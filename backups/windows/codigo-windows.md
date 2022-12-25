@@ -1,0 +1,7 @@
+TRANSACTION SUCCESSFUL
+Transaction code:
+W280353268
+
+
+codigo de 25 digitos:
+FFKMW-DYJ8H-C6KKF-9GGRV-P3YD6
