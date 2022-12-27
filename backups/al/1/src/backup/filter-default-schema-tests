@@ -58,8 +58,8 @@ describe('Filter Default Schema', () => {
       refinedData: { productId },
       quadrant: [{
         ...mock_param_collection,
-        _containerConfigsOfLinksPresentsOnProductContext: [{
-          theLinksPresentsInThisProductContextByProduct: [{
+        _screen_config_links: [{
+          linksByProduct: [{
             __editorItemTitle: '1000',
             propertieToLinkOnCtx: 'productId'
           }]
@@ -75,8 +75,8 @@ describe('Filter Default Schema', () => {
   })
 
   describe('Matchs', () => {
-    describe('theLinksPresentsInThisProductContextByProduct', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByProduct'
+    describe('linksByProduct', () => {
+      const resolver = 'linksByProduct'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'productId'
 
       it('Should filter all links on linksByProductAttr and return collection if any match occurs ', () => {
@@ -105,7 +105,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -142,7 +142,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -184,7 +184,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -219,7 +219,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [{
               propertieToLinkOnCtx: propertieTolinkOnProductContext,
               __editorItemTitle: product_id_match
@@ -242,8 +242,8 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByCategoryId', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByCategoryId'
+    describe('linksByCategory', () => {
+      const resolver = 'linksByCategory'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'categoryId'
 
       it('Should filter all links on linksByCategoryAttr and return collection if any match occurs ', () => {
@@ -254,7 +254,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -294,7 +294,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -331,7 +331,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -373,7 +373,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -408,7 +408,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [{
               propertieToLinkOnCtx: propertieTolinkOnProductContext,
               __editorItemTitle: category_id_match
@@ -431,8 +431,8 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByBrand', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByBrand'
+    describe('linksByBrand', () => {
+      const resolver = 'linksByBrand'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'brandId'
 
       it('Should filter all links on linksByBrandAttr and return collection if any match occurs ', () => {
@@ -443,7 +443,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -483,7 +483,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -520,7 +520,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -562,7 +562,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -597,7 +597,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [{
               propertieToLinkOnCtx: propertieTolinkOnProductContext,
               __editorItemTitle: brand_id_match
@@ -620,8 +620,8 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByCollections', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByCollections'
+    describe('linksByCollection', () => {
+      const resolver = 'linksByCollection'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfCollections'
 
       it('Should filter all links on linksByCollectionAttr and return collection if any match occurs ', () => {
@@ -638,7 +638,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -681,7 +681,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -724,7 +724,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -767,7 +767,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -809,7 +809,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [{
               propertieToLinkOnCtx: propertieTolinkOnProductContext,
               __editorItemTitle: collection_match.id
@@ -832,11 +832,11 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByProductField', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByProductField'
-      const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfProductFields'
+    describe('linksBySpecification', () => {
+      const resolver = 'linksBySpecification'
+      const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfSpecification'
 
-      it('Should filter all links on linksByProductFieldAttr and return collection if any match occurs ', () => {
+      it('Should filter all links on linksBySpecificationAttr and return collection if any match occurs ', () => {
         const product_field_1: ListOfProductField = {
           name: 'product_field_1',
           values: ['value_1', 'value_2']
@@ -850,7 +850,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: product_field_1.name,
@@ -899,7 +899,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: product_field_1.name,
@@ -945,7 +945,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: product_field_1.name,
@@ -991,7 +991,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: product_field_1.name,
@@ -1040,7 +1040,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: product_field_1.name,
@@ -1074,7 +1074,7 @@ describe('Filter Default Schema', () => {
         expect(result).toBeNull()
       })
 
-      it('Should call the resolver of linksByProductFieldAttr only if there is at least one link inside linksByProductFieldAttr', () => {
+      it('Should call the resolver of linksBySpecificationAttr only if there is at least one link inside linksBySpecificationAttr', () => {
         const product_field: ListOfProductField = {
           name: 'any_name',
           values: ['any_value']
@@ -1087,7 +1087,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -1113,7 +1113,7 @@ describe('Filter Default Schema', () => {
         expect(privateMethodSpy).toBeCalled()
       })
 
-      it('Should call the resolver of linksByProductFieldAttr only once, regardless of the number of links', () => {
+      it('Should call the resolver of linksBySpecificationAttr only once, regardless of the number of links', () => {
         const product_field_1: ListOfProductField = {
           name: 'any_name',
           values: ['any_value']
@@ -1130,7 +1130,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -1162,8 +1162,8 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByVariations', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByVariations'
+    describe('linksByVariation', () => {
+      const resolver = 'linksByVariation'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfVariations'
 
       it('Should filter all links on linksByVariationAttr and return collection if any match occurs ', () => {
@@ -1180,7 +1180,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: variation_1.name,
@@ -1229,7 +1229,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: variation_1.name,
@@ -1275,7 +1275,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: variation_1.name,
@@ -1321,7 +1321,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: variation_1.name,
@@ -1370,7 +1370,7 @@ describe('Filter Default Schema', () => {
 
         const mock_param_collection: schema_site_editor_default_collection_flags = {
           ...mock_result,
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 __editorItemTitle: variation_1.name,
@@ -1417,7 +1417,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,
@@ -1460,7 +1460,7 @@ describe('Filter Default Schema', () => {
           typeContent: 'createContent',
           variant: 'variant-default',
           __editorItemTitle: 'Container Coleção 1',
-          _containerConfigsOfLinksPresentsOnProductContext: [{
+          _screen_config_links: [{
             [resolver]: [
               {
                 propertieToLinkOnCtx: propertieTolinkOnProductContext,

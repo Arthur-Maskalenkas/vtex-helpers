@@ -1,4 +1,4 @@
-const resolver = 'theLinksPresentsInThisProductContextByProduct'
+const resolver = 'linksByProduct'
 const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'productId'
 const propertieToHTMLMatchBy = 'product-attr'
 

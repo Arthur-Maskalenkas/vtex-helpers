@@ -1,43 +1,54 @@
-import { FilterListAttributesCtxReturn } from 'remap-schema/utils'
-
 import {
   RefinedDataOnProductContext,
   schema_site_editor_default_collection_flags,
-  schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext,
   schema_site_editor_default_linkField,
   schema_site_editor_default_linkField_filtered,
   schema_site_editor_default_linkField_matched
 } from '../../src/remap-schema/_interfaces'
+import { T_schema_links_to_filter } from '../remap-schema/_interfaces/_schema-types'
 
-const GenerateHTMLKey = (key: string, isDefault = true): string => (`data-${isDefault ? 'default--' : 'custom--'}${key}`)
+export const GenerateHTMLKey = (key: string, isDefault = true): string => `data-${isDefault ? 'default--' : 'custom--'}${normalizeString(key,isDefault)}`
 
-const switchImprovement = (value: keyof schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext): string => {
+const switchImprovement = (value: T_schema_links_to_filter): string => {
   switch (value) {
-    case 'theLinksPresentsInThisProductContextByProduct':
+    case 'linksByProduct':
       return 'product-attr'
-    case 'theLinksPresentsInThisProductContextByProductField':
+    case 'linksBySpecification':
       return 'specification-attr'
-    case 'theLinksPresentsInThisProductContextByCollections':
+    case 'linksByCollection':
       return 'collection-attr'
-    case 'theLinksPresentsInThisProductContextByBrand':
+    case 'linksByBrand':
       return 'brand-attr'
-    case 'theLinksPresentsInThisProductContextByCategoryId':
+    case 'linksByCategory':
       return 'category-attr'
-    case 'theLinksPresentsInThisProductContextByVariations':
+    case 'linksByVariation':
       return 'variation-attr'
     default:
       return value
   }
 }
 
-export const normalizeString = (text?: string): string => {
+export const normalizeString = (text?: string,isDefault = true): string => {
   if (!text) return
   const preValue = String(text).replace(/-/g, ' ')
 
-  return preValue?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\s-]+/g, '-').toLowerCase()
+  const format =
+    preValue
+      ?.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/([A-Z])/g, '-$1')
+      .replace(/[\s-]+/g, '-')
+      .toLowerCase()
+
+  if (!isDefault) {
+    return format
+      .replace(/-name/g, '--name')
+      .replace(/-value/g, '--value')
+  }
+
+  return format
 }
 
-const compare = (value?: any): string => {
+const compare = (value?: string | number): string => {
   if (!value) {
     return ''
   }
@@ -45,58 +56,56 @@ const compare = (value?: any): string => {
   return String(value)?.toString()?.toLowerCase()
 }
 export class FilterDefaultSchema {
-  constructor(
-    private readonly refinedDataOnProductContext: RefinedDataOnProductContext,
-    private readonly showLogs?: boolean
+  constructor (
+    private readonly refinedDataOnProductContext: RefinedDataOnProductContext
   ) { }
 
-  private theLinksPresentsInThisProductContextByProduct(link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
+  private linksByProduct (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
     const match =
-      link?.find(currentLink => compare(currentLink?.__editorItemTitle) === compare(this.refinedDataOnProductContext?.productId))
+      link?.find(currentLink => compare(currentLink?.value) === compare(this.refinedDataOnProductContext?.productId))
 
     if (!match) return null
 
     return {
       HTMLMatch: {
-        [GenerateHTMLKey(`match-by-product-attr-value-${match.__editorItemTitle}`, false)]: true
+        [GenerateHTMLKey(`match-by-product-attr-value-${match.value}`, false)]: true
       }
     }
   }
 
-  private theLinksPresentsInThisProductContextByBrand(link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
+  private linksByBrand (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
     const match =
-      link?.find(currentLink => compare(currentLink?.__editorItemTitle) === compare(this.refinedDataOnProductContext?.brandId))
+      link?.find(currentLink => compare(currentLink?.value) === compare(this.refinedDataOnProductContext?.brandId))
 
     if (!match) return null
 
     return {
       HTMLMatch: {
-        [GenerateHTMLKey(`match-by-brand-attr-value-${match.__editorItemTitle}`, false)]: true
+        [GenerateHTMLKey(`match-by-brand-attr-value-${match.value}`, false)]: true
       }
     }
   }
 
-  private theLinksPresentsInThisProductContextByCategoryId(link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
+  private linksByCategory (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
     const match =
-      link?.find(currentLink => compare(currentLink?.__editorItemTitle) === compare(this.refinedDataOnProductContext?.categoryId))
+      link?.find(currentLink => compare(currentLink?.value) === compare(this.refinedDataOnProductContext?.categoryId))
 
     if (!match) return null
 
     return {
       HTMLMatch: {
-        [GenerateHTMLKey(`match-by-category-attr-value-${match.__editorItemTitle}`, false)]: true
+        [GenerateHTMLKey(`match-by-category-attr-value-${match.value}`, false)]: true
       }
     }
   }
 
-
-  private theLinksPresentsInThisProductContextByCollections(links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
+  private linksByCollection (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
     const listOfMatchs = links.filter(link => {
       const refinedDataOnProductCtx = this.refinedDataOnProductContext?.listOfCollections
 
       const match = refinedDataOnProductCtx
         ?.find(refinedData => {
-          return compare(refinedData?.id) === compare(link?.__editorItemTitle)
+          return compare(refinedData?.id) === compare(link?.value)
         })
 
       if (!match) return false
@@ -109,7 +118,7 @@ export class FilterDefaultSchema {
     const listOfMatchsRemapped = listOfMatchs?.reduce((acc, current) => {
       return {
         ...acc,
-        [GenerateHTMLKey(`match-by-collection-attr--value-${current?.__editorItemTitle}`, false)]: true
+        [GenerateHTMLKey(`match-by-collection-attr--value-${current?.value}`, false)]: true
       }
     }, {})
 
@@ -118,16 +127,16 @@ export class FilterDefaultSchema {
     }
   }
 
-  private theLinksPresentsInThisProductContextByProductField(links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
+  private linksBySpecification (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
     const listOfMatchs = links?.filter(link => {
       const refinedDataOnProductCtx = this.refinedDataOnProductContext?.listOfProductFields
 
       const matchName = refinedDataOnProductCtx
         ?.find(refinedData => {
-          return compare(refinedData?.name) === compare(link?.__editorItemTitle)
+          return compare(refinedData?.name) === compare(link?.name)
         })
 
-      const matchValue = matchName?.values?.find(value => compare(value) === compare(link?.extraCampToFilter_1))
+      const matchValue = matchName?.values?.find(value => compare(value) === compare(link?.value))
 
       return Boolean(!!matchValue && !!matchName)
     })
@@ -137,7 +146,7 @@ export class FilterDefaultSchema {
     const listOfMatchsRemapped = listOfMatchs?.reduce((acc, current) => {
       return {
         ...acc,
-        [GenerateHTMLKey(`match-by-specification-attr--name-${current?.__editorItemTitle}--value-${current?.extraCampToFilter_1}`, false)]: true
+        [GenerateHTMLKey(`match-by-specification-attr--name-${current?.name}--value-${current?.value}`, false)]: true
       }
     }, {})
 
@@ -146,16 +155,16 @@ export class FilterDefaultSchema {
     }
   }
 
-  private theLinksPresentsInThisProductContextByVariations(links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
+  private linksByVariation (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField_matched | null {
     const listOfMatchs = links?.filter(link => {
       const refinedDataOnProductCtx = this.refinedDataOnProductContext?.listOfVariations
 
       const matchName = refinedDataOnProductCtx
         ?.find(refinedData => {
-          return compare(refinedData?.name) === compare(link?.__editorItemTitle)
+          return compare(refinedData?.name) === compare(link?.name)
         })
 
-      const matchValue = matchName?.values?.find(value => compare(value) === compare(link?.extraCampToFilter_1))
+      const matchValue = matchName?.values?.find(value => compare(value) === compare(link?.value))
 
       return Boolean(!!matchValue && !!matchName)
     })
@@ -165,7 +174,7 @@ export class FilterDefaultSchema {
     const listOfMatchsRemapped = listOfMatchs?.reduce((acc, current) => {
       return {
         ...acc,
-        [GenerateHTMLKey(`match-by-variation-attr--name-${current?.__editorItemTitle}--value-${current?.extraCampToFilter_1}`, false)]: true
+        [GenerateHTMLKey(`match-by-variation-attr--name-${current?.name}--value-${current?.value}`, false)]: true
       }
     }, {})
 
@@ -174,17 +183,19 @@ export class FilterDefaultSchema {
     }
   }
 
-  public filterCollection(collection: schema_site_editor_default_collection_flags, showLogs: boolean = false): schema_site_editor_default_linkField_filtered | null {
+  public filterCollection (collection: schema_site_editor_default_collection_flags): schema_site_editor_default_linkField_filtered | null {
     if (!this.refinedDataOnProductContext || !collection) return null
 
-    const { _containerConfigsOfLinksPresentsOnProductContext, ...currentCollectionData } = collection
+    const { _screen_config_links = [], ...currentCollectionData } = collection
 
-    const linksInsideThisCollection = collection._containerConfigsOfLinksPresentsOnProductContext?.[0]
+    const linksInsideThisCollection = collection?._screen_config_links?.[0]
 
-    const linksFiltereds = Object.keys(linksInsideThisCollection).map((key: keyof schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext) => {
+    if (!linksInsideThisCollection) return null
+
+    const linksFiltereds = Object?.keys(linksInsideThisCollection)?.reduce((acc, key) => {
       const currentLink = linksInsideThisCollection[key]
 
-      if (!currentLink || !Array.isArray(currentLink) || currentLink?.length === 0 || key === '__editorItemTitle') return null
+      if (!currentLink || !Array.isArray(currentLink) || currentLink?.length === 0) return null
 
       if (typeof this?.[key] !== 'function') return null
 
@@ -193,15 +204,15 @@ export class FilterDefaultSchema {
       if (!matchLinkOnRefined) return null
 
       return {
+        ...acc,
         ...matchLinkOnRefined.HTMLMatch,
-        [GenerateHTMLKey(`match-occurs-by-${switchImprovement(key)}`)]: true
+        [GenerateHTMLKey(`match-occurs-by-${switchImprovement(key as T_schema_links_to_filter)}`)]: true
       }
-    })
+    }, {})
 
-    if (linksFiltereds?.length === 0 || linksFiltereds?.every(link => link === null)) return null
+    if (!linksFiltereds) return null
 
     const {
-      __editorItemTitle = '',
       priority = '0',
       typeContent = 'createContent',
       variant = 'variant-1'
@@ -210,10 +221,10 @@ export class FilterDefaultSchema {
     return {
       ...currentCollectionData,
       HTMLMatch: {
-        ...linksFiltereds[0],
+        ...linksFiltereds,
         [GenerateHTMLKey(`priority-value-${priority}`)]: true,
         [GenerateHTMLKey(`type-content-${typeContent}`)]: true,
-        [GenerateHTMLKey(`link-name-${normalizeString(collection.__editorItemTitle)}`)]: true,
+        [GenerateHTMLKey(`link-name-${collection.__editorItemTitle}`)]: true,
         [GenerateHTMLKey(`variant-value-${variant}`)]: true
       }
     }

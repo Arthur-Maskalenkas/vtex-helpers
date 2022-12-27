@@ -1,9 +1,5 @@
-import {
-  schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext,
-  schema_site_editor_default_priorirty_config_container
-} from "./_schemas-site-editor-default"
-
-export type schema_site_editor_remapped_quadrants = "quadrantTopLeft" | "quadrantTopRight" | "quadrantBottom"
+import { schema_site_editor_default_screen_config_container } from './_schemas-site-editor-default'
+import { T_schema_type_of_content, T_schema_variation } from './_schema-types'
 
 export interface schema_site_editor_remapped_root_custom_app_badge_custom {
   quadrantBottom?: schema_site_editor_remapped_custom_quadrant
@@ -14,7 +10,7 @@ export interface schema_site_editor_remapped_root_custom_app_badge_custom {
 export interface schema_site_editor_remapped_custom_quadrant {
   dataHTMLOnContainerFlag: any
   listOfFlags?: schema_site_editor_remapped_custom_flag[]
-  priorityConfigContainer: schema_site_editor_default_priorirty_config_container
+  priorityConfigContainer: schema_site_editor_default_screen_config_container
   name: string
   hasCollection: boolean
 }
@@ -28,16 +24,9 @@ export interface schema_site_editor_remapped_custom_flag {
   badgesStyles?: any
 }
 
-export interface schema_site_editor_remapped_QuadrantStyles {
-  __editorItemTitle: string
-  horizontalDistance: string
-  verticalDistance: string
-  positionFlow?: "leftToRight" | "rightToLeft" | "center"
-}
-
 export interface schema_site_editor_remapped_collection_flags {
-  typeContent: 'image' | 'createContent'
-  variant?: 'variant-default' | 'variant-1' | 'variant-2' | 'variant-3'
+  typeContent: T_schema_type_of_content
+  variant?: T_schema_variation
   styles: schema_site_editor_remapped_option_image | schema_site_editor_remapped_option_content
 }
 

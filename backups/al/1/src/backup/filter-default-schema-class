@@ -3,7 +3,7 @@ import { FilterListAttributesCtxReturn } from 'remap-schema/utils'
 import {
   RefinedDataOnProductContext,
   schema_site_editor_default_collection_flags,
-  schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext,
+  schema_site_editor_default_screen_config_links,
   schema_site_editor_default_container_generic_quadrant,
   schema_site_editor_default_linkField,
   schema_site_editor_default_linkField_filtered
@@ -24,7 +24,7 @@ export class FilterDefaultSchema {
 
   private readonly validCollections = []
 
-  private theLinksPresentsInThisProductContextByProduct (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField {
+  private linksByProduct (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField {
     const match = link?.find(currentLink => compare(currentLink?.__editorItemTitle) === compare(this.refinedDataOnProductContext?.productId))
 
     if (!match) return null
@@ -32,7 +32,7 @@ export class FilterDefaultSchema {
     return match
   }
 
-  private theLinksPresentsInThisProductContextByBrand (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField {
+  private linksByBrand (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField {
     const match = link?.find(currentLink => compare(currentLink?.__editorItemTitle) === compare(this.refinedDataOnProductContext?.brandId))
 
     if (!match) return null
@@ -40,7 +40,7 @@ export class FilterDefaultSchema {
     return match
   }
 
-  private theLinksPresentsInThisProductContextByCollections (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField[] {
+  private linksByCollection (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField[] {
     const listOfMatchs = links.filter(link => {
       const refinedDataOnProductCtx = this.refinedDataOnProductContext?.listOfCollections
 
@@ -59,9 +59,9 @@ export class FilterDefaultSchema {
     return listOfMatchs
   }
 
-  private theLinksPresentsInThisProductContextByProductField (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField[] {
+  private linksBySpecification (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField[] {
     const listOfMatchs = links.filter(link => {
-      const refinedDataOnProductCtx = this.refinedDataOnProductContext?.listOfProductFields
+      const refinedDataOnProductCtx = this.refinedDataOnProductContext?.listOfSpecification
 
       const matchName = refinedDataOnProductCtx
         ?.find(refinedData => {
@@ -78,7 +78,7 @@ export class FilterDefaultSchema {
     return listOfMatchs
   }
 
-  private theLinksPresentsInThisProductContextByVariations (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField[] {
+  private linksByVariation (links: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField[] {
     const listOfMatchs = links.filter(link => {
       const refinedDataOnProductCtx = this.refinedDataOnProductContext?.listOfVariations
 
@@ -97,7 +97,7 @@ export class FilterDefaultSchema {
     return listOfMatchs
   }
 
-  private theLinksPresentsInThisProductContextByCategoryId (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField {
+  private linksByCategory (link: schema_site_editor_default_linkField[]): schema_site_editor_default_linkField {
     const match = link?.find(currentLink => compare(currentLink?.__editorItemTitle) === compare(this.refinedDataOnProductContext?.categoryId))
 
     if (!match) return null
@@ -113,11 +113,11 @@ export class FilterDefaultSchema {
 
     if (!this.refinedDataOnProductContext || !collection) return null
 
-    const { _containerConfigsOfLinksPresentsOnProductContext, ...currentCollectionData } = collection
+    const { _screen_config_links, ...currentCollectionData } = collection
 
-    const linksInsideThisCollection = collection._containerConfigsOfLinksPresentsOnProductContext?.[0]
+    const linksInsideThisCollection = collection._screen_config_links?.[0]
 
-    const linksFiltereds: any = Object.keys(linksInsideThisCollection).map((key: keyof schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext) => {
+    const linksFiltereds: any = Object.keys(linksInsideThisCollection).map((key: keyof schema_site_editor_default_screen_config_links) => {
       const currentLink = linksInsideThisCollection[key] as schema_site_editor_default_linkField[]
       if (!currentLink || !Array.isArray(currentLink) || currentLink?.length === 0 || key === '__editorItemTitle') return [null]
 

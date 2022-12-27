@@ -1,30 +1,28 @@
-import { mock_schema_remapped_priority_config_container } from "./schema_site-editor-remapped"
-import { mock_refined_data_on_product_context } from "./refined-data"
+import { mock_refined_data_on_product_context } from './refined-data'
 
 import {
   RefinedDataOnProductContext,
   schema_site_editor_default_collection_flags,
   schema_site_editor_default_container_generic_quadrant,
-  schema_site_editor_default_priorirty_config_container,
-  schema_site_editor_default_quadrant_editor_title,
-  schema_site_editor_default_quadrant_name,
   schema_site_editor_default_root_app_badge_custom,
-  schema_site_editor_remapped_QuadrantStyles
+  schema_site_editor_default_screen_config_container,
+  schema_site_editor_default_screen_config_position
 } from '../../../src/remap-schema/_interfaces'
+import { T_schema_quadrant_name } from '../../../src/remap-schema/_interfaces/_schema-types'
 
 export const mock_schema_default_collection_flags_id_product = (idProduct: string | number): schema_site_editor_default_collection_flags => {
   return {
     __editorItemTitle: "id produto",
     priority: "0",
     isActive: true,
-    _containerConfigsOfLinksPresentsOnProductContext: [
+    _screen_config_links: [
       {
         __editorItemTitle: "Configurações",
-        theLinksPresentsInThisProductContextByProduct: [
+        linksByProduct: [
           {
             _: "Atenção!",
-            __editorItemTitle: 26,
-            propertieToLinkOnCtx: "productId"
+            value: 26
+
           }
         ]
       }
@@ -46,7 +44,7 @@ export const mock_schema_default_collection_flags_id_product = (idProduct: strin
   }
 }
 
-export const mock_schema_default_priorirty_config_container = (): [schema_site_editor_default_priorirty_config_container] => {
+export const mock_schema_default_priorirty_config_container = (): [schema_site_editor_default_screen_config_container] => {
   return [
     {
       __editorItemTitle: "Configurações",
@@ -58,7 +56,7 @@ export const mock_schema_default_priorirty_config_container = (): [schema_site_e
   ]
 }
 
-export const mock_schema_default_QuadrantStyles = (): [schema_site_editor_remapped_QuadrantStyles] => {
+export const mock_schema_default_QuadrantStyles = (): [schema_site_editor_default_screen_config_position] => {
   return [{
     __editorItemTitle: "Configurações",
     horizontalDistance: "10px",
@@ -73,67 +71,23 @@ export const mock_schema_default_container_generic_quadrant = (): schema_site_ed
     collection: [
       mock_schema_default_collection_flags_id_product(100)
     ],
-    _positioningContainer: mock_schema_default_QuadrantStyles(),
-    _priorityConfigContainer: mock_schema_default_priorirty_config_container()
+    _screen_config_position: mock_schema_default_QuadrantStyles(),
+    _screen_config_priority: mock_schema_default_priorirty_config_container()
   }
 }
 
-export const mock_schema_default_collection_flags_to_filter_collection = (
-  {
-    value = 1,
-    extraValue = null,
-    name = "id produto",
-    propertieToLinkOnCtx = "productId",
-    priority = "0",
-    isActive = true
-  }: { value: string | number, propertieToLinkOnCtx?: keyof RefinedDataOnProductContext, extraValue?: string, name?: string, priority?: string, isActive?: boolean }
-): schema_site_editor_default_collection_flags => {
-  return {
-    __editorItemTitle: name,
-    priority,
-    isActive,
-    _containerConfigsOfLinksPresentsOnProductContext: [
-      {
-        __editorItemTitle: "Configurações",
-        theLinksPresentsInThisProductContextByProduct: [
-          {
-            _: "Atenção!",
-            __editorItemTitle: value,
-            propertieToLinkOnCtx,
-            extraCampToFilter_1: extraValue
-          }
-        ]
-      }
-    ],
-    typeContent: "createContent",
-    items: [
-      {
-        __editorItemTitle: "Configurações",
-        text: "id produto",
-        fontWeight: "400",
-        color: "#FFFFFF",
-        backgroundColor: "#000000",
-        commonPropsBetweenContentAndImage: {
-          width: "20",
-          height: "unset"
-        }
-      }
-    ]
-  }
-}
-
-export const mock_default_quadrant_base_to_filter_collections = (mock_quadrant: schema_site_editor_default_quadrant_editor_title, mock_collection: schema_site_editor_default_collection_flags[]): schema_site_editor_default_container_generic_quadrant => {
+export const mock_default_quadrant_base_to_filter_collections = (mock_quadrant: T_schema_quadrant_name, mock_collection: schema_site_editor_default_collection_flags[]): schema_site_editor_default_container_generic_quadrant => {
   return {
     __editorItemTitle: mock_quadrant,
     collection: [
       ...mock_collection
     ],
-    _positioningContainer: mock_schema_default_QuadrantStyles(),
-    _priorityConfigContainer: mock_schema_default_priorirty_config_container()
+    _screen_config_position: mock_schema_default_QuadrantStyles(),
+    _screen_config_priority: mock_schema_default_priorirty_config_container()
   }
 }
 
-export const mock_default_quadrant_to_filter_collections = (...mock_quadrant: Array<Partial<Record<schema_site_editor_default_quadrant_name, schema_site_editor_default_container_generic_quadrant>>>): schema_site_editor_default_root_app_badge_custom => {
+export const mock_default_quadrant_to_filter_collections = (...mock_quadrant: Array<Partial<Record<T_schema_quadrant_name, schema_site_editor_default_container_generic_quadrant>>>): schema_site_editor_default_root_app_badge_custom => {
   return {
     quadrantBottom: null,
     quadrantTopLeft: null,
@@ -142,43 +96,43 @@ export const mock_default_quadrant_to_filter_collections = (...mock_quadrant: Ar
   }
 }
 
-export const patchs_to_match_refined_with_quadrant_on_filter = () => {
+export const patchs_to_match_refined_with_quadrant_on_filter = (): any => {
   return {
     quadrantRight: {
       brandId: {
         pathCurrentQuadrant: mock_schema_default_root_app().quadrantTopRight.collection[0],
-        propertieToLinkOnCtx: "brandId",
+
         value: 2000000,
         matchByValueOnRefinedData: mock_refined_data_on_product_context.brandId
       },
       categoryId: {
         pathCurrentQuadrant: mock_schema_default_root_app().quadrantTopRight.collection[1],
-        propertieToLinkOnCtx: "categoryId",
+
         value: 54,
         matchByValueOnRefinedData: mock_refined_data_on_product_context.categoryId
       },
       productId: {
         pathCurrentQuadrant: mock_schema_default_root_app().quadrantTopRight.collection[2],
-        propertieToLinkOnCtx: "productId",
+
         value: 26,
         matchByValueOnRefinedData: mock_refined_data_on_product_context.productId
       },
       listOfCollections: {
         pathCurrentQuadrant: mock_schema_default_root_app().quadrantTopRight.collection[3],
-        propertieToLinkOnCtx: "ListOfCollections",
+
         value: 143,
         matchByValueOnRefinedData: mock_refined_data_on_product_context.listOfCollections.find(collection => collection.id === '143')
       },
       listOfVariations: {
         pathCurrentQuadrant: mock_schema_default_root_app().quadrantTopRight.collection[4],
-        propertieToLinkOnCtx: "listOfVariations",
+
         name: 'Cor',
         value: 'Vermelho',
         matchByValueOnRefinedData: mock_refined_data_on_product_context.listOfVariations.find(variation => variation.name === 'Cor' && variation.values[0] === 'Vermelho')
       },
       listOfProductFields: {
         pathCurrentQuadrant: mock_schema_default_root_app().quadrantTopRight.collection[5],
-        propertieToLinkOnCtx: "ListOfProductFields",
+
         name: 'Voltagem',
         value: '220',
         matchByValueOnRefinedData: mock_refined_data_on_product_context.listOfProductFields.find(variation => variation.name === 'Voltagem' && variation.values[0] === '220')
@@ -187,7 +141,7 @@ export const patchs_to_match_refined_with_quadrant_on_filter = () => {
     quadrantLeft: {
       productId: {
         pathCurrentQuadrant: mock_schema_default_root_app().quadrantTopLeft.collection[0],
-        propertieToLinkOnCtx: "productId",
+
         value: 26,
         matchByValueOnRefinedData: mock_refined_data_on_product_context.productId
       }
@@ -195,7 +149,7 @@ export const patchs_to_match_refined_with_quadrant_on_filter = () => {
     quadrantBottom: {
       productId: {
         pathCurrentQuadrant: mock_schema_default_root_app().quadrantBottom.collection[0],
-        propertieToLinkOnCtx: "productId",
+
         value: 26,
         matchByValueOnRefinedData: mock_refined_data_on_product_context.productId
       }
@@ -212,14 +166,14 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "id marca",
         priority: "0",
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByBrand: [
+            linksByBrand: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 2000000,
-                propertieToLinkOnCtx: "brandId"
+                value: 2000000
+
               }
             ]
           }
@@ -244,14 +198,14 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "ida categoria",
         priority: "0",
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByCategoryId: [
+            linksByCategory: [
               {
                 _: "Atenção!",
-                propertieToLinkOnCtx: "categoryId",
-                __editorItemTitle: 54
+
+                value: 54
               }
             ]
           }
@@ -275,14 +229,14 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "id produto",
         priority: "0",
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByProduct: [
+            linksByProduct: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 26,
-                propertieToLinkOnCtx: "productId"
+                value: 26
+
               }
             ]
           }
@@ -306,24 +260,24 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "coleção",
         priority: "0",
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByCollections: [
+            linksByCollection: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 143,
-                propertieToLinkOnCtx: "listOfCollections"
+                value: 143
+
               },
               {
                 _: "Atenção!",
-                __editorItemTitle: 147,
-                propertieToLinkOnCtx: "listOfCollections"
+                value: 147
+
               },
               {
                 _: "Atenção!",
-                __editorItemTitle: 139,
-                propertieToLinkOnCtx: "listOfCollections"
+                value: 139
+
               }
             ]
           }
@@ -347,15 +301,15 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "variação 2",
         priority: "0",
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByVariations: [
+            linksByVariation: [
               {
                 _: "Atenção!",
-                __editorItemTitle: "Cor",
-                extraCampToFilter_1: "Vermelho",
-                propertieToLinkOnCtx: "listOfVariations"
+                name: "Cor",
+                value: "Vermelho"
+
               }
             ]
           }
@@ -379,15 +333,15 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "campo de produto",
         priority: "0",
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByProductField: [
+            linksBySpecification: [
               {
                 _: "Atenção!",
-                __editorItemTitle: "Voltagem",
-                extraCampToFilter_1: "220",
-                propertieToLinkOnCtx: "listOfProductFields"
+                name: "Voltagem",
+                value: "220"
+
               }
             ]
           }
@@ -408,7 +362,7 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         ]
       }
     ],
-    _positioningContainer: [
+    _screen_config_position: [
       {
         __editorItemTitle: "Configurações",
         horizontalDistance: "10px",
@@ -416,7 +370,7 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         verticalDistance: "10px"
       }
     ],
-    _priorityConfigContainer: [
+    _screen_config_priority: [
       {
         __editorItemTitle: "Configurações",
         _: "Priridade por Campo",
@@ -434,16 +388,16 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "item 1 - prioridade 1",
         priority: '1',
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByCollections: [],
-            theLinksPresentsInThisProductContextByBrand: [],
-            theLinksPresentsInThisProductContextByProduct: [
+            linksByCollection: [],
+            linksByBrand: [],
+            linksByProduct: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 26,
-                propertieToLinkOnCtx: "productId"
+                value: 26
+
               }
             ]
           }
@@ -467,16 +421,16 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "item 2 - prioridade 2",
         priority: '2',
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByCollections: [],
-            theLinksPresentsInThisProductContextByBrand: [],
-            theLinksPresentsInThisProductContextByProduct: [
+            linksByCollection: [],
+            linksByBrand: [],
+            linksByProduct: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 26,
-                propertieToLinkOnCtx: "productId"
+                value: 26
+
               }
             ]
           }
@@ -500,16 +454,16 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "item 3 - prioridade 3",
         priority: '3',
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByCollections: [],
-            theLinksPresentsInThisProductContextByBrand: [],
-            theLinksPresentsInThisProductContextByProduct: [
+            linksByCollection: [],
+            linksByBrand: [],
+            linksByProduct: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 26,
-                propertieToLinkOnCtx: "productId"
+                value: 26
+
               }
             ]
           }
@@ -533,16 +487,16 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "item 4 - prioridade 4",
         priority: '4',
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByCollections: [],
-            theLinksPresentsInThisProductContextByBrand: [],
-            theLinksPresentsInThisProductContextByProduct: [
+            linksByCollection: [],
+            linksByBrand: [],
+            linksByProduct: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 26,
-                propertieToLinkOnCtx: "productId"
+                value: 26
+
               }
             ]
           }
@@ -566,16 +520,16 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         __editorItemTitle: "item 5 - prioridade 2",
         priority: '2',
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByCollections: [],
-            theLinksPresentsInThisProductContextByBrand: [],
-            theLinksPresentsInThisProductContextByProduct: [
+            linksByCollection: [],
+            linksByBrand: [],
+            linksByProduct: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 26,
-                propertieToLinkOnCtx: "productId"
+                value: 26
+
               }
             ]
           }
@@ -596,7 +550,7 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         ]
       }
     ],
-    _positioningContainer: [
+    _screen_config_position: [
       {
         __editorItemTitle: "Configurações",
         horizontalDistance: "10px",
@@ -604,7 +558,7 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         verticalDistance: "10px"
       }
     ],
-    _priorityConfigContainer: [
+    _screen_config_priority: [
       {
         __editorItemTitle: "Configurações",
         _: "Priridade por Campo",
@@ -623,21 +577,21 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         typeContent: "createContent",
         priority: '0',
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByProduct: [
+            linksByProduct: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 26,
-                propertieToLinkOnCtx: "productId"
+                value: 26
+
               }
             ],
-            theLinksPresentsInThisProductContextByCollections: [],
-            theLinksPresentsInThisProductContextByProductField: [],
-            theLinksPresentsInThisProductContextByVariations: [],
-            theLinksPresentsInThisProductContextByCategoryId: [],
-            theLinksPresentsInThisProductContextByBrand: []
+            linksByCollection: [],
+            linksBySpecification: [],
+            linksByVariation: [],
+            linksByCategory: [],
+            linksByBrand: []
           }
         ],
         items: [
@@ -661,18 +615,18 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         typeContent: "createContent",
         priority: '0',
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByProduct: [],
-            theLinksPresentsInThisProductContextByCollections: [],
-            theLinksPresentsInThisProductContextByProductField: [],
-            theLinksPresentsInThisProductContextByVariations: [],
-            theLinksPresentsInThisProductContextByCategoryId: [
+            linksByProduct: [],
+            linksByCollection: [],
+            linksBySpecification: [],
+            linksByVariation: [],
+            linksByCategory: [
               {
                 _: "Atenção!",
-                propertieToLinkOnCtx: "categoryId",
-                __editorItemTitle: 54
+
+                value: 54
               }
             ]
           }
@@ -698,19 +652,19 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         typeContent: "createContent",
         priority: '3',
         isActive: true,
-        _containerConfigsOfLinksPresentsOnProductContext: [
+        _screen_config_links: [
           {
             __editorItemTitle: "Configurações",
-            theLinksPresentsInThisProductContextByProduct: [],
-            theLinksPresentsInThisProductContextByCollections: [],
-            theLinksPresentsInThisProductContextByProductField: [],
-            theLinksPresentsInThisProductContextByVariations: [],
-            theLinksPresentsInThisProductContextByCategoryId: [],
-            theLinksPresentsInThisProductContextByBrand: [
+            linksByProduct: [],
+            linksByCollection: [],
+            linksBySpecification: [],
+            linksByVariation: [],
+            linksByCategory: [],
+            linksByBrand: [
               {
                 _: "Atenção!",
-                __editorItemTitle: 2000000,
-                propertieToLinkOnCtx: "brandId"
+                value: 2000000
+
               }
             ]
           }
@@ -732,7 +686,7 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         ]
       }
     ],
-    _positioningContainer: [
+    _screen_config_position: [
       {
         __editorItemTitle: "Configurações",
         horizontalDistance: "10px",
@@ -740,7 +694,7 @@ export const mock_schema_default_root_app = (): schema_site_editor_default_root_
         verticalDistance: "10px"
       }
     ],
-    _priorityConfigContainer: [
+    _screen_config_priority: [
       {
         __editorItemTitle: "Configurações",
         _: "Priridade por Campo",

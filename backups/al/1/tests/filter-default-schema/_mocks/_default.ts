@@ -1,10 +1,10 @@
 import {
   RefinedDataOnProductContext,
   schema_site_editor_default_collection_flags,
-  schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext,
   schema_site_editor_default_linkField,
-  schema_site_editor_default_linkField_filtered
-} from '../../src/remap-schema/_interfaces'
+  schema_site_editor_default_linkField_filtered,
+  schema_site_editor_default_screen_config_links
+} from '../../../src/remap-schema/_interfaces'
 
 export const normalizeString = (text?: string): string => {
   if (!text) return
@@ -13,7 +13,7 @@ export const normalizeString = (text?: string): string => {
   return preValue?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\s-]+/g, '-').toLowerCase()
 }
 
-export const generateHTMLResult = (propertieToHTMLMatchBy: string, value: string, name?: string) => {
+export const generateHTMLResult = (propertieToHTMLMatchBy: string, value: string, name?: string): Object => {
   let result = {}
 
   if (name) {
@@ -53,13 +53,13 @@ export const generateMockResult = (
   }): schema_site_editor_default_linkField_filtered => ({
   ...result,
   HTMLMatch: {
-    [`data-default--type-content-${result.typeContent}`]: true,
+    [`data-default--type-content-${result.typeContent.replace(/([A-Z])/g, '-$1').toLowerCase()}`]: true,
     [`data-default--priority-value-${result.priority}`]: true,
     [`data-default--match-occurs-by-${propertieToHTMLMatchBy}`]: true,
     [`data-default--variant-value-${result.variant}`]: true,
     [`data-default--link-name-${normalizeString(result.__editorItemTitle)}`]: true,
-    ...!!valueToMatch?.name && { [`data-custom--match-by-${propertieToHTMLMatchBy}-name-${valueToMatch?.name ?? 1}`]: true },
-    ...!!valueToMatch?.value && { [`data-custom--match-by-${propertieToHTMLMatchBy}-value-${valueToMatch?.value ?? 1}`]: true },
+    ...!!valueToMatch?.name && { [`data-custom--match-by-${propertieToHTMLMatchBy}--name-${valueToMatch?.name ?? 1}`]: true },
+    ...!!valueToMatch?.value && { [`data-custom--match-by-${propertieToHTMLMatchBy}--value-${valueToMatch?.value ?? 1}`]: true },
     ...valueToMatch?.unlimitedValues?.length > 0 && valueToMatch?.unlimitedValues?.reduce((acc, current) => {
       return {
         ...acc,
@@ -77,18 +77,17 @@ export const generateMockResult = (
   }
 })
 
-export const generateMockLink = (__editorItemTitle: string, propertieToLinkOnCtx: keyof RefinedDataOnProductContext, extraCampToFilter_1?: string): schema_site_editor_default_linkField => ({
-  __editorItemTitle,
-  extraCampToFilter_1,
-  propertieToLinkOnCtx
+export const generateMockLink = (value: string | number, name?: string): schema_site_editor_default_linkField => ({
+  name,
+  value
 })
 
 export const generateMockParamCollection = (
-  resolver: keyof Omit<schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext, '__editorItemTitle'>,
+  resolver: keyof Omit<schema_site_editor_default_screen_config_links, '__editorItemTitle'>,
   links: schema_site_editor_default_linkField[],
   mockResult: schema_site_editor_default_linkField_filtered): schema_site_editor_default_collection_flags => ({
   ...mockResult,
-  _containerConfigsOfLinksPresentsOnProductContext: [{
+  _screen_config_links: [{
     [resolver]: links
   }]
 })

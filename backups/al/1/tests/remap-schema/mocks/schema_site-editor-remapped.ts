@@ -1,12 +1,13 @@
 import {
-  schema_site_editor_default_collection_flags,
-  schema_site_editor_default_priorirty_config_container, schema_site_editor_default_quadrant_name,
+  schema_site_editor_default_screen_config_container,
   schema_site_editor_remapped_collection_flags,
-  schema_site_editor_remapped_custom_flag, schema_site_editor_remapped_custom_quadrant,
-  schema_site_editor_remapped_QuadrantStyles, schema_site_editor_remapped_root_custom_app_badge_custom
+  schema_site_editor_remapped_custom_flag,
+  schema_site_editor_remapped_custom_quadrant,
+  schema_site_editor_remapped_root_custom_app_badge_custom
 } from '../../../src/remap-schema/_interfaces'
+import { T_schema_quadrant_title } from '../../../src/remap-schema/_interfaces/_schema-types'
 
-export const mock_schema_remapped_priority_config_container = (): [schema_site_editor_default_priorirty_config_container] => {
+export const mock_schema_remapped_priority_config_container = (): [schema_site_editor_default_screen_config_container] => {
   return [
     {
       prioritySystemOnQuadrant: "priorityByList",
@@ -67,7 +68,7 @@ export const mock_schema_remapped_custom_flag_by_product_id = (productId: string
 }
 
 // tornar generico
-export const mock_schema_remapped_quadrant_top_right = (quadrantName: schema_site_editor_default_quadrant_name = 'quadrantTopRight'): schema_site_editor_remapped_custom_quadrant => {
+export const mock_schema_remapped_quadrant_top_right = (quadrantName: T_schema_quadrant_title = 'quadrantTopRight'): schema_site_editor_remapped_custom_quadrant => {
   return {
     name: quadrantName,
     priorityConfigContainer: mock_schema_remapped_priority_config_container()[0],

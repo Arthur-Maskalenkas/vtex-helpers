@@ -1,6 +1,4 @@
 import {
-  ListFilteredItems,
-  schema_site_editor_default_container_generic_quadrant,
   schema_site_editor_default_option_content,
   schema_site_editor_default_option_image,
   schema_site_editor_default_root_app_badge_custom,
@@ -17,13 +15,6 @@ export class RemapSchema {
     private readonly Filter: FilterDefaultSchema
   ) { }
 
-  private normalizeString (text?: string): string {
-    if (!text) return
-    const preValue = String(text).replace(/-/g, ' ')
-
-    return preValue?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\s-]+/g, '-').toLowerCase()
-  }
-
   public remap (): schema_site_editor_remapped_root_custom_app_badge_custom | null {
     if (!this?.schema) {
       return {
@@ -32,9 +23,9 @@ export class RemapSchema {
         quadrantTopRight: null
       }
     }
+
     return {
-      // @ts-ignore
-      ...Object.keys(this.schema).reduce((acc: {}, key: keyof schema_site_editor_default_root_app_badge_custom) => {
+      ...Object.keys(this.schema)?.reduce((acc: schema_site_editor_remapped_root_custom_app_badge_custom, key: keyof schema_site_editor_default_root_app_badge_custom) => {
         const currentQuadrantContainer = this.schema[key]
 
         if (!currentQuadrantContainer) {
@@ -49,43 +40,43 @@ export class RemapSchema {
           [key]: {
             name: key,
             // vai pegar do novo filtro
-            hasCollection: !!currentQuadrantContainer?.collection && currentQuadrantContainer?.collection?.length > 0,
+            hasCollection: true,
             priorityConfigContainer: {
-              isInverted: currentQuadrantContainer?._priorityConfigContainer[0]?.isInverted,
-              prioritySystemOnQuadrant: currentQuadrantContainer?._priorityConfigContainer[0]?.prioritySystemOnQuadrant
+              isInverted: currentQuadrantContainer?._screen_config_priority[0]?.isInverted,
+              prioritySystemOnQuadrant: currentQuadrantContainer?._screen_config_priority[0]?.prioritySystemOnQuadrant
             },
             dataHTMLOnContainerFlag: {
               style: {
                 ...key === 'quadrantTopLeft' && {
-                  left: currentQuadrantContainer?._positioningContainer[0]?.horizontalDistance ?? '0px',
-                  top: currentQuadrantContainer?._positioningContainer[0]?.verticalDistance ?? '0px'
+                  left: currentQuadrantContainer?._screen_config_position[0]?.horizontalDistance ?? '0px',
+                  top: currentQuadrantContainer?._screen_config_position[0]?.verticalDistance ?? '0px'
                 },
 
                 ...key === 'quadrantTopRight' && {
-                  right: currentQuadrantContainer?._positioningContainer?.[0].horizontalDistance ?? '0px',
-                  top: currentQuadrantContainer?._positioningContainer?.[0].verticalDistance ?? '0px'
+                  right: currentQuadrantContainer?._screen_config_position?.[0].horizontalDistance ?? '0px',
+                  top: currentQuadrantContainer?._screen_config_position?.[0].verticalDistance ?? '0px'
                 },
 
                 ...key === 'quadrantBottom' && {
-                  bottom: currentQuadrantContainer?._positioningContainer?.[0].verticalDistance,
+                  bottom: currentQuadrantContainer?._screen_config_position?.[0].verticalDistance,
 
-                  ...currentQuadrantContainer?._positioningContainer?.[0] ?? {
+                  ...currentQuadrantContainer?._screen_config_position?.[0] ?? {
                     horizontalDistance: '0px',
                     verticalDistance: '0px',
                     positionFlow: 'leftToRight'
                   },
 
-                  ...currentQuadrantContainer?._positioningContainer?.[0].positionFlow === 'leftToRight' && {
-                    left: currentQuadrantContainer?._positioningContainer?.[0].horizontalDistance,
+                  ...currentQuadrantContainer?._screen_config_position?.[0].positionFlow === 'leftToRight' && {
+                    left: currentQuadrantContainer?._screen_config_position?.[0].horizontalDistance,
                     flexDirection: 'row'
                   },
 
-                  ...currentQuadrantContainer?._positioningContainer?.[0].positionFlow === 'rightToLeft' && {
-                    right: currentQuadrantContainer?._positioningContainer?.[0].horizontalDistance,
+                  ...currentQuadrantContainer?._screen_config_position?.[0].positionFlow === 'rightToLeft' && {
+                    right: currentQuadrantContainer?._screen_config_position?.[0].horizontalDistance,
                     flexDirection: 'row-reverse'
                   },
 
-                  ...currentQuadrantContainer?._positioningContainer?.[0].positionFlow === 'center' && {
+                  ...currentQuadrantContainer?._screen_config_position?.[0].positionFlow === 'center' && {
                     left: '50%',
                     transform: 'translateX(-50%)',
                     flexDirection: 'row'
@@ -94,42 +85,53 @@ export class RemapSchema {
               }
             },
             // vai jogar um filter depois de collection.
-            listOfFlags: currentQuadrantContainer?.collection?.map(collection => this.Filter.filterCollection(collection))?.map((collection) => ({
-              priority: Number(collection?.priority),
-              quadrantOwner: key,
-              currentCollection: {
-                typeContent: collection?.typeContent,
+            listOfFlags: currentQuadrantContainer?.collection
+              ?.map(collection => this.Filter.filterCollection(collection))
+              ?.filter(Boolean)
+              ?.map((collection) => ({
+                priority: Number(collection?.priority),
+                quadrantOwner: key,
+                currentCollection: {
+                  typeContent: collection?.typeContent,
 
-                styles: {
-                  ...collection?.items?.[0],
-                  commonStyles: collection?.items?.[0]?.commonPropsBetweenContentAndImage
-                }
-              },
-              badgesStyles: collection?.typeContent === 'image'
-                ? ({
-                    src: (collection?.items as schema_site_editor_default_option_image[])?.[0]?.src,
-                    alt: (collection?.items as schema_site_editor_default_option_image[])?.[0]?.alt,
-                    width: (collection?.items as schema_site_editor_default_option_image[])?.[0]?.commonPropsBetweenContentAndImage?.width ?? 'auto',
-                    height: (collection?.items as schema_site_editor_default_option_image[])?.[0]?.commonPropsBetweenContentAndImage?.height ?? 'auto'
-                  })
-                : ({
-                    text: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.text,
-                    color: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.color || '#000',
-                    fontWeight: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.fontWeight || '400',
-                    borderRadius: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.borderRadius || '0px',
-                    backgroundColor: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.backgroundColor || '#fff',
-                    width: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.commonPropsBetweenContentAndImage?.width || 'auto',
-                    height: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.commonPropsBetweenContentAndImage?.height || 'auto',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textAlign: 'center',
-                    zIndex: 10
-                  })
-            } as schema_site_editor_remapped_custom_flag))
+                  styles: {
+                    ...collection?.items?.[0],
+                    commonStyles: collection?.items?.[0]?.commonPropsBetweenContentAndImage
+                  }
+                },
+                HTMLAttributes: {
+                  ...collection?.HTMLMatch
+                },
+                badgesStyles: collection?.typeContent === 'image'
+                  ? ({
+                      src: (collection?.items as schema_site_editor_default_option_image[])?.[0]?.src,
+                      alt: (collection?.items as schema_site_editor_default_option_image[])?.[0]?.alt,
+                      width: (collection?.items as schema_site_editor_default_option_image[])?.[0]?.commonPropsBetweenContentAndImage?.width ?? 'auto',
+                      height: (collection?.items as schema_site_editor_default_option_image[])?.[0]?.commonPropsBetweenContentAndImage?.height ?? 'auto'
+                    })
+                  : ({
+                      text: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.text,
+                      color: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.color || '#000',
+                      fontWeight: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.fontWeight || '400',
+                      borderRadius: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.borderRadius || '0px',
+                      backgroundColor: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.backgroundColor || '#fff',
+                      width: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.commonPropsBetweenContentAndImage?.width || 'auto',
+                      height: (collection?.items as schema_site_editor_default_option_content[])?.[0]?.commonPropsBetweenContentAndImage?.height || 'auto',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      zIndex: 10
+                    })
+              } as schema_site_editor_remapped_custom_flag))
           } as schema_site_editor_remapped_custom_quadrant
-        }
-      }, {})
+        } as schema_site_editor_remapped_root_custom_app_badge_custom
+      }, {
+        quadrantBottom: null,
+        quadrantTopLeft: null,
+        quadrantTopRight: null
+      })
+
     }
   }
 }

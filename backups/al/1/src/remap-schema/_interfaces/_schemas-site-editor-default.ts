@@ -1,28 +1,28 @@
 //
 // ** Valores que estão chegando do site editor **
 //
-import { schema_site_editor_remapped_QuadrantStyles } from "./_schemas-site-editor-remapped"
-import { RefinedDataOnProductContext } from "./_refined-data-on-product-context"
+import { RefinedDataOnProductContext } from './_refined-data-on-product-context'
+import {
+  T_schema_position_flow,
+  T_schema_priority,
+  T_schema_type_of_content,
+  T_schema_variation
+} from './_schema-types'
 
-export type schema_site_editor_default_quadrant_editor_title = 'Quadrante - inferior' | 'Quadrante - Esquerda' | 'Quadrante - Direita'
-
-export type schema_site_editor_default_quadrant_name = 'quadrantTopLeft' | 'quadrantTopRight' | 'quadrantBottom'
-
-export type schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext = {
+export type schema_site_editor_default_screen_config_links = {
   __editorItemTitle?: string
-  theLinksPresentsInThisProductContextByProduct?: schema_site_editor_default_linkField[]
-  theLinksPresentsInThisProductContextByCollections?: schema_site_editor_default_linkField[]
-  theLinksPresentsInThisProductContextByProductField?: schema_site_editor_default_linkField[]
-  theLinksPresentsInThisProductContextByVariations?: schema_site_editor_default_linkField[]
-  theLinksPresentsInThisProductContextByCategoryId?: schema_site_editor_default_linkField[]
-  theLinksPresentsInThisProductContextByBrand?: schema_site_editor_default_linkField[]
+  linksByProduct?: schema_site_editor_default_linkField[]
+  linksByCollection?: schema_site_editor_default_linkField[]
+  linksBySpecification?: schema_site_editor_default_linkField[]
+  linksByVariation?: schema_site_editor_default_linkField[]
+  linksByCategory?: schema_site_editor_default_linkField[]
+  linksByBrand?: schema_site_editor_default_linkField[]
 }
 
 export type schema_site_editor_default_linkField = {
-  __editorItemTitle?: number | string
   "_"?: string
-  propertieToLinkOnCtx: keyof RefinedDataOnProductContext
-  extraCampToFilter_1?: string
+  name?: string
+  value: string | number
 }
 
 export interface schema_site_editor_default_root_app_badge_custom {
@@ -31,45 +31,42 @@ export interface schema_site_editor_default_root_app_badge_custom {
   quadrantTopLeft?: schema_site_editor_default_container_generic_quadrant
 }
 
-export type schema_site_editor_default_priorirty_config_container = {
+export type schema_site_editor_default_screen_config_container = {
   "_"?: string
   "_2"?: string
   __editorItemTitle?: string
-  prioritySystemOnQuadrant: 'priorityByList' | 'priorityByField'
+  prioritySystemOnQuadrant: T_schema_priority
   isInverted: boolean
 }
 
 export interface schema_site_editor_default_container_generic_quadrant {
   __editorItemTitle?: string
-  _positioningContainer: [schema_site_editor_remapped_QuadrantStyles]
-  _priorityConfigContainer: [schema_site_editor_default_priorirty_config_container]
+  _screen_config_position: [schema_site_editor_default_screen_config_position]
+  _screen_config_priority: [schema_site_editor_default_screen_config_container]
   collection?: schema_site_editor_default_collection_flags[]
 }
 
-export type schema_site_editor_default_root = {
-  schemaAppFlagCustom: schema_site_editor_default_flags_custom[]
+export interface schema_site_editor_default_screen_config_position {
+  __editorItemTitle: string
+  horizontalDistance: string
+  verticalDistance: string
+  positionFlow?: T_schema_position_flow
 }
 
 export interface schema_site_editor_default_flags_custom {
   __editorItemTitle?: string
-  quadrantBottom?: schema_site_editor_default_container_bottom_quadrant[]
+  quadrantBottom?: schema_site_editor_default_container_generic_quadrant[]
   quadrantTopRight?: schema_site_editor_default_container_generic_quadrant[]
   quadrantTopLeft?: schema_site_editor_default_container_generic_quadrant[]
 }
 
-export interface schema_site_editor_default_container_bottom_quadrant extends schema_site_editor_default_container_generic_quadrant {
-  positionFlow?: "leftToRight" | "rightToLeft" | "center"
-}
-
-export type TypeContent = 'image' | 'createContent'
-
 export interface schema_site_editor_default_collection_flags {
   __editorItemTitle?: string
-  typeContent: 'image' | 'createContent'
-  variant?: 'variant-default' | 'variant-1' | 'variant-2' | 'variant-3'
+  typeContent: T_schema_type_of_content
+  variant?: T_schema_variation
   isActive: boolean
   priority: string
-  _containerConfigsOfLinksPresentsOnProductContext: schema_site_editor_default_containerConfigsOfLinksPresentsOnProductContext[]
+  _screen_config_links: schema_site_editor_default_screen_config_links[]
   items: schema_site_editor_default_option_image[] | schema_site_editor_default_option_content[]
 }
 

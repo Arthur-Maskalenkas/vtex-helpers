@@ -2,21 +2,21 @@ import {
   ListOfCollection,
   ListOfProductField,
   ListOfVariation,
-  RefinedDataOnProductContext,
-  schema_site_editor_default_linkField_filtered
+  RefinedDataOnProductContext
 } from 'remap-schema/_interfaces'
 
 import {
   generateMockLink,
   generateMockParamCollection,
   generateMockRefinedDataOnProductContext,
-  generateMockResult, normalizeString
-} from './_mocks'
+  generateMockResult,
+  normalizeString
+} from './_mocks/_default'
+import { mock_real_data_quadrant_right_1, mock_real_data_refined_1, mock_real_data_result_1 } from './_mocks/case-1'
 
-import { mock_refined_data_on_product_context } from "../remap-schema/mocks/refined-data"
-import { FilterDefaultSchema } from "../../src/filter-default-schema/filter-default-schema"
-import { mock_schema_default_container_generic_quadrant } from "../remap-schema/mocks/schema-site-editor-default"
-import { BuildMatch } from "../remap-schema/mocks/filter"
+import { mock_refined_data_on_product_context } from '../remap-schema/mocks/refined-data'
+import { FilterDefaultSchema } from '../../src/filter-default-schema/filter-default-schema'
+import { mock_schema_default_container_generic_quadrant } from '../remap-schema/mocks/schema-site-editor-default'
 
 type SutTypes = {
   sut: FilterDefaultSchema
@@ -39,9 +39,21 @@ describe('Filter Default Schema', () => {
     })
   })
 
+  describe('ingration with real data', () => {
+    it('Should work well with top right quadrant', () => {
+      const { sut } = makeSut(mock_real_data_refined_1)
+
+      const matchs = mock_real_data_quadrant_right_1.map(collection => {
+        return sut.filterCollection(collection)
+      })
+
+      expect(matchs).toStrictEqual(mock_real_data_result_1)
+    })
+  })
+
   describe('Matchs', () => {
-    describe('theLinksPresentsInThisProductContextByProduct', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByProduct'
+    describe('linksByProduct', () => {
+      const resolver = 'linksByProduct'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'productId'
       const propertieToHTMLMatchBy = 'product-attr'
 
@@ -51,7 +63,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy, { value: mock_value_1 })
 
-        const mock_links = [generateMockLink(mock_value_1, propertieTolinkOnProductContext), generateMockLink(mock_value_2, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value_1, propertieTolinkOnProductContext), generateMockLink(mock_value_2)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value_1 })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -76,7 +88,7 @@ describe('Filter Default Schema', () => {
           [`data-default--link-name-${mock_link_name}`]: true,
           [`data-default--match-occurs-by-${propertieToHTMLMatchBy}`]: true,
           [`data-default--variant-value-${mock_variant}`]: true,
-          [`data-custom--match-by-product-attr-value-${normalizeString(mock_value)}`]: true
+          [`data-custom--match-by-product-attr--value-${normalizeString(mock_value)}`]: true
         }
 
         const mock_result = {
@@ -112,7 +124,7 @@ describe('Filter Default Schema', () => {
           }
         }
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
@@ -128,12 +140,12 @@ describe('Filter Default Schema', () => {
         const mock_value = '1'
 
         const mock_default_html_attributes = {
-          'data-custom--match-by-product-attr-value-1': true
+          'data-custom--match-by-product-attr--value-1': true
         }
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy, { value: mock_value })
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
 
@@ -151,7 +163,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -170,7 +182,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext, mock_name)]
+        const mock_links = [generateMockLink(mock_value, mock_name)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -189,7 +201,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value_match, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value_match)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value_not_match })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -203,8 +215,8 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByCategoryId', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByCategoryId'
+    describe('linksByCategory', () => {
+      const resolver = 'linksByCategory'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'categoryId'
       const propertieToHTMLMatchBy = 'category-attr'
 
@@ -214,7 +226,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy, { value: mock_value_1 })
 
-        const mock_links = [generateMockLink(mock_value_1, propertieTolinkOnProductContext), generateMockLink(mock_value_2, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value_1, propertieTolinkOnProductContext), generateMockLink(mock_value_2)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value_1 })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -239,7 +251,7 @@ describe('Filter Default Schema', () => {
           [`data-default--link-name-${mock_link_name}`]: true,
           [`data-default--match-occurs-by-${propertieToHTMLMatchBy}`]: true,
           [`data-default--variant-value-${mock_variant}`]: true,
-          [`data-custom--match-by-${propertieToHTMLMatchBy}-value-${normalizeString(mock_value)}`]: true
+          [`data-custom--match-by-${propertieToHTMLMatchBy}--value-${normalizeString(mock_value)}`]: true
         }
 
         const mock_result = {
@@ -275,7 +287,7 @@ describe('Filter Default Schema', () => {
           }
         }
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
@@ -291,12 +303,12 @@ describe('Filter Default Schema', () => {
         const mock_value = '1'
 
         const mock_default_html_attributes = {
-          [`data-custom--match-by-${propertieToHTMLMatchBy}-value-1`]: true
+          [`data-custom--match-by-${propertieToHTMLMatchBy}--value-1`]: true
         }
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy, { value: mock_value })
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
 
@@ -314,7 +326,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -333,7 +345,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext, mock_name)]
+        const mock_links = [generateMockLink(mock_value, mock_name)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -352,7 +364,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value_match, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value_match)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value_not_match })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -366,8 +378,8 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByBrand', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByBrand'
+    describe('linksByBrand', () => {
+      const resolver = 'linksByBrand'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'brandId'
       const propertieToHTMLMatchBy = 'brand-attr'
 
@@ -377,7 +389,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy, { value: mock_value_1 })
 
-        const mock_links = [generateMockLink(mock_value_1, propertieTolinkOnProductContext), generateMockLink(mock_value_2, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value_1, propertieTolinkOnProductContext), generateMockLink(mock_value_2)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value_1 })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -402,7 +414,7 @@ describe('Filter Default Schema', () => {
           [`data-default--link-name-${mock_link_name}`]: true,
           [`data-default--match-occurs-by-${propertieToHTMLMatchBy}`]: true,
           [`data-default--variant-value-${mock_variant}`]: true,
-          [`data-custom--match-by-${propertieToHTMLMatchBy}-value-${normalizeString(mock_value)}`]: true
+          [`data-custom--match-by-${propertieToHTMLMatchBy}--value-${normalizeString(mock_value)}`]: true
         }
 
         const mock_result = {
@@ -438,7 +450,7 @@ describe('Filter Default Schema', () => {
           }
         }
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
@@ -449,17 +461,16 @@ describe('Filter Default Schema', () => {
 
         expect(result.HTMLMatch).toEqual(mock_result.HTMLMatch)
       })
-
       it('Should return HTML identifier of match on match', () => {
         const mock_value: any = '1'
 
         const mock_default_html_attributes = {
-          [`data-custom--match-by-${propertieToHTMLMatchBy}-value-1`]: true
+          [`data-custom--match-by-${propertieToHTMLMatchBy}--value-1`]: true
         }
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy, { value: mock_value })
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
 
@@ -477,7 +488,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -496,7 +507,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value, propertieTolinkOnProductContext, mock_name)]
+        const mock_links = [generateMockLink(mock_value, mock_name)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -515,7 +526,7 @@ describe('Filter Default Schema', () => {
 
         const mock_result = generateMockResult(propertieToHTMLMatchBy)
 
-        const mock_links = [generateMockLink(mock_value_match, propertieTolinkOnProductContext)]
+        const mock_links = [generateMockLink(mock_value_match)]
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_value_not_match })
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
@@ -529,19 +540,15 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByCollections', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByCollections'
+    describe('linksByCollection', () => {
+      const resolver = 'linksByCollection'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfCollections'
       const propertieToHTMLMatchBy = 'collection-attr'
 
-      it('Should filter all links on linksByProductFieldAttr and return collection if any match occurs ', () => {
+      it('Should filter all links on linksBySpecificationAttr and return collection if any match occurs ', () => {
         const product_field_1: ListOfCollection = {
           name: 'product_field_1',
           id: '1'
-        }
-        const product_field_2: ListOfCollection = {
-          name: 'product_field_2',
-          id: '2'
         }
 
         const mock_result =
@@ -549,7 +556,7 @@ describe('Filter Default Schema', () => {
             { unlimitedValuesById: [{ id: product_field_1.id, name: product_field_1.name }] })
 
         const mock_links = [
-          generateMockLink(product_field_1.id, propertieTolinkOnProductContext)]
+          generateMockLink(product_field_1.id)]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: [product_field_1] })
 
@@ -589,8 +596,8 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.id, propertieTolinkOnProductContext),
-          generateMockLink(mock_value_2.id, propertieTolinkOnProductContext)
+          generateMockLink(mock_value_1.id),
+          generateMockLink(mock_value_2.id)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -629,29 +636,30 @@ describe('Filter Default Schema', () => {
               }
             ]
           },
-            {
-              priority: '10',
-              typeContent: 'image',
-              isActive: false,
-              variant: mock_variant,
-              __editorItemTitle: mock_link_name,
-              items: [
-                {
-                  __editorItemTitle: 'any_title',
-                  backgroundColor: 'any_color',
-                  color: 'any_color',
-                  text: 'any_text',
-                  fontWeight: 'any_weight',
-                  fontSize: 'any_size',
-                  borderRadius: 'any_radius',
-                  commonPropsBetweenContentAndImage: {
-                    width: 'any_width',
-                    height: 'any_height'
-                  }
-                }
-              ]
+          {
 
-            }
+            priority: '10',
+            typeContent: 'image',
+            isActive: false,
+            variant: mock_variant,
+            __editorItemTitle: mock_link_name,
+            items: [
+              {
+                __editorItemTitle: 'any_title',
+                backgroundColor: 'any_color',
+                color: 'any_color',
+                text: 'any_text',
+                fontWeight: 'any_weight',
+                fontSize: 'any_size',
+                borderRadius: 'any_radius',
+                commonPropsBetweenContentAndImage: {
+                  width: 'any_width',
+                  height: 'any_height'
+                }
+              }
+            ]
+
+          }
           ),
 
           HTMLMatch: {
@@ -665,7 +673,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.id, propertieTolinkOnProductContext)
+          generateMockLink(mock_value_1.id)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -674,6 +682,7 @@ describe('Filter Default Schema', () => {
           ]
         })
 
+        // reparar no que esta sendo enviado pelo refined
         const mock_param_collection = generateMockParamCollection(resolver, mock_links, mock_result)
 
         const { sut } = makeSut(mock_refined_data)
@@ -701,7 +710,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.id, propertieTolinkOnProductContext)
+          generateMockLink(mock_value_1.id)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -752,8 +761,8 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.id),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.id)
+          generateMockLink(mock_value_2.id,mock_value_2.name),
+          generateMockLink(mock_value_2.id,mock_value_2.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -772,7 +781,7 @@ describe('Filter Default Schema', () => {
         const { sut } = makeSut(mock_refined_data)
         const privateMethodSpy = jest.spyOn(sut, resolver as any)
 
-        const result = sut.filterCollection(mock_param_collection)
+        sut.filterCollection(mock_param_collection)
 
         expect(privateMethodSpy).toBeCalled()
       })
@@ -797,7 +806,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value.name, propertieTolinkOnProductContext, mock_value.id)
+          generateMockLink(mock_value.id,mock_value.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -816,12 +825,12 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByProductField', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByProductField'
+    describe('linksBySpecification', () => {
+      const resolver = 'linksBySpecification'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfProductFields'
       const propertieToHTMLMatchBy = 'specification-attr'
 
-      it('Should filter all links on linksByProductFieldAttr and return collection if any match occurs ', () => {
+      it('Should filter all links on linksBySpecificationAttr and return collection if any match occurs ', () => {
         const product_field_1: ListOfProductField = {
           name: 'product_field_1',
           values: ['any_value_1', 'any_value_2']
@@ -843,8 +852,8 @@ describe('Filter Default Schema', () => {
         })
 
         const mock_links = [
-          generateMockLink(product_field_1.name, propertieTolinkOnProductContext, product_field_1.values[0]),
-          generateMockLink(product_field_2.name, propertieTolinkOnProductContext, product_field_2.values[0])
+          generateMockLink(product_field_1.values[0],product_field_1.name),
+          generateMockLink(product_field_2.values[0],product_field_2.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -905,9 +914,9 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0]),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.values[0]),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.values[1])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name),
+          generateMockLink(mock_value_2.values[0],mock_value_2.name),
+          generateMockLink(mock_value_2.values[1],mock_value_2.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -944,13 +953,13 @@ describe('Filter Default Schema', () => {
         const mock_result = {
           ...generateMockResult(
             propertieToHTMLMatchBy, {
-            unlimitedValues: [
-              {
-                value: mock_value_1.values[0],
-                name: mock_value_1.name
-              }
-            ]
-          },
+              unlimitedValues: [
+                {
+                  value: mock_value_1.values[0],
+                  name: mock_value_1.name
+                }
+              ]
+            },
             {
               priority: '10',
               typeContent: 'image',
@@ -987,7 +996,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1024,7 +1033,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1079,9 +1088,9 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0]),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.values[0]),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.values[1])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name),
+          generateMockLink(mock_value_2.values[0],mock_value_2.name),
+          generateMockLink(mock_value_2.values[1],mock_value_2.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1100,7 +1109,7 @@ describe('Filter Default Schema', () => {
         const { sut } = makeSut(mock_refined_data)
         const privateMethodSpy = jest.spyOn(sut, resolver as any)
 
-        const result = sut.filterCollection(mock_param_collection)
+        sut.filterCollection(mock_param_collection)
 
         expect(privateMethodSpy).toBeCalled()
       })
@@ -1135,7 +1144,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1161,12 +1170,12 @@ describe('Filter Default Schema', () => {
       })
     })
 
-    describe('theLinksPresentsInThisProductContextByVariations', () => {
-      const resolver = 'theLinksPresentsInThisProductContextByVariations'
+    describe('linksByVariation', () => {
+      const resolver = 'linksByVariation'
       const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfVariations'
       const propertieToHTMLMatchBy = 'variation-attr'
 
-      it('Should filter all links on linksByProductFieldAttr and return collection if any match occurs ', () => {
+      it('Should filter all links on linksBySpecificationAttr and return collection if any match occurs ', () => {
         const product_field_1: ListOfVariation = {
           name: 'product_field_1',
           values: ['any_value_1', 'any_value_2']
@@ -1188,8 +1197,8 @@ describe('Filter Default Schema', () => {
         })
 
         const mock_links = [
-          generateMockLink(product_field_1.name, propertieTolinkOnProductContext, product_field_1.values[0]),
-          generateMockLink(product_field_2.name, propertieTolinkOnProductContext, product_field_2.values[0])
+          generateMockLink(product_field_1.values[0],product_field_1.name),
+          generateMockLink(product_field_2.values[0],product_field_2.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1250,9 +1259,9 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0]),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.values[0]),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.values[1])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name),
+          generateMockLink(mock_value_2.values[0],mock_value_2.name),
+          generateMockLink(mock_value_2.values[1],mock_value_2.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1289,13 +1298,13 @@ describe('Filter Default Schema', () => {
         const mock_result = {
           ...generateMockResult(
             propertieToHTMLMatchBy, {
-            unlimitedValues: [
-              {
-                value: mock_value_1.values[0],
-                name: mock_value_1.name
-              }
-            ]
-          },
+              unlimitedValues: [
+                {
+                  value: mock_value_1.values[0],
+                  name: mock_value_1.name
+                }
+              ]
+            },
             {
               priority: '10',
               typeContent: 'image',
@@ -1332,7 +1341,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1369,7 +1378,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1424,9 +1433,9 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0]),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.values[0]),
-          generateMockLink(mock_value_2.name, propertieTolinkOnProductContext, mock_value_2.values[1])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name),
+          generateMockLink(mock_value_2.values[0],mock_value_2.name),
+          generateMockLink(mock_value_2.values[1],mock_value_2.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({
@@ -1445,7 +1454,7 @@ describe('Filter Default Schema', () => {
         const { sut } = makeSut(mock_refined_data)
         const privateMethodSpy = jest.spyOn(sut, resolver as any)
 
-        const result = sut.filterCollection(mock_param_collection)
+        sut.filterCollection(mock_param_collection)
 
         expect(privateMethodSpy).toBeCalled()
       })
@@ -1480,7 +1489,7 @@ describe('Filter Default Schema', () => {
         }
 
         const mock_links = [
-          generateMockLink(mock_value_1.name, propertieTolinkOnProductContext, mock_value_1.values[0])
+          generateMockLink(mock_value_1.values[0],mock_value_1.name)
         ]
 
         const mock_refined_data = generateMockRefinedDataOnProductContext({

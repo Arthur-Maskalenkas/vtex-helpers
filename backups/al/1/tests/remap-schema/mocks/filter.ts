@@ -1,6 +1,10 @@
-import { RefinedDataOnProductContext, schema_site_editor_default_collection_flags, schema_site_editor_default_container_generic_quadrant } from "remap-schema/_interfaces"
+import {
+  RefinedDataOnProductContext,
+  schema_site_editor_default_collection_flags,
+  schema_site_editor_default_container_generic_quadrant
+} from 'remap-schema/_interfaces'
 
-import { mock_default_quadrant_base_to_filter_collections } from "./schema-site-editor-default"
+import { mock_default_quadrant_base_to_filter_collections } from './schema-site-editor-default'
 
 export interface BuildMatchProps {
   quadrant?: Array<Partial<schema_site_editor_default_collection_flags>>
@@ -32,7 +36,7 @@ export const BuildMatch = ({
     typeContent: 'createContent',
     variant: 'variant-default',
     __editorItemTitle: 'Container Coleção 1',
-    _containerConfigsOfLinksPresentsOnProductContext: []
+    _screen_config_links: []
   }
 }: BuildMatchProps) => {
   const mock_refinedData: RefinedDataOnProductContext = {
