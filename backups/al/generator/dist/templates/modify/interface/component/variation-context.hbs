@@ -1,0 +1,12 @@
+$1
+  "app-{{dashCase name}}": {
+    "component": "{{pascalCase name}}",
+    "around": [
+      "context-{{dashCase name}}"
+    ]
+  },
+
+  "context-{{dashCase name}}": {
+    "component": "{{pascalCase name}}Provider"
+  },
+{{"\n"}}

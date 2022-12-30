@@ -1,0 +1,35 @@
+{
+  "store.custom#page-custom-{{dashCase name}}": {
+    "blocks": [
+      "flex-layout.row#container-page-custom--{{dashCase name}}"
+    ]
+  },
+
+  "flex-layout.row#container-page-custom--{{dashCase name}}": {
+    "props": {
+      "blockClass": [
+        "container__page-custom--{{dashCase name}}-row",
+        "container__page-custom-row"
+      ],
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    },
+    "children": [
+      "flex-layout.col#container-page-custom--{{dashCase name}}"
+    ]
+  },
+
+  "flex-layout.col#container-page-custom--{{dashCase name}}": {
+    "props": {
+      "blockClass": [
+        "container__page-custom--{{dashCase name}}-col",
+        "container__page-custom-col"
+      ],
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+
+    ]
+  }
+}
