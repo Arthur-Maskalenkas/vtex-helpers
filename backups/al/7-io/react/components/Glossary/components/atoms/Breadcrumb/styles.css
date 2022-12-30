@@ -1,0 +1,63 @@
+.containerBreadcrumb .contentDesktop {
+    display: none;
+}
+
+.containerBreadcrumb .contentMobile {
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    margin-bottom: 30px;
+}
+
+.containerBreadcrumb .contentMobile img {
+    margin-right: 10px;
+}
+
+.containerBreadcrumb .contentMobile span.back {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    color: #005DC7;
+
+    position: relative;
+    bottom: 3px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .containerBreadcrumb .contentMobile {
+        display: none;
+    }
+
+    .containerBreadcrumb .contentDesktop {
+        display: flex;
+        align-items: center;
+
+        margin: 25px 0;
+
+        width: max-content;
+        cursor: pointer;
+    }
+
+    .containerBreadcrumb .contentDesktop .home {
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 600;
+        color: #004A9E;
+    }
+
+    .containerBreadcrumb .contentDesktop .currentPage {
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 200;
+        color: #3F4246;
+    }
+
+    .containerBreadcrumb .contentDesktop img {
+        margin: 0 6px;
+
+        position: relative;
+        bottom: 2px;
+    }
+}

@@ -1,0 +1,24 @@
+.containerLink {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 200;
+    color: #3F4246;
+
+    width: 100%;
+
+    cursor: pointer;
+
+    transition: 500ms all;
+
+    display: block;
+
+}
+
+
+.containerLink:hover {
+    color: #005DC7;
+    transform: translateX(10px);
+
+    font-size: 18px;
+}
+

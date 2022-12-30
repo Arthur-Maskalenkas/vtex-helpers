@@ -1,0 +1,30 @@
+.containerBreadcrumb {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.containerBreadcrumb a {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+    color: #004A9E;
+
+    text-decoration: unset;
+}
+
+
+.containerBreadcrumb .currentPage {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 200;
+    color: #3F4246;
+}
+
+.containerBreadcrumb img {
+    margin: 0 8px;
+
+    position: relative;
+    bottom: 1px;
+}

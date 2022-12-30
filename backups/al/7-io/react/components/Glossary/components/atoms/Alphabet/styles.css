@@ -1,0 +1,73 @@
+div.containerAlphabet {
+    padding: 21px 17px 45px;
+
+    background: #F0F0F0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 15px);
+    justify-content: center;
+
+    row-gap: 12px;
+    column-gap: 25px;
+
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+div.containerAlphabet .termSelect {
+    color: #004a9e;
+}
+
+div.containerAlphabet button {
+    font-size: 22px;
+    font-weight: 600;
+    color: #d2d2d2;
+
+
+    text-align: center;
+
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    div.containerAlphabet {
+        display: flex;
+        justify-content: space-between;
+        column-gap: unset;
+        row-gap: unset;
+
+        flex-wrap: nowrap;
+        padding: 0;
+        padding-top: 20px;
+
+        background-color: transparent;
+    }
+
+
+    body div.containerAlphabet button {
+        font-size: 30px;
+        line-height: 30px;
+
+        width: auto;
+
+        text-align: center;
+
+        row-gap: 0;
+    }
+}
+
+
+@media only screen and (min-width: 1255px) {
+
+
+    body div.containerAlphabet button {
+        font-size: 40px;
+        line-height: 40px;
+    }
+}

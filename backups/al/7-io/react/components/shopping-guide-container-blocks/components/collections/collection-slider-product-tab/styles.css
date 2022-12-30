@@ -1,0 +1,75 @@
+body .containerBlockCollectionSliderProductTab .containerBlockCollectionProduct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .without5images.containerBlockCollectionSliderProductTab .seeMoreProducts {
+  margin-top: 20px;
+  width: calc(100% - 40px);
+}
+@media screen and (min-width: 1024px) {
+  body .without5images.containerBlockCollectionSliderProductTab .seeMoreProducts {
+    margin-top: 35px;
+    width: 100%;
+  }
+}
+body .without5images.containerBlockCollectionSliderProductTab img {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body .without5images.containerBlockCollectionSliderProductTab .containerBlockCollectionProduct {
+  width: 100%;
+}
+body .without5images.containerBlockCollectionSliderProductTab .containerBlockCollectionProduct > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px;
+}
+body .with5Images.containerBlockCollectionSliderProductTab .containerBlockCollectionProduct > a {
+  min-height: 103px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .with5Images.containerBlockCollectionSliderProductTab .containerBlockCollectionProduct > a img {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (min-width: 1024px) {
+  body .with5Images.containerBlockCollectionSliderProductTab .imageProduct {
+    max-width: 200px;
+  }
+}

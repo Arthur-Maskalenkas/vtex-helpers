@@ -1,0 +1,72 @@
+.containerAlphabetInFooter,
+.containerAlphabetInFooter * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+
+.containerAlphabetInFooter .titleApp {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+
+    margin-bottom: 8px;
+}
+
+.containerAlphabetInFooter li,
+.containerAlphabetInFooter ul {
+    list-style: none;
+}
+
+.containerAlphabetInFooter ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.containerAlphabetInFooter ul > li:not(:last-child) {
+    margin-right: 13px;
+}
+
+.containerAlphabetInFooter button {
+    appearance: none;
+    border: unset;
+    background-color: transparent;
+    outline: unset;
+
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: 400ms font-size ease-in-out;
+}
+
+
+.containerAlphabetInFooter {
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .containerAlphabetInFooter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-bottom: 35px;
+    }
+
+    .containerAlphabetInFooter ul > li:not(:last-child) {
+        margin-right: 16px;
+    }
+
+    .containerAlphabetInFooter button:hover {
+        font-size: 17px;
+    }
+}

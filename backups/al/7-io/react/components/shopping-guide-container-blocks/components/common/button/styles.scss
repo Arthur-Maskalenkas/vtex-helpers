@@ -1,0 +1,144 @@
+%default {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  appearance: none;
+}
+
+
+
+
+%variants {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.tab {
+    padding-bottom: 10px;
+
+    @media screen and (min-width: 1024px) {
+      padding-right: 5px;
+
+      margin-right: 15px;
+    }
+
+    position: relative;
+
+    border-bottom: 3px solid transparent;
+
+    transition: 300ms all;
+
+    z-index: 1;
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+
+      @media screen and (min-width: 1024px) {
+        bottom: -3px;
+        left: 0;
+      }
+
+      bottom: 0;
+      left: 0;
+
+      background-color: transparent;
+
+      width: 160%;
+      height: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+
+
+      @media screen and (min-width: 1024px) {
+        width: 100%;
+
+        left: unset;
+        transform: unset;
+      }
+    }
+
+    &[aria-current="true"] {
+      &::after {
+        background-color: #004A9E;
+      }
+
+      color: #004A9E;
+
+
+      &::before {
+        content: " ";
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        background: #005dc7;
+        margin-right: 10px;
+        transition: 300ms all;
+
+        position: relative;
+
+        top: 3px;
+
+      }
+    }
+  }
+
+  span {
+    color: #707070;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+  }
+
+
+  &.product {
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 40px;
+
+    border: 1px solid #005DC7;
+    z-index: 1;
+    position: relative;
+
+    span {
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 600;
+      color: #005DC7;
+    }
+
+    &:hover {
+      background-color: #005DC7;
+
+      span {
+        color: white;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: max-content;
+
+      padding: 0 15px;
+    }
+
+  }
+}
+
+.containerBlockButton {
+  @extend %default;
+}
+
+
+body {
+  .containerBlockButton {
+    @extend %variants;
+  }
+}

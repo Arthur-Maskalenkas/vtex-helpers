@@ -1,0 +1,39 @@
+.containerInputRadio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+.containerInputRadio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.primary.containerInputRadio input[type=radio] + * {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: transparent;
+  border: 1px solid white;
+  width: 66px;
+  height: 66px;
+  border-radius: 20px;
+}
+.primary.containerInputRadio input[type=radio] + * svg *[fill*="#"] {
+  fill: #fff;
+}
+.primary.containerInputRadio input[type=radio]:checked + * {
+  background-color: white;
+}
+.primary.containerInputRadio input[type=radio]:checked + * svg *[fill*="#"] {
+  fill: #00326B;
+}

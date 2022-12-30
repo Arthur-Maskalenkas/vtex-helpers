@@ -1,0 +1,73 @@
+@use "sass:selector";
+
+%variation {
+  &.product {
+    @at-root #{selector.unify(&, p)} {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 200;
+      color: #707070;
+
+      margin-bottom: 20px;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 16px;
+        font-size: 16px;
+      }
+    }
+
+    @at-root #{selector.unify(&, h3)} {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 600;
+      color: #707070;
+
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      @media screen and (min-width: 1024px) {
+        margin-top: 20px;
+        font-size: 16px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &.block {
+    @at-root #{selector.unify(&, p)} {
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 200;
+      color: #707070;
+
+      margin-bottom: 20px;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    @at-root #{selector.unify(&, h2)} {
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 600;
+      color: #707070;
+
+      margin-bottom: 10px;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 22px;
+        line-height: 22px;
+
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+body {
+  .containerBlockWordRenderer {
+    @extend %variation;
+  }
+}

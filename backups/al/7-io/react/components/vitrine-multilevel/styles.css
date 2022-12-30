@@ -1,0 +1,82 @@
+.containerMultilevel {
+  margin-top: 20px;
+}
+
+.containerMultilevel * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  line-height: 0;
+
+  font-family: Neris;
+}
+
+.containerMultilevel button {
+  appearance: none;
+  border: unset;
+  background-color: transparent;
+  outline: unset;
+  cursor: pointer;
+}
+
+.containerMultilevel ul,
+.containerMultilevel li {
+  list-style: none;
+}
+
+.containerMultilevel .content .disableItem {
+  display: none;
+}
+
+.containerMultilevel .content .activeItem {
+  display: flex;
+}
+
+
+.containerMultilevel .containerButtonMultilevel {
+  display: flex;
+  align-items: center;
+}
+
+.containerMultilevel .containerButtonMultilevel button {
+  height: 40px;
+
+  border-bottom: 1px solid transparent;
+
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #3f4246;
+
+  margin-right: 16px;
+
+  display: flex;
+  align-items: center;
+}
+
+.containerMultilevel .containerButtonMultilevel button.active {
+  color: #005dc7;
+
+  border-color: #005dc7;
+}
+
+.containerMultilevel .containerButtonMultilevel button.active::before {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #005dc7;
+  margin-right: 10px;
+}
+
+.containerMultilevel .containerButtonMultilevel>button:last-child {
+  margin-right: unset;
+}
+
+@media (min-width: 1024px) {
+  .containerMultilevel .containerButtonMultilevel button {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}

@@ -1,0 +1,44 @@
+body .containerStepInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: unset;
+  cursor: pointer;
+}
+body .containerStepInfo > .status {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  margin-right: 8px;
+  display: block;
+}
+body .containerStepInfo .containerTitleStepInfo {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+body .containerStepInfo {
+  cursor: not-allowed;
+}
+body .isPossible.containerStepInfo {
+  cursor: pointer;
+}
+body .containerStepInfo > .status.past {
+  background-color: #00C373;
+}
+body .containerStepInfo > .status.present {
+  background-color: #FF9700;
+}
+body .containerStepInfo > .status.future {
+  background-color: #ffffff;
+}

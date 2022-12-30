@@ -1,0 +1,36 @@
+%default {
+
+  .containerImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    background-color: #F7F9FF;
+
+    svg *[fill*="#"] {
+      fill: #00326B;
+    }
+
+
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+
+    @media screen and (min-width: 1024px) {
+      border-radius: 20px;
+      width: 66px;
+      height: 66px;
+    }
+  }
+}
+
+
+
+
+.containerResult {
+  @extend %default;
+}

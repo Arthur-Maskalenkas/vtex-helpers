@@ -1,0 +1,14 @@
+.containerFilterOption [data-container-with-icons-responsive=true] [data-device-icon=desktop] {
+  display: none;
+}
+.containerFilterOption [data-container-with-icons-responsive=true] [data-device-icon=mobile] {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .containerFilterOption [data-container-with-icons-responsive=true] [data-device-icon=desktop] {
+    display: block;
+  }
+  .containerFilterOption [data-container-with-icons-responsive=true] [data-device-icon=mobile] {
+    display: none;
+  }
+}

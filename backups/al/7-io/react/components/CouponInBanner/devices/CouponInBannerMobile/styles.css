@@ -1,0 +1,59 @@
+.containerCouponInBannerMobile {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    overflow: hidden;
+
+    transition: 1s all;
+}
+
+.containerCouponInBannerMobile.withBanner {
+    margin-bottom: 20px;
+}
+
+.containerCouponInBannerMobile.CouponInBannerError img,
+.containerCouponInBannerMobile.CouponInBannerSuccess img {
+    filter: grayscale(1);
+}
+
+.containerCouponInBannerMobile.CouponInBannerError button,
+.containerCouponInBannerMobile.CouponInBannerSuccess button {
+    cursor: not-allowed;
+}
+
+.containerCouponInBannerMobile,
+.containerCouponInBannerMobile * {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+.containerCouponInBannerMobile .statusMessage {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    color: green;
+
+    margin-top: 5px;
+    text-align: center;
+}
+
+.containerCouponInBannerMobile .containerImageDesktop {
+    display: none;
+}
+
+.containerCouponInBannerMobile img {
+    width: 100%;
+    transition: 600ms all;
+}
+
+.containerCouponInBannerMobile button {
+    border: unset;
+    appearance: none;
+    background: unset;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+

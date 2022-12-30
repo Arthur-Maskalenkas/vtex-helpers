@@ -1,0 +1,17 @@
+%default {
+  .reset-button {
+    margin-bottom: 25px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: grid;
+
+    grid-template-columns: 300px 1fr;
+
+    column-gap: 100px;
+  }
+}
+
+.containerResultLayout {
+  @extend %default;
+}

@@ -1,0 +1,34 @@
+.containerShowMoreLink {
+    text-decoration: none;
+
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 32px;
+
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 600;
+    color: #1067CB;
+
+    background-color: #F7F9FF;
+
+    border-radius: 10px;
+
+    transition: 400ms all;
+
+    margin-top: 35px;
+}
+
+.containerShowMoreLink:hover {
+    background-color: #e4eaee;
+}
+
+@media (min-width: 1024px){
+  .containerShowMoreLink {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,62 @@
+.containerCouponInBannerDesktop {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    overflow: hidden;
+
+    transition: 1s all;
+}
+
+.containerCouponInBannerDesktop.withBanner {
+    margin-bottom: 40px;
+    transition: 300ms all;
+}
+
+.containerCouponInBannerDesktop.withBanner:hover {
+      transform: scale(1.02);
+}
+
+
+.containerCouponInBannerDesktop.CouponInBannerError img,
+.containerCouponInBannerDesktop.CouponInBannerSuccess img {
+    filter: grayscale(1);
+}
+
+.containerCouponInBannerDesktop.CouponInBannerError button,
+.containerCouponInBannerDesktop.CouponInBannerSuccess button {
+    cursor: not-allowed;
+}
+
+.containerCouponInBannerDesktop,
+.containerCouponInBannerDesktop * {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+.containerCouponInBannerDesktop .statusMessage {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    color: green;
+
+    margin-top: 5px;
+    text-align: center;
+}
+
+.containerCouponInBannerDesktop img {
+    width: 100%;
+    transition: 600ms all;
+}
+
+.containerCouponInBannerDesktop button {
+    border: unset;
+    appearance: none;
+    background: unset;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+
+

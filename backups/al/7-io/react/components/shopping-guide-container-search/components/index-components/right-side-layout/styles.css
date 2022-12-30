@@ -1,0 +1,10 @@
+.containerRightSideLayout {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1024px) {
+  .containerRightSideLayout {
+    margin-bottom: 0;
+    position: relative;
+    left: 20px;
+  }
+}

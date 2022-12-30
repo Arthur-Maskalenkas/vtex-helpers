@@ -1,0 +1,12 @@
+.containerResultLayout .reset-button {
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 1024px) {
+  .containerResultLayout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    -webkit-column-gap: 100px;
+       -moz-column-gap: 100px;
+            column-gap: 100px;
+  }
+}
