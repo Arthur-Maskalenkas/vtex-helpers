@@ -1,0 +1,30 @@
+.paginationDot {
+  background-color: #9E9E9E;
+  height: 6px!important;
+  width: 6px!important;
+}
+.paginationDot--isActive {
+  background-color: #926836;
+  border-radius: 3px;
+  transition: width 0.3s linear;
+  width: 46px!important;
+}
+.slideChildrenContainer {
+  padding: 5px;
+}
+.sliderLayoutContainer {
+  padding-bottom: 50px;
+}
+.containerSliderRelated{
+  margin-top: 40px;
+}
+@media (min-width: 1024px){
+  .containerSliderRelated{
+    padding: 0 22px;
+  }
+}
+@media (min-width: 1300px){
+  .containerSliderRelated{
+    padding: 0;
+  }
+}

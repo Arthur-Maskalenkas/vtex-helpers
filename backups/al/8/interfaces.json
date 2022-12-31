@@ -1,0 +1,37 @@
+{
+  "app-teste-result": {
+    "component": "TesteResult",
+    "required": [ "product-summary" ]
+  },
+
+  "related-shelf-custom": {
+    "required": [ "product-summary" ],
+    "component": "RelatedShelf"
+  },
+
+  "app-contexto": {
+    "component": "Contexto"
+  },
+
+  "app-um-componente": {
+    "composition": "children",
+    "component": "UmComponente",
+    "around": [
+      "context-um-componente"
+    ]
+  },
+
+  "context-um-componente": {
+    "component": "UmComponenteProvider"
+  },
+
+  "hello-world": {
+    "component": "HelloWorld"
+  },
+  "product-context-example": {
+    "component": "ProductContext"
+  },
+  "search-context-example": {
+    "component": "SearchContext"
+  }
+}
