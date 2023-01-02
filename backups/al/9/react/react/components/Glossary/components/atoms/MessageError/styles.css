@@ -1,0 +1,12 @@
+.containerMessageError * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containerMessageError span {
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 600;
+    color: #3F4246;
+}

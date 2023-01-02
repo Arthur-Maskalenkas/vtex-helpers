@@ -1,0 +1,32 @@
+{
+  "flex-layout.row#container-page-shopping-guide--section-2-page-links": {
+    "title": "",
+    "props": {
+      "blockClass": [
+        "container__page-shopping-guide--section-2-page-links-row",
+        "container__page-shopping-guide--section-2-row",
+        "container__page-shopping-guide-row"
+      ],
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    },
+    "children": [
+      "flex-layout.col#container-page-shopping-guide--section-2-page-links"
+    ]
+  },
+
+  "flex-layout.col#container-page-shopping-guide--section-2-page-links": {
+    "props": {
+      "blockClass": [
+        "container__page-shopping-guide--section-2-page-links-col",
+        "container__page-shopping-guide--section-2-col",
+        "container__page-shopping-guide-col"
+      ],
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+      // app desktop/mobile
+    ]
+  }
+}

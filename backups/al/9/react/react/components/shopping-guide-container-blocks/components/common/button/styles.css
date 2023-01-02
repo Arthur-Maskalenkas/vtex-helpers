@@ -1,0 +1,118 @@
+.containerBlockButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+body .containerBlockButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body .tab.containerBlockButton {
+  padding-bottom: 10px;
+  position: relative;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+  z-index: 1;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  body .tab.containerBlockButton {
+    padding-right: 5px;
+    margin-right: 15px;
+  }
+}
+body .tab.containerBlockButton::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  width: 160%;
+  height: 3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media screen and (min-width: 1024px) {
+  body .tab.containerBlockButton::after {
+    bottom: -3px;
+    left: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body .tab.containerBlockButton::after {
+    width: 100%;
+    left: unset;
+    -webkit-transform: unset;
+            transform: unset;
+  }
+}
+body .tab[aria-current=true].containerBlockButton {
+  color: #004A9E;
+}
+body .tab[aria-current=true].containerBlockButton::after {
+  background-color: #004A9E;
+}
+body .tab[aria-current=true].containerBlockButton::before {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #005dc7;
+  margin-right: 10px;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+  position: relative;
+  top: 3px;
+}
+body .containerBlockButton span {
+  color: #707070;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+}
+body .product.containerBlockButton {
+  border-radius: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  border: 1px solid #005DC7;
+  z-index: 1;
+  position: relative;
+}
+body .product.containerBlockButton span {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+  color: #005DC7;
+}
+body .product.containerBlockButton:hover {
+  background-color: #005DC7;
+}
+body .product.containerBlockButton:hover span {
+  color: white;
+}
+@media screen and (min-width: 1024px) {
+  body .product.containerBlockButton {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 0 15px;
+  }
+}

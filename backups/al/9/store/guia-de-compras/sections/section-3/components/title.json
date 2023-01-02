@@ -1,0 +1,11 @@
+{
+  "rich-text#title-page-shopping-guide--section-3": {
+    "props": {
+      "text": "Escolha o seu Sofá ideal",
+      "blockClass": [
+        "title__page-shopping-guide--section-3",
+        "title__page-shopping-guide"
+      ]
+    }
+  }
+}

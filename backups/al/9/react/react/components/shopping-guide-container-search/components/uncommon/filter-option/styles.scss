@@ -1,0 +1,25 @@
+%default {
+  [data-container-with-icons-responsive="true"] {
+    [data-device-icon="desktop"] {
+      display: none;
+    }
+
+    [data-device-icon="mobile"] {
+      display: block;
+    }
+
+    @media (min-width: 1024px) {
+      [data-device-icon="desktop"] {
+        display: block;
+      }
+
+      [data-device-icon="mobile"] {
+        display: none;
+      }
+    }
+  }
+}
+
+.containerFilterOption {
+  @extend %default;
+}

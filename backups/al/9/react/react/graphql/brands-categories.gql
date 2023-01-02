@@ -1,0 +1,22 @@
+query BRANDS_AND_CATEGORIES {
+  brands {
+    name
+    id
+    slug
+  }
+  categories {
+    name
+    id
+    href
+    children {
+      name
+      id
+      href
+      children {
+        name
+        id
+        href
+      }
+    }
+  }
+}

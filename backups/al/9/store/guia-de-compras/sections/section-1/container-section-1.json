@@ -1,0 +1,36 @@
+{
+  "flex-layout.row#container-page-shopping-guide--section-1--container": {
+    "title": "Container Sessão 1",
+    "props": {
+      "blockClass": [
+        "container__page-shopping-guide--section-1--container-row",
+        "container__page-shopping-guide--section-1-row",
+        "container__page-shopping-guide-row"
+      ],
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    },
+    "children": [
+      "flex-layout.col#container-page-shopping-guide--section-1--container"
+    ]
+
+  },
+
+  "flex-layout.col#container-page-shopping-guide--section-1--container": {
+    "props": {
+      "blockClass": [
+        "container__page-shopping-guide--section-1--container-col",
+        "container__page-shopping-guide--section-1-col",
+        "container__page-shopping-guide-col"
+      ],
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+      "image#page-shopping-guide--section-1--image-mobile",
+      "image#page-shopping-guide--section-1--image-desktop",
+      "flex-layout.row#container-page-shopping-guide--section-1--container--texts-and-buttons"
+    ]
+  }
+
+}

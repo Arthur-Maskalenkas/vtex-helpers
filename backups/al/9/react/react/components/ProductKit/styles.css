@@ -1,0 +1,27 @@
+.container{
+  border-radius: 16px;
+  border: 1px solid #d1d1d1;
+  margin-bottom: 15px;
+  padding: 16px;
+  width: 100%;
+}
+.container > :nth-child(3n){
+  border-top: 1px solid #d1d1d1;
+}
+.container > :last-child{
+  padding-bottom: 0;
+}
+.kit_title{
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  color: #004a9e;
+  margin: 0;
+}
+@media (min-width:1024px){
+  .container{
+    margin-bottom: 0;
+    max-width: 300px;
+  }
+}

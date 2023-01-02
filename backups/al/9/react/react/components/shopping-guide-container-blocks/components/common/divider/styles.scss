@@ -1,0 +1,22 @@
+%default {
+  width: 100%;
+  background-color: #D2D2D2;
+  height: 2px;
+  opacity: .5;
+  margin-top: 30px;
+
+
+  @media screen and (min-width: 1024px) {
+    max-width: 570px;
+
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+body {
+  .containerBlockDivider {
+    @extend %default
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "flex-layout.row#container-page-shopping-guide--container--breadcrumb": {
+    "props": {
+      "blockClass": [
+        "container__page-shopping-guide--container--breadcrumb-row",
+        "container__page-shopping-guide--container-row",
+        "container__page-shopping-guide-row"
+      ],
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    },
+    "children": [
+      "fake-breadcrumb#guia-de-compras"
+    ]
+  },
+
+  "fake-breadcrumb#guia-de-compras": {
+    "props": {
+      "currentPage": "Guia de compras - XYZ"
+    }
+  }
+}

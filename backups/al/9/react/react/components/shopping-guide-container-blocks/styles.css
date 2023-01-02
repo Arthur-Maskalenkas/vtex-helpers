@@ -1,0 +1,67 @@
+@media (max-width: 1024px) {
+  .containerShoppingGuideContainerBlocks [data-content-desktop=true] {
+    display: none !important;
+  }
+  .containerShoppingGuideContainerBlocks [data-content-mobile=true][data-content-slider=true] {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+@media (min-width: 1024px) {
+  .containerShoppingGuideContainerBlocks [data-content-mobile=true] {
+    display: none !important;
+  }
+}
+.containerShoppingGuideContainerBlocks, .containerShoppingGuideContainerBlocks * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 0;
+}
+.containerShoppingGuideContainerBlocks p,
+.containerShoppingGuideContainerBlocks a,
+.containerShoppingGuideContainerBlocks span,
+.containerShoppingGuideContainerBlocks h1,
+.containerShoppingGuideContainerBlocks h2,
+.containerShoppingGuideContainerBlocks h3,
+.containerShoppingGuideContainerBlocks h4,
+.containerShoppingGuideContainerBlocks h5,
+.containerShoppingGuideContainerBlocks h6,
+.containerShoppingGuideContainerBlocks ul,
+.containerShoppingGuideContainerBlocks li,
+.containerShoppingGuideContainerBlocks ol,
+.containerShoppingGuideContainerBlocks svg *,
+.containerShoppingGuideContainerBlocks div,
+.containerShoppingGuideContainerBlocks svg,
+.containerShoppingGuideContainerBlocks figure,
+.containerShoppingGuideContainerBlocks label,
+.containerShoppingGuideContainerBlocks button {
+  font-family: "Neris";
+  -webkit-transition: 400ms all;
+  transition: 400ms all;
+}
+.containerShoppingGuideContainerBlocks a {
+  text-decoration: none;
+}
+.containerShoppingGuideContainerBlocks li {
+  list-style: none;
+}
+
+body .containerShoppingGuideContainerBlocks {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body .containerShoppingGuideContainerBlocks > li + li {
+  margin-top: 30px;
+}
+@media screen and (min-width: 1024px) {
+  body .containerShoppingGuideContainerBlocks > li + li {
+    margin-top: 60px;
+  }
+}
+body .containerShoppingGuideContainerBlocks > li:last-child .containerBlockDivider {
+  display: none;
+  margin: unset;
+}

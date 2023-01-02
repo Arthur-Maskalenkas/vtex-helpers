@@ -83,5 +83,23 @@
 14/12/2022 - 10:30 - 12:52 - marabraz - guia de compras ⚪
 14/12/2022 - 13:52 - 15:00 marabraz - guia de compras ⚪
 14/12/2022 - 15:00 - 16:05 marabraz - guia de compras ⚪
-14/12/2022 - 16:30 - xxx  Serallê - Alinhamento interno suporte e projeto ⚪
+14/12/2022 - 16:30 - xxx  Serallê - Alinhamento interno suporte e projeto 
 
+**# 30/12/2022 - Kopenhagen - marabraz**
+30/12/2022 - 09:00 - 10:30 - marabraz - guia de compras ⚪
+30/12/2022 - 10:30 - 11:15 - kopenhagen - daily 
+30/12/2022 - 11:15 - 12:00 - marabraz - guia de compras ⚪
+30/12/2022 - 13:00 - 17:15 - marabraz - guia de compras ⚪ - 
+30/12/2022 - 17:15 - xx:xx - xxx
+30/12/2022 - xx:xx - 19:50 - marabraz - guia de compras ⚪
+
+
+**# 02/01/2023 - Kopenhagen - marabraz**
+09:00 - 11:15 - marabraz - guia de compras ⚪
+11:15 - 11:35 - weekly devs
+11:35 - 12:35 - marabraz - guia de compras ⚪
+15:00 - 15:15 - call aleatoria - tudo de bicho - fluxo de cadastrados 
+15:15 - 15:45 - kopenhagen - daily ⚪
+15:45 - 17:30 - kopenhagen - homolog interna ⚪
+17:30 - 17:45 - weekly semanal
+17:45 - 18:10 - kopenhagen - homolog interna ⚪

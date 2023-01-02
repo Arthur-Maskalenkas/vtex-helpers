@@ -1,0 +1,28 @@
+.containerResult .containerImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: #F7F9FF;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+.containerResult .containerImage svg *[fill*="#"] {
+  fill: #00326B;
+}
+@media screen and (min-width: 1024px) {
+  .containerResult .containerImage {
+    border-radius: 20px;
+    width: 66px;
+    height: 66px;
+  }
+}

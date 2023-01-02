@@ -1,0 +1,7 @@
+%default {
+  box-sizing: border-box
+}
+
+.containerBlockProduct {
+  @extend %default;
+}

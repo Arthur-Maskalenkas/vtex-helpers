@@ -1,0 +1,74 @@
+.containerButton{
+  background: #f7f9ff;
+  border-radius: 8px;
+  color: #005dc7;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+}
+.containerButton:hover{
+  opacity: 0.9;
+}
+.containerMain{
+  border-top: 1px solid #d1d1d1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.containerSpecification{
+  width: 100%;
+}
+.contentSpecification{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0px;
+}
+.containerSpecification>:nth-child(even){
+  background-color: #f2f2f2;
+}
+.titleNameSpecification{
+  color: #3f4246;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0em;
+  line-height: 24px;
+  margin: 0;
+  text-align: left;
+  text-transform: initial;
+}
+@media (min-width:1024px){
+  .containerSpecification{
+    margin-left: 15%;
+  }
+  .containerNameSpecification{
+    width: 15%;
+  }
+  .containerSpecification{
+    width: 85%;
+  }
+  .containerSpecification > :first-child{
+   padding: 0 0 10px 0;
+  }
+  .containerMain{
+    border-top: 1px solid #d1d1d1;
+    flex-direction: row;
+    margin: 60px auto 0 auto;
+    max-width: 1252px;
+    padding: 30px 0 0 0;
+  }
+  .containerNameSpecification{
+    display: block;
+  }
+  .titleNameSpecification{
+    font-size: 22px;
+  }
+}
+@media (max-width:1024px){
+  .containerMainspecificationGroups > :first-child{
+    border-top: 0;
+    padding-top: 0;
+  }
+}

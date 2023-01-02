@@ -1,0 +1,130 @@
+.containerResultLayout .reset-button {
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 370px) {
+  .withResult.containerResultLayout .containerResultRightSide {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .withoutResult.containerResultLayout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .withResult.containerResultLayout {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    -webkit-column-gap: 30px;
+       -moz-column-gap: 30px;
+            column-gap: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .withResult.containerResultLayout {
+    grid-template-columns: 1fr 863px;
+    -webkit-column-gap: 90px;
+       -moz-column-gap: 90px;
+            column-gap: 90px;
+  }
+}
+.containerResultLayout .containerResultRightSide {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 35px;
+}
+@media screen and (min-width: 1024px) {
+  .containerResultLayout .containerResultRightSide {
+    padding: 20px 35px;
+    row-gap: 50px;
+  }
+}
+.containerResultLayout .containerResultRightSide .containerButton {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 400px;
+}
+@media screen and (min-width: 1024px) {
+  .containerResultLayout .containerResultRightSide .containerButton {
+    width: auto;
+  }
+}
+.containerResultLayout .containerResultRightSide .paginationDotsContainer {
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: -15px;
+}
+.containerResultLayout .containerResultRightSide .paginationDotsContainer .paginationDot {
+  width: 6px !important;
+  height: 6px !important;
+  background-color: #C4C4C4;
+}
+.containerResultLayout .containerResultRightSide .paginationDotsContainer .paginationDot--isActive {
+  height: 8px !important;
+  width: 8px !important;
+  background-color: #3F4246;
+}
+.containerResultLayout :global(.vtex-modal-layout-0-x-triggerContainer--quickview) {
+  display: none;
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderLeftArrow) {
+  cursor: pointer;
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderLeftArrow) svg {
+  display: none;
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderLeftArrow):not(:disabled)::after {
+  content: url(https://lojasmarabrazqa.vteximg.com.br/arquivos/arrow-right-shopping-guide.png);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderLeftArrow):disabled {
+  cursor: not-allowed;
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderLeftArrow):disabled::after {
+  content: url(https://lojasmarabrazqa.vteximg.com.br/arquivos/arrow-left-shopping-guide.png);
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderRightArrow) {
+  cursor: pointer;
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderRightArrow) svg {
+  display: none;
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderRightArrow)::after {
+  content: url(https://lojasmarabrazqa.vteximg.com.br/arquivos/arrow-right-shopping-guide.png);
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderRightArrow):disabled {
+  cursor: not-allowed;
+}
+.containerResultLayout :global(.lojasmarabrazqa-store-theme-3-x-sliderRightArrow):disabled::after {
+  content: url(https://lojasmarabrazqa.vteximg.com.br/arquivos/arrow-left-shopping-guide.png);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}

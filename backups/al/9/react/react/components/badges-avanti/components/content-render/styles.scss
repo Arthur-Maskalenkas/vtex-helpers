@@ -1,0 +1,21 @@
+%variants {
+  &[data-variant-1="true"] {
+    >span {
+      background-color: red !important;
+    }
+  }
+
+  &[data-variant-2="true"] {
+    >span {
+      background-color: blue !important;
+    }
+  }
+}
+
+body {
+  .containerContentRender {
+
+    @extend %variants;
+    box-sizing: border-box;
+  }
+}

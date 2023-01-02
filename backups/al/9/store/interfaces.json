@@ -1,0 +1,128 @@
+{
+  "app-badges-avanti": {
+    "component": "BadgesAvanti"
+  },
+
+  "global-context": {
+    "component": "GlobalProvider",
+    "content": {
+      "$ref": "app:lojasmarabrazqa.store-theme#/definitions/GlobalProvider"
+    }
+
+  },
+
+  "context-shopping-guide-80": {
+    "component": "ShoppingGuideProvider",
+    "content": {
+      "$ref": "app:lojasmarabrazqa.store-theme#/definitions/ShoppingGuide"
+    }
+  },
+
+
+  "app-shopping-guide-container-search-15": {
+    "component": "ShoppingGuideContainerSearch",
+    "required": [ "product-summary", "modal-trigger" ],
+
+    "render": "client",
+    "around": [ "context-shopping-guide-80" ]
+  },
+
+  "app-shopping-guide-container-block-01": {
+    "component": "ShoppingGuideContainerBlocks",
+    "render": "client",
+    "around": [ "context-shopping-guide-80" ]
+
+  },
+
+  "fake-breadcrumb": {
+    "component": "FakeBreadcrumb"
+  },
+
+  "show-more-link": {
+    "component": "ShowMoreLink"
+  },
+
+  "hello-world": {
+    "component": "HelloWorld"
+  },
+
+
+  "app-vitrine-multilevel-3": {
+    "component": "VitrineMultilevel",
+    "composition": "children"
+  },
+
+  "product-context-example": {
+    "component": "ProductContext"
+  },
+  "search-context-example": {
+    "component": "SearchContext"
+  },
+  "product-specification-custom": {
+    "component": "ProductSpecification"
+  },
+  "header.full": {
+    "around": [
+      "avanti-menu-context"
+    ]
+  },
+  "context-coupon-in-banner": {
+    "component": "CouponInBannerProvider"
+  },
+
+  "coupon-in-banner-desktop": {
+    "component": "CouponInBannerDesktop",
+    "render": "client",
+    "around": [
+      "context-coupon-in-banner"
+    ],
+    "content": {
+      "$ref": "app:lojasmarabrazqa.store-theme#/definitions/CouponInBannerDesktop"
+    }
+  },
+  "coupon-in-banner-mobile": {
+    "component": "CouponInBannerMobile",
+    "render": "client",
+    "around": [
+      "context-coupon-in-banner"
+    ],
+    "content": {
+      "$ref": "app:lojasmarabrazqa.store-theme#/definitions/CouponInBannerMobile"
+    }
+  },
+  "context-glossary": {
+    "component": "GlossaryProvider"
+  },
+  "glossary": {
+    "component": "Glossary",
+    "render": "client",
+    "around": [
+      "context-glossary"
+    ]
+  },
+
+  "PdpScripts": {
+    "component": "PdpScripts"
+  },
+  "ProductKit": {
+    "component": "ProductKit"
+  },
+
+  "alphabet-in-footer": {
+    "component": "AlphabetInFooter",
+    "render": "client"
+  },
+
+  "condition-voltagem": {
+    "component": "ModalVoltagem",
+    "composition": "children",
+    "render": "client"
+  },
+  "AssemblyInstructions": {
+    "component": "AssemblyInstructions"
+  },
+  "page-coupons": {
+    "component": "CouponPage",
+    "render": "client"
+  }
+}

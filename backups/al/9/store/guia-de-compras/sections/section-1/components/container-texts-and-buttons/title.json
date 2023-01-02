@@ -1,0 +1,11 @@
+{
+  "rich-text#title-page-shopping-guide--section-1": {
+    "props": {
+      "text": "# Guia de Compras - XYZ",
+      "blockClass": [
+        "title__page-shopping-guide--section-1",
+        "title__page-shopping-guide"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+%default {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+
+
+  @media screen and (min-width: 1024px) {
+    cursor: auto;
+
+    label,
+    figcaption {
+      width: max-content;
+    }
+  }
+}
+
+.containerInputRadio {
+  @extend %default;
+}

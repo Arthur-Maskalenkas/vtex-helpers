@@ -1,0 +1,32 @@
+%variation {
+  & h3.primary {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #fff;
+
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 26px;
+      line-height: 26px;
+      margin-bottom: 15px;
+    }
+  }
+
+  & p.primary {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #fff;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 16px;
+      line-height: 23px;
+    }
+  }
+}
+
+.containerWordRenderer {
+  @extend %variation;
+}

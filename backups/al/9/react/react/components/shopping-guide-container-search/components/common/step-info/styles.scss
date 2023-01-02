@@ -1,0 +1,60 @@
+%default {
+  display: flex;
+  align-items: center;
+
+  appearance: none;
+  background-color: transparent;
+  border: unset;
+  cursor: pointer;
+
+
+  &>.status {
+    border: 1px solid black;
+    border-radius: 50%;
+
+    height: 8px;
+    width: 8px;
+
+    margin-right: 8px;
+
+    display: block;
+  }
+
+  & .containerTitleStepInfo {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+%variations {
+  cursor: not-allowed;
+
+
+  &.isPossible {
+    cursor: pointer;
+  }
+
+  &>.status.past {
+    background-color: #00C373;
+  }
+
+
+  &>.status.present {
+    background-color: #FF9700;
+  }
+
+  &>.status.future {
+    background-color: #ffffff;
+
+
+  }
+}
+
+body {
+  .containerStepInfo {
+    @extend %default;
+    @extend %variations;
+  }
+}
