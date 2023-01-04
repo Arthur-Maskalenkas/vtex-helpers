@@ -75,7 +75,7 @@
 13/12/2022 - 10:15 - 11:40 - Savegnago - Especificações PDP ⚪
 13/12/2022 - 11:40 - 12:50 - Savegnago - Especificações PDP ⚪
 13/12/2022 - 13:50 - 16:15 - marabraz - guia de compras 🟢
-13/12/2022 - 16:15 - 16:55 - kopenhagen - reunião aleatoria para repassar conhecimento sobre o projeto de guia de compras
+13/12/2022 - 16:15 - 16:55 -  reunião aleatoria para repassar conhecimento sobre o projeto de guia de compras
 13/12/2022 - 16:55 - 19:00 - marabraz - guia de compras  🟢
 
 **# 14/12/2022 - Kopenhagen - marabraz**

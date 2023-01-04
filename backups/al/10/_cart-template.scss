@@ -1,0 +1,466 @@
+.cart-template {
+  &.mini-cart {
+    padding: 0;
+  }
+
+  #cart-choose-products {
+    @include textConfig($gray09, $secondaryFont, 14, $fontMedium, 16, center, initial, 50);
+    background-color: $brown;
+    background-image: none;
+    border-radius: 2px;
+    border: 0;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  .empty-cart- {
+    &message {
+      >p {
+        @include textConfig($dark-gray01, $primaryFont, 13, $fontRegular, auto, left, initial, 10);
+      }
+    }
+
+    &title {
+      @include textConfig($dark-gray01, $primaryFont, 30, $fontBold, auto, left, initial, 10);
+    }
+  }
+}
+
+.cart-fixed-transition {
+  margin-top: 30px;
+
+  @include mq("992") {
+    @include size(100%);
+    margin: 0 0 0 auto;
+    max-width: 485px
+  }
+
+  h2 {
+    @include textConfig($brown01, $secondaryFont, 14, $fontSemiBold, 15, left, initial, 10);
+    background-color: $light-yellow;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0px 2px 8px rgb(0 0 0 / 12%);
+    margin-bottom: 0;
+    padding: 20px;
+  }
+
+  .summary-cart-template-holder {
+    .cart {
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $gray03;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, .15)
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, .2)
+      }
+
+      .hproduct {
+        &.item {
+          display: grid;
+          grid-template-columns: auto auto 1fr;
+
+          .url {
+            margin: 10px 20px 0 0;
+            padding-left: 20px;
+          }
+
+          .url,
+          .product-name {
+            grid-row: 2;
+          }
+
+          .product-name {
+            width: 100%;
+          }
+
+          .description {
+            margin: 0;
+            grid-row: 3;
+            grid-column: 3;
+          }
+
+          .service- {
+            &item {
+              display: flex;
+            }
+
+            &list {
+              grid-column-end: 4;
+              grid-column-start: 1;
+              grid-row: 4;
+              margin-top: 10px;
+              width: 100%;
+
+              .price {
+                display: none;
+              }
+
+              .product-name {
+                @include display-flex(center, space-between, row-reverse);
+                height: 31px;
+                background-color: $white05;
+
+                .cart-items {
+                  padding: 0 20px;
+                }
+
+                border-radius: 2px;
+                padding: 0 10px;
+
+                >i {
+                  &::before {
+                    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.534' height='8.238' viewBox='0 0 11.534 8.238'%3E%3Cpath id='check_3_' data-name='check (3)' d='M4.119,8.238A.821.821,0,0,1,3.537,8L.241,4.7A.824.824,0,0,1,1.406,3.537L4.119,6.249,10.127.241a.824.824,0,0,1,1.165,1.165L4.7,8A.821.821,0,0,1,4.119,8.238Z' fill='%23dc3e51'/%3E%3C/svg%3E%0A");
+                  }
+                }
+
+                >span {
+                  @include textConfig($dark-gray01, $secondaryFont, 14, $fontMedium, 21, left, initial, 50);
+                  align-items: center;
+                  display: flex;
+
+                  &::before {
+                    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cg id='gift' transform='translate(0.194 -0.295)'%3E%3Crect id='Retângulo_7420' data-name='Retângulo 7420' width='25' height='25' transform='translate(-0.194 0.295)' fill='none'/%3E%3Cpath id='União_703' data-name='União 703' d='M9.289,17.448H2.858a1.427,1.427,0,0,1-1.429-1.422V10.339A1.427,1.427,0,0,1,0,8.917V6.073A1.427,1.427,0,0,1,1.429,4.651H4.547A2.856,2.856,0,0,1,8.785.834a2.782,2.782,0,0,1,.5.729,2.775,2.775,0,0,1,.5-.727,2.855,2.855,0,0,1,4.24,3.815h3.118a1.427,1.427,0,0,1,1.429,1.422V8.917a1.427,1.427,0,0,1-1.429,1.422v5.688a1.427,1.427,0,0,1-1.429,1.422Zm6.431-1.422V10.339H10v5.688Zm-12.861,0H8.574V10.339H2.858Zm14.29-7.109V6.073H10V8.917Zm-15.719,0H8.574V6.073H1.428ZM10.8,1.839a5.4,5.4,0,0,0-.77,2.782,5.485,5.485,0,0,0,2.8-.768A1.429,1.429,0,0,0,10.8,1.839Zm-5.055,0a1.422,1.422,0,0,0,0,2.016,5.488,5.488,0,0,0,2.8.766,5.417,5.417,0,0,0-.772-2.784,1.438,1.438,0,0,0-2.024,0Z' transform='translate(3.216 4.071)' fill='%23dc3e51' stroke='%23fbe9e7' stroke-linecap='round' stroke-width='0.2'/%3E%3C/g%3E%3C/svg%3E%0A");
+                    height: 27px;
+                    margin-right: 10px;
+                  }
+                }
+              }
+            }
+          }
+
+          border-bottom: 1px solid $gray21;
+          margin-top: 20px;
+          padding: 0 0 20px;
+          position: relative;
+        }
+
+        margin-top: 30px;
+
+        .photo {
+          @include size(80px, auto);
+
+          @include mq("992") {
+            @include size(56px, auto);
+          }
+        }
+
+        .product-name {
+          @include textConfig($dark-gray01, $secondaryFont, 14, $fontMedium, 22, left, initial, 0);
+          width: 70%;
+        }
+
+        .badge {
+          @include display-flex(center, center, row);
+          @include size(18px);
+          @include textConfig($red02, $secondaryFont, 13, $fontBold, 16, right, initial, 0);
+          background-color: $white05;
+          box-shadow: none;
+          grid-row: 1;
+          grid-column: 1;
+          padding: 0;
+          position: inherit;
+        }
+
+        .shipping-date {
+          display: none;
+        }
+
+        .price {
+          @include textConfig($dark-gray02, $secondaryFont, 14, $fontBold, 16, right, initial, 0);
+        }
+      }
+
+      .cart-items {
+        > :last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  #go-to-cart-button {
+    margin-right: 10px;
+    margin-top: 15px;
+
+    @include mq("992") {
+      margin: 15px 0 0;
+    }
+
+    #orderform-minicart-to-cart {
+      font-size: 0;
+
+      &::before {
+        @include textConfig($brown01, $secondaryFont, 14, $fontSemiBold, 16, right, initial, 50);
+        content: "Voltar para a sacola";
+        text-decoration: underline;
+      }
+
+      &:hover {
+        opacity: .9;
+      }
+    }
+  }
+
+  .summary-template-holder {
+    border: 0;
+
+    .aviso-checkout {
+      >i {
+        display: none;
+      }
+
+      margin-bottom: 20px;
+
+      .aviso-mensagem-text {
+        border-radius: 2px;
+        border: 1px solid $white05;
+        margin: 0;
+
+        > :first-child {
+          align-items: center;
+          background-color: $white05;
+          display: flex;
+          font-size: 0;
+          height: 43px;
+          padding: 0 10px;
+
+          &::before {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cg id='gift' transform='translate(0.194 -0.295)'%3E%3Crect id='Retângulo_7420' data-name='Retângulo 7420' width='25' height='25' transform='translate(-0.194 0.295)' fill='none'/%3E%3Cpath id='União_703' data-name='União 703' d='M9.289,17.448H2.858a1.427,1.427,0,0,1-1.429-1.422V10.339A1.427,1.427,0,0,1,0,8.917V6.073A1.427,1.427,0,0,1,1.429,4.651H4.547A2.856,2.856,0,0,1,8.785.834a2.782,2.782,0,0,1,.5.729,2.775,2.775,0,0,1,.5-.727,2.855,2.855,0,0,1,4.24,3.815h3.118a1.427,1.427,0,0,1,1.429,1.422V8.917a1.427,1.427,0,0,1-1.429,1.422v5.688a1.427,1.427,0,0,1-1.429,1.422Zm6.431-1.422V10.339H10v5.688Zm-12.861,0H8.574V10.339H2.858Zm14.29-7.109V6.073H10V8.917Zm-15.719,0H8.574V6.073H1.428ZM10.8,1.839a5.4,5.4,0,0,0-.77,2.782,5.485,5.485,0,0,0,2.8-.768A1.429,1.429,0,0,0,10.8,1.839Zm-5.055,0a1.422,1.422,0,0,0,0,2.016,5.488,5.488,0,0,0,2.8.766,5.417,5.417,0,0,0-.772-2.784,1.438,1.438,0,0,0-2.024,0Z' transform='translate(3.216 4.071)' fill='%23dc3e51' stroke='%23fbe9e7' stroke-linecap='round' stroke-width='0.2'/%3E%3C/g%3E%3C/svg%3E%0A");
+            height: 27px;
+            margin-right: 10px;
+          }
+
+          &::after {
+            @include textConfig($dark-gray01, $secondaryFont, 14, $fontMedium, 21, left, initial, 50);
+            content: "Pedido com cartão presente";
+          }
+        }
+
+        >div {
+          align-items: center;
+          display: flex;
+          padding: 16px 0 13px 0;
+
+          >span {
+            width: 50%;
+          }
+        }
+
+        span {
+          @include textConfig($gray22, $secondaryFont, 14, $fontRegular, 15, left, initial, 0);
+          padding: 0 15px
+        }
+
+        strong {
+          @include textConfig($dark-gray02, $secondaryFont, 14, $fontSemiBold, 15, left, initial, 0);
+        }
+
+        > :last-child {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+
+          >strong {
+            margin-bottom: 6px;
+          }
+        }
+      }
+    }
+
+    .summary-totalizers {
+      > :nth-child(2n) {
+        width: 100%;
+      }
+    }
+
+    .accordion-inner {
+      .table {
+        .totalizers-list {
+          @include mq("992") {
+            display: flex;
+            flex-direction: column
+          }
+
+          .Items {
+            @include display-flex(center, flex-end, row);
+
+            @include mq("992") {
+              @include size(100%, auto);
+              margin: 0;
+              max-width: none;
+            }
+
+            .info {
+              @include size(50%, auto);
+              @include textConfig($dark-gray02, $secondaryFont, 14, $fontMedium, 15, left, initial, 20);
+              display: flex;
+              padding: 20px 0 8px;
+            }
+
+            .monetary {
+              @include size(50%, auto);
+              @include textConfig($dark-gray02, $secondaryFont, 14, $fontMedium, 15, right, initial, 20);
+              display: flex;
+              justify-content: flex-end;
+              padding: 20px 0 8px;
+            }
+          }
+
+          .Shipping {
+            @include display-flex(center, flex-end, row);
+
+            @include mq("992") {
+              @include size(100%, auto);
+              margin: 0;
+              max-width: none;
+            }
+
+            .info {
+              @include size(50%, auto);
+              @include textConfig($dark-gray02, $secondaryFont, 14, $fontMedium, 15, left, initial, 20);
+              display: flex;
+              padding: 0 0 8px;
+            }
+
+            .monetary {
+              @include size(50%, auto);
+              @include textConfig($dark-gray02, $secondaryFont, 14, $fontMedium, 15, left, initial, 20);
+              display: flex;
+              justify-content: flex-end;
+              padding: 0 0 8px;
+            }
+          }
+        }
+
+        tfoot>tr {
+          margin: 0 0px 20px 0px;
+          display: flex;
+
+          @include mq("992") {
+            @include size(100%, auto);
+            max-width: none;
+            float: right;
+            margin: 0;
+          }
+
+          &>.info {
+            @include size(50%, auto);
+            @include textConfig($dark-gray02, $secondaryFont, 16, $fontBold, 15, left, initial, 20);
+            display: flex;
+            padding: 0 0 20px;
+          }
+
+          &>.monetary {
+            @include size(50%, auto);
+            @include textConfig($dark-gray02, $secondaryFont, 16, $fontBold, 15, left, initial, 20);
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 0 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .payment-confirmation-wrap {
+    border: 0;
+    padding: 0;
+
+    .payment-submit-wrap {
+      margin: 0;
+    }
+
+    #payment-data-submit {
+      @include size(100%, auto);
+      background: $brown;
+      border-radius: 2px;
+      border: 0;
+      font-size: 0;
+      margin: 0;
+      padding: 13px 0;
+      position: relative;
+      text-shadow: none;
+
+      &:after {
+        @include abs-position(initial, 0, initial, 0);
+        @include textConfig($gray09, $secondaryFont, 14, $fontMedium, 16, center, initial, 50);
+        content: "Finalizar pedido";
+      }
+
+      &:hover {
+        opacity: .9;
+      }
+    }
+  }
+
+
+  .cart-active .table .totalizers-list .srp-summary-result {
+    width: 372px;
+    display: flex;
+  }
+
+  @media (min-width: 1025px) {
+    .cart-active .table .totalizers-list .srp-summary-result {
+      width: 319px;
+      display: flex;
+    }
+
+    .table tfoot>tr {
+      width: 255px;
+      display: flex;
+      margin: 0;
+    }
+
+    .table .totalizers-list .Items {
+      width: 255px;
+      display: flex;
+      margin: 0;
+    }
+
+    &.affix {
+      position: relative;
+      top: 0;
+    }
+
+    .srp-delivery-info .srp-delivery-select-container {
+      width: 255px;
+    }
+  }
+}
+
+.cart-fixed {
+  @include mq("768") {
+    @include size(100%, auto !important);
+  }
+}
+
+.mini-cart {
+  @include mq("768") {
+    .summary-template-holder {
+      background: transparent;
+    }
+  }
+
+  @include mq("480") {
+    .cart-items {
+      padding: 0 20px;
+    }
+  }
+
+  @include mq("980") {
+    .cart {
+      max-height: 400px;
+    }
+  }
+}
