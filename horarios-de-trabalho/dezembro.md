@@ -108,3 +108,26 @@
 03/01/2023 - 13:40 - 17:15 - kopenhagen - homolog interna ⚪
 03/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
 03/01/2023 - 17:35 - 18:10 - kopenhagen - homolog interna ⚪
+
+**# 04/01/2023**
+04/01/2023 - 07:00 - 11:15 - kopenhagen - homolog interna ⚪
+04/01/2023 - 11:15 - 12:14 - weekly devs
+04/01/2023 - 13:15 - 17:15 - kopenhagen - homolog interna ⚪
+04/01/2023 - 17:15 - 17:25 - kopenhagen - daily 🟢
+04/01/2023 - 17:25 - 18:00 - kopenhagen - homolog interna ⚪
+
+**# 05/01/2023**
+05/01/2023 - 09:00 - 09:50 - kopenhagen - homolog interna ⚪
+05/01/2023 - 09:50 - 11:40 - aquário - homolog cliente ⚪
+05/01/2023 - 11:40 - 12:40 - kopenhagen - homolog cliente ⚪
+05/01/2023 - 13:40 - 17:15 - kopenhagen - homolog cliente ⚪
+05/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
+05/01/2023 - 17:35 - 18:00 - kopenhagen - homolog cliente ⚪
+
+**# 06/01/2023**
+06/01/2023 - 09:00 - 10:00 - kopenhagen - alinhamento de homolog ⚪
+06/01/2023 - 10:00 - 12:40 - kopenhagen - homolog cliente ⚪
+06/01/2023 - 13:40 - 14:00 - savennago - call - instalando app ⚪
+06/01/2023 - 14:00 - 14:20 - call com com lili - tudo de bicho 
+06/01/2023 - 14:20 - 15:30 - savennago - call - instalando app ⚪
+06/01/2023 - 15:30 - 17:00 - farmacia sao rafael - francisco aiolfi - ajustando header ⚪

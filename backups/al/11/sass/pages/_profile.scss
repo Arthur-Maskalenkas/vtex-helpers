@@ -1,0 +1,200 @@
+#client-profile-data {
+  @include mq("980") {
+    margin-right: 10px;
+  }
+
+  @include mq("1310") {
+    margin-right: 18px;
+  }
+
+  .box-client-info-pj,
+  .newsletter {
+    display: none;
+  }
+
+  .step {
+    background-color: $white;
+    border-radius: 2px;
+    border: 0;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+    padding: 0;
+
+    .accordion {
+      &-heading {
+        background-color: $light-yellow;
+        padding: 20px;
+
+        .accordion-toggle {
+          @include textConfig($brown01, $secondaryFont, 14, $fontSemiBold, 15, left, initial, 10);
+
+          .icon-user {
+            display: none;
+          }
+
+          &-active {
+            span {
+              @include textConfig($brown01, $secondaryFont, 14, $fontSemiBold, 15, left, initial, 10);
+            }
+          }
+        }
+
+        .link-box-edit {
+          padding: 0;
+
+          .icon-edit {
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg id='note-pencil' transform='translate(0 0)'%3E%3Crect id='Retângulo_6229' data-name='Retângulo 6229' width='24' height='24' transform='translate(0 0)' fill='none'/%3E%3Cpath id='União_457' data-name='União 457' d='M1.44,18A1.442,1.442,0,0,1,0,16.56V2.16A1.442,1.442,0,0,1,1.44.72H9.36a.72.72,0,0,1,0,1.44H1.44v14.4h14.4V8.64a.72.72,0,1,1,1.44,0v7.92A1.442,1.442,0,0,1,15.84,18Zm4.32-5.04a.72.72,0,0,1-.72-.72V9.36a.72.72,0,0,1,.211-.509l8.64-8.64a.72.72,0,0,1,1.018,0l2.88,2.88a.72.72,0,0,1,0,1.018l-2.16,2.16-6.48,6.48a.72.72,0,0,1-.509.211Zm.72-3.3V11.52H8.342L14.1,5.76,12.24,3.9Zm8.64-4.916L16.262,3.6,14.4,1.738,13.258,2.88Z' transform='translate(3 3)' fill='%23cca37a'/%3E%3C/g%3E%3C/svg%3E%0A") center no-repeat;
+          }
+        }
+      }
+
+      &-body {
+        padding: 0 20px;
+
+        .box {
+          &-info {
+            @include textConfig($dark-gray01, $secondaryFont, 14, $fontRegular, 24, left, initial, 0);
+            .client-profile-email{
+              @include mq("1024"){
+                padding-top: 5px;
+              }
+              margin: 0;
+            }
+          }
+
+          &-edit {
+
+            #go-to-shipping,
+            #go-to-payment,
+            #btn-go-to-payment {
+              @include textConfig($white, $secondaryFont, 14, $fontMedium, 16, center, initial, 40);
+              background-color: $brown;
+              background-image: none;
+              border-radius: 2px;
+              border: 0;
+              text-shadow: none;
+
+              &:focus {
+                outline: none;
+              }
+
+              &:hover {
+                opacity: .9;
+              }
+            }
+          }
+
+          &-step {
+            .btn-submit-wrapper {
+              margin-top: 10px;
+            }
+          }
+        }
+
+        #is-corporate-client {
+          color: $brown;
+          text-decoration: underline
+        }
+
+        .client- {
+
+          &notice,
+          &email,
+          &first-name,
+          &last-name,
+          &document,
+          &phone {
+            @include textConfig($dark-gray01, $secondaryFont, 14, $fontRegular, auto, left, initial, 0);
+
+            @include mq("980") {
+              width: 100%;
+            }
+
+            >label {
+              @include textConfig($dark-gray01, $secondaryFont, 14, $fontRegular, auto, left, initial, 0);
+            }
+
+            >input {
+              border-radius: 2px;
+
+              @include mq("980") {
+                width: 94%;
+              }
+
+              &:focus {
+                border-color: $gray12;
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+
+      &-inner {}
+    }
+  }
+
+  .optin-whatsapp-status {
+    align-items: flex-start;
+    display: flex;
+    width: 100%;
+  }
+
+  .newsletter- {
+    &label {
+      padding: 0;
+
+      >input {
+        margin-left: 0;
+      }
+    }
+
+    &text {
+      @include textConfig($dark-gray01, $secondaryFont, 11, $fontRegular, auto, left, initial, 0);
+      padding-left: 8px
+    }
+
+    &title {
+      @include textConfig($dark-gray01, $secondaryFont, 13, $fontSemiBold, auto, left, initial, 0);
+      border-bottom: 1px solid $gray21;
+      padding: 8px 0;
+    }
+  }
+}
+
+.client-pre-email {
+  @include abs-position(-4px, 0, inherit, 0);
+  background-color: $gray09;
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    &:focus {
+      border-color: $gray12;
+      box-shadow: none;
+    }
+  }
+
+  #btn-client-pre-email {
+    background-color: $brown;
+    background-image: none;
+
+    >span {
+      @include textConfig($white, $secondaryFont, 14, $fontMedium, 16, center, initial, 50);
+    }
+  }
+
+  .pre-email {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+
+  .emailInfo {
+    width: calc(100% - 40px);
+
+    >h3,
+    .icon-ok {
+      color: $brown;
+    }
+  }
+}

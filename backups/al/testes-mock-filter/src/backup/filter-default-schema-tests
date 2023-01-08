@@ -1,0 +1,1497 @@
+import {
+  RefinedDataOnProductContext,
+  schema_site_editor_default_collection_flags,
+  schema_site_editor_default_linkField_filtered,
+  ListOfCollection, ListOfProductField, ListOfVariation
+} from 'remap-schema/_interfaces'
+
+import {
+  generateMockLink,
+  generateMockParamCollection,
+  generateMockRefinedDataOnProductContext,
+  generateMockResult
+} from './_mocks'
+
+import { mock_refined_data_on_product_context } from "../remap-schema/mocks/refined-data"
+import { FilterDefaultSchema } from "../../src/filter-default-schema/filter-default-schema"
+import { mock_schema_default_container_generic_quadrant } from "../remap-schema/mocks/schema-site-editor-default"
+import { BuildMatch } from "../remap-schema/mocks/filter"
+
+type SutTypes = {
+  sut: FilterDefaultSchema
+}
+
+const makeSut = (refinedData: RefinedDataOnProductContext | null = mock_refined_data_on_product_context): SutTypes => {
+  const sut = new FilterDefaultSchema(refinedData)
+
+  return {
+    sut
+  }
+}
+
+describe('Filter Default Schema', () => {
+  it('Should return null if refinedDataOnProductContext is null', () => {
+    const { sut } = makeSut(null)
+    const result = sut.filterCollection(mock_schema_default_container_generic_quadrant().collection[0])
+    expect(result).toBe(null)
+  })
+
+  it('Should return null if collection is null', () => {
+    const { sut } = makeSut()
+    const result = sut.filterCollection(null)
+    expect(result).toBe(null)
+  })
+
+  it('Should return null if collection not match with any link', () => {
+    const productId = '1'
+
+    const mock_param_collection: schema_site_editor_default_linkField_filtered = {
+      isActive: true,
+      items: [],
+      priority: "1",
+      typeContent: 'createContent',
+      variant: 'variant-default',
+      __editorItemTitle: 'Container Coleção 1'
+    }
+
+    const { mock_quadrant, mock_refinedData } = BuildMatch({
+      refinedData: { productId },
+      quadrant: [{
+        ...mock_param_collection,
+        _screen_config_links: [{
+          linksByProduct: [{
+            __editorItemTitle: '1000',
+            propertieToLinkOnCtx: 'productId'
+          }]
+        }]
+      }]
+    })
+
+    const { sut } = makeSut(mock_refinedData)
+
+    const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+    expect(result).toEqual(null)
+  })
+
+  describe('Matchs', () => {
+    describe('linksByProduct', () => {
+      const resolver = 'linksByProduct'
+      const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'productId'
+
+      it('Should filter all links on linksByProductAttr and return collection if any match occurs ', () => {
+        const mock_id_1 = '1'
+        const mock_id_2 = '2'
+
+        const mock_result = generateMockResult()
+        const mock_links = [generateMockLink(mock_id_1, propertieTolinkOnProductContext), generateMockLink(mock_id_2, propertieTolinkOnProductContext)] as any
+        const mock_refined_data = generateMockRefinedDataOnProductContext({ [propertieTolinkOnProductContext]: mock_id_1 })
+        const mock_param_collection = generateMockParamCollection(resolver, mock_links,mock_result)
+
+        const { sut } = makeSut(mock_refined_data)
+
+        const result = sut.filterCollection(mock_param_collection)
+
+        expect(result).toEqual([mock_result])
+      })
+
+      it('Should call the resolver of linksByProductAttr only if there is at least one link inside linksByProductAttr', () => {
+        const product_id = '1'
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: product_id
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: product_id },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should call the resolver of linksByProductAttr only once, regardless of the number of links', () => {
+        const product_id_1 = '1'
+        const product_id_2 = '2'
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: product_id_1
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: product_id_2
+              }
+            ]
+
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: product_id_1 },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalledTimes(1)
+      })
+
+      it('Should match only by id attribute' , () => {
+        const product_id = '1'
+        const product_name = 'any_name'
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: product_id,
+                extraCampToFilter_1: product_name
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: product_id },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should return null if any match by id not occurs', () => {
+        const product_id_match = '1'
+        const product_id_not_match = '1000'
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [{
+              propertieToLinkOnCtx: propertieTolinkOnProductContext,
+              __editorItemTitle: product_id_match
+            }]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: product_id_not_match },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual(null)
+      })
+    })
+
+    describe('linksByCategory', () => {
+      const resolver = 'linksByCategory'
+      const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'categoryId'
+
+      it('Should filter all links on linksByCategoryAttr and return collection if any match occurs ', () => {
+        const category_id_1 = '1'
+        const category_id_2 = '2'
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: category_id_1
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: category_id_2
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: { [propertieTolinkOnProductContext]: category_id_1 },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual([mock_result])
+      })
+
+      it('Should call the resolver of linksByCategoryAttr only if there is at least one link inside linksByCategoryAttr', () => {
+        const category_id = '1'
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: category_id
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: category_id },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should call the resolver of linksByCategoryAttr only once, regardless of the number of links', () => {
+        const category_id_1 = '1'
+        const category_id_2 = '2'
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: category_id_1
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: category_id_2
+              }
+            ]
+
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: category_id_1 },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalledTimes(1)
+      })
+
+      it('Should match only by id attribute' , () => {
+        const category_id = '1'
+        const category_name = 'any_name'
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: category_id,
+                extraCampToFilter_1: category_name
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: category_id },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should return null if any match by id not occurs', () => {
+        const category_id_match = '1'
+        const category_id_not_match = '1000'
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [{
+              propertieToLinkOnCtx: propertieTolinkOnProductContext,
+              __editorItemTitle: category_id_match
+            }]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: category_id_not_match },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual(null)
+      })
+    })
+
+    describe('linksByBrand', () => {
+      const resolver = 'linksByBrand'
+      const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'brandId'
+
+      it('Should filter all links on linksByBrandAttr and return collection if any match occurs ', () => {
+        const brand_id_1 = 1
+        const brand_id_2 = 2
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: brand_id_1
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: brand_id_2
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: { [propertieTolinkOnProductContext]: brand_id_1 },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual([mock_result])
+      })
+
+      it('Should call the resolver of linksByBrandAttr only if there is at least one link inside linksByBrandAttr', () => {
+        const brand_id = 1
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: brand_id
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: brand_id },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should call the resolver of linksByBrandAttr only once, regardless of the number of links', () => {
+        const brand_id_1 = 1
+        const brand_id_2 = 2
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: brand_id_1
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: brand_id_2
+              }
+            ]
+
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: brand_id_1 },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalledTimes(1)
+      })
+
+      it('Should match only by id attribute' , () => {
+        const brand_id = 1
+        const brand_name = 'any_name'
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: brand_id,
+                extraCampToFilter_1: brand_name
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: brand_id },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should return null if any match by id not occurs', () => {
+        const brand_id_match = 1
+        const brand_id_not_match = 1000
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [{
+              propertieToLinkOnCtx: propertieTolinkOnProductContext,
+              __editorItemTitle: brand_id_match
+            }]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: brand_id_not_match },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual(null)
+      })
+    })
+
+    describe('linksByCollection', () => {
+      const resolver = 'linksByCollection'
+      const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfCollections'
+
+      it('Should filter all links on linksByCollectionAttr and return collection if any match occurs ', () => {
+        const collection_1: ListOfCollection = {
+          name: 'any_name',
+          id: '1'
+        }
+        const collection_2: ListOfCollection = {
+          name: 'any_name',
+          id: '2'
+        }
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: collection_1.id
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: collection_2.id
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: { [propertieTolinkOnProductContext]: [collection_1] },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual([mock_result])
+      })
+
+      it('Should call the resolver of linksByCollectionAttr only if there is at least one link inside linksByCollectionAttr', () => {
+        const collection: ListOfCollection = {
+          name: 'any_name',
+          id: '1'
+        }
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: collection.id
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: [collection] },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should call the resolver of linksByCollectionAttr only once, regardless of the number of links', () => {
+        const collection_1: ListOfCollection = {
+          name: 'any_name',
+          id: '1'
+        }
+        const collection_2: ListOfCollection = {
+          name: 'any_name',
+          id: '2'
+        }
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: collection_1.id
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: collection_2.id
+              }
+            ]
+
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: [collection_1] },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalledTimes(1)
+      })
+
+      it('Should match only by id attribute' , () => {
+        const collection: ListOfCollection = {
+          name: 'any_name',
+          id: '1'
+        }
+
+        const collection_not_match_name = "any_name_not_match"
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: collection.id,
+                extraCampToFilter_1: collection_not_match_name
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: [collection] },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should return null if any match by id not occurs', () => {
+        const collection_match: ListOfCollection = {
+          name: 'any_name',
+          id: '1'
+        }
+
+        const collection_not_match: ListOfCollection = {
+          name: 'any_name',
+          id: '1000'
+        }
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [{
+              propertieToLinkOnCtx: propertieTolinkOnProductContext,
+              __editorItemTitle: collection_match.id
+            }]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: [collection_not_match] },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual(null)
+      })
+    })
+
+    describe('linksBySpecification', () => {
+      const resolver = 'linksBySpecification'
+      const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfSpecification'
+
+      it('Should filter all links on linksBySpecificationAttr and return collection if any match occurs ', () => {
+        const product_field_1: ListOfProductField = {
+          name: 'product_field_1',
+          values: ['value_1', 'value_2']
+        }
+        const product_field_2: ListOfProductField = {
+          name: 'product_field_2',
+          values: ['value_1', 'value_2']
+        }
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: product_field_1.name,
+                extraCampToFilter_1: product_field_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              },
+              {
+                __editorItemTitle: product_field_2.name,
+                extraCampToFilter_1: product_field_2.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: product_field_1.name,
+                  values: [product_field_1.values[0]]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual([mock_result])
+      })
+
+      it('Should match with value and name only ', () => {
+        const product_field_1: ListOfProductField = {
+          name: 'product_field_1',
+          values: ['value_1', 'value_2']
+        }
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: product_field_1.name,
+                extraCampToFilter_1: product_field_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: product_field_1.name,
+                  values: [product_field_1.values[0]]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual([mock_result])
+      })
+
+      it('Should return null if there is a match just by name', () => {
+        const product_field_1: ListOfProductField = {
+          name: 'product_field_1',
+          values: ['value_1', 'value_2']
+        }
+
+        const product_field_value_not_match = 'value_not_match'
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: product_field_1.name,
+                extraCampToFilter_1: product_field_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: product_field_1.name,
+                  values: [product_field_value_not_match]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toBeNull()
+      })
+
+      it('Should return null if there is a match just by value', () => {
+        const product_field_1: ListOfProductField = {
+          name: 'product_field_1',
+          values: ['value_1', 'value_2']
+        }
+
+        const product_field_name_not_match = 'product_field_not_match'
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: product_field_1.name,
+                extraCampToFilter_1: product_field_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: product_field_name_not_match,
+                  values: [product_field_1.values[0]]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toBeNull()
+      })
+
+      it("Should return null if any match not occurs", () => {
+        const product_field_1: ListOfProductField = {
+          name: 'product_field_1',
+          values: ['value_1']
+        }
+
+        const product_field_not_match: ListOfProductField = {
+          name: 'product_field_not_match',
+          values: ['value_1']
+        }
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: product_field_1.name,
+                extraCampToFilter_1: product_field_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: product_field_not_match.name,
+                  values: [product_field_not_match.values[0]]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toBeNull()
+      })
+
+      it('Should call the resolver of linksBySpecificationAttr only if there is at least one link inside linksBySpecificationAttr', () => {
+        const product_field: ListOfProductField = {
+          name: 'any_name',
+          values: ['any_value']
+        }
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: product_field.values[0]
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: [product_field] },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should call the resolver of linksBySpecificationAttr only once, regardless of the number of links', () => {
+        const product_field_1: ListOfProductField = {
+          name: 'any_name',
+          values: ['any_value']
+        }
+        const product_field_2: ListOfProductField = {
+          name: 'any_name',
+          values: ['any_value']
+        }
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: product_field_1.values[0]
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: product_field_2.values[0]
+              }
+            ]
+
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: [product_field_1] },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalledTimes(1)
+      })
+    })
+
+    describe('linksByVariation', () => {
+      const resolver = 'linksByVariation'
+      const propertieTolinkOnProductContext: keyof RefinedDataOnProductContext = 'listOfVariations'
+
+      it('Should filter all links on linksByVariationAttr and return collection if any match occurs ', () => {
+        const variation_1: ListOfVariation = {
+          name: 'variation_1',
+          values: ['value_1', 'value_2']
+        }
+        const variation_2: ListOfVariation = {
+          name: 'variation_2',
+          values: ['value_1', 'value_2']
+        }
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: variation_1.name,
+                extraCampToFilter_1: variation_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              },
+              {
+                __editorItemTitle: variation_2.name,
+                extraCampToFilter_1: variation_2.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: variation_1.name,
+                  values: [variation_1.values[0]]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual([mock_result])
+      })
+
+      it('Should match with value and name only ', () => {
+        const variation_1: ListOfVariation = {
+          name: 'variation_1',
+          values: ['value_1', 'value_2']
+        }
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: variation_1.name,
+                extraCampToFilter_1: variation_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: variation_1.name,
+                  values: [variation_1.values[0]]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toEqual([mock_result])
+      })
+
+      it('Should return null if there is a match just by name', () => {
+        const variation_1: ListOfVariation = {
+          name: 'variation_1',
+          values: ['value_1', 'value_2']
+        }
+
+        const variation_value_not_match = 'value_not_match'
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: variation_1.name,
+                extraCampToFilter_1: variation_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: variation_1.name,
+                  values: [variation_value_not_match]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toBeNull()
+      })
+
+      it('Should return null if there is a match just by value', () => {
+        const variation_1: ListOfVariation = {
+          name: 'variation_1',
+          values: ['value_1', 'value_2']
+        }
+
+        const variation_name_not_match = 'variation_not_match'
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: variation_1.name,
+                extraCampToFilter_1: variation_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: variation_name_not_match,
+                  values: [variation_1.values[0]]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toBeNull()
+      })
+
+      it("Should return null if any match not occurs", () => {
+        const variation_1: ListOfVariation = {
+          name: 'variation_1',
+          values: ['value_1']
+        }
+
+        const variation_not_match: ListOfVariation = {
+          name: 'variation_not_match',
+          values: ['value_1']
+        }
+
+        const mock_result = generateMockResult()
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          ...mock_result,
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                __editorItemTitle: variation_1.name,
+                extraCampToFilter_1: variation_1.values[0],
+                propertieToLinkOnCtx: propertieTolinkOnProductContext
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch(
+          {
+            refinedData: {
+              [propertieTolinkOnProductContext]: [
+                {
+                  name: variation_not_match.name,
+                  values: [variation_not_match.values[0]]
+                }
+              ]
+            },
+            quadrant: [{
+              ...mock_param_collection
+            }]
+          }
+        )
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const result: schema_site_editor_default_linkField_filtered | null = sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(result).toBeNull()
+      })
+
+      it('Should call the resolver of linksByVariationAttr only if there is at least one link inside linksByVariationAttr', () => {
+        const variation: ListOfVariation = {
+          name: 'any_name',
+          values: ['any_value']
+        }
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: variation.values[0]
+              }
+            ]
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: [variation] },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalled()
+      })
+
+      it('Should call the resolver of linksByVariationAttr only once, regardless of the number of links', () => {
+        const variation_1: ListOfVariation = {
+          name: 'any_name',
+          values: ['any_value']
+        }
+        const variation_2: ListOfVariation = {
+          name: 'any_name',
+          values: ['any_value']
+        }
+
+        const mock_param_collection: schema_site_editor_default_collection_flags = {
+          isActive: true,
+          items: [],
+          priority: "1",
+          typeContent: 'createContent',
+          variant: 'variant-default',
+          __editorItemTitle: 'Container Coleção 1',
+          _screen_config_links: [{
+            [resolver]: [
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: variation_1.values[0]
+              },
+              {
+                propertieToLinkOnCtx: propertieTolinkOnProductContext,
+                __editorItemTitle: variation_2.values[0]
+              }
+            ]
+
+          }]
+        }
+
+        const { mock_quadrant, mock_refinedData } = BuildMatch({
+          refinedData: { [propertieTolinkOnProductContext]: [variation_1] },
+          quadrant: [{
+            ...mock_param_collection
+          }]
+        })
+
+        const { sut } = makeSut(mock_refinedData)
+
+        const privateMethodSpy = jest.spyOn(sut, resolver as any)
+
+        sut.filterCollection(mock_quadrant.collection[0])
+
+        expect(privateMethodSpy).toBeCalledTimes(1)
+      })
+    })
+  })
+})
+
+// html attributes

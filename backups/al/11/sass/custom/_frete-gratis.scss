@@ -1,0 +1,47 @@
+.free-shipping {
+  display: none;
+  @include size(auto,45px);
+  background-color: $yellow01;
+  border-radius: 9px;
+  @include mq("992"){
+    float: right;
+    margin: 0;
+    @include size(330px,45px);
+  }
+  &-bar-content {
+    @include size(100%,45px);
+    @include display-flex(center,flex-start,row);
+    margin: 10px auto 0;
+    position: relative;
+    @include mq("992"){
+      margin: 0;
+    }
+  }
+  &__text {
+    @include textConfig($black01, $primaryFont, 14, $fontRegular, 26, center, initial, 20);
+    margin: 0 0 0 50px;
+    position: relative;
+    z-index: 2;
+    strong, span {
+      font-weight: $fontBold;
+      text-transform: uppercase;
+    }
+    &:before {
+      @include abs-position(4px,initial,initial,-30px);
+      @include size(26px,19px);
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='25.862' height='18.011' viewBox='0 0 25.862 18.011'%3e%3cg id='Grupo_4643' data-name='Grupo 4643' transform='translate(0 0)'%3e%3ccircle id='Elipse_8' data-name='Elipse 8' cx='2.309' cy='2.309' r='2.309' transform='translate(3.233 13.393)' fill='%23161615'/%3e%3cpath id='Caminho_137' data-name='Caminho 137' d='M16.317,6H3.385A1.386,1.386,0,0,0,2,7.385V20.317A1.386,1.386,0,0,0,3.385,21.7h.924a3.233,3.233,0,0,1,6.466,0H17.7V7.385A1.386,1.386,0,0,0,16.317,6Z' transform='translate(-2 -6)' fill='%23161615'/%3e%3ccircle id='Elipse_9' data-name='Elipse 9' cx='2.309' cy='2.309' r='2.309' transform='translate(18.935 13.393)' fill='%23161615'/%3e%3cpath id='Caminho_138' data-name='Caminho 138' d='M28.959,13.556l-3-4A1.385,1.385,0,0,0,24.849,9H20V21.931h1.385a3.233,3.233,0,1,1,6.466,0,1.386,1.386,0,0,0,1.385-1.385V14.388A1.386,1.386,0,0,0,28.959,13.556Zm-2.032.52a.465.465,0,0,1-.466.466H22.313a.465.465,0,0,1-.466-.466V10.85a.464.464,0,0,1,.465-.465h2.3a.466.466,0,0,1,.372.186l1.845,2.462a.461.461,0,0,1,.093.279Z' transform='translate(-3.374 -6.229)' fill='%23161615'/%3e%3c/g%3e%3c/svg%3e ");
+      background-repeat: no-repeat;
+      content: "";
+      display: block;
+    }
+  }
+  &__barActive {
+    @include abs-position(0,initial,initial,initial);
+    @include size(0,45px);
+    background-color: $color-primary;
+    border-radius: 9px;
+    display: block;
+    max-width: 100%;
+    transition: width 0.5s;
+  }
+}

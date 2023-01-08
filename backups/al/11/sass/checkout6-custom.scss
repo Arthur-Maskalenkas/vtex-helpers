@@ -1,0 +1,19 @@
+// Utilidades
+@import "./utils/_mixin";
+@import "./utils/_vars";
+
+// Partes em comum
+@import "./partials/header";
+@import "./partials/footer";
+@import "./partials/cart-template";
+
+// Páginas
+@import "./pages/general";
+@import "./pages/cart";
+@import "./pages/profile";
+@import "./pages/shipping";
+@import "./pages/payment";
+
+//Custom
+@import "./custom/aviso-frete";
+@import "./custom/frete-gratis";
