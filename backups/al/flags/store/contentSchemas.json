@@ -1,0 +1,759 @@
+{
+  "definitions": {
+    "GlobalProvider": {
+      "type": "object",
+      "properties": {
+        "schemaAppFlagCustom": {
+          "title": "App Flags Gerenciaveis",
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "__editorItemTitle": {
+                "title": "Configurações",
+                "type": "string",
+                "disabled": true,
+                "default": "Container flags"
+              },
+              "quadrantBottom": {
+                "title": "_",
+                "type": "array",
+                "maxItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "type": "string",
+                      "disabled": true,
+                      "default": "Quadrante - Inferior"
+                    },
+
+                    "_screen_config_priority": {
+                      "$ref": "app:avantiimplantacao.store-theme#/definitions/PriorityConfigContainerRef"
+                    },
+
+                    "_screen_config_position": {
+                      "$ref": "app:avantiimplantacao.store-theme#/definitions/PositioningContainerBottomRef"
+                    },
+
+                    "collection": {
+                      "title": "Lista De Vinculações",
+                      "type": "array",
+                      "items": {
+                        "$ref": "app:avantiimplantacao.store-theme#/definitions/CollectionRef"
+                      }
+                    }
+                  }
+                }
+              },
+
+              "quadrantTopRight": {
+                "title": "_",
+                "type": "array",
+                "maxItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "type": "string",
+                      "disabled": true,
+                      "default": "Quadrante - Direita"
+                    },
+
+                    "_screen_config_priority": {
+                      "$ref": "app:avantiimplantacao.store-theme#/definitions/PriorityConfigContainerRef"
+                    },
+
+
+                    "_screen_config_position": {
+                      "$ref": "app:avantiimplantacao.store-theme#/definitions/PositioningContainerRef"
+                    },
+
+                    "collection": {
+                      "title": "Lista De Vinculações",
+                      "type": "array",
+                      "items": {
+                        "$ref": "app:avantiimplantacao.store-theme#/definitions/CollectionRef"
+                      }
+                    }
+                  }
+                }
+              },
+
+              "quadrantTopLeft": {
+                "title": "_",
+                "type": "array",
+                "maxItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "type": "string",
+                      "disabled": true,
+                      "default": "Quadrante - Esquerda"
+                    },
+
+                    "_screen_config_priority": {
+                      "$ref": "app:avantiimplantacao.store-theme#/definitions/PriorityConfigContainerRef"
+                    },
+
+
+                    "_screen_config_position": {
+                      "$ref": "app:avantiimplantacao.store-theme#/definitions/PositioningContainerRef"
+                    },
+
+
+                    "collection": {
+                      "title": "Lista De Vinculações",
+                      "type": "array",
+                      "items": {
+                        "$ref": "app:avantiimplantacao.store-theme#/definitions/CollectionRef"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "PriorityConfigContainerRef": {
+      "title": "Configurar Sistema De Prioridade",
+      "minItems": 1,
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "_": {
+            "title": "",
+            "type": "string",
+            "default": "Priridade por Campo",
+            "description": "Atenção: Caso seja selecionado a opção 'Priridade por Campo'  a prioridade será definida pelo campo 'Prioridade' presente na vinculação, e quanto mais alto o número, mais prioridade a vinculação terá. Vinculações que possuirem o mesmo número de prioridade (não existe um limite para isso) serão ordenadas pela ordenagem da lista de vinculações.",
+            "disabled": true
+          },
+
+          "_2": {
+            "title": "",
+            "type": "string",
+            "default": "Prioridade Por Ordem Da Lista",
+            "description": "Atenção: Caso seja selecionada a opção 'Prioridade Por Ordem Da Lista' a prioridade será definida pela ordenagem da lista de vinculações e quanto mais no topo da lista a vinculação estiver, mais prioridade ela terá. Sempre que uma vinculação for criada, ela será adicionada no final da lista e poderá ser arrasta para cima ou para baixo para alterar a prioridade.",
+            "disabled": true
+          },
+
+          "prioritySystemOnQuadrant": {
+            "title": "Qual será a configuração utilizada para definir a prioridade das vinculações?",
+            "type": "string",
+            "enum": [
+              "priorityByList",
+              "priorityByField"
+            ],
+            "enumNames": [
+              "Prioridade Por Ordem Da Lista",
+              "Priridade por Campo"
+            ],
+
+            "default": "20",
+            "ui:widget": "select"
+          },
+
+          "isInverted": {
+            "title": "Inverter Ordem Da Comparação",
+            "type": "boolean",
+            "default": false
+
+          }
+        }
+      }
+    },
+
+    "PositioningContainerBottomRef": {
+      "title": "Configurar Posicionamento",
+      "minItems": 1,
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+
+          "positionFlow": {
+            "title": "Posicionamento Do Fluxo",
+            "description": "O Conteúdo será posicionado em qual sentido?",
+            "type": "string",
+            "enum": [
+              "leftToRight",
+              "rightToLeft",
+              "center"
+            ],
+            "enumNames": [
+              "Esquerda para Direita",
+              "Direita para Esquerda",
+              "Centro"
+            ],
+            "widget": {
+              "ui:widget": "select"
+            }
+          },
+
+          "horizontalDistance": {
+            "title": "Distância Horizontal",
+            "type": "string",
+            "enum": [
+              "0px",
+              "5px",
+              "10px",
+              "15px",
+              "20px",
+              "25px",
+              "30px"
+            ],
+            "enumNames": [
+              "Não Aplicar",
+              "5",
+              "10",
+              "15",
+              "20",
+              "25",
+              "30"
+            ],
+            "default": "0px",
+            "ui:widget": "select"
+          },
+
+          "verticalDistance": {
+            "title": "Distância Vertical",
+            "type": "string",
+            "enum": [
+              "0px",
+              "5px",
+              "10px",
+              "15px",
+              "20px",
+              "25px",
+              "30px"
+            ],
+            "enumNames": [
+              "Não Aplicar",
+              "5",
+              "10",
+              "15",
+              "20",
+              "25",
+              "30"
+            ],
+            "default": "0px",
+            "ui:widget": "select"
+          }
+        }
+      }
+    },
+
+    "PositioningContainerRef": {
+      "title": "Configurar Posicionamento",
+      "minItems": 1,
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+
+
+          "horizontalDistance": {
+            "title": "Distância Horizontal",
+            "type": "string",
+            "enum": [
+              "0px",
+              "5px",
+              "10px",
+              "15px",
+              "20px",
+
+              "25px",
+              "30px"
+            ],
+            "enumNames": [
+              "Não Aplicar",
+              "5",
+              "10",
+              "15",
+              "20",
+              "25",
+              "30"
+            ],
+            "default": "0px",
+            "ui:widget": "select"
+          },
+
+          "verticalDistance": {
+            "title": "Distância Vertical",
+            "type": "string",
+            "enum": [
+              "0px",
+              "5px",
+              "10px",
+              "15px",
+              "20px",
+              "25px",
+              "30px"
+            ],
+            "enumNames": [
+              "Não Aplicar",
+              "5",
+              "10",
+              "15",
+              "20",
+              "25",
+              "30"
+            ],
+            "default": "0px",
+            "ui:widget": "select"
+          }
+        }
+      }
+    },
+
+    "CollectionRef": {
+      "type": "object",
+      "dependencies": {
+        "typeContent": {
+          "oneOf": [
+            {
+              "properties": {
+                "typeContent": {
+                  "enum": [
+                    "image"
+                  ]
+                },
+                "items": {
+                  "title": "Configurar Imagem",
+                  "minItems": 0,
+                  "type": "array",
+                  "maxItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "src": {
+                        "title": "Imagem",
+                        "type": "string",
+                        "widget": {
+                          "ui:widget": "image-uploader"
+                        }
+                      },
+
+                      "alt": {
+                        "title": "Texto Alternativo",
+                        "type": "string",
+                        "default": "Imagem"
+                      },
+
+                      "commonPropsBetweenContentAndImage": {
+                        "$ref": "app:avantiimplantacao.store-theme#/definitions/FlagStylesRef"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+
+            {
+              "properties": {
+                "typeContent": {
+                  "enum": [
+                    "createContent"
+                  ]
+                },
+                "items": {
+                  "title": "Configurar Conteúdo",
+                  "minItems": 0,
+                  "type": "array",
+                  "maxItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+
+
+                      "text": {
+                        "title": "Texto",
+                        "type": "string",
+                        "description": "Texto que será exibido na badge",
+                        "default": "Black Friday"
+                      },
+
+                      "fontWeight": {
+                        "title": "Peso Da Fonte",
+                        "description": "O peso da fonte que sera exibida na badge. Caso não seja informado, o peso padrão será 400",
+                        "type": "string",
+                        "default": "400",
+                        "enum": [
+                          "200",
+                          "400",
+                          "700"
+                        ],
+                        "enumNames": [
+                          "light",
+                          "medium",
+                          "bold"
+                        ]
+                      },
+
+                      "color": {
+                        "title": "Cor Da Fonte",
+                        "type": "string",
+                        "description": "Cor do texto que será exibido na badge. É necessario que o valor seja em hexadecimal. Por Exemplo: #000000",
+                        "default": "#FFFFFF"
+                      },
+
+                      "backgroundColor": {
+                        "title": "Cor De Fundo",
+                        "type": "string",
+                        "description": "Cor de fundo da badge. É necessario que o valor seja em hexadecimal. Por Exemplo: #000000",
+                        "default": "#000000"
+                      },
+
+                      "borderRadius": {
+                        "title": "Arredondamento",
+                        "type": "string",
+                        "description": "O conteúdo da badge será arredondado. Caso não seja informado, o conteúdo não será arredondado",
+                        "enum": [
+                          "0px",
+                          "10px",
+                          "30px",
+                          "50px"
+                        ],
+                        "enumNames": [
+                          "Sem Arredondamento",
+                          "Minimo",
+                          "Medio",
+                          "Maximo"
+                        ],
+
+                        "ui:widget": "select"
+                      },
+                      "commonPropsBetweenContentAndImage": {
+                        "$ref": "app:avantiimplantacao.store-theme#/definitions/FlagStylesRef"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "typeContent": {
+                  "enum": [
+                    false
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "properties": {
+        "__editorItemTitle": {
+          "title": "Titulo",
+          "type": "string",
+          "description": "Campo opcional. Ele será utilizado para identificar a vinculação na lista de vinculações.",
+          "default": "Conteúdo Padrão"
+        },
+
+        "isActive": {
+          "title": "Exibir Conteúdo",
+          "type": "boolean",
+          "description": "Defina se o conteúdo será exibido ou não.",
+          "default": true
+        },
+
+        "priority": {
+          "title": "Prioridade",
+          "type": "number",
+          "description": "Prioridade do conteúdo. A forma como essa prioridade funciona é definida no menu 'Configurar Sistema De Prioridade' a uma tela atrás.",
+          "default": "0"
+        },
+
+        "_screen_config_links": {
+          "title": "Configurar Vinculações Do Conteúdo",
+          "minItems": 1,
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "title": "Conteúdo",
+            "type": "object",
+
+            "properties": {
+              "linksByBrand": {
+                "title": "Vinculações Por Marca",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "title": "Titulo Identificação Site Editor",
+                      "type": "string",
+                      "description": "Opcional. Esse titulo será usado para identificar qual foi a vinculação criada para que o match ocorra pelo HTML e também para facilitar a visualização na lista de vinculações",
+                      "default": "Item"
+                    },
+
+                    "value": {
+                      "title": "Id Marca",
+                      "type": "number",
+                      "description": "O ID da Marca que será vinculada ao produto.",
+                      "default": "123"
+                    }
+                  }
+                }
+              },
+
+              "linksByCategory": {
+                "title": "Vinculações Por Categoria",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "title": "Titulo Identificação Site Editor",
+                      "type": "string",
+                      "description": "Opcional. Esse titulo será usado para identificar qual foi a vinculação criada para que o match ocorra pelo HTML e também para facilitar a visualização na lista de vinculações",
+                      "default": "Item"
+                    },
+
+                    "value": {
+                      "title": "Id Produto",
+                      "type": "number",
+                      "description": "O ID da marca que será vinculada ao produto.",
+                      "default": "123"
+                    }
+                  }
+                }
+              },
+
+              "linksByProduct": {
+                "title": "Vinculações Por Produto",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "title": "Titulo Identificação Site Editor",
+                      "type": "string",
+                      "description": "Opcional. Esse titulo será usado para identificar qual foi a vinculação criada para que o match ocorra pelo HTML e também para facilitar a visualização na lista de vinculações",
+                      "default": "Item"
+                    },
+
+                    "value": {
+                      "title": "Id Produto",
+                      "type": "number",
+                      "description": "O ID do produto que será vinculada ao produto.",
+                      "default": "123"
+                    }
+                  }
+                }
+              },
+
+              "linksByCollection": {
+                "title": "Vinculações Por Coleção",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "title": "Titulo Identificação Site Editor",
+                      "type": "string",
+                      "description": "Opcional. Esse titulo será usado para identificar qual foi a vinculação criada para que o match ocorra pelo HTML e também para facilitar a visualização na lista de vinculações",
+                      "default": "Composição"
+                    },
+
+                    "value": {
+                      "title": "Id Coleção",
+                      "type": "number",
+                      "description": "O ID da coleção que será vinculada ao produto.",
+                      "default": "123"
+                    }
+                  }
+                }
+              },
+
+
+              "linksBySpecification": {
+                "title": "Vinculações Por Especificação",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "title": "Titulo Identificação Site Editor",
+                      "type": "string",
+                      "description": "Opcional. Esse titulo será usado para identificar qual foi a vinculação criada para que o match ocorra pelo HTML e também para facilitar a visualização na lista de vinculações",
+                      "default": "Composição"
+                    },
+
+                    "name": {
+                      "title": "Nome Especificação",
+                      "type": "number",
+                      "description": "O nome da especificação que será vinculada ao produto.",
+                      "default": "123"
+                    },
+
+                    "value": {
+                      "title": "Valor Especificação",
+                      "type": "number",
+                      "description": "O valor da especificação que será vinculada ao produto.",
+                      "default": "123"
+                    }
+                  }
+                }
+              },
+
+              "linksByVariation": {
+                "title": "Vinculações Por Variação",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__editorItemTitle": {
+                      "title": "Titulo Identificação Site Editor",
+                      "type": "string",
+                      "description": "Opcional. Esse titulo será usado para identificar qual foi a vinculação criada para que o match ocorra pelo HTML e também para facilitar a visualização na lista de vinculações",
+                      "default": "Composição"
+                    },
+
+                    "name": {
+                      "title": "Nome Variação",
+                      "type": "number",
+                      "description": "O nome da variação que será vinculada ao produto.",
+                      "default": "123"
+                    },
+
+                    "value": {
+                      "title": "Valor Variação",
+                      "type": "number",
+                      "description": "O valor da variação que será vinculada ao produto.",
+                      "default": "123"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+
+        "variant": {
+          "title": "Opcional - Variante Que Será Uitilizada Para Personalizar O Conteúdo",
+          "type": "string",
+          "enum": [
+            "variant-default",
+            "variant-1",
+            "variant-2",
+            "variant-3"
+          ],
+          "enumNames": [
+            "Não Utilizar Variante",
+            "Variante 1",
+            "Variante 2",
+            "Variante 3"
+          ],
+
+          "ui:widget": "select"
+        },
+
+        "typeContent": {
+          "title": "Tipo De Conteúdo Que Sera Exibido",
+          "type": "string",
+          "enum": [
+            "image",
+            "createContent"
+          ],
+          "default": "image",
+          "enumNames": [
+            "Imagem",
+            "Criar o meu próprio conteúdo"
+          ],
+          "widget": {
+            "ui:widget": "radio"
+          }
+        }
+      }
+
+    },
+
+
+    "FlagStylesRef": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "title": "Largura",
+          "description": "Largura do conteúdo em pixels. Exemplo: 50. Caso o conteúdo seja maior que essa largura, ele será cortado. Caso não seja passado nenhum valor, o conteúdo assumira o tamanho original.",
+          "type": "string",
+          "enum": [
+            "fit-content",
+            "20px",
+            "40px",
+            "60px",
+            "80px",
+            "100px",
+            "120px",
+            "140px",
+            "160px",
+            "180px",
+            "200px"
+          ],
+          "enumNames": [
+            "Largura Automatica",
+            "20",
+            "40",
+            "60",
+            "80",
+            "100",
+            "120",
+            "140",
+            "160",
+            "180",
+            "200"
+          ],
+
+          "default": "fit-content",
+          "ui:widget": "select"
+        },
+
+        "height": {
+          "title": "Altura",
+          "description": "Altura do conteúdo. Exemplo: 50. Caso o conteúdo seja maior que a altura definida, ele será cortado. Caso não seja passado nenhum valor, o conteúdo assumira o tamanho original.",
+          "type": "string",
+          "enum": [
+            "auto",
+            "20px",
+            "40px",
+            "60px",
+            "80px",
+            "100px",
+            "120px",
+            "140px",
+            "160px",
+            "180px",
+            "200px"
+          ],
+          "enumNames": [
+            "Altura Automatica",
+            "20",
+            "40",
+            "60",
+            "80",
+            "100",
+            "120",
+            "140",
+            "160",
+            "180",
+            "200"
+          ],
+          "default": "auto",
+          "ui:widget": "select"
+        }
+      }
+    }
+
+
+  }
+}

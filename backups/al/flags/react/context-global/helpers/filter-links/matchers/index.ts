@@ -1,0 +1,6 @@
+export * from './match-by-brand'
+export * from './match-by-product'
+export * from './match-by-category'
+export * from './match-by-collection'
+export * from './match-by-variation'
+export * from './match-by-specification'
