@@ -1,5 +1,11 @@
 import { PPicker } from './protocols'
-import { PickBasicField, PickPriceField, PickSpecificationField } from './pickers'
+import {
+  PickBasicField,
+  PickCollectionField,
+  PickPriceField,
+  PickSpecificationField,
+  PickVariationField
+} from './pickers'
 import { RefinedData } from './refined-data'
 
 export class RefinedDataBuilder {
@@ -26,12 +32,12 @@ export class RefinedDataBuilder {
   }
 
   pickCollectionField (): this {
-    this.listOfPickers.push(new PickBasicField('collection'))
+    this.listOfPickers.push(new PickCollectionField('collection'))
     return this
   }
 
   pickVariationField (): this {
-    this.listOfPickers.push(new PickBasicField('variation'))
+    this.listOfPickers.push(new PickVariationField('variation'))
     return this
   }
 

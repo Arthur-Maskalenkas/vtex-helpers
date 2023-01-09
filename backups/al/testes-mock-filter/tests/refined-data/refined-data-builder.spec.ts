@@ -1,3 +1,5 @@
+import { mock_product_context_1 } from './_mocks/mock_product_context'
+
 import {
   PickBasicField,
   PickCollectionField,
@@ -46,6 +48,6 @@ describe('GetRefinedDataComposite', () => {
       new PickSpecificationField('specification'),
       new PickVariationField('variation'),
       new PickPriceField('price')
-    ],'summary')
+    ], 'summary')
   })
 })

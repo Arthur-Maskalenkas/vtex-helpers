@@ -30,6 +30,10 @@ export class RemapSchema {
       ...Object.keys(this.schema)?.reduce((acc: schema_site_editor_remapped_root_custom_app_badge_custom, key: keyof schema_site_editor_default_root_app_badge_custom) => {
         const currentQuadrantContainer = this?.schema[key]?.[0]
 
+        if (key === '__editorItemTitle' as any) {
+          return null
+        }
+
         if (!currentQuadrantContainer) {
           return {
             ...acc,
@@ -42,16 +46,16 @@ export class RemapSchema {
           [key]: {
             name: key,
             // vai pegar do novo filtro
-            hasCollection: true,
             priorityConfigContainer: {
-              isInverted: currentQuadrantContainer?._screen_config_priority[0]?.isInverted,
-              prioritySystemOnQuadrant: currentQuadrantContainer?._screen_config_priority[0]?.prioritySystemOnQuadrant
+              isInverted: currentQuadrantContainer?._screen_config_priority?.[0]?.isInverted,
+              prioritySystemOnQuadrant: currentQuadrantContainer?._screen_config_priority?.[0]?.prioritySystemOnQuadrant
             },
             dataHTMLOnContainerFlag: {
               style: {
+                position: 'absolute',
                 ...key === 'quadrantTopLeft' && {
-                  left: currentQuadrantContainer?._screen_config_position[0]?.horizontalDistance ?? '0px',
-                  top: currentQuadrantContainer?._screen_config_position[0]?.verticalDistance ?? '0px'
+                  left: currentQuadrantContainer?._screen_config_position?.[0]?.horizontalDistance ?? '0px',
+                  top: currentQuadrantContainer?._screen_config_position?.[0]?.verticalDistance ?? '0px'
                 },
 
                 ...key === 'quadrantTopRight' && {

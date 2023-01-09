@@ -1,3 +1,5 @@
+import { mock_product_context_1 } from './_mocks/mock_product_context'
+
 import { RefinedData } from '../../src/refined-data/refined-data'
 import { PickBasicField } from '../../src/refined-data/pickers/pick-basic-field'
 import { get_mock, mock_product_context } from '../refined-data/_mocks/default'
@@ -54,5 +56,13 @@ describe('GetRefinedDataComposite', () => {
     const result = sut.get(mock_product_context)
 
     expect(result).toStrictEqual(result_mock)
+  })
+
+  it('Should return all data if any data is found 2', () => {
+    const { sut } = makeSut()
+
+    const result = sut.get(mock_product_context_1)
+
+    expect(result.collection.length).toBeGreaterThan(2)
   })
 })

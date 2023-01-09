@@ -16,7 +16,7 @@ export class FilterLinks implements PFilterLinks {
   }
 
   filter (link: schema_site_editor_default_collection_flags): schema_site_editor_default_linkField_filtered | null {
-    if (!this?.refinedData || !link || !link?._screen_config_links?.[0]) {
+    if (!this?.refinedData || !link || !link?._screen_config_links?.[0] || !link?.isActive || JSON.stringify(link?._screen_config_links?.[0]) === '{}') {
       return null
     }
 
@@ -45,6 +45,10 @@ export class FilterLinks implements PFilterLinks {
         [GenerateHTMLKey(`match-occurs-by-${matcher.attributeLinkRefinedData}-attr`)]: true
       }
     }, {})
+
+    if (!linksMatcheds) {
+      return null
+    }
 
     return {
       ...currentCollectionData,
