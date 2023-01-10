@@ -1,0 +1,312 @@
+{
+  "global-context-27": {
+    "props": {
+      "schemaAppFlagCustom": [
+        {
+          "__editorItemTitle": "Container flags",
+          "quadrantTopRight": [
+            {
+              "__editorItemTitle": "Quadrante - Direita",
+              "_screen_config_priority": [
+                {
+                  "_": "Priridade por Campo",
+                  "_2": "Prioridade Por Ordem Da Lista",
+                  "prioritySystemOnQuadrant": "priorityByField",
+                  "isInverted": false
+                }
+              ],
+              "_screen_config_position": [
+                {
+                  "horizontalDistance": "0px",
+                  "verticalDistance": "0px"
+                }
+              ],
+              "collection": [
+                {
+                  "__editorItemTitle": "titulo vinculação por id produto",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByProduct": [
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por ID Produto",
+                          "value": 26
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "id produto",
+                      "fontWeight": "400",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "tiulo vinculação por id categoria",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por ID Categoria",
+                          "value": 54
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "id categoria",
+                      "fontWeight": "400",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "titulo vinculação por id marca",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByBrand": [
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por ID Marca",
+                          "value": 2000000
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "id marca",
+                      "fontWeight": "400",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "titulo vinculação por id coleção",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [ ],
+                      "linksByCollection": [
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por Coleção 1",
+                          "value": 139
+                        },
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por Coleção 2",
+                          "value": 142
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "id coleção",
+                      "fontWeight": "400",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "titulo vinculação por especificação",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksBySpecification": [
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por Especificação 1",
+                          "name": "utilizado em",
+                          "value": "hótéís e centrõS"
+                        },
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por Especificação 2",
+                          "name": "Forro",
+                          "value": "100% poliéster"
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "especificação",
+                      "fontWeight": "400",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "titulo vinculação por variação",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByVariation": [
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por Variação",
+                          "name": "cor",
+                          "value": "vermelho"
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "alt": "Imagem",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      },
+                      "text": "variação",
+                      "fontWeight": "200",
+                      "backgroundColor": "#000",
+                      "color": "#fff"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "quadrantTopLeft": [
+            {
+              "__editorItemTitle": "Quadrante - Esquerda",
+              "_screen_config_priority": [
+                {
+                  "_": "Priridade por Campo",
+                  "_2": "Prioridade Por Ordem Da Lista",
+                  "prioritySystemOnQuadrant": "priorityByField",
+                  "isInverted": false
+                }
+              ],
+              "_screen_config_position": [
+                {
+                  "horizontalDistance": "0px",
+                  "verticalDistance": "0px"
+                }
+              ],
+              "collection": [
+                {
+                  "__editorItemTitle": "Item 1",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByProduct": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 26
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Id produto",
+                      "fontWeight": "400",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "quadrantBottom": [
+            {
+              "__editorItemTitle": "Quadrante - Inferior",
+              "_screen_config_priority": [
+                {
+                  "_": "Priridade por Campo",
+                  "_2": "Prioridade Por Ordem Da Lista",
+                  "prioritySystemOnQuadrant": "priorityByField",
+                  "isInverted": false
+                }
+              ],
+              "_screen_config_position": [
+                {
+                  "horizontalDistance": "0px",
+                  "verticalDistance": "0px",
+                  "positionFlow": "center"
+                }
+              ],
+              "collection": [
+                {
+                  "__editorItemTitle": "item 1",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByProduct": [
+                        {
+                          "__editorItemTitle": "Exemplo Vinculação Por ID produto",
+                          "value": 26
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Item 1",
+                      "fontWeight": "400",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

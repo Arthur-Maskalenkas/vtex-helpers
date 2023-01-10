@@ -1,0 +1,34 @@
+{
+  "app-render-flags-avanti": {
+    "component": "RenderFlagsAvanti"
+  },
+
+  "global-context-27": {
+    "component": "GlobalProvider",
+    "content": {
+      "$ref": "app:avantiimplantacao.store-theme#/definitions/GlobalProvider"
+    }
+  },
+
+  "app-um-componente": {
+    "composition": "children",
+    "component": "UmComponente",
+    "around": [
+      "context-um-componente"
+    ]
+  },
+
+  "context-um-componente": {
+    "component": "UmComponenteProvider"
+  },
+
+  "hello-world": {
+    "component": "HelloWorld"
+  },
+  "product-context-example": {
+    "component": "ProductContext"
+  },
+  "search-context-example": {
+    "component": "SearchContext"
+  }
+}

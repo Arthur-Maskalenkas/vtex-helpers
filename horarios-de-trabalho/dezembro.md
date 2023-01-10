@@ -131,3 +131,15 @@
 06/01/2023 - 14:00 - 14:20 - call com com lili - tudo de bicho 
 06/01/2023 - 14:20 - 15:30 - savennago - call - instalando app ⚪
 06/01/2023 - 15:30 - 17:00 - farmacia sao rafael - francisco aiolfi - ajustando header ⚪
+
+**# 09/01/2023**
+09/01/2023 - 09:00 - 11:15 - kopenhagen - homolog cliente ⚪
+09/01/2023 - 11:15 - 12:00 - weekly devs
+09/01/2023 - 13:10 - 17:15 - kopenhagen - homolog cliente ⚪
+09/01/2023 - 17:15 - 17:35 - kopenhagen - daily
+09/01/2023 - 17:35 - 17:50 - weekly semanal
+
+**# 10/01/2023**
+09:05 - 10:00 - kopenhagen - homolog cl
+10:00 - 10:30 - sevenago - instalação app flags custom
+10:30 - xxx - kopenhagen - homolog cl
