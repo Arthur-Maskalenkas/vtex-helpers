@@ -125,11 +125,11 @@
 05/01/2023 - 17:35 - 18:00 - kopenhagen - homolog cliente ⚪
 
 **# 06/01/2023**
-06/01/2023 - 09:00 - 10:00 - kopenhagen - alinhamento de homolog ⚪
+06/01/2023 - 09:00 - 10:00 - kopenhagen - alinhamento projeto ⚪
 06/01/2023 - 10:00 - 12:40 - kopenhagen - homolog cliente ⚪
 06/01/2023 - 13:40 - 14:00 - savennago - call - instalando app ⚪
-06/01/2023 - 14:00 - 14:20 - call com com lili - tudo de bicho 
-06/01/2023 - 14:20 - 15:30 - savennago - call - instalando app ⚪
+06/01/2023 - 14:00 - 14:20 - call com com lili - tudo de bicho ⚪
+06/01/2023 - 14:20 - 15:30 - savennago - call - instalando app flags ⚪
 06/01/2023 - 15:30 - 17:00 - farmacia sao rafael - francisco aiolfi - ajustando header ⚪
 
 **# 09/01/2023**
@@ -140,6 +140,27 @@
 09/01/2023 - 17:35 - 17:50 - weekly semanal
 
 **# 10/01/2023**
-09:05 - 10:00 - kopenhagen - homolog cl
-10:00 - 10:30 - sevenago - instalação app flags custom
-10:30 - xxx - kopenhagen - homolog cl
+10/01/2023 - 09:05 - 10:00 - kopenhagen - homolog cl ⚪
+10/01/2023 - 10:00 - 10:30 - sevenago - instalação app flags custom ⚪
+10/01/2023 - 10:30 - 12:10 - kopenhagen - homolog cl ⚪
+10/01/2023 - 13:10 - 15:30 - kopenhagen - homolog cl ⚪
+10/01/2023 - 15:30 - 16:00 - kopenhagen - alinhamento projeto ⚪
+10/01/2023 - 16:00 - 16:30 - kopenhagen - homolog cl ⚪
+10/01/2023 - 16:30 - 17:00 - kopenhagen - alinhamento projeto ⚪
+10/01/2023 - 17:00 - 18:00 - kopenhagen - homolog cl ⚪
+
+**# 11/01/2023**
+11/01/2023 - 09:05 - 12:30 - kopenhagen - homolog cl 
+11/01/2023 - 13:40 - 17:15 - kopenhagen - homolog cl
+11/01/2023 - 17:15 - 17:50 - kopenhagen - daily
+11/01/2023 - 17:50 - 20:05 - kopenhagen - homolog cl
+
+**# 12/01/2023**
+12/01/2023 - 09:30 - 10:50 - kopenhagen - homolog cl 
+12/01/2023 - 10:50 - 11:30 - covabra - call regionalização
+12/01/2023 - 12:00 - 12:50 - kopenhagen - homolog cl
+12/01/2023 - 14:00 - 17:15 - kopenhagen - homolog cl
+12/01/2023 - 17:15 - 17:30 - kopenhagen - daily
+12/01/2023 - 17:30 - 18:00 - kopenhagen - daily
+
+

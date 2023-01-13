@@ -1,1 +1,0 @@
-export const mock_list_priority = [1, 3, 2, 4]
