@@ -139,7 +139,7 @@
 09/01/2023 - 11:15 - 12:00 - weekly devs 🟢
 09/01/2023 - 13:10 - 17:15 - kopenhagen - homolog cl ⚪
 09/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
-09/01/2023 - 17:35 - 17:50 - weekly semanal
+09/01/2023 - 17:35 - 17:50 - weekly semanal 🟢
 
 **# 10/01/2023**
 10/01/2023 - 09:05 - 10:00 - kopenhagen - homolog cl ⚪
@@ -162,7 +162,7 @@
 12/01/2023 - 10:50 - 11:30 - covabra - call regionalização ⚪
 12/01/2023 - 12:00 - 12:50 - kopenhagen - homolog cl ⚪
 12/01/2023 - 14:00 - 17:15 - kopenhagen - homolog cl ⚪
-12/01/2023 - 17:15 - 17:30 - kopenhagen - daily
+12/01/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 12/01/2023 - 17:30 - 18:00 - kopenhagen - homolog cl ⚪
 
 
