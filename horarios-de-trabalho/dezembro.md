@@ -111,32 +111,34 @@
 
 **# 04/01/2023**
 04/01/2023 - 07:00 - 11:15 - kopenhagen - homolog interna ⚪
-04/01/2023 - 11:15 - 12:14 - weekly devs
+04/01/2023 - 11:15 - 12:14 - weekly devs 🟢
 04/01/2023 - 13:15 - 17:15 - kopenhagen - homolog interna ⚪
 04/01/2023 - 17:15 - 17:25 - kopenhagen - daily 🟢
 04/01/2023 - 17:25 - 18:00 - kopenhagen - homolog interna ⚪
 
 **# 05/01/2023**
 05/01/2023 - 09:00 - 09:50 - kopenhagen - homolog interna ⚪
-05/01/2023 - 09:50 - 11:40 - aquário - homolog cliente ⚪
-05/01/2023 - 11:40 - 12:40 - kopenhagen - homolog cliente ⚪
-05/01/2023 - 13:40 - 17:15 - kopenhagen - homolog cliente ⚪
+05/01/2023 - 09:50 - 11:40 - aquário - homolog cl ⚪
+05/01/2023 - 11:40 - 12:40 - kopenhagen - homolog cl ⚪
+05/01/2023 - 13:40 - 17:15 - kopenhagen - homolog cl ⚪
 05/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
-05/01/2023 - 17:35 - 18:00 - kopenhagen - homolog cliente ⚪
+05/01/2023 - 17:35 - 18:00 - kopenhagen - homolog cl ⚪
 
 **# 06/01/2023**
 06/01/2023 - 09:00 - 10:00 - kopenhagen - alinhamento projeto ⚪
-06/01/2023 - 10:00 - 12:40 - kopenhagen - homolog cliente ⚪
+06/01/2023 - 10:00 - 12:40 - kopenhagen - homolog cl ⚪
 06/01/2023 - 13:40 - 14:00 - savennago - call - instalando app ⚪
 06/01/2023 - 14:00 - 14:20 - call com com lili - tudo de bicho ⚪
 06/01/2023 - 14:20 - 15:30 - savennago - call - instalando app flags ⚪
 06/01/2023 - 15:30 - 17:00 - farmacia sao rafael - francisco aiolfi - ajustando header ⚪
+06/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
+06/01/2023 - 10:00 - 12:40 - kopenhagen - homolog cl ⚪
 
 **# 09/01/2023**
-09/01/2023 - 09:00 - 11:15 - kopenhagen - homolog cliente ⚪
-09/01/2023 - 11:15 - 12:00 - weekly devs
-09/01/2023 - 13:10 - 17:15 - kopenhagen - homolog cliente ⚪
-09/01/2023 - 17:15 - 17:35 - kopenhagen - daily
+09/01/2023 - 09:00 - 11:15 - kopenhagen - homolog cl ⚪
+09/01/2023 - 11:15 - 12:00 - weekly devs 🟢
+09/01/2023 - 13:10 - 17:15 - kopenhagen - homolog cl ⚪
+09/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
 09/01/2023 - 17:35 - 17:50 - weekly semanal
 
 **# 10/01/2023**
@@ -150,17 +152,29 @@
 10/01/2023 - 17:00 - 18:00 - kopenhagen - homolog cl ⚪
 
 **# 11/01/2023**
-11/01/2023 - 09:05 - 12:30 - kopenhagen - homolog cl 
-11/01/2023 - 13:40 - 17:15 - kopenhagen - homolog cl
-11/01/2023 - 17:15 - 17:50 - kopenhagen - daily
-11/01/2023 - 17:50 - 20:05 - kopenhagen - homolog cl
+11/01/2023 - 09:05 - 12:30 - kopenhagen - homolog cl ⚪ 
+11/01/2023 - 13:40 - 17:15 - kopenhagen - homolog cl ⚪
+11/01/2023 - 17:15 - 17:50 - kopenhagen - daily 🟢
+11/01/2023 - 17:50 - 20:05 - kopenhagen - homolog cl ⚪
 
 **# 12/01/2023**
-12/01/2023 - 09:30 - 10:50 - kopenhagen - homolog cl 
-12/01/2023 - 10:50 - 11:30 - covabra - call regionalização
-12/01/2023 - 12:00 - 12:50 - kopenhagen - homolog cl
-12/01/2023 - 14:00 - 17:15 - kopenhagen - homolog cl
+12/01/2023 - 09:30 - 10:50 - kopenhagen - homolog cl ⚪ 
+12/01/2023 - 10:50 - 11:30 - covabra - call regionalização ⚪
+12/01/2023 - 12:00 - 12:50 - kopenhagen - homolog cl ⚪
+12/01/2023 - 14:00 - 17:15 - kopenhagen - homolog cl ⚪
 12/01/2023 - 17:15 - 17:30 - kopenhagen - daily
-12/01/2023 - 17:30 - 18:00 - kopenhagen - daily
+12/01/2023 - 17:30 - 18:00 - kopenhagen - homolog cl ⚪
 
 
+**# 13/01/2023**
+13/01/2023 - 09:07 - 12:58 - kopenhagen - homolog cl ⚪
+13/01/2023 - 13:58 - 15:15 - kopenhagen - homolog cl ⚪
+13/01/2023 - 15:15 - 15:30 - kopenhagen - daily 🟢
+13/01/2023 - 15:30 - 20:00 - kopenhagen - homolog cl ⚪
+
+**# 16/01/2023**
+16/01/2023 - 09:15 - 11:15 - kopenhagen - homolog cl ⚪
+16/01/2023 - 11:15 - 12:35 - weekly devs 🟢
+16/01/2023 - 13:35 - 17:15 - kopenhagen - homolog cl ⚪
+16/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
+16/01/2023 - 17:35 - 19:41 - kopenhagen - homolog cl ⚪
