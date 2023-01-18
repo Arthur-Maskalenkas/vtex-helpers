@@ -178,3 +178,13 @@
 16/01/2023 - 13:35 - 17:15 - kopenhagen - homolog cl ⚪
 16/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
 16/01/2023 - 17:35 - 19:41 - kopenhagen - homolog cl ⚪
+
+
+09:00 - 11:30 - boilerplate 🟢
+11:30 - 12:00 - marabraz - alinhamento de tasks
+12:00 - 12:57 - boilerplate 🟢
+13:57 - 15:50 - marabraz - xxxx
+15:50 - 16:35 - leo 
+16:40 - 17:05 - kopenhagen - homolog cliente - auxiliando thiago ⚪
+17:15 - 17:50 - kopenhagen - daily 🟢
+17:50 - 18:00 - marabraz - xxxx
