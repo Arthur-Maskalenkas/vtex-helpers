@@ -179,12 +179,26 @@
 16/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
 16/01/2023 - 17:35 - 19:41 - kopenhagen - homolog cl ⚪
 
+**# 17/01/2023**
+17/01/2023 - 09:00 - 11:30 - boilerplate 🟢
+17/01/2023 - 11:30 - 12:00 - marabraz - alinhamento de tasks
+17/01/2023 - 12:00 - 12:57 - boilerplate 🟢
+17/01/2023 - 13:57 - 15:50 - marabraz - xxxx
+17/01/2023 - 15:50 - 16:35 - leo 
+17/01/2023 - 16:40 - 17:05 - kopenhagen - homolog cliente - auxiliando thiago ⚪
+17/01/2023 - 17:15 - 17:50 - kopenhagen - daily 🟢
+17/01/2023 - 17:50 - 18:00 - marabraz - xxxx
 
-09:00 - 11:30 - boilerplate 🟢
-11:30 - 12:00 - marabraz - alinhamento de tasks
-12:00 - 12:57 - boilerplate 🟢
-13:57 - 15:50 - marabraz - xxxx
-15:50 - 16:35 - leo 
-16:40 - 17:05 - kopenhagen - homolog cliente - auxiliando thiago ⚪
-17:15 - 17:50 - kopenhagen - daily 🟢
-17:50 - 18:00 - marabraz - xxxx
+**# 18/01/2023**
+18/01/2023 - 09:00 - 10:40 - marabraz - xxx
+18/01/2023 - 10:40 - 12:40 - marabraz - garantia cliente ⚪
+18/01/2023 - 13:50 - 15:00 - preçolandia - homolog cliente ⚪
+18/01/2023 - 15:00 - 15:30 - websalão - alinhamento⚪
+18/01/2023 - 15:30 - 17:15 - websalao - homolog cliente ⚪
+18/01/2023 - 17:15 - 17:30 - websalao - daily⚪
+
+**# 19/01/2023**
+19/01/2023 - 09:00 - 12:45 - websalao b2b - homolog cliente⚪
+19/01/2023 - 13:45 - 17:15 - kopenhagen - homolog cliente⚪
+19/01/2023 - 17:15 - 18:00 - kopenhagen - daily
+19/01/2023 - 18:00 - 18:30 - kopenhagen - homolog cliente⚪
