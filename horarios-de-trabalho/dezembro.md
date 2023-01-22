@@ -202,3 +202,8 @@
 19/01/2023 - 13:45 - 17:15 - kopenhagen - homolog cliente⚪
 19/01/2023 - 17:15 - 18:00 - kopenhagen - daily
 19/01/2023 - 18:00 - 18:30 - kopenhagen - homolog cliente⚪
+
+
+
+
+
