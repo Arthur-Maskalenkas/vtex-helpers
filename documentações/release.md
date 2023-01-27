@@ -152,3 +152,44 @@ vtex.wish-list                      1.15.4
 
 ### Passo 7
 vá em /admin > configurações de busca > reindexação e ative
+
+
+# prevenção
+
+1. Fazer release em outro ws. Baixar os apps e publica-los
+2. após fazer o publish e install dos apps, ir para store-theme, deslinkar tudo e seguir com o publish/install dela
+3. Quando tudo (apps/store-theme) baixado e publicado, mudar para o ws em produção
+4. Com o ambiente de produção aberto, ir para cada pasta de app e rodar vtex install. Caso algum deles dê erro, faça install da store-theme e depois volte para esse app que apresentou o erro. 
+
+
+# erros conhecidos
+
+## erros no install: 
+
+### erro 1
+```
+PS C:\Users\maska\Desktop\projetos\Avanti\vtexio-kopenhagen\avanti-kop-middlewares> vtex install
+10:36:05.205 - error: Installation failed!
+10:36:05.207 - error: App has route conflict in:
+Route: "/_v/postFC/:p3". Declarers: kopenhagen21.avanti-general-middleware@5.0.0,kopenhagen21.avanti-general-middleware@0.0.1
+Route: "/_v/status/:p3". Declarers: kopenhagen21.avanti-general-middleware@5.0.0,kopenhagen21.avanti-general-middleware@0.0.1
+If you are sure you want to install this app, use the parameter '--force' in the installation command       
+PS C:\Users\maska\Desktop\projetos\Avanti\vtexio-kopenhagen\avanti-kop-middlewares> vtex install kopenhagen21.avanti-general-middleware@5.0.0
+10:36:33.016 - error: Installation failed!
+10:36:33.018 - error: App has route conflict in:
+Route: "/_v/postFC/:p3". Declarers: kopenhagen21.avanti-general-middleware@5.0.0,kopenhagen21.avanti-general-middleware@0.0.1
+Route: "/_v/status/:p3". Declarers: kopenhagen21.avanti-general-middleware@5.0.0,kopenhagen21.avanti-general-middleware@0.0.1
+
+
+1. /store-theme - atualize o manifest com a versão que o app vai pegar
+antes: 
+"dependencies": {
+  "kopenhagen21.avanti-general-middleware": "0.x"
+}
+depois:
+"dependencies": {
+  "kopenhagen21.avanti-general-middleware": "5.x"
+}
+2. /store-theme - vtex setup
+3. /avanti-general-middleware - tente instalar novamente o app
+```
