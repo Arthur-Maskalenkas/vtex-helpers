@@ -1,0 +1,273 @@
+@import './include-media';
+
+
+$media-576: 576px;
+$media-768: 768px;
+$media-992: 992px;
+$media-1300: 1300px;
+
+
+@mixin resetBootstrap {
+  .container {
+    max-width: 1240px;
+  }
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    padding: 0;
+  }
+
+}
+
+
+
+@mixin configureFont {
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #18181B;
+
+  }
+
+  p {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 34px;
+
+    color: #777777;
+  }
+}
+
+@mixin configureButton {
+
+  .btn-outline-secondary,
+  .btn-primary {
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    line-height: 18px;
+    min-height: 45px;
+    border-radius: 10px;
+    border-radius: 0;
+
+    @include media('>#{$media-992}') {
+      min-height: 56px;
+    }
+  }
+
+  .btn-primary {
+    background-color: #42BDD9;
+    height: 36px;
+    color: #FFFFFF;
+    border: unset;
+    transition: 300ms all;
+
+    &:hover {
+      background-color: darken(#42BDD9, 10%);
+    }
+  }
+}
+
+@mixin configureImage {
+  .container-image>div {
+    border-radius: 15px;
+    height: 100%;
+    background-color: #777777;
+    width: 100%;
+  }
+}
+
+body {
+  @include resetBootstrap();
+
+}
+
+%pageDefaultStyles {
+  @include configureButton();
+  @include configureFont();
+  @include configureImage();
+}
+
+
+body {
+  @include resetBootstrap();
+}
+
+.page-fotos,
+.page-projetos,
+.page-contato {
+  @extend %pageDefaultStyles;
+}
+
+.page-fotos {
+
+  li.item-article {
+    border: 1px solid rgba(82, 82, 91, 0.1);
+    border-radius: 20px;
+    background-color: #F8FAFC;
+
+    padding: 55px 50px;
+  }
+
+  .container-image>div {
+    width: 462px;
+    height: 300px;
+    background-color: #777777;
+  }
+
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 35px;
+  }
+}
+
+.page-projetos {
+
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 70px;
+
+    li {
+
+      row-gap: 30px;
+      display: flex;
+      flex-direction: column-reverse;
+
+
+
+      padding: 15px 15px 30px;
+
+      border-radius: 15px;
+      background-color: #F8FAFC;
+
+      min-height: 380px;
+
+      border: 1px solid rgba(82, 82, 91, 0.1);
+
+      .container-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container-content {
+        display: flex;
+        flex-direction: column;
+
+        .btn-primary {
+          width: 100%;
+
+
+          margin-top: 30px;
+
+          @media only screen and (min-width: 1100px) {
+            margin-top: auto;
+          }
+        }
+      }
+
+      @include media('>#{$media-576}') {
+        padding: 35;
+      }
+
+      @include media('>#{$media-992}') {
+        display: grid;
+        grid-template-columns: 1fr 462px;
+        column-gap: 50px;
+
+        padding: 43px 43px 30px;
+
+        .container-content {
+          padding-top: 20px;
+        }
+
+        &.revert {
+          grid-template-columns: 462px 1fr;
+
+          .container-image {
+            grid-column: 1/2;
+            grid-row: 1/2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-contato {
+  label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #18181B;
+
+    margin-bottom: 5px;
+  }
+
+  .form-row.form-group.flex-column.flex-sm-row {
+    margin-bottom: 20px;
+
+    row-gap: 5px;
+
+    input,
+    textarea,
+    option,
+    select {
+
+      &,
+      &::placeholder {
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        color: #2A3334;
+      }
+    }
+
+    input {
+      min-height: 48px;
+    }
+
+    textarea {
+      min-height: 144px;
+    }
+  }
+
+  .btn-group {
+    margin-top: 30px;
+    row-gap: 15px;
+  }
+
+  .form-row.form-group.flex-column.flex-sm-row,
+  .btn-group {
+    @media only screen and (min-width: 576px) {
+      row-gap: 0;
+      column-gap: 30px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      column-gap: 80px;
+    }
+  }
+
+
+}
