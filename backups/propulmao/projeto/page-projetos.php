@@ -14,10 +14,8 @@ function verifyIndex($index) {
 	return $result;
 }
 ?>
-<div>
-	Projetos
-	<section class="container  page-projetos">
-		<?php
+<section class="container  page-projetos">
+	<?php
 		// Check rows exists.
 		if (have_rows('projects')):
 			echo '<ul>';
@@ -30,38 +28,36 @@ function verifyIndex($index) {
 
 				$class = verifyIndex($index);
 				?>
-		<li class="<?php echo $class ?>">
-			<div class="container-content">
-				<h2>
-					<?php echo get_sub_field('project') ?>
-				</h2>
+	<li class="<?php echo $class ?>">
+		<div class="container-content">
+			<h2>
+				<?php echo get_sub_field('project') ?>
+			</h2>
 
-				<p>
-					<?php echo get_sub_field('project_text') ?>
-				</p>
+			<p>
+				<?php echo get_sub_field('project_text') ?>
+			</p>
 
-				<button class="btn-primary w-100 p-">
-					Veja Mais
-				</button>
-			</div>
+			<button class="btn-primary w-100 p-">
+				Veja Mais
+			</button>
+		</div>
 
-			<div class="container-image">
-				<img src="<?php echo get_sub_field('project_image') ?>" alt="ilustração">
-			</div>
-		</li>
-		<?php
+		<div class="container-image">
+			<img src="<?php echo get_sub_field('project_image') ?>" alt="ilustração">
+		</div>
+	</li>
+	<?php
 				// End loop.
 			endwhile;
 			echo '</ul>';
 			?>
-		<?php
+	<?php
 		// No value.
 		else:
 			// No rows found
 		endif;
 		?>
-	</section>
-
-</div>
+</section>
 
 <?php get_footer(); ?>

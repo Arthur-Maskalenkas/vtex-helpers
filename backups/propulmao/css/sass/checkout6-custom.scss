@@ -6,10 +6,18 @@ $media-768: 768px;
 $media-992: 992px;
 $media-1300: 1300px;
 
-
 @mixin resetBootstrap {
   .container {
     max-width: 1240px;
+  }
+
+  .bg-secondary {
+    background-color: #F8FAFC !important;
+  }
+
+  .border-secondary {
+    border: 1px solid darken(#F8FAFC, 10%) !important;
+    border-radius: 20px;
   }
 
   h2,
@@ -21,6 +29,16 @@ $media-1300: 1300px;
     padding: 0;
   }
 
+}
+
+@mixin reset {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 
@@ -94,6 +112,7 @@ body {
   @include configureButton();
   @include configureFont();
   @include configureImage();
+  @include reset();
 }
 
 
@@ -103,7 +122,8 @@ body {
 
 .page-fotos,
 .page-projetos,
-.page-contato {
+.page-contato,
+.page-entrevistas {
   @extend %pageDefaultStyles;
 
 
@@ -114,8 +134,6 @@ body {
     padding: 0;
 
     &.list-articles {
-      display: flex;
-      flex-direction: column;
       row-gap: 60px;
     }
   }
@@ -323,4 +341,87 @@ body {
   }
 
 
+}
+
+.page-entrevistas {
+
+  ul.list-entrevistas {
+    display: grid;
+    padding: 0;
+    row-gap: 50px;
+
+    align-items: center;
+    justify-content: center;
+
+    a.container-article {
+      padding: 20px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include media('>#{$media-768}') {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      justify-content: space-between;
+
+      a.container-article {
+        padding: 40px 30px;
+
+      }
+    }
+
+    @include media('>#{$media-992}') {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      a.container-article {
+        padding: 80px 40px 60px 40px;
+      }
+    }
+
+  }
+
+
+
+
+
+  h2 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #18181B;
+    margin-bottom: 10px;
+
+  }
+
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #777777;
+
+    margin-bottom: 25px;
+  }
+
+  .container-image {
+    position: relative;
+
+    &::after {
+      content: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M37.5 36.625V63.375C37.5 65.2917 38.375 66.75 40.125 67.75C41.875 68.75 43.5833 68.6667 45.25 67.5L66 54.25C67.5833 53.25 68.375 51.8333 68.375 50C68.375 48.1667 67.5833 46.75 66 45.75L45.25 32.5C43.5833 31.3333 41.875 31.25 40.125 32.25C38.375 33.25 37.5 34.7083 37.5 36.625ZM50 100C43.0833 100 36.5833 98.6867 30.5 96.06C24.4167 93.4367 19.125 89.875 14.625 85.375C10.125 80.875 6.56333 75.5833 3.94 69.5C1.31333 63.4167 0 56.9167 0 50C0 43.0833 1.31333 36.5833 3.94 30.5C6.56333 24.4167 10.125 19.125 14.625 14.625C19.125 10.125 24.4167 6.56167 30.5 3.935C36.5833 1.31167 43.0833 0 50 0C56.9167 0 63.4167 1.31167 69.5 3.935C75.5833 6.56167 80.875 10.125 85.375 14.625C89.875 19.125 93.4367 24.4167 96.06 30.5C98.6867 36.5833 100 43.0833 100 50C100 56.9167 98.6867 63.4167 96.06 69.5C93.4367 75.5833 89.875 80.875 85.375 85.375C80.875 89.875 75.5833 93.4367 69.5 96.06C63.4167 98.6867 56.9167 100 50 100Z' fill='%2342BDD9'/%3E%3C/svg%3E");
+      ;
+
+      width: 100px;
+      height: 100px;
+
+      display: flex;
+
+      bottom: 10px;
+
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+  }
 }
