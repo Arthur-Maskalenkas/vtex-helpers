@@ -37,24 +37,19 @@ get_header();
 				<span>Programa</span>
 			</div>
 		</div>
-
+		<?php echo get_sub_field('medical_specialtie') ?>
 		<div class="pp-about-us-image">
-			<img src="https://via.placeholder.com/500x500" alt="">
+			<img src="<?php echo get_field('about_us_image') ?>" alt="Banner Sobre Nós">
 		</div>
 		<div class="pp-about-us-summary">
 			<div>
-				<h5>Nossa História</h5>
-				<p>Presente em vários estados brasileiros, o programa PROPULMÃO é uma rede de médicos e profissionais de
-					saúde
-					focados em conscientizar, prevenir e tratar a população, fumante ou não, sobre o câncer de pulmão.
-					Todos
-					os
-					anos, o projeto realiza uma série de eventos em todo o Brasil, como palestras e consultorias
-					regionais,
-					para
-					interessados em parar de fumar e seus familiares e pessoas que queiram prevenir ou tratar a doença.
+				<h5>
+					<?php echo get_field('about_us_header') ?>
+				</h5>
+				<p>
+					<?php echo get_field('about_us_text') ?>
 				</p>
-				<a href="#" class="btn btn-primary">Leia mais sobre nosso projeto</a>
+				<a href="<?php echo get_field('about_us_href') ?>" class="btn btn-primary">Leia mais sobre nosso projeto</a>
 			</div>
 		</div>
 	</div>
@@ -79,69 +74,80 @@ get_header();
 	</div>
 </section>
 <section class="pp-who-make">
-	<?php
+	<div class="container">
+		<div class="pp-section-title">
+			<div class="pp-section-title-main">
+				<h2>QUEM <span>FAZ</span></h2>
+			</div>
+			<div class="pp-section-title-sub">
+				<h3>Conheça os</h3>
+				<span>Profissionais</span>
+			</div>
+		</div>
+		<?php
 	// Check rows exists.
 	if (have_rows('doctors')):
-		echo '<div class="pp-who-make-doctors">';
+		echo '<div class="pp-home-slider-doctors">';
 		// Loop through rows.
 		while (have_rows('doctors')):
 			the_row();
 			?>
+		<div>
 			<div>
-				<div>
-					<img src="<?php echo get_sub_field('doctor_img') ?>" alt="Foto de um Médico parceiro" />
-				</div>
-				<h5>
-					<?php echo get_sub_field('medical_specialtie') ?>
-				</h5>
-				<p>
-					<?php echo get_sub_field('doctor_name') ?>
-				</p>
-				<p>
-					<?php echo get_sub_field('doctor_workplace') ?>
-				</p>
+				<img src="<?php echo get_sub_field('doctor_img') ?>" alt="Foto de um Médico parceiro" />
 			</div>
+			<h5>
+				<?php echo get_sub_field('doctor_name') ?>
+			</h5>
+			<p>
+				<?php echo get_sub_field('medical_specialtie') ?>
+			</p>
+			<p>
+				<?php echo get_sub_field('doctor_workplace') ?>
+			</p>
+		</div>
 		<?php
 			// End loop.
 		endwhile;
 		echo '</div>';
 		?>
-	<?php
+		<?php
 		// No value.
 	else:
 		// No rows found
 	endif;
 	?>
 
-	<h4>Médicos parceiros:</h4>
+		<h4>Médicos parceiros:</h4>
 
-	<?php
+		<?php
 	// Check rows exists.
 	if (have_rows('doctors_partners')):
-		echo '<div class="pp-who-make-doctors partners">';
+	echo '<div class="pp-home-slider-doctors">';
 		// Loop through rows.
 		while (have_rows('doctors_partners')):
 			the_row();
 			?>
+		<div>
 			<div>
-				<div>
-					<img src="<?php echo get_sub_field('doctor_img') ?>" alt="Foto de um Médico parceiro" />
-				</div>
-				<h5>
-					<?php echo get_sub_field('doctor_name') ?>
-				</h5>
+				<img src="<?php echo get_sub_field('doctor_img') ?>" alt="Foto de um Médico parceiro" />
 			</div>
+			<h5>
+				<?php echo get_sub_field('doctor_name') ?>
+			</h5>
+		</div>
 		<?php
 			// End loop.
 		endwhile;
 		echo '</div>';
 		?>
-	<?php
+		<?php
 		// No value.
 	else:
 		// No rows found
 	endif;
 	?>
+	</div>
 
 </section>
 <section class="pp-about-cancer">
