@@ -32,11 +32,11 @@ function verifyIndex($index) {
 			<p>
 				<?php echo get_sub_field('project_text') ?>
 			</p>
-			<button class="btn-primary w-100 " onclick="calculateLines(<?php echo $index; ?>)" data-toggle="modal"
+			<button class="btn btn-primary w-100 " onclick="calculateLines(<?php echo $index; ?>)" data-toggle="modal"
 				data-target="<?php echo '#seemore' . $index; ?>">
 				Veja Mais
 			</button>
-			<div class="modal fade" id="<?php echo 'seemore' . $index; ?>" tabindex="-1" role="dialog"
+			<div class="modal pp-c-modal fade" id="<?php echo 'seemore' . $index; ?>" tabindex="-1" role="dialog"
 				aria-labelledby="seeMoreTitle" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered d-flex flex-column" role="document">
 
@@ -94,6 +94,7 @@ function verifyIndex($index) {
 	</div>
 	</footer>
 	</div>
+
 	</div>
 	</div>
 	<div class="container-image">

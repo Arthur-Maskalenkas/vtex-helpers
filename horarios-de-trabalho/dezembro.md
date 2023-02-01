@@ -32,10 +32,10 @@
 05/12/2022 - 13:01 - 15:00 - kopenhagen - menu header mobile 🟢
 
 **# 06/12/2022 - Kopenhagen**
-06/12/2022 - 09:00 - 09:30 - kopenhagen - corrigindo prs 🔴
+06/12/2022 - 09:00 - 09:30 - kopenhagen - corrigindo prs 🟢
 06/12/2022 - 09:30 - 12:00 - kopenhagen - minicart 🟢
 06/12/2022 - 13:00 - 14:15 - kopenhagen - minicart 🟢
-06/12/2022 - 14:15 - 15:30 - kopenhagen - auxiliando dev (fernanda) 🔴
+06/12/2022 - 14:15 - 15:30 - kopenhagen - auxiliando dev (fernanda) 🟢
 06/12/2022 - 15:30 - 17:30 - kopenhagen - minicart 🟢
 06/12/2022 - 17:30 - 18:05 - avanti - weekly setor 🟢
 
@@ -231,4 +231,13 @@
 16:20 - 17:50 - web salão - newsletter MD V1 🟢
 
 **# 27/01/2023** 
-11:00 - 11:30 - kopenhagen - daily
+09:07 - 11:00 - kopenhagen - homolog cl 🟢
+11:00 - 11:30 - kopenhagen - daily 🟢
+11:30 - 14:55 - kopenhagen - homolog cl 🟢
+16:05 - 18:00 - kopenhagen - homolog cl 🟢
+
+**# 30/01/2023** 
+09:00 - 11:00 - kopenhagen - homolog cl 🟢
+11:00 - 11:20 - kopenhagen - daily 🟢
+11:20 - 12:45 - weekly devs 🟢
+13:45 - xxx - homolog cl

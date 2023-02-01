@@ -10,23 +10,43 @@ get_header();
 
 ?>
 
-<section class="pp-hero">
-	<!-- Slider main container -->
-	<div class="swiper">
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper">
-			<!-- Slides -->
-			<div class="swiper-slide">Slide 1</div>
-			<div class="swiper-slide">Slide 2</div>
-			<div class="swiper-slide">Slide 3</div>
-			...
-		</div>
-		<!-- If we need pagination -->
-		<div class="swiper-pagination"></div>
-	</div>
+<section class="pp-page-home-section-main-banner w-100">
+	<?php
+			// Check rows exists.
+			if (have_rows('home_main_banners')) :
+				echo '<div class="pp-home-main-banner">';
+				// Loop through rows.
+				while (have_rows('home_main_banners')) :
+					the_row();
+			?>
+	<div class="pp-container-banner position-relative">
+		<img src="<?php echo get_sub_field('home_main_banner_image_src') ?>" class="w-100">
+		<div class="pp-container-texts position-absolute">
+			<h2>
+				<?php echo get_sub_field('home_main_banner_image_title') ?>
+			</h2>
+			<p>
+				<?php echo get_sub_field('home_main_banner_image_description') ?>
+			</p>
 
+			<a class="btn pp-btn-banner" href="<?php echo get_sub_field('home_main_banner_button_href') ?>">
+				<?php echo get_sub_field('home_main_banner_button_label') ?>
+			</a>
+		</div>
+	</div>
+	<?php
+				// End loop.
+				endwhile;
+				echo '</div>';
+				?>
+	<?php
+			// No value.
+			else :
+			// No rows found
+			endif;
+			?>
 </section>
-<section class="pp-about-us">
+<section class="pp-about-us pp-page-home-section-about-us">
 	<div class="container">
 		<div class="pp-section-title">
 			<div class="pp-section-title-main">
@@ -38,11 +58,11 @@ get_header();
 			</div>
 		</div>
 		<?php echo get_sub_field('medical_specialtie') ?>
-		<div class="pp-about-us-image">
-			<img src="<?php echo get_field('about_us_image') ?>" alt="Banner Sobre Nós">
-		</div>
-		<div class="pp-about-us-summary">
-			<div>
+		<div class="pp-container-content">
+			<div class="pp-container-image pp-c-container-image-effect-primary">
+				<img src="<?php echo get_field('about_us_image') ?>" />
+			</div>
+			<div class="pp-c-container-bg-secondary">
 				<h5>
 					<?php echo get_field('about_us_header') ?>
 				</h5>
@@ -54,23 +74,38 @@ get_header();
 		</div>
 	</div>
 </section>
-<section class="pp-truck">
-	<div section class="pp-truck-map">
-		<div>
-			<div>
-				icon
-				<h5>Onde estivemos</h5>
+<section class="container pp-truck pp-page-home-section-truck">
+	<div class="pp-container-content">
+		<img src="<?php echo get_template_directory_uri(); ?>/imgs/truck-image.png" class="pp-truck-image" />
+
+		<div class="pp-right-side">
+			<div class="pp-cards">
+
+				<button class="btn pp-card" data-toggle="modal" data-target="#truckOption1">
+					<img src="<?php echo get_template_directory_uri(); ?>/imgs/truck-card-1.svg" />
+					<p>
+						Onde<br /> estivemos
+					</p>
+				</button>
+
+				<button class="btn pp-card" data-toggle="modal" data-target="#truckOption2">
+					<img src="<?php echo get_template_directory_uri(); ?>/imgs/truck-card-2.svg" />
+					<p>
+						Onde<br /> estamos
+					</p>
+				</button>
+
+				<button class="btn pp-card" data-toggle="modal" data-target="#truckOption3">
+					<img src="<?php echo get_template_directory_uri(); ?>/imgs/truck-card-3.svg" />
+					<p>
+						Onde<br /> estaremos
+					</p>
+				</button>
 			</div>
-			<div>
-				icon
-				<h5>Onde estamos</h5>
-			</div>
-			<div>
-				icon
-				<h5>Onde estaremos</h5>
-			</div>
+			<a href="<?php echo get_field('truck_exam_link') ?>" class="btn btn-outline-light">
+				Agende seu Exame de Tomografia Gratuito
+			</a>
 		</div>
-		<a href="#" class="btn btn-primary">Agende seu Exame de Tomografia Gratuito </a>
 	</div>
 </section>
 <section class="pp-who-make">
@@ -193,5 +228,194 @@ get_header();
 	</div>
 
 </section>
+
+
+<div class="modal pp-modal-truck pp-c-modal fade" id="truckOption1" tabindex="-1" role="dialog"
+	aria-labelledby="truckOption1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered d-flex flex-column" role="document">
+
+		<header class="d-flex justify-content-end w-100">
+			<div class="pp-section-title">
+				<div class="pp-section-title-main">
+					<h2>ONDE <span>ESTIVEMOS</span></h2>
+				</div>
+			</div>
+
+			<button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+				<img src="<?php echo get_template_directory_uri(); ?>/imgs/modal-close.svg" />
+			</button>
+		</header>
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="bg-primary">
+					<tr>
+						<th scope="col">DATA</th>
+						<th scope="col">CIDADE</th>
+						<th scope="col">DETALHES</th>
+					</tr>
+				</thead>
+				<?php
+								// Check rows exists.
+								if (have_rows('truck_events_past')) :
+									echo '<tbody>';
+									// Loop through rows.
+									while (have_rows('truck_events_past')) :
+										the_row();
+								?>
+				<tr class="position-relative">
+					<th scope="row">
+						<a href="#" class="stretched-link">
+							<?php echo get_sub_field('truck_event_date') ?>
+						</a>
+					</th>
+					<td>
+						<?php echo get_sub_field('truck_event_city') ?>
+					</td>
+					<td>
+						<?php echo get_sub_field('truck_event_details') ?>
+					</td>
+				</tr>
+				<?php
+									// End loop.
+									endwhile;
+									echo '</tbody>';
+									?>
+				<?php
+								// No value.
+								else :
+								// No rows found
+								endif;
+								?>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="modal pp-modal-truck pp-c-modal fade" id="truckOption2" tabindex="-1" role="dialog"
+	aria-labelledby="truckOption2" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered d-flex flex-column" role="document">
+
+		<header class="d-flex justify-content-end w-100">
+			<div class="pp-section-title">
+				<div class="pp-section-title-main">
+					<h2>ONDE <span>ESTAMOS</span></h2>
+				</div>
+			</div>
+
+			<button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+				<img src="<?php echo get_template_directory_uri(); ?>/imgs/modal-close.svg" />
+			</button>
+		</header>
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="bg-primary">
+					<tr>
+						<th scope="col">DATA</th>
+						<th scope="col">CIDADE</th>
+						<th scope="col">HORA</th>
+						<th scope="col">DETALHES</th>
+					</tr>
+				</thead>
+				<?php
+								// Check rows exists.
+								if (have_rows('truck_events_now')) :
+									echo '<tbody>';
+									// Loop through rows.
+									while (have_rows('truck_events_now')) :
+										the_row();
+								?>
+				<tr class="position-relative">
+					<th scope="row">
+						<a href="#" class="stretched-link">
+							<?php echo get_sub_field('truck_event_date') ?>
+						</a>
+					</th>
+					<td>
+						<?php echo get_sub_field('truck_event_city') ?>
+					</td>
+					<td>
+						<?php echo get_sub_field('truck_event_hour') ?>
+					</td>
+					<td>
+						<?php echo get_sub_field('truck_event_details') ?>
+					</td>
+				</tr>
+				<?php
+									// End loop.
+									endwhile;
+									echo '</tbody>';
+									?>
+				<?php
+								// No value.
+								else :
+								// No rows found
+								endif;
+								?>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="modal pp-modal-truck pp-c-modal fade" id="truckOption3" tabindex="-1" role="dialog"
+	aria-labelledby="truckOption3" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered d-flex flex-column" role="document">
+
+		<header class="d-flex justify-content-end w-100">
+			<div class="pp-section-title">
+				<div class="pp-section-title-main">
+					<h2>ONDE <span>ESTAREMOS</span></h2>
+				</div>
+			</div>
+
+			<button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+				<img src="<?php echo get_template_directory_uri(); ?>/imgs/modal-close.svg" />
+			</button>
+		</header>
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="bg-primary">
+					<tr>
+						<th scope="col">DATA</th>
+						<th scope="col">CIDADE</th>
+						<th scope="col">DETALHES</th>
+					</tr>
+				</thead>
+				<?php
+								// Check rows exists.
+								if (have_rows('truck_events_future')) :
+									echo '<tbody>';
+									// Loop through rows.
+									while (have_rows('truck_events_future')) :
+										the_row();
+								?>
+				<tr class="position-relative">
+					<th scope="row">
+						<a href="#" class="stretched-link">
+							<?php echo get_sub_field('truck_event_date') ?>
+						</a>
+					</th>
+					<td>
+						<?php echo get_sub_field('truck_event_city') ?>
+					</td>
+
+					<td>
+						<?php echo get_sub_field('truck_event_details') ?>
+					</td>
+				</tr>
+				<?php
+									// End loop.
+									endwhile;
+									echo '</tbody>';
+									?>
+				<?php
+								// No value.
+								else :
+								// No rows found
+								endif;
+								?>
+			</table>
+		</div>
+	</div>
+</div>
 
 <?php get_footer(); ?>

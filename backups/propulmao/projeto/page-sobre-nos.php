@@ -10,13 +10,13 @@ get_header();
 
 ?>
 
-<section class="page-sobre-nos">
-	<div class="container-1">
-		<div class="container-image">
+<section class="pp-page-sobre-nos container">
+	<div class="pp-container-1">
+		<div class="pp-container-image pp-c-container-image-effect-primary">
 			<img src="<?php echo get_field('our_history_image') ?>" />
 		</div>
 
-		<div class="container-text">
+		<div class="pp-container-text pp-c-container-bg-secondary">
 			<h3>
 				<?php echo get_field('our_history_title') ?>
 			</h3>
@@ -26,16 +26,16 @@ get_header();
 		</div>
 	</div>
 
-	<div class="container-2">
+	<div class="pp-container-2">
 		<?php
 		// Check rows exists.
 		if (have_rows('our_cards')) :
-			echo '<ul class="list-cards">';
+			echo '<ul class="pp-list-cards">';
 			// Loop through rows.
 			while (have_rows('our_cards')) :
 				the_row();
 		?>
-		<li>
+		<li class="pp-c-container-bg-secondary">
 			<img src="<?php echo get_sub_field('our_card_image') ?>" alt="card" />
 			<h3>
 				<?php echo get_sub_field('our_card_title') ?>
