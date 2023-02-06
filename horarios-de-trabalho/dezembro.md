@@ -240,4 +240,35 @@
 09:00 - 11:00 - kopenhagen - homolog cl 🟢
 11:00 - 11:20 - kopenhagen - daily 🟢
 11:20 - 12:45 - weekly devs 🟢
-13:45 - xxx - homolog cl
+13:45 - 18:00 - kopenhagen - homolog cl
+
+**# 31/01/2023** 
+31/01/2023 - 10:00 - 12:24 - marabraz - app medidas 🔴
+31/01/2023 - 14:40 - 15:25 - marabraz - app medidas 🔴
+
+**# 01/02/2023** 
+09:40 - 14:10 - marabraz - garantia 🟢
+15:15 - 16:35 - boilerplate - auxiliando lucio 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 19:50 - marabraz - app medidas 🔴
+
+**# 02/02/2023** 
+09:01 - 12:20 - kopenhagen - homolog cl 🟢
+13:23 - 17:30 - kopenhagen - homolog cl 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 18:00 - kopenhagen - homolog cl 🟢
+
+**# 03/02/2023** 
+09:00 - 13:04 - kopenhagen - homolog cl 🟢
+14:03 - 17:15 - kopenhagen - homolog cl 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 18:00 - kopenhagen - homolog cl 🟢
+
+**# 06/02/2023** 
+06/02/2023 - 09:15 - 09:30 - aquario - daily 🔴
+06/02/2023 - 11:15 - 12:25 - weekly devs 🟢
+06/02/2023 - 13:30 - 15:30 - kopenhagen - homolog cl 🟢
+06/02/2023 - 15:30 - 16:40 - marabraz - daily 🟢
+06/02/2023 - 16:40 - 17:15 - kopenhagen - homolog cl 🟢
+06/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+06/02/2023 - 17:30 - 18:00 - weekly equipe 🟢
