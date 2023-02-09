@@ -272,3 +272,22 @@
 06/02/2023 - 16:40 - 17:15 - kopenhagen - homolog cl 🟢
 06/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 06/02/2023 - 17:30 - 18:00 - weekly equipe 🟢
+
+**# 07/02/2023** 
+09:00 - 09:40 - marabraz - garantia 🟢
+09:40 - 12:59 - kopenhagen - homolog cl 🟢
+14:04 - 17:15 - marabraz - garantia 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 19:59 - marabraz - garantia 🟢
+
+**# 08/02/2023**
+09:22 - 10:00 - café avanti
+11:30 - 12:29 - kopenhagen - homolog cl 🟢 - instabilidade vtex
+13:31 - 16:30 - kopenhagen - homolog cl 🟢
+16:30 - 17:15 - webfones - homolog cliente
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 18:20 - webfones - homolog cliente
+
+**# 09/02/2023** 
+09:02 - 13:00 - kopenhagen - homolog cl 🟢
+14:15 - marabraz - garantia
