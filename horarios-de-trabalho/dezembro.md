@@ -130,7 +130,7 @@
 06/01/2023 - 13:40 - 14:00 - sevenago - instalação app flags custom 🟢
 06/01/2023 - 14:00 - 14:20 - call com com lili - tudo de bicho 🔴
 06/01/2023 - 14:20 - 15:30 - sevenago - instalação app flags custom 🟢
-06/01/2023 - 15:30 - 17:00 - farmacia sao rafael - header ⚪
+06/01/2023 - 15:30 - 17:00 - farmacia sao rafael - header 🟢
 06/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
 
 **# 09/01/2023**
@@ -159,24 +159,24 @@
 **# 12/01/2023**
 12/01/2023 - 09:30 - 10:50 - kopenhagen - homolog cl 🟢 
 12/01/2023 - 10:50 - 11:30 - covabra - call regionalização 🟢
-12/01/2023 - 12:00 - 12:50 - kopenhagen - homolog cl 🟢
-12/01/2023 - 14:00 - 17:15 - kopenhagen - homolog cl 🟢
+12/01/2023 - 12:00 - 12:50 - kopenhagen - garantia 🟢
+12/01/2023 - 14:00 - 17:15 - kopenhagen - garantia 🟢
 12/01/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
-12/01/2023 - 17:30 - 18:00 - kopenhagen - homolog cl 🟢
+12/01/2023 - 17:30 - 18:00 - kopenhagen - garantia 🟢
 
 
 **# 13/01/2023**
-13/01/2023 - 09:07 - 12:58 - kopenhagen - homolog cl 🟢
-13/01/2023 - 13:58 - 15:15 - kopenhagen - homolog cl 🟢
+13/01/2023 - 09:07 - 12:58 - kopenhagen - garantia 🟢
+13/01/2023 - 13:58 - 15:15 - kopenhagen - garantia 🟢
 13/01/2023 - 15:15 - 15:30 - kopenhagen - daily 🟢
-13/01/2023 - 15:30 - 20:00 - kopenhagen - homolog cl 🟢
+13/01/2023 - 15:30 - 20:00 - kopenhagen - garantia 🟢
 
 **# 16/01/2023**
-16/01/2023 - 09:15 - 11:15 - kopenhagen - homolog cl 🟢
+16/01/2023 - 09:15 - 11:15 - kopenhagen - garantia 🟢
 16/01/2023 - 11:15 - 12:35 - weekly devs 🟢
-16/01/2023 - 13:35 - 17:15 - kopenhagen - homolog cl 🟢
+16/01/2023 - 13:35 - 17:15 - kopenhagen - garantia 🟢
 16/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
-16/01/2023 - 17:35 - 19:41 - kopenhagen - homolog cl 🟢
+16/01/2023 - 17:35 - 19:41 - kopenhagen - garantia 🟢
 
 **# 17/01/2023**
 17/01/2023 - 09:00 - 11:30 - boilerplate 🟢
@@ -184,7 +184,7 @@
 17/01/2023 - 12:00 - 12:57 - boilerplate 🟢
 17/01/2023 - 13:57 - 15:50 - marabraz - xxx 🟢
 17/01/2023 - 15:50 - 16:35 - leo 
-17/01/2023 - 16:40 - 17:05 - kopenhagen - homolog cl 🟢
+17/01/2023 - 16:40 - 17:05 - kopenhagen - garantia 🟢
 17/01/2023 - 17:15 - 17:50 - kopenhagen - daily 🟢
 17/01/2023 - 17:50 - 18:00 - marabraz - xxx 🟢
 
@@ -198,49 +198,49 @@
 
 **# 19/01/2023**
 19/01/2023 - 09:00 - 12:45 - websalao b2b - homolog cl 🟢
-19/01/2023 - 13:45 - 17:15 - kopenhagen - homolog cl 🟢
+19/01/2023 - 13:45 - 17:15 - kopenhagen - garantia 🟢
 19/01/2023 - 17:15 - 18:00 - kopenhagen - daily 🟢
-19/01/2023 - 18:00 - 18:30 - kopenhagen - homolog cl 🟢
+19/01/2023 - 18:00 - 18:30 - kopenhagen - garantia 🟢
 
 
 **# 23/01/2023**
 23/01/2023 - 09:00 - 09:45 - kopenhagen - daily 🟢
-23/01/2023 - 09:45 - 11:15 - kopenhagen - homolog cl 🟢
+23/01/2023 - 09:45 - 11:15 - kopenhagen - garantia 🟢
 23/01/2023 - 11:15 - 12:10 - weekly devs
-23/01/2023 - 12:10 - 13:08 - kopenhagen - homolog cl 🟢
-23/01/2023 - 14:08 - 17:15 - kopenhagen - homolog cl 🟢
+23/01/2023 - 12:10 - 13:08 - kopenhagen - garantia 🟢
+23/01/2023 - 14:08 - 17:15 - kopenhagen - garantia 🟢
 23/01/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
-23/01/2023 - 17:30 - 18:15 - kopenhagen - homolog cl 🟢
+23/01/2023 - 17:30 - 18:15 - kopenhagen - garantia 🟢
 
 **# 24/01/2023**
-09:10 - 12:22 - kopenhagen - homolog cl 🟢
-13:26 - 17:15 - kopenhagen - homolog cl 🟢  
+09:10 - 12:22 - kopenhagen - garantia 🟢
+13:26 - 17:15 - kopenhagen - garantia 🟢  
 17:15 - 17:35 - kopenhagen - daily 🟢
-17:35 - 18:04 - kopenhagen - homolog cl 🟢
+17:35 - 18:04 - kopenhagen - garantia 🟢
 
 **# 25/01/2023**
-09:21 - 12:00 - kopenhagen - homolog cl 🟢
-14:05 - 17:15 - kopenhagen - homolog cl 🟢
+09:21 - 12:00 - kopenhagen - garantia 🟢
+14:05 - 17:15 - kopenhagen - garantia 🟢
 17:15 - 17:35 - kopenhagen - daily 🟢
-17:35 - 18:00 - kopenhagen - homolog cl 🟢 
+17:35 - 18:00 - kopenhagen - garantia 🟢 
 
 **# 26/01/2023** 
-09:00 - 12:30 - kopenhagen - homolog cl 🟢 
+09:00 - 12:30 - kopenhagen - garantia 🟢 
 12:30 - 13:18 - avanti connection 🟢
 15:00 - 16:20 - avanti connection 🟢
 16:20 - 17:50 - web salão - newsletter MD V1 🟢
 
 **# 27/01/2023** 
-09:07 - 11:00 - kopenhagen - homolog cl 🟢
+09:07 - 11:00 - kopenhagen - garantia 🟢
 11:00 - 11:30 - kopenhagen - daily 🟢
-11:30 - 14:55 - kopenhagen - homolog cl 🟢
-16:05 - 18:00 - kopenhagen - homolog cl 🟢
+11:30 - 14:55 - kopenhagen - garantia 🟢
+16:05 - 18:00 - kopenhagen - garantia 🟢
 
 **# 30/01/2023** 
-09:00 - 11:00 - kopenhagen - homolog cl 🟢
+09:00 - 11:00 - kopenhagen - garantia 🟢
 11:00 - 11:20 - kopenhagen - daily 🟢
 11:20 - 12:45 - weekly devs 🟢
-13:45 - 18:00 - kopenhagen - homolog cl
+13:45 - 18:00 - kopenhagen - garantia 🟢
 
 **# 31/01/2023** 
 31/01/2023 - 10:00 - 12:24 - marabraz - app medidas 🔴
@@ -253,41 +253,87 @@
 17:30 - 19:50 - marabraz - app medidas 🔴
 
 **# 02/02/2023** 
-09:01 - 12:20 - kopenhagen - homolog cl 🟢
-13:23 - 17:30 - kopenhagen - homolog cl 🟢
+09:01 - 12:20 - kopenhagen - garantia 🟢
+13:23 - 17:30 - kopenhagen - garantia 🟢
 17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 18:00 - kopenhagen - homolog cl 🟢
+17:30 - 18:00 - kopenhagen - garantia 🟢
 
 **# 03/02/2023** 
-09:00 - 13:04 - kopenhagen - homolog cl 🟢
-14:03 - 17:15 - kopenhagen - homolog cl 🟢
+09:00 - 13:04 - kopenhagen - garantia 🟢
+14:03 - 17:15 - kopenhagen - garantia 🟢
 17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 18:00 - kopenhagen - homolog cl 🟢
+17:30 - 18:00 - kopenhagen - garantia 🟢
 
 **# 06/02/2023** 
 06/02/2023 - 09:15 - 09:30 - aquario - daily 🔴
 06/02/2023 - 11:15 - 12:25 - weekly devs 🟢
-06/02/2023 - 13:30 - 15:30 - kopenhagen - homolog cl 🟢
+06/02/2023 - 13:30 - 15:30 - kopenhagen - garantia 🟠
 06/02/2023 - 15:30 - 16:40 - marabraz - daily 🟢
-06/02/2023 - 16:40 - 17:15 - kopenhagen - homolog cl 🟢
+06/02/2023 - 16:40 - 17:15 - kopenhagen - garantia 🟠
 06/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 06/02/2023 - 17:30 - 18:00 - weekly equipe 🟢
 
 **# 07/02/2023** 
 09:00 - 09:40 - marabraz - garantia 🟢
-09:40 - 12:59 - kopenhagen - homolog cl 🟢
+09:40 - 12:59 - kopenhagen - garantia 🟠
 14:04 - 17:15 - marabraz - garantia 🟢
 17:15 - 17:30 - kopenhagen - daily 🟢
 17:30 - 19:59 - marabraz - garantia 🟢
 
 **# 08/02/2023**
 09:22 - 10:00 - café avanti
-11:30 - 12:29 - kopenhagen - homolog cl 🟢 - instabilidade vtex
-13:31 - 16:30 - kopenhagen - homolog cl 🟢
+11:30 - 12:29 - kopenhagen - garantia 🟠 - instabilidade vtex
+13:31 - 16:30 - kopenhagen - garantia 🟠
 16:30 - 17:15 - webfones - homolog cliente
 17:15 - 17:30 - kopenhagen - daily 🟢
 17:30 - 18:20 - webfones - homolog cliente
 
 **# 09/02/2023** 
-09:02 - 13:00 - kopenhagen - homolog cl 🟢
-14:15 - marabraz - garantia
+09:02 - 13:00 - kopenhagen - garantia 🟠
+14:20 - 15:20 - marabraz - garantia 🟢
+15:20 - 15:50 - mundo animal - sku selector - auxiliando higor
+caiu net
+16:30 - 16:40 - webfones - homolog cl 🟢
+17:20 - 17:30 - kopenhagen - daily 🟢
+18:00 - 20:00 - marabraz - garantia 🟢
+
+**# 10/02/2023** 
+09:10 - 13:00 - kopenhagen - garantia
+14:00 - 17:15 - kopenhagen - garantia
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 18:10 - kopenhagen - garantia
+
+09:20 - 11:15 - kopenhagen - garantia
+11:15 - 12:05 - weekly dev
+12:05 - 12:20 - kopenhagen - garantia
+13:20 - 16:30 - kopenhagen - garantia
+16:30 - 16:50 - cacau brasil - start replicação entregaveis
+16:50 - 17:15 - kopenhagen - garantia
+17:15 - 17:30 - kopenhagen - daily
+17:30 - 18:10 - kopenhagen - garantia
+
+13/02
+09:13 - 12:21 - 
+13:21 - 17:15 -
+17:15 - 17:30 - kopenhagen - daily
+17:30 - 19:59 - marabraz - garantia
+
+14/02
+09:29 - 13:01 -  
+14:01 - 17:15 -
+17:15 - 17:30 - kopenhagen - daily
+17:30 - 18:32 -
+
+15/02
+09:15 - 12:02 
+13:02 - 17:15 -
+17:15 - 17:30 - kopenhagen - daily
+17:30 - 18:15 - 
+
+
+
+16/02/2023
+10:00 - 12:30 - marabraz - garantia
+13:30 - 15:00 - marabraz - garantia
+15:00 - 17:15 - kopenhagen - garantia
+17:15 - 17:40 - kopenhagen - daily
