@@ -6,9 +6,14 @@ contexto de ações
 show context actions
 ctrl + e
 
-popup menus
+menu de operações git
 vsf oprations popup
+ctrl + \
+
+menu de inserir - markdown insere tabela, imagem e etc.
+vai estar no caminho markdown/insert
 ctrl + w
+
 
 documentação
 quick documentation
