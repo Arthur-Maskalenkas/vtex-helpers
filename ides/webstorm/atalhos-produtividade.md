@@ -1,3 +1,16 @@
+[ ] implementar debug de teste
+[ ] implementar replace ( ctr + r)
+[ ] redefinir as keys
+[ ] verificar se existe a maneira de editar via json
+
+refatorar trecho selecionado
+refactor this
+ctrl + r
+
+colocar um wrapper no trecho selecionado
+sorrund with
+ctrl + shift + \
+
 selecionar todo o bracket
 extend selection
 ctrl + d
@@ -22,3 +35,4 @@ ctrl + q
 remover tag e manter filho
 remove tag
 ctrl + shift + x
+
