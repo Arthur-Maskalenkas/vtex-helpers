@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67c5dae-80cf-4785-b217-4a93ff503755" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ides/phpstorm/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ides/phpstorm/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ides/phpstorm/img_10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ides/phpstorm/img_11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ides/phpstorm/img_12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ides/phpstorm/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ides/phpstorm/img_9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ides/phpstorm/local-flywheel-debug.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/flag-custom-new/mocks-locais/mock-search-flag/tests/remap-schema/remap-schema.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backups/flag-custom-new/mocks-locais/mock-search-flag/tests/remap-schema/remap-schema.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/phpstorm/settings.zip" beforeDir="false" afterPath="$PROJECT_DIR$/backups/phpstorm/settings.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ides/webstorm/atalhos-produtividade.md" beforeDir="false" afterPath="$PROJECT_DIR$/ides/webstorm/atalhos-produtividade.md" afterDir="false" />
-    </list>
+    <list default="true" id="e67c5dae-80cf-4785-b217-4a93ff503755" name="Changes" comment="dsadsadsa" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,11 +49,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676864112535</updated>
-      <workItem from="1676864114039" duration="2526000" />
+      <workItem from="1676864114039" duration="2775000" />
     </task>
+    <task id="LOCAL-00001" summary="dsadsadsa">
+      <created>1676866922476</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676866922476</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dsadsadsa" />
+    <option name="LAST_COMMIT_MESSAGE" value="dsadsadsa" />
   </component>
 </project>

@@ -24,10 +24,12 @@ refactor this
 menu de inserir - markdown insere tabela, imagem e etc.
 vai estar no caminho markdown/insert
 
+
 ---
 ## popups de outras coisas
 documentação - ctrl + shift + q
 menu de operações git - ctrl + shift  + w
+
 
 ## popup de manipulação de codigo
 colocar um wrapper no trecho selecionado - shift + \
@@ -41,4 +43,16 @@ remover tag e manter filho - ctrl + shift + \
 ## seleção
 selecionar todo o bracket - ctrl + shift + a
 
+## inspecionar usos e ir até codigos
 
+ver historico de copiar - default
+ctrl + shift + insert
+
+show usage
+shift + w
+
+quick definition
+shift + q
+
+go to declaration or usages
+sgift + e
