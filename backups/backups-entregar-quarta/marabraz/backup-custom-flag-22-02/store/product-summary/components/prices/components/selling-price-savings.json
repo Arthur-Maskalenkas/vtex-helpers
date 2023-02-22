@@ -1,0 +1,30 @@
+{
+  "flex-layout.row#product-summary-selling-price-savings": {
+    "title": "Container Preço De Venda E Economia",
+    "props": {
+      "preserveLayoutOnMobile": true,
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true,
+      "blockClass": "container__selling-price-savings"
+    },
+    "children": [
+      "product-selling-price#product-summary"
+    ]
+  },
+
+  "product-selling-price#product-summary": {
+    "props": {
+      "blockClass": "container__selling-price"
+    }
+  },
+  "product-price-savings#product-summary": {
+    "title": "Flag de Desconto",
+    "props": {
+      "blockClass": "container__price-savings",
+      "markers": [
+        "discount"
+      ],
+      "message": "-{savingsPercentage}"
+    }
+  }
+}

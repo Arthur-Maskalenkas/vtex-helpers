@@ -1,0 +1,8 @@
+{
+  "product-installments#product-summary": {
+    "title": "Container Parcelas",
+    "props": {
+      "blockClass": "container__installments"
+    }
+  }
+}

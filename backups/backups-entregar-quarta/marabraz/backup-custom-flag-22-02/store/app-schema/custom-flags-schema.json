@@ -1,0 +1,600 @@
+{
+  "global-context-1": {
+    "props": {
+      "schemaAppFlagCustom": [
+        {
+          "__editorItemTitle": "Container flags",
+          "quadrantTopRight": [
+            {
+              "__editorItemTitle": "Quadrante - Direita",
+              "_screen_config_position": [ ],
+              "collection": [
+                {
+                  "__editorItemTitle": "Conteúdo Padrão 1",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 1",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão 2",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 2",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão 3",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 3",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão 4",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 4",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "teste 1 - id 1",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ],
+                      "linksByPromotionDiscount": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": "20% de desconto"
+                        }
+                      ],
+                      "linksByCollection": [
+                        {
+                          "__editorItemTitle": "Composição",
+                          "value": 1233
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "teste 1 - id 1",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "quadrantTopLeft": [
+            {
+              "__editorItemTitle": "Quadrante - Esquerda",
+              "_screen_config_position": [ ],
+              "collection": [
+                {
+                  "__editorItemTitle": "list price",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "listPrice=> {listPrice}",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "selling price",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "sellingPrice=> sellingPrice",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "discount value",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "discount => {discountInValue}",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "porcentagem",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "porcentagem => discountInPercentage",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "auto",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "quadrantBottom": [
+            {
+              "__editorItemTitle": "Quadrante - Inferior",
+              "_screen_config_position": [
+                {
+                  "__editorItemTitle": "Configurações",
+                  "horizontalDistance": "0px",
+                  "verticalDistance": "0px",
+                  "positionFlow": "leftToRight"
+                }
+              ],
+              "collection": [
+                {
+                  "__editorItemTitle": "Conteúdo Padrão 1",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 1",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "widthAllLine",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão 2",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 2",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "widthHalfLine",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão 3",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 3",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "widthHalfLine",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão 4",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 4",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "widthOneThird",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo padrão",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ],
+                      "linksByPromotionDiscount": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": "20% de desconto"
+                        }
+                      ],
+                      "linksByCollection": [
+                        {
+                          "__editorItemTitle": "Composição",
+                          "value": 1233312
+                        }
+                      ],
+                      "linksByProduct": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 26
+                        }
+                      ],
+                      "linksByBrand": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 123312
+                        }
+                      ],
+                      "linksBySpecification": [
+                        {
+                          "__editorItemTitle": "Composição",
+                          "name": "123dasdsa",
+                          "value": "123321312"
+                        }
+                      ],
+                      "linksByVariation": [
+                        {
+                          "__editorItemTitle": "Composição",
+                          "name": "dasdsa",
+                          "value": "123dsadsa321"
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "Generico 5",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "widthOneThird",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "generico 6",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "widthOneThird",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "generico 7",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "140px",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "__editorItemTitle": "Conteúdo Padrão",
+                  "isActive": true,
+                  "priority": "0",
+                  "_screen_config_links": [
+                    {
+                      "linksByCategory": [
+                        {
+                          "__editorItemTitle": "Item",
+                          "value": 55
+                        }
+                      ]
+                    }
+                  ],
+                  "typeContent": "createContent",
+                  "items": [
+                    {
+                      "text": "generico 8",
+                      "fontWeight": "400",
+                      "fontSize": "12px",
+                      "color": "#FFFFFF",
+                      "backgroundColor": "#000000",
+                      "commonPropsBetweenContentAndImage": {
+                        "width": "widthRestOfLine",
+                        "height": "auto"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "quadrantHorizontal": [
+            {
+              "__editorItemTitle": "Horizontal",
+              "_screen_config_position": [
+                {
+                  "__editorItemTitle": "Configurações",
+                  "horizontalDistance": "0px",
+                  "verticalDistance": "0px"
+                }
+              ],
+              "collection": [ ]
+            }
+          ]
+        }
+      ]
+
+    }
+
+  }
+}

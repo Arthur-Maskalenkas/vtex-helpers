@@ -1,0 +1,15 @@
+{
+  "flex-layout.row#general-buy-button": {
+    "title": "Buy Button",
+    "props": {
+      "blockClass": "button--primary",
+      "preserveLayoutOnMobile": true,
+      "preventHorizontalStretch": false,
+      "preventVerticalStretch": true
+    },
+    "children": [
+      "add-to-cart-button",
+      "modal-trigger#quickview"
+    ]
+  }
+}

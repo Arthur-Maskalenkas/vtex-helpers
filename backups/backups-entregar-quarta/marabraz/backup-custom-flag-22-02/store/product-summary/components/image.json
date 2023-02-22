@@ -1,0 +1,21 @@
+{
+  "stack-layout#prodsum": {
+    "title": "Container Imagem Produto",
+    "props": {
+      "blockClass": "container_debug"
+    },
+    "children": [
+      "product-summary-image-custom#product-summary",
+      "app-render-flags-avanti",
+      "app-custom-debugger"
+    ]
+  },
+
+  "product-summary-image-custom#product-summary": {
+    "props": {
+      "showBadge": false,
+      "aspectRatio": "1:1",
+      "maxHeight": 300
+    }
+  }
+}

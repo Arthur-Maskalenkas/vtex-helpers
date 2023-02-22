@@ -1,0 +1,13 @@
+{
+  "flex-layout.col#product-summary-rating": {
+    "title": "Container Avaliações Do Produto",
+    "props": {
+      "blockClass": "container__rating",
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true
+    },
+    "children": [
+      "product-rating-inline"
+    ]
+  }
+}
