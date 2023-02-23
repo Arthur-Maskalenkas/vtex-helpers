@@ -206,7 +206,7 @@
 **# 23/01/2023**
 23/01/2023 - 09:00 - 09:45 - kopenhagen - daily 🟢
 23/01/2023 - 09:45 - 11:15 - kopenhagen - garantia 🟢
-23/01/2023 - 11:15 - 12:10 - weekly devs
+23/01/2023 - 11:15 - 12:10 - weekly devs 🟢
 23/01/2023 - 12:10 - 13:08 - kopenhagen - garantia 🟢
 23/01/2023 - 14:08 - 17:15 - kopenhagen - garantia 🟢
 23/01/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
@@ -243,14 +243,14 @@
 13:45 - 18:00 - kopenhagen - garantia 🟢
 
 **# 31/01/2023** 
-31/01/2023 - 10:00 - 12:24 - marabraz - app medidas 🔴
-31/01/2023 - 14:40 - 15:25 - marabraz - app medidas 🔴
+31/01/2023 - 10:00 - 12:24 - marabraz - app medidas 🟢
+31/01/2023 - 14:40 - 15:25 - marabraz - app medidas 🟢
 
 **# 01/02/2023** 
 09:40 - 14:10 - marabraz - garantia 🟢
 15:15 - 16:35 - boilerplate - auxiliando lucio 🟢
 17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 19:50 - marabraz - app medidas 🔴
+17:30 - 19:50 - marabraz - app medidas 🟢
 
 **# 02/02/2023** 
 09:01 - 12:20 - kopenhagen - garantia 🟢
@@ -267,73 +267,81 @@
 **# 06/02/2023** 
 06/02/2023 - 09:15 - 09:30 - aquario - daily 🔴
 06/02/2023 - 11:15 - 12:25 - weekly devs 🟢
-06/02/2023 - 13:30 - 15:30 - kopenhagen - garantia 🟠
+06/02/2023 - 13:30 - 15:30 - kopenhagen - garantia 🟢
 06/02/2023 - 15:30 - 16:40 - marabraz - daily 🟢
-06/02/2023 - 16:40 - 17:15 - kopenhagen - garantia 🟠
+06/02/2023 - 16:40 - 17:15 - kopenhagen - garantia 🟢
 06/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
-06/02/2023 - 17:30 - 18:00 - weekly equipe 🟢
+06/02/2023 - 17:30 - 18:00 - weekly setor 🟢
 
 **# 07/02/2023** 
 09:00 - 09:40 - marabraz - garantia 🟢
-09:40 - 12:59 - kopenhagen - garantia 🟠
+09:40 - 12:59 - kopenhagen - garantia 🟢
 14:04 - 17:15 - marabraz - garantia 🟢
 17:15 - 17:30 - kopenhagen - daily 🟢
 17:30 - 19:59 - marabraz - garantia 🟢
 
 **# 08/02/2023**
 09:22 - 10:00 - café avanti
-11:30 - 12:29 - kopenhagen - garantia 🟠 - instabilidade vtex
-13:31 - 16:30 - kopenhagen - garantia 🟠
-16:30 - 17:15 - webfones - homolog cliente
+11:30 - 12:29 - kopenhagen - garantia 🟢
+13:31 - 16:30 - kopenhagen - garantia 🟢
+16:30 - 17:15 - webfones - homolog cliente 🟢
 17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 18:20 - webfones - homolog cliente
+17:30 - 18:20 - webfones - homolog cliente 🟢
 
 **# 09/02/2023** 
-09:02 - 13:00 - kopenhagen - garantia 🟠
+09:02 - 13:00 - kopenhagen - garantia 🟢
 14:20 - 15:20 - marabraz - garantia 🟢
-15:20 - 15:50 - mundo animal - sku selector - auxiliando higor
 caiu net
 16:30 - 16:40 - webfones - homolog cl 🟢
 17:20 - 17:30 - kopenhagen - daily 🟢
 18:00 - 20:00 - marabraz - garantia 🟢
 
-**# 10/02/2023** 
-09:10 - 13:00 - kopenhagen - garantia
-14:00 - 17:15 - kopenhagen - garantia
-17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 18:10 - kopenhagen - garantia
+**# 10/02/2023**
+10/02/2023 - 09:20 - 12:20 - kopenhagen - garantia 🟢
+10/02/2023 - 13:20 - 16:30 - kopenhagen - garantia 🟢
+10/02/2023 - 16:30 - 16:50 - cacau brasil - start replicação 🟡
+10/02/2023 - 16:50 - 17:15 - kopenhagen - garantia 🟢
+10/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+10/02/2023 - 17:30 - 18:10 - kopenhagen - garantia 🟢
 
-09:20 - 11:15 - kopenhagen - garantia
-11:15 - 12:05 - weekly dev
-12:05 - 12:20 - kopenhagen - garantia
-13:20 - 16:30 - kopenhagen - garantia
-16:30 - 16:50 - cacau brasil - start replicação entregaveis
-16:50 - 17:15 - kopenhagen - garantia
-17:15 - 17:30 - kopenhagen - daily
-17:30 - 18:10 - kopenhagen - garantia
+**# 13/02/2023**
+13/02/2023 - 09:13 - 11:15 - kopenhagen - garantia 🟢
+13/02/2023 - 11:15 - 12:20 - weekly dev 🟢
+13/02/2023 - 13:21 - 17:15 - kopenhagen - garantia 🟢
+13/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+13/02/2023 - 17:30 - 18:00 - weekly setor 🟢
+13/02/2023 - 18:00 - 19:59 - marabraz - app menu mobile custom 🟡
 
-13/02
-09:13 - 12:21 - 
-13:21 - 17:15 -
-17:15 - 17:30 - kopenhagen - daily
-17:30 - 19:59 - marabraz - garantia
+**# #14/0/2023**
+14/02/2023 - 09:29 - 13:01 - kopenhagen - garantia 🟢 
+14/02/2023 - 14:01 - 15:00 - kopenhagen - garantia 🟢 
+14/02/2023 - 15:00 - 17:15 - marabraz - app menu mobile custom 🟡 
+14/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+14/02/2023 - 17:30 - 18:32 - marabraz - app menu mobile custom 🟡
 
-14/02
-09:29 - 13:01 -  
-14:01 - 17:15 -
-17:15 - 17:30 - kopenhagen - daily
-17:30 - 18:32 -
+**# #15/0/2023**
+15/02/2023 - 10:15 - 12:02 - kopenhagen - garantia 🟢 
+15/02/2023 - 13:02 - 17:15 - kopenhagen - app shipping custom 🟡 
+15/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+15/02/2023 - 17:30 - 18:15 - kopenhagen - app shipping custom 🟡 
 
-15/02
-09:15 - 12:02 
-13:02 - 17:15 -
-17:15 - 17:30 - kopenhagen - daily
-17:30 - 18:15 - 
+**# #16/0/2023**
+16/02/2023 - 10:00 - 12:30 - marabraz - garantia 🟢
+16/02/2023 - 13:30 - 15:00 - marabraz - garantia 🟢
+16/02/2023 - 15:00 - 17:15 - kopenhagen - garantia 🟢
+16/02/2023 - 17:15 - 17:40 - kopenhagen - daily 🟢
+16/02/2023 - 17:40 - 19:00 - marabraz - garantia 🟢
 
+**# 17/02/2023**
+17/02/2023 - 09:16 - 11:26 - kopenhagen - garantia 🟢
+17/02/2023 - 11:26 - 12:58 - marabraz - garantia 🟢
+17/02/2023 - 14:03 - 17:15 - entregavel - contador de ofertas 🟡
+17/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+17/02/2023 - 17:30 - 18:17 - entregavel - contador de ofertas 🟡
 
-
-16/02/2023
-10:00 - 12:30 - marabraz - garantia
-13:30 - 15:00 - marabraz - garantia
-15:00 - 17:15 - kopenhagen - garantia
-17:15 - 17:40 - kopenhagen - daily
+**# 22/02/2023**
+22/02/2023 - 09:00 - 12:41 - marabraz - garantia 🟢
+22/02/2023 - 13:46 - 16:00 - marabraz - garantia 🟢
+22/02/2023 - 16:00 - 17:15 - entregavel - buy box 🟡
+22/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+22/02/2023 - 17:30 - 18:45 - marabraz - garantia 🟢
