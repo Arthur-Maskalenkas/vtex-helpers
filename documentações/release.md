@@ -29,6 +29,8 @@
 2. workspace master
 3. branch master
 
+### caso seja loja com cms no ar, fazer release no workspace de dev (exemplo, homologavanti, ou seja, não precisa criar um novo workspace) e não rodar vtex promote ao final ja que não vai ter nada em produção
+
 >## Depois de se certificar, fazer o seguinte:
 
 1. vtex use wpmajor –production - cria um workspace de produção
