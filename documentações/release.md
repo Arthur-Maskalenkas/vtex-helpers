@@ -24,12 +24,16 @@
 
 # Fazendo update de major
 
+(8 x 19) = 152
+
+8 x 17 = 136
+
 >## Antes de tudo, se certificar que:
 1. vtex.admin-graphql-ide@3.x está instalado na master
 2. workspace master
 3. branch master
 
-### caso seja loja com cms no ar, fazer release no workspace de dev (exemplo, homologavanti, ou seja, não precisa criar um novo workspace) e não rodar vtex promote ao final ja que não vai ter nada em produção
+# IMPORTANTE - caso seja loja com cms no ar, fazer release no workspace de dev (exemplo, homologavanti, ou seja, não precisa criar um novo workspace) e não rodar vtex promote ao final ja que não vai ter nada em produção
 
 >## Depois de se certificar, fazer o seguinte:
 
@@ -195,3 +199,14 @@ depois:
 2. /store-theme - vtex setup
 3. /avanti-general-middleware - tente instalar novamente o app
 ```
+
+
+
+marabraz: 
+* app menu mobile custom | 13/02 - 14/02 | 03:15 
+* entregavel Vitrine com contagem regressiva | 17/02 | 04:00
+* entregavel app Buybox para venda de marketplace in | 22/02 | 01:15
+
+kopenhagen:
+* app shipping custom | 15/02 | 04:30
+

@@ -1,0 +1,142 @@
+{
+  "brandId": 2000000,
+  "categoryId": "54",
+  "productId": "26",
+  "listOfCollections": [
+    {
+      "id": "139",
+      "name": "Sale",
+      "__typename": "ClusterHighlight"
+    },
+    {
+      "id": "142",
+      "name": "Novidade",
+      "__typename": "ClusterHighlight"
+    },
+    {
+      "id": "143",
+      "name": "Inovação",
+      "__typename": "ClusterHighlight"
+    },
+    {
+      "id": "147",
+      "name": "Produtos Kits",
+      "__typename": "ClusterHighlight"
+    }
+  ],
+  "listOfVariations": [
+    {
+      "name": "Cor",
+      "values": [
+        "Vermelho"
+      ],
+      "__typename": "Property"
+    },
+    {
+      "name": "Tamanho",
+      "values": [
+        "P"
+      ],
+      "__typename": "Property"
+    },
+    {
+      "name": "activeSubscriptions",
+      "values": [
+        "assinatura2"
+      ],
+      "__typename": "Property"
+    }
+  ],
+  "listOfProductFields": [
+    {
+      "name": "Voltagem",
+      "originalName": "Voltagem",
+      "values": [
+        "220"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "Porte",
+      "originalName": "Porte",
+      "values": [
+        "Médio"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "Indicação",
+      "originalName": "Indicação",
+      "values": [
+        "Com queda"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "Capacidade",
+      "originalName": "Capacidade",
+      "values": [
+        "128GB"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "Composição",
+      "originalName": "Composição",
+      "values": [
+        "100% Poliuretano"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "Forro",
+      "originalName": "Forro",
+      "values": [
+        "100% Poliéster"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "Indicação de uso",
+      "originalName": "Indicação de uso",
+      "values": [
+        "uma indicação de uso teste"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "utilizado em",
+      "originalName": "utilizado em",
+      "values": [
+        "praia",
+        "hótéís e centrõS",
+        "viagens"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "Cor",
+      "originalName": "Cor",
+      "values": [
+        "Vermelho"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "Tamanho",
+      "originalName": "Tamanho",
+      "values": [
+        "P"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    },
+    {
+      "name": "sellerId",
+      "originalName": "sellerId",
+      "values": [
+        "1"
+      ],
+      "__typename": "SpecificationGroupProperty"
+    }
+  ]
+}

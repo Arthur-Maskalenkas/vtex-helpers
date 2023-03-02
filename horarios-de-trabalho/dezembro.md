@@ -1,3 +1,11 @@
+^(?:(?![🟡🟢#]).)*kopenhagen(?:(?![🟡🟢#]).)*$
+^ - âncora que casa o início da linha.
+(?: - início de um grupo não-capturador.
+(?![🟡🟢#]) - negative lookahead que verifica se o próximo caractere não é 🟡, 🟢 ou #.
+. - casa qualquer caractere.
+)* - fecha o grupo não-capturador e repete zero ou mais vezes.
+
+
 **# 29/11/2022 - Kopenhagen**
 29/11/2022 - 09:02 - 11:15 - kopenhagen - entregavel header mobile 🟢
 29/11/2022 - 11:15 - 12:00 - avanti - weekly dev 🟢
@@ -15,7 +23,7 @@
 01/12/2022 - 09:05 - 10:40 - kopenahnge - menu header desktop 🟢
 01/12/2022 - 10:40 - 12:35 - marabraz - homolog cliente 🟢
 01/12/2022 - 13:35 - 14:30: - marabraz - homolog cliente 🟢
-01/12/2022 - 14:30 - 14:45: - kopenahnge - call aleatoria
+01/12/2022 - 14:30 - 14:45: - kopenahnge - call aleatoria 🟢
 01/12/2022 - 14:45 - 15:10 - marabraz - homolog cliente 🟢
 01/12/2022 - 15:10 - 15:40 - kopenahnge - menu header desktop 🟢  
 01/12/2022 - 15:40 - 16:15 - marabraz - homolog cliente 🟢  
@@ -43,7 +51,7 @@
 07/12/2022 - 09:00 - 09:50 - avanti - café 🟢
 07/12/2022 - 09:50 - 10:30 - kopenhagen - revisão de projeto 🟢
 07/12/2022 - 10:30 - 10:50 - kopenhagen - daily 🟢
-07/12/2022 - 11:00 - 12:22 - casa do tenista - levantamento de requisitos ⚪
+07/12/2022 - 11:00 - 12:22 - casa do tenista - levantamento de requisitos 🟢
 07/12/2022 - 12:22 - 12:55 - kopenhagen - revisão de projeto 🟢
 07/12/2022 - 14:00 - 14:20 - kopenhagen -  menu header mobile 🟢
 07/12/2022 - 14:30 - 17:50 - marabraz - instalação de ambiente qa 🟢
@@ -53,7 +61,7 @@
 08/12/2022 - 11:00 - 11:15 - kopenhagen - daily 🟢
 08/12/2022 - 12:00 - 12:50 - marabraz - evolução app flag 🟢
 08/12/2022 - 14:00 - 14:30 - marabraz - evolução app flag 🟢
-08/12/2022 - 14:30 - 15:00 - casa do tenista - levantamento de requisitos ⚪
+08/12/2022 - 14:30 - 15:00 - casa do tenista - levantamento de requisitos 🟢
 08/12/2022 - 15:00 - 19:40 - marabraz - evolução app flag 🟢
 
 **# 09/12/2022 - Kopenhagen - marabraz**
@@ -79,15 +87,15 @@
 13/12/2022 - 16:55 - 19:00 - marabraz - guia de compras  🟢
 
 **# 14/12/2022 - Kopenhagen - marabraz**
-14/12/2022 - 09:00 - 10:30 - café avanti
+14/12/2022 - 09:00 - 10:30 - café avanti 🟢
 14/12/2022 - 10:30 - 12:52 - marabraz - guia de compras 🟢 
 14/12/2022 - 13:52 - 16:05 - marabraz - guia de compras  🟢
-14/12/2022 - 16:30 - 16:50 - Serallê - Alinhamento interno suporte e projeto 🔴
+14/12/2022 - 16:30 - 16:50 - Serallê - Alinhamento interno suporte e projeto 🟢
 14/12/2022 - 14:50 - 18:53 - marabraz - guia de compras  🟢
 
 **# 30/12/2022 - Kopenhagen - marabraz**
 30/12/2022 - 09:00 - 10:30 - marabraz - guia de compras 🟢
-30/12/2022 - 10:30 - 11:15 - kopenhagen - daily 
+30/12/2022 - 10:30 - 11:15 - kopenhagen - daily 🟢
 30/12/2022 - 11:15 - 12:00 - marabraz - guia de compras 🟢
 30/12/2022 - 13:00 - 19:50 - marabraz - guia de compras 🟢
 
@@ -96,7 +104,6 @@
 02/01/2023 - 09:00 - 11:15 - marabraz - guia de compras 🟢
 02/01/2023 - 11:15 - 11:35 - weekly devs 🟢
 02/01/2023 - 11:35 - 12:35 - marabraz - guia de compras 🟢
-02/01/2023 - 15:00 - 15:15 - call aleatoria - tudo de bicho - fluxo de cadastrados 🔴
 02/01/2023 - 15:15 - 15:45 - kopenhagen - daily 🟢
 02/01/2023 - 15:45 - 17:30 - kopenhagen - homolog interna 🟢
 02/01/2023 - 17:30 - 17:45 - weekly semanal 🟢
@@ -125,10 +132,9 @@
 05/01/2023 - 17:35 - 18:00 - kopenhagen - homolog cl 🟢
 
 **# 06/01/2023**
-06/01/2023 - 09:00 - 10:00 - kopenhagen - alinhamento projeto 
+06/01/2023 - 09:00 - 10:00 - kopenhagen - alinhamento projeto 🟢
 06/01/2023 - 10:00 - 12:40 - kopenhagen - homolog cl 🟢
 06/01/2023 - 13:40 - 14:00 - sevenago - instalação app flags custom 🟢
-06/01/2023 - 14:00 - 14:20 - call com com lili - tudo de bicho 🔴
 06/01/2023 - 14:20 - 15:30 - sevenago - instalação app flags custom 🟢
 06/01/2023 - 15:30 - 17:00 - farmacia sao rafael - header 🟢
 06/01/2023 - 17:15 - 17:35 - kopenhagen - daily 🟢
@@ -183,7 +189,6 @@
 17/01/2023 - 11:30 - 12:00 - marabraz - alinhamento de tasks 🟢
 17/01/2023 - 12:00 - 12:57 - boilerplate 🟢
 17/01/2023 - 13:57 - 15:50 - marabraz - xxx 🟢
-17/01/2023 - 15:50 - 16:35 - leo 
 17/01/2023 - 16:40 - 17:05 - kopenhagen - garantia 🟢
 17/01/2023 - 17:15 - 17:50 - kopenhagen - daily 🟢
 17/01/2023 - 17:50 - 18:00 - marabraz - xxx 🟢
@@ -265,7 +270,6 @@
 17:30 - 18:00 - kopenhagen - garantia 🟢
 
 **# 06/02/2023** 
-06/02/2023 - 09:15 - 09:30 - aquario - daily 🔴
 06/02/2023 - 11:15 - 12:25 - weekly devs 🟢
 06/02/2023 - 13:30 - 15:30 - kopenhagen - garantia 🟢
 06/02/2023 - 15:30 - 16:40 - marabraz - daily 🟢
@@ -281,7 +285,7 @@
 17:30 - 19:59 - marabraz - garantia 🟢
 
 **# 08/02/2023**
-09:22 - 10:00 - café avanti
+09:22 - 10:00 - café avanti 🟢
 11:30 - 12:29 - kopenhagen - garantia 🟢
 13:31 - 16:30 - kopenhagen - garantia 🟢
 16:30 - 17:15 - webfones - homolog cliente 🟢
@@ -291,7 +295,6 @@
 **# 09/02/2023** 
 09:02 - 13:00 - kopenhagen - garantia 🟢
 14:20 - 15:20 - marabraz - garantia 🟢
-caiu net
 16:30 - 16:40 - webfones - homolog cl 🟢
 17:20 - 17:30 - kopenhagen - daily 🟢
 18:00 - 20:00 - marabraz - garantia 🟢
@@ -299,7 +302,7 @@ caiu net
 **# 10/02/2023**
 10/02/2023 - 09:20 - 12:20 - kopenhagen - garantia 🟢
 10/02/2023 - 13:20 - 16:30 - kopenhagen - garantia 🟢
-10/02/2023 - 16:30 - 16:50 - cacau brasil - start replicação 🟡
+10/02/2023 - 16:30 - 16:50 - cacau brasil - replicação
 10/02/2023 - 16:50 - 17:15 - kopenhagen - garantia 🟢
 10/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 10/02/2023 - 17:30 - 18:10 - kopenhagen - garantia 🟢
@@ -310,22 +313,22 @@ caiu net
 13/02/2023 - 13:21 - 17:15 - kopenhagen - garantia 🟢
 13/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 13/02/2023 - 17:30 - 18:00 - weekly setor 🟢
-13/02/2023 - 18:00 - 19:59 - marabraz - app menu mobile custom 🟡
+13/02/2023 - 18:00 - 19:59 - marabraz - app menu mobile custom 🟢
 
-**# #14/0/2023**
+**# #14/02/2023**
 14/02/2023 - 09:29 - 13:01 - kopenhagen - garantia 🟢 
 14/02/2023 - 14:01 - 15:00 - kopenhagen - garantia 🟢 
-14/02/2023 - 15:00 - 17:15 - marabraz - app menu mobile custom 🟡 
+14/02/2023 - 15:00 - 17:15 - marabraz - app menu mobile custom 🟢 
 14/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
-14/02/2023 - 17:30 - 18:32 - marabraz - app menu mobile custom 🟡
+14/02/2023 - 17:30 - 18:32 - marabraz - app menu mobile custom 🟢
 
-**# #15/0/2023**
+**# #15/02/2023**
 15/02/2023 - 10:15 - 12:02 - kopenhagen - garantia 🟢 
 15/02/2023 - 13:02 - 17:15 - kopenhagen - app shipping custom 🟡 
 15/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 15/02/2023 - 17:30 - 18:15 - kopenhagen - app shipping custom 🟡 
 
-**# #16/0/2023**
+**# #16/02/2023**
 16/02/2023 - 10:00 - 12:30 - marabraz - garantia 🟢
 16/02/2023 - 13:30 - 15:00 - marabraz - garantia 🟢
 16/02/2023 - 15:00 - 17:15 - kopenhagen - garantia 🟢
@@ -335,13 +338,89 @@ caiu net
 **# 17/02/2023**
 17/02/2023 - 09:16 - 11:26 - kopenhagen - garantia 🟢
 17/02/2023 - 11:26 - 12:58 - marabraz - garantia 🟢
-17/02/2023 - 14:03 - 17:15 - entregavel - contador de ofertas 🟡
+17/02/2023 - 14:03 - 17:15 - marabraz - Vitrine com contagem regressiva 🟢
 17/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
-17/02/2023 - 17:30 - 18:17 - entregavel - contador de ofertas 🟡
+17/02/2023 - 17:30 - 18:17 - marabraz - Vitrine com contagem regressiva 🟢
 
 **# 22/02/2023**
 22/02/2023 - 09:00 - 12:41 - marabraz - garantia 🟢
 22/02/2023 - 13:46 - 16:00 - marabraz - garantia 🟢
-22/02/2023 - 16:00 - 17:15 - entregavel - buy box 🟡
+22/02/2023 - 16:00 - 17:15 - entregavel - Buybox para venda de marketplace in 🟢
 22/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 22/02/2023 - 17:30 - 18:45 - marabraz - garantia 🟢
+
+**# 23/02/2023**
+23/02/2023 - 10:01 - 12:30 - brasil cacau - replicação 🟡
+23/02/2023 - 13:30 - 17:15 - brasil cacau - replicação 🟡
+23/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟡
+23/02/2023 - 17:30 - 19:00 - brasil cacau - replicação 🟡
+
+**# 24/02/2023**
+24/02/2023 - 09:00 - 12:59 - brasil cacau - replicação 🟡 
+24/02/2023 - 13:59 - 14:40 - marabraz producao - garantia 🟢
+24/02/2023 - 14:40 - 17:15 - brasil cacau - replicação 🟡
+24/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟡
+24/02/2023 - 17:30 - 18:00 - brasil cacau - replicação 🟡 
+24/02/2023 - 18:00 - 19:59 - marabraz producao - garantia 🟢
+
+**# 27/02/2023**
+27/02/2023 - 09:00 - 11:20 - brasil cacau - replicação 🟡 
+27/02/2023 - 11:15 - 12:20 - weekly devs 🟢
+27/02/2023 - 12:20 - 12:59 - brasil cacau - replicação 🟡 
+27/02/2023 - 13:45 - 14:15 - brasil cacau - daily 🟡
+27/02/2023 - 14:15 - 16:20 - brasil cacau - replicação 🟡 
+27/02/2023 - 16:20 - 17:00 - marabraz producao - garantia 🟢
+27/02/2023 - 17:00 - 18:00 - weekly time 🟢
+27/02/2023 - 18:00 - 18:28 - boilerplate 🟢
+
+**# 28/02/2023**
+28/02/2023 - 09:00 - 11:00 - marabraz producao - garantia 🟢
+28/02/2023 - 11:00 - 13:20 - brasil cacau - replicação 🟡 
+28/02/2023 - 14:00 - 14:15 - olympikus - validação app de flags 🟡 
+28/02/2023 - 14:15 - 17:15 - brasil cacau - replicação 🟡
+28/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟡 
+28/02/2023 - 17:30 - 17:45 - marabraz - daily 🟢
+28/02/2023 - 17:45 - 18:00 - brasil cacau - replicação 🟡
+
+**# 01/03/2023**
+01/03/2023 - 07:00 - 10:30 - marabraz - garantia 🟢
+01/03/2023 - 10:30 - 12:50 - kopenhagen - garantia 🟢
+01/03/2023 - 14:00 - 15:00 - kopenhagen - garantia 🟢
+01/03/2023 - 15:00 - 17:15 - cacau brasil - replicação 🟡
+01/03/2023 - 17:15 - 17:30 - cacau brasil - daily 🟡
+01/03/2023 - 17:30 - 18:00 - friopecas - daily 🟡
+
+**# 02/03/2023**
+07:25 - 
+
+
+
+
+
+
+
+
+
+
+//
+01/02
+02/02
+03/02
+06/02
+07/02
+08/02
+09/02
+10/02
+13/02
+14/02
+15/02
+16/02
+17/02
+22/02
+23/02
+24/02
+27/02
+28/02
+
+total que deveria trabalhar: 144 horas
+total apontado: 114 horas - falta apontar 29 horas
