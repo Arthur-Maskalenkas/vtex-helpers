@@ -382,7 +382,7 @@
 28/02/2023 - 17:30 - 17:45 - marabraz - daily 🟢
 28/02/2023 - 17:45 - 18:00 - brasil cacau - replicação 🟡
 
-**# 01/03/2023**
+**# 01/02/2023**
 01/03/2023 - 07:00 - 10:30 - marabraz - garantia 🟢
 01/03/2023 - 10:30 - 12:50 - kopenhagen - garantia 🟢
 01/03/2023 - 14:00 - 15:00 - kopenhagen - garantia 🟢
@@ -390,9 +390,14 @@
 01/03/2023 - 17:15 - 17:30 - cacau brasil - daily 🟡
 01/03/2023 - 17:30 - 18:00 - friopecas - daily 🟡
 
-**# 02/03/2023**
-07:25 - 
+**# 02/02/2023**
+07:25 - 12:59
+14:00 - 15:00 - marabraz - daily
+15:00 - xxxx - kopenhagen - 
+17:15 - 17:30 - cacau brasil - daily
 
+**# 03/02/2023**
+07:00 - 10:20 - marabraz - garantia
 
 
 
