@@ -24,10 +24,6 @@
 
 # Fazendo update de major
 
-(8 x 19) = 152
-
-8 x 17 = 136
-
 >## Antes de tudo, se certificar que:
 1. vtex.admin-graphql-ide@3.x está instalado na master
 2. workspace master

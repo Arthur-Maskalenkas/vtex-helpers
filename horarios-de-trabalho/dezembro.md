@@ -1,7 +1,7 @@
-^(?:(?![🟡🟢#]).)*kopenhagen(?:(?![🟡🟢#]).)*$
+^(?:(?![🟢#]).)*brasil.*daily(?:(?![🟢#]).)*$
 ^ - âncora que casa o início da linha.
 (?: - início de um grupo não-capturador.
-(?![🟡🟢#]) - negative lookahead que verifica se o próximo caractere não é 🟡, 🟢 ou #.
+(?![🟢#]) - negative lookahead que verifica se o próximo caractere não é 🟡, 🟢 ou #.
 . - casa qualquer caractere.
 )* - fecha o grupo não-capturador e repete zero ou mais vezes.
 
@@ -324,9 +324,9 @@
 
 **# #15/02/2023**
 15/02/2023 - 10:15 - 12:02 - kopenhagen - garantia 🟢 
-15/02/2023 - 13:02 - 17:15 - kopenhagen - app shipping custom 🟡 
+15/02/2023 - 13:02 - 17:15 - kopenhagen - app shipping custom 🟢 
 15/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
-15/02/2023 - 17:30 - 18:15 - kopenhagen - app shipping custom 🟡 
+15/02/2023 - 17:30 - 18:15 - kopenhagen - app shipping custom 🟢 
 
 **# #16/02/2023**
 16/02/2023 - 10:00 - 12:30 - marabraz - garantia 🟢
@@ -350,82 +350,111 @@
 22/02/2023 - 17:30 - 18:45 - marabraz - garantia 🟢
 
 **# 23/02/2023**
-23/02/2023 - 10:01 - 12:30 - brasil cacau - replicação 🟡
-23/02/2023 - 13:30 - 17:15 - brasil cacau - replicação 🟡
-23/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟡
-23/02/2023 - 17:30 - 19:00 - brasil cacau - replicação 🟡
+23/02/2023 - 10:01 - 12:30 - brasil cacau - replicação 🟢
+23/02/2023 - 13:30 - 17:15 - brasil cacau - replicação 🟢
+23/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
+23/02/2023 - 17:30 - 19:00 - brasil cacau - replicação 🟢
+
+
 
 **# 24/02/2023**
-24/02/2023 - 09:00 - 12:59 - brasil cacau - replicação 🟡 
+24/02/2023 - 09:00 - 12:59 - brasil cacau - replicação 🟢
 24/02/2023 - 13:59 - 14:40 - marabraz producao - garantia 🟢
-24/02/2023 - 14:40 - 17:15 - brasil cacau - replicação 🟡
-24/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟡
-24/02/2023 - 17:30 - 18:00 - brasil cacau - replicação 🟡 
+24/02/2023 - 14:40 - 17:15 - brasil cacau - replicação 🟢
+24/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
+24/02/2023 - 17:30 - 18:00 - brasil cacau - replicação 🟢
 24/02/2023 - 18:00 - 19:59 - marabraz producao - garantia 🟢
 
 **# 27/02/2023**
-27/02/2023 - 09:00 - 11:20 - brasil cacau - replicação 🟡 
+27/02/2023 - 09:00 - 11:20 - brasil cacau - replicação 🟢
 27/02/2023 - 11:15 - 12:20 - weekly devs 🟢
-27/02/2023 - 12:20 - 12:59 - brasil cacau - replicação 🟡 
-27/02/2023 - 13:45 - 14:15 - brasil cacau - daily 🟡
-27/02/2023 - 14:15 - 16:20 - brasil cacau - replicação 🟡 
+27/02/2023 - 12:20 - 12:59 - brasil cacau - replicação 🟢
+27/02/2023 - 13:45 - 14:15 - brasil cacau - daily 🟢
+27/02/2023 - 14:15 - 16:20 - brasil cacau - replicação 🟢
 27/02/2023 - 16:20 - 17:00 - marabraz producao - garantia 🟢
 27/02/2023 - 17:00 - 18:00 - weekly time 🟢
 27/02/2023 - 18:00 - 18:28 - boilerplate 🟢
 
 **# 28/02/2023**
 28/02/2023 - 09:00 - 11:00 - marabraz producao - garantia 🟢
-28/02/2023 - 11:00 - 13:20 - brasil cacau - replicação 🟡 
+28/02/2023 - 11:00 - 13:20 - brasil cacau - replicação 🟢
 28/02/2023 - 14:00 - 14:15 - olympikus - validação app de flags 🟡 
-28/02/2023 - 14:15 - 17:15 - brasil cacau - replicação 🟡
-28/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟡 
+28/02/2023 - 14:15 - 17:15 - brasil cacau - replicação 🟢
+28/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
 28/02/2023 - 17:30 - 17:45 - marabraz - daily 🟢
-28/02/2023 - 17:45 - 18:00 - brasil cacau - replicação 🟡
+28/02/2023 - 17:45 - 18:00 - brasil cacau - replicação 🟢
 
-**# 01/02/2023**
+**# 01/03/2023**
 01/03/2023 - 07:00 - 10:30 - marabraz - garantia 🟢
 01/03/2023 - 10:30 - 12:50 - kopenhagen - garantia 🟢
 01/03/2023 - 14:00 - 15:00 - kopenhagen - garantia 🟢
-01/03/2023 - 15:00 - 17:15 - cacau brasil - replicação 🟡
-01/03/2023 - 17:15 - 17:30 - cacau brasil - daily 🟡
-01/03/2023 - 17:30 - 18:00 - friopecas - daily 🟡
+01/03/2023 - 15:00 - 17:15 - cacau brasil - replicação 🟢
+01/03/2023 - 17:15 - 17:30 - cacau brasil - daily 🟢
+01/03/2023 - 17:30 - 18:00 - marabraz - daily 🟡
 
-**# 02/02/2023**
-07:25 - 12:59
-14:00 - 15:00 - marabraz - daily
-15:00 - xxxx - kopenhagen - 
-17:15 - 17:30 - cacau brasil - daily
+**# 02/03/2023**
+07:25 - 12:59 - marabraz - garantia 🟢
+14:00 - 15:00 - marabraz - daily 🟡
+15:00 - 17:15 - kopenhagen - garantia 🟢
+17:15 - 17:30 - brasil cacau - daily 🟢
+15:00 - 18:00 - kopenhagen - garantia 🟢
 
-**# 03/02/2023**
-07:00 - 10:20 - marabraz - garantia
+**# 03/03/2023**
+07:00 - 10:20 - marabraz - garantia 🟢
+10:20 - 12:59 - kopenhagen - garantia 🟢
+13:59 - 16:00 - kopenhagen - garantia 🟢
+16:00 - 18:00 - marabraz - garantia 🟢
 
+**# 06/03/2023**
+09:00 - 13:08  - marabraz - garantia 🟢
+14:08 - 15:10 - marabraz - garantia 🟢
+15:10 - 17:00 - kopenhagen - garantia  🟢
+17:00 - 18:00 - weekly time
 
+**# 07/03/2023**
+08:00 - 09:00 - marabraz - garantia 🟢
+09:00 -  13:11 - kopenhagen - garantia  🟢
+14:11 - 17:15 - kopenhagen - garantia  🟢
+17:15 - 17:30 - brasil cacau - daily 🟢
+17:30 - 18:00 - marabraz - daily 🟡
+18:00 - 19:00 - marabraz - garantia 🟢
 
+**# 08/03/2023**
+09:00 - 10:00 - marabraz - garantia 🟢
+10:00 - 12:13 - cacau brasil - replicação 🟢
+13:14 - 17:15 - cacau brasil - replicação 🟢
+17:15 - 17:30 - brasil cacau - daily 🟢
+18:00 - 20:00 - marabraz - garantia 🟢
 
+**# 09/03** 
+09:07 - 12:13 - kopenhagen - garantia 🟢
+13:14 - 14:00 - kopenhagen - garantia 🟢
+14:00 - 17:15 - marabraz - garantia 🟢
+17:15 - 17:30 - brasil cacau - daily 🟢
+17:30 - 18:06 - marabraz - garantia 🟢
 
+**# 10/03** 
+09:00 - 13:11 - kopenhagen - garantia 🟢
+14:11 - 17:15 - kopenhagen - garantia 🟢
+17:15 - 17:30 - brasil cacau - daily 🟢
+17:30 - 18:00 - kopenhagen - garantia 🟢
+18:00 - 20:01 - marabraz - garantia 🟢
 
+**# 13/03**
+09:00 - 11:15 - kopenhagen - garantia 🟢
+11:15 - 12:00 - weekly devs
+12:00 - 13:09 - kopenhagen - garantia 🟢 
+14:09 - 
 
+17:00 - 18:00 - weekly equipe
 
+**# 14/03**
 
-//
-01/02
-02/02
-03/02
-06/02
-07/02
-08/02
-09/02
-10/02
-13/02
-14/02
-15/02
-16/02
-17/02
-22/02
-23/02
-24/02
-27/02
-28/02
+**# 15/03**
+09:00 - 09:50 - café avanti 🟢
+10:20 - 12:55 - marabraz - garantia 🟢
+14:15 - 15:30 - marabraz - garantia
+15:30 - 17:00 - savengnago - instalação app flags
 
-total que deveria trabalhar: 144 horas
-total apontado: 114 horas - falta apontar 29 horas
+**# 16/03**
+09:00 - 10:00 - savengnago - instalação app flags
