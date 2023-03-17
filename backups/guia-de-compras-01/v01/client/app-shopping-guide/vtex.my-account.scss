@@ -1,0 +1,47 @@
+:global(.lojasmarabraz-app-shopping-guide-0-x-container-component--search) {
+  :global(.slick-slide)>div {
+    margin-left: 10px;
+  }
+
+  :global(.lojasmarabraz-app-shopping-guide-0-x-container-component--slider-products-variation-01) {
+    margin-left: -20px;
+    margin-right: -20px;
+
+    :global(.slick-track) {
+      margin-left: -40px;
+    }
+
+    @include mq('1024') {
+      margin-left: 0;
+      margin-right: 0;
+
+      :global(.slick-track) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &,
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    appearance: none;
+    border: none;
+    background-color: unset;
+    font-family: $primaryFont;
+  }
+
+  & {
+    background-color: #00326B;
+    padding: 40px 20px;
+  }
+
+  input[type="radio"]:checked+* {
+    background-color: white !important;
+
+    img {
+      filter: invert(20%) sepia(48%) saturate(150) hue-rotate(202deg) brightness(100%) contrast(102%);
+    }
+  }
+}
