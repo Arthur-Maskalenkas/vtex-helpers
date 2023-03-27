@@ -1,4 +1,4 @@
-^(?:(?![🟢#]).)*brasil.*daily(?:(?![🟢#]).)*$
+^(?:(?![🟢#]).)*savegnago(?:(?![🟢#]).)*$
 ^ - âncora que casa o início da linha.
 (?: - início de um grupo não-capturador.
 (?![🟢#]) - negative lookahead que verifica se o próximo caractere não é 🟡, 🟢 ou #.
@@ -302,7 +302,7 @@
 **# 10/02/2023**
 10/02/2023 - 09:20 - 12:20 - kopenhagen - garantia 🟢
 10/02/2023 - 13:20 - 16:30 - kopenhagen - garantia 🟢
-10/02/2023 - 16:30 - 16:50 - cacau brasil - replicação
+10/02/2023 - 16:30 - 16:50 - cacau brasil - replicação 🟢
 10/02/2023 - 16:50 - 17:15 - kopenhagen - garantia 🟢
 10/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 10/02/2023 - 17:30 - 18:10 - kopenhagen - garantia 🟢
@@ -409,7 +409,7 @@
 09:00 - 13:08  - marabraz - garantia 🟢
 14:08 - 15:10 - marabraz - garantia 🟢
 15:10 - 17:00 - kopenhagen - garantia  🟢
-17:00 - 18:00 - weekly time
+17:00 - 18:00 - weekly time 🟢
 
 **# 07/03/2023**
 08:00 - 09:00 - marabraz - garantia 🟢
@@ -438,23 +438,66 @@
 14:11 - 17:15 - kopenhagen - garantia 🟢
 17:15 - 17:30 - brasil cacau - daily 🟢
 17:30 - 18:00 - kopenhagen - garantia 🟢
-18:00 - 20:01 - marabraz - garantia 🟢
+18:00 - 20:01 -  marabraz - shopping guide 🟡
 
 **# 13/03**
 09:00 - 11:15 - kopenhagen - garantia 🟢
-11:15 - 12:00 - weekly devs
+11:15 - 12:00 - weekly devs 🟢 
 12:00 - 13:09 - kopenhagen - garantia 🟢 
-14:09 - 
-
-17:00 - 18:00 - weekly equipe
+14:20 - 17:00 - marabraz - shopping guide 🟢
+17:00 - 18:00 - weekly equipe 🟢 
 
 **# 14/03**
+09:07 - 13:01  - marabraz - shopping guide 🟢
+14:30 - 17:15 - marabraz - shopping guide 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 19:03  - marabraz - shopping guide 🟢
 
 **# 15/03**
-09:00 - 09:50 - café avanti 🟢
-10:20 - 12:55 - marabraz - garantia 🟢
-14:15 - 15:30 - marabraz - garantia
-15:30 - 17:00 - savengnago - instalação app flags
+09:00 - 09:50 - café avanti 
+10:20 - 12:55 - marabraz - shopping guide 🟢
+14:15 - 15:15 - marabraz - shopping guide 🟢
+15:15 - 17:00 - savengnago - instalação app flags 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 20:00 - marabraz - shopping guide 🟢
 
 **# 16/03**
-09:00 - 10:00 - savengnago - instalação app flags
+09:00 - 10:00 - savengnago - instalação app flags red 🟢
+10:00 - 13:00 - marabraz - shopping guide 🟢
+14:00 - 17:15 - marabraz - shopping guide 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 18:00 - marabraz - daily 🟢
+
+**# 17/03**
+09:39 - 13:04 - marabraz - shopping guide 🟢
+14:09 - 17:15 - marabraz - shopping guide 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 18:00 - marabraz - shopping guide 🟢
+
+**# 20/03**
+09:00 - 11:15 - marabraz - shopping guide 🟢
+11:15 - 12:00 - weekly devs 🟢 
+13:30 - 14:00 - mizuno - daily 🟡
+14:28 - 17:00 - marabraz - shopping guide 🟢
+17:00 - 18:01 - weekly equipe 🟢
+
+**# 21/03**
+09:00 - 13:03 - marabraz - shopping guide 🟢
+14:30 - 17:45 - marabraz - shopping guide 🟢
+17:45 - 18:00 - mizuno - daily 🟡
+
+**# 22/03**
+09:08 - 09:30  - marabraz - shopping guide 🟢
+09:30 - 10:00 - mizuno - daily 🟡
+10:00 - 13:08 - marabraz - shopping guide 🟢
+14:08 - 17:15 - marabraz - shopping guide 🟢
+17:15 - 17:30 - kopenhagen - daily 🟢
+17:30 - 19:20 - kopenhagen - garantia
+
+**# 24/03**
+09:30 - 12:00 - marabraz - landing page 🟡
+13:20 - 18:28 - marabraz - landing page 🟡
+
+**# 27/03**
+09:00 - 10:30 - marabraz - landing page 🟡
+11:15 - 12:20 - weekly equipe
