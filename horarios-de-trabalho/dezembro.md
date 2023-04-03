@@ -1,7 +1,7 @@
 ^(?:(?![🟢#]).)*savegnago(?:(?![🟢#]).)*$
 ^ - âncora que casa o início da linha.
 (?: - início de um grupo não-capturador.
-(?![🟢#]) - negative lookahead que verifica se o próximo caractere não é 🟡, 🟢 ou #.
+(?![🟢#]) - negative lookahead que verifica se o próximo caractere não é🟡, 🟢 ou #.
 . - casa qualquer caractere.
 )* - fecha o grupo não-capturador e repete zero ou mais vezes.
 
@@ -378,7 +378,7 @@
 **# 28/02/2023**
 28/02/2023 - 09:00 - 11:00 - marabraz producao - garantia 🟢
 28/02/2023 - 11:00 - 13:20 - brasil cacau - replicação 🟢
-28/02/2023 - 14:00 - 14:15 - olympikus - validação app de flags 🟡 
+28/02/2023 - 14:00 - 14:15 - olympikus - validação app de flags🟡 
 28/02/2023 - 14:15 - 17:15 - brasil cacau - replicação 🟢
 28/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
 28/02/2023 - 17:30 - 17:45 - marabraz - daily 🟢
@@ -390,114 +390,207 @@
 01/03/2023 - 14:00 - 15:00 - kopenhagen - garantia 🟢
 01/03/2023 - 15:00 - 17:15 - cacau brasil - replicação 🟢
 01/03/2023 - 17:15 - 17:30 - cacau brasil - daily 🟢
-01/03/2023 - 17:30 - 18:00 - marabraz - daily 🟡
+01/03/2023 - 17:30 - 18:00 - marabraz - daily 🟢
 
 **# 02/03/2023**
-07:25 - 12:59 - marabraz - garantia 🟢
-14:00 - 15:00 - marabraz - daily 🟡
-15:00 - 17:15 - kopenhagen - garantia 🟢
-17:15 - 17:30 - brasil cacau - daily 🟢
-15:00 - 18:00 - kopenhagen - garantia 🟢
+02/03/2023 - 07:25 - 12:59 - marabraz - garantia 🟢
+02/03/2023 - 14:00 - 15:00 - marabraz - daily 🟢
+02/03/2023 - 15:00 - 17:15 - kopenhagen - garantia 🟢
+02/03/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
+02/03/2023 - 15:00 - 18:00 - kopenhagen - garantia 🟢
 
 **# 03/03/2023**
-07:00 - 10:20 - marabraz - garantia 🟢
-10:20 - 12:59 - kopenhagen - garantia 🟢
-13:59 - 16:00 - kopenhagen - garantia 🟢
-16:00 - 18:00 - marabraz - garantia 🟢
+03/03/2023 - 07:00 - 10:20 - marabraz - garantia 🟢
+03/03/2023 - 10:20 - 12:59 - kopenhagen - garantia 🟢
+03/03/2023 - 13:59 - 16:00 - kopenhagen - garantia 🟢
+03/03/2023 - 16:00 - 18:00 - marabraz - garantia 🟢
 
 **# 06/03/2023**
-09:00 - 13:08  - marabraz - garantia 🟢
-14:08 - 15:10 - marabraz - garantia 🟢
-15:10 - 17:00 - kopenhagen - garantia  🟢
-17:00 - 18:00 - weekly time 🟢
+06/03/2023 - 09:00 - 13:08  - marabraz - garantia 🟢
+06/03/2023 - 14:08 - 15:10 - marabraz - garantia 🟢
+06/03/2023 - 15:10 - 17:00 - kopenhagen - garantia  🟢
+06/03/2023 - 17:00 - 18:00 - weekly time 🟢
 
 **# 07/03/2023**
-08:00 - 09:00 - marabraz - garantia 🟢
-09:00 -  13:11 - kopenhagen - garantia  🟢
-14:11 - 17:15 - kopenhagen - garantia  🟢
-17:15 - 17:30 - brasil cacau - daily 🟢
-17:30 - 18:00 - marabraz - daily 🟡
-18:00 - 19:00 - marabraz - garantia 🟢
+07/03/2023 - 08:00 - 09:00 - marabraz - garantia 🟢
+07/03/2023 - 09:00 -  13:11 - kopenhagen - garantia  🟢
+07/03/2023 - 14:11 - 17:15 - kopenhagen - garantia  🟢
+07/03/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
+07/03/2023 - 17:30 - 18:00 - marabraz - daily 🟢
+07/03/2023 - 18:00 - 19:00 - marabraz - garantia 🟢
 
 **# 08/03/2023**
-09:00 - 10:00 - marabraz - garantia 🟢
-10:00 - 12:13 - cacau brasil - replicação 🟢
-13:14 - 17:15 - cacau brasil - replicação 🟢
-17:15 - 17:30 - brasil cacau - daily 🟢
-18:00 - 20:00 - marabraz - garantia 🟢
+08/03/2023 - 09:00 - 10:00 - marabraz - garantia 🟢
+08/03/2023 - 10:00 - 12:13 - cacau brasil - replicação 🟢
+08/03/2023 - 13:14 - 17:15 - cacau brasil - replicação 🟢
+08/03/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
+08/03/2023 - 18:00 - 20:00 - marabraz - garantia 🟢
 
 **# 09/03** 
-09:07 - 12:13 - kopenhagen - garantia 🟢
-13:14 - 14:00 - kopenhagen - garantia 🟢
-14:00 - 17:15 - marabraz - garantia 🟢
-17:15 - 17:30 - brasil cacau - daily 🟢
-17:30 - 18:06 - marabraz - garantia 🟢
+09/03/2023 - 09:07 - 12:13 - kopenhagen - garantia 🟢
+09/03/2023 - 13:14 - 14:00 - kopenhagen - garantia 🟢
+09/03/2023 - 14:00 - 17:15 - marabraz - garantia 🟢
+09/03/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
+09/03/2023 - 17:30 - 18:06 - marabraz - garantia 🟢
 
 **# 10/03** 
-09:00 - 13:11 - kopenhagen - garantia 🟢
-14:11 - 17:15 - kopenhagen - garantia 🟢
-17:15 - 17:30 - brasil cacau - daily 🟢
-17:30 - 18:00 - kopenhagen - garantia 🟢
-18:00 - 20:01 -  marabraz - shopping guide 🟡
+10/03/2023 - 09:00 - 13:11 - kopenhagen - garantia 🟢
+10/03/2023 - 14:11 - 17:15 - kopenhagen - garantia 🟢
+10/03/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
+10/03/2023 - 17:30 - 18:00 - kopenhagen - garantia 🟢
+10/03/2023 - 18:00 - 20:01 -  marabraz - shopping guide 🟢
 
 **# 13/03**
-09:00 - 11:15 - kopenhagen - garantia 🟢
-11:15 - 12:00 - weekly devs 🟢 
-12:00 - 13:09 - kopenhagen - garantia 🟢 
-14:20 - 17:00 - marabraz - shopping guide 🟢
-17:00 - 18:00 - weekly equipe 🟢 
+13/03/2023 - 09:00 - 11:15 - kopenhagen - garantia 🟢
+13/03/2023 - 11:15 - 12:00 - weekly devs 🟢 
+13/03/2023 - 12:00 - 13:09 - kopenhagen - garantia 🟢 
+13/03/2023 - 14:20 - 17:00 - marabraz - shopping guide 🟢
+13/03/2023 - 17:00 - 18:00 - weekly equipe 🟢 
 
 **# 14/03**
-09:07 - 13:01  - marabraz - shopping guide 🟢
-14:30 - 17:15 - marabraz - shopping guide 🟢
-17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 19:03  - marabraz - shopping guide 🟢
+14/03/2023 - 09:07 - 13:14  - marabraz - shopping guide 🟢
+14/03/2023 - 14:30 - 17:15 - marabraz - shopping guide 🟢
+14/03/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+14/03/2023 - 17:30 - 19:03  - marabraz - shopping guide 🟢
+
 
 **# 15/03**
-09:00 - 09:50 - café avanti 
-10:20 - 12:55 - marabraz - shopping guide 🟢
-14:15 - 15:15 - marabraz - shopping guide 🟢
-15:15 - 17:00 - savengnago - instalação app flags 🟢
-17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 20:00 - marabraz - shopping guide 🟢
+15/03/2023 - 09:00 - 09:50 - café avanti 🟢
+15/03/2023 - 10:20 - 12:55 - marabraz - shopping guide 🟢
+15/03/2023 - 14:15 - 15:15 - marabraz - shopping guide 🟢
+15/03/2023 - 15:15 - 17:00 - savengnago - instalação app flags 🟢
+15/03/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+15/03/2023 - 17:30 - 20:00 - marabraz - shopping guide 🟢
 
 **# 16/03**
-09:00 - 10:00 - savengnago - instalação app flags red 🟢
-10:00 - 13:00 - marabraz - shopping guide 🟢
-14:00 - 17:15 - marabraz - shopping guide 🟢
-17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 18:00 - marabraz - daily 🟢
+16/03/2023 - 09:00 - 10:00 - savengnago - instalação app flags red 🟢
+16/03/2023 - 10:00 - 13:00 - marabraz - shopping guide 🟢
+16/03/2023 - 14:00 - 17:15 - marabraz - shopping guide 🟢
+16/03/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+16/03/2023 - 17:30 - 18:00 - marabraz - daily 🟢
 
 **# 17/03**
-09:39 - 13:04 - marabraz - shopping guide 🟢
-14:09 - 17:15 - marabraz - shopping guide 🟢
-17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 18:00 - marabraz - shopping guide 🟢
+17/03/2023 - 09:39 - 13:04 - marabraz - shopping guide 🟢
+17/03/2023 - 14:09 - 17:15 - marabraz - shopping guide 🟢
+17/03/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+17/03/2023 - 17:30 - 18:00 - marabraz - shopping guide 🟢
 
 **# 20/03**
-09:00 - 11:15 - marabraz - shopping guide 🟢
-11:15 - 12:00 - weekly devs 🟢 
-13:30 - 14:00 - mizuno - daily 🟡
-14:28 - 17:00 - marabraz - shopping guide 🟢
-17:00 - 18:01 - weekly equipe 🟢
+20/03/2023 - 09:00 - 11:15 - marabraz - shopping guide 🟢
+20/03/2023 - 11:15 - 12:00 - weekly devs 🟢 
+20/03/2023 - 13:30 - 14:00 - mizuno - daily🟡
+20/03/2023 - 14:28 - 17:00 - marabraz - shopping guide 🟢
+20/03/2023 - 17:00 - 18:01 - weekly equipe 🟢
 
 **# 21/03**
-09:00 - 13:03 - marabraz - shopping guide 🟢
-14:30 - 17:45 - marabraz - shopping guide 🟢
-17:45 - 18:00 - mizuno - daily 🟡
+21/03/2023 - 09:00 - 13:03 - marabraz - shopping guide 🟢
+21/03/2023 - 14:30 - 17:45 - marabraz - shopping guide 🟢
+21/03/2023 - 17:45 - 18:00 - mizuno - daily🟡
 
 **# 22/03**
-09:08 - 09:30  - marabraz - shopping guide 🟢
-09:30 - 10:00 - mizuno - daily 🟡
-10:00 - 13:08 - marabraz - shopping guide 🟢
-14:08 - 17:15 - marabraz - shopping guide 🟢
-17:15 - 17:30 - kopenhagen - daily 🟢
-17:30 - 19:20 - kopenhagen - garantia
+22/03/2023 - 09:08 - 09:30  - marabraz - shopping guide 🟢
+22/03/2023 - 09:30 - 10:00 - mizuno - daily🟡
+22/03/2023 - 10:00 - 13:08 - marabraz - shopping guide 🟢
+22/03/2023 - 14:08 - 17:15 - marabraz - shopping guide 🟢
+22/03/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
+22/03/2023 - 17:30 - 19:20 - kopenhagen - garantia 🟢
 
-**# 24/03**
-09:30 - 12:00 - marabraz - landing page 🟡
-13:20 - 18:28 - marabraz - landing page 🟡
+**# 24/03** 
+24/03/2023 - 09:30 - 12:00 - marabraz - landing page 🟢
+24/03/2023 - 13:20 - 18:28 - marabraz - landing page 🟢
 
 **# 27/03**
-09:00 - 10:30 - marabraz - landing page 🟡
-11:15 - 12:20 - weekly equipe
+27/03/2023 - 09:00 - 10:30 - marabraz - landing page 🟢
+27/03/2023 - 11:15 - 12:20 - weekly equipe 🟢
+27/03/2023 - 13:40 - 15:30 - marabraz - garantia 🟢
+27/03/2023 - 15:30 - 17:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+
+**# 28/03/2023**
+28/03/2023 - 09:30 - 10:40 - mizuno - call sobre departamento🟡
+28/03/2023 - 10:40 - 12:00 - marabraz - garantia 🟢
+28/03/2023 - 12:00 - 13:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+28/03/2023 - 14:00 - 14:20 - mizuno - call sobre departamento🟡
+28/03/2023 - 14:20 - 17:30 - mizuno - entregavel id 13 - departamento/categoria🟡
+28/03/2023 - 17:30 - 17:45 - mizuno - daily🟡
+28/03/2023 - 17:45 - 18:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+28/03/2023 - 18:00 - 20:00 - marabraz - landing page 🟢
+
+**# 29/03/2023**
+10:00 - 11:00 - mizuno - entregavel id 13 - departamento/categoria 🟡
+11:00 - 13:00 - marabraz - landing page 🟢
+14:00 - 15:40 - mizuno - entregavel id 13 - departamento/categoria 🟡
+15:40 - 16:10 - marabraz - landing page 🟢
+16:10 - 16:50 - mizuno - entregavel id 13 - departamento/categoria 🟡
+16:50 - 17:15 - kopenhagen 🟢
+17:15 - 17:30 - mizuno - daily🟡
+17:30 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟡
+
+**# 30/03/2023**
+09:00 - 10:30 - marabraz - garantia 🟢
+10:30 - almoço - mizuno - entregavel id 13 - departamento/categoria🟡
+pós almoço - 16:30 - mizuno - entregavel id 13 - departamento/categoria🟡
+16:30 - 17:10 - vtex - caiu 🟠
+17:10 - 17:25 - mizuno - daily🟡
+17:25 - 18:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+
+**# 31/03/2023**
+09:35 - 10:30 - mizuno - entregavel id 14 - breadcrumb🟡
+10:45 - 12:30 - mizuno - entregavel id 15 - resultado de busca🟡
+12:40 - 13:00 - mizuno - entregavel id 16 - busca vazia🟡
+14:00 - 15:30 - mizuno - entregavel id 15 - resultado de busca🟡
+15:30 - 16:20 - mizuno - corrigindo pr e verificando estrutura do projeto 🟠
+16:20 - 16:50 - mizuno - entregavel id 15 - resultado de busca🟡
+16:50 - 17:15 - mizuno - entregavel id 23 - footer checkout 🟡
+17:15 - 17:30 - mizuno - daily🟡
+17:30 - 18:00 - mizuno - entregavel id 23 - footer checkout 🟡
+
+
+
+
+
+id 13 - 14:50 - previsto 18 horas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28/02/2023 - 14:00 - 14:15 - olympikus - validação app de flags🟡
+20/03/2023 - 13:30 - 14:00 - mizuno - daily🟡
+21/03/2023 - 17:45 - 18:00 - mizuno - daily🟡
+22/03/2023 - 09:30 - 10:00 - mizuno - daily🟡
+27/03/2023 - 15:30 - 17:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+28/03/2023 - 09:30 - 10:40 - mizuno - call sobre departamento🟡
+28/03/2023 - 12:00 - 13:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+28/03/2023 - 14:00 - 14:20 - mizuno - call sobre departamento🟡
+28/03/2023 - 14:20 - 17:30 - mizuno - entregavel id 13 - departamento/categoria🟡
+28/03/2023 - 17:30 - 17:45 - mizuno - daily🟡
+28/03/2023 - 17:45 - 18:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+10:00 - 11:00 - mizuno - entregavel id 13 - departamento/categoria 🟡
+14:00 - 15:40 - mizuno - entregavel id 13 - departamento/categoria 🟡
+16:10 - 16:50 - mizuno - entregavel id 13 - departamento/categoria 🟡
+17:15 - 17:30 - mizuno - daily🟡
+17:30 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟡
+10:30 - almoço - mizuno - entregavel id 13 - departamento/categoria🟡
+pós almoço - 16:30 - mizuno - entregavel id 13 - departamento/categoria🟡
+17:10 - 17:25 - mizuno - daily🟡
+17:25 - 18:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+09:35 - 10:30 - mizuno - entregavel id 14 - breadcrumb🟡
+10:45 - 12:30 - mizuno - entregavel id 15 - resultado de busca🟡
+12:40 - 13:00 - mizuno - entregavel id 16 - busca vazia🟡
+14:00 - 15:30 - mizuno - entregavel id 15 - resultado de busca🟡
+16:20 - 16:50 - mizuno - entregavel id 15 - resultado de busca🟡
+16:50 - 17:15 - mizuno - entregavel id 23 - footer checkout 🟡
+17:15 - 17:30 - mizuno - daily🟡
+17:30 - 18:00 - mizuno - entregavel id 23 - footer checkout 🟡

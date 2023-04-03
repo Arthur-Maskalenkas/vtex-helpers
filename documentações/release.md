@@ -35,16 +35,22 @@
 
 1. vtex use wpmajor –production - cria um workspace de produção
 2. instale o app que foi inserido no peerdependecies - exemplo: "yourviews.yourviews": "0.x"
-3. vtex setup && yarn run dev:sass
-4. vtex release major stable
-5. vtex deploy
-6. vtex install {nome-da-loja}.store-theme@{versão-major} - versão nova que vai ser gerada
-7. ir até o app do graphql presente no admin e procurar por vtex.pages-graphql@2.x
+3. verifique se todas as referencias da versão atual da store-theme foram mudadads no css. Por exemplo, alterar store-theme-11-x para store-theme-12-x
+4. vtex setup && yarn run dev:sass
+5. vtex release major stable
+6. vtex deploy
+7. vtex install {nome-da-loja}.store-theme@{versão-major} - versão nova que vai ser gerada
+8. ir até o app do graphql presente no admin e procurar por vtex.pages-graphql@2.x
   8. dentro do app, fazer a seguinte mutation exemplo:
    ```graphql
     //Exemplo store theme
     mutation{
       updateThemeIds(from:"{nome-da-loja}.store-theme@0.x", to:"{nome-da-loja}.store-theme@1.x")
+    }
+
+    // exemplo
+     mutation{
+      updateThemeIds(from:"lojasmarabraz.store-theme@9.x", to:"lojasmarabraz.store-theme@11.x")
     }
 
     //Exemplo genérico
