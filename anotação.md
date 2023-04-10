@@ -1,0 +1,12 @@
+dev-depenedncias:
+    "@ptkdev/logger": "^1.8.0",
+    "@types/glob": "^8.1.0",
+    "@types/gulp": "^4.0.10",
+    "@types/gulp-concat": "^0.0.33",
+    "@types/gulp-sass": "^5.0.0",
+    "gulp-nodemon": "^2.5.0",
+    "gulp-sass": "5.1.0",
+    "ts-node": "^10.9.1",
+        "gulp-debug": "^4.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "nodemon": "^2.0.22",

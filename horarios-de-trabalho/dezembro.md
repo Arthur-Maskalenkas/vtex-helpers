@@ -478,18 +478,18 @@
 **# 20/03**
 20/03/2023 - 09:00 - 11:15 - marabraz - shopping guide 🟢
 20/03/2023 - 11:15 - 12:00 - weekly devs 🟢 
-20/03/2023 - 13:30 - 14:00 - mizuno - daily🟡
+20/03/2023 - 13:30 - 14:00 - mizuno - daily 🟡
 20/03/2023 - 14:28 - 17:00 - marabraz - shopping guide 🟢
 20/03/2023 - 17:00 - 18:01 - weekly equipe 🟢
 
 **# 21/03**
 21/03/2023 - 09:00 - 13:03 - marabraz - shopping guide 🟢
 21/03/2023 - 14:30 - 17:45 - marabraz - shopping guide 🟢
-21/03/2023 - 17:45 - 18:00 - mizuno - daily🟡
+21/03/2023 - 17:45 - 18:00 - mizuno - daily 🟡
 
 **# 22/03**
 22/03/2023 - 09:08 - 09:30  - marabraz - shopping guide 🟢
-22/03/2023 - 09:30 - 10:00 - mizuno - daily🟡
+22/03/2023 - 09:30 - 10:00 - mizuno - daily 🟡
 22/03/2023 - 10:00 - 13:08 - marabraz - shopping guide 🟢
 22/03/2023 - 14:08 - 17:15 - marabraz - shopping guide 🟢
 22/03/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
@@ -503,94 +503,66 @@
 27/03/2023 - 09:00 - 10:30 - marabraz - landing page 🟢
 27/03/2023 - 11:15 - 12:20 - weekly equipe 🟢
 27/03/2023 - 13:40 - 15:30 - marabraz - garantia 🟢
-27/03/2023 - 15:30 - 17:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+27/03/2023 - 15:30 - 17:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 
 **# 28/03/2023**
-28/03/2023 - 09:30 - 10:40 - mizuno - call sobre departamento🟡
+28/03/2023 - 09:30 - 10:40 - mizuno - call sobre departamento 🟡
 28/03/2023 - 10:40 - 12:00 - marabraz - garantia 🟢
-28/03/2023 - 12:00 - 13:00 - mizuno - entregavel id 13 - departamento/categoria🟡
-28/03/2023 - 14:00 - 14:20 - mizuno - call sobre departamento🟡
-28/03/2023 - 14:20 - 17:30 - mizuno - entregavel id 13 - departamento/categoria🟡
-28/03/2023 - 17:30 - 17:45 - mizuno - daily🟡
-28/03/2023 - 17:45 - 18:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+28/03/2023 - 12:00 - 13:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
+28/03/2023 - 14:00 - 14:20 - mizuno - call sobre departamento 🟡
+28/03/2023 - 14:20 - 17:30 - mizuno - entregavel id 13 - departamento/categoria 🟢
+28/03/2023 - 17:30 - 17:45 - mizuno - daily 🟡
+28/03/2023 - 17:45 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 28/03/2023 - 18:00 - 20:00 - marabraz - landing page 🟢
 
 **# 29/03/2023**
-10:00 - 11:00 - mizuno - entregavel id 13 - departamento/categoria 🟡
-11:00 - 13:00 - marabraz - landing page 🟢
-14:00 - 15:40 - mizuno - entregavel id 13 - departamento/categoria 🟡
-15:40 - 16:10 - marabraz - landing page 🟢
-16:10 - 16:50 - mizuno - entregavel id 13 - departamento/categoria 🟡
-16:50 - 17:15 - kopenhagen 🟢
-17:15 - 17:30 - mizuno - daily🟡
-17:30 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟡
+29/03/2023 - 10:00 - 11:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
+29/03/2023 - 11:00 - 13:00 - marabraz - landing page 🟢
+29/03/2023 - 14:00 - 15:40 - mizuno - entregavel id 13 - departamento/categoria 🟢
+29/03/2023 - 15:40 - 16:10 - marabraz - landing page 🟢
+29/03/2023 - 16:10 - 16:50 - mizuno - entregavel id 13 - departamento/categoria 🟢
+29/03/2023 - 16:50 - 17:15 - kopenhagen 🟢
+29/03/2023 - 17:15 - 17:30 - mizuno - daily 🟡
+29/03/2023 - 17:30 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 
 **# 30/03/2023**
-09:00 - 10:30 - marabraz - garantia 🟢
-10:30 - almoço - mizuno - entregavel id 13 - departamento/categoria🟡
-pós almoço - 16:30 - mizuno - entregavel id 13 - departamento/categoria🟡
-16:30 - 17:10 - vtex - caiu 🟠
-17:10 - 17:25 - mizuno - daily🟡
-17:25 - 18:00 - mizuno - entregavel id 13 - departamento/categoria🟡
+30/03/2023 - 09:00 - 10:30 - marabraz - garantia 🟢
+30/03/2023 - 10:30 - 13:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
+30/03/2023 - 14:00 - 16:30 - mizuno - entregavel id 13 - departamento/categoria 🟢
+30/03/2023 - 16:30 - 17:10 - vtex - caiu 🔴
+30/03/2023 - 17:10 - 17:25 - mizuno - daily 🟡
+30/03/2023 - 17:25 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 
 **# 31/03/2023**
-09:35 - 10:30 - mizuno - entregavel id 14 - breadcrumb🟡
-10:45 - 12:30 - mizuno - entregavel id 15 - resultado de busca🟡
-12:40 - 13:00 - mizuno - entregavel id 16 - busca vazia🟡
-14:00 - 15:30 - mizuno - entregavel id 15 - resultado de busca🟡
-15:30 - 16:20 - mizuno - corrigindo pr e verificando estrutura do projeto 🟠
-16:20 - 16:50 - mizuno - entregavel id 15 - resultado de busca🟡
-16:50 - 17:15 - mizuno - entregavel id 23 - footer checkout 🟡
-17:15 - 17:30 - mizuno - daily🟡
-17:30 - 18:00 - mizuno - entregavel id 23 - footer checkout 🟡
+31/03/2023 - 09:35 - 10:30 - mizuno - entregavel id 14 - breadcrumb 🟢
+31/03/2023 - 10:45 - 12:30 - mizuno - entregavel id 15 - resultado de busca 🟢
+31/03/2023 - 12:40 - 13:00 - mizuno - entregavel id 16 - busca vazia 🟢
+31/03/2023 - 14:00 - 15:30 - mizuno - entregavel id 15 - resultado de busca 🟢
+31/03/2023 - 15:30 - 16:20 - mizuno - corrigindo pr e verificando estrutura do projeto 🔴
+31/03/2023 - 16:20 - 16:50 - mizuno - entregavel id 15 - resultado de busca 🟢
+31/03/2023 - 16:50 - 17:15 - mizuno - entregavel id 23 - footer checkout 🟢
+31/03/2023 - 17:15 - 17:30 - mizuno - daily 🟡
+31/03/2023 - 17:30 - 18:00 - mizuno - entregavel id 23 - footer checkout 🟢
+
+**# 03/04/2023**
+03/04/2023 - 09:00 - 09:40 - mizuno - entregavel id 23 - footer checkout 🟢
+03/04/2023 - 10:20 - 11:15 - savegnago - garantia
+03/04/2023 - 11:15 - 12:00 - weekly dev
+03/04/2023 - 12:00 - 13:00 - mizuno - entregavel id 23 - footer checkout 🟢
+03/04/2023 - 14:00 - 17:00 - mizuno - entregavel id 23 - footer checkout 🟢
+03/04/2023 - 17:00 - 17:45 - weekly equipe 
+03/04/2023 - 17:45 - 20:00 - cacau brasil - garantia
+
+**# 10/04/2023**
+10/04/2023 - 09:30 - 12:10 - boilerplate - fazendo ajustes para automatizar varias tarefas
+10/04/2023 - 11:15 - 12:20 - weekly dev 
+10/04/2023 - 13:30 - 15:30 - mizuno - entregavel id 26 - orderplaced
+10/04/2023 - 15:30 - 16:00 - mizuno - corrigindo pr e verificando estrutura do projeto 🔴
+10/04/2023 - 16:00 - 17:00 - mizuno - entregavel id 23 - footer checkout 🟢
+10/04/2023 - 17:00 - 18:00 - weekly equipe
 
 
 
 
 
-id 13 - 14:50 - previsto 18 horas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28/02/2023 - 14:00 - 14:15 - olympikus - validação app de flags🟡
-20/03/2023 - 13:30 - 14:00 - mizuno - daily🟡
-21/03/2023 - 17:45 - 18:00 - mizuno - daily🟡
-22/03/2023 - 09:30 - 10:00 - mizuno - daily🟡
-27/03/2023 - 15:30 - 17:00 - mizuno - entregavel id 13 - departamento/categoria🟡
-28/03/2023 - 09:30 - 10:40 - mizuno - call sobre departamento🟡
-28/03/2023 - 12:00 - 13:00 - mizuno - entregavel id 13 - departamento/categoria🟡
-28/03/2023 - 14:00 - 14:20 - mizuno - call sobre departamento🟡
-28/03/2023 - 14:20 - 17:30 - mizuno - entregavel id 13 - departamento/categoria🟡
-28/03/2023 - 17:30 - 17:45 - mizuno - daily🟡
-28/03/2023 - 17:45 - 18:00 - mizuno - entregavel id 13 - departamento/categoria🟡
-10:00 - 11:00 - mizuno - entregavel id 13 - departamento/categoria 🟡
-14:00 - 15:40 - mizuno - entregavel id 13 - departamento/categoria 🟡
-16:10 - 16:50 - mizuno - entregavel id 13 - departamento/categoria 🟡
-17:15 - 17:30 - mizuno - daily🟡
-17:30 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟡
-10:30 - almoço - mizuno - entregavel id 13 - departamento/categoria🟡
-pós almoço - 16:30 - mizuno - entregavel id 13 - departamento/categoria🟡
-17:10 - 17:25 - mizuno - daily🟡
-17:25 - 18:00 - mizuno - entregavel id 13 - departamento/categoria🟡
-09:35 - 10:30 - mizuno - entregavel id 14 - breadcrumb🟡
-10:45 - 12:30 - mizuno - entregavel id 15 - resultado de busca🟡
-12:40 - 13:00 - mizuno - entregavel id 16 - busca vazia🟡
-14:00 - 15:30 - mizuno - entregavel id 15 - resultado de busca🟡
-16:20 - 16:50 - mizuno - entregavel id 15 - resultado de busca🟡
-16:50 - 17:15 - mizuno - entregavel id 23 - footer checkout 🟡
-17:15 - 17:30 - mizuno - daily🟡
-17:30 - 18:00 - mizuno - entregavel id 23 - footer checkout 🟡
