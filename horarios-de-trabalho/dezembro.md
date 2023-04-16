@@ -561,8 +561,31 @@
 10/04/2023 - 16:00 - 17:00 - mizuno - entregavel id 23 - footer checkout 🟢
 10/04/2023 - 17:00 - 18:00 - weekly equipe
 
+**# 11/04/2023**
+09:00 - 10:10 - mizuno - auxiliando dev carlos a rodar projeto
+10:40 - 12:30 - mizuno - landing page cadastro 
+12:30 - 13:00 - cacau brasil - landing page formulario
+14:00 - 16:00 - call estruturação ideias - lorena,leo,mario
+16:00 - 18:00 - Brasil Cacau - garantia
 
+**# 12/04/2023**
+09:00 - 09:40 - kopenhagen - formulario de cadastro
+- medico
+11:00 - 13:00 - kopenhagen - formulario de cadastro
+14:00 - 17:00 - kopenhagen - formulario de cadastro
+17:15 - 17:30 - daily
+17:30 - 18:00 - brasil cacau - garantia
 
+13/04
+09:00 - 11:00 - kopenhagen - garantia
+11:00 - 11:30 - A/D
+11:30 - 16:00 - kopenhagen - garantia
+17:00 - 18:00 - kopenhagen - garantia
 
+// amanhã:
+subir NPS e fix cacau brasil
+ver shelfs em mizuno
+deixar pronto regionalização
+documentar questão de placeholder
 
 

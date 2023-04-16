@@ -14,6 +14,57 @@
 ## delivery
 É a entrega do produto no endereço do cliente.
 
+## produto coringa
+Produto com esstoque infinito em todos os sellers, utilizado para listar todas as entregas e retiradas de um cep
+
+```js
+export const HandleView = async ({
+  newCep,
+  orderForm
+}: THandleView) => {
+  let data = null
+
+    const options = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/vnd.vtex.ds.v10+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        items: [
+          {
+            id: orderForm.items.length > 0 ?
+              orderForm.items[0].id :
+              '697',
+            quantity: 1,
+            seller: '1'
+          }
+        ],
+        postalCode: newCep,
+        country: 'BRA',
+      })
+    };
+
+  try {
+    await fetch('/api/checkout/pub/orderForms/simulation?RnbBehavior=0', options)
+      .then(response => response.json())
+      .then(dataResponse => {
+
+
+        data = dataResponse?.logisticsInfo.reduce((slas: string[], info: any) => [
+          ...slas,
+          ...info.slas
+        ], [])
+      })
+  } catch (err) {
+    return data
+  }
+
+  return data
+}
+
+```
+
 # API usada para regionalização
 ```js
 export type TRegionalizeStore = {
@@ -57,7 +108,7 @@ export const GetPickupSimulation = async ({ itemId, selectedCep, hasSlaSelected 
 }
 ```
 
-##delivery
+## delivery
 
 ```js
 export const GetDeliverySimulation = async ({ itemId, selectedCep }: TGetDeliverySimulation) => {
