@@ -1,4 +1,4 @@
-^(?:(?![🟢#]).)*savegnago(?:(?![🟢#]).)*$
+^(?:(?![🟢#]).)*cafe(?:(?![🟢#]).)*$
 ^ - âncora que casa o início da linha.
 (?: - início de um grupo não-capturador.
 (?![🟢#]) - negative lookahead que verifica se o próximo caractere não é🟡, 🟢 ou #.
@@ -302,7 +302,7 @@
 **# 10/02/2023**
 10/02/2023 - 09:20 - 12:20 - kopenhagen - garantia 🟢
 10/02/2023 - 13:20 - 16:30 - kopenhagen - garantia 🟢
-10/02/2023 - 16:30 - 16:50 - cacau brasil - replicação 🟢
+10/02/2023 - 16:30 - 16:50 - brasil cacau - replicação 🟢
 10/02/2023 - 16:50 - 17:15 - kopenhagen - garantia 🟢
 10/02/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
 10/02/2023 - 17:30 - 18:10 - kopenhagen - garantia 🟢
@@ -378,7 +378,7 @@
 **# 28/02/2023**
 28/02/2023 - 09:00 - 11:00 - marabraz producao - garantia 🟢
 28/02/2023 - 11:00 - 13:20 - brasil cacau - replicação 🟢
-28/02/2023 - 14:00 - 14:15 - olympikus - validação app de flags🟡 
+28/02/2023 - 14:00 - 14:15 - olympikus - validação app de flags 🔴
 28/02/2023 - 14:15 - 17:15 - brasil cacau - replicação 🟢
 28/02/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
 28/02/2023 - 17:30 - 17:45 - marabraz - daily 🟢
@@ -388,8 +388,8 @@
 01/03/2023 - 07:00 - 10:30 - marabraz - garantia 🟢
 01/03/2023 - 10:30 - 12:50 - kopenhagen - garantia 🟢
 01/03/2023 - 14:00 - 15:00 - kopenhagen - garantia 🟢
-01/03/2023 - 15:00 - 17:15 - cacau brasil - replicação 🟢
-01/03/2023 - 17:15 - 17:30 - cacau brasil - daily 🟢
+01/03/2023 - 15:00 - 17:15 - brasil cacau - replicação 🟢
+01/03/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
 01/03/2023 - 17:30 - 18:00 - marabraz - daily 🟢
 
 **# 02/03/2023**
@@ -421,8 +421,8 @@
 
 **# 08/03/2023**
 08/03/2023 - 09:00 - 10:00 - marabraz - garantia 🟢
-08/03/2023 - 10:00 - 12:13 - cacau brasil - replicação 🟢
-08/03/2023 - 13:14 - 17:15 - cacau brasil - replicação 🟢
+08/03/2023 - 10:00 - 12:13 - brasil cacau - replicação 🟢
+08/03/2023 - 13:14 - 17:15 - brasil cacau - replicação 🟢
 08/03/2023 - 17:15 - 17:30 - brasil cacau - daily 🟢
 08/03/2023 - 18:00 - 20:00 - marabraz - garantia 🟢
 
@@ -478,18 +478,18 @@
 **# 20/03**
 20/03/2023 - 09:00 - 11:15 - marabraz - shopping guide 🟢
 20/03/2023 - 11:15 - 12:00 - weekly devs 🟢 
-20/03/2023 - 13:30 - 14:00 - mizuno - daily 🟡
+20/03/2023 - 13:30 - 14:00 - mizuno - daily 🟢
 20/03/2023 - 14:28 - 17:00 - marabraz - shopping guide 🟢
 20/03/2023 - 17:00 - 18:01 - weekly equipe 🟢
 
 **# 21/03**
 21/03/2023 - 09:00 - 13:03 - marabraz - shopping guide 🟢
 21/03/2023 - 14:30 - 17:45 - marabraz - shopping guide 🟢
-21/03/2023 - 17:45 - 18:00 - mizuno - daily 🟡
+21/03/2023 - 17:45 - 18:00 - mizuno - daily 🟢
 
 **# 22/03**
 22/03/2023 - 09:08 - 09:30  - marabraz - shopping guide 🟢
-22/03/2023 - 09:30 - 10:00 - mizuno - daily 🟡
+22/03/2023 - 09:30 - 10:00 - mizuno - daily 🟢
 22/03/2023 - 10:00 - 13:08 - marabraz - shopping guide 🟢
 22/03/2023 - 14:08 - 17:15 - marabraz - shopping guide 🟢
 22/03/2023 - 17:15 - 17:30 - kopenhagen - daily 🟢
@@ -511,7 +511,7 @@
 28/03/2023 - 12:00 - 13:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 28/03/2023 - 14:00 - 14:20 - mizuno - call sobre departamento 🟡
 28/03/2023 - 14:20 - 17:30 - mizuno - entregavel id 13 - departamento/categoria 🟢
-28/03/2023 - 17:30 - 17:45 - mizuno - daily 🟡
+28/03/2023 - 17:30 - 17:45 - mizuno - daily 🟢
 28/03/2023 - 17:45 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 28/03/2023 - 18:00 - 20:00 - marabraz - landing page 🟢
 
@@ -522,7 +522,7 @@
 29/03/2023 - 15:40 - 16:10 - marabraz - landing page 🟢
 29/03/2023 - 16:10 - 16:50 - mizuno - entregavel id 13 - departamento/categoria 🟢
 29/03/2023 - 16:50 - 17:15 - kopenhagen 🟢
-29/03/2023 - 17:15 - 17:30 - mizuno - daily 🟡
+29/03/2023 - 17:15 - 17:30 - mizuno - daily 🟢
 29/03/2023 - 17:30 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 
 **# 30/03/2023**
@@ -530,7 +530,7 @@
 30/03/2023 - 10:30 - 13:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 30/03/2023 - 14:00 - 16:30 - mizuno - entregavel id 13 - departamento/categoria 🟢
 30/03/2023 - 16:30 - 17:10 - vtex - caiu 🔴
-30/03/2023 - 17:10 - 17:25 - mizuno - daily 🟡
+30/03/2023 - 17:10 - 17:25 - mizuno - daily 🟢
 30/03/2023 - 17:25 - 18:00 - mizuno - entregavel id 13 - departamento/categoria 🟢
 
 **# 31/03/2023**
@@ -541,51 +541,97 @@
 31/03/2023 - 15:30 - 16:20 - mizuno - corrigindo pr e verificando estrutura do projeto 🔴
 31/03/2023 - 16:20 - 16:50 - mizuno - entregavel id 15 - resultado de busca 🟢
 31/03/2023 - 16:50 - 17:15 - mizuno - entregavel id 23 - footer checkout 🟢
-31/03/2023 - 17:15 - 17:30 - mizuno - daily 🟡
+31/03/2023 - 17:15 - 17:30 - mizuno - daily 🟢
 31/03/2023 - 17:30 - 18:00 - mizuno - entregavel id 23 - footer checkout 🟢
 
 **# 03/04/2023**
 03/04/2023 - 09:00 - 09:40 - mizuno - entregavel id 23 - footer checkout 🟢
 03/04/2023 - 10:20 - 11:15 - savegnago - garantia
-03/04/2023 - 11:15 - 12:00 - weekly dev
+03/04/2023 - 11:15 - 12:00 - weekly dev 🟢
 03/04/2023 - 12:00 - 13:00 - mizuno - entregavel id 23 - footer checkout 🟢
 03/04/2023 - 14:00 - 17:00 - mizuno - entregavel id 23 - footer checkout 🟢
-03/04/2023 - 17:00 - 17:45 - weekly equipe 
-03/04/2023 - 17:45 - 20:00 - cacau brasil - garantia
+03/04/2023 - 17:00 - 17:45 - weekly equipe  🟢
+03/04/2023 - 17:45 - 20:00 - brasil cacau - garantia 🟡
+
+**# 04/04/2023**
+04/04/2023 - 09:00 - 10:00 - brasil cacau - formulario de cadastro 🟡
+04/04/2023 - 10:00 - 11:00 - brasil cacau - call sobre formulario de cadastro 🟡
+04/04/2023 - 11:00 - 13:02 - brasil cacau - formulario de cadastro 🟡
+04/04/2023 - 14:05 - 16:30 - brasil cacau - formulario de cadastro 🟡
+04/04/2023 - 16:30 - 17:00 - mizuno - daily 🟢
+04/04/2023 - 17:00 - 18:02 - brasil cacau - formulario de cadastro 🟡
+
+**# 05/04/2023**
+05/04/2023 - 09:00 - 09:40 - café avanti 🟢
+05/04/2023 - 09:40 - 11:00 - atestado 🔴
+05/04/2023 - 11:00 - 14:00 - brasil cacau - formulario de cadastro 🟡
+05/04/2023 - 15:00 - 17:45 - brasil cacau - formulario de cadastro 🟡
+05/04/2023 - 17:45 - 18:00 - mizuno - daily 🟢
 
 **# 10/04/2023**
-10/04/2023 - 09:30 - 12:10 - boilerplate - fazendo ajustes para automatizar varias tarefas
-10/04/2023 - 11:15 - 12:20 - weekly dev 
-10/04/2023 - 13:30 - 15:30 - mizuno - entregavel id 26 - orderplaced
+10/04/2023 - 09:30 - 12:10 - boilerplate - fazendo ajustes para automatizar varias tarefas 🟢
+10/04/2023 - 11:15 - 12:20 - weekly dev 🟢 
+10/04/2023 - 13:30 - 15:30 - mizuno - entregavel id 26 - orderplaced 🟡
 10/04/2023 - 15:30 - 16:00 - mizuno - corrigindo pr e verificando estrutura do projeto 🔴
 10/04/2023 - 16:00 - 17:00 - mizuno - entregavel id 23 - footer checkout 🟢
-10/04/2023 - 17:00 - 18:00 - weekly equipe
+10/04/2023 - 17:00 - 18:00 - weekly equipe 🟢
 
 **# 11/04/2023**
-09:00 - 10:10 - mizuno - auxiliando dev carlos a rodar projeto
-10:40 - 12:30 - mizuno - landing page cadastro 
-12:30 - 13:00 - cacau brasil - landing page formulario
-14:00 - 16:00 - call estruturação ideias - lorena,leo,mario
-16:00 - 18:00 - Brasil Cacau - garantia
+11/04/2023 - 09:00 - 10:10 - mizuno - auxiliando dev carlos a rodar projeto 🔴
+11/04/2023 - 10:40 - 12:30 - mizuno - landing page cadastro 
+11/04/2023 - 12:30 - 13:00 - brasil cacau - formulario de cadastro 🟡
+11/04/2023 - 14:00 - 16:00 - call estruturação ideias - lorena,leo,mario
+11/04/2023 - 16:00 - 18:00 - Brasil Cacau - formulario de cadastro 🟡
 
 **# 12/04/2023**
-09:00 - 09:40 - kopenhagen - formulario de cadastro
-- medico
-11:00 - 13:00 - kopenhagen - formulario de cadastro
-14:00 - 17:00 - kopenhagen - formulario de cadastro
-17:15 - 17:30 - daily
-17:30 - 18:00 - brasil cacau - garantia
+12/04/2023 - 09:00 - 09:40 - kopenhagen - formulario de cadastro 🟡
+12/04/2023 - 09:40 - 11:00 - medico
+12/04/2023 - 11:00 - 13:00 - kopenhagen - formulario de cadastro 🟡
+12/04/2023 - 14:00 - 17:00 - kopenhagen - formulario de cadastro 🟡
+12/04/2023 - 17:15 - 17:30 - mizuno - daily 🟢
+12/04/2023 - 17:30 - 18:00 - brasil cacau - formulario de cadastro 🟡
 
-13/04
-09:00 - 11:00 - kopenhagen - garantia
-11:00 - 11:30 - A/D
-11:30 - 16:00 - kopenhagen - garantia
-17:00 - 18:00 - kopenhagen - garantia
+**# 13/04/2023**
+13/04/2023 - 09:00 - 11:00 - kopenhagen - regionalização 🟡
+13/04/2023 - 11:00 - 11:30 - A/D 🟡
+13/04/2023 - 11:30 - 15:58 - kopenhagen - regionalização 🟡
+13/04/2023 - 16:58 - 18:00 - kopenhagen - regionalização 🟡
 
-// amanhã:
-subir NPS e fix cacau brasil
-ver shelfs em mizuno
-deixar pronto regionalização
-documentar questão de placeholder
+**# 14/04/2023**
+14/04/2023 - 09:00 - 13:02 - kopenhagen - regionalização 🟡 
+14/04/2023 - 14:03 - 16:30 - brasil cacau - regionalização 🟡
+14/04/2023 - 16:30 - 17:00 - mizuno - daily 🟢
+14/04/2023 - 17:00 - 18:00 - brasil cacau - regionalização 🟡
+
+**# 17/04/2023**
+17/04/2023 - 09:00 - 11:15 - kopenhagen - regionalização 🟡
+17/04/2023 - 11:15 - 12:15 - weekly dev 🟢
+17/04/2023 - 13:50 - 17:00 - mizuno - prateleira 🟡
+17/04/2023 - 17:00 - 17:30 - weekly equipe 🟢
 
 
+
+
+
+
+
+
+
+
+
+
+
+mizuno - call sobre departamento - 28/03/2023 - 01:30
+
+brasil cacau - garantia - 03/04/2023 - 02:15
+brasil cacau - formulario de cadastro - 04/04/2023 - 12/04/2023 - 15:30
+brasil cacau - call sobre formulario de cadastro - 04/04/2023 - 01:00
+
+kopenhagen - formulario de cadastro - 12/04/2023 - 05:00 
+mizuno - entregavel id 26 - orderplaced - 10/04/2023 - 02:00
+kopenhagen - regionalização - 13/04/2023 - 14/04/2023 - 10:00
+
+A/D - 13/04/2023 - 01:30
+
+brasil cacau - regionalização - andamento
+mizuno - prateleira - 17/04/2023 - andamento

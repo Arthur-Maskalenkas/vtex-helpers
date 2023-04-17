@@ -1,0 +1,1 @@
+https://brasilcacau.myvtex.com/admin/inventory?skuId=697&keyword=697
