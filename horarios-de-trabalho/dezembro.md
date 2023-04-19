@@ -614,6 +614,7 @@
 18/04/2023 - 10:00 - 13:00 - mizuno - prateleira 🟡
 18/04/2023 - 14:00 - xxx - brasil cacau - regionalização 🟡
 18/04/2023 - 15:00 - 15:30 - mizuno - daily
+18/04/2023 - 15:30 - xxx - brasil cacau - regionalização 🟡
 
 
 **# 19/04/2023**
