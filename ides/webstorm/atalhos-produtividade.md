@@ -51,8 +51,11 @@ ctrl + shift + insert
 show usage
 shift + w
 
-quick definition
-shift + q
+quick documentation
+shift + | + shift + z
+
+close active tab
+shift + | + shift + |
 
 mostrar conteudo do codigo selecionado (abre popup no codigo selecionado)
 shift + e

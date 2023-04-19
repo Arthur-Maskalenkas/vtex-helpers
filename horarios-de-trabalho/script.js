@@ -9,8 +9,8 @@ const inputInit = $(".delete-modal-content > form > :nth-child(2) input[placehol
 const inputEnd = $(".delete-modal-content > form > :nth-child(3) input[placeholder=\"00:00\"")
 const buttonSubmit = $(".delete-modal-content > form > :last-child > button:first-child")
 
-inputDate.value = "14/04/2023"
-inputInit.value = "14:00"
-inputEnd.value = "15:00"
+inputDate.value = "17/04/2023"
+inputInit.value = "17:00"
+inputEnd.value = "17:30"
 
 buttonSubmit.click()
