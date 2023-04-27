@@ -24,3 +24,4 @@ const simulateProduct = async (idProduct, postalcode) => {
 }
 
 await simulateProduct('697', '06460010')
+await fetch('https://www.kopenhagen.com.br/api/checkout/pub/regions/?country=BRA&postalCode=06460010').then(d => d.json()).then(r => r[0].sellers)
