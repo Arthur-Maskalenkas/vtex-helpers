@@ -578,7 +578,7 @@
 11/04/2023 - 09:00 - 10:10 - mizuno - auxiliando dev carlos a rodar projeto 🔴
 11/04/2023 - 10:40 - 12:30 - mizuno - landing page cadastro 
 11/04/2023 - 12:30 - 13:00 - brasil cacau - garantia 🟢
-11/04/2023 - 14:00 - 16:00 - call estruturação ideias - lorena,leo,mario
+11/04/2023 - 14:00 - 16:00 - call estruturação ideias - lorena,leo,mario 🟢
 11/04/2023 - 16:00 - 18:00 - brasil cacau - garantia 🟢
 
 **# 12/04/2023**
@@ -618,47 +618,36 @@
 **# 19/04/2023**
 19/04/2023 - 09:00 - 10:00 - café avanti
 19/04/2023 - 10:00 - 11:00 - mizuno - integração api smart hint 🟢
-19/04/2023 - 11:00 - 13:00 - mappin - replicação 🟡
+19/04/2023 - 11:00 - 13:00 - mappin - replicação 🟢
 19/04/2023 - 14:00 - 17:00 - mizuno - integração api smart hint 🟢
-19/04/2023 - 17:00 - 18:00 - olympkus - pdp 🟡
+19/04/2023 - 17:00 - 18:00 - olympkus - pdp 🟢
 
 **# 20/04/2023**
-09:00 - 13:00 - mizuno - integração api smart hint 🟢
-14:00 - 17:15 - mizuno - integração api smart hint 🟢
-17:15 - 17:30 - mizuno - daily 🟢
+20/04/2023 - 09:00 - 13:00 - mizuno - integração api smart hint 🟢
+20/04/2023 - 14:00 - 17:15 - mizuno - integração api smart hint 🟢
+20/04/2023 - 17:15 - 17:30 - mizuno - daily 🟢
 
-24/04/2023
-09:00 - 11:15  - mizuno - integração api smart hint 🟢
-11:15 - 12:20 - weekly dev
-14:00 - 18:00  - mizuno - integração api smart hint 🟢
+**# 24/04/2023**
+24/04/2023 - 09:00 - 11:15  - mizuno - integração api smart hint 🟢
+24/04/2023 - 11:15 - 12:20 - weekly dev
+24/04/2023 - 14:00 - 18:00  - mizuno - integração api smart hint 🟢
 
-25/04/2023
-09:30 13:00 - mizuno - entregavel id 10 - prateleiras 🟢
-14:00 - 15:00 - mizuno - entregavel id 10 - prateleiras 🟢
-15:00 - 18:00 - brasil cacau - garantia 🟢
+**# 25/04/2023**
+25/04/2023 - 09:30 13:00 - mizuno - entregavel id 10 - prateleiras 🟢
+25/04/2023 - 14:00 - 15:00 - mizuno - entregavel id 10 - prateleiras 🟢
+25/04/2023 - 15:00 - 18:00 - brasil cacau - garantia 🟢
 
-26/04/2023
-09:40 - 13:00 - mizuno - entregavel id 10 - prateleiras 🟢
-14:00 - 18:40 - mizuno - entregavel id 10 - prateleiras 🟢
+**# 26/04/2023**
+26/04/2023 - 09:40 - 13:00 - mizuno - entregavel id 10 - prateleiras 🟢
+26/04/2023 - 14:00 - 18:40 - mizuno - entregavel id 10 - prateleiras 🟢
 
-27/04/2023
-09:00 - 13:00 - mizuno - entregavel id 10 - prateleiras 🟢 
-14:00 - 17:20 - mizuno - entregavel id 10 - prateleiras 🟢 
-17:45 - 18:15 - mizuno - daily 🟢
+**# 27/04/2023**
+27/04/2023 - 09:00 - 13:00 - mizuno - entregavel id 10 - prateleiras 🟢 
+27/04/2023 - 14:00 - 17:20 - mizuno - entregavel id 10 - prateleiras 🟢 
+27/04/2023 - 17:45 - 18:15 - mizuno - daily 🟢
 
-28/04/2023 
-11:00 - 11:20 - mizuno - daily 🟢
-
-mizuno - entregavel id 41 - Banner entre shelvs - 27/03/2023 - 01:30 🟢
-mizuno - entregavel id 26 - orderplaced - 10/04/2023 - 02:00 🟢
-mizuno - entregavel id 10 - prateleiras - 24/07/2023 - andamento 🟢
-
-brasil cacau - garantia - 03/04/2023 - 26/04/2023 - 13:00 🟢
-kopenhagen - garantia - 13/04/2023 - 14/04/2023 - 10:00 🟢
-
-olympikus - pdp - 19/04/2023 - 01:00
-nansi - replicação - 19/04/2023 - 02:00
-
-A/D - 13/04/2023 - 00:30
-
-integração api smart hint 🟢
+**# 28/04/2023** 
+28/04/2023 - 09:00 - 11:00 - mizuno - entregavel id 10 - prateleiras 🟢 
+28/04/2023 - 11:00 - 11:20 - mizuno - daily 🟢
+28/04/2023 - 12:00 - 13:00 - mizuno - entregavel id 10 - prateleiras 🟢 
+28/04/2023 - 14:00 - 18:00 - mizuno - entregavel id 10 - prateleiras 🟢 
