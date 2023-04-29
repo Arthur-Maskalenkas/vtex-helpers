@@ -1,0 +1,28 @@
+.container-component--shelf-desktop--default.container-component {
+  position: relative;
+
+  padding-bottom: 80px;
+
+  .button--right-arrow,
+  .button--left-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .button--left-arrow {
+    left: -25px;
+  }
+
+  .button--right-arrow {
+    right: -25px;
+  }
+
+  .container-content--shelf--title {
+    .title {
+      @include textConfigCustom($color: #060606, $fontSize: 32, $line-height: 32, $fontWeight: 700);
+      margin-bottom: 40px;
+    }
+  }
+}

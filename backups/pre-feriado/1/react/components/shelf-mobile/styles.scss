@@ -1,0 +1,33 @@
+.container-component--shelf-mobile--default.container-component {
+  position: relative;
+
+  padding-bottom: 80px;
+
+  .container-content--slider-arrows {
+    position: absolute;
+    bottom: 0;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .button--right-arrow {
+      margin-left: 30px;
+    }
+
+    .button {
+      cursor: pointer;
+    }
+  }
+
+  .container-content--shelf--title {
+    .title {
+      @include textConfigCustom($color: #060606, $fontSize: 32, $line-height: 32, $fontWeight: 700);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+}
