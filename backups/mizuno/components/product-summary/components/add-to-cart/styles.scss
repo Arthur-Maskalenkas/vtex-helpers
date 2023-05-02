@@ -1,0 +1,109 @@
+.container-component--add-to-cart {
+  width: 100%;
+  z-index: 10;
+
+  .container-content--hidden-button {
+    .button--open-sku {
+      transform: translateX(-50px);
+      pointer-events: none !important;
+      width: 40px !important;
+    }
+  }
+
+  .button--open-sku {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    transition: 300ms all;
+    background: white;
+    border-radius: 20px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 10px;
+
+    height: 40px;
+    width: 40px;
+
+    &:hover {
+      width: calc(300px - 20px);
+    }
+
+    .container-content--hidden {
+
+      background-color: white;
+      transition: 300ms all;
+
+      overflow: hidden;
+      width: 0;
+
+      .text {
+        color: black;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        min-width: 300px;
+        left: 0;
+      }
+    }
+  }
+
+  .list--sku {
+    .container-component--skeleton {
+      width: 100%;
+      cursor: not-allowed;
+      height: 100%;
+      border-radius: 20px;
+      position: absolute;
+    }
+
+
+    transform: translateY(150%);
+    border-radius: 10px;
+    transition: 200ms all;
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    max-width: calc(300px - 20px);
+
+    padding: 5px;
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    row-gap: 10px;
+    column-gap: 10px;
+
+    background-color: white;
+
+    .button--add-sku {
+      @include textConfigCustom($color: #707070, $fontSize: 14, $line-height: 14, $fontWeight: 500);
+      cursor: pointer;
+
+      &:hover {
+        -webkit-text-stroke-width: 1px;
+        text-decoration: underline;
+        -webkit-text-stroke-color: black;
+      }
+    }
+
+    &--opened {
+      transform: translateY(0);
+
+    }
+
+
+  }
+
+}

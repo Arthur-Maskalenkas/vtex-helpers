@@ -1,0 +1,16 @@
+{
+  "app-smart-hint": { },
+
+  "app-smart-hint.shelf-recommendations-by-page": {
+    "component": "ShelfRecommendationsByPage",
+    "render": "client"
+  },
+  "app-smart-hint.history-pdp": {
+    "component": "HistoryPdp",
+    "render": "client"
+  },
+  "app-smart-hint.history-search": {
+    "component": "HistorySearch",
+    "render": "client"
+  }
+}
