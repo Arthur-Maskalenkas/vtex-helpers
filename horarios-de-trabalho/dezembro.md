@@ -651,3 +651,25 @@
 28/04/2023 - 11:00 - 11:20 - mizuno - daily 🟢
 28/04/2023 - 12:00 - 13:00 - mizuno - entregavel id 10 - prateleiras 🟢 
 28/04/2023 - 14:00 - 18:00 - mizuno - entregavel id 10 - prateleiras 🟢 
+
+02/05/2023
+16:00 - 18:00 - weekly
+11:15 - 12:00 - devs
+
+03/05/2023
+10:30 - 11:30 - mapppin - estimativa de tempo
+14:30 - 16:00 - mapppin - estimativa de tempo
+16:00 - 17:45 - mapppin - replicação
+
+04/05/2023
+09:00 - 10:00 - mapppin - replicação
+10:30 - 13:00 - mizuno - entregavel id 34 - E-Mails Transacionais
+14:15 - 15:00 - mizuno - entregavel id 34 - E-Mails Transacionais
+15:00 - 16:00 - olympkus - smart hint
+16:00 - 17:15 - mappin - replicação
+17:30 - 17:45 - mizuno - daily
+
+05/05/2023
+09:00 - 13:00 - smart hint
+14:30 - 15:30 - mizuno - daily
+15:30 - 18:00 - mizuno - homolog
