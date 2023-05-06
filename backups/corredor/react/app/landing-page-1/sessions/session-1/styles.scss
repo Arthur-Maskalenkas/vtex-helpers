@@ -1,0 +1,31 @@
+.container-component--session-1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .container-content--image-text {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    .title {
+      @include textConfigCustom($color: #F2F2F2, $fontSize: 35, $line-height: 35, $fontWeight: 700, $fontSizeDesktop: 40, $lineHeightDesktop: 40);
+      margin-bottom: 10px;
+    }
+
+    .text {
+      @include textConfigCustom($color: #F2F2F2, $fontSize: 16, $line-height: 20, $fontWeight: 500);
+      max-width: 200px;
+    }
+  }
+}

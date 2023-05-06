@@ -1,0 +1,18 @@
+.container-component--session-3 {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    @include textConfigCustom($color: #060606, $fontSize: 40, $line-height: 40, $fontWeight: 700);
+    margin-bottom: 20px;
+  }
+
+  .text {
+    @include textConfigCustom($color: #060606, $fontSize: 16, $line-height: 16, $fontWeight: 500);
+    text-align: center;
+  }
+}

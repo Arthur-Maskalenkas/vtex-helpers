@@ -1,0 +1,21 @@
+.container-rich-text-custom,
+.container-rich-text-custom * {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  text-decoration: inherit !important;
+  color: inherit !important;
+  width: inherit !important;
+  height: inherit !important;
+  display: inherit !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  border: inherit !important;
+  background: inherit !important;
+  text-align: inherit !important;
+  line-height: inherit !important;
+  box-sizing: inherit !important;
+  white-space: inherit !important;
+  overflow: inherit !important;
+
+}
