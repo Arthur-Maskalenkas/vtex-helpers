@@ -4,6 +4,7 @@ import React from 'react'
 import { CSS_HANDLES, generateCSS } from '../../modules'
 import { useCssHandles } from 'vtex.css-handles'
 
+
 export interface RichTextCustomProps {
   text: string
 }
@@ -13,7 +14,9 @@ export const RichTextCustom = ({ text }: RichTextCustomProps) => {
 
   return (
     <div className={`${generateCSS('container-component', ['rich-text-custom', ''], css)} container-rich-text-custom`}>
-      <RichText text={text} />
+      <RichText
+        text={text}
+      />
     </div>
   )
 }

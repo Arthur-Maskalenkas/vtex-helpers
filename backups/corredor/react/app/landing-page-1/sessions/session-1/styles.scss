@@ -18,14 +18,14 @@
 
     transform: translate(-50%, -50%);
 
-    .title {
-      @include textConfigCustom($color: #F2F2F2, $fontSize: 35, $line-height: 35, $fontWeight: 700, $fontSizeDesktop: 40, $lineHeightDesktop: 40);
-      margin-bottom: 10px;
-    }
+    .container-component--sanitize-text {
+      &.text {
+        max-width: 200px;
+      }
 
-    .text {
-      @include textConfigCustom($color: #F2F2F2, $fontSize: 16, $line-height: 20, $fontWeight: 500);
-      max-width: 200px;
+      &.title {
+        margin-bottom: 20px;
+      }
     }
   }
 }

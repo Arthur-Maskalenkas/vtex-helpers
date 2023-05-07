@@ -9,6 +9,7 @@ declare module 'vtex.rich-text' {
     textPosition?: TextPositionValues,
     htmlId?: string,
     classes?: CssHandlesTypes.CustomClasses<typeof CSS_HANDLES>
+    blockClass?: Array<string>
   }
 
   const RichText: React.FC<RichTextProps>

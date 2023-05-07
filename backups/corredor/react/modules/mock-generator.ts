@@ -1,4 +1,4 @@
-import { ResponsiveImages } from "../context/landing-page-1/types";
+import { ResponsiveImages, ScreenImage } from "../context/landing-page-1/types";
 
 export type TFallback = {
   size?: string,
@@ -9,6 +9,10 @@ export type TFallback = {
 };
 
 export class imageHelper {
+
+  public static getImageContextAttributes(image: ScreenImage[]): ScreenImage {
+    return image?.[0] ?? { alt: '', href: '', srcDesktop: '', srcMobile: '', srcTablet: '', hrefTarget: '' }
+  }
 
   public static getSrcResponsiveOnContext(src: ResponsiveImages[]): ResponsiveImages {
     return {
@@ -40,11 +44,14 @@ export class imageHelper {
   }
 
   public static generateSrc(src?: string, fallback?: TFallback) {
+    console.log(`🚀 ~ imageHelper ~ generateSrc ~ src:`, src)
     const { size = '300x300', backgroundColor = '001589', textColor = '0087ca' } = fallback ?? {}
 
     const apiFallback = `https://dummyimage.com/${size}/${backgroundColor}/${textColor}`
 
     const validSrc = Boolean(src) ? src : apiFallback
+    console.log(`🚀 ~ imageHelper ~ generateSrc ~  Boolean(src):`, Boolean(src))
+    console.log(`🚀 ~ imageHelper ~ generateSrc ~ validSrc:`, validSrc)
 
     return validSrc
   }

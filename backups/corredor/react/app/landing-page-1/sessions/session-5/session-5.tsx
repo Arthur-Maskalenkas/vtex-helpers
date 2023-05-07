@@ -16,12 +16,12 @@ export const Session5 = () => {
   const css = useCssHandles(CSS_HANDLES)
 
   return (
-    <section className={generateCSS('container-component', ['session-5'], css)}>
-      <h2 className={generateCSS('title', ['session-5', 'main'], css)}>
+    <div className={generateCSS('container-component', ['session-5', 'section'], css)}>
+      <h2 className={generateCSS('title', ['session-5', 'variation-1'], css)}>
         <RichTextCustom text={contextSession?.title} />
       </h2>
 
-      <h2 className={generateCSS('text', ['session-5', 'main'], css)}>
+      <h2 className={generateCSS('text', ['session-5', 'variation-1'], css)}>
         <RichTextCustom text={contextSession?.description} />
       </h2>
 
@@ -42,13 +42,13 @@ export const Session5 = () => {
               {
                 item?.typeContent === 'image'
                   ? <Image srcResponsives={imageHelper.getSrcResponsiveOnContext(item?._screen_image ?? [])} />
-                  : <iframe width="700" height="400" src={item?.src} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+                  : <Image srcResponsives={imageHelper.getSrcResponsiveOnContext(item?._screen_image ?? [])} />
               }
             </li>
           )
         })}
       </ul>
 
-    </section>
+    </div>
   )
 }

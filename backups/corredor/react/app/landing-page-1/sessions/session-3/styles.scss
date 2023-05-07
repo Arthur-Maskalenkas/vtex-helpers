@@ -6,13 +6,57 @@
   justify-content: center;
   align-items: center;
 
-  .title {
-    @include textConfigCustom($color: #060606, $fontSize: 40, $line-height: 40, $fontWeight: 700);
-    margin-bottom: 20px;
+  .list-item--slider {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .container-component--link {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container-content--info {
+      .container-component--link {
+        width: max-content;
+        margin-left: auto;
+      }
+
+      padding: 20px 10px 0 10px;
+
+      display: flex;
+      flex-direction: column;
+
+
+
+      .container-content--icon-and-title {
+        display: flex;
+        align-items: center;
+
+        .title {
+          margin-left: 20px;
+        }
+      }
+
+      .container-component--sanitize-text {
+        &.link {
+          margin-left: auto;
+        }
+      }
+    }
+
+
   }
 
-  .text {
-    @include textConfigCustom($color: #060606, $fontSize: 16, $line-height: 16, $fontWeight: 500);
-    text-align: center;
+  .container-component--sanitize-text {
+    &.text {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+
+    &.container-component--main.title {
+      margin-bottom: 30px;
+    }
   }
 }

@@ -1360,6 +1360,11 @@
   dependencies:
     "@types/ms" "*"
 
+"@types/escape-html@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@types/escape-html/-/escape-html-0.0.20.tgz#cae698714dd61ebee5ab3f2aeb9a34ba1011735a"
+  integrity sha512-6dhZJLbA7aOwkYB2GDGdIqJ20wmHnkDzaxV9PJXe7O02I2dSFTERzRB6JrX6cWKaS+VqhhY7cQUMCbO5kloFUw==
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.4"
   resolved "https://registry.npmjs.org/@types/graceful-fs/-/graceful-fs-4.1.4.tgz"
@@ -1436,6 +1441,11 @@
   dependencies:
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
+
+"@types/marked@^0.6.4":
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.6.5.tgz#3cf2a56ef615dad24aaf99784ef90a9eba4e29d8"
+  integrity sha512-6kBKf64aVfx93UJrcyEZ+OBM5nGv4RLsI6sR1Ar34bpgvGVRoyTgpxn4ZmtxOM5aDTAaaznYuYUH8bUX3Nk3YA==
 
 "@types/mdast@^3.0.0":
   version "3.0.10"
@@ -1560,6 +1570,14 @@
   version "0.8.1"
   resolved "https://registry.npmjs.org/@types/zen-observable/-/zen-observable-0.8.1.tgz"
   integrity sha512-wmk0xQI6Yy7Fs/il4EpOcflG4uonUpYGqvZARESLc2oy4u69fkatFLbJOeW4Q6awO15P4rduAe6xkwHevpXcUQ==
+
+"@vtex/insane@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@vtex/insane/-/insane-2.8.0.tgz#f0184a490ce77d0b9ce764fcd07238d064d2e116"
+  integrity sha512-wAzITOKANrprxRvV7XxL8qAeh+vG0+QoyFmckqg/f05bDmkiSe6R1+81wyTcE2QNDyfkk0HaBSdVFFCD09kEgw==
+  dependencies:
+    assignment "2.0.0"
+    he "0.5.0"
 
 "@vtex/test-tools@^3.3.2":
   version "3.3.2"
@@ -1808,6 +1826,11 @@ assign-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/assign-symbols/-/assign-symbols-1.0.0.tgz"
   integrity sha1-WWZ/QfrdTyDMvCu5a41Pf3jsA2c=
+
+assignment@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/assignment/-/assignment-2.0.0.tgz#ffd17b21bf5d6b22e777b989681a815456a3dd3e"
+  integrity sha512-naMULXjtgCs9SVUEtyvJNt68aF18em7/W+dhbR59kbz9cXWPEvUkCun2tqlgqRPSqZaKPpqLc5ZnwL8jVmJRvw==
 
 astral-regex@^1.0.0:
   version "1.0.0"
@@ -2439,6 +2462,11 @@ escalade@^3.1.1:
   resolved "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
   integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
 
+escape-html@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
+  integrity sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==
+
 escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
@@ -2836,6 +2864,11 @@ hast-util-whitespace@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/hast-util-whitespace/-/hast-util-whitespace-2.0.0.tgz#4fc1086467cc1ef5ba20673cb6b03cec3a970f1c"
   integrity sha512-Pkw+xBHuV6xFeJprJe2BBEoDV+AvQySaz3pPDRUs5PNZEMQjpXJJueqrpcHIXxnWTcAGi/UOCgVShlkY6kLoqg==
+
+he@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/he/-/he-0.5.0.tgz#2c05ffaef90b68e860f3fd2b54ef580989277ee2"
+  integrity sha512-DoufbNNOFzwRPy8uecq+j+VCPQ+JyDelHTmSgygrA5TsR8Cbw4Qcir5sGtWiusB4BdT89nmlaVDhSJOqC/33vw==
 
 hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
@@ -3788,6 +3821,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+marked@^0.6.1:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.6.3.tgz#79babad78af638ba4d522a9e715cdfdd2429e946"
+  integrity sha512-Fqa7eq+UaxfMriqzYLayfqAE40WN03jf+zHjT18/uXNuzjq3TY0XTbrAoPeqSJrAmPz11VuUA+kBPYOhHt9oOQ==
+
 mdast-util-definitions@^5.0.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/mdast-util-definitions/-/mdast-util-definitions-5.1.1.tgz#2c1d684b28e53f84938bb06317944bee8efa79db"
@@ -4110,6 +4148,10 @@ mixin-deep@^1.2.0:
   dependencies:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
+
+"mizunobrio.landing-pages@https://arthurdevcorredor--mizunobrio.myvtex.com/_v/private/typings/linked/v1/mizunobrio.landing-pages@0.0.6+build1683465903/public/@types/mizunobrio.landing-pages":
+  version "0.0.6"
+  resolved "https://arthurdevcorredor--mizunobrio.myvtex.com/_v/private/typings/linked/v1/mizunobrio.landing-pages@0.0.6+build1683465903/public/@types/mizunobrio.landing-pages#4b427f82d85b9d7150ac81856fa03d32dad73658"
 
 mri@^1.1.0:
   version "1.2.0"

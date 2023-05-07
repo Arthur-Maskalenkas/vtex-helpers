@@ -13,9 +13,11 @@ export type ImageProps = {
 
 export const Image = ({ renderOn = ['desktop', 'phone', 'tablet'], srcResponsives, src = '', fallback, modifier = '', ...imageProps }: ImageProps) => {
   const { device } = useDevice()
-  const srcImage = Boolean(srcResponsives)
+  console.log(`🚀 ~ Image ~ srcResponsives:`, srcResponsives)
+  const srcImage = Object?.values(srcResponsives ?? {}).some(item => Boolean(item))
     ? imageHelper.generateResponsiveSrc(srcResponsives, device as any)
     : imageHelper?.generateSrc(src)
+  console.log(`🚀 ~ Image ~ srcImage:`, srcImage)
 
   const css = useCssHandles(CSS_HANDLES)
 

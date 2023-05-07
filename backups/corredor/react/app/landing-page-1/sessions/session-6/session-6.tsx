@@ -36,13 +36,13 @@ export const Session6 = () => {
   }
 
   return (
-    <section className={generateCSS('container-component', ['session-6'], css)}>
+    <div className={generateCSS('container-component', ['session-6', 'section'], css)}>
       <div className={generateCSS('container-content', ['session-6', 'left'], css)}>
-        <h3 className={generateCSS('title', ['session-6', 'main'], css)}>
+        <h3 className={generateCSS('title', ['session-6', 'variation-1'], css)}>
           <RichTextCustom text={contextSession?.title} />
         </h3>
 
-        <h4 className={generateCSS('text', ['session-6', 'main'], css)}>
+        <h4 className={generateCSS('text', ['session-6', 'variation-1'], css)}>
           <RichTextCustom text={contextSession?.description} />
         </h4>
         <SliderArrows
@@ -58,16 +58,16 @@ export const Session6 = () => {
                 <Link {...item}>
                   <Image srcResponsives={imageHelper.getSrcResponsiveOnContext(item?._screen_image)} />
 
-                  <h3 className={generateCSS('title', ['session-6', ''], css)}>
+                  <h3 className={generateCSS('title', ['session-6', 'variation-1'], css)}>
                     {item?.title}
                     <RichTextCustom text={item?.title} />
                   </h3>
 
-                  <h4 className={generateCSS('text', ['session-6', ''], css)}>
+                  <h4 className={generateCSS('text', ['session-6', 'variation-1'], css)}>
                     <RichTextCustom text={item?.description} />
                   </h4>
 
-                  <p className={generateCSS('text', ['session-6', 'buy-now'], css)}>
+                  <p className={generateCSS('link', ['session-6', 'variation-1'], css)}>
                     SAIBA MAIS +
                   </p>
                 </Link>
@@ -77,6 +77,6 @@ export const Session6 = () => {
         </SwiperSliderCustom>
       </div>
 
-    </section>
+    </div>
   )
 }

@@ -10,6 +10,10 @@ export const CSS_HANDLES = [
 
   "reset-default-styles",
   "reset-default-styles-all-childrens",
+  "sanitized",
+  "sanitizer",
+
+  "variation",
 
   "title",
   "text",
@@ -22,6 +26,7 @@ export const CSS_HANDLES = [
   "list-item",
   'input',
   "image",
+  "strong",
 
   "other",
 
