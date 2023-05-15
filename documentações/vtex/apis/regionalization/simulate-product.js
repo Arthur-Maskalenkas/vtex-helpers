@@ -23,4 +23,4 @@ const simulateProduct = async (idProduct, postalcode) => {
   return response
 }
 
-await simulateProduct('697', '06460010')
+await simulateProduct('697', '14680-000')

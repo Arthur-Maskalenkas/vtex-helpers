@@ -1,4 +1,4 @@
-^(?:(?![🟢#]).)*cacau(?:(?![🟢#]).)*$
+^(?:(?![🟢#]).)*mizuno(?:(?![🟢#]).)*$
 ^ - âncora que casa o início da linha.
 (?: - início de um grupo não-capturador.
 (?![🟢#]) - negative lookahead que verifica se o próximo caractere não é🟡, 🟢 ou #.
@@ -616,7 +616,7 @@
 
 
 **# 19/04/2023**
-19/04/2023 - 09:00 - 10:00 - café avanti
+19/04/2023 - 09:00 - 10:00 - café avanti 🟢
 19/04/2023 - 10:00 - 11:00 - mizuno - integração api smart hint 🟢
 19/04/2023 - 11:00 - 13:00 - mappin - replicação 🟢
 19/04/2023 - 14:00 - 17:00 - mizuno - integração api smart hint 🟢
@@ -629,7 +629,7 @@
 
 **# 24/04/2023**
 24/04/2023 - 09:00 - 11:15  - mizuno - integração api smart hint 🟢
-24/04/2023 - 11:15 - 12:20 - weekly dev
+24/04/2023 - 11:15 - 12:20 - weekly dev 🟢
 24/04/2023 - 14:00 - 18:00  - mizuno - integração api smart hint 🟢
 
 **# 25/04/2023**
@@ -652,24 +652,74 @@
 28/04/2023 - 12:00 - 13:00 - mizuno - entregavel id 10 - prateleiras 🟢 
 28/04/2023 - 14:00 - 18:00 - mizuno - entregavel id 10 - prateleiras 🟢 
 
-02/05/2023
-16:00 - 18:00 - weekly
-11:15 - 12:00 - devs
+**# 02/05/2023** 
+02/05/2023 - 09:30 - 11:15 - mizuno - integração api smart hint 🟢
+02/05/2023 - 11:15 - 12:00 - devs 🟢
+02/05/2023 - 12:00 - 13:00 - mizuno - integração api smart hint 🟢
+02/05/2023 - 14:00 - 16:00 - mizuno - integração api smart hint 🟢
+02/05/2023 - 16:00 - 18:00 - weekly setor 🟢
 
-03/05/2023
-10:30 - 11:30 - mapppin - estimativa de tempo
-14:30 - 16:00 - mapppin - estimativa de tempo
-16:00 - 17:45 - mapppin - replicação
+**# 03/05/2023** 
+03/05/2023 - 09:00 - 10:30 - mizuno - integração api smart hint 🟢
+03/05/2023 - 10:30 - 11:30 - mapppin - estimativa de tempo 🟢
+03/05/2023 - 11:30 - 13:00 - mizuno - integração api smart hint 🟢
+03/05/2023 - 14:30 - 16:00 - mapppin - estimativa de tempo 🟢
+03/05/2023 - 16:00 - 17:45 - mappin - replicação 🟢
 
-04/05/2023
-09:00 - 10:00 - mapppin - replicação
-10:30 - 13:00 - mizuno - entregavel id 34 - E-Mails Transacionais
-14:15 - 15:00 - mizuno - entregavel id 34 - E-Mails Transacionais
-15:00 - 16:00 - olympkus - smart hint
-16:00 - 17:15 - mappin - replicação
-17:30 - 17:45 - mizuno - daily
+**# 04/05/2023** 
+09:00 - 10:00 - mappin - replicação 🟢
+10:30 - 13:00 - mizuno - entregavel id 34 - E-Mails Transacionais🟢 
+14:15 - 15:00 - mizuno - entregavel id 34 - E-Mails Transacionais🟢 
+15:00 - 16:00 - olympkus - smart hint 🟠
+16:00 - 17:15 - mappin - replicação 🟢
+17:30 - 17:45 - mizuno - daily 🟢 
 
-05/05/2023
-09:00 - 13:00 - smart hint
-14:30 - 15:30 - mizuno - daily
+**# 05/05/2023** 
+09:00 - 13:00 - mizuno - integração api smart hint 🟢
+14:30 - 15:30 - mizuno - daily🟢 
 15:30 - 18:00 - mizuno - homolog
+
+**# 08/05/2023** 
+09:00 - 11:15 - mizuno - landing page corredor 🟢
+11:15 - 12:30 - weekly devs 🟢
+14:00 - 15:00 - aeronautica - start 🟢
+15:00 - 16:30 - mizuno - landing page corredor 🟢
+17:00 - 18:00 - weekly setor 🟢 
+
+
+**# 09/05/2023** 
+09:45 - 10:10 - aeronautica - Reunião de planejamento de entregáveis 🟢
+10:00 - 12:30 - underarmour - smart hint 🟠
+13:30 - 14:00 - marabraz - features
+14:00 - 14:40 - savegnago - regionalização 🟠
+14:40 - 15:50 - olympikus - smart hint 🟠
+16:10 - 17:30 - savegnago - regionalização 🟠
+17:30 - 18:00 - mizuno - daily 🟢 
+
+**# 10/05/2023** 
+09:00 - 09:30 - café avanti 🟢
+09:30 - 11:00 - savegnago - regionalização 🟠
+11:00 - 11:15 - aeronautica - daily 🟢
+11:15 - 13:15 - savegnago - regionalização 🟠
+14:45 - 17:30 - savegnago - regionalização 🟠
+17:30 - 18:00 - mizuno - daily 🟢  
+
+**# 11/05/2023** 
+09:30 - 13:15 - marabraz - extra - remover item duplicado menu 🟠
+14:30 - 16:00 - marabraz - extra - formas de pagamento pdp 🟠
+16:00 - 17:30 - marabraz - extra - formas de pagamento summary 🟠
+17:30 - 17:50 - mizuno - daily 🟢
+17:30 - 18:00 - marabraz - extra - formas de pagamento summary 🟠
+
+**# 12/05/2023** 
+09:10 - 13:00 - marabraz - extra - menu mobile 🟠
+14:00 - 14:30 - marabraz - extra - menum mobile 🟠
+14:30 - 14:40 - aeronautica - daily 🟢
+15:00 - 16:00 - bazar horizonte - homolog
+15:00 - 17:30 - marabraz - garantia 🟢
+17:30 - 17:50 - mizuno - daily 🟢
+
+15/05/2023
+09:00 - 11:15 - marabraz - garantia 🟢
+11:15 - 12:30 - weekly devs
+14:00 - 14:30 - marcando ponto
