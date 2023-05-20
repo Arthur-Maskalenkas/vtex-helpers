@@ -33,7 +33,7 @@ GlobalProvider.schema = {
     _global_avanti_footer: {
       type: 'array',
       maxItems: 1,
-      title: 'Configurar footer',
+      title: 'Configurar footer 1',
       items: GlobalContextSchemaAvantiFooter()
     }
   }
