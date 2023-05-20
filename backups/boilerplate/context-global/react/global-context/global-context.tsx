@@ -25,7 +25,6 @@ const GlobalProvider = (props: GlobalSiteEditorProps) => {
   )
 }
 
-console.log(`🚀 ~ file: global-context.tsx:28 ~ window?.location?.href:`, window?.location?.href)
 GlobalProvider.schema = {
   title: 'Configurações globais',
   type: "object",
@@ -33,7 +32,7 @@ GlobalProvider.schema = {
     _global_avanti_footer: {
       type: 'array',
       maxItems: 1,
-      title: 'Configurar footer 1',
+      title: 'Configurar footer',
       items: GlobalContextSchemaAvantiFooter()
     }
   }
