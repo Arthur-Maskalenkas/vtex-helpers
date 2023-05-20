@@ -721,5 +721,33 @@
 
 15/05/2023
 09:00 - 11:15 - marabraz - garantia 🟢
-11:15 - 12:30 - weekly devs
+11:15 - 12:30 - weekly devs 🟢
 14:00 - 14:30 - marcando ponto
+14:30 - 16:45 - aeronautica - home 🟢
+16:45 - 17:00 - aeronautica - daily 🟢
+17:00 - 18:00 - weekly setor 🟢
+
+16/05/2023
+09:00 - 11:10 - marabraz - garantia 🟢
+11:30 - 11:45 - aeronautica - daily
+11:45 - 13:00 - marabraz - garantia 🟢
+14:05 - 17:30 - marabraz - garantia 🟢
+17:30 - 17:45 - mizuno - daily 🟢
+
+17/05/2023
+09:00 - 11:10 - mappin - replicação 🟢
+11:30 - 11:45 - aeronautica - daily 🟢
+11:50 - 12:30 - mappin - replicação 🟢
+13:30 - 17:30 - mappin - replicação 🟢
+17:30 - 18:00 - mizuno - daily
+
+18/05/2023
+09:45 - 10:00 - marabraz - daily
+10:00 - 10:30 - labs - alinhamento app de flags
+15:30 - 16:00 - aeronatuica - daily 🟢
+
+19/05/2023
+09:00 - 13:00 - marabraz - garantia
+14:00 - 16:00 - marabraz - garantia
+16:00 - 16:30 - olympkus - call com a julia - smart hint
+16:30 - 16:45 - aeronatuica - 
