@@ -38,7 +38,7 @@ type SocialLinksSection = {
   items: SectionItem[];
 };
 
-type GlobalContextTypeAvantiFooter = {
+export type GlobalContextTypeAvantiFooter = {
   _screen_config_other_section?: OtherSection[];
   _screen_config_about_store?: AboutStoreSection[];
   _screen_config_logo?: LogoSection[];

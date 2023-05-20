@@ -1,4 +1,4 @@
-import { GlobalAvantiMenuContext, GlobalPixDiscounContext } from "./contexts";
+import { GlobalAvantiMenuContext, GlobalContextTypeAvantiFooter, GlobalPixDiscounContext } from "./contexts";
 
 export interface GlobalSiteEditorProps {
   _global_pix_discount: [GlobalPixDiscounContext] | [],

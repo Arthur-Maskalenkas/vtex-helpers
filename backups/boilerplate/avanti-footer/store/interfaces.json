@@ -1,0 +1,7 @@
+{
+  "app--avanti-footer": { },
+
+  "app--avanti-footer.render-mobile": {
+    "component": "RenderMobile"
+  }
+}
