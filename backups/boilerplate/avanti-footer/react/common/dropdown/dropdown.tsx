@@ -1,62 +1,58 @@
 import React, { useRef } from 'react'
-import { applyModifiers, useCssHandles } from 'vtex.css-handles'
-import { CSS_HANDLES } from "../../modules"
-
+import { useCssHandles } from 'vtex.css-handles'
+import { CSS_HANDLES, generateCSS } from "../../modules"
+import { SanitizeText } from '../sanitize-text/sanitize-text'
 
 type TDropdown = {
-	title?: string
-	text?: string
+  title?: string
 }
 
 export const Dropdown = ({
-	text,
-	title
-}: TDropdown) => {
-	if (!text || !title) {
-		return <></>
-	}
+  title,
+  children
+}: React.PropsWithChildren<TDropdown>) => {
+  if (!title || !children) {
+    return <></>
+  }
 
-	const [ isOpen, setIsOpen ] = React.useState<boolean>(false)
+  const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
-	const handleClick = () => {
-		setIsOpen(!isOpen)
-	}
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+  }
 
-	const css = useCssHandles(CSS_HANDLES)
+  const css = useCssHandles(CSS_HANDLES)
 
-	const classNameIfIsOpen = isOpen
-														? 'opened'
-														: 'closed'
+  const classNameIfIsOpen = isOpen
+    ? 'opened'
+    : 'closed'
 
-	const textElement = useRef<HTMLDivElement>(null)
+  const refContainerComponent = useRef<HTMLDivElement>(null)
+  const refContainerTitle = useRef<HTMLButtonElement>(null)
+  const refContainerChildren = useRef<HTMLDivElement>(null)
 
-	React.useEffect(() => {
-		if (textElement.current) {
-			textElement.current.style.height = isOpen
-																				 ? `${textElement.current.scrollHeight}px`
-																				 : '0px'
-		}
-	}, [ isOpen ])
+  React.useEffect(() => {
+    if (refContainerComponent.current && refContainerChildren.current && refContainerTitle.current) {
+      const heightChildren = refContainerChildren.current.scrollHeight
+      const heightTitle = refContainerTitle.current.scrollHeight
 
-	return (
-		<button onClick={() => handleClick()} className={`${applyModifiers(css['container-component'], [
-			'dropdown',
-			`dropdown-${classNameIfIsOpen}`
-		])}`}>
-			<div className={`${applyModifiers(css['container-content'], 'title')}`}>
-				<h2 dangerouslySetInnerHTML={{__html: title}} className={`${applyModifiers(css['title'], '')}`}>
-				</h2>
+      refContainerComponent.current.style.height = isOpen
+        ? `${heightChildren + heightTitle}px`
+        : `${heightTitle}px`
+    }
+  }, [isOpen])
 
-				<span className={`${applyModifiers(css['icon'], 'status')}`}>
-          {isOpen
-					 ? '-'
-					 : '+'}
+  return (
+    <div ref={refContainerComponent} className={generateCSS('container-component', ['dropdown', classNameIfIsOpen], css)}    >
+      <button ref={refContainerTitle} onClick={handleClick} className={generateCSS('container-content', ['dropdown', 'title'], css)}      >
+        <SanitizeText text={title} customClass='title' />
+        <span className={generateCSS('icon', ['dropdown', 'status'], css)}>
+          {isOpen ? '-' : '+'}
         </span>
-			</div>
-			<div className={`${applyModifiers(css['container-content'], 'text')}`} ref={textElement}>
-				<p dangerouslySetInnerHTML={{__html: text}} className={`${applyModifiers(css['text'], '')}`}>
-				</p>
-			</div>
-		</button>
-	)
+      </button>
+      <div ref={refContainerChildren} className={generateCSS('container-content', ['dropdown', 'children'], css)}>
+        {children}
+      </div>
+    </div>
+  )
 }
