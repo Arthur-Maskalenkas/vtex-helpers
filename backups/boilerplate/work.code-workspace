@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "avanti-footer"
+		},
+		{
+			"path": "avanti-common"
 		}
 	],
 	"settings": { }
