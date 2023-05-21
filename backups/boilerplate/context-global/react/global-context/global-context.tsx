@@ -5,7 +5,7 @@ import { GlobalContextSchemaAvantiFooter } from './contexts'
 
 export const GlobalContext = React.createContext<GlobalProviderProps>({} as any)
 
-export const useGlobalProvider = () => {
+const useGlobalProvider = () => {
   return React.useContext(GlobalContext)
 }
 
@@ -38,4 +38,7 @@ GlobalProvider.schema = {
   }
 } as SchemaSiteEditor
 
-export default GlobalProvider
+export {
+  GlobalProvider,
+  useGlobalProvider
+}
