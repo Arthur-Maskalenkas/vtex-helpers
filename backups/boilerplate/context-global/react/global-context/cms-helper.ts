@@ -113,7 +113,8 @@ export type SchemaSiteEditor = SchemaObjectSiteEditor | SchemaArraySiteEditor | 
 
 export type SchemaObjectSiteEditor = {
   type: 'object';
-  properties: SchemaObjectProperty;
+  dependencies?: any
+  properties?: SchemaObjectProperty;
 }
 
 export type SchemaArraySiteEditor = {

@@ -6,6 +6,7 @@ import { GlobalContextSchemaAvantiFooter } from './contexts/global-avanti-footer
 import { GlobalContextAvantiFooter } from './contexts/global-avanti-footer-context/global-context-avanti-footer'
 import { GlobalContextPricePix } from './contexts/global-price-pix-context/global-context-price-pix'
 import { GlobalContextSchemaPricePix } from './contexts/global-price-pix-context/global-context-schema-price-pix'
+import { GlobalContextSchemaAvantiMenu } from './contexts/global-avanti-menu-context/global-context-schema-avanti-menu'
 
 export const GlobalContext = React.createContext<GlobalProviderProps>({} as any)
 
@@ -45,6 +46,13 @@ GlobalProvider.schema = {
       maxItems: 1,
       title: 'Configurar valor de pix',
       items: GlobalContextSchemaPricePix()
+    },
+
+    _global_avanti_menu: {
+      type: 'array',
+      maxItems: 1,
+      title: 'Configurar Avanti Menu',
+      items: GlobalContextSchemaAvantiMenu()
     }
   }
 } as SchemaSiteEditor

@@ -11,6 +11,10 @@
 		},
 		{
 			"path": "avanti-common-repository"
+		},
+		{
+			"name": "vtexio-avantiimplatancao-apps",
+			"path": "vtexio-avantiimplatancao-apps"
 		}
 	],
 	"settings": { }

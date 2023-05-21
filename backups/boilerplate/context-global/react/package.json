@@ -28,7 +28,7 @@
     "@vtex/test-tools": "^3.3.2",
     "@vtex/tsconfig": "^0.4.4",
     "apollo-cache-inmemory": "^1.6.5",
-    "avantiimplantacao.global-context": "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704319/public/@types/avantiimplantacao.global-context",
+    "avantiimplantacao.global-context": "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684706351/public/@types/avantiimplantacao.global-context",
     "graphql": "^14.6.0",
     "typescript": "3.9.7",
     "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles",
