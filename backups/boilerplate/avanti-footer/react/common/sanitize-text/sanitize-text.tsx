@@ -9,7 +9,7 @@ import escapeHtml from 'escape-html'
 import { MarkedHelper, SanitizerHelper } from './utils'
 
 export type SanitizeTextProps = {
-  text: string
+  text?: string
   customClass?: string
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'li'
 }

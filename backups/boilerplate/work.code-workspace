@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "context-global"
+		},
+		{
+			"path": "../../../Avanti/boilerplate/vtexio-boilerplate-projetos/store-theme"
+		},
+		{
+			"path": "avanti-footer"
+		}
+	],
+	"settings": { }
+}

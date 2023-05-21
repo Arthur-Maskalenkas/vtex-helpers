@@ -1847,13 +1847,13 @@ atob@^2.1.2:
   resolved "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-"avantiimplantacao.avanti-footer@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1684655223/public/@types/avantiimplantacao.avanti-footer":
+"avantiimplantacao.avanti-footer@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1684680656/public/@types/avantiimplantacao.avanti-footer":
   version "0.0.0"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1684655223/public/@types/avantiimplantacao.avanti-footer#057efe7e16ed660bf99e62d010ac147b1e19b37f"
+  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1684680656/public/@types/avantiimplantacao.avanti-footer#dc72a702f9d69045b0e57ad7f25f1c1508b4bf49"
 
-"avantiimplantacao.global-context@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684653756/public/@types/avantiimplantacao.global-context":
+"avantiimplantacao.global-context@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684680861/public/@types/avantiimplantacao.global-context":
   version "0.0.0"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684653756/public/@types/avantiimplantacao.global-context#3b59027a0b784eb8cdd14bd1c44da0956d309710"
+  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684680861/public/@types/avantiimplantacao.global-context#61a9d71fb082b94e99fa70c77157e7780c4f0ff6"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
