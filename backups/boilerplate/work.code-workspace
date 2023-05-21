@@ -10,7 +10,7 @@
 			"path": "avanti-footer"
 		},
 		{
-			"path": "avanti-common"
+			"path": "avanti-common-repository"
 		}
 	],
 	"settings": { }

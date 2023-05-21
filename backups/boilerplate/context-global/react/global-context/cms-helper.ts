@@ -97,7 +97,7 @@ type NumberType = {
   type: 'number',
   title: string,
   description?: string
-  default?: string
+  default?: number
 }
 
 type BooleanType = {

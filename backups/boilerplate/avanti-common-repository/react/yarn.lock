@@ -1847,13 +1847,13 @@ atob@^2.1.2:
   resolved "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-"avantiimplantacao.avanti-footer@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1684681181/public/@types/avantiimplantacao.avanti-footer":
+"avantiimplantacao.avanti-common-repository@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-common-repository@0.0.0+build1684704647/public/@types/avantiimplantacao.avanti-common-repository":
   version "0.0.0"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1684681181/public/@types/avantiimplantacao.avanti-footer#ed3a31d999af378240ca392cbe3b9be65b5c55a7"
+  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-common-repository@0.0.0+build1684704647/public/@types/avantiimplantacao.avanti-common-repository#d0f53e5afd7f97d084292559ec4a8c82df0cc735"
 
-"avantiimplantacao.global-context@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704319/public/@types/avantiimplantacao.global-context":
+"avantiimplantacao.global-context@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704761/public/@types/avantiimplantacao.global-context":
   version "0.0.0"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704319/public/@types/avantiimplantacao.global-context#95873735b848475cc7a28ecbaa4f7ee244fdaa5a"
+  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704761/public/@types/avantiimplantacao.global-context#dcf758054d300c9577ad26a8f99113e3653d0082"
 
 aws-sign2@~0.7.0:
   version "0.7.0"

@@ -16,11 +16,16 @@
     "react-dom": "^16.12.0",
     "react-intl": "^3.12.0",
     "react-markdown": "^8.0.3",
-    "react-slick": "^0.29.0"
+    "react-slick": "^0.29.0",
+    "@vtex/insane": "^2.8.0",
+    "marked": "^0.6.1",
+    "escape-html": "^1.0.3"
   },
   "devDependencies": {
     "@apollo/react-testing": "^3.1.3",
+    "@types/escape-html": "^0.0.20",
     "@types/jest": "^25.1.4",
+    "@types/marked": "^0.6.4",
     "@types/node": "^13.9.8",
     "@types/react": "^16.9.31",
     "@types/react-slick": "^0.23.10",
@@ -28,7 +33,8 @@
     "@vtex/test-tools": "^3.3.2",
     "@vtex/tsconfig": "^0.4.4",
     "apollo-cache-inmemory": "^1.6.5",
-    "avantiimplantacao.global-context": "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704319/public/@types/avantiimplantacao.global-context",
+    "avantiimplantacao.avanti-common-repository": "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-common-repository@0.0.0+build1684704647/public/@types/avantiimplantacao.avanti-common-repository",
+    "avantiimplantacao.global-context": "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704761/public/@types/avantiimplantacao.global-context",
     "graphql": "^14.6.0",
     "typescript": "3.9.7",
     "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles",
