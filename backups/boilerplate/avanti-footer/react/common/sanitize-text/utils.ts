@@ -51,15 +51,15 @@ export class SanitizerHelper {
 }
 
 export class MarkedHelper {
-  public static configNormalText(content: any, el: string, css: any, generateCSS: typeof generateCSSType, variations: string[]) {
-    const defaultClass = generateCSS('variation', [...variations], css, { variations: ['sanitized', 'text'] })
+  public static configNormalText(content: any, el: string, css: any, generateCSS: typeof generateCSSType) {
+    const defaultClass = generateCSS('sanitized', ['text-default', 'text'], css)
 
 
     return `<${el} class="${defaultClass}">${content}</${el}>`
   }
 
-  public static configHeading(text: string, level: number, raw: string, css: any, generateCSS: typeof generateCSSType, variations: string[]) {
-    const defaultClass = generateCSS('variation', [...variations], css, { variations: ['sanitized', 'title'] })
+  public static configHeading(text: string, level: number, raw: string, css: any, generateCSS: typeof generateCSSType) {
+    const defaultClass = generateCSS('sanitized', ['head', `head-${level}`, 'text'], css)
 
 
     const slug = raw?.toLowerCase()?.replace(/[^\wàùòèéì]+/g, '-')?.replace(/^\-+|\-+$/g, '');
@@ -70,8 +70,8 @@ export class MarkedHelper {
     `;
   }
 
-  public static configStrong(content: string, css: any, generateCSS: typeof generateCSSType, variations: string[]) {
-    const defaultClass = generateCSS('variation', [...variations], css, { variations: ['sanitized', 'strong'] })
+  public static configStrong(content: string, css: any, generateCSS: typeof generateCSSType) {
+    const defaultClass = generateCSS('sanitized', ['strong', 'text'], css)
 
     return `<strong class="${defaultClass}">${content}</strong>`
   }
@@ -79,8 +79,9 @@ export class MarkedHelper {
 
 
 
-  public static configLink(href: string, title: string, content: string, css: any, generateCSS: typeof generateCSSType, variations: string[]) {
-    const defaultClass = generateCSS('variation', [...variations], css, { variations: ['sanitized', 'link'] })
+  public static configLink(href: string, title: string, content: string, css: any, generateCSS: typeof generateCSSType) {
+    const defaultClass = generateCSS('sanitized', ['link', 'text'], css)
+
 
     const getTargetFromUrl = (url: string) => {
       const urlSplit = url.split('?')
@@ -120,13 +121,13 @@ export class MarkedHelper {
   }
 
 
-  public static configImage(href: string, title: string, content: string, css: any, generateCSS: typeof generateCSSType, variations: string[]) {
-    const defaultClass = generateCSS('variation', [...variations], css, { variations: ['sanitized', 'image'] })
+  public static configImage(href: string, title: string, content: string, css: any, generateCSS: typeof generateCSSType) {
+    const defaultClass = generateCSS('sanitized', ['image'], css)
 
     return `<img class="${defaultClass}" src="${href}" alt="${content}" ${title ? `title="${title}"` : ''} />`
   }
-  public static configList(body: string, ordered: boolean, css: any, generateCSS: typeof generateCSSType, variations: string[]) {
-    const defaultClass = generateCSS('list', ['sanitize-text', ...variations], css, { variations: ['sanitized'] })
+  public static configList(body: string, ordered: boolean, css: any, generateCSS: typeof generateCSSType) {
+    const defaultClass = generateCSS('sanitized', ['list'], css)
 
     const tag = ordered ? 'ol' : 'ul'
 
@@ -134,8 +135,8 @@ export class MarkedHelper {
       }">${body}</${tag}>`
   }
 
-  public static configListItem(content: string, css: any, generateCSS: typeof generateCSSType, variations: string[]) {
-    const defaultClass = generateCSS('variation', [...variations], css, { variations: ['sanitized', 'list-item'] })
+  public static configListItem(content: string, css: any, generateCSS: typeof generateCSSType) {
+    const defaultClass = generateCSS('sanitized', ['list-item'], css)
 
 
     return `<li class="${defaultClass}">${content}</li>`

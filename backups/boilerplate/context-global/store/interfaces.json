@@ -1,5 +1,8 @@
 {
-  "app-global-context": {
+
+  "app--global-context": { },
+
+  "app--global-context.provider": {
     "component": "GlobalProvider"
   }
 

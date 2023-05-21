@@ -173,6 +173,24 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
           }
         }
       }
+    },
+
+    _screen_config_copyright: {
+      title: 'Configurar texto copyright',
+      type: 'array',
+      maxItems: 1,
+      items: {
+        type: 'object',
+        properties: {
+          text: {
+            title: "Texto Copyright",
+            type: 'string',
+            widget: {
+              "ui:widget": "textarea"
+            }
+          }
+        }
+      }
     }
   }
 })

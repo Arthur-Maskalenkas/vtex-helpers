@@ -1,15 +1,12 @@
 import React from 'react'
-import { GlobalProviderProps, GlobalSiteEditorProps } from './types'
 import { SchemaSiteEditor } from './cms-helper'
-import { GlobalContextSchemaAvantiFooter } from './contexts'
+import { GlobalProviderProps, GlobalSiteEditorProps } from './types'
+import { GlobalContextSchemaAvantiFooter } from './contexts/global-avanti-footer-context/global-context-schema-avanti-footer'
+import { GlobalContextAvantiFooter } from './contexts/global-avanti-footer-context/global-context-avanti-footer'
 
 export const GlobalContext = React.createContext<GlobalProviderProps>({} as any)
 
-const useGlobalProvider = () => {
-  return React.useContext(GlobalContext)
-}
-
-const GlobalProvider = (props: GlobalSiteEditorProps) => {
+export const GlobalProvider = (props: GlobalSiteEditorProps) => {
   console.log(`🚀 ~ file: global-context.tsx:12 ~ GlobalProvider ~ props:`, props)
 
   const siteEditorItems: GlobalProviderProps = {
@@ -20,7 +17,9 @@ const GlobalProvider = (props: GlobalSiteEditorProps) => {
 
   return (
     <GlobalContext.Provider value={siteEditorItems}>
-      {props.children}
+      <GlobalContextAvantiFooter.Provider value={props?._global_avanti_footer?.[0] ?? null}>
+        {props.children}
+      </GlobalContextAvantiFooter.Provider>
     </GlobalContext.Provider >
   )
 }
@@ -38,7 +37,3 @@ GlobalProvider.schema = {
   }
 } as SchemaSiteEditor
 
-export {
-  GlobalProvider,
-  useGlobalProvider
-}

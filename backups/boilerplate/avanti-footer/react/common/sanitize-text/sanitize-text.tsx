@@ -8,50 +8,19 @@ import marked, { Renderer } from 'marked'
 import escapeHtml from 'escape-html'
 import { MarkedHelper, SanitizerHelper } from './utils'
 
-export type VariationProps = {
-  variationType?: 'text' | 'title' | 'link'
-  variationFont?: '1' | '2' | '3'
-  variationColor?: 'black' | 'white' | 'blue' | 'gray'
-}
-
-
 export type SanitizeTextProps = {
   text: string
   customClass?: string
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'li'
-
-  variations?: VariationProps
 }
 
-export const SanitizeText = ({ text, customClass, as = 'h3', variations }: SanitizeTextProps) => {
+export const SanitizeText = ({ text, customClass = 'default-class', as }: SanitizeTextProps) => {
   if (!text) {
     return <></>
   }
   const css = useCssHandles(CSS_HANDLES)
 
-  const variationsRemapped = Object.entries(variations ?? {})?.map(([key, value]) => {
-    const keyFormatted = key?.replace(/[A-Z]/g, '-$&')?.toLowerCase()?.replace(/variation-/g, '')
-    const valueFormatted = value?.toLowerCase()
-    const fullValue = `${keyFormatted}-${valueFormatted}`
-    const cssHandlesValue = generateCSS('variation', [fullValue], css)?.replace(/undefined/g, '')
-    return cssHandlesValue
-  }).join(' ')
-
-  const currentVariation = Boolean(variationsRemapped) ? variationsRemapped : [generateCSS('variation', ['default-value'], css)]
-
-  const onlyVariations = Object.entries(variations ?? {})?.map(([key, value]) => {
-    const keyFormatted = key?.replace(/[A-Z]/g, '-$&')?.toLowerCase()?.replace(/variation-/g, '')
-    const valueFormatted = value?.toLowerCase()
-    const fullValue = `${keyFormatted}-${valueFormatted}`
-
-    return fullValue
-  })
-
-
   const [isMounted, setMounted] = React.useState(false)
-
-  const Element = as
-
 
 
   const renderer = React.useRef<Renderer>()
@@ -62,15 +31,15 @@ export const SanitizeText = ({ text, customClass, as = 'h3', variations }: Sanit
 
   if (!isMounted) {
     renderer.current = new Renderer()
-    renderer.current.strong = (content: string) => MarkedHelper.configStrong(content, css, generateCSS, onlyVariations)
-    renderer.current.paragraph = (content: string) => MarkedHelper.configNormalText(content, 'p', css, generateCSS, onlyVariations)
-    renderer.current.strong = (content: string) => MarkedHelper.configStrong(content, css, generateCSS, onlyVariations)
-    renderer.current.em = (content: string) => MarkedHelper.configNormalText(content, 'em', css, generateCSS, onlyVariations)
-    renderer.current.heading = (text, level, raw) => MarkedHelper.configHeading(text, level, raw, css, generateCSS, onlyVariations)
-    renderer.current.link = (href: string, title: string, content: string) => MarkedHelper.configLink(href, title, content, css, generateCSS, onlyVariations)
-    renderer.current.image = (href: string, title: string, content: string) => MarkedHelper.configImage(href, title, content, css, generateCSS, onlyVariations)
-    renderer.current.list = (body: string, ordered: boolean) => MarkedHelper.configList(body, ordered, css, generateCSS, onlyVariations)
-    renderer.current.listitem = (content: string) => MarkedHelper.configListItem(content, css, generateCSS, onlyVariations)
+    renderer.current.strong = (content: string) => MarkedHelper.configStrong(content, css, generateCSS)
+    renderer.current.paragraph = (content: string) => MarkedHelper.configNormalText(content, 'p', css, generateCSS)
+    renderer.current.strong = (content: string) => MarkedHelper.configStrong(content, css, generateCSS)
+    renderer.current.em = (content: string) => MarkedHelper.configNormalText(content, 'em', css, generateCSS)
+    renderer.current.heading = (text, level, raw) => MarkedHelper.configHeading(text, level, raw, css, generateCSS)
+    renderer.current.link = (href: string, title: string, content: string) => MarkedHelper.configLink(href, title, content, css, generateCSS)
+    renderer.current.image = (href: string, title: string, content: string) => MarkedHelper.configImage(href, title, content, css, generateCSS)
+    renderer.current.list = (body: string, ordered: boolean) => MarkedHelper.configList(body, ordered, css, generateCSS)
+    renderer.current.listitem = (content: string) => MarkedHelper.configListItem(content, css, generateCSS)
     renderer.current.html = (html) => escapeHtml(html)
   }
 
@@ -83,13 +52,24 @@ export const SanitizeText = ({ text, customClass, as = 'h3', variations }: Sanit
       renderer: renderer.current,
     })
 
+    let html = marked(text)
+    // Encontra as tags do nível superior
+    const topLevelTagMatches = html.match(/<([a-z][a-z0-9]*)\b[^>]*>(.*?)<\/\1>/gs) || []
+
+    // Se houver apenas uma tag no nível superior, substitui essa tag pela tag presente na prop 'as'
+    if (topLevelTagMatches.length === 1 && Boolean(as)) {
+      const tag = topLevelTagMatches?.[0]?.match(/<([a-z][a-z0-9]*)\b[^>]*>/)?.[1]
+      const tagRegEx = new RegExp(`<(/)?${tag}(\\b|>)`, 'g')
+      html = html.replace(tagRegEx, `<$1${as}$2`)
+    }
+
     return insane(
-      marked(text),
+      html,
       SanitizerHelper.getConfig()
     )
   }, [text])
 
   return (
-    <Element className={`${generateCSS('container-component', ['sanitize-text', customClass ?? ''], css, { variations: [variations?.variationType ?? 'text'] })} ${currentVariation} `} dangerouslySetInnerHTML={{ __html: HTMLSanitized }} />
+    <div className={generateCSS('sanitized', ['container', customClass], css)} dangerouslySetInnerHTML={{ __html: HTMLSanitized }} />
   )
 }

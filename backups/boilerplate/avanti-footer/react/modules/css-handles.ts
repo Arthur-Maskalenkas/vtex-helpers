@@ -28,6 +28,8 @@ export const CSS_HANDLES = [
   "image",
   "strong",
 
+  "handled",
+
   "other",
 
   "desktop-only",
