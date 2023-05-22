@@ -1,0 +1,350 @@
+/* PRIMEIRO TEMA <theme1> ESTILO DELUPO */
+
+.theme1 {
+  .mobile {
+    &-container,
+    &-overlay,
+    &-menuArrowIcon {
+      transition: 0.3s;
+    }
+
+    &-hamburguer,
+    &-closeButton,
+    &-menuBackButton {
+      @include display-flex(center, flex, center, row);
+      background: none;
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    &-hamburguerImage {
+      @include size(37px, 25px);
+    }
+
+    &-container {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      background-color: $white;
+      @include size(80%, 110vh);
+      padding-bottom: 10vh;
+      min-width: 290px;
+      pointer-events: none;
+      transform: translate3d(-100%, 0px, 0px);
+    }
+
+    &-content {
+      @include display-flex(initial, flex, center, column);
+      @include size(100%);
+    }
+
+    &-container--Opened {
+      pointer-events: initial;
+      transform: translate3d(0%, 0px, 0px);
+    }
+
+    &-overlay {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      background-color: $blue;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &-overlay--Opened {
+      pointer-events: initial;
+      opacity: 1;
+    }
+
+    &-headerContainer {
+      height: fit-content;
+      background-color: $dark-gray;
+    }
+
+    &-titleContainer {
+      @include display-flex(center, flex, space-between, row);
+      padding: 15px 20px;
+    }
+
+    &-titleContainer::before {
+      content: '';
+      @include size(20px);
+      background-color: transparent;
+    }
+
+    &-titleContent {
+      @include display-flex(center, flex, space-between, row);
+      min-height: 24px;
+    }
+
+    &-buttonsContainer {
+      @include display-flex(center, flex, space-between, row);
+    }
+
+    &-logoutButton {
+      @include textConfig($white, 12, $fontRegular, 12, left, initial, 50);
+      padding-left: 15px;
+    }
+
+    &-title {
+      @include textConfig($black, 19, $fontSemiBold, 20, left, uppercase, 50);
+    }
+
+    &-itemsContainer {
+      @include display-flex(center, flex, space-between, column);
+      overflow: hidden;
+    }
+
+    &-itemsContent,
+    &-subItemsContent {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    &-item,
+    &-titleContainer {
+      border-bottom: 1px solid $light-gray-03;
+    }
+
+    &-subItem {
+      @include display-flex(center, flex, space-between, row);
+      @include textConfig($black, 12, $fontRegular, 12, left, initial, 50);
+      padding: 2vh 0;
+      text-decoration: none;
+    }
+
+    &-itemLink {
+      @include display-flex(center, flex, space-between, row);
+      padding: 15px 20px;
+      text-decoration: none;
+      color: $white;
+    }
+
+    &-subItemsContent {
+      padding: 0 20px;
+    }
+
+    &-itemTextContent {
+      @include display-flex(center, flex, space-between, row);
+    }
+
+    &-itemIcon {
+      padding-right: 12px;
+      @include display-flex(center, flex, space-between, row);
+    }
+
+    &-itemText {
+      @include display-flex(center, flex, space-between, row);
+      @include textConfig($white, 15, $fontSemiBold 16, left, uppercase, 50);
+      border: none;
+    }
+
+    &-subItemLink {
+      @include display-flex(center, flex, space-between, row);
+    }
+
+    &-subItemLink {
+      text-decoration: none;
+    }
+
+    &-subItemText {
+      @include textConfig($white, 16, $fontRegular, 16, left, initial, 50);
+    }
+
+    &-itemButtonAttendanceContent {
+      @include display-flex(center, flex, space-between, row);
+    }
+
+    &-itemButtonAttendance {
+      margin: 21px 28px;
+      min-height: 45px;
+      background-color: $yellow;
+      border: none;
+      border-radius: 9px;
+      @include size(100%, auto);
+      max-width: 264px;
+      @include textConfig($white, 13, $fontSemiBold, 13, left, uppercase, 50);
+    }
+
+    &-menuContainer {
+      color: inherit;
+      height: 100%;
+      overflow: auto !important;
+      position: relative;
+    }
+
+    &-menuItemsWrapper {
+      height: inherit;
+    }
+
+    &-subItems {
+      max-height: 0;
+      pointer-events: none;
+      transition: max-height 1s;
+      overflow: hidden;
+    }
+
+    &-item--Opened .mobile-subItems {
+      max-height: 280px;
+      pointer-events: auto;
+    }
+
+    &-itemLink .mobile-menuArrowIcon {
+      transform: rotate(0deg);
+      transition: 0.3s;
+      max-width: 9px;
+      fill: $white;
+    }
+
+    &-item--Opened .mobile-itemLink .mobile-menuArrowIcon {
+      transform: rotate(180deg);
+    }
+
+    &-menuItemsWrapper,
+    &-menuSecondItemsWrapper,
+    &-menuThirdItemsWrapper {
+      padding: 2vh 0;
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems {
+      display: grid;
+      padding-bottom: 11vh;
+      margin: 0;
+      height: auto;
+      overflow: auto !important;
+    }
+
+    &-menuItems {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      overflow: auto !important;
+    }
+
+    &-menuItem,
+    &-menuSecondItem,
+    &-menuThirdItem {
+      list-style: none;
+      padding: 13px 20px;
+    }
+
+    &-menuItem--novidades .mobile-menuItemLink {
+      color: $orange;
+      font-weight: 700;
+    }
+
+    &-menuItemLink,
+    &-menuSecondItemLink {
+      text-decoration: none;
+      display: block;
+    }
+
+    &-menuArrowIcon {
+      max-width: 13px;
+      fill: $orange;
+      height: auto;
+    }
+
+    &-menuItemLink,
+    &-menuSecondItemLink,
+    &-menuThirdItemLink {
+      @include textConfig($black02, 12, $fontRegular, 12, left, uppercase, 50);
+      text-decoration: none;
+    }
+
+    &-menuItemLink,
+    &-menuSecondItemLink,
+    &-menuThirdItemLink {
+      font-weight: $fontRegular;
+      text-transform: uppercase;
+    }
+
+    &-menuItemLink--promocoes {
+      color: $red;
+    }
+
+    &-menuSecondItemsWrapper,
+    &-menuThirdItemsWrapper {
+      @include abs-position(0, auto, auto, 0);
+      @include size(100%);
+      visibility: hidden;
+      pointer-events: none;
+      background-color: $white;
+      transform: translate3d(-100%, 0px, 0px);
+      z-index: 10;
+      transition: 0.3s;
+    }
+
+    &-menuItem--Opened .mobile-menuSecondItemsWrapper,
+    &-menuSecondItem--Opened .mobile-menuThirdItemsWrapper {
+      transform: translate3d(0%, 0px, 0px);
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    &-menuItemLink,
+    &-menuSecondItemLink {
+      @include display-flex(center, flex, space-between, row);
+    }
+
+    &-menuArrowIconContent {
+      @include display-flex(center, flex, space-between, row);
+    }
+
+    &-menuBackButton .mobile-menuArrowIconContent {
+      padding-right: 6px;
+    }
+
+    &-menuArrowIcon {
+      transform: rotate(270deg);
+    }
+
+    &-menuBackButton .mobile-menuArrowIcon {
+      transform: rotate(90deg);
+      fill: $orange;
+      max-width: 13px;
+    }
+
+    &-menuBackButton {
+      @include textConfig($black02, 12, $fontRegular, 12, left, uppercase, 50);
+      height: 48px;
+    }
+
+    &-menuItemsTitleContent {
+      padding: 0 20px;
+    }
+
+    &-menuItemsTitleLink {
+      text-decoration: none;
+    }
+
+    &-menuItemsTitle {
+      @include textConfig($dark-gray, 18, $fontBold, 18, left, uppercase, 50);
+      padding: 0;
+      margin: 14px 0;
+    }
+
+    &-menuSeeAllButton {
+      @include textConfig($black, 12, $fontRegular, 16, left, uppercase, 50);
+      display: block;
+      text-decoration: underline;
+      padding: 0 20px 13px;
+    }
+
+    &-footerContainer {
+      margin-top: 5vh;
+    }
+
+    &-footerContainer {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "app--avanti-menu": {},
+
+  "app--avanti-menu.context": {
+    "component": "AvantiMenuContext"
+  },
+
+  "app--avanti-menu.render-desktop": {
+    "component": "AvantiMenuDesktop",
+    "render": "client",
+    "around": ["app--avanti-menu.context"],
+    "content": {
+      "$ref": "app:avantiimplantacao.avanti-menu#/definitions/AvantiMenuDesktop"
+    }
+
+  },
+  "app--avanti-menu.render-mobile": {
+    "component": "AvantiMenuMobile",
+    "render": "client",
+    "around": ["app--avanti-menu.context"],
+    "content": {
+      "$ref": "app:avantiimplantacao.avanti-menu#/definitions/AvantiMenuMobile"
+    }
+  }
+}

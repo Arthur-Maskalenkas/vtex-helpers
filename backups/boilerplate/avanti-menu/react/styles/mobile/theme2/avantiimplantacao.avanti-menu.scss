@@ -1,0 +1,274 @@
+/* SEGUNDO TEMA <theme2> ESTILO MORENAROSA */
+
+.theme2 {
+  .mobile {
+    &-container,
+    &-overlay,
+    &-menuArrowIcon {
+      transition: 0.3s;
+    }
+
+    &-headerContainer,
+    &-menuContainer,
+    &-footerContainer {
+      padding: 0 4vw;
+    }
+
+    &-hamburguer,
+    &-closeButton {
+      display: flex;
+      background: none;
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    &-container {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      background-color: $white;
+      @include size(85%, 100%);
+      max-width: 400px;
+      min-width: 280px;
+      pointer-events: none;
+      transform: translate3d(-100%, 0px, 0px);
+
+      @include mq('767', max) {
+        width: 100%;
+      }
+    }
+
+    &-content {
+      @include display-flex(initial, flex, space-between, column);
+    }
+
+    &-container--Opened {
+      pointer-events: initial;
+      transform: translate3d(0%, 0px, 0px);
+    }
+
+    &-overlay {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      background-color: $blue;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &-overlay--Opened {
+      pointer-events: initial;
+      opacity: 1;
+    }
+
+    &-headerContainer {
+      max-height: 25vh;
+      background-color: $light-gray-02;
+    }
+
+    &-titleContainer {
+      @include display-flex(center, flex, flex-start, row);
+      width: 100%;
+      padding-top: 3vh;
+      position: relative;
+    }
+
+    &-titleContent {
+      min-height: 24px;
+      order: 2;
+      padding-left: 10px;
+    }
+
+    &-buttonsContainer {
+      @include display-flex(center, flex, flex-start, row);
+    }
+
+    &-logoutButton {
+      position: absolute;
+      right: 0;
+      @include textConfig($black, 12, $fontSemiBold, 16, left, initial, 50);
+    }
+
+    &-title {
+      @include textConfig($black, 12, $fontSemiBold, 16, left, initial, 50);
+    }
+
+    &-itemsContainer {
+      @include display-flex(flex-start, flex, flex-start, column);
+      max-height: 15vh;
+      overflow: auto;
+      padding: 3vh 0 1.5vh;
+    }
+
+    &-itemsContent {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      overflow-x: hidden;
+    }
+
+    &-itemLink {
+      @include display-flex(center, flex, space-between, row);
+      padding-bottom: 2vh;
+      text-decoration: none;
+      color: $black;
+    }
+
+    &-itemTextContent {
+      @include display-flex(center, flex, flex-start, row);
+    }
+
+    &-itemIcon {
+      @include display-flex(center, flex, flex-start, row);
+      padding-right: 15px;
+      max-width: 15px;
+    }
+
+    &-itemText {
+      @include textConfig($black, 12, $fontSemiBold, 16, left, initial, 50);
+      display: flex;
+      text-decoration: underline;
+      border: none;
+    }
+
+    &-menuItemLink,
+    &-menuSecondItemLink {
+      position: relative;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid $light-gray;
+    }
+
+    &-menuArrowIcon {
+      max-width: 12px;
+      height: auto;
+    }
+
+    &-menuItemsTitle,
+    &-menuBackButton,
+    &-menuSeeAllButton {
+      display: none;
+    }
+
+    &-menuItems,
+    &-menuSecondItems,
+    &-menuThirdItems {
+      padding: 0;
+      margin: 0;
+    }
+
+    &-menuItems {
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100%;
+      max-height: 65vh;
+      margin-top: 1vh;
+    }
+
+    &-menuItems {
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: $white;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $light-gray-02;
+        border-radius: 20px;
+        border: 2px solid $white;
+      }
+    }
+
+    &-menuItem,
+    &-menuSecondItem,
+    &-menuThirdItem {
+      list-style: none;
+    }
+
+    &-menuItemLink {
+      padding: 20px 0;
+      @include textConfig($black, 11, $fontSemiBold, 11, left, uppercase, 50);
+    }
+
+    &-menuItemLinkText {
+      @include display-flex(center, flex, flex-start, row);
+    }
+
+    &-menuIcon {
+      padding-right: 10px;
+    }
+
+    &-menuIconContent {
+      @include display-flex(flex-end, flex, center, row);
+      height: 20px;
+    }
+
+    &-menuIcon {
+      @include size(100%, inherit);
+    }
+
+    &-menuSecondItems .mobile-menuSecondItemLinkText,
+    &-menuSecondItems .mobile-menuThirdItemLinkText {
+      @include display-flex(center, flex, flex-start, row);
+    }
+
+    &-menuSecondItemLink {
+      padding: 20px 0;
+      margin: 0 8px;
+      @include textConfig($black, 11, $fontSemiBold, 12, left, initial, 80);
+    }
+
+    &-menuThirdItemLink {
+      display: block;
+      padding: 10px 0;
+      margin: 0 16px;
+      @include textConfig($black, 11, $fontRegular, 12, left, initial, 50);
+    }
+
+    &-subItems {
+      display: none;
+    }
+
+    &-menuSecondItemsWrapper,
+    &-menuThirdItemsWrapper,
+    &-subItems {
+      pointer-events: none;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: 0.2s;
+      overflow: hidden;
+      height: 0;
+    }
+
+    &-menuItem--Opened .mobile-menuSecondItemsWrapper,
+    &-menuSecondItem--Opened .mobile-menuThirdItemsWrapper,
+    &-item--Opened .mobile-subItems {
+      pointer-events: auto;
+      transform: scaleY(1);
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    &-menuItemLink,
+    &-menuSecondItemLink {
+      @include display-flex(center, flex, space-between, row);
+    }
+
+    &-menuItem--Opened .mobile-menuItemLink .mobile-menuArrowIcon,
+    &-menuSecondItem--Opened .mobile-menuSecondItemLink .mobile-menuArrowIcon,
+    &-item--Opened .mobile-itemLink .mobile-menuArrowIcon {
+      transform: rotate(-180deg);
+    }
+
+    &-footerContainer {
+      margin-top: 2vh;
+    }
+  }
+}
+
+/* FIM DO SEGUNDO TEMA </theme2> */

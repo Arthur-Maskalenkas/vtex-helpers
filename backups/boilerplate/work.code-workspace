@@ -15,6 +15,9 @@
 		{
 			"name": "vtexio-avantiimplatancao-apps",
 			"path": "vtexio-avantiimplatancao-apps"
+		},
+		{
+			"path": "avanti-menu"
 		}
 	],
 	"settings": { }

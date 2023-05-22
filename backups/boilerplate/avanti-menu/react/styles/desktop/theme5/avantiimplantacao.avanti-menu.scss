@@ -1,0 +1,397 @@
+/* QUINTO TEMA <theme5> */
+.theme5 {
+  &.desktop-navbar {
+    z-index: 10;
+    position: relative;
+    background-color: $white;
+  }
+
+  .desktop {
+    &-menuItem,
+    &-menuSecondItemsWrapper,
+    &-menuThirdItemsWrapper,
+    &-departmentsItem .desktop-menuItemsWrapper {
+      transition: 0.4s;
+    }
+
+    &-menuItemsNav {
+      position: relative;
+    }
+
+    &-menuItems {
+      @include display-flex(inherit, flex, space-between, inherit);
+      @include grid();
+      list-style: none;
+      background-color: $white;
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentItems,
+    &-departmentsItem .desktop-menuItems {
+      @include size(100%);
+      padding: 0px;
+      background: transparent;
+      overflow-y: auto;
+      overflow-x: hidden;
+      list-style: none;
+    }
+
+    &-menuSecondItemsContainer {
+      @include display-flex(flex-start, flex, space-between, row);
+      width: 100%;
+    }
+
+    &-menuSecondItems {
+      @include display-flex(flex-start, flex, inherit, column);
+      @include size(100%, fit-content);
+      padding: 0 1vw 0 3vw;
+      position: relative;
+      column-gap: 5vw;
+      min-width: 150px;
+    }
+
+    &-menuThirdItems .desktop-menuItemsTitle,
+    &-menuSecondItem .desktop-arrowIcon,
+    &-menuSecondItem .desktop-menuSeeAllButton,
+    &-menuThirdItemsWrapper {
+      display: none;
+    }
+
+    &-departmentsItem {
+      .desktop-menuSecondItemsWrapper {
+        &::before {
+          @include size(20px, 100%);
+          @include abs-position(0, auto, auto, -18px);
+          content: '';
+          background-color: transparent;
+          z-index: 10;
+          top: 0;
+        }
+      }
+    }
+
+    &-menuItem,
+    &-departmentsItem {
+      @include textConfig($black, 13, $fontRegular, 14, left, initial, 50);
+      @include display-flex(center, flex, center, inherit);
+      border: 0px;
+      text-transform: initial;
+    }
+
+    &-menuItemsTitle--Second,
+    &-menuItemsTitle--Third {
+      @include textConfig($black, 13, $fontRegular, 14, left, initial, 50);
+      padding: 0px 20px;
+    }
+
+    &-menuItemsTitle--Second {
+      display: none;
+    }
+
+    &-menuItemLink,
+    &-departmentsItemLink {
+      @include textConfig($black, 10, $fontBold, 12, left, uppercase, 50);
+      padding: 12px 0px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+    }
+
+    &-menuItemLink,
+    &-departmentsItemLink {
+      &::after {
+        @include abs-position(100%, 0, auto, 0);
+        content: '';
+        height: 2px;
+        transition: all 0.3s ease 0s;
+        text-align: center;
+        transform: scaleX(0.2);
+        background: transparent;
+        z-index: 10;
+      }
+    }
+
+    &-menuItem,
+    &-departmentsItem {
+      &:hover {
+        .desktop-menuItemLink,
+        .desktop-departmentsItemLink {
+          &::after {
+            transform: scaleX(1);
+            background: $pink;
+          }
+        }
+      }
+    }
+
+    &-menuIcon {
+      max-width: 22px;
+    }
+
+    &-menuIconContent {
+      @include display-flex(flex-end, flex, inherit, inherit);
+      height: 20px;
+      text-align: center;
+    }
+
+    &-menuSecondItems {
+      .desktop-menuSecondItemLinkText,
+      .desktop-menuThirdItemLinkText {
+        @include display-flex(center, flex, inherit, inherit);
+        gap: 10px;
+      }
+    }
+
+    &-menuItemLink .desktop-arrowIconContent,
+    &-departmentsItem .desktop-menuItemLink .desktop-menuIconContent {
+      display: none;
+    }
+
+    &-departmentsItem {
+      .desktop-departmentsItemLink {
+        @include display-flex(flex-end, flex, space-between, inherit);
+        height: 100%;
+      }
+
+      .desktop-menuItemLink {
+        .desktop-arrowIconContent {
+          display: block;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &-bannerContent {
+      display: inline-block;
+      height: 100%;
+      padding: 0 3vw 0 1vw;
+      .desktop-bannerLink {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    &-menuSecondItemsWrapper {
+      @include display-flex(center, flex, flex-start, column);
+      @include abs-position(100%, auto, auto, 50%);
+      @include size(auto, 432px);
+      text-align: left;
+      transform: translateX(-50%);
+      background: $white02;
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      padding: 4vh 0;
+      overflow-y: auto;
+      min-width: 400px;
+    }
+
+    &-menuItem--child-3,
+    &-menuItem--child-4,
+    &-menuItem--child-5,
+    &-menuItem--child-6,
+    &-menuItem--child-7,
+    &-menuItem--child-8 {
+      .desktop-menuSecondItemsWrapper {
+        right: 0px;
+        left: unset;
+        transform: none;
+      }
+    }
+
+    &-menuItem {
+      position: relative;
+      .desktop-bannerImage {
+        visibility: visible;
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+      }
+
+      &:hover {
+        .desktop-menuSecondItemsWrapper {
+          visibility: visible;
+          pointer-events: auto;
+          opacity: 1;
+        }
+
+        .desktop-bannerImage {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentsItem .desktop-menuItems,
+    &-menuSecondItemsWrapper {
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentsItem .desktop-menuItems,
+    &-menuSecondItemsWrapper {
+      &::-webkit-scrollbar-track {
+        background: $white;
+      }
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentsItem .desktop-menuItems,
+    &-menuSecondItemsWrapper {
+      &::-webkit-scrollbar-thumb {
+        background-color: $light-gray-01;
+      }
+    }
+
+    &-menuItem--bannerOnly .desktop-menuSecondItemsWrapper {
+      display: none;
+    }
+
+    &-menuSecondItem,
+    &-menuThirdItem,
+    &-departmentsItem .desktop-menuItem {
+      @include textConfig($black, 12, $fontRegular, 14, left, initial, 50);
+      padding: 0;
+    }
+
+    &-departmentsItem {
+      .desktop-menuItemsWrapper {
+        .desktop-menuItemLink {
+          color: $black;
+        }
+      }
+
+      .desktop-menuItem {
+        &:hover {
+          background-color: $white02;
+          border-color: $white02;
+        }
+      }
+    }
+
+    &-menuThirdItemLink {
+      @include textConfig($primary-color, 14, $fontSemiBold, 15, left, initial, 50);
+      text-decoration: none;
+      display: block;
+      padding-bottom: 13px;
+    }
+
+    &-menuSecondItemLink {
+      @include textConfig($primary-color, 12, $fontSemiBold, 12, left, initial, 50);
+      @include display-flex(inherit, flex, inherit, inherit);
+      text-align: left;
+      text-decoration: none;
+      padding-bottom: 25px;
+    }
+
+    &-menuSeeAllButton {
+      @include textConfig($primary-color, 11, $fontRegular, 12, left, initial, 50);
+      text-decoration: underline;
+      padding-bottom: 30px;
+      display: block;
+    }
+
+    &-arrowIconContent {
+      @include display-flex(inherit, flex, inherit, inherit);
+    }
+
+    &-arrowIcon {
+      max-width: 5px;
+    }
+
+    &-departmentsItem {
+      .desktop-menuItemsWrapper {
+        @include size(100%, 432px);
+        @include display-flex(inherit, flex, flex-start, row);
+        @include abs-position(100%, auto, auto, 0);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .desktop-menuItems {
+        @include size(300px, inherit);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        justify-content: initial;
+        width: 250px;
+        background-color: $white;
+        border: 1px solid $white02;
+      }
+
+      .desktop-menuItem {
+        width: 100%;
+        display: block;
+        position: initial;
+        border-radius: 0;
+        border-bottom: 1px solid $white02;
+      }
+    }
+
+    &-menuItemLink,
+    &-menuItemLinkText {
+      @include display-flex(center, flex, space-between, column);
+      gap: 10px;
+    }
+
+    &-menuItemLink {
+      justify-content: flex-end;
+      height: 100%;
+    }
+
+    &-departmentsItem {
+      .desktop-menuItemLink {
+        padding: 10px 22px;
+        align-items: initial;
+      }
+
+      .desktop-menuItemLinkText {
+        text-align: left;
+      }
+
+      .desktop-menuSecondItemsWrapper {
+        top: 0;
+        left: 250px;
+        width: calc(100% - 250px);
+        transform: none;
+      }
+
+      &:hover {
+        .desktop-menuItemsWrapper {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+      }
+
+      .desktop-menuItemLink {
+        font-weight: bold;
+      }
+
+      .desktop-departmentsIcon {
+        fill: $black;
+        padding-right: 8px;
+      }
+    }
+
+    &-menuItemLinkText {
+      flex-direction: row;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}
+
+/* FIM DO QUINTO TEMA </theme5> */

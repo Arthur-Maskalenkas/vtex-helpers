@@ -1,0 +1,380 @@
+/* QUARTO TEMA <theme4> ESTILO Baumgarten */
+.theme4 {
+  &.desktop-navbar {
+    z-index: 10;
+    position: relative;
+    background-color: $white;
+  }
+
+  .desktop {
+    &-menuItem,
+    &-menuSecondItemsWrapper,
+    &-menuThirdItemsWrapper,
+    &-departmentsItem .desktop-menuItemsWrapper,
+    &-departmentsItem .desktop-menuItems {
+      transition: 0.4s;
+    }
+
+    &-menuItems {
+      @include display-flex(initial, flex, space-between, initial);
+      width: 100%;
+      padding: 0 25px;
+      margin: 0;
+      list-style: none;
+      background-color: $white;
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentItems,
+    &-departmentsItem .desktop-menuItems {
+      @include size(100%);
+      padding: 0px;
+      background: transparent;
+      overflow: hidden;
+      list-style: none;
+    }
+
+    &-menuSecondItemsContainer {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+    }
+
+    &-menuSecondItems {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      position: relative;
+      align-content: flex-start;
+      overflow: hidden;
+      row-gap: 30px;
+      max-height: 350px;
+    }
+
+    &-menuItem:hover .desktop-menuSecondItems {
+      overflow-y: auto;
+    }
+
+    &-menuItemsTitle--Third,
+    &-menuSecondItem .desktop-arrowIcon {
+      display: none;
+    }
+
+    &-departmentsItem {
+      .desktop-menuSecondItems {
+        ::before {
+          @include size(20px, 100%);
+          @include abs-position(0, auto, auto, -18px);
+          content: '';
+          background-color: transparent;
+          z-index: 10;
+        }
+      }
+    }
+
+    &-menuItem,
+    &-departmentsItem {
+      @include textConfig($black, 13, $fontRegular, 13, left, initial, 50);
+      @include display-flex(center, flex, center, initial);
+      border: 0px;
+    }
+
+    &-menuItemsTitle--Second,
+    &-menuItemsTitle--Third {
+      padding: 0px 20px;
+      @include textConfig($primary-color, 13, $fontRegular, 13, left, initial, 50);
+    }
+
+    &-menuItemsTitle--Second {
+      display: none;
+    }
+
+    &-menuItemLink,
+    &-departmentsItemLink {
+      @include textConfig($black, 10, $fontBold, 13, left, uppercase, 90);
+      padding: 32px 0px;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+    }
+
+    &-menuItemLink,
+    &-menuItemLinkText {
+      gap: 10px;
+    }
+
+    &-menuItemLink {
+      @include display-flex(center, flex, flex-end, column);
+      height: 100%;
+    }
+
+    &-departmentsItem .desktop-menuItemLink {
+      align-items: initial;
+    }
+
+    &-menuItemLinkText {
+      @include display-flex(center, flex, space-between, row);
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    &-departmentsItem .desktop-menuItemLinkText {
+      text-align: left;
+    }
+
+    &-menuItemLink,
+    &-departmentsItemLink {
+      &::after {
+        @include abs-position(100%, 0, auto, 0);
+        content: '';
+        height: 4px;
+        transition: all 0.3s ease 0s;
+        text-align: center;
+        transform: scaleX(0.2);
+        background: transparent;
+        z-index: 10;
+      }
+    }
+
+    &-menuItem,
+    &-departmentsItem {
+      &:hover {
+        .desktop-menuItemLink,
+        .desktop-departmentsItemLink {
+          &::after {
+            transform: scaleX(1);
+            background: $black;
+          }
+        }
+      }
+    }
+
+    &-menuItemLink .desktop-arrowIconContent,
+    &-departmentsItem .desktop-menuIcon {
+      display: none;
+    }
+
+    &-departmentsItem .desktop-menuItemLink .desktop-arrowIconContent {
+      display: block;
+    }
+
+    &-menuIcon {
+      max-width: 22px;
+    }
+
+    &-menuIconContent {
+      @include display-flex(flex-end, flex, initial, initial);
+      text-align: center;
+      height: 20px;
+    }
+
+    &-menuSecondItems .desktop-menuSecondItemLinkText,
+    &-menuSecondItems .desktop-menuThirdItemLinkText {
+      @include display-flex(center, flex, initial, initial);
+      gap: 10px;
+    }
+
+    &-departmentsItem .desktop-departmentsItemLink {
+      @include display-flex(flex-end, flex, space-between, initial);
+      height: 100%;
+    }
+
+    &-departmentsItem .desktop-menuItemLink::after {
+      display: none;
+    }
+
+    &-menuSecondItemsWrapper {
+      width: 100%;
+    }
+
+    &-bannerContent {
+      height: 100%;
+      display: grid;
+      align-items: center;
+    }
+
+    &-menuSecondItemsWrapper {
+      @include abs-position(100%, auto, auto, 0);
+      @include display-flex(initial, flex, initial, row);
+      height: 0;
+      background: $white;
+      box-shadow: rgba(0, 0, 0, 0.06) 0px 12px 12px;
+      visibility: hidden;
+      pointer-events: none;
+      padding: 0;
+      padding: 0 3vw;
+    }
+
+    &-menuItem .desktop-bannerImage {
+      visibility: visible;
+      opacity: 0;
+      transition: all 0.3s ease 0s;
+    }
+
+    &-menuItem:hover .desktop-menuSecondItemsWrapper {
+      visibility: visible;
+      pointer-events: auto;
+      height: 432px;
+    }
+
+    &-menuItem:hover .desktop-menuSecondItemsWrapper {
+      padding: 4vh 3vw;
+    }
+
+    &-menuItem:hover .desktop-bannerImage {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentsItem .desktop-menuItems {
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentsItem .desktop-menuItems {
+      &::-webkit-scrollbar-track {
+        background: $white;
+      }
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentsItem .desktop-menuItems {
+      &::-webkit-scrollbar-thumb {
+        background-color: $light-gray-01;
+        border-radius: 20px;
+        border: 2px solid $white;
+      }
+    }
+
+    &-menuItem--bannerOnly {
+      position: relative;
+    }
+
+    &-menuItem--bannerOnly .desktop-menuSecondItemsWrapper {
+      left: unset;
+      right: 0;
+      width: fit-content;
+    }
+
+    &-departmentsItem .desktop-menuItem--bannerOnly .desktop-menuSecondItemsWrapper {
+      left: 250px;
+      right: unset;
+      width: fit-content;
+    }
+
+    &-menuSecondItem,
+    &-menuThirdItem,
+    &-departmentsItem .desktop-menuItem {
+      @include textConfig($black, 12, $fontRegular, 13, left, initial, 50);
+      padding: 0;
+    }
+
+    &-departmentsItem .desktop-menuItemsWrapper .desktop-menuItemLink {
+      color: $black;
+    }
+
+    &-departmentsItem .desktop-menuItem:hover .desktop-menuItemLink {
+      color: $primary-color;
+      font-weight: bold;
+      border-color: transparent;
+    }
+
+    &-menuThirdItemLink {
+      @include textConfig($black, 14, $fontSemiBold, 15, left, initial, 50);
+      text-decoration: none;
+      display: block;
+      padding-bottom: 10px;
+    }
+
+    &-menuSecondItemLink {
+      @include textConfig($primary-color, 13, $fontBold, 16, left, uppercase, 50);
+      text-align: left;
+      text-decoration: none;
+      display: flex;
+      padding-bottom: 8px;
+    }
+
+    &-menuSeeAllButton {
+      @include textConfig($blue, 14, $fontBold, 15, left, initial, 50);
+      text-decoration: none;
+      display: block;
+      padding-bottom: 15px;
+    }
+
+    &-menuSeeAllButton--Second {
+      display: none;
+    }
+
+    &-arrowIconContent {
+      display: flex;
+    }
+
+    &-arrowIcon {
+      max-width: 8px;
+    }
+
+    &-departmentsItem {
+      .desktop-menuItemsWrapper {
+        @include size(100%, 0);
+        @include abs-position(100%, auto, auto, 0);
+        @include display-flex(initial, flex, initial, row);
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .desktop-menuItems {
+        width: 300px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        justify-content: initial;
+        width: 250px;
+        background-color: $white;
+      }
+
+      .desktop-menuItem {
+        width: 100%;
+        display: block;
+        position: initial;
+        border-radius: 0;
+      }
+
+      .desktop-menuItemLink {
+        @include display-flex(center, flex, space-between, row);
+        gap: 10px;
+        font-weight: bold;
+        padding: 10px 22px;
+      }
+
+      &:hover {
+        .desktop-menuItemsWrapper {
+          height: 432px;
+          visibility: visible;
+          pointer-events: auto;
+        }
+      }
+
+      .desktop-menuSecondItemsWrapper {
+        top: 0;
+        left: 250px;
+        width: calc(100% - 250px);
+      }
+
+      .desktop-departmentsIcon {
+        fill: $black;
+        padding-right: 8px;
+      }
+    }
+  }
+}
+
+/* FIM DO QUARTO TEMA </theme4> */

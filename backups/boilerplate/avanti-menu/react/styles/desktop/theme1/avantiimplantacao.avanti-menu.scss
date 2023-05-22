@@ -1,0 +1,429 @@
+/* PRIMEIRO TEMA <theme2> ESTILO DELUPO */
+
+.theme1 {
+  &.desktop-navbar {
+    z-index: 9;
+    position: relative;
+    background-color: $white;
+    @include size(auto, 100%);
+  }
+
+  .desktop {
+    &-menuItem,
+    &-menuSecondItemsWrapper,
+    &-menuThirdItemsWrapper,
+    &-departmentsItem .desktop-menuItemsWrapper {
+      transition: 0.4s;
+    }
+
+    &-menuItemsWrapper {
+      @include grid();
+      @include size(auto, 100%);
+      z-index: 9;
+      position: relative;
+    }
+
+    &-menuItems {
+      @include size(100%, 100%);
+      @include display-flex(center, flex, space-between, row);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentItemsContent,
+    &-departmentsItem .desktop-menuItems {
+      @include size(100%, 100%);
+      padding: 0px;
+      background: transparent;
+      overflow-y: auto;
+      overflow-x: hidden;
+      list-style: none;
+    }
+
+    &-menuSecondItemsContainer {
+      @include size(100%);
+    }
+
+    &-menuSecondItems {
+      @include size(100%, auto);
+      @include display-flex(flex-start, flex, center, column);
+      flex-flow: column wrap;
+      column-gap: 4vw;
+      background: $white;
+      position: relative;
+      max-height: 370px;
+      overflow-x: auto;
+      column-gap: 1vw;
+    }
+
+    &-menuSecondItems--no-scroll {
+      .desktop-overlay {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 200px;
+        z-index: 100;
+        display: none;
+      }
+    }
+
+    &-menuItemsTitle--Third,
+    &-menuSecondItem .desktop-arrowIcon {
+      display: none;
+    }
+
+    &-menuItem,
+    &-departmentsItem {
+      @include textConfig($black, 13, $fontRegular, 13, left, initial, 50);
+      @include display-flex(center, flex, center, row);
+      border: 0px;
+    }
+
+    &-menuItemsTitleLink {
+      text-decoration: none;
+    }
+
+    &-menuItemsTitle--Second {
+      display: block;
+      @include textConfig($yellow, 16, $fontSemiBold, 16px, left, initial, 50);
+      margin: 0px;
+      padding-top: 20px;
+    }
+
+    &-menuItemLink,
+    &-departmentsItem .desktop-departmentsItemLink {
+      @include textConfig($black, 12, $fontRegular, 12, left, uppercase, 50);
+      text-decoration: none;
+      display: block;
+      position: relative;
+    }
+
+    &-menuItemLink {
+      @include display-flex(center, flex, center, row);
+      @include size(auto, 100%);
+      padding: 17px 10px;
+      color: $dark-gray;
+      font-weight: 300;
+      gap: 10px;
+
+      &--promocoes {
+        .desktop-menuItemLinkText {
+          color: $red;
+        }
+      }
+    }
+
+    &-menuItemLink,
+    &-departmentsItemLink {
+      &::after {
+        content: '';
+        @include abs-position(calc(100% - 5px), 0, auto, 0);
+        @include size(auto, 5px);
+        transition: all 0.3s ease 0s;
+        text-align: center;
+        transform: scaleX(0.2);
+        background: transparent;
+        z-index: 10;
+      }
+    }
+
+    &-menuItem:hover .desktop-menuItemLink::after,
+    &-departmentsItem:hover .desktop-departmentsItemLink::after {
+      transform: scaleX(1);
+      background: $yellow;
+    }
+
+    &-departmentsItem {
+      &:hover {
+        .desktop-menuItemsWrapper {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+      }
+
+      .desktop-departmentsItemLink {
+        padding: 10px 0;
+        color: $yellow;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .desktop-menuItemLink {
+        padding: 10px 22px;
+      }
+
+      .desktop-menuSecondItemsWrapper {
+        &::before {
+          content: '';
+          background-color: transparent;
+          @include size(20px, 100%);
+          @include abs-position(0, auto, auto, -18px);
+          z-index: 10;
+        }
+      }
+
+      .desktop-menuItemLink {
+        &::after {
+          display: none;
+        }
+      }
+
+      .desktop-menuIconContent,
+      .desktop-menuSecondItemLinkText .desktop-menuIconContent {
+        display: none;
+      }
+
+      .desktop-departmentsItemLink {
+        @include display-flex(center, flex, center, row);
+        @include size(auto, 100%);
+        gap: 10px;
+      }
+
+      .desktop-menuSecondItemsWrapper {
+        border-radius: 0 0 12px 0;
+      }
+
+      .desktop-menuItems {
+        &::-webkit-scrollbar-track {
+          background: $white01;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: $light-gray-02;
+          border-radius: 20px;
+          border: 4px solid $white01;
+        }
+      }
+
+      .desktop-menuItem--bannerOnly .desktop-menuSecondItemsWrapper {
+        left: 250px;
+        right: unset;
+        @include size(fit-content, auto);
+      }
+
+      .desktop-menuItemsWrapper .desktop-menuItemLink {
+        @include textConfig($black02, 12, $fontBold, 13, left, initial, 50);
+      }
+
+      .desktop-menuItem {
+        &:hover {
+          .desktop-menuItemLink {
+            color: $yellow;
+            border-color: transparent;
+          }
+          .desktop-arrowIcon {
+            fill: $yellow;
+          }
+        }
+      }
+
+      .desktop-arrowIcon {
+        max-width: 7px;
+        transform: rotate(0deg);
+      }
+
+      .desktop-menuItemsWrapper {
+        @include abs-position(100%, auto, auto, 0);
+        @include display-flex(flex-start, flex, space-between, row);
+        @include size(100%, 450px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .desktop-menuItems {
+        @include size(300px, inherit);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .desktop-menuItems {
+        @include size(250px, 100%);
+        flex-direction: column;
+        justify-content: initial;
+        background-color: $white01;
+        border-radius: 0px 0px 0px 12px;
+        padding: 12px 0px;
+        box-shadow: rgb(0 0 0 / 30%) 0px 4px 5px;
+      }
+
+      .desktop-menuItem {
+        @include size(100%, auto);
+        display: block;
+        position: initial;
+        border-radius: 0;
+      }
+
+      .desktop-menuItemLinkText {
+        @include display-flex(center, flex, space-between, row);
+        text-align: left;
+        max-width: initial;
+        gap: 10px;
+      }
+
+      .desktop-menuSecondItemsWrapper {
+        top: 0;
+        left: 250px;
+        @include size(calc(100% - 250px), 100%);
+      }
+
+      .desktop-departmentsIcon {
+        max-height: 25px;
+      }
+    }
+
+    &-menuIconContent,
+    &-departmentsIconContent {
+      display: block;
+      @include size(auto, 25px);
+      max-height: 25px;
+      text-align: center;
+    }
+
+    &-bannerContent {
+      @include display-flex(center, flex, center, row);
+      @include size(auto, 100%);
+    }
+
+    &-menuSecondItemsWrapper {
+      @include abs-position(calc(100% - 1px), auto, auto, 0);
+      @include display-flex(baseline, flex, flex-start, column);
+      @include size(100%, 450px);
+      background: $white;
+      box-shadow: rgb(0 0 0 / 30%) 0px 4px 5px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      padding: 0 2vw;
+      border-radius: 0 0 12px 12px;
+    }
+
+    &-menuItem:hover,
+    &-menuItem:hover .desktop-menuSecondItemsWrapper,
+    &-menuSecondItem:hover .desktop-menuThirdItemsWrapper {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems,
+    &-departmentsItem .desktop-menuItems {
+      &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems {
+      &::-webkit-scrollbar-track {
+        background: $white;
+      }
+    }
+
+    &-menuSecondItems,
+    &-menuThirdItems {
+      &::-webkit-scrollbar-thumb {
+        background-color: $light-gray-02;
+        border-radius: 20px;
+        border: 4px solid $white;
+      }
+    }
+
+    &-menuItem {
+      &--bannerOnly {
+        position: relative;
+
+        .desktop-menuSecondItemsWrapper {
+          left: unset;
+          right: 0;
+          @include size(fit-content, auto);
+        }
+      }
+
+      &--hasChildren {
+        .desktop-menuItemLinkText {
+          padding: 0 8px;
+        }
+      }
+    }
+
+    &-menuSecondItem,
+    &-menuThirdItem,
+    &-departmentsItem .desktop-menuItem {
+      @include textConfig($black, 12, $fontRegular, 12, left, initial, 50);
+      padding: 0;
+    }
+
+    &-menuSecondItem {
+      @include size(auto);
+      padding-bottom: 20px;
+      break-inside: avoid;
+      display: table;
+      max-width: 110px;
+    }
+
+    &-menuSecondItemLink {
+      @include textConfig($black02, 13, $fontSemiBold, 14, left, initial, 50);
+      text-decoration: none;
+      display: block;
+    }
+
+    &-menuThirdItemLink {
+      @include textConfig($dark-gray-02, 13, $fontRegular, 14, left, initial, 50);
+      text-decoration: none;
+      display: block;
+      padding: 4px 0;
+      transition: all 0.1s ease 0s;
+    }
+
+    &-menuSeeAllButton {
+      @include textConfig($dark-gray-02, 13, $fontSemiBold, 15, left, uppercase, 50);
+      text-decoration: underline;
+      transition: all 0.1s ease 0s;
+      text-align: left 0;
+      padding: 4px 0;
+      display: block;
+    }
+
+    &-menuSeeAllButton--Second {
+      @include textConfig($dark-gray-02, 14, $fontRegular, 14, left, initial, 50);
+      padding-bottom: 26px;
+    }
+
+    &-arrowIconContent {
+      @include display-flex(baseline, flex, center, row);
+      @include abs-position(0, 0, auto, auto);
+    }
+
+    &-arrowIcon {
+      max-width: 5px;
+      transform: rotate(90deg);
+    }
+
+    &-menuItemLinkText {
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      text-align: center;
+      @include size(100%, auto);
+      max-width: 100px;
+    }
+  }
+
+  @include mq('1120', max) {
+    .desktop-menuItemLink .desktop-menuItemLinkText,
+    .desktop-departmentsItem .desktop-departmentsItemLink {
+      @include font-size(11);
+    }
+  }
+}
+
+/* FIM DO PRIMEIRO TEMA </theme1> */

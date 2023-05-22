@@ -1824,9 +1824,9 @@ atob@^2.1.2:
   resolved "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-"avantiimplantacao.global-context@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684706351/public/@types/avantiimplantacao.global-context":
+"avantiimplantacao.global-context@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684768415/public/@types/avantiimplantacao.global-context":
   version "0.0.0"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684706351/public/@types/avantiimplantacao.global-context#dc7ef1eb597dd30fbfbafb922c9396ddc2e018a4"
+  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684768415/public/@types/avantiimplantacao.global-context#b413e7d1165e96f13cadfd5ff25350f2095457d5"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
