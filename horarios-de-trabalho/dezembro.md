@@ -713,7 +713,7 @@
 
 **# 12/05/2023** 
 09:10 - 13:00 - marabraz - extra - menu mobile 🟠
-14:00 - 14:30 - marabraz - extra - menum mobile 🟠
+14:00 - 14:30 - marabraz - extra - menu mobile 🟠
 14:30 - 14:40 - aeronautica - daily 🟢
 15:00 - 16:00 - bazar horizonte - homolog
 15:00 - 17:30 - marabraz - garantia 🟢
@@ -729,7 +729,7 @@
 
 16/05/2023
 09:00 - 11:10 - marabraz - garantia 🟢
-11:30 - 11:45 - aeronautica - daily
+11:30 - 11:45 - aeronautica - daily 🟢
 11:45 - 13:00 - marabraz - garantia 🟢
 14:05 - 17:30 - marabraz - garantia 🟢
 17:30 - 17:45 - mizuno - daily 🟢
@@ -739,15 +739,29 @@
 11:30 - 11:45 - aeronautica - daily 🟢
 11:50 - 12:30 - mappin - replicação 🟢
 13:30 - 17:30 - mappin - replicação 🟢
-17:30 - 18:00 - mizuno - daily
+17:30 - 18:00 - mizuno - daily 🟢
 
 18/05/2023
-09:45 - 10:00 - marabraz - daily
-10:00 - 10:30 - labs - alinhamento app de flags
+09:45 - 10:00 - marabraz - daily 🟢
+10:00 - 10:30 - labs - alinhamento app de flags 🟢
+10:30 - 13:00 - marabraz - garantia 🟢
+14:00 - 15:30 - mappin - replicação 🟢
 15:30 - 16:00 - aeronatuica - daily 🟢
+16:00 - 18:00 - mappin - replicação 🟢
 
 19/05/2023
-09:00 - 13:00 - marabraz - garantia
-14:00 - 16:00 - marabraz - garantia
-16:00 - 16:30 - olympkus - call com a julia - smart hint
-16:30 - 16:45 - aeronatuica - 
+09:00 - 13:00 - marabraz - garantia 🟢
+14:00 - 16:00 - marabraz - garantia 🟢
+16:00 - 16:30 - olympkus - call com a julia - smart hint 🟢
+16:30 - 16:45 - aeronautica - pontinho com alan/juliana sobre cadastro 🟢
+16:45 - 17:30 - marabraz - garantia 🟢
+17:30 - 17:45 - mizuno - daily 🟢
+
+22/05/2023
+09:30 - 11:00 - marabraz - garantia 🟢
+11:15 - 12:30 - weekly devs 🟢
+12:30 - 13:15 - boilerplate 🟢
+13:55 - 14:05 - aeronautica - daily 🟢
+14:20 - 17:00 - aeronautica - home 🟢
+17:00 - 17:20 - weekly time 🟢
+17:20 - 18:00 - aeronautica - home 🟢

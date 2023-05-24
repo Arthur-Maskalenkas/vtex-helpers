@@ -1,5 +1,5 @@
 import React from 'react'
-import { CMSHelper, SchemaSiteEditor } from './cms-helper'
+import { SchemaSiteEditor } from './cms-helper'
 import { GlobalProviderProps, GlobalSiteEditorProps } from './types'
 
 import { GlobalContextSchemaAvantiFooter } from './contexts/global-avanti-footer-context/global-context-schema-avanti-footer'
@@ -28,22 +28,11 @@ export const GlobalProvider = (props: GlobalSiteEditorProps) => {
 }
 
 
-const objectForDev = CMSHelper.thisIsDevWorkspace() ? {
-  type: 'string',
-  title: !!fetch && fetch?.('https://jsonplaceholder.typicode.com/posts/1')?.then(r => r?.json())?.then(r => r?.title)
-}
-  :
-  {
-    type: 'string',
-    title: !!fetch && fetch?.('https://jsonplaceholder.typicode.com/posts/1')?.then(r => r?.json())?.then(r => r?.title)
-  }
 
 GlobalProvider.schema = {
   title: 'Configurações globais',
   type: "object",
   properties: {
-    tipoTeste: objectForDev,
-
     _global_avanti_footer: {
       type: 'array',
       maxItems: 1,
@@ -67,3 +56,4 @@ GlobalProvider.schema = {
   }
 } as SchemaSiteEditor
 
+console.log(`🚀 ~ file: global-context.tsx:49 ~ GlobalProvider.schema:`, GlobalProvider.schema)
