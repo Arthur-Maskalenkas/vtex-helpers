@@ -1,0 +1,36 @@
+{
+  "rich-text#institutional-footer": {
+    "title": "Título Menu Institucional",
+    "props": {
+      "text": "#### Institucional",
+      "blockClass": "footerItemTitle"
+    }
+  },
+  "rich-text#ajuda-footer": {
+    "title": "Título Menu Ajuda e Suporte",
+    "props": {
+      "text": "#### Ajuda e Suporte",
+      "blockClass": "footerItemTitle"
+    }
+  },
+  "rich-text#pagamento-footer": {
+    "title": "Título Menu Pagamento",
+    "props": {
+      "text": "#### Pagamento",
+      "blockClass": [
+        "footerItemTitle",
+        "noMargin"
+      ]
+    }
+  },
+  "rich-text#seguranca-footer": {
+    "title": "Título Menu Segurança",
+    "props": {
+      "text": "#### Segurança",
+      "blockClass": [
+        "footerItemTitle",
+        "noMargin"
+      ]
+    }
+  }
+}

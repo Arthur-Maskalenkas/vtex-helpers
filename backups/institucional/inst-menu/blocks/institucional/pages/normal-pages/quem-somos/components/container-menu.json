@@ -1,0 +1,31 @@
+{
+  "flex-layout.row#container--institucional--menu-quem-somos": {
+    "title": "",
+    "props": {
+      "blockClass": [
+        "container-institutional-page#quem-somos",
+        "menu"
+      ],
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    },
+    "children": [
+      "flex-layout.col#container--institucional--menu-quem-somos"
+    ]
+  },
+
+  "flex-layout.col#container--institucional--menu-quem-somos": {
+    "props": {
+      "blockClass": [
+        "container-institutional-page",
+        "main"
+      ],
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+      "app--custom-apps.render-breadcrumb#quem-somos",
+      "inst-menu"
+    ]
+  }
+}

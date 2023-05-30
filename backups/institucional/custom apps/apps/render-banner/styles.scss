@@ -1,0 +1,9 @@
+.container-component--render-banner {
+  display: none;
+
+  @include mq('1024') {
+    display: flex;
+
+  }
+
+}

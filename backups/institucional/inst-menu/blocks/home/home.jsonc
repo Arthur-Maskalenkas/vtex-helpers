@@ -1,0 +1,38 @@
+{
+  "store.home": {
+    "blocks": [
+      "flex-layout.row#container--page--home"
+    ]
+  },
+
+  "flex-layout.row#container--page--home": {
+    "title": "Container conteúdo home",
+    "props": {
+      "blockClass": [
+        "main-container-page-home"
+      ],
+      "fullWidth": true
+    },
+    "children": [
+      "flex-layout.col#container--page--home"
+    ]
+  },
+
+  "flex-layout.col#container--page--home": {
+    "props": {
+      "blockClass": [
+        "main-container-page-home"
+      ],
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+
+    "children": [
+      "flex-layout.row#home--banner-main",
+      "flex-layout.row#home--list-categories-1",
+      "flex-layout.row#home--list-categories-2",
+      "flex-layout.row#home--shelf",
+      "flex-layout.row#home--banner-promotion"
+    ]
+  }
+}

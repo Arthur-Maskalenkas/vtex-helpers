@@ -1,0 +1,27 @@
+{
+  "flex-layout.row#container-highlights": {
+    "title": "Container Flags",
+    "props": {
+      "blockClass": [ "container__highlights", "summary" ],
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true,
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true
+    },
+    "children": [
+      "flex-layout.col#container-highlights"
+    ]
+  },
+
+  "flex-layout.col#container-highlights": {
+    "props": {
+      "blockClass": [ "container__highlights", "summary" ],
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+      "product-price-savings#flag-summary",
+      "vtex.product-highlights@2.x:product-highlights#summary-collection"
+    ]
+  }
+}

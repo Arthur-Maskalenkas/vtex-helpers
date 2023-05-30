@@ -1,0 +1,28 @@
+{
+  "flex-layout.col#logo-desktop": {
+    "props": {
+      "verticalAlign": "middle"
+    },
+    "children": [
+      "logo#desktop"
+    ]
+  },
+  "logo#desktop": {
+    "title": "Logo Desktop",
+    "props": {
+      "width": 422,
+      "height": 78,
+      "url": "assets/imgs/banner-header-logo.png",
+      "href": "/"
+    }
+  },
+  "logo#mobile": {
+    "title": "Logo Mobile",
+    "props": {
+      "width": 262,
+      "height": 48,
+      "url": "assets/imgs/banner-header-logo.png",
+      "href": "/"
+    }
+  }
+}

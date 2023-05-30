@@ -1,0 +1,7 @@
+{
+  "product-list-price#summary": {
+    "props": {
+      "blockClass": "summary-price"
+    }
+  }
+}

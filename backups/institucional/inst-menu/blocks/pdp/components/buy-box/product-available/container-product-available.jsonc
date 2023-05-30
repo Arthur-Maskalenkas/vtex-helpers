@@ -1,0 +1,35 @@
+{
+  "flex-layout.row#product-available": {
+    "title": "Caso Produto Disponivel",
+    "props": {
+      "blockClass": [
+        "container__buy-box-product",
+        "container__product-available"
+      ]
+    },
+    "children": [
+      "flex-layout.col#stack",
+      "flex-layout.col#right-col-if-product-available"
+    ]
+  },
+  "flex-layout.col#right-col-if-product-available": {
+    "title": "Container Informações Produto",
+    "props": {
+      "preventVerticalStretch": true,
+      "blockClass": "container__info-product"
+    },
+    "children": [
+      "flex-layout.row#product-name",
+      "flex-layout.row#product-identifier",
+      "flex-layout.row#rating-summary",
+      "flex-layout.row#list-price-savings-with-price-savings",
+      "flex-layout.row#selling-price",
+      "flex-layout.row#installments",
+      "flex-layout.row#sku-selector",
+      "flex-layout.row#product-quantity",
+      "flex-layout.row#buy-button",
+      "flex-layout.row#shipping-simulator",
+      "flex-layout.row#share"
+    ]
+  }
+}

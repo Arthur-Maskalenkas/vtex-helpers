@@ -21,3 +21,6 @@ img[alt^="opt"] {
 img[alt$="opt"] {
   background: red;
 }
+
+## selecione uma classe que não contenha a classe Y como irmã
+    :global(.vtex-search-result-3-x-accordionFilter:not(.overflow-scroll)) {}

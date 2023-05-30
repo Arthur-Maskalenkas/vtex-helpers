@@ -1,0 +1,174 @@
+.cardSelectorWrapper,
+.activeCardSelectorWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 10px;
+    width: 100%;
+}
+
+.activeCardSelectorWrapper .cardContentMobile {
+    display: none;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: initial;
+}
+
+.cardSelectorContent,
+.activeCardSelectorContent {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.card {
+    background-color: #FFF;
+}
+
+.card,
+.activeCard {
+    min-height: 123px;
+    height: 100%;
+    padding: .5rem 11px;
+    border-radius: 15px;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cardContentDesktop:empty {
+    display: none !important;
+}
+
+.activeCardContentMobile,
+.cardContentDesktop {
+    background-color: #FFF;
+    padding: 42px 53px 42px 35px;
+    min-height: 160px;
+    margin: 10px 0 0 0;
+    border-radius: 27px;
+    color: #491835;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.title,
+.activeTitle,
+.subtitle,
+.activeSubtitle {
+    margin: 0;
+}
+
+.title,
+.activeTitle {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-top: 10px;
+}
+
+.title {
+    color: #FF7BB7;
+}
+
+.activeTitle {
+    color: #FFF;
+}
+
+
+.subtitle,
+.activeSubtitle {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: 4px;
+}
+
+.subtitle {
+    color: #000;
+}
+
+.activeSubtitle {
+    color: #FFF;
+}
+
+.icon,
+.activeIcon {
+    max-width: 35px;
+}
+
+.activeCard {
+    background-color: #ff7bb7;
+}
+
+
+@media only screen and (min-width: 360px) {
+    .cardSelectorContent,
+    .activeCardSelectorContent {
+        margin: 0;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 1024px) {
+
+    .cardsContainer {
+        gap: 8px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cardSelectorContent,
+    .activeCardSelectorContent {
+        width: 100%;
+    }
+
+    .cardContentMobile {
+        display: none;
+    }
+
+    .activeCardContentMobile {
+        margin-bottom: 24px;
+    }
+
+    .activeCardContentMobile:nth-child(2),
+    .activeCardContentMobile:nth-child(4) {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 3;
+    }
+
+    .activeCardContentMobile:nth-child(6),
+    .activeCardContentMobile:nth-child(8) {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-row-end: 3;
+        grid-column-end: 3;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .cardSelectorWrapper,
+    .activeCardSelectorWrapper {
+        margin-top: 30px;
+    }
+
+    .cardsContainer {
+        flex-wrap: nowrap;
+        gap: 16px;
+    }
+
+    .card, 
+    .activeCard {
+        width: 100%;
+        min-height: 142px;
+        padding: .5rem 22px;
+    }
+}

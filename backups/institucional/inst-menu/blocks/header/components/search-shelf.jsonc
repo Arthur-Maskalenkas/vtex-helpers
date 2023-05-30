@@ -1,0 +1,54 @@
+{
+  "product-summary.shelf#search": {
+    "children": [
+      "flex-layout.row#product-summary-search"
+    ]
+  },
+  "flex-layout.row#product-summary-search": {
+    "props": {
+      "preventHorizontalStretch": true
+    },
+    "children": [
+      "flex-layout.col#product-summary-search-col01",
+      "flex-layout.col#product-summary-search-col02"
+    ]
+  },
+  "flex-layout.col#product-summary-search-col01": {
+    "children": [
+      "stack-layout#prodsum"
+    ]
+  },
+  "flex-layout.col#product-summary-search-col02": {
+    "props": {
+      "preventVerticalStretch": true,
+      "blockClass": "product-infos-search",
+      "rowGap": 4
+    },
+    "children": [
+      "product-summary-name",
+      "condition-layout.product#availability-product-summary-search"
+    ]
+  },
+  "condition-layout.product#availability-product-summary-search": {
+    "title": "Condição Do Produto Shelf",
+    "props": {
+      "conditions": [
+        {
+          "subject": "isProductAvailable"
+        }
+      ],
+      "Then": "flex-layout.row#product-summary-available-search",
+      "Else": "flex-layout.row#product-summary-unavailable"
+    }
+  },
+  "flex-layout.row#product-summary-available-search": {
+    "children": [
+      "flex-layout.row#product-summary-container-prices"
+    ],
+    "props": {
+      "blockClass": "available__shelf",
+      "preventHorizontalStretch": false,
+      "preventVerticalStretch": false
+    }
+  }
+}

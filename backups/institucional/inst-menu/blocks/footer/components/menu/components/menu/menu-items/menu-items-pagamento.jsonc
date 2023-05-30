@@ -1,0 +1,7 @@
+{
+  "image#pag-tesouro": {
+    "props": {
+      "src": "assets/icons/icon-pagtesouro.svg"
+    }
+  }
+}

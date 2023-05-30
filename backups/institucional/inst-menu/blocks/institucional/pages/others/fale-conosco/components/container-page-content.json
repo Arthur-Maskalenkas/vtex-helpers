@@ -1,0 +1,32 @@
+{
+  "flex-layout.row#institutional-page-content-fale-conosco": {
+    "title": "Container Pagina",
+    "props": {
+      "preventVerticalStretch": true,
+      "colSizing": "auto",
+      "blockClass": [
+        "container-institutional-page",
+        "grid-1260",
+        "page-content"
+      ]
+    },
+    "children": [
+      "flex-layout.col#institutional-page-content-fale-conosco"
+    ]
+  },
+
+  "flex-layout.col#institutional-page-content-fale-conosco": {
+    "props": {
+      "preventVerticalStretch": true,
+      "colSizing": "auto",
+      "blockClass": [
+        "container-institutional-page",
+        "page-content"
+      ]
+    },
+    "children": [
+      "flex-layout.row#container--institucional--menu-fale-conosco",
+      "app--custom-apps.render-content#fale-conosco"
+    ]
+  }
+}

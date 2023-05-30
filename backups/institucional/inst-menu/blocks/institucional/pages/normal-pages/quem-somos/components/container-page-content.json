@@ -1,0 +1,32 @@
+{
+  "flex-layout.row#institutional-page-content-quem-somos": {
+    "title": "Container Pagina",
+    "props": {
+      "preventVerticalStretch": true,
+      "colSizing": "auto",
+      "blockClass": [
+        "container-institutional-page",
+        "grid-1260",
+        "page-content"
+      ]
+    },
+    "children": [
+      "flex-layout.col#institutional-page-content-quem-somos"
+    ]
+  },
+
+  "flex-layout.col#institutional-page-content-quem-somos": {
+    "props": {
+      "preventVerticalStretch": true,
+      "colSizing": "auto",
+      "blockClass": [
+        "container-institutional-page",
+        "page-content"
+      ]
+    },
+    "children": [
+      "flex-layout.row#container--institucional--menu-quem-somos",
+      "app--custom-apps.render-content#quem-somos"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "flex-layout.row#product-summary-container-prices": {
+    "title": "Container Preços",
+    "props": {
+      "blockClass": "container__prices-row",
+      "fullWidth": true,
+      "preserveLayoutOnMobile": true,
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true
+    },
+    "children": [
+      "product-list-price#summary",
+      "product-selling-price#summary"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "stack-layout#prodsum": {
+    "title": "Container Imagem Produto",
+    "children": [
+      "product-summary-image-custom#product-summary",
+      "flex-layout.row#container-highlights"
+    ]
+  },
+  "product-summary-image-custom#product-summary": {
+    "props": {
+      "showBadge": false,
+      "aspectRatio": "1:1",
+      "maxHeight": 300
+    }
+  }
+}

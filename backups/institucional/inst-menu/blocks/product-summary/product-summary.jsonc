@@ -1,0 +1,43 @@
+{
+  "product-summary.shelf": {
+    "children": [
+      "stack-layout#prodsum",
+      "product-summary-name",
+      "condition-layout.product#availability-product-summary"
+    ]
+  },
+  "condition-layout.product#availability-product-summary": {
+    "title": "Condição Do Produto Shelf",
+    "props": {
+      "conditions": [
+        {
+          "subject": "isProductAvailable"
+        }
+      ],
+      "Then": "flex-layout.row#product-summary-available",
+      "Else": "flex-layout.row#product-summary-unavailable"
+    }
+  },
+  "flex-layout.row#product-summary-available": {
+    "children": [
+      "flex-layout.row#product-summary-container-prices"
+    ],
+    "props": {
+      "blockClass": "available__shelf",
+      "preventHorizontalStretch": false,
+      "preventVerticalStretch": false
+    }
+  },
+  "flex-layout.row#product-summary-unavailable": {
+    "children": [
+      "rich-text#product-unavailable"
+    ]
+  },
+  "rich-text#product-unavailable": {
+    "title": "Shelf - Produto indisponível",
+    "props": {
+      "blockClass": "unavailable",
+      "text": "Produto indisponível"
+    }
+  }
+}

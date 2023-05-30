@@ -1,0 +1,58 @@
+{
+  // DESKTOP
+  "flex-layout.col#footer-menu-desktop-01": {
+    "title": "Menu - Institucional",
+    "children": [
+      "rich-text#institutional-footer",
+      "vtex.menu@2.x:menu#institutional-submenu-items"
+    ],
+    "props": {
+      "blockClass": "footerMenuDesktop",
+      "preventVerticalStretch": true
+    }
+  },
+  "flex-layout.col#footer-menu-desktop-02": {
+    "title": "Menu - Ajuda e Suporte",
+    "children": [
+      "rich-text#ajuda-footer",
+      "vtex.menu@2.x:menu#ajuda-submenu-items"
+    ],
+    "props": {
+      "blockClass": "footerMenuDesktop",
+      "preventVerticalStretch": true
+    }
+  },
+  "flex-layout.row#footer-menu-desktop-03": {
+    "title": "Menu - Pagamento",
+    "children": [
+      "rich-text#pagamento-footer",
+      "image#pag-tesouro"
+    ],
+    "props": {
+      "blockClass": [
+        "footerMenuDesktop",
+        "footerFlag"
+      ],
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    }
+  },
+  "flex-layout.row#footer-menu-desktop-04": {
+    "title": "Menu - Segurança",
+    "children": [
+      "rich-text#seguranca-footer",
+      "image#encrypt",
+      "image#vtex-pcie"
+    ],
+    "props": {
+      "blockClass": [
+        "footerMenuDesktop",
+        "footerFlag"
+      ],
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    }
+  }
+}

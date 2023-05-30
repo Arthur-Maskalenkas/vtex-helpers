@@ -1,0 +1,21 @@
+{
+  "flex-layout.row#description": {
+    "title": "Container Descrição",
+    "props": {
+      "blockClass": "container__description-pdp",
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true,
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    },
+    "children": [
+      "product-description"
+    ]
+  },
+
+  "product-description": {
+    "props": {
+      "collapseContent": false
+    }
+  }
+}

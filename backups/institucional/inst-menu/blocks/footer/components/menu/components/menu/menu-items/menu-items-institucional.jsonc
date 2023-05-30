@@ -1,0 +1,44 @@
+{
+  "rich-text#link-institucional-01": {
+    "title": "Menu Link 01",
+    "props": {
+      "blockClass": "footerSubmenuItem",
+      "text": "##### [Quem Somos](/quem-somos)"
+    }
+  },
+  "rich-text#link-institucional-02": {
+    "title": "Menu Link 02",
+    "props": {
+      "blockClass": "footerSubmenuItem",
+      "text": "##### [Fale Conosco](/fale-conosco)"
+    }
+  },
+  "rich-text#link-institucional-03": {
+    "title": "Menu Link 03",
+    "props": {
+      "blockClass": "footerSubmenuItem",
+      "text": "##### [fale-conosco](/fale-conosco)"
+    }
+  },
+  "rich-text#link-institucional-04": {
+    "title": "Menu Link 05",
+    "props": {
+      "blockClass": "footerSubmenuItem",
+      "text": "##### [Atendimento](/atendimento)"
+    }
+  },
+  "rich-text#link-institucional-05": {
+    "title": "Menu Link 06",
+    "props": {
+      "blockClass": "footerSubmenuItem",
+      "text": "##### [Trabalhe Conosco](/trabalhe-conosco)"
+    }
+  },
+  "rich-text#link-institucional-06": {
+    "title": "Menu Link 07",
+    "props": {
+      "blockClass": "footerSubmenuItem",
+      "text": "##### [Mapa do Site](/mapa-do-site)"
+    }
+  }
+}

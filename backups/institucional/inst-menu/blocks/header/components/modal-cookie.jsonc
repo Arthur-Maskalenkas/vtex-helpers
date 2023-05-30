@@ -1,0 +1,11 @@
+{
+  "modal-cookie#desk-mob": {
+    "title": "Modal de Cookies",
+    "props": {
+      "activateCookie": true,
+      "cookiesDaysExpiration": 365,
+      "buttonText": "ACEITAR E FECHAR",
+      "showHideCloseBtn": true
+    }
+  }
+}

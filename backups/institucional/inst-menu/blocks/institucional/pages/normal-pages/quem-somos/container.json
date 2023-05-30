@@ -1,0 +1,39 @@
+{
+  "store.custom#institutional-quem-somos": {
+    "blocks": [
+      "app--custom-apps.provider#quem-somos"
+    ]
+  },
+
+
+  "flex-layout.row#institutional-main-container-page-quem-somos": {
+    "title": "Container Pagina",
+    "props": {
+      "preventVerticalStretch": true,
+      "colSizing": "auto",
+      "blockClass": [
+        "container-institutional-page",
+        "main-page"
+      ]
+    },
+    "children": [
+      "flex-layout.col#institutional-main-container-page-quem-somos"
+    ]
+  },
+
+  "flex-layout.col#institutional-main-container-page-quem-somos": {
+    "props": {
+      "preventVerticalStretch": true,
+      "colSizing": "auto",
+      "blockClass": [
+        "container-institutional-page",
+        "main-page"
+      ]
+    },
+    "children": [
+      "app--custom-apps.render-banner#quem-somos",
+      "flex-layout.row#institutional-page-content-quem-somos"
+    ]
+  }
+}
+

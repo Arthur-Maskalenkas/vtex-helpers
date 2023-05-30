@@ -1,0 +1,47 @@
+{
+  "flex-layout.row#footer-copyright": {
+    "title": "Bloco do Copyright",
+    "children": ["flex-layout.col#footer-copyright"],
+    "props": {
+      "blockClass": "footer-copyright-images",
+      "preventHorizontalStretch": true,
+      "fullWidth": true
+    }
+  },
+  "flex-layout.col#footer-copyright": {
+    "children": ["flex-layout.row#copyright-images"],
+    "props": {
+      "preventVerticalStretch": true
+    }
+  },
+  "rich-text#copyright-text": {
+    "title": "Texto Copyright",
+    "props": {
+      "text": "",
+      "blockClass": "copyrightText"
+    }
+  },
+  "flex-layout.row#copyright-images": {
+    "children": ["image#avanti-copyright", "image#vtex-copyright"],
+    "props": {
+      "blockClass": "footer-copyright-images",
+      "preventHorizontalStretch": true,
+      "fullWidth": true
+    }
+  },
+  "image#avanti-copyright": {
+    "title": "Logo Avanti Footer",
+    "props": {
+      "alt": "Logo da Avanti",
+      "src": "/arquivos/logo-avanti.png",
+      "blockClass": "avanti-image"
+    }
+  },
+  "image#vtex-copyright": {
+    "title": "Logo VTEX Footer",
+    "props": {
+      "alt": "Logo da VTEX",
+      "src": "/arquivos/logo-vtex.png"
+    }
+  }
+}

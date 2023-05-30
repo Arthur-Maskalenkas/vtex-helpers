@@ -1,0 +1,152 @@
+{
+  "custom-faq": {
+    "props": {
+      "questions": [
+        {
+          "isTypeTitle": true,
+          "__editorItemTitle": "MEUS PEDIDOS"
+        },
+        {
+          "__editorItemTitle": "Consigo rastrear meus pedidos?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Posso adicionar outro produto a uma compra finalizada?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Posso comprar no site e retirar na loja fisica?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Meu produto estava indisponivel no momento da Retira. O que devo fazer?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "isTypeTitle": true,
+          "__editorItemTitle": "ENTREGAS"
+        },
+        {
+          "__editorItemTitle": "Posso alterar o endereço de entrega?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Não recebi minha compra na data prevista. O que devo fazer?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Não recebi todos os meus produtos. O que eu faço?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Posso enviar uma parte da compra para um endereço e outra para outro?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Como é calculado o frete do meu pedido?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Qual o prazo de entrega?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Quantas tentativas de entrega serão feitas?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Posso agendar minha entrega?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "As entregas poderão ser feitas nos finais de semana e feriados?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Meu pedido veio errado, como proceder?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Meu produto não funciona ou está avariado. O que fazer?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Como posso trocar meus produtos?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "isTypeTitle": true,
+          "__editorItemTitle": "CANCELAMENTO, ARREPENDIMENTO, TROCAS E DEVOLUÇÕES"
+        },
+        {
+          "__editorItemTitle": "Como posso trocar um produto via televenda?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Como posso trocar produtos comprados pelo e-commerce na loja física?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "E se o produto que eu desejo trocar não tiver mais disponível?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Como devolver um produto?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Quero alterar a data do meu cancelamento, como faço?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        },
+        {
+          "__editorItemTitle": "Como faço para solicitar o estorno de um pedido devolvido?",
+          "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus diam, molestie vitae felis in, placerat cursus ipsum. Mauris vehicula sem tellus, ac tincidunt nibh convallis sit amet. Etiam quam justo, sollicitudin a erat eu, molestie tempor mi. Nulla fermentum dictum mi, in placerat nisi tincidunt non. Integer quis sodales risus. Donec non tempor mauris, eu tristique nulla. Nulla ultrices fermentum enim et semper. Ut suscipit purus eu cursus sollicitudin. Nullam ultrices arcu metus, sed interdum augue lacinia tempus. Curabitur ultricies convallis dolor et tempor.",
+          "colorQIcon": false,
+          "isTypeTitle": false
+        }
+      ]
+    }
+  }
+}

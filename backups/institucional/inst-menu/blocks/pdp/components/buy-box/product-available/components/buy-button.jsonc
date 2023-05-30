@@ -1,0 +1,22 @@
+{
+  "flex-layout.row#buy-button": {
+    "title": "Container Botão De Compra",
+
+    "props": {
+      "blockClass": "container__buy-button"
+    },
+    "children": [
+      "add-to-cart-button#pdp"
+    ]
+  },
+  "add-to-cart-button#pdp": {
+    "props": {
+      "addToCartFeedback": "customEvent",
+      "customPixelEventId": "add-to-cart-button",
+      "onClickBehavior": "ensure-sku-selection",
+      "text": "Comprar",
+      "unavailableText": "Produto Indisponível",
+      "isOneClickBuy": false
+    }
+  }
+}

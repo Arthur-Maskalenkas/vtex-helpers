@@ -1,0 +1,8 @@
+{
+  "product-selling-price#summary": {
+    "title": "Preço sem desconto",
+    "props": {
+      "blockClass": "summary-price"
+    }
+  }
+}

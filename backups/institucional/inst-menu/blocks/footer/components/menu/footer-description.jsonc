@@ -1,0 +1,17 @@
+{
+  "flex-layout.row#footer-description": {
+    "props": {
+      "blockClass": "footer-description"
+    },
+    "children": [
+      "rich-text#description-subtitle"
+    ]
+  },
+  "rich-text#description-subtitle": {
+    "title": "Footer Texto 02",
+    "props": {
+      "text": "FORÇA AÉREA BRASILEIRA - CNPJ: 38.299.091/0001-80 © Todos os direitos reservados. 2022",
+      "blockClass": "footer-description-text"
+    }
+  }
+}

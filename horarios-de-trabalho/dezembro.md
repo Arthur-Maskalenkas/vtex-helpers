@@ -690,7 +690,7 @@
 **# 09/05/2023** 
 09:45 - 10:10 - aeronautica - Reunião de planejamento de entregáveis 🟢
 10:00 - 12:30 - underarmour - smart hint 🟠
-13:30 - 14:00 - marabraz - features
+13:30 - 14:00 - marabraz - features 🟢
 14:00 - 14:40 - savegnago - regionalização 🟠
 14:40 - 15:50 - olympikus - smart hint 🟠
 16:10 - 17:30 - savegnago - regionalização 🟠
@@ -705,15 +705,15 @@
 17:30 - 18:00 - mizuno - daily 🟢  
 
 **# 11/05/2023** 
-09:30 - 13:15 - marabraz - extra - remover item duplicado menu 🟠
-14:30 - 16:00 - marabraz - extra - formas de pagamento pdp 🟠
-16:00 - 17:30 - marabraz - extra - formas de pagamento summary 🟠
+09:30 - 13:15 - marabraz - 🟢
+14:30 - 16:00 - marabraz - 🟢
+16:00 - 17:30 - marabraz - 🟢
 17:30 - 17:50 - mizuno - daily 🟢
-17:30 - 18:00 - marabraz - extra - formas de pagamento summary 🟠
+17:30 - 18:00 - marabraz - 🟢
 
 **# 12/05/2023** 
-09:10 - 13:00 - marabraz - extra - menu mobile 🟠
-14:00 - 14:30 - marabraz - extra - menu mobile 🟠
+09:10 - 13:00 - marabraz - 🟢
+14:00 - 14:30 - marabraz - 🟢
 14:30 - 14:40 - aeronautica - daily 🟢
 15:00 - 16:00 - bazar horizonte - homolog
 15:00 - 17:30 - marabraz - garantia 🟢

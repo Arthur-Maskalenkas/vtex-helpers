@@ -1,0 +1,102 @@
+{
+  "flex-layout.row#home--list-categories-1": {
+    "title": "Container lista de categorias 1",
+
+    "props": {
+      "blockClass": [
+        "container-page-home",
+        "grid-1260",
+        "section-2",
+        "list-categories"
+
+      ],
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    },
+    "children": [
+      "flex-layout.col#home--list-categories-1"
+    ]
+  },
+
+
+  "flex-layout.col#home--list-categories-1": {
+    "props": {
+      "blockClass": [
+        "list-categories-1",
+        "container-page-home",
+        "list-categories"
+
+      ],
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+      "image-new-custom#home--list-categories-1--image-1",
+      "image-new-custom#home--list-categories-1--image-2",
+      "image-new-custom#home--list-categories-1--image-3",
+      "image-new-custom#home--list-categories-1--image-4",
+      "image-new-custom#home--list-categories-1--image-5",
+      "image-new-custom#home--list-categories-1--image-6"
+    ]
+  },
+
+  "image-new-custom#home--list-categories-1--image-1": {
+    "title": "Imagem 1",
+    "props": {
+      "src": "arquivos/home-sessao-2-banner-1.png",
+      "height": "200",
+      "width": "300",
+      "blockClass": "banner-image"
+    }
+  },
+
+  "image-new-custom#home--list-categories-1--image-2": {
+    "title": "Imagem 2",
+    "props": {
+      "src": "arquivos/home-sessao-2-banner-2.png",
+      "height": "200",
+      "width": "300",
+      "blockClass": "banner-image"
+    }
+  },
+
+  "image-new-custom#home--list-categories-1--image-3": {
+    "title": "Imagem 3",
+    "props": {
+      "src": "arquivos/home-sessao-2-banner-3.png",
+      "height": "200",
+      "width": "300",
+      "blockClass": "banner-image"
+    }
+  },
+
+  "image-new-custom#home--list-categories-1--image-4": {
+    "title": "Imagem 4",
+    "props": {
+      "src": "arquivos/home-sessao-2-banner-4.png",
+      "height": "200",
+      "width": "300",
+      "blockClass": "banner-image"
+    }
+  },
+
+  "image-new-custom#home--list-categories-1--image-5": {
+    "title": "Imagem 5",
+    "props": {
+      "src": "arquivos/home-sessao-2-banner-5.png",
+      "height": "200",
+      "width": "300",
+      "blockClass": "banner-image"
+    }
+  },
+
+  "image-new-custom#home--list-categories-1--image-6": {
+    "title": "Imagem 6",
+    "props": {
+      "src": "arquivos/home-sessao-2-banner-6.png",
+      "height": "200",
+      "width": "300",
+      "blockClass": "banner-image"
+    }
+  }
+}

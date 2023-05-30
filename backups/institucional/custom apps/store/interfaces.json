@@ -1,0 +1,74 @@
+{
+  "image-new-custom": {
+    "component": "Image",
+    "content": {
+      "$ref": "app:forcaaerea.custom-apps#/definitions/ImageCustom"
+    }
+  },
+  "image-slider-custom": {
+    "component": "ImageSlider",
+    "content": {
+      "properties": {
+        "images": {
+          "$ref": "app:forcaaerea.custom-apps#/definitions/ImagesCustom"
+        }
+      }
+    }
+  },
+  "image-list-custom": {
+    "component": "ImageListWithoutContext",
+    "content": {
+      "properties": {
+        "images": {
+          "$ref": "app:forcaaerea.custom-apps#/definitions/ImagesCustom"
+        }
+      }
+    }
+  },
+  "list-context.image-list-custom": {
+    "component": "ImageList",
+    "composition": "children",
+    "allowed": "*",
+    "content": {
+      "properties": {
+        "images": {
+          "$ref": "app:forcaaerea.custom-apps#/definitions/ImagesCustom"
+        }
+      }
+    }
+  },
+  "product-summary-image-custom": {
+    "component": "ProductSummaryImage"
+  },
+  "modal-cookie": {
+    "component": "ModalCookie",
+    "render": "client"
+  },
+
+  "custom-faq": {
+    "component": "CustomFaq",
+    "render": "client",
+    "content": {
+      "$ref": "app:forcaaerea.custom-apps#/definitions/CustomFaq"
+    }
+  },
+
+  "app--custom-apps": { },
+
+  "app--custom-apps.provider": {
+    "component": "CmsContextProvider",
+    "composition": "children"
+  },
+
+  "app--custom-apps.render-content": {
+    "component": "RenderContent"
+  },
+
+  "app--custom-apps.render-breadcrumb": {
+    "component": "RenderBreadcrumb"
+  },
+
+  "app--custom-apps.render-banner": {
+    "component": "RenderBanner"
+  }
+}

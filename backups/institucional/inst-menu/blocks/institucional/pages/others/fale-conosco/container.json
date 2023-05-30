@@ -1,0 +1,39 @@
+{
+  "store.custom#institutional-fale-conosco": {
+    "blocks": [
+      "app--custom-apps.provider#fale-conosco"
+    ]
+  },
+
+
+  "flex-layout.row#institutional-main-container-page-fale-conosco": {
+    "title": "Container Pagina",
+    "props": {
+      "preventVerticalStretch": true,
+      "colSizing": "auto",
+      "blockClass": [
+        "container-institutional-page",
+        "main-page"
+      ]
+    },
+    "children": [
+      "flex-layout.col#institutional-main-container-page-fale-conosco"
+    ]
+  },
+
+  "flex-layout.col#institutional-main-container-page-fale-conosco": {
+    "props": {
+      "preventVerticalStretch": true,
+      "colSizing": "auto",
+      "blockClass": [
+        "container-institutional-page",
+        "main-page"
+      ]
+    },
+    "children": [
+      "app--custom-apps.render-banner#fale-conosco",
+      "flex-layout.row#institutional-page-content-fale-conosco"
+    ]
+  }
+}
+

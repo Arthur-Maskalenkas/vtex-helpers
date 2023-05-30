@@ -1,0 +1,72 @@
+{
+  // MOBILE
+  "flex-layout.row#footer-menu-mobile": {
+    "children": [
+      "flex-layout.col#footer-menu-mobile"
+    ],
+    "props": {
+      "blockClass": [
+        "footer-menu"
+      ],
+      "fullWidth": true
+      // "preventHorizontalStretch": true
+    }
+  },
+  "flex-layout.col#footer-menu-mobile": {
+    "children": [
+      "menu-item#institutional",
+      "menu-item#ajuda"
+    ],
+    "props": {
+      "blockClass": "footerMenuCol",
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    }
+  },
+  //ITEMS DOS MENUS
+  "menu-item#institutional": {
+    "props": {
+      "blockClass": "footerMenuItem",
+      "id": "menu-item-footer-institutional",
+      "type": "custom",
+      "highlight": false,
+      "iconProps": {
+        "id": "nav-caret--down",
+        "size": 16,
+        "activeClassName": "black"
+      },
+      "itemProps": {
+        "type": "internal",
+        "iconPosition": "right",
+        "noFollow": false,
+        "tagTitle": "Menu - Institucional",
+        "text": "Institucional"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#institutional-submenu"
+    ]
+  },
+  //ATENDIMENTO
+  "menu-item#ajuda": {
+    "props": {
+      "blockClass": "footerMenuItem",
+      "id": "menu-item-footer-ajuda",
+      "type": "custom",
+      "highlight": false,
+      "iconProps": {
+        "id": "nav-caret--down"
+      },
+      "itemProps": {
+        "type": "internal",
+        "iconPosition": "right",
+        "noFollow": false,
+        "tagTitle": "Menu - Ajuda e Suporte",
+        "text": "Ajuda e Suporte"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#ajuda-submenu"
+    ]
+  }
+}

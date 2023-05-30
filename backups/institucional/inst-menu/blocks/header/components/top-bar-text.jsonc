@@ -1,0 +1,89 @@
+{
+  "toggle-layout#top-bar-text": {
+    "title": "Toggle Texto Topo",
+    "props": {
+      "blockClass": "top-bar-container-desktop"
+    },
+    "children": [
+      "responsive-layout.desktop#topbar-text-desktop",
+      "responsive-layout.mobile#topbar-text-mobile"
+    ]
+  },
+  "responsive-layout.desktop#topbar-text-desktop": {
+    "children": [
+      "flex-layout.row#top-bar-desktop"
+    ]
+  },
+  "flex-layout.row#top-bar-desktop": {
+    "props": {
+      "fullWidth": true,
+      "blockClass": [
+        "top-bar-desk",
+        "top-bar"
+      ]
+    },
+    "children": [
+      "rich-text#top-bar-desktop01",
+      "rich-text#top-bar-desktop02",
+      "rich-text#top-bar-desktop03"
+    ]
+  },
+  "rich-text#top-bar-desktop01": {
+    "title": "Topbar Texto 01",
+    "props": {
+      "blockClass": "top-bar-text",
+      "text": "**Frete grátis** para Sul e Sudeste"
+    }
+  },
+  "rich-text#top-bar-desktop02": {
+    "title": "Topbar Texto 02",
+    "props": {
+      "blockClass": "top-bar-text",
+      "text": "**Troca grátis** na primeira compra"
+    }
+  },
+  "rich-text#top-bar-desktop03": {
+    "title": "Topbar Texto 03",
+    "props": {
+      "blockClass": "top-bar-text",
+      "text": "**5% desconto** no pix"
+    }
+  },
+  //
+  /////////////// MOBILE /////////////////
+  //
+  "responsive-layout.mobile#topbar-text-mobile": {
+    "children": [
+      "flex-layout.row#top-bar-mobile"
+    ]
+  },
+  "flex-layout.row#top-bar-mobile": {
+    "props": {
+      "blockClass": [
+        "top-bar-mobile",
+        "top-bar"
+      ]
+    },
+    "children": [
+      "slider-layout#top-bar-mobile"
+    ]
+  },
+  "slider-layout#top-bar-mobile": {
+    "title": "Top Bar - Slides - Mobile",
+    "props": {
+      "itemsPerPage": 1,
+      "infinite": true,
+      "blockClass": "slide-top-bar",
+      "showNavigationArrows": "never",
+      "showPaginationDots": "never",
+      "autoplay": {
+        "timeout": 5000
+      }
+    },
+    "children": [
+      "rich-text#top-bar-desktop01",
+      "rich-text#top-bar-desktop02",
+      "rich-text#top-bar-desktop03"
+    ]
+  }
+}
