@@ -1847,13 +1847,9 @@ atob@^2.1.2:
   resolved "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-"avantiimplantacao.avanti-footer@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1684681181/public/@types/avantiimplantacao.avanti-footer":
+"avantiimplantacao.global-context@https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1685981965/public/@types/avantiimplantacao.global-context":
   version "0.0.0"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1684681181/public/@types/avantiimplantacao.avanti-footer#ed3a31d999af378240ca392cbe3b9be65b5c55a7"
-
-"avantiimplantacao.global-context@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704319/public/@types/avantiimplantacao.global-context":
-  version "0.0.0"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684704319/public/@types/avantiimplantacao.global-context#95873735b848475cc7a28ecbaa4f7ee244fdaa5a"
+  resolved "https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1685981965/public/@types/avantiimplantacao.global-context#f07f7b95f5953d9f748a12dda356a566defbe5e9"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -5690,17 +5686,17 @@ vfile@^5.0.0:
   version "0.16.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.rich-text@0.16.0/public/@types/vtex.rich-text#0cdcaccffb37ae0d025894ba7055f69bc3c9aa30"
 
-"vtex.search-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-graphql@0.52.0/public/@types/vtex.search-graphql":
-  version "0.52.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-graphql@0.52.0/public/@types/vtex.search-graphql#40069ed320b6eb9de9a419ea641f30b908d0dcd3"
+"vtex.search-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-graphql@0.53.0/public/@types/vtex.search-graphql":
+  version "0.53.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-graphql@0.53.0/public/@types/vtex.search-graphql#a55879c066c3de799ba97e3647fe49e9b533d8c6"
 
 "vtex.search-page-context@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-page-context@0.2.0/public/@types/vtex.search-page-context":
   version "0.2.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-page-context@0.2.0/public/@types/vtex.search-page-context#1b37f20648d8e4ff062ae9fffb0aa2718f172af7"
 
-"vtex.search-result@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-result@3.122.0/public/@types/vtex.search-result":
-  version "3.122.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-result@3.122.0/public/@types/vtex.search-result#c64c1f95bc9b544672a43658194301f7310f81e5"
+"vtex.search-result@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-result@3.122.2/public/@types/vtex.search-result":
+  version "3.122.2"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-result@3.122.2/public/@types/vtex.search-result#e5ec3d77962ac7d31b6d1b555349bc5e11cebc70"
 
 "vtex.search@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search@2.16.0/public/@types/vtex.search":
   version "2.16.0"
@@ -5718,9 +5714,9 @@ vfile@^5.0.0:
   version "3.169.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-components@3.169.0/public/@types/vtex.store-components#04d29e761b52c48b1f72a7d81a42dce3c143ee8e"
 
-"vtex.store-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-graphql@2.161.3/public/@types/vtex.store-graphql":
-  version "2.161.3"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-graphql@2.161.3/public/@types/vtex.store-graphql#4db8fb38d92864f7aefddfce15995ab90ddb7fd1"
+"vtex.store-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-graphql@2.163.0/public/@types/vtex.store-graphql":
+  version "2.163.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-graphql@2.163.0/public/@types/vtex.store-graphql#7dfdee5036802ffd00506e836a0925bcc685e7a3"
 
 "vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.90.0/public/@types/vtex.store-resources":
   version "0.90.0"

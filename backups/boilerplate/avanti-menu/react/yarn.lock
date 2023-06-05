@@ -1851,13 +1851,13 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-"avantiimplantacao.avanti-menu@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-menu@0.0.4+build1684756382/public/@types/avantiimplantacao.avanti-menu":
+"avantiimplantacao.avanti-menu@http://avantiimplantacao.vtexassets.com/_v/public/typings/v1/avantiimplantacao.avanti-menu@0.0.4/public/@types/avantiimplantacao.avanti-menu":
   version "0.0.4"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-menu@0.0.4+build1684756382/public/@types/avantiimplantacao.avanti-menu#fe7f9f02f878b3c60208e2de26c9394d505530b0"
+  resolved "http://avantiimplantacao.vtexassets.com/_v/public/typings/v1/avantiimplantacao.avanti-menu@0.0.4/public/@types/avantiimplantacao.avanti-menu#52c979baa66303e027acc9600c710f3ecfb607f9"
 
-"avantiimplantacao.global-context@https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684756069/public/@types/avantiimplantacao.global-context":
+"avantiimplantacao.global-context@https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1685981965/public/@types/avantiimplantacao.global-context":
   version "0.0.0"
-  resolved "https://arthurdev--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1684756069/public/@types/avantiimplantacao.global-context#df0839501df4e6308a6aa95918bf99eb41ddafb8"
+  resolved "https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1685981965/public/@types/avantiimplantacao.global-context#f07f7b95f5953d9f748a12dda356a566defbe5e9"
 
 aws-sign2@~0.7.0:
   version "0.7.0"

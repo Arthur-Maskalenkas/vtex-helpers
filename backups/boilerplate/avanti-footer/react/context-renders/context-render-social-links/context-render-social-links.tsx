@@ -6,40 +6,40 @@ import { CSS_HANDLES, generateCSS } from '../../modules'
 
 
 export const ContextRenderSocialLinks = () => {
-	const css = useCssHandles(CSS_HANDLES)
-	const socialLinks = UseGlobalContextAvantiFooter()?._screen_config_social_links?.[0]
-	const containerClassName = generateCSS('container-component', [
-		'context-render',
-		'social-links'
-	], css)
+  const css = useCssHandles(CSS_HANDLES)
+  const socialLinks = UseGlobalContextAvantiFooter()?._screen_config_social_links?.[0]
+  const containerClassName = generateCSS('container-component', [
+    'context-render',
+    'social-links'
+  ], css)
 
-	return (
-		<div className={containerClassName}>
-			<SanitizeText text={socialLinks?.__editorItemTitle}/>
+  return (
+    <div className={containerClassName}>
+      <SanitizeText text={socialLinks?.__editorItemTitle} />
 
-			<ul>
+      <ul>
 
-				{socialLinks?.items?.map((item, index) => {
+        {socialLinks?.items?.map((item, index) => {
 
-					const imageAttrs: ImageNormalProps = {
-						src: item?.src,
-						title: item?.__editorItemTitle,
-						alt: item?.alt,
-						className: 'logo'
-					}
+          const imageAttrs: ImageNormalProps = {
+            src: item?.src,
+            title: item?.__editorItemTitle,
+            alt: item?.alt,
+            className: 'logo'
+          }
 
 
-					return (
+          return (
 
-						<li key={index}>
-							<Link href={item.href}>
-								<ImageNormal {...imageAttrs} />
-							</Link>
-						</li>
-					)
-				})}
-			</ul>
+            <li key={index}>
+              <Link href={item.href}>
+                <ImageNormal {...imageAttrs} />
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
 
-		</div>
-	)
+    </div>
+  )
 }

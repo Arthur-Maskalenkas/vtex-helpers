@@ -670,14 +670,14 @@
 09:00 - 10:00 - mappin - replicação 🟢
 10:30 - 13:00 - mizuno - entregavel id 34 - E-Mails Transacionais🟢 
 14:15 - 15:00 - mizuno - entregavel id 34 - E-Mails Transacionais🟢 
-15:00 - 16:00 - olympkus - smart hint 🟠
+15:00 - 16:00 - olympkus - smart hint 🟢
 16:00 - 17:15 - mappin - replicação 🟢
 17:30 - 17:45 - mizuno - daily 🟢 
 
 **# 05/05/2023** 
 09:00 - 13:00 - mizuno - integração api smart hint 🟢
 14:30 - 15:30 - mizuno - daily🟢 
-15:30 - 18:00 - mizuno - homolog
+15:30 - 18:00 - mizuno - homolog 🟢
 
 **# 08/05/2023** 
 09:00 - 11:15 - mizuno - landing page corredor 🟢
@@ -689,19 +689,19 @@
 
 **# 09/05/2023** 
 09:45 - 10:10 - aeronautica - Reunião de planejamento de entregáveis 🟢
-10:00 - 12:30 - underarmour - smart hint 🟠
+10:00 - 12:30 - underarmour - smart hint 🟢
 13:30 - 14:00 - marabraz - features 🟢
-14:00 - 14:40 - savegnago - regionalização 🟠
-14:40 - 15:50 - olympikus - smart hint 🟠
-16:10 - 17:30 - savegnago - regionalização 🟠
+14:00 - 14:40 - savegnago - regionalização 🟢
+14:40 - 15:50 - olympikus - smart hint 🟢
+16:10 - 17:30 - savegnago - regionalização 🟢
 17:30 - 18:00 - mizuno - daily 🟢 
 
 **# 10/05/2023** 
 09:00 - 09:30 - café avanti 🟢
-09:30 - 11:00 - savegnago - regionalização 🟠
+09:30 - 11:00 - savegnago - regionalização 🟢
 11:00 - 11:15 - aeronautica - daily 🟢
-11:15 - 13:15 - savegnago - regionalização 🟠
-14:45 - 17:30 - savegnago - regionalização 🟠
+11:15 - 13:15 - savegnago - regionalização 🟢
+14:45 - 17:30 - savegnago - regionalização 🟢
 17:30 - 18:00 - mizuno - daily 🟢  
 
 **# 11/05/2023** 
@@ -765,3 +765,34 @@
 14:20 - 17:00 - aeronautica - home 🟢
 17:00 - 17:20 - weekly time 🟢
 17:20 - 18:00 - aeronautica - home 🟢
+
+
+
+
+
+01/05 SEG 9997 Feriado
+02/05 TER 0003 09:05 13:01 14:02 18:06 Trabalhando
+03/05 QUA 0003 09:05 13:03 14:04 18:09 Banco de Horas (+)
+04/05 QUI 0003 09:08 13:16 14:22 18:00 Banco de Horas (-)
+05/05 SEX 0003 09:00 13:08 14:10 18:05 Banco de Horas (+)
+08/05 SEG 0003 09:02 13:04 14:05 18:01 Banco de Horas (-)
+09/05 TER 0003 09:00 12:28 13:36 18:03 Banco de Horas (-)
+10/05 QUA 0003 09:00 13:00 14:14 18:07 Banco de Horas (-)
+11/05 QUI 0003 09:06 13:15 14:17 18:00 Banco de Horas (-)
+12/05 SEX 0003 09:18 13:00 14:08 18:00 Banco de Horas (-)
+15/05 SEG 0003 09:07 13:00 14:01 18:00 Banco de Horas (-)
+16/05 TER 0003 09:02 13:01 14:03 18:08 Banco de Horas (+)
+17/05 QUA 0003 09:04 12:30 13:30 18:04 Trabalhando
+18/05 QUI 0003 09:08 13:03 14:03 18:01 Banco de Horas (-)
+19/05 SEX 0003 09:04 13:08 14:09 18:04 Banco de Horas (-)
+22/05 SEG 0003 09:08 13:17 14:22 18:01 Banco de Horas (-)
+23/05 TER 0003 09:09 12:09 13:09 18:00 Banco de Horas (-)
+24/05 QUA 0003 09:00 13:00 14:02 18:00 Banco de Horas (-)
+25/05 QUI 0003 09:00 12:00 13:08 18:04 Banco de Horas (-)
+26/05 SEX 0003 09:00 13:06 14:06 18:00 Trabalhando
+29/05 SEG 0003 09:01 13:31 14:33 18:02 Banco de Horas (-)
+30/05 TER 0003 09:25 13:11 14:21 Marcações Inválidas
+31/05 QUA 0003 09:06 13:10 14:11 Apuração Incompleta
+
+156 horas apontadas
+22 x 8 = 176
