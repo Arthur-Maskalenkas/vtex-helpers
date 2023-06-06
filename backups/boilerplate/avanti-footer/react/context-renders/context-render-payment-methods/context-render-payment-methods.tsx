@@ -1,43 +1,45 @@
 import { UseGlobalContextAvantiFooter } from 'avantiimplantacao.global-context'
 import React from 'react'
 import { useCssHandles } from 'vtex.css-handles'
-import { ImageNormal, ImageNormalProps, SanitizeText } from '../../common'
+import { Image, ImageProps, SanitizeText } from '../../common'
 import { CSS_HANDLES, generateCSS } from '../../modules'
 
 
 export const ContextRenderPaymentMethods = () => {
-	const css = useCssHandles(CSS_HANDLES)
-	const context = UseGlobalContextAvantiFooter()?._screen_config_payment_methods?.[0]
-	const containerClassName = generateCSS('container-component', [
-		'context-render',
-		'payment-methods'
-	], css)
+  const css = useCssHandles(CSS_HANDLES)
+  const context = UseGlobalContextAvantiFooter()?._screen_config_payment_methods?.[0]
+  const containerClassName = generateCSS('container-component', [
+    'context-render',
+    'payment-methods'
+  ], css)
 
-	return (
-		<div className={containerClassName}>
-			<SanitizeText text={context?.__editorItemTitle}/>
+  return (
+    <div className={containerClassName}>
+      <SanitizeText text={context?.__editorItemTitle} />
 
-			<ul>
+      <ul>
 
-				{context?.items?.map((item, index) => {
+        {context?.items?.map((item, index) => {
 
-					const imageAttrs: ImageNormalProps = {
-						src: item?.src,
-						title: item?.__editorItemTitle,
-						alt: item?.alt,
-						className: 'logo'
-					}
+          const imageAttrs: ImageProps = {
+            allDevices: {
+              src: item?.src
+            },
+            title: item?.__editorItemTitle,
+            alt: item?.alt,
+            className: 'logo'
+          }
 
 
-					return (
+          return (
 
-						<li key={index}>
-							<ImageNormal {...imageAttrs} />
-						</li>
-					)
-				})}
-			</ul>
+            <li key={index}>
+              <Image {...imageAttrs} />
+            </li>
+          )
+        })}
+      </ul>
 
-		</div>
-	)
+    </div>
+  )
 }

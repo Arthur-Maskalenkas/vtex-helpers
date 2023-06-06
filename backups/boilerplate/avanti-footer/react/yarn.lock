@@ -1847,6 +1847,10 @@ atob@^2.1.2:
   resolved "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
+"avantiimplantacao.avanti-footer@https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1685988630/public/@types/avantiimplantacao.avanti-footer":
+  version "0.0.0"
+  resolved "https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1685988630/public/@types/avantiimplantacao.avanti-footer#f3d6c5e54d00eef4c0ed7adf59cf9832d4c63089"
+
 "avantiimplantacao.global-context@https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1685981965/public/@types/avantiimplantacao.global-context":
   version "0.0.0"
   resolved "https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1685981965/public/@types/avantiimplantacao.global-context#f07f7b95f5953d9f748a12dda356a566defbe5e9"

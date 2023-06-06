@@ -1,5 +1,4 @@
-export * from './image/image-responsive';
-export * from './image/image-normal';
+export * from './image/image';
 export * from './dropdown/dropdown';
 export * from './sanitize-text/sanitize-text';
 export * from './skeleton/skeleton';

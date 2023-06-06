@@ -3,12 +3,11 @@ import { ImageSize } from "./image";
 export const loadImage = async (src: string): Promise<HTMLImageElement> => {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = reject;
     img.src = src;
+    img.onerror = (e: any) => reject(new Error(`Erro ao carregar a imagem: ${e.error?.message}`));
+    img.onload = () => resolve(img);
   });
-}
-
+};
 export type BuildImageAttrsProps = {
   widthImg?: string | number | null,
   heightImg?: string | number | null,

@@ -1,7 +1,7 @@
 import { UseGlobalContextAvantiFooter } from 'avantiimplantacao.global-context'
 import React from 'react'
 import { useCssHandles } from 'vtex.css-handles'
-import { ImageNormal, ImageNormalProps, SanitizeText, Link } from '../../common'
+import { Image, ImageProps, SanitizeText, Link } from '../../common'
 import { CSS_HANDLES, generateCSS } from '../../modules'
 
 
@@ -13,6 +13,7 @@ export const ContextRenderSocialLinks = () => {
     'social-links'
   ], css)
 
+
   return (
     <div className={containerClassName}>
       <SanitizeText text={socialLinks?.__editorItemTitle} />
@@ -21,8 +22,17 @@ export const ContextRenderSocialLinks = () => {
 
         {socialLinks?.items?.map((item, index) => {
 
-          const imageAttrs: ImageNormalProps = {
-            src: item?.src,
+          const imageAttrs: ImageProps = {
+            mobile: {
+              src: item?.src,
+              height: '20',
+              width: '20'
+            },
+            desktop: {
+              src: item?.src,
+              height: '40',
+              width: '40'
+            },
             title: item?.__editorItemTitle,
             alt: item?.alt,
             className: 'logo'
@@ -33,7 +43,7 @@ export const ContextRenderSocialLinks = () => {
 
             <li key={index}>
               <Link href={item.href}>
-                <ImageNormal {...imageAttrs} />
+                <Image {...imageAttrs} />
               </Link>
             </li>
           )

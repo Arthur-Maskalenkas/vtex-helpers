@@ -33,6 +33,7 @@
     "@vtex/test-tools": "^3.3.2",
     "@vtex/tsconfig": "^0.4.4",
     "apollo-cache-inmemory": "^1.6.5",
+    "avantiimplantacao.avanti-footer": "https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.avanti-footer@0.0.0+build1685988630/public/@types/avantiimplantacao.avanti-footer",
     "avantiimplantacao.global-context": "https://arthurcontexto--avantiimplantacao.myvtex.com/_v/private/typings/linked/v1/avantiimplantacao.global-context@0.0.0+build1685981965/public/@types/avantiimplantacao.global-context",
     "graphql": "^14.6.0",
     "typescript": "3.9.7",
