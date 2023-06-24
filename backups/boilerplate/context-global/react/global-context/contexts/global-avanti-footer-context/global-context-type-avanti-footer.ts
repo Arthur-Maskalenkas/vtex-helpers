@@ -1,28 +1,49 @@
 export type GlobalContextTypeAvantiFooter = {
-  _screen_config_social_links: [ScreenConfigSocialLink] | null
-  _screen_config_payment_methods: [ScreenConfigPaymentMethod] | null
-  _screen_config_security: [ScreenConfigSecurity] | null
+  // configurar logo
   _screen_config_logo: [ScreenConfigLogo] | null
-  _screen_config_about_store: [ScreenConfigAboutStore] | null
-  _screen_config_other_section: [ScreenConfigOtherSection] | null
-  _screen_config_copyright: [ScreenConfigCopyright] | null
+
+  // configurar banner
+  _screen_config_banner: [ScreenConfigBanner] | null
+
+  // configurar coluna de texto
+  _screen_config_text_column: [ScreenConfigAboutStore] | null
+
+  // configurar copyright
+  _screen_config_text_copyright: [ScreenConfigCopyright] | null
+
+  // configurar sessões de icones
+  _screen_config_sections_icons: [ScreenConfigSocialLink] | null
+
+  // configurar sessões de links
+  _screen_config_sections_links: [ScreenConfigSectionsLinks] | null
+
+
 } | null
+
+type ResponsiveOptions = {
+  responsive_option_desktop: boolean
+  responsive_option_tablet: boolean
+  responsive_option_mobile: boolean
+}
 
 export interface ScreenConfigCopyright {
   text: string
 }
 
 export interface ScreenConfigSocialLink {
-  __editorItemTitle: string
-  items: Item[]
+  items: Array<{
+    __editorItemTitle: string
+    items: Item[]
+  } & ResponsiveOptions>
 }
 
-export interface Item {
+export type Item = {
   __editorItemTitle: string
   src: string
   alt: string
   href: string
-}
+  target: boolean
+} & ResponsiveOptions
 
 export interface ScreenConfigPaymentMethod {
   __editorItemTitle: string
@@ -53,21 +74,30 @@ export interface ScreenConfigLogo {
   alt: string
 }
 
+export interface ScreenConfigBanner {
+  alt: string
+  href: string
+  __editorItemTitle: string
+  srcDesktop: string
+  srcMobile: string
+  target: boolean
+}
+
 export interface ScreenConfigAboutStore {
   freeText: string
 }
 
-export interface ScreenConfigOtherSection {
+export interface ScreenConfigSectionsLinks {
   items: Item4[]
 }
 
-export interface Item4 {
+export type Item4 = {
   __editorItemTitle: string
   items: Item5[]
-}
+} & ResponsiveOptions
 
-export interface Item5 {
+export type Item5 = {
   target: boolean
   __editorItemTitle: string
   href: string
-}
+} & ResponsiveOptions

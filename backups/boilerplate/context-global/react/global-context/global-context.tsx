@@ -12,7 +12,6 @@ import { GlobalContextAvantiMenu } from './contexts/global-avanti-menu-context/g
 export const GlobalContext = React.createContext<GlobalProviderProps>({} as any)
 
 export const GlobalProvider = (props: GlobalSiteEditorProps) => {
-  console.log(`🚀 ~ file: global-context.tsx:12 ~ GlobalProvider ~ props:`, props)
 
   return (
     <GlobalContext.Provider value={null as any}>
@@ -26,6 +25,7 @@ export const GlobalProvider = (props: GlobalSiteEditorProps) => {
     </GlobalContext.Provider >
   )
 }
+
 
 
 
@@ -56,4 +56,3 @@ GlobalProvider.schema = {
   }
 } as SchemaSiteEditor
 
-console.log(`🚀 ~ file: global-context.tsx:49 ~ GlobalProvider.schema:`, GlobalProvider.schema)

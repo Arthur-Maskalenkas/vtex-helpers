@@ -1,0 +1,282 @@
+<keymap version="1" name="Windows copy" parent="$default">
+    <!--
+        **
+        ** botão 1
+        **
+    -->
+
+
+    <!--    linha 2-->
+
+    <!--    reformata o codigo -->
+    <action id="ReformatCode">
+        <keyboard-shortcut first-keystroke="ctrl alt l"/>
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="quote"/>
+    </action>
+
+    <!--  refactor this  -->
+    <action id="Refactorings.QuickListPopupAction">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="1"/>
+    </action>
+
+    <!--    mostrar intenções (remover pai, code style etc.)-->
+    <action id="ShowIntentionActions">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="2"/>
+    </action>
+
+    <!--    encapsular em um live template-->
+    <action id="SurroundWithLiveTemplate">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="3"/>
+    </action>
+
+    <!--    manipulação de string-->
+    <action id="osmedile.intellij.stringmanip.PopupChoiceAction">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="4"/>
+    </action>
+
+
+    <!--    gerar estrutura (normalmente usado em classes e markdown)-->
+    <action id="Generate">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="4"/>
+    </action>
+
+    <!--    inserir no markdown-->
+    <action id="Markdown.Insert">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="6"/>
+    </action>
+
+
+    <!--//    linha 2-->
+
+    <!--    linha 3-->
+    <!--    infos de parametros -->
+    <action id="ParameterInfo">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="q"/>
+    </action>
+
+    <!--    infos de parametros mais detalhados - caso aperte 2x, abre a doc a direita -->
+    <action id="QuickJavaDoc">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="w"/>
+    </action>
+
+    <!--    verificar implementação sem sair do arquivo atual -->
+    <action id="QuickImplementations">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="e"/>
+    </action>
+    <!--    linha 3-->
+
+    <!--    linha 4-->
+
+    <!--  ir para arquivo da declaração  -->
+    <action id="GotoDeclaration">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="a"/>
+    </action>
+
+    <!--    ir para related symbol-->
+    <action id="GotoRelated">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="s"/>
+    </action>
+
+    <!--//    linha 4-->
+
+
+    <!--  linha 5-->
+    <!--    salvar codigo selecionado como template -->
+    <action id="SaveAsTemplate">
+        <keyboard-shortcut first-keystroke="shift alt q" second-keystroke="back_slash"/>
+    </action>
+    <!--//  linha 5-->
+
+
+    <!--
+        ||||
+        **
+        ** botão 1
+        **
+        ||||
+    -->
+
+    <!--
+        **
+        ** botão 2
+        **
+    -->
+    <!--  linha 2-->
+
+    <action id="ToggleBookmark0">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="1"/>
+    </action>
+    <action id="ToggleBookmark1">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="2"/>
+    </action>
+    <action id="ToggleBookmark2">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="3"/>
+    </action>
+    <action id="ToggleBookmark3">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="4"/>
+    </action>
+    <action id="ToggleBookmark4">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="5"/>
+    </action>
+    <action id="ToggleBookmark5">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="6"/>
+    </action>
+    <action id="ToggleBookmark6">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="7"/>
+    </action>
+    <action id="ToggleBookmark7">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="8"/>
+    </action>
+    <action id="ToggleBookmark8">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="9"/>
+    </action>
+
+
+    <!--//  linha 2-->
+
+
+    <!--  linha 3 -->
+
+    <action id="GotoBookmark0">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="q"/>
+    </action>
+    <action id="GotoBookmark1">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="w"/>
+    </action>
+    <action id="GotoBookmark2">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="e"/>
+    </action>
+    <action id="GotoBookmark3">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="r"/>
+    </action>
+    <action id="GotoBookmark4">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="t"/>
+    </action>
+    <action id="GotoBookmark5">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="y"/>
+    </action>
+    <action id="GotoBookmark6">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="u"/>
+    </action>
+    <action id="GotoBookmark7">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="i"/>
+    </action>
+    <action id="GotoBookmark8">
+        <keyboard-shortcut first-keystroke="shift alt w" second-keystroke="o"/>
+    </action>
+
+    <!--//  linha 3 -->
+
+    <!--  last edit location   -->
+
+    <!--    next edit location-->
+
+    <!--
+        |||
+        **
+        ** botão 2
+        **
+        |||
+    -->
+
+
+    <!--
+    **
+    ** botão 3
+    **
+-->
+
+
+    <!--
+        |||
+        **
+        ** botão 3
+        **
+        |||
+    -->
+
+
+    <!--
+    **
+    ** botão 4
+    **
+-->
+
+
+    <!--  linha 2-->
+    <action id="GoToTargetEx">
+        <keyboard-shortcut first-keystroke="shift alt r" second-keystroke="7"/>
+        <keyboard-shortcut first-keystroke="shift alt r" second-keystroke="quote"/>
+    </action>
+    <action id="GotoClass">
+        <keyboard-shortcut first-keystroke="shift alt r" second-keystroke="5"/>
+    </action>
+    <action id="GotoFile">
+        <keyboard-shortcut first-keystroke="shift alt r" second-keystroke="3"/>
+    </action>
+    <action id="GotoSymbol">
+        <keyboard-shortcut first-keystroke="shift alt r" second-keystroke="4"/>
+    </action>
+
+    <action id="SearchEverywhere">
+        <keyboard-shortcut first-keystroke="shift alt r" second-keystroke="1"/>
+    </action>
+
+    <action id="ReplaceInPath">
+        <keyboard-shortcut first-keystroke="shift alt r" second-keystroke="2"/>
+    </action>
+
+    <!--//  linha 2-->
+
+
+    <!--
+        |||
+        **
+        ** botão 4
+        **
+        |||
+    -->
+
+
+    <!--
+    **
+    ** botão 5
+    **
+-->
+
+    <!--  linha xx-->
+
+    <!--    git popup-->
+
+    <!--//  linha xx-->
+
+    <!--
+        |||
+        **
+        ** botão 5
+        **
+        |||
+    -->
+
+
+    <!--
+    **
+    ** botão 8
+    **
+-->
+
+    <!--  linha xx-->
+
+    <!--    faz xx coisa-->
+
+    <!--//  linha xx-->
+
+    <!--
+        |||
+        **
+        ** botão 8
+        **
+        |||
+    -->
+
+</keymap>

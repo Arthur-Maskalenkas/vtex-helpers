@@ -26,26 +26,25 @@ export type ImageProps = {
 export const Image = ({ desktop = {}, mobile = {}, className = 'default', allDevices = {}, ...imgProps }: ImageProps) => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [img, setImg] = React.useState<Partial<React.ImgHTMLAttributes<HTMLImageElement>> | null>(null)
-  console.log(`🚀 ~ file: image.tsx:26 ~ Image ~ img:`, img)
 
   const css = useCssHandles(CSS_HANDLES)
-  console.log(`🚀 ~ file: image.tsx:95 ~ Image ~ allDevices:`, allDevices)
-  console.log(`🚀 ~ file: image.tsx:95 ~ Image ~ mobile:`, mobile)
-  console.log(`🚀 ~ file: image.tsx:95 ~ Image ~ desktop:`, desktop)
   const { deviceInfo } = useRuntime()
   const isMobile = deviceInfo?.isMobile
 
   const deviceChoosed = isMobile ? mobile : desktop
   const hasSrcOnDevice = deviceChoosed?.src !== '' && !!deviceChoosed?.src
 
+
+
   const imageSize = hasSrcOnDevice ? deviceChoosed : allDevices
-  console.log(`🚀 ~ file: image.tsx:32 ~ Image ~ imageSize:`, imageSize)
+
+  if (!imageSize) {
+    return <></>
+  }
 
   const { width = null, height = null, src = null } = imageSize
-  console.log(`🚀 ~ file: image.tsx:38 ~ Image ~ src:`, src)
 
   const ClassName = isMobile ? 'mobile' : 'desktop';
-  console.log(`🚀 ~ file: image.tsx:41 ~ Image ~ ClassName:`, ClassName)
 
 
   // Apply lazy-loading
