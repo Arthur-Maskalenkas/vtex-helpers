@@ -1,0 +1,25 @@
+{
+  "search-bar#desktop": {
+    "title": "Header - Barra de busca",
+    "blocks": [
+      "autocomplete-result-list.v2#desktop"
+    ],
+    "props": {
+      "autocompleteFullWidth": true,
+      "placeholder": "Search UA",
+      "maxWidth": "1920px"
+    }
+  },
+  "autocomplete-result-list.v2#desktop": {
+    "props": {
+      "maxSuggestedProducts": 4,
+      "autocompleteWidth": "100",
+      "hideUnavailableItems": true,
+      "simulationBehavior": "default",
+      "__unstableProductOriginVtex": true
+    },
+    "blocks": [
+      "product-summary.shelf"
+    ]
+  }
+}

@@ -85,7 +85,9 @@
 }
 
 
-@include reset();
-@include configMainContainer();
-@include configContainerListProducts();
-@include configContainerOptions();
+@include mq('1024') {
+  @include reset();
+  @include configMainContainer();
+  @include configContainerListProducts();
+  @include configContainerOptions();
+}
