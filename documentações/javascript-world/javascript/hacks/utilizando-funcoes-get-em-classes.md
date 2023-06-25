@@ -1,0 +1,18 @@
+# Utilizando o get em classes
+# utilizando funções get
+# hack utilizando get em classes
+
+```javascript
+class Tax {
+static get taxesBasedOnAge() {
+return [
+{ from: 18, to: 25, then: 1.1 },
+{ from: 26, to: 30, then: 1.5 },
+{ from: 31, to: 100, then: 1.3 },
+]
+}
+}
+
+// utilizando
+const data = Tax.taxesBasedOnAge
+```

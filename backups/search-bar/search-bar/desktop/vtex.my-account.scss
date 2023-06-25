@@ -1,0 +1,91 @@
+// mixin que cria as configurações relacionadas ao container principal.
+// ? Toda a divisão e manipulação do container principal se encontra aqui
+@mixin configMainContainer {
+
+  body :global(.vtex-search-2-x-biggy-js-container--hidden),
+  body :global(.vtex-search-2-x-biggy-autocomplete-wrapper) {
+    opacity: 1 !important;
+    max-height: unset !important;
+    margin-top: 100px !important;
+    padding: 0 !important;
+
+    > :global(.vtex-search-2-x-biggy-autocomplete) {
+      background-color: white;
+      position: relative;
+      padding-left: calc((100% - 1500px) / 2) !important;
+      padding-right: calc((100% - 1500px) / 2) !important;
+      box-sizing: border-box !important;
+
+      display: flex;
+      flex-direction: row-reverse !important;
+      justify-content: space-between;
+
+
+
+    }
+  }
+}
+
+// mixin que cria as configurações relacionadas ao reset de todo o container
+@mixin reset {
+  :global(.vtex-search-2-x-biggy-autocomplete-wrapper) {
+    *:not([class*="summary"] *) {
+      line-height: 0;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      background-color: transparent;
+    }
+  }
+}
+
+// Mixin que cria as configurações relacionadas ao container do lado esquerdo, aonde aparece a lista de produtos
+@mixin configContainerListProducts {
+
+  body :global(.vtex-search-2-x-biggy-js-container--hidden),
+  body :global(.vtex-search-2-x-biggy-autocomplete-wrapper) {
+    > :global(.vtex-search-2-x-biggy-autocomplete) {
+
+      > :global(.vtex-search-2-x-tileList) {
+        padding-right: 20px;
+
+        >ul {
+          justify-content: space-between;
+
+          >li {
+            max-width: 220px;
+          }
+
+          >li:last-child {
+            display: none;
+
+            @include mq('1200') {
+              display: flex;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mixin que cria as configurações relacionadas ao container do lado direito, aonde aparece a lista de links
+@mixin configContainerOptions {
+
+  body :global(.vtex-search-2-x-biggy-js-container--hidden),
+  body :global(.vtex-search-2-x-biggy-autocomplete-wrapper) {
+    > :global(.vtex-search-2-x-biggy-autocomplete) {
+      > :global(.vtex-search-2-x-itemList) {
+        max-width: 270px;
+      }
+    }
+  }
+}
+
+
+@include reset();
+@include configMainContainer();
+@include configContainerListProducts();
+@include configContainerOptions();

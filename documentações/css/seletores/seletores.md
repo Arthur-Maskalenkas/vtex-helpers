@@ -24,3 +24,14 @@ img[alt$="opt"] {
 
 ## selecione uma classe que não contenha a classe Y como irmã
     :global(.vtex-search-result-3-x-accordionFilter:not(.overflow-scroll)) {}
+
+## selecione tudo, menos containrs que contenham classes com summary e seus respectivos filhos
+:global(.vtex-search-2-x-biggy-autocomplete-wrapper) {
+  *:not([class*="summary"] *) {
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+}

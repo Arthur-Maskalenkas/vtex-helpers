@@ -1,0 +1,1 @@
+https://blog.erickwendel.com.br/5-shocking-things-about-nodejs-that-you-thought-you-knew-but-didnt  
