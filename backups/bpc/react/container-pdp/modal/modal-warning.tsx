@@ -7,7 +7,7 @@ export const ModalWarning = () => {
 
 
   return (
-    <div className={generateCSS('container-component', ['modal-warning'], css)}>
+    <div className={generateCSS('container-screen', ['warning', 'modal-warning'], css)}>
       <div className={generateCSS('container-content', ['main'], css)}>
         <h3 className={generateCSS('title', ['main'], css)}>
           Titulo

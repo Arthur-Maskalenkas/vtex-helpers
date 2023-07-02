@@ -1,4 +1,4 @@
-import { ModalScreenNames } from "..";
+import { ModalScreenNames } from '..';
 import { ModalCoupon } from "../modal-coupon";
 import { ModalSecondStep } from "../modal-second-step";
 import { ModalWarning } from "../modal-warning";

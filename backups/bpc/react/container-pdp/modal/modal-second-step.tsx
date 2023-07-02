@@ -1,19 +1,16 @@
 import React from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 import { CSS_HANDLES, generateCSS } from '../../modules'
-import { UseFormRegister } from 'react-hook-form'
-import { SchemaFormStep } from '../form-schema'
+import { useContextContainerPDP } from '../context'
 
-export type ModalSecondStepProps = {
-  register: UseFormRegister<SchemaFormStep>
-}
 
-export const ModalSecondStep = ({ register }: ModalSecondStepProps) => {
+
+export const ModalSecondStep = () => {
   const css = useCssHandles(CSS_HANDLES)
-
+  const { componentValues: { form: { register } } } = useContextContainerPDP()
 
   return (
-    <div className={generateCSS('container-component', ['modal-second-step'], css)}>
+    <div className={generateCSS('container-screen', ['form', 'modal-form'], css)}>
       <div className={generateCSS('container-content', ['input'], css)}>
         <label className={generateCSS('label', ['input'], css)}>Nome</label>
         <input

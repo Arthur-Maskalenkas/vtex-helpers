@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { imperativeCloseModal } from "./forwardRef";
-import { ModalScreenNames } from "..";
+import { SetCurrentScreen, SetIsOpen } from "..";
 
-export const useModalEffect = (isOpen: boolean, setCurrentScreen: (screenName: ModalScreenNames) => void, setIsOpen: (isOpen: boolean) => void) => {
+export const useModalEffect = (isOpen: boolean, setCurrentScreen: SetCurrentScreen, setIsOpen: SetIsOpen, imperativeCloseModal: any) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        imperativeCloseModal(setCurrentScreen,setIsOpen);
+        imperativeCloseModal(setIsOpen,setCurrentScreen);
       }
     };
 

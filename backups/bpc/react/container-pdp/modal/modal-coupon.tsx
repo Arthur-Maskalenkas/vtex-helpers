@@ -8,13 +8,13 @@ export const ModalCoupon = () => {
   const [couponCode, setCouponCode] = useState('');
   const [hasError, setHasError] = useState(false)
 
-  const handleFormSubmit = async (data: any) => {
+  const handleFormSubmit = async () => {
     const orderform = await fetch('/api/checkout/pub/orderForm')
     const orderformJson = await orderform.json()
 
     const postWarningForm = buildServicePostWarningForm(orderformJson)
 
-    const response = await postWarningForm.handle(data?.couponCode)
+    const response = await postWarningForm.handle(couponCode)
 
     if (!response) {
       setHasError(true)
@@ -27,7 +27,7 @@ export const ModalCoupon = () => {
   };
 
   return (
-    <div className={generateCSS('container-component', ['modal-coupon'], css)}>
+    <div className={generateCSS('container-screen', ['coupon', 'modal-coupon'], css)}>
       <div className={generateCSS('form', ['main'], css)}>
         <h3 className={generateCSS('title', ['main'], css)}>
           Titulo

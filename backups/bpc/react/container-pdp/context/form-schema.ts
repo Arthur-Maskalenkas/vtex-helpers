@@ -1,6 +1,6 @@
 import * as Yup from 'yup'
-import { PostForm } from "../services/container-pdp/presentation/post-form"
-import { MDV1BP } from "../typings/apis/md-v1-bp"
+import { PostForm } from "../../services/container-pdp/presentation/post-form"
+import { MDV1BP } from "../../typings/apis/md-v1-bp"
 
 
 export type SchemaFormStep1 = {

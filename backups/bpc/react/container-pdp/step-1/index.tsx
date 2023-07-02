@@ -2,22 +2,23 @@ import React from 'react'
 import { useCssHandles } from 'vtex.css-handles';
 import { CSS_HANDLES, generateCSS } from '../../modules';
 import { GetForm } from '../../services/container-pdp/presentation/get-form';
-import { SchemaFormStep } from '../form-schema';
-import { UseFormRegister } from 'react-hook-form';
+import { useContextContainerPDP } from '../context';
 
 export type ContainerStep1Props = {
   inputOptionsDistance: GetForm.DataDistanceTransformed
   inputOptionsColor: GetForm.DataColorTransformed
   inputOptionsSize: GetForm.DataSizeTransformed
-  register: UseFormRegister<SchemaFormStep>
-  formIsValid: boolean
 }
 
-export const ContainerStep1 = ({ inputOptionsColor, inputOptionsDistance, inputOptionsSize, register, formIsValid }: ContainerStep1Props) => {
+export const ContainerStep1 = ({ inputOptionsColor, inputOptionsDistance, inputOptionsSize }: ContainerStep1Props) => {
   const css = useCssHandles(CSS_HANDLES);
+  const { componentValues: { form: { register, watch } } } = useContextContainerPDP()
+
+  const watchedFields = watch(['distance', 'color', 'size']);
+  const formIsValid = Object.values(watchedFields).every(field => field);
 
   return (
-    <div className={generateCSS('container-component', ['container-first-step'], css)}>
+    <div className={generateCSS('container-screen', ['first-step'], css)}>
 
       <div className={generateCSS('container-content', ['lists'], css)}>
         <ul className={generateCSS('container-component', ['list-selector-distance'], css)}>

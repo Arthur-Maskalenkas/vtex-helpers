@@ -1,11 +1,19 @@
 
+import { UseFormReturn } from 'react-hook-form';
+import { ModalScreenNames } from '../modal';
+
 export const contextContainerPDPInitialValues = {} as any
 
 export namespace ContextContainerPDP {
   //
   // * Tipo utilizado para se referir aos valores que são estados ou incluem alguma lógica
   //
-  type ComponentValues = {}
+  type ComponentValues = {
+    form: UseFormReturn<any, any, undefined>
+    handleChangeModalScreen: (modalScreenName: ModalScreenNames,event?: any) => void
+handleCloseModal: (event?: any) => void
+handleOpenModal: (event?: any) => void
+  }
 
   //
   // * Tipo utilizado para se referir aos valores que são recebidos pelo site editor
@@ -17,8 +25,8 @@ export namespace ContextContainerPDP {
   // * exp:  <ContextContainerPDP.Provider value={{ componentValues: {}, siteEditorValues: {} }}>
   //
   export type Provider = {
-    siteEditorValues?: SiteEditorValues
-    componentValues?: ComponentValues
+    siteEditorValues: SiteEditorValues
+    componentValues: ComponentValues
   }
 
   //
