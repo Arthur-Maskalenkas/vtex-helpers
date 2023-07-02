@@ -6,13 +6,17 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
   type: 'object',
   properties: {
 
-    _screen_config_logo: CMSHelper.generateImagePage('Configurar logo'),
+    _screen_config_logo: {
+      ...CMSHelper.generateDisableOption(),
+
+      ...CMSHelper.generateImagePage('Configurar logo')
+    },
 
     _screen_config_banner: CMSHelper.generateImagePage('Configurar banner'),
 
-    _screen_config_text_column: {
+    _screen_config_attendance_text_column: {
       type: 'array',
-      title: 'Configurar coluna de texto',
+      title: 'Configurar coluna de texto Atendimento',
       maxItems: 1,
       items: {
         type: 'object',
@@ -20,7 +24,7 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
           freeText: {
             type: 'string',
             title: "Texto",
-            description: "Texto que será exibido na coluna de texto.",
+            description: "Texto que será exibido na cikyba de texto Atendimento.",
             widget: {
               "ui:widget": "textarea"
             }
@@ -36,6 +40,7 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
       items: {
         type: 'object',
         properties: {
+
           text: {
             title: "Texto Copyright",
             type: 'string',
@@ -47,8 +52,8 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
       }
     },
 
-    _screen_config_sections_links: {
-      title: 'Configurar sessões de links',
+    _screen_config_columns_links: {
+      title: 'Configurar colunas de links',
       type: 'array',
       minItems: 1,
       maxItems: 1,
@@ -56,19 +61,21 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
         type: 'object',
         properties: {
           items: {
-            title: 'Lista de sessões',
+            title: 'Lista de colunas',
             type: 'array',
             maxItems: 10,
 
             items: {
               type: 'object',
               properties: {
+                ...CMSHelper.generateDisableOption(),
+
                 ...CMSHelper.generateResponsiveOption(),
 
                 __editorItemTitle: {
                   title: 'Titulo',
                   type: 'string',
-                  description: 'Título que será exibido acima da sessão.'
+                  description: 'Título que será exibido acima da coluna.'
                 },
 
                 items: {
@@ -78,6 +85,8 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
                   items: {
                     type: 'object',
                     properties: {
+                      ...CMSHelper.generateDisableOption(),
+
                       ...CMSHelper.generateResponsiveOption(),
 
                       __editorItemTitle: {
@@ -109,21 +118,23 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
       }
     },
 
-    _screen_config_sections_icons: {
-      title: 'configurar sessões de icones',
+    _screen_config_columns_icons: {
+      title: 'configurar colunas de icones',
       type: 'array',
       maxItems: 1,
       items: {
         type: 'object',
         properties: {
           items: {
-            title: 'Lista de sessões',
+            title: 'Lista de colunas',
             type: 'array',
             maxItems: 5,
 
             items: {
               type: 'object',
               properties: {
+                ...CMSHelper.generateDisableOption(),
+
                 ...CMSHelper.generateResponsiveOption(),
 
                 __editorItemTitle: {
@@ -139,6 +150,8 @@ export const GlobalContextSchemaAvantiFooter = (): SchemaObjectSiteEditor => ({
                   items: {
                     type: 'object',
                     properties: {
+                      ...CMSHelper.generateDisableOption(),
+
                       ...CMSHelper.generateResponsiveOption(),
                       __editorItemTitle: {
                         title: 'Título',

@@ -6,16 +6,16 @@ import { CSS_HANDLES, generateCSS } from '../../modules'
 
 
 export const ContextRenderCopyright = () => {
-	const css = useCssHandles(CSS_HANDLES)
-	const context = UseGlobalContextAvantiFooter()?._screen_config_copyright?.[0]
-	const containerClassName = generateCSS('container-component', [
-		'context-render',
-		'copyright'
-	], css)
+  const css = useCssHandles(CSS_HANDLES)
+  const context = UseGlobalContextAvantiFooter()?._screen_config_text_copyright?.[0]
+  const containerClassName = generateCSS('container-component', [
+    'context-render',
+    'copyright'
+  ], css)
 
-	return (
-		<div className={containerClassName}>
-			<SanitizeText text={context?.text} customClass='copyright'/>
-		</div>
-	)
+  return (
+    <div className={containerClassName}>
+      <SanitizeText text={context?.text} customClass='copyright' />
+    </div>
+  )
 }

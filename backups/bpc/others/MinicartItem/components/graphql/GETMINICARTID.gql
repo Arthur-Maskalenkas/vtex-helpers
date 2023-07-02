@@ -1,0 +1,13 @@
+query($productID: ID!) {
+  product(identifier: { field: id, value: $productID }) @context(provider: "vtex.search-graphql") {
+    items {
+      itemId
+      sellers {
+        sellerId
+        commertialOffer {
+          AvailableQuantity
+        }
+      }
+    }
+  }
+}

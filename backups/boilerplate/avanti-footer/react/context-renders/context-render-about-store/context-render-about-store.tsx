@@ -6,17 +6,17 @@ import { CSS_HANDLES, generateCSS } from '../../modules'
 
 
 export const ContextRenderAboutStore = () => {
-	const css = useCssHandles(CSS_HANDLES)
-	const containerClassName = generateCSS('container-component', [
-		'context-render',
-		'about-store'
-	], css)
+  const css = useCssHandles(CSS_HANDLES)
+  const containerClassName = generateCSS('container-component', [
+    'context-render',
+    'about-store'
+  ], css)
 
-	const freeText = UseGlobalContextAvantiFooter()?._screen_config_about_store?.[0].freeText
+  const context = UseGlobalContextAvantiFooter()?._screen_config_attendance_text_column?.[0]
 
-	return (
-		<div className={containerClassName}>
-			<SanitizeText text={freeText}/>
-		</div>
-	)
+  return (
+    <div className={containerClassName}>
+      <SanitizeText text={context?.freeText} />
+    </div>
+  )
 }

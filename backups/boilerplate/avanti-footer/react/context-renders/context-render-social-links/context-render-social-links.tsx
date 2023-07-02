@@ -7,7 +7,7 @@ import { CSS_HANDLES, generateCSS } from '../../modules'
 
 export const ContextRenderSocialLinks = () => {
   const css = useCssHandles(CSS_HANDLES)
-  const socialLinks = UseGlobalContextAvantiFooter()?._screen_config_social_links?.[0]
+  const socialLinks = UseGlobalContextAvantiFooter()?._screen_config_columns_icons?.[0]?.items?.[0]
   const containerClassName = generateCSS('container-component', [
     'context-render',
     'social-links'

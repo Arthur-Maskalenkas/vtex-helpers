@@ -78,6 +78,17 @@ export class CMSHelper {
       }
     }
   }
+
+  public static generateDisableOption(): SchemaObjectProperty {
+    return {
+      disable_option: {
+        type: 'boolean',
+
+        title: 'Desabilitar item',
+        default: false
+      }
+    }
+  }
 }
 
 export type UiWidget = 'image-uploader' | 'textarea' | 'datetime' | 'select' | 'color';

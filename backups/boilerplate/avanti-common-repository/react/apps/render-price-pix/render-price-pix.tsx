@@ -4,6 +4,7 @@ import { CSS_HANDLES, formatCurrency, generateCSS } from '../../modules'
 import { useCssHandles } from 'vtex.css-handles'
 import { UseGlobalContextPricePix } from 'avantiimplantacao.global-context'
 export type RenderPricePixProps = {
+
   type: 'shelf' | 'pdp'
 }
 

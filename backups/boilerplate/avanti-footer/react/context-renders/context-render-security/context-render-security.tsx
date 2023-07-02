@@ -7,7 +7,7 @@ import { CSS_HANDLES, generateCSS } from '../../modules'
 
 export const ContextRenderSecurity = () => {
   const css = useCssHandles(CSS_HANDLES)
-  const context = UseGlobalContextAvantiFooter()?._screen_config_security?.[0]
+  const context = UseGlobalContextAvantiFooter()?._screen_config_columns_icons?.[0]?.items?.[2]
   const containerClassName = generateCSS('container-component', [
     'context-render',
     'security'

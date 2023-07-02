@@ -11,8 +11,15 @@ export type ImageSize = {
   src?: string;
 };
 
-// Adicionar Link
-// Exportar os schemas a partir do componente
+// deve ser capaz de:
+// receber title,alt,disabled
+
+// receber src,width,height de tablet,mobile,desk,alldevices
+
+// caso não retorne nada o src ou não possua src, utilize fallback
+// caso não receba width/height, calcule do src recebido
+
+
 
 export type ImageProps = {
   mobile?: ImageSize;
@@ -22,7 +29,6 @@ export type ImageProps = {
   title?: string
   alt?: string
 }
-
 export const Image = ({ desktop = {}, mobile = {}, className = 'default', allDevices = {}, ...imgProps }: ImageProps) => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [img, setImg] = React.useState<Partial<React.ImgHTMLAttributes<HTMLImageElement>> | null>(null)

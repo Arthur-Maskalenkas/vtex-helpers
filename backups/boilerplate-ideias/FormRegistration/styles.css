@@ -1,0 +1,10 @@
+.container {}
+
+:global(.vtex-store__template) {
+  background-color: gray !important;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}

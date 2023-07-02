@@ -7,7 +7,7 @@ import { CSS_HANDLES, generateCSS } from '../../modules'
 
 export const ContextRenderOtherSections = () => {
   const css = useCssHandles(CSS_HANDLES)
-  const context = UseGlobalContextAvantiFooter()
+  const context = UseGlobalContextAvantiFooter()?._screen_config_columns_links?.[0]
   const containerClassName = generateCSS('container-component', [
     'context-render',
     'other-sections'
@@ -16,7 +16,7 @@ export const ContextRenderOtherSections = () => {
 
   return (
     <ul className={containerClassName}>
-      {context?._screen_config_other_section?.[0]?.items?.map((item, index) => (
+      {context?.items?.map((item, index) => (
         <li className={generateCSS('list-item', [
           'other-sections',
           'section-1'
