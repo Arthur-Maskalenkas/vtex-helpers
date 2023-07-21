@@ -24,23 +24,7 @@ retorna o id do pedido.
 Essa é a melhor forma de garantir que o que esta funcionando continua funcionando, principalemnte quando não tem testes
 no software
 
-# libs utilizadas
 
-## nwc
-
-gera o coverage do projeto
-
-## mocha
-
-estilo jest, mas permite ser estruturado e é mais leve
-
-## sinon
-
-Utilizado para fazer stubs/spies.
-
-## chai
-
-É utilizado para assersão. é muito usado em BDD
 
 # Estrutura do projeto
 
