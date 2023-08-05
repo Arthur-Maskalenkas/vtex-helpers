@@ -1,0 +1,15 @@
+body div .container-master-app-buy-box .container-app-container-sides {
+  @include mq('1026') {
+    display: flex;
+    flex-direction: row;
+
+    .container-app-container-left-side {
+      width: 100%;
+    }
+
+    .container-app-container-right-side {
+      min-width: 500px;
+      width: 500px;
+    }
+  }
+}

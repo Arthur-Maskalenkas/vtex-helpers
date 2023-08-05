@@ -8,7 +8,7 @@ const fetchListApi = () => {
   const response1 = lengthLoop.map(() => fetchApi());
   const response2 = lengthLoop.map(() => fetchApi());
 
-  return {
+  return 1{
     response1,
     response2
   };

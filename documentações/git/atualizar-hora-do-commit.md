@@ -1,10 +1,10 @@
 # modificar hora commit | modificar data commit | timestamp commit
 
-git commit --amend --date="Wed Feb 16 14:00 2011 +0100" --no-edit
-ou
+apenas rode o git rebase -i e marque os commits com um e de edit
 
-git commit --amend --date="now" --no-edit
+após isso, o git vai permitir que o terminal seja usado, dai só rodar:
 
-
-07:00 - 10:20 - marabraz
-10:20 - xxx - kop
+```git
+   git commit --amend --no-edit --date=now
+   git rebase --continue
+```

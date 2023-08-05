@@ -1,25 +1,48 @@
 # Coersão de tipos
-// !!{} utilizado - coersão implicita
-// Boolean({}) - coersão explicita
+// !!{} utilizado - coersão implicita // Boolean({}) - coersão explicita
 
 # operação de tipos
 !!{}
+
+#  monkey patching
+É uma maneira de estender ou modificar o comportamento de código em tempo de execução sem alterar o código original.
+```javascript
+Http.Server.prototype.emit;
+```
+O uso do prototype é necessário para alterar o comportamento do método emit em todas as instâncias do Http.Server.
+
+```javascript
+
+// * 📚 Quando um método é chamado em um objeto JavaScript, a linguagem procura o método na cadeia de protótipos do objeto. 
+class AnyClass {
+  log() {
+    console.log('original')
+  }
+}
+
+
+const instanceAnyClass = new AnyClass()
+instanceAnyClass.log() // * 📝 original
+
+AnyClass.prototype.log = () => console.log('alterado')
+instanceAnyClass.log() // * 📝 alterado
+```
 
 # Codigo fluente
 É quando possui um statement por linha
 ```javascript
 const any = teste.aMethod()
-.function2()
-.function3()
+  .function2()
+  .function3()
 ```
 
+# Middlewares, interceptors, gateways seguem o mesmo principio do decorator
 
 # funções explicitas
-* internamente objetos literais viram funções explicitas
-String()
-Boolean()
-Number()
-Array()
+* internamente objetos literais viram funções explicitas String()
+  Boolean()
+  Number()
+  Array()
 
 # assinatura de classe
 Seriam os nome de metodos presentes da classe apenas, não a funcionalidade

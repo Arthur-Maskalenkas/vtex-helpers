@@ -1,0 +1,51 @@
+body div .container-master-app-buy-box .container-app-add-quantity {
+
+
+  .container-operation {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    max-width: 150px;
+    margin-bottom: 10px;
+
+  }
+
+  .quantity-text {
+    color: #fff;
+    font-family: Signal Web, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.25px;
+    text-align: center;
+  }
+
+  .add-text {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 300;
+    color: $white;
+  }
+
+  button {
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+body div .container-master-app-buy-box .container-app-var-add-to-cart {
+  button {
+    color: #fff;
+    font-family: Signal Web;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: -.25px;
+    line-height: 18px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,86 @@
+@function px($value) {
+  @return #{$value}px
+}
+
+@mixin responsive-font($font-size-medium, $font-size-desktop) {
+  font-size: #{$font-size-medium}px;
+  line-height: #{$font-size-medium}px;
+
+  @include mq-height-desktop(750) {
+    font-size: #{$font-size-desktop}px;
+    line-height: #{$font-size-desktop}px;
+  }
+}
+
+@mixin responsive-height($height-medium, $height-desktop) {
+  height: px($height-medium);
+
+  @include mq-height-desktop(750) {
+    height: px($height-desktop);
+  }
+}
+
+@mixin responsive-padding($value-medium, $value-desktop) {
+  padding: px($value-medium);
+
+  @include mq-height-desktop(750) {
+    padding: px($value-desktop);
+  }
+}
+
+@mixin responsive-content-slider($size-medium, $size-desktop) {
+  padding: 5px;
+
+  max-height: px($size-medium);
+  max-width: px($size-medium);
+  min-width: px($size-medium);
+  min-height: px($size-medium);
+
+  @include mq-height-desktop(750) {
+    max-height: px($size-desktop);
+    max-width: px($size-desktop);
+    min-width: px($size-desktop);
+    min-height: px($size-desktop);
+  }
+}
+
+@mixin responsive-svg($value-medium, $value-desktop) {
+  width: px($value-medium);
+  height: px($value-medium);
+
+  @include mq-height-desktop(750) {
+    width: px($value-medium);
+    height: px($value-medium);
+  }
+}
+
+
+body div div.container-master-app-buy-box.extra-class .container-app-container-desktop {
+  display: none;
+  flex-direction: column;
+
+  @include mq('1026') {
+    display: flex;
+  }
+
+  .container-app-old-price {
+    margin-bottom: 10px;
+  }
+
+  .container-raintg-and-share {
+    margin-top: 10px;
+  }
+
+  .container-app-container-right-side {
+    padding-top: 20px;
+
+
+    .container-app-product-promotion {
+      margin: 15px 0;
+    }
+
+    .container-prices {
+      margin-bottom: 25px;
+    }
+  }
+}

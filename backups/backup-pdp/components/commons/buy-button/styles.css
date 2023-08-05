@@ -1,0 +1,127 @@
+.adtc-container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.adtc-content-button {
+  align-items: center;
+  display: flex;
+  width: 150px;
+}
+
+.adtc-content-button>span {
+  color: #fff;
+  font-family: 'Signal Web', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+  text-align: center;
+  width: 100%;
+}
+
+.adtc-container-quantity {
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  background-color: #000;
+  height: 86px;
+}
+
+.adtc-button-add {
+  background-color: #000;
+  border: none;
+  cursor: pointer;
+  height: 86px;
+  width: 100%;
+}
+
+.textButtonAddBuyBox {
+  color: #fff;
+  font-family: 'Signal Web';
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -0.25px;
+  line-height: 25px;
+  margin: 0;
+  text-align: center;
+}
+
+.adtc-button-add>svg:not([class*="spinner"]) {
+  display: none;
+}
+
+.adtc-button-add:hover {
+  opacity: 0.9;
+}
+
+.adtc-button-text-add {
+  color: #fff;
+  font-family: 'Signal Web';
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.25px;
+  line-height: 22px;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+.containerBuyButton {
+  display: flex;
+  flex-direction: column;
+}
+
+.adtc-button-add:disabled {
+  cursor: not-allowed;
+}
+
+@media (min-width: 390px) {
+  .adtc-container-quantity {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .adtc-button-add {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 1299px) and (min-width: 1026px) {
+  .adtc-container-quantity {
+    max-width: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .adtc-button-add,
+  .adtc-container-quantity {
+    max-width: 100%;
+  }
+
+  .textButtonAddBuyBox {
+    font-weight: 400;
+  }
+}
+
+.adtc-button-increment,
+.adtc-button-decrement {
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.textLimitStock {
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: 'Signal Web';
+  font-weight: 300;
+}

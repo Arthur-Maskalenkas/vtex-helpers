@@ -9,3 +9,6 @@ ctrl + shift + setas
 
 # fechando paineis
 ctrl + shift + w
+
+# abrir nova janela de terminal no diretorio atual
+wt -d .

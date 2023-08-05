@@ -1,0 +1,51 @@
+@mixin configureInputSize($size) {
+  min-width: $size;
+  min-height: $size;
+
+
+}
+
+body div .container-master-app-buy-box .container-app-input-image {
+  label {
+
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+      border-color: #b3b3b3;
+      z-index: 1;
+    }
+
+    position: relative;
+
+    input {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+    }
+
+    img {
+      object-fit: contain;
+      pointer-events: none
+    }
+
+    @include configureInputSize(50px);
+
+    @include mq('400') {
+      @include configureInputSize(100px)
+    }
+
+
+
+    @include mq('1026') {
+      @include configureInputSize(50px)
+    }
+  }
+}

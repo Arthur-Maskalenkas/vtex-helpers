@@ -5,6 +5,7 @@
 
 ### declarando o arquivo
 ```typescript - arquivo.d.ts
+export * from 'vtex.rich-text'
 import { TextAlignmentValues, TextPositionValues, textAlignmentTypes, textPositionTypes } from 'vtex.rich-text/react/typings/SchemaTypes'
 
 declare module 'vtex.rich-text' {

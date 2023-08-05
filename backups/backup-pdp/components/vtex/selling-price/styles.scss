@@ -1,0 +1,11 @@
+body div .container-master-app-buy-box .container-app-selling-price {
+  display: flex;
+  align-items: center;
+
+  * {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $black;
+  }
+}

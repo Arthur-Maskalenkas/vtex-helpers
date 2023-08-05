@@ -59,13 +59,13 @@ Após todos os passos, é importante ter backup de:
 * schemas da loja
 * emails (o miolo deles principalmente)
 * checkout (footer,headere,js,css)
-* um workspace igual a master (para isso vá para o workspace master e vtex use bkpprod)
+* um workspace igual a master (para isso vá para o workspace master e vtex use bkpprod --PRODUCTION) PRECISA SER DE PRODUÇÃO
 
 Quando for go live é importante:
-1. substituir o checkout
-2. substituir os emails (prestar atenção no miolo)
-3. fazer promote do WS de produção para master
+1.substituir o checkout
+2.substituir os emails (prestar atenção no miolo)
+3.fazer promote do WS de produção para master 
 
 
 após o golive:
-* criar um WS de Prod de bkp chamado bkpavantiio
+* criar um WS de Prod de bkp chamado bkpavantiio - PRECISA SER DE PRODUÇÃO

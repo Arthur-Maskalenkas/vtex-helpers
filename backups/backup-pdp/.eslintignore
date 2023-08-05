@@ -1,0 +1,6 @@
+*.snap.ts
+dist/
+node_modules/
+coverage/
+testSetup.js
+jest.config.js

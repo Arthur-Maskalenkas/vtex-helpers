@@ -1,0 +1,25 @@
+body div .container-master-app-buy-box .container-app-breadcrumb>div {
+  * {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $black;
+  }
+
+  svg {
+    display: none;
+  }
+
+  &>:last-child,
+  &> :nth-last-child(2) {
+    display: none;
+  }
+
+  >span:not(:first-of-type) {
+    &:before {
+      content: '⎯';
+      padding: 0 2px;
+      display: inline-block;
+    }
+  }
+}

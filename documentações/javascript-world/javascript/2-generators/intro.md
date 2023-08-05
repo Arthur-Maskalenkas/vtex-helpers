@@ -1,23 +1,23 @@
 <!-- TOC -->
 
 * [generators](#generators)
-    * [Definição](#definição)
-        * [Generators por padrão possuem as funções next, return.](####generators-por-padrão-possuem-as-funções-next-return)
-        * [se o done estiver true, significa que a lista foi finalizada](####se-o-done-estiver-true-significa-que-a-lista-foi-finalizada)
-        * [Se a gente passar uma função como asteristico, ele não vai entender que a gente quer que ele execute, ele vai retornar a função apenas para ser executada posteriormente](####se-a-gente-passar-uma-função-como-asteristico-ele-não-vai-entender-que-a-gente-quer-que-ele-execute-ele-vai-retornar-a-função-apenas-para-ser-executada-posteriormente)
-    * [consumindo dados retornados pelo generator](#consumindo-dados-retornados-pelo-generator)
-        * [É possivel consumir o generator através de funções retornadas por ele mesmo, como next()](####é-possivel-consumir-o-generator-através-de-funções-retornadas-por-ele-mesmo-como-next)
-        * [Consumindo os valores através de iteradores](####consumindo-os-valores-através-de-iteradores)
-            * [É possivel consumir o generator através do operator rest spread](#é-possivel-consumir-o-generator-através-do-operator-rest-spread)
-            * [É possivel consumir o generator através da função Array.from](#é-possivel-consumir-o-generator-através-da-função-arrayfrom)
-            * [É possivel consumir o generator através do iterador for of](#é-possivel-consumir-o-generator-através-do-iterador-for-of)
+  * [Definição](#definição)
+    * [Generators por padrão possuem as funções next, return.](####generators-por-padrão-possuem-as-funções-next-return)
+    * [se o done estiver true, significa que a lista foi finalizada](####se-o-done-estiver-true-significa-que-a-lista-foi-finalizada)
+    * [Se a gente passar uma função como asteristico, ele não vai entender que a gente quer que ele execute, ele vai retornar a função apenas para ser executada posteriormente](####se-a-gente-passar-uma-função-como-asteristico-ele-não-vai-entender-que-a-gente-quer-que-ele-execute-ele-vai-retornar-a-função-apenas-para-ser-executada-posteriormente)
+  * [consumindo dados retornados pelo generator](#consumindo-dados-retornados-pelo-generator)
+    * [É possivel consumir o generator através de funções retornadas por ele mesmo, como next()](####é-possivel-consumir-o-generator-através-de-funções-retornadas-por-ele-mesmo-como-next)
+    * [Consumindo os valores através de iteradores](####consumindo-os-valores-através-de-iteradores)
+      * [É possivel consumir o generator através do operator rest spread](#é-possivel-consumir-o-generator-através-do-operator-rest-spread)
+      * [É possivel consumir o generator através da função Array.from](#é-possivel-consumir-o-generator-através-da-função-arrayfrom)
+      * [É possivel consumir o generator através do iterador for of](#é-possivel-consumir-o-generator-através-do-iterador-for-of)
 * [Async iterators](#async-iterators)
-    * [Definição](#definição-1)
-        * [Entendedo o codigo presente no NodeJs em relação ao readDir](#entendedo-o-codigo-presente-no-nodejs-em-relação-ao-readdir)
-    * [Resolvendo promises](#resolvendo-promises)
-        * [Como nenhuma promisse foi resolvida, vai trazer a promise pendente](#como-nenhuma-promisse-foi-resolvida-vai-trazer-a-promise-pendente)
-        * [Eu posso utilizar o promise.all para resolver todas as promisses](#eu-posso-utilizar-o-promiseall-para-resolver-todas-as-promisses)
-        * [Eu posso utilizar o for await para resolver todas as promisses](#eu-posso-utilizar-o-for-await-para-resolver-todas-as-promisses)
+  * [Definição](#definição-1)
+    * [Entendedo o codigo presente no NodeJs em relação ao readDir](#entendedo-o-codigo-presente-no-nodejs-em-relação-ao-readdir)
+  * [Resolvendo promises](#resolvendo-promises)
+    * [Como nenhuma promisse foi resolvida, vai trazer a promise pendente](#como-nenhuma-promisse-foi-resolvida-vai-trazer-a-promise-pendente)
+    * [Eu posso utilizar o promise.all para resolver todas as promisses](#eu-posso-utilizar-o-promiseall-para-resolver-todas-as-promisses)
+    * [Eu posso utilizar o for await para resolver todas as promisses](#eu-posso-utilizar-o-for-await-para-resolver-todas-as-promisses)
 
 <!-- TOC -->
 
@@ -247,7 +247,7 @@ function* promisified() {
 console.log(...promisified())
 ```
 
-```bash
+```bash1
 Promise { <pending> } Promise { 'Um' }
 ```
 

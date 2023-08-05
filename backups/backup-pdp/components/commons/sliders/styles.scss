@@ -1,0 +1,58 @@
+body div .container-master-app-buy-box .slider {
+  .container-title {
+    margin-bottom: 10px;
+
+
+
+    .list-title {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 12px;
+      color: $black;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .list-render {
+    display: flex;
+    align-items: center;
+
+    button {
+      appearance: none;
+      background-color: transparent;
+      outline: none;
+      padding: 0;
+      border: 0;
+    }
+
+    .arrow-right,
+    .arrow-left {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      height: 100%;
+      cursor: pointer;
+
+      display: none;
+
+      @include mq('1024') {
+        display: flex;
+      }
+    }
+
+    .arrow-left {
+      padding-right: 10px;
+
+    }
+
+    .arrow-right {
+      padding-left: 10px;
+    }
+  }
+
+
+
+
+}

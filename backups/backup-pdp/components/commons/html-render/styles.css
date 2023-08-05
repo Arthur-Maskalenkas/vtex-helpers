@@ -1,0 +1,107 @@
+.containerTitle {
+  height: 85px;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+}
+.title {
+  font-family: 'FK Olympikus', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 52px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.titleSectionOne,
+.titleSectionTwo {
+  font-family: 'FK Olympikus', sans-serif;
+  font-size: 47px;
+  line-height: 48px;
+  letter-spacing: 1px;
+  margin: 0 20px 30px 20px;
+  padding-top: 50px;
+}
+.descriptionSectionOne,
+.descriptionSectionTwo {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0 20px 30px 20px;
+  margin: 0;
+}
+.sliderOne .sliderRightArrow,
+.sliderOne .sliderLeftArrow,
+.sliderTwo .sliderLeftArrow,
+.sliderTwo .sliderRightArrow {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin: 0 20px;
+}
+.containerVideo {
+  border: none;
+}
+.imgSectionOneDesktop {
+  width: 100%;
+}
+@media (min-width: 320px) {
+  .imgSectionOneDesktop,
+  .imageSectionTwoDesktop,
+  .imageSectionThreeDesktop,
+  .imageSectionFourDesktop {
+    display: none;
+  }
+  .imageSectionFourMobile,
+  .imageSectionThreeMobile,
+  .imageSectionTwoMobile,
+  .imgSectionOneMobile {
+    width: 100%;
+  }
+  .containerSectionTwo,
+  .containerSectionThree {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1024px) {
+  .imgSectionOneMobile,
+  .imageSectionTwoMobile,
+  .imageSectionThreeMobile,
+  .imageSectionFourMobile {
+    display: none;
+  }
+  .imgSectionOneDesktop,
+  .imageSectionThreeDesktop,
+  .imageSectionFourDesktop,
+  .titleSectionOne,
+  .titleSectionTwo,
+  .descriptionSectionOne,
+  .containerSectionOne,
+  .containerSectionTwo,
+  .containerSectionThree,
+  .containerSectionFour,
+  .sliderOne,
+  .sliderTwo {
+    display: block;
+  }
+
+  .containerVideo {
+    width: 100%;
+    min-height: 650px;
+  }
+  .sliderOne :global(.olympikusio-store-theme-3-x-sliderTrackContainer),
+  .sliderTwo :global(.olympikusio-store-theme-3-x-sliderTrackContainer) {
+    max-width: 1920px;
+  }
+}
+.containerGlobal {
+  display: flex;
+  flex-direction: column;
+}
+.imgSlider {
+  max-width: 1920px;
+  min-width: 30px;
+  width: 100%;
+}
