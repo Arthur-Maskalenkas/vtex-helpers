@@ -7,7 +7,7 @@
 4 - Desinstalar no WS de Prod e Dev apps da loja atual
 5 - Linkar os apps no WS de Dev e conferir se estão com algum problema;
      5.1 - Problema comum, quando remove a store anterior se perde a page da loja, necessário fazer um apontamento de mutation no Graphql - pages, igual fazemos em release de major
-6 - Pegar pelo runtime da loja os conteúdos já cadastrados de Site Editor e deixar fixo no código;
+6 - Pegar pelo runtime da loja os conteúdos já cadastrados de Site Editor e deixar fixo no código; 📌
 7 - Fazer release dos apps e instalarem no WS de Prod;
     7.1 - Caso tenha algum conteúdo que não foi possível pegar via runtime, recadastrar via Site editor no WS de Prod;
 8 - Possivelmente necessário release major na store, seguir todos os passos da Doc(https://community.jobber.team/articles/862) no WS de Prod já criado(Passo 2#) com exceção do passo final(9# - promote), esse passo só será feito no Go Live;
@@ -31,21 +31,23 @@
 
 ## Objetivo: migrar o IO da subAccount rovitexIoDev (possui io) para a subaccount rovitex (possui io)
 
-1 - O desenvolvedor esta logado na subaccount rovitexIoDev
-2 - então irá utilizar vtex login rovitex
-3 - e dentro da subaccount rovitex criara um workspace chamado "devavanti"
-4 -  e vai alterar as referencias feitas a subaccount rovitexIoDev para Rovitex.
-4.1 - Alterar a vendor de todos os apps. Exemplo: rovitexIoDev.avanti-menu vai passar a ser rovitex.avanti-menu
-4.2 - Alterar os nomes dos arquivos que fazem referencia a vendor. por exemplo: rovitexiodev.avanti-menu.css precisa ser rovitex.avanti-menu.css
-4.3 - Importante se atentar ao nome dos apps. Por exemplo: caso tenha um app com o name 'store-theme' no ar e você tiver outro app com o nome de 'store-theme', então o seu app vai substituir o que esta no ar.
-5 - e também desinstalara os apps da nova subaccount
-5.1 - Todos os apps da subaccont Rovitex precisam ser desinstalados, pois não vão ser utilizados após a migração. Por exemplo: desinstalar os apps rovitex.m3-app e etc.
+1 -📌 O desenvolvedor esta logado na subaccount rovitexIoDev
+2 -📌 então irá utilizar vtex login rovitex
+3 -📌 e dentro da subaccount rovitex criara um workspace chamado "devavanti"
+4 -📌  e vai alterar as referencias feitas a subaccount rovitexIoDev para Rovitex. cmt
+4.1 -📌 Alterar a vendor de todos os apps. Exemplo: rovitexIoDev.avanti-menu vai passar a ser rovitex.avanti-menu
+4.2 -📌 Alterar os nomes dos arquivos que fazem referencia a vendor. por exemplo: rovitexiodev.avanti-menu.css precisa ser rovitex.avanti-menu.css
+4.3 -📌 Importante se atentar ao nome dos apps. Por exemplo: caso tenha um app com o name 'store-theme' no ar e você tiver outro app com o nome de 'store-theme', então o seu app vai substituir o que esta no ar.
+5 -📌 e também desinstalara os apps da nova subaccount
+5.1 -📌 Todos os apps da subaccont Rovitex precisam ser desinstalados, pois não vão ser utilizados após a migração. Por exemplo: desinstalar os apps rovitex.m3-app e etc.
 6 - e após estar logado na subaccount rovitex, em um workspace chamado devavanti, e tendo mudado as referencias da subaccount rovitexIoDev para a subaccount rovitex e excluido todos os apps da subaccount rovitex o dev irá linkar no workspace
 6.1 importante linkar todos os apps da subaccount rovitexIoDev
 7 - Com tudo linkado corretamente, o dev irá fazer o release de cada app e vai instalar no workspace devavanti
 8 - após instalar todos os apps no workspace homologavanti é necessario utilizar o pages do graphql
 8.1 - o pages do graphql só funciona em apps que possuem o builder "store"
 8.2 - basicamente ele diz: quero migrar do app template@1.x para o app store-theme-avanti@2.x
+
+
 ```gql
 mutation{
   # basicamente estou falando: pare de utilizar o app template que possui um builder da store e comece a utilizar o app store-theme-avanti que possui builder da store
@@ -69,3 +71,6 @@ Quando for go live é importante:
 
 após o golive:
 * criar um WS de Prod de bkp chamado bkpavantiio - PRECISA SER DE PRODUÇÃO
+
+# Para que serve o workspace de produção
+Serve tanto para utilizar promote quanto para atualizar o conteudo que não é possivel atualizar nos blocos.
