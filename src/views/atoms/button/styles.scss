@@ -1,0 +1,12 @@
+div .container-app-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: $secondary !important;
+
+  min-width: 500px;
+
+
+  min-height: 500px;
+}

@@ -1,3 +1,2 @@
-[] sass
-[] vitest
+  [] vitest
 [] google-chrome
