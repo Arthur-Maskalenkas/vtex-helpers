@@ -1,6 +1,7 @@
-import {Button} from "../../../src/views/atoms/button";
-import {render,screen,userEvent } from '../../utils/test-utils'
-
+import { Button } from "../../../src/views/atoms/button";
+import { render, screen, userEvent } from '../../utils/test-utils'
+import React from "react";
+import { vi } from 'vitest'
 describe('button', () => {
     it('should render the button', async () => {
         const spyClick = vi.fn()
