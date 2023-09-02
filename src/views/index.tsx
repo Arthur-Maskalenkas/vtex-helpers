@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Product } from './pages/product'
+import { Application } from './application'
 import './global.scss'
 
 // Crie um novo elemento para renderizar o componente React
@@ -15,6 +15,6 @@ existingElement.appendChild(reactRoot);
 // Use ReactDOM.createRoot para renderizar o componente React no novo elemento
 ReactDOM.createRoot(reactRoot).render(
   <React.StrictMode>
-    <Product />
+    <Application />
   </React.StrictMode>
 );
