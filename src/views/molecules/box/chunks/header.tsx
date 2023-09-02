@@ -16,7 +16,7 @@ const Input = () => {
 
 const Container = ({ className, children }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <header className={"container-app-header" + " " + className}>
+    <header className={'container-app-header' + ' ' + className}>
       {children}
     </header>
   )

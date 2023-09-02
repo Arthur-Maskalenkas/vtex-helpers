@@ -1,28 +1,26 @@
 import React from 'react'
-import {Button} from '../../../atoms/button'
+import { Button } from '../../../atoms/button'
 
-
-
-const Option = ({children, key}: React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>) => {
-    return (
+const Option = ({ children, key }: React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>) => {
+  return (
         <li key={key}>
             <Button>
                 {children}
             </Button>
         </li>
-    )
+  )
 }
 
 export const ListOptions = () => {
-    const options = [
-        "Informações do produto",
-        "Informações da loja",
-        "Paginas Admin",
-        "Paginas da loja",
-        "Outros"
-    ]
+  const options = [
+    'Informações do produto',
+    'Informações da loja',
+    'Paginas Admin',
+    'Paginas da loja',
+    'Outros'
+  ]
 
-    return (
+  return (
         <ul>
             {options.map((option, index) => (
                 <Option key={index}>
@@ -30,5 +28,5 @@ export const ListOptions = () => {
                 </Option>
             ))}
         </ul>
-    )
+  )
 }

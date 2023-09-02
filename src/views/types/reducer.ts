@@ -1,4 +1,4 @@
-export type GlobalActionProps<S,A> = {
-    state: S
-    action: A
+export type GlobalActionProps<S, A> = {
+  state: S
+  action: A
 }

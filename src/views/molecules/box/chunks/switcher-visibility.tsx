@@ -1,17 +1,16 @@
 import React from 'react'
-import {Button as ButtonAtom} from "../../../atoms/button";
+import { Button as ButtonAtom } from '../../../atoms/button'
 
-export const Button = ({children}: React.PropsWithChildren) => {
-
-    return (
+export const Button = ({ children }: React.PropsWithChildren) => {
+  return (
         <ButtonAtom className={'container-app-button'}>
             {children}
         </ButtonAtom>
-    )
+  )
 }
 
 const Icon = () => {
-    return (
+  return (
         <div className={'container-app-icon'}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                  stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -20,10 +19,10 @@ const Icon = () => {
                 <path d="M21 21l-4.35-4.35"></path>
             </svg>
         </div>
-    )
+  )
 }
 
 export const SwitcherVisibility = {
-    Button,
-    Icon
+  Button,
+  Icon
 }

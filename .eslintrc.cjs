@@ -5,6 +5,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+      'standard-with-typescript'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'build'],
   parser: '@typescript-eslint/parser',
@@ -15,6 +16,8 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
   },
 }
