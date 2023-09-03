@@ -1,5 +1,6 @@
 import { cleanup, render, type RenderOptions } from '@testing-library/react'
 import { afterEach } from 'vitest'
+import { ProviderApplication } from '../../src/views/context'
 
 // eslint-disable-next-line vitest/no-hooks,vitest/require-top-level-describe
 afterEach(() => {
@@ -8,7 +9,7 @@ afterEach(() => {
 
 function customRender (ui: React.ReactElement, options: RenderOptions = {}) {
   return render(ui, {
-    wrapper: ({ children }) => children,
+    wrapper: ProviderApplication,
     ...options
   })
 }
