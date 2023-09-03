@@ -1,17 +1,28 @@
 import { ProviderApplication } from '../context'
-import { Box } from '../molecules/box'
 import { useEffect } from 'react'
+import 'styles.scss'
+import { Header } from '../molecules/header.tsx'
+import { ListOptions } from '../molecules/listOptions.tsx'
+import { SwitcherVisibility } from '../molecules/switcher-visibility.tsx'
 
 export const Application = () => {
-  useEffect(() => {
-    console.log('Carregou Application 123122321323211')
-  }, [])
   return (
         <div className={'.container-main-app'}>
             <ProviderApplication>
-                <Box.Overlay/>
-                <Box.Content/>
-                <Box.ButtonSwitchVisibility/>
+                <div className="container-app-overlay"/>
+
+                <div className="container-app-box">
+                    <Header>
+                        <Header.Input/>
+                        <Header.Icon/>
+                    </Header>
+                    <ListOptions/>
+                </div>
+
+                <SwitcherVisibility>
+                    <SwitcherVisibility.Icon/>
+                </SwitcherVisibility>
+
             </ProviderApplication>
         </div>
   )

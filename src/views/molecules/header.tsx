@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input as InputAtom } from '../../../atoms/input'
+import { Input as InputAtom } from '../atoms/input'
 
 const Icon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
   stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -14,7 +14,7 @@ const Input = () => {
   )
 }
 
-const Container = ({ className, children }: React.HTMLAttributes<HTMLDivElement>) => {
+export const Header = ({ className, children }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <header className={'container-app-header' + ' ' + className}>
       {children}
@@ -22,8 +22,5 @@ const Container = ({ className, children }: React.HTMLAttributes<HTMLDivElement>
   )
 }
 
-export const Header = {
-  Container,
-  Input,
-  Icon
-}
+Header.Input = Input
+Header.Icon = Icon

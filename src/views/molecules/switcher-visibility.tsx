@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button as ButtonAtom } from '../../../atoms/button'
+import { Button as ButtonAtom } from '../atoms/button'
 
-export const Button = ({ children }: React.PropsWithChildren) => {
+export const SwitcherVisibility = ({ children }: React.PropsWithChildren) => {
   return (
         <ButtonAtom className={'container-app-button'}>
             {children}
@@ -22,7 +22,4 @@ const Icon = () => {
   )
 }
 
-export const SwitcherVisibility = {
-  Button,
-  Icon
-}
+SwitcherVisibility.Icon = Icon
