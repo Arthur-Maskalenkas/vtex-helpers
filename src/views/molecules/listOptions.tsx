@@ -4,9 +4,9 @@ import { Button } from '../atoms/button'
 const Option = ({ children, key }: React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>) => {
   return (
         <li key={key}>
-            <Button>
+            <Button.Container>
                 {children}
-            </Button>
+            </Button.Container>
         </li>
   )
 }

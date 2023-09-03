@@ -1,10 +1,9 @@
 import React, { createContext, type Dispatch } from 'react'
 import {
-  type ActionsApplication,
   reducerApplication,
-  type StatesApplication,
   statesDefault
 } from './reducers/reducerApplication/reducerApplication.ts'
+import { type ActionsApplication, type StatesApplication } from './reducers/reducerApplication/types.ts'
 
 const ApplicationStatesContext = createContext<StatesApplication>(statesDefault)
 const ApplicationDispatchContext = createContext<Dispatch<ActionsApplication>>({} as unknown as Dispatch<ActionsApplication>)

@@ -1,15 +1,5 @@
 import { actionHandleIsOpen } from './actions/actionHandleIsOpen.ts'
-import { type GlobalActionProps } from '../../../types/reducer.ts'
-
-export interface StatesApplication {
-  isOpened: boolean
-}
-
-export type ActionsApplication = {
-  type: 'ACTION_HANDLE_IS_OPEN'
-}
-
-export type ReducerApplicationParams = GlobalActionProps<StatesApplication, ActionsApplication>
+import { type ActionsApplication, type StatesApplication } from './types.ts'
 
 export function reducerApplication (state: StatesApplication, action: ActionsApplication) {
   const commonProps = {
@@ -26,5 +16,7 @@ export function reducerApplication (state: StatesApplication, action: ActionsApp
 }
 
 export const statesDefault: StatesApplication = {
-  isOpened: false
+  isOpened: false,
+  breadcrumb: [],
+  currentLevel: 0
 }

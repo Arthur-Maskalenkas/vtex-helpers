@@ -37,6 +37,7 @@ module.exports = {
         "eol-last": "off",
         "@typescript-eslint/triple-slash-reference": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
     },
 
 }

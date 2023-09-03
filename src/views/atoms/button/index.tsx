@@ -10,7 +10,8 @@ export const Container: React.FC<ContainerProps> = ({ className, children, ...pr
   const classNameResolved = `container-app-button  ${className} atom`
 
   return (
-      <button className={classNameResolved} {...props}>{children}
+      <button className={classNameResolved} {...props}>
+        {children}
         {props.icon && <Icon {...props.icon} />}
       </button>
   )
@@ -26,3 +27,4 @@ export const Text = ({ children }: React.PropsWithChildren) => {
 
 export const Button = () => null
 Button.Container = Container
+Button.Text = Text

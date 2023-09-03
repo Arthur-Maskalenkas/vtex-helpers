@@ -1,7 +1,6 @@
-import { type GlobalActionProps } from '../../../../types/reducer.ts'
-import { type ActionsApplication, type StatesApplication } from '../reducerApplication.ts'
+import { type ReducerApplicationParams, type StatesApplication } from '../types.ts'
 
-export const actionHandleIsOpen = (props: GlobalActionProps<StatesApplication, ActionsApplication>): StatesApplication => {
+export const actionHandleIsOpen = (props: ReducerApplicationParams): StatesApplication => {
   const { state } = props
 
   return {
