@@ -7,7 +7,7 @@ import './global.scss'
 const reactRoot = document.createElement('div')
 
 // Selecione o elemento existente no qual você deseja adicionar o componente React
-const existingElement = document.querySelector('body.bg-base') as HTMLElement
+const existingElement = document.querySelector('div.main') as HTMLElement
 
 // Adicione o novo elemento à árvore DOM, como um filho do elemento existente
 existingElement.appendChild(reactRoot)

@@ -1,0 +1,10 @@
+.container-app-content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: $secondary !important;
+
+  min-width: 200px;
+  min-height: 200px;
+}

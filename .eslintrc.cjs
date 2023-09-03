@@ -1,23 +1,24 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2021: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-      'standard-with-typescript'
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'build'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
-  rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
+    root: true,
+    env: {browser: true, es2021: true},
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react-hooks/recommended',
+        'standard-with-typescript'
     ],
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/consistent-type-definitions": "off",
-  },
+    ignorePatterns: ['dist', '.eslintrc.cjs', 'build'],
+    parser: '@typescript-eslint/parser',
+    plugins: ['react-refresh'],
+    rules: {
+        'react-refresh/only-export-components': [
+            'warn'
+        ],
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "eol-last": "off"
+    },
+
 }
