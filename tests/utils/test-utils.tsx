@@ -1,4 +1,4 @@
-import { cleanup, render } from '@testing-library/react'
+import { cleanup, render, type RenderOptions } from '@testing-library/react'
 import { afterEach } from 'vitest'
 
 // eslint-disable-next-line vitest/no-hooks,vitest/require-top-level-describe
@@ -6,7 +6,7 @@ afterEach(() => {
   cleanup()
 })
 
-function customRender (ui: React.ReactElement, options = {}) {
+function customRender (ui: React.ReactElement, options: RenderOptions = {}) {
   return render(ui, {
     wrapper: ({ children }) => children,
     ...options
