@@ -2,7 +2,33 @@
   &,* {
     margin: 0;
     padding: 0;
+    list-style: none;
+    appearance: none;
+    background-color: transparent;
     box-sizing: border-box;
     border: 0;
+
+    line-height: inherit;
+    font-size: inherit;
+    color: black;
+
+    ::placeholder {
+      color: black;
+      line-height: inherit;
+      font-size: inherit;
+    }
+
+    button,p,h1,h2,h3,h4,h5,h6,span {
+      font-size: 12px;
+      line-height: 12px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    div {
+      line-height: 0;
+    }
   }
 }

@@ -6,10 +6,13 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
-    test: {
-        globals: true,
-        environment: 'jsdom',
-        setupFiles: './tests/configs/setup.ts'
-    },
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+    setupFiles: './tests/configs/setup.ts',
+    css: false,
+    minThreads: 6,
+    maxThreads: 6
+  }
 })

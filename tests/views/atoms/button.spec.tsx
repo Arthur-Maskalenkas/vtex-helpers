@@ -1,17 +1,17 @@
-import { Button } from "../../../src/views/atoms/button";
-import { render, screen, userEvent } from '../../utils/test-utils'
-import React from "react";
-import { vi } from 'vitest'
+import { Button } from '../../../src/views/atoms/button'
+import { render, userEvent } from '../../utils/test-utils'
+import { vi, expect } from 'vitest'
+
 describe('button', () => {
-    it('should render the button', async () => {
-        const spyClick = vi.fn()
+  it('should render the button', async () => {
+    const spyClick = vi.fn()
 
-        render(<Button onClick={spyClick}>teste</Button>)
-        const button = screen.getByText('teste')
+    const { getByText } = render(<Button onClick={spyClick}>teste</Button>)
+    const button = getByText('teste')
 
-        await userEvent.click(button)
+    await userEvent.click(button)
 
-        expect(button).toBeInTheDocument()
-        expect(spyClick).toHaveBeenCalled()
-    })
+    expect(button).toBeInTheDocument()
+    expect(spyClick).toHaveBeenCalled()
+  })
 })

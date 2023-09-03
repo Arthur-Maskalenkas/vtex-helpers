@@ -18,8 +18,7 @@
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.18",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/postcss-prefix-selector": "^1.16.0",
     "@types/react": "^18.2.15",
@@ -27,18 +26,19 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
-    "@vitest/coverage-v8": "latest",
-    "@vitest/ui": "latest",
+    "@vitest/ui": "^0.31.4",
     "autoprefixer": "^10.4.15",
     "eslint": "^8.45.0",
     "eslint-config-standard-with-typescript": "^39.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "jsdom": "latest",
+    "eslint-plugin-vitest": "^0.3.1",
+    "happy-dom": "^10.11.2",
     "sass": "^1.66.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-zip-pack": "^1.0.6",
-    "vitest": "latest"
+    "vitest": "^0.31.4",
+    "vitest-dom": "^0.1.0"
   }
 }

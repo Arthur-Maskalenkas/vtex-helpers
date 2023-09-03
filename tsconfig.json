@@ -2,10 +2,13 @@
   "compilerOptions": {
     "target": "ES2021",
     "useDefineForClassFields": true,
-    "lib": [ "ES2021", "DOM", "DOM.Iterable" ],
+    "lib": [
+      "ES2021",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -18,9 +21,17 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": [ "node", "vitest/globals" ]
+    "types": [
+      "node"
+    ]
   },
-
-  "include": [ "src" ],
-  "extends": [ "./tsconfig.node.json" ]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "tests"
+  ],
+  "extends": [
+    "./tsconfig.node.json"
+  ]
 }
