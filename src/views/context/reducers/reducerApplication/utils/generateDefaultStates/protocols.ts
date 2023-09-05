@@ -16,7 +16,7 @@ export type ManualItems = Record<string, ManualItem>
 
 export type ParamsBuildDefaultStates = {
   manualList: ManualItems
-}
+} & Partial<StatesApplication>
 export interface ProtocolMapperDefaultStates {
   field: keyof StatesApplication
   map: (params: ParamsBuildDefaultStates) => any

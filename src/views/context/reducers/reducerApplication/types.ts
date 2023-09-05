@@ -15,7 +15,12 @@ export namespace StateListOptions {
 
   export type Item = WithItems | WithComponents
 
-  export type State = Item[]
+  export type ItemMapped = {
+    title: string
+    fn?: () => any | null
+  }
+
+  export type State = ItemMapped[]
   export type _State = Map<string, string[] | (() => any) | undefined | null>
 }
 

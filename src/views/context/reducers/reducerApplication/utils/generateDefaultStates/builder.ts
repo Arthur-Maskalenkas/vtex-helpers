@@ -7,8 +7,13 @@ export class BuilderDefaultStates {
   ) { }
 
   public handle (params: ParamsBuildDefaultStates): StatesApplication {
-    return this.mappers.reduce<any>((acc, mapper) => {
-      const valueMapped = mapper?.map(params)
+    return this.mappers.reduce<any>((acc: any, mapper) => {
+      const param = {
+        ...acc,
+        ...params
+      }
+
+      const valueMapped = mapper?.map(param)
 
       if (!valueMapped) {
         return acc
