@@ -1,4 +1,5 @@
 import { type GlobalActionProps } from '../../../types/reducer.ts'
+import { type ActionsApplication } from './reducerApplication.ts'
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace StateListOptions {
@@ -25,10 +26,6 @@ export interface StatesApplication {
   breadcrumb: string[]
   listOptions: StateListOptions.State
   privateListOptions: StateListOptions._State
-}
-
-export type ActionsApplication = {
-  type: 'ACTION_HANDLE_IS_OPEN'
 }
 
 export type ReducerApplicationParams = GlobalActionProps<StatesApplication, ActionsApplication>

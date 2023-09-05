@@ -1,5 +1,9 @@
 import { actionHandleIsOpen } from './actions/actionHandleIsOpen.ts'
-import { type ActionsApplication, type StatesApplication } from './types.ts'
+import { type StatesApplication } from './types.ts'
+
+export type ActionsApplication = {
+  type: 'ACTION_HANDLE_IS_OPEN'
+}
 
 export function reducerApplication (state: StatesApplication, action: ActionsApplication) {
   const commonProps = {
