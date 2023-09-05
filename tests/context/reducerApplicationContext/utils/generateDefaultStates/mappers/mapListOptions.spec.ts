@@ -1,10 +1,10 @@
 import {
   MapListOptions
-} from '../../../../../../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates/mappers/mapListOptions.ts'
+} from '../../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates/mappers/mapListOptions.ts'
 import {
   type ParamsBuildDefaultStates
-} from '../../../../../../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
-import { type StateListOptions } from '../../../../../../../src/views/context/reducers/reducerApplication/types.ts'
+} from '../../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
+import { type StateListOptions } from '../../../../../../src/context/reducers/types.ts'
 
 const makeSut = () => {
   const sut = new MapListOptions()
@@ -18,7 +18,7 @@ const makeParams = (params: PartialParamsBuildDefaultStates): ParamsBuildDefault
 }
 
 describe(MapListOptions.name, () => {
-  it('should return only items from first level', () => {
+  it('should return only options from first level', () => {
     const { sut } = makeSut()
 
     const params = makeParams({

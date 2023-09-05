@@ -1,10 +1,10 @@
 import {
   generateDefaultStates
-} from '../../../../../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates'
+} from '../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates'
 import {
   type ParamsBuildDefaultStates
-} from '../../../../../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
-import { type StatesApplication } from '../../../../../../src/views/context/reducers/reducerApplication/types.ts'
+} from '../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
+import { type StatesApplication } from '../../../../../src/context/reducers/types.ts'
 
 describe(generateDefaultStates.name, () => {
   it('should generate default states', () => {

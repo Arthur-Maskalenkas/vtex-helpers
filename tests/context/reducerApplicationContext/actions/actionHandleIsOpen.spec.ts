@@ -1,13 +1,13 @@
 import {
   actionHandleIsOpen
-} from '../../../../../src/views/context/reducers/reducerApplication/actions/actionHandleIsOpen.ts'
-import { StatesBuilder } from '../../../../builders/statesBuilder.ts'
+} from '../../../../src/context/reducers/reducerApplication/actions/actionHandleIsOpen.ts'
+import { StatesBuilder } from '../../../builders/statesBuilder.ts'
 import {
-} from '../../../../../src/views/context/reducers/reducerApplication/reducerApplication.ts'
+} from '../../../../src/context/reducers/reducerApplication/reducerApplication.ts'
 import {
   type ReducerApplicationParams,
   type StatesApplication
-} from '../../../../../src/views/context/reducers/reducerApplication/types.ts'
+} from '../../../../src/context/reducers/types.ts'
 
 const makeParams = (state: StatesApplication): ReducerApplicationParams => {
   return {

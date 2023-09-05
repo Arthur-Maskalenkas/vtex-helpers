@@ -1,10 +1,10 @@
 import {
   MapPrivateListOptions
-} from '../../../../../../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates/mappers/mapPrivateListOptions.ts'
+} from '../../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates/mappers/mapPrivateListOptions.ts'
 import { expect, vi } from 'vitest'
 import {
   type ParamsBuildDefaultStates
-} from '../../../../../../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
+} from '../../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
 
 const makeSut = () => {
   const sut = new MapPrivateListOptions()
@@ -12,7 +12,7 @@ const makeSut = () => {
 }
 
 describe(MapPrivateListOptions.name, () => {
-  it('should map value with fn if items is not array', () => {
+  it('should map value with component if options is not array', () => {
     const { sut } = makeSut()
 
     const fnSpy1 = vi.fn()
@@ -59,7 +59,7 @@ describe(MapPrivateListOptions.name, () => {
     expect(fnSpy2).not.toHaveBeenCalled()
   })
 
-  it('should map value with null if items is empty', () => {
+  it('should map value with null if options is empty', () => {
     const { sut } = makeSut()
 
     const params: ParamsBuildDefaultStates = {
@@ -143,7 +143,7 @@ describe(MapPrivateListOptions.name, () => {
 
     expect(result).toStrictEqual(expected)
   })
-  it('should return a flat Map of items, indexed by title', () => {
+  it('should return a flat Map of options, indexed by title', () => {
     const { sut } = makeSut()
 
     const paramFn = vi.fn
@@ -216,7 +216,7 @@ describe(MapPrivateListOptions.name, () => {
     expect(result).toStrictEqual(expected)
   })
 
-  it.todo('should delete all items that are null')
+  it.todo('should delete all options that are null')
 
-  it.todo('should create each key on Map with key as path and value as function or items')
+  it.todo('should create each key on Map with key as path and value as function or options')
 })

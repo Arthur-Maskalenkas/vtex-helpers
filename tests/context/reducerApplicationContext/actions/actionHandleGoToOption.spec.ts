@@ -1,14 +1,14 @@
 import {
   type ReducerApplicationParams,
   type StatesApplication
-} from '../../../../../src/views/context/reducers/reducerApplication/types.ts'
+} from '../../../../src/context/reducers/types.ts'
 import {
   ActionHandleGoToOption
-} from '../../../../../src/views/context/reducers/reducerApplication/actions/actionHandleGoToOption.ts'
-import { StatesBuilder } from '../../../../builders/statesBuilder.ts'
+} from '../../../../src/context/reducers/reducerApplication/actions/actionHandleGoToOption.ts'
+import { StatesBuilder } from '../../../builders/statesBuilder.ts'
 import {
   type ActionsApplication
-} from '../../../../../src/views/context/reducers/reducerApplication/reducerApplication.ts'
+} from '../../../../src/context/reducers/reducerApplication/reducerApplication.ts'
 import { vi } from 'vitest'
 
 const makeDispatch = (target: string): ActionsApplication => {
@@ -52,13 +52,13 @@ describe(ActionHandleGoToOption.name, () => {
     expect(result).toStrictEqual(expected)
   })
 
-  it('should return target selected with attribute fn', () => {
+  it('should return target selected with attribute component', () => {
     const fnSpy = vi.fn()
 
     const state =
-        StatesBuilder.a()
-          .appendPrivateListOptionsWithFNAttribute(fnSpy)
-          .build()
+            StatesBuilder.a()
+              .appendPrivateListOptionsWithFNAttribute(fnSpy)
+              .build()
 
     const currentTarget = 'item_0_title'
 
@@ -73,13 +73,18 @@ describe(ActionHandleGoToOption.name, () => {
       ...state,
       currentTarget: fnSpy as any,
       listOptions: [
-        { title: 'item_0_title', fn: fnSpy }
+        { title: 'item_0_title', component: fnSpy }
       ]
     }
 
     expect(result).toStrictEqual(expected)
     expect(fnSpy).not.toHaveBeenCalled()
   })
+
+  //  function () {
+  //     return null
+  //   }
+  it.todo('should return a component')
 
   it.todo('should throw error if target not exists')
 })

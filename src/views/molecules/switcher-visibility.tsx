@@ -3,9 +3,9 @@ import { Button as ButtonAtom } from '../atoms/button'
 
 export const SwitcherVisibility = ({ children }: React.PropsWithChildren) => {
   return (
-        <ButtonAtom className={'container-app-button'}>
+        <ButtonAtom.Container className={'container-app-button'}>
             {children}
-        </ButtonAtom>
+        </ButtonAtom.Container>
   )
 }
 

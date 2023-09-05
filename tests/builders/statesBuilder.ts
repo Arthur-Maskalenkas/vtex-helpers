@@ -1,9 +1,9 @@
 import {
-} from '../../src/views/context/reducers/reducerApplication/reducerApplication.ts'
-import { type StatesApplication } from '../../src/views/context/reducers/reducerApplication/types.ts'
+} from '../../src/context/reducers/reducerApplication/reducerApplication.ts'
+import { type StatesApplication } from '../../src/context/reducers/types.ts'
 import {
   generateDefaultStates
-} from '../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates'
+} from '../../src/context/reducers/reducerApplication/utils/generateDefaultStates'
 
 export class StatesBuilder {
   #state: StatesApplication

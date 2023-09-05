@@ -1,6 +1,6 @@
 import { cleanup, render, type RenderOptions } from '@testing-library/react'
 import { afterEach } from 'vitest'
-import { ProviderApplication } from '../../src/views/context'
+import { ProviderApplication } from '../../src/context'
 
 // eslint-disable-next-line vitest/no-hooks,vitest/require-top-level-describe
 afterEach(() => {
