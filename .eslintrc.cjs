@@ -38,6 +38,7 @@ module.exports = {
         "@typescript-eslint/triple-slash-reference": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-namespace": "off"
     },
 
 }
