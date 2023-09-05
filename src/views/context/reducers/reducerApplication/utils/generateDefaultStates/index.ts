@@ -17,8 +17,31 @@ export const generateDefaultStates = (params: ParamsBuildDefaultStates = { manua
 
 export const statesDefault = generateDefaultStates({
   manualList: {
-    others: {
-      title: 'Outros'
+    'store.1': {
+      title: 'Store 1'
+    },
+
+    'store.2': {
+      title: 'Store 2',
+      items: {
+        'store.2.2': {
+          title: 'Store 2.2'
+        }
+      }
+    },
+
+    'store.3': {
+      title: 'Store 3',
+      items: {
+        'store.3.3': {
+          title: 'Store 3.3',
+          items: {
+            'store.3.3.3': {
+              title: 'Store 3.3.3'
+            }
+          }
+        }
+      }
     }
   }
 })

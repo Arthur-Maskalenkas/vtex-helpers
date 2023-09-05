@@ -26,7 +26,7 @@ export namespace StateListOptions {
 
 export interface StatesApplication {
   isOpened: boolean
-  currentTarget: string
+  currentTarget: string | CallableFunction
   breadcrumb: string[]
   listOptions: StateListOptions.State
   privateListOptions: StateListOptions._State

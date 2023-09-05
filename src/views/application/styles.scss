@@ -7,3 +7,12 @@
   min-width: 200px;
   min-height: 200px;
 }
+
+.root-app {
+  .container-inside-content {
+    background-color: gray;
+
+    padding: 20px;
+  }
+
+}

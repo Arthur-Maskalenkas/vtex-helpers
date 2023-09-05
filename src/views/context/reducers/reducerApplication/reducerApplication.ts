@@ -1,5 +1,6 @@
 import { actionHandleIsOpen } from './actions/actionHandleIsOpen.ts'
 import { type StatesApplication } from './types.ts'
+import { ActionHandleGoToOption } from './actions/actionHandleGoToOption.ts'
 
 export namespace ActionApplication {
   export type HandleIsOpen = {
@@ -29,7 +30,7 @@ export function reducerApplication (state: StatesApplication, action: ActionsApp
     case 'ACTION_HANDLE_IS_OPEN':
       return actionHandleIsOpen(commonProps)
     case 'ACTION_HANDLE_GO_TO_OPTION':
-      return actionHandleIsOpen(commonProps)
+      return ActionHandleGoToOption(commonProps)
     default:
       return state
   }

@@ -1,4 +1,4 @@
-import React, { createContext, type Dispatch } from 'react'
+import React, { createContext, type Dispatch, useContext } from 'react'
 import {
   type ActionsApplication,
   reducerApplication
@@ -6,17 +6,24 @@ import {
 import { type StatesApplication } from './reducers/reducerApplication/types.ts'
 import { statesDefault } from './reducers/reducerApplication/utils/generateDefaultStates'
 
-const ApplicationStatesContext = createContext<StatesApplication>(statesDefault)
-const ApplicationDispatchContext = createContext<Dispatch<ActionsApplication>>({} as unknown as Dispatch<ActionsApplication>)
+type ApplicationReducerProvider = {
+  state: StatesApplication
+  dispatch: Dispatch<ActionsApplication>
+}
+
+const ApplicationReducerContext = createContext<ApplicationReducerProvider>({
+  state: statesDefault,
+  dispatch: {} as unknown as Dispatch<ActionsApplication>
+})
 
 export const ProviderReducerApplication = ({ children }: React.PropsWithChildren) => {
   const [stateApplication, dispatchApplication] = React.useReducer(reducerApplication, statesDefault)
 
   return (
-        <ApplicationStatesContext.Provider value={stateApplication}>
-            <ApplicationDispatchContext.Provider value={dispatchApplication}>
+        <ApplicationReducerContext.Provider value={{ dispatch: dispatchApplication, state: stateApplication }}>
                 {children}
-            </ApplicationDispatchContext.Provider>
-        </ApplicationStatesContext.Provider>
+        </ApplicationReducerContext.Provider>
   )
 }
+
+export const useApplicationReducerContext = () => useContext(ApplicationReducerContext)
