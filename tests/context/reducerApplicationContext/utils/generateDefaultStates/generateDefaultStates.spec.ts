@@ -1,10 +1,10 @@
 import {
   generateDefaultStates
-} from '../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates'
+} from '../../../../../src/context/reducers/reducer/utils/generateDefaultStates'
 import {
   type ParamsBuildDefaultStates
-} from '../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
-import { type StatesApplication } from '../../../../../src/context/reducers/types.ts'
+} from '../../../../../src/context/reducers/reducer/utils/generateDefaultStates/protocols.ts'
+import { type States } from '../../../../../src/context/reducers/types.ts'
 
 describe(generateDefaultStates.name, () => {
   it('should generate default states', () => {
@@ -31,7 +31,7 @@ describe(generateDefaultStates.name, () => {
       }
     }
 
-    const expected: Partial<StatesApplication> = {
+    const expected: Partial<States> = {
       privateListOptions: new Map<any, any>([
         ['item_1_title', ['item_1_1_title']],
         ['item_1_1_title', null],
@@ -57,7 +57,7 @@ describe(generateDefaultStates.name, () => {
 
     const result = generateDefaultStates(params)
 
-    const expected: Partial<StatesApplication> = {
+    const expected: Partial<States> = {
       listOptions: [],
       privateListOptions: new Map()
     }

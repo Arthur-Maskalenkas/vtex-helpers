@@ -1,17 +1,17 @@
 import {
-  type ReducerApplicationParams,
-  type StatesApplication
+  type ReducerParams,
+  type States
 } from '../../../../src/context/reducers/types.ts'
 import {
   ActionHandleGoToOption
-} from '../../../../src/context/reducers/reducerApplication/actions/actionHandleGoToOption.ts'
+} from '../../../../src/context/reducers/reducer/actions/actionHandleGoToOption.ts'
 import { StatesBuilder } from '../../../builders/statesBuilder.ts'
 import {
-  type ActionsApplication
-} from '../../../../src/context/reducers/reducerApplication/reducerApplication.ts'
+  type Actions
+} from '../../../../src/context/reducers/reducer/reducer.ts'
 import { vi } from 'vitest'
 
-const makeDispatch = (target: string): ActionsApplication => {
+const makeDispatch = (target: string): Actions => {
   return {
     type: 'ACTION_HANDLE_GO_TO_OPTION',
     payload: {
@@ -33,13 +33,13 @@ describe(ActionHandleGoToOption.name, () => {
     const currentTarget = 'item_1_title'
 
     const dispatch = makeDispatch(currentTarget)
-    const params: ReducerApplicationParams = {
+    const params: ReducerParams = {
       state,
       action: dispatch
     }
     const result = ActionHandleGoToOption(params)
 
-    const expected: StatesApplication = {
+    const expected: States = {
       ...state,
       currentTarget,
       listOptions: [
@@ -63,13 +63,13 @@ describe(ActionHandleGoToOption.name, () => {
     const currentTarget = 'item_0_title'
 
     const dispatch = makeDispatch(currentTarget)
-    const params: ReducerApplicationParams = {
+    const params: ReducerParams = {
       state,
       action: dispatch
     }
     const result = ActionHandleGoToOption(params)
 
-    const expected: StatesApplication = {
+    const expected: States = {
       ...state,
       currentTarget: fnSpy as any,
       listOptions: [

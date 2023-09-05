@@ -1,9 +1,9 @@
 import {
   MapListOptions
-} from '../../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates/mappers/mapListOptions.ts'
+} from '../../../../../../src/context/reducers/reducer/utils/generateDefaultStates/mappers/mapListOptions.ts'
 import {
   type ParamsBuildDefaultStates
-} from '../../../../../../src/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
+} from '../../../../../../src/context/reducers/reducer/utils/generateDefaultStates/protocols.ts'
 import { type StateListOptions } from '../../../../../../src/context/reducers/types.ts'
 
 const makeSut = () => {

@@ -1,12 +1,12 @@
 import {
-} from '../../src/context/reducers/reducerApplication/reducerApplication.ts'
-import { type StatesApplication } from '../../src/context/reducers/types.ts'
+} from '../../src/context/reducers/reducer/reducer.ts'
+import { type States } from '../../src/context/reducers/types.ts'
 import {
   generateDefaultStates
-} from '../../src/context/reducers/reducerApplication/utils/generateDefaultStates'
+} from '../../src/context/reducers/reducer/utils/generateDefaultStates'
 
 export class StatesBuilder {
-  #state: StatesApplication
+  #state: States
   private constructor () {
     this.#state = generateDefaultStates()
   }

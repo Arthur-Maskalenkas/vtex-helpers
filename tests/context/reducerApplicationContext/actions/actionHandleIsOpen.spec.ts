@@ -1,15 +1,15 @@
 import {
   actionHandleIsOpen
-} from '../../../../src/context/reducers/reducerApplication/actions/actionHandleIsOpen.ts'
+} from '../../../../src/context/reducers/reducer/actions/actionHandleIsOpen.ts'
 import { StatesBuilder } from '../../../builders/statesBuilder.ts'
 import {
-} from '../../../../src/context/reducers/reducerApplication/reducerApplication.ts'
+} from '../../../../src/context/reducers/reducer/reducer.ts'
 import {
-  type ReducerApplicationParams,
-  type StatesApplication
+  type ReducerParams,
+  type States
 } from '../../../../src/context/reducers/types.ts'
 
-const makeParams = (state: StatesApplication): ReducerApplicationParams => {
+const makeParams = (state: States): ReducerParams => {
   return {
     state,
     action: {
@@ -25,7 +25,7 @@ describe(actionHandleIsOpen.name, () => {
 
     const result = actionHandleIsOpen(params)
 
-    const expected: StatesApplication = {
+    const expected: States = {
       ...state,
       isOpened: true
     }
@@ -40,7 +40,7 @@ describe(actionHandleIsOpen.name, () => {
 
     const result = actionHandleIsOpen(params)
 
-    const expected: StatesApplication = {
+    const expected: States = {
       ...state,
       isOpened: false
     }
