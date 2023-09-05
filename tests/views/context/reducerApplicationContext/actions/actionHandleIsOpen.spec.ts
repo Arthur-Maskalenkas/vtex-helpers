@@ -3,8 +3,11 @@ import {
 } from '../../../../../src/views/context/reducers/reducerApplication/actions/actionHandleIsOpen.ts'
 import { StatesApplicationBuilder } from '../../../../builders/statesApplicationBuilder.ts'
 import {
-  type ReducerApplicationParams, type StatesApplication
 } from '../../../../../src/views/context/reducers/reducerApplication/reducerApplication.ts'
+import {
+  type ReducerApplicationParams,
+  type StatesApplication
+} from '../../../../../src/views/context/reducers/reducerApplication/types.ts'
 
 const makeParams = (state: StatesApplication): ReducerApplicationParams => {
   return {
