@@ -46,32 +46,15 @@ describe(MapPrivateListOptions.name, () => {
     }
 
     const result = sut.map(params)
-    const expectedMap = new Map()
 
-    expectedMap.set(
-      'item_1_title', fnSpy1
-    )
+    const expected = new Map<string, any>([
+      ['item_1_title', fnSpy1],
+      ['item_2_title', ['item_2_1_title']],
+      ['item_2_1_title', ['item_2_1_1_title']],
+      ['item_2_1_1_title', fnSpy2]
+    ])
 
-    expectedMap.set(
-      'item_2_title', [
-        'item_2_1_title'
-      ]
-
-    )
-
-    expectedMap.set(
-      'item_2_1_title', [
-        'item_2_1_1_title'
-      ]
-    )
-
-    expectedMap.set(
-      'item_2_1_1_title', fnSpy2
-    )
-
-    expect(result.size).to.equal(4)
-
-    expect(result).toMatchObject(expectedMap)
+    expect(result).toStrictEqual(expected)
     expect(fnSpy1).not.toHaveBeenCalled()
     expect(fnSpy2).not.toHaveBeenCalled()
   })
@@ -79,234 +62,157 @@ describe(MapPrivateListOptions.name, () => {
   it('should map value with null if items is empty', () => {
     const { sut } = makeSut()
 
-    const item1 = {
-      title: 'item_1_title'
-    }
-
-    const item2 = {
-      title: 'item_2_title'
-    }
-
     const params: ParamsBuildDefaultStates = {
       manualList: {
-        item1,
-        item2
+        item1: {
+          title: 'item_1_title'
+        },
+        item2: {
+          title: 'item_2_title'
+        }
       }
     }
 
     const result = sut.map(params)
 
-    const expectedMap = new Map()
-
-    expectedMap.set(
-      'item_1_title', null
+    const expected = new Map(
+      [
+        ['item_1_title', null],
+        ['item_2_title', null]
+      ]
     )
 
-    expectedMap.set(
-      'item_2_title', null
-    )
-
-    expect(result.get('item_1_title')).toBeNull()
-    expect(result.get('item_2_title')).toBeNull()
-
-    expect(result).toHaveLength(2)
-    expect(result).toEqual(expectedMap)
+    expect(result).toStrictEqual(expected)
   })
 
   it('should return each child as an array indexed by its title', () => {
     const { sut } = makeSut()
 
-    const item1 = {
-      title: 'item_1_title',
-      items: {
-        item_1_1: {
-          title: 'item_1_1_title'
-        }
-      }
-    }
-
     const params: ParamsBuildDefaultStates = {
       manualList: {
-        item1
-      }
-    }
-
-    const result = sut.map(params)
-    const expectedMap = new Map()
-
-    expectedMap.set(
-      'item_1_title', [
-        'item_1_1_title'
-      ]
-    )
-
-    expectedMap.set(
-      'item_1_1_title', null
-    )
-
-    expect(result.get('item_1_title')).toHaveLength(1)
-    expect(result.get('item_1_1_title')).toBeNull()
-
-    expect(result).toHaveLength(2)
-  })
-  it('should return each child as an array indexed by its title, following the same rules as the initial data', () => {
-    const { sut } = makeSut()
-
-    const item1 = {
-      title: 'item_1_title',
-      items: {
-        item_1_1: {
-          title: 'item_1_1_title',
+        item1: {
+          title: 'item_1_title',
           items: {
-            item_1_1_1: {
-              title: 'item_1_1_1_title'
+            item_1_1: {
+              title: 'item_1_1_title'
             }
           }
         }
       }
     }
 
+    const result = sut.map(params)
+    const expected = new Map(
+      [
+        ['item_1_title', ['item_1_1_title']],
+        ['item_1_1_title', null]
+      ]
+    )
+
+    expect(result).toStrictEqual(expected)
+  })
+  it('should return each child as an array indexed by its title, following the same rules as the initial data', () => {
+    const { sut } = makeSut()
+
     const params: ParamsBuildDefaultStates = {
       manualList: {
-        item1
+        item1: {
+          title: 'item_1_title',
+          items: {
+            item_1_1: {
+              title: 'item_1_1_title',
+              items: {
+                item_1_1_1: {
+                  title: 'item_1_1_1_title'
+                }
+              }
+            }
+          }
+        }
       }
     }
 
     const result = sut.map(params)
-    const expectedMap = new Map()
-
-    expectedMap.set(
-      'item_1_title', [
-        'item_1_1_title'
+    const expected = new Map(
+      [
+        ['item_1_title', ['item_1_1_title']],
+        ['item_1_1_title', ['item_1_1_1_title']],
+        ['item_1_1_1_title', null]
       ]
     )
 
-    expectedMap.set(
-      'item_1_1_title', [
-        'item_1_1_1_title'
-      ]
-    )
-
-    expectedMap.set(
-      'item_1_1_1_title', null
-    )
-
-    expect(result.get('item_1_title')).toHaveLength(1)
-    expect(result.get('item_1_1_title')).toHaveLength(1)
-    expect(result.get('item_1_1_1_title')).toBeNull()
-
-    expect(result).toHaveLength(3)
+    expect(result).toStrictEqual(expected)
   })
   it('should return a flat Map of items, indexed by title', () => {
     const { sut } = makeSut()
 
     const paramFn = vi.fn
 
-    const item1 = {
-      title: 'item_1_title',
-      items: {
-        item_1_1: {
-          title: 'item_1_1_title',
-
+    const params: ParamsBuildDefaultStates = {
+      manualList: {
+        item1: {
+          title: 'item_1_title',
           items: {
-            item_1_1_1: {
-              title: 'item_1_1_1_title',
+            item_1_1: {
+              title: 'item_1_1_title',
+
               items: {
-                item_1_1_1_1: {
-                  title: 'item_1_1_1_1_title'
+                item_1_1_1: {
+                  title: 'item_1_1_1_title',
+                  items: {
+                    item_1_1_1_1: {
+                      title: 'item_1_1_1_1_title'
+                    },
+                    item_1_1_1_2: {
+                      title: 'item_1_1_1_2_title',
+                      fn: paramFn
+                    }
+                  }
                 },
-                item_1_1_1_2: {
-                  title: 'item_1_1_1_2_title',
-                  fn: paramFn
+
+                item_1_1_2: {
+                  title: 'item_1_1_2_title'
                 }
               }
             },
 
-            item_1_1_2: {
-              title: 'item_1_1_2_title'
+            item_1_2: {
+              title: 'item_1_2_title'
+            },
+
+            item_1_3: {
+              title: 'item_1_3_title'
             }
           }
         },
-
-        item_1_2: {
-          title: 'item_1_2_title'
-        },
-
-        item_1_3: {
-          title: 'item_1_3_title'
+        item2: {
+          title: 'item_2_title',
+          items: {
+            item_2_1: {
+              title: 'item_2_1_title'
+            }
+          }
         }
-      }
-    }
-    const item2 = {
-      title: 'item_2_title',
-      items: {
-        item_2_1: {
-          title: 'item_2_1_title'
-        }
-      }
-    }
 
-    const params: ParamsBuildDefaultStates = {
-      manualList: {
-        item1,
-        item2
       }
     }
 
     const result = sut.map(params)
-
-    const expectedMap = new Map()
-
-    expectedMap.set(
-      'item_1_title', [
-        'item_1_1_title',
-        'item_1_2_title',
-        'item_1_3_title'
-      ])
-
-    expectedMap.set(
-      'item_1_1_title', [
-        'item_1_1_1_title',
-        'item_1_1_2_title'
-      ])
-
-    expectedMap.set(
-      'item_1_1_2_title', null
-    )
-
-    expectedMap.set(
-      'item_1_1_1_title', [
-        'item_1_1_1_1_title',
-        'item_1_1_1_2_title'
+    const expected = new Map<string, any>(
+      [
+        ['item_1_title', ['item_1_1_title', 'item_1_2_title', 'item_1_3_title']],
+        ['item_1_1_title', ['item_1_1_1_title', 'item_1_1_2_title']],
+        ['item_1_1_2_title', null],
+        ['item_1_1_1_title', ['item_1_1_1_1_title', 'item_1_1_1_2_title']],
+        ['item_1_1_1_1_title', null],
+        ['item_1_1_1_2_title', paramFn],
+        ['item_1_2_title', null],
+        ['item_1_3_title', null],
+        ['item_2_title', ['item_2_1_title']],
+        ['item_2_1_title', null]
       ]
     )
 
-    expectedMap.set(
-      'item_1_1_1_1_title', null
-    )
-
-    expectedMap.set(
-      'item_1_1_1_2_title', paramFn
-    )
-
-    expectedMap.set(
-      'item_1_2_title', null
-    )
-
-    expectedMap.set(
-      'item_1_3_title', null
-    )
-
-    expectedMap.set(
-      'item_2_title', [
-        'item_2_1_title'
-      ]
-    )
-
-    expectedMap.set(
-      'item_2_1_title', null
-    )
-
-    expect(result).toStrictEqual(expectedMap)
+    expect(result).toStrictEqual(expected)
   })
 })
