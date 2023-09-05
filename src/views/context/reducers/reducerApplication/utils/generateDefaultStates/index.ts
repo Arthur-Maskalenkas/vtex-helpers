@@ -4,7 +4,7 @@ import { type ParamsBuildDefaultStates } from './protocols.ts'
 import { BuilderDefaultStates } from './builder.ts'
 import { MapListOptions } from './mappers/mapListOptions.ts'
 
-export const generateDefaultStates = (params: ParamsBuildDefaultStates): StatesApplication => {
+export const generateDefaultStates = (params: ParamsBuildDefaultStates = { manualList: {} }): StatesApplication => {
   const mapPrivateListOptions = new MapPrivateListOptions()
   const mapListOptions = new MapListOptions()
 

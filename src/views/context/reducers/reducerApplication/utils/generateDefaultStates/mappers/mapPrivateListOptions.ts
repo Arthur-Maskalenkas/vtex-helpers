@@ -9,6 +9,8 @@ export class MapPrivateListOptions implements ProtocolMapperDefaultStates {
 
     const map = new Map()
 
+    if (!manualList) return map
+
     function convertItem (item: StateListOptions.Item) {
       if ('fn' in item) {
         map.set(item.title, item.fn)

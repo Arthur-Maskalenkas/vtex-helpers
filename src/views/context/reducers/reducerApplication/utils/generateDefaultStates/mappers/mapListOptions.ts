@@ -7,6 +7,8 @@ export class MapListOptions implements ProtocolMapperDefaultStates {
   public map (params: ParamsBuildDefaultStates): any {
     const { manualList } = params
 
+    if (!manualList) return []
+
     const options = []
 
     for (const value of Object.values(manualList)) {

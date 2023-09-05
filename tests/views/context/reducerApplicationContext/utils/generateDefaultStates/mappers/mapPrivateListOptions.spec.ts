@@ -215,4 +215,8 @@ describe(MapPrivateListOptions.name, () => {
 
     expect(result).toStrictEqual(expected)
   })
+
+  it.todo('should delete all items that are null')
+
+  it.todo('should create each key on Map with key as path and value as function or items')
 })

@@ -1,7 +1,7 @@
 import {
   actionHandleIsOpen
 } from '../../../../../src/views/context/reducers/reducerApplication/actions/actionHandleIsOpen.ts'
-import { StatesApplicationBuilder } from '../../../../builders/statesApplicationBuilder.ts'
+import { StatesBuilder } from '../../../../builders/statesBuilder.ts'
 import {
 } from '../../../../../src/views/context/reducers/reducerApplication/reducerApplication.ts'
 import {
@@ -19,7 +19,7 @@ const makeParams = (state: StatesApplication): ReducerApplicationParams => {
 }
 describe(actionHandleIsOpen.name, () => {
   it('shoud return isOpened true if calling on isOpened is false', () => {
-    const state = StatesApplicationBuilder.aStatesApplication().appendIsOpenedFalse().build()
+    const state = StatesBuilder.a().appendIsOpenedFalse().build()
 
     const params = makeParams(state)
 
@@ -34,7 +34,7 @@ describe(actionHandleIsOpen.name, () => {
   })
 
   it('shoud return isOpened false if calling on isOpened is true', () => {
-    const state = StatesApplicationBuilder.aStatesApplication().appendIsOpenedTrue().build()
+    const state = StatesBuilder.a().appendIsOpenedTrue().build()
 
     const params = makeParams(state)
 

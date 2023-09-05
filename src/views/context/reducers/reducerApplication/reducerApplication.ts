@@ -6,9 +6,18 @@ export namespace ActionApplication {
     type: 'ACTION_HANDLE_IS_OPEN'
   }
 
+  export type HandleGoToOption = {
+    type: 'ACTION_HANDLE_GO_TO_OPTION'
+    payload: {
+      data: {
+        target: string
+      }
+    }
+  }
+
 }
 
-export type ActionsApplication = ActionApplication.HandleIsOpen
+export type ActionsApplication = ActionApplication.HandleIsOpen | ActionApplication.HandleGoToOption
 
 export function reducerApplication (state: StatesApplication, action: ActionsApplication) {
   const commonProps = {
@@ -18,6 +27,8 @@ export function reducerApplication (state: StatesApplication, action: ActionsApp
 
   switch (action.type) {
     case 'ACTION_HANDLE_IS_OPEN':
+      return actionHandleIsOpen(commonProps)
+    case 'ACTION_HANDLE_GO_TO_OPTION':
       return actionHandleIsOpen(commonProps)
     default:
       return state

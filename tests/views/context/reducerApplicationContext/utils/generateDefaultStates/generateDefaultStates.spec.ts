@@ -49,4 +49,19 @@ describe(generateDefaultStates.name, () => {
 
     expect(result).toStrictEqual(expected)
   })
+
+  it('should not throw error if lists is empty', () => {
+    const params: ParamsBuildDefaultStates = {
+      manualList: {}
+    }
+
+    const result = generateDefaultStates(params)
+
+    const expected: Partial<StatesApplication> = {
+      listOptions: [],
+      privateListOptions: new Map()
+    }
+
+    expect(result).toStrictEqual(expected)
+  })
 })
