@@ -1,5 +1,5 @@
 import { type ParamsBuildDefaultStates, type ProtocolMapperDefaultStates } from '../protocols.ts'
-import { type StateListOptions, type StatesApplication } from '../../../types.ts'
+import { type StatesApplication } from '../../../types.ts'
 
 export class MapListOptions implements ProtocolMapperDefaultStates {
   field: keyof StatesApplication = 'listOptions'
