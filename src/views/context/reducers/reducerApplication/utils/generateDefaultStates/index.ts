@@ -12,3 +12,11 @@ export const generateDefaultStates = (params: ParamsBuildDefaultStates): StatesA
 
   return builderDefaultStates.handle(params)
 }
+
+export const statesDefault = generateDefaultStates({
+  manualList: {
+    others: {
+      title: 'Outros'
+    }
+  }
+})

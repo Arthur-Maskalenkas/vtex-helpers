@@ -4,8 +4,7 @@ import { type StatesApplication } from '../../types.ts'
 export class BuilderDefaultStates {
   constructor (
     private readonly mappers: ProtocolMapperDefaultStates[]
-  ) {
-  }
+  ) { }
 
   public handle (params: ParamsBuildDefaultStates): StatesApplication {
     return this.mappers.reduce<any>((acc, mapper) => {

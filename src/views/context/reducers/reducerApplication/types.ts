@@ -15,7 +15,7 @@ export namespace StateListOptions {
   export type Item = WithItems | WithComponents
 
   export type State = Item[]
-  export type _State = Map<string, string[] | (() => any) | undefined>
+  export type _State = Map<string, string[] | (() => any) | undefined | null>
 }
 
 export interface StatesApplication {
