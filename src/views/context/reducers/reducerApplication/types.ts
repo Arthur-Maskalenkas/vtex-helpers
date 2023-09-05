@@ -23,8 +23,8 @@ export interface StatesApplication {
 
   currentLevel: number
   breadcrumb: string[]
-  listOptions?: StateListOptions.State
-  _listOptions?: StateListOptions._State
+  listOptions: StateListOptions.State
+  privateListOptions: StateListOptions._State
 }
 
 export type ActionsApplication = {

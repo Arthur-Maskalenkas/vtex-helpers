@@ -1,48 +1,20 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+import {
+  MapPrivateListOptions
+} from '../../../../../../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates/mappers/mapPrivateListOptions.ts'
 import { expect, vi } from 'vitest'
+import {
+  type ParamsBuildDefaultStates
+} from '../../../../../../../src/views/context/reducers/reducerApplication/utils/generateDefaultStates/protocols.ts'
 
-type Item = ItemWithItems | ItemWithFn
-
-type ItemWithItems = {
-  title: string
-  items?: Record<string, Item> | null
+const makeSut = () => {
+  const sut = new MapPrivateListOptions()
+  return { sut }
 }
 
-type ItemWithFn = {
-  title: string
-  fn?: () => any | null
-}
-
-export type buildStatesDefaultParams = Record<string, Item>
-
-const buildStatesDefault = (states: buildStatesDefaultParams): Map<string, string[] | (() => any) | undefined> => {
-  const map = new Map()
-
-  function convertItem (item: Item) {
-    if ('fn' in item) {
-      map.set(item.title, item.fn)
-      return
-    }
-
-    const itemWithItems = item as ItemWithItems
-    const itemKeys = Object.keys(itemWithItems.items ?? {})
-    const itemValues = itemKeys.map((key) => itemWithItems.items![key].title)
-
-    map.set(itemWithItems.title, itemKeys.length > 0 ? itemValues : null)
-
-    for (const key of itemKeys) {
-      convertItem(itemWithItems.items![key])
-    }
-  }
-
-  for (const key of Object.keys(states)) {
-    convertItem(states[key])
-  }
-
-  return map
-}
-describe(buildStatesDefault.name, () => {
+describe(MapPrivateListOptions.name, () => {
   it('should map value with fn if items is not array', () => {
+    const { sut } = makeSut()
+
     const fnSpy1 = vi.fn()
     const fnSpy2 = vi.fn()
 
@@ -66,12 +38,14 @@ describe(buildStatesDefault.name, () => {
       }
     }
 
-    const params: buildStatesDefaultParams = {
-      item1,
-      item2
+    const params: ParamsBuildDefaultStates = {
+      manualList: {
+        item1,
+        item2
+      }
     }
 
-    const result = buildStatesDefault(params)
+    const result = sut.map(params)
     const expectedMap = new Map()
 
     expectedMap.set(
@@ -103,6 +77,8 @@ describe(buildStatesDefault.name, () => {
   })
 
   it('should map value with null if items is empty', () => {
+    const { sut } = makeSut()
+
     const item1 = {
       title: 'item_1_title'
     }
@@ -111,12 +87,14 @@ describe(buildStatesDefault.name, () => {
       title: 'item_2_title'
     }
 
-    const params: buildStatesDefaultParams = {
-      item1,
-      item2
+    const params: ParamsBuildDefaultStates = {
+      manualList: {
+        item1,
+        item2
+      }
     }
 
-    const result = buildStatesDefault(params)
+    const result = sut.map(params)
 
     const expectedMap = new Map()
 
@@ -134,7 +112,10 @@ describe(buildStatesDefault.name, () => {
     expect(result).toHaveLength(2)
     expect(result).toEqual(expectedMap)
   })
+
   it('should return each child as an array indexed by its title', () => {
+    const { sut } = makeSut()
+
     const item1 = {
       title: 'item_1_title',
       items: {
@@ -144,11 +125,13 @@ describe(buildStatesDefault.name, () => {
       }
     }
 
-    const params: buildStatesDefaultParams = {
-      item1
+    const params: ParamsBuildDefaultStates = {
+      manualList: {
+        item1
+      }
     }
 
-    const result = buildStatesDefault(params)
+    const result = sut.map(params)
     const expectedMap = new Map()
 
     expectedMap.set(
@@ -167,6 +150,8 @@ describe(buildStatesDefault.name, () => {
     expect(result).toHaveLength(2)
   })
   it('should return each child as an array indexed by its title, following the same rules as the initial data', () => {
+    const { sut } = makeSut()
+
     const item1 = {
       title: 'item_1_title',
       items: {
@@ -181,11 +166,13 @@ describe(buildStatesDefault.name, () => {
       }
     }
 
-    const params: buildStatesDefaultParams = {
-      item1
+    const params: ParamsBuildDefaultStates = {
+      manualList: {
+        item1
+      }
     }
 
-    const result = buildStatesDefault(params)
+    const result = sut.map(params)
     const expectedMap = new Map()
 
     expectedMap.set(
@@ -211,6 +198,8 @@ describe(buildStatesDefault.name, () => {
     expect(result).toHaveLength(3)
   })
   it('should return a flat Map of items, indexed by title', () => {
+    const { sut } = makeSut()
+
     const paramFn = vi.fn
 
     const item1 = {
@@ -257,12 +246,14 @@ describe(buildStatesDefault.name, () => {
       }
     }
 
-    const params: buildStatesDefaultParams = {
-      item1,
-      item2
+    const params: ParamsBuildDefaultStates = {
+      manualList: {
+        item1,
+        item2
+      }
     }
 
-    const result = buildStatesDefault(params)
+    const result = sut.map(params)
 
     const expectedMap = new Map()
 

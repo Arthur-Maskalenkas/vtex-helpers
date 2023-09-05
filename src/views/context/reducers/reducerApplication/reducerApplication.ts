@@ -14,9 +14,3 @@ export function reducerApplication (state: StatesApplication, action: ActionsApp
       return state
   }
 }
-
-export const statesDefault: StatesApplication = {
-  isOpened: false,
-  breadcrumb: [],
-  currentLevel: 0
-}
