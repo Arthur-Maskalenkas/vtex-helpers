@@ -14,7 +14,7 @@ export namespace StateListOptions {
 
   export type WithItems = {
     title: string
-    options?: Record<string, Item> | null
+    items?: Record<string, Item> | null
   }
 
   export type Item = WithItems | WithComponents

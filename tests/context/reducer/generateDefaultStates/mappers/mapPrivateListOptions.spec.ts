@@ -1,219 +1,172 @@
 import {
   MapPrivateListOptions
 } from '../../../../../src/context/reducer/generateDefaultStates/mappers/mapPrivateListOptions.ts'
-import { type ParamsBuildDefaultStates } from '../../../../../src/context/reducer/generateDefaultStates/protocols.ts'
 
 const makeSut = () => {
   const sut = new MapPrivateListOptions()
   return { sut }
 }
 
+type buildParamsWithChildrensOptions = {
+  lengthChildrens?: number
+  mainIndex?: number
+}
+const buildParamsWithChildrens = (options: buildParamsWithChildrensOptions = {}) => {
+  const { lengthChildrens = 1, mainIndex = 1 } = options
+  const result: any = {
+    [`option.${mainIndex}`]: {
+      title: `Opção ${mainIndex}`,
+      items: {}
+    }
+  }
+
+  for (let i = 1; i <= lengthChildrens; i++) {
+    const key = `option.${mainIndex}.${i}`
+    result[`option.${mainIndex}`].items[key] = {
+      title: `Opção ${mainIndex}.${i}`
+    }
+  }
+
+  return result
+}
+
 describe(MapPrivateListOptions.name, () => {
-  it('should map value with component if options is not array', () => {
+  it('should create each key on Map with key as path and value as function or options', () => {
     const { sut } = makeSut()
+    const params = buildParamsWithChildrens({ lengthChildrens: 2 })
 
-    const fnSpy1 = vi.fn()
-    const fnSpy2 = vi.fn()
-
-    const item1 = {
-      title: 'item_1_title',
-      fn: fnSpy1
-    }
-
-    const item2 = {
-      title: 'item_2_title',
-      items: {
-        item_2_1: {
-          title: 'item_2_1_title',
-          items: {
-            item_2_1_1: {
-              title: 'item_2_1_1_title',
-              fn: fnSpy2
-            }
-          }
-        }
-      }
-    }
-
-    const params: ParamsBuildDefaultStates = {
-      manualList: {
-        item1,
-        item2
-      }
-    }
-
-    const result = sut.map(params)
-
-    const expected = new Map<string, any>([
-      ['item_1_title', fnSpy1],
-      ['item_2_title', ['item_2_1_title']],
-      ['item_2_1_title', ['item_2_1_1_title']],
-      ['item_2_1_1_title', fnSpy2]
-    ])
-
-    expect(result).toStrictEqual(expected)
-    expect(fnSpy1).not.toHaveBeenCalled()
-    expect(fnSpy2).not.toHaveBeenCalled()
-  })
-
-  it('should map value with null if options is empty', () => {
-    const { sut } = makeSut()
-
-    const params: ParamsBuildDefaultStates = {
-      manualList: {
-        item1: {
-          title: 'item_1_title'
-        },
-        item2: {
-          title: 'item_2_title'
-        }
-      }
-    }
-
-    const result = sut.map(params)
-
-    const expected = new Map(
-      [
-        ['item_1_title', null],
-        ['item_2_title', null]
-      ]
-    )
-
-    expect(result).toStrictEqual(expected)
-  })
-
-  it('should return each child as an array indexed by its title', () => {
-    const { sut } = makeSut()
-
-    const params: ParamsBuildDefaultStates = {
-      manualList: {
-        item1: {
-          title: 'item_1_title',
-          items: {
-            item_1_1: {
-              title: 'item_1_1_title'
-            }
-          }
-        }
-      }
-    }
-
-    const result = sut.map(params)
-    const expected = new Map(
-      [
-        ['item_1_title', ['item_1_1_title']],
-        ['item_1_1_title', null]
-      ]
-    )
-
-    expect(result).toStrictEqual(expected)
-  })
-  it('should return each child as an array indexed by its title, following the same rules as the initial data', () => {
-    const { sut } = makeSut()
-
-    const params: ParamsBuildDefaultStates = {
-      manualList: {
-        item1: {
-          title: 'item_1_title',
-          items: {
-            item_1_1: {
-              title: 'item_1_1_title',
-              items: {
-                item_1_1_1: {
-                  title: 'item_1_1_1_title'
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    const result = sut.map(params)
-    const expected = new Map(
-      [
-        ['item_1_title', ['item_1_1_title']],
-        ['item_1_1_title', ['item_1_1_1_title']],
-        ['item_1_1_1_title', null]
-      ]
-    )
-
-    expect(result).toStrictEqual(expected)
-  })
-  it('should return a flat Map of options, indexed by title', () => {
-    const { sut } = makeSut()
-
-    const paramFn = vi.fn
-
-    const params: ParamsBuildDefaultStates = {
-      manualList: {
-        item1: {
-          title: 'item_1_title',
-          items: {
-            item_1_1: {
-              title: 'item_1_1_title',
-
-              items: {
-                item_1_1_1: {
-                  title: 'item_1_1_1_title',
-                  items: {
-                    item_1_1_1_1: {
-                      title: 'item_1_1_1_1_title'
-                    },
-                    item_1_1_1_2: {
-                      title: 'item_1_1_1_2_title',
-                      component: paramFn as any
-                    }
-                  }
-                },
-
-                item_1_1_2: {
-                  title: 'item_1_1_2_title'
-                }
-              }
-            },
-
-            item_1_2: {
-              title: 'item_1_2_title'
-            },
-
-            item_1_3: {
-              title: 'item_1_3_title'
-            }
-          }
-        },
-        item2: {
-          title: 'item_2_title',
-          items: {
-            item_2_1: {
-              title: 'item_2_1_title'
-            }
-          }
-        }
-
-      }
-    }
-
-    const result = sut.map(params)
     const expected = new Map<string, any>(
       [
-        ['item_1_title', ['item_1_1_title', 'item_1_2_title', 'item_1_3_title']],
-        ['item_1_1_title', ['item_1_1_1_title', 'item_1_1_2_title']],
-        ['item_1_1_2_title', null],
-        ['item_1_1_1_title', ['item_1_1_1_1_title', 'item_1_1_1_2_title']],
-        ['item_1_1_1_1_title', null],
-        ['item_1_1_1_2_title', paramFn],
-        ['item_1_2_title', null],
-        ['item_1_3_title', null],
-        ['item_2_title', ['item_2_1_title']],
-        ['item_2_1_title', null]
+        ['option.1', { title: 'Opção 1' }],
+        ['option.1/option.1.1', { title: 'Opção 1.1' }],
+        ['option.1/option.1.2', { title: 'Opção 1.2' }]
       ]
     )
+
+    const result = sut.map({ manualList: params })
+    expect(result).toStrictEqual(expected)
+  })
+
+  it('should work with depth levels', () => {
+    const { sut } = makeSut()
+
+    const expected = new Map<string, any>(
+      [
+        ['option.2', { title: 'Opção 2' }],
+        ['option.2/option.2.1', { title: 'Opção 2.1' }],
+        ['option.2/option.2.1/option.2.1.1', { title: 'Opção 2.1.1' }],
+        ['option.2/option.2.1/option.2.1.1/option.2.1.1.1', { title: 'Opção 2.1.1.1' }]
+      ]
+    )
+
+    const params = {
+      'option.2': {
+        title: 'Opção 2',
+        items: {
+          'option.2.1': {
+            title: 'Opção 2.1',
+            items: {
+              'option.2.1.1': {
+                title: 'Opção 2.1.1',
+                items: {
+                  'option.2.1.1.1': {
+                    title: 'Opção 2.1.1.1'
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    const result = sut.map({ manualList: params })
 
     expect(result).toStrictEqual(expected)
   })
 
-  it.todo('should delete all options that are null')
+  it('should work with multiple childrens', () => {
+    const { sut } = makeSut()
+    const params = {
+      ...buildParamsWithChildrens({ lengthChildrens: 2, mainIndex: 1 }),
+      ...buildParamsWithChildrens({ lengthChildrens: 2, mainIndex: 2 })
+    }
 
-  it.todo('should create each key on Map with key as path and value as function or options')
+    const expected = new Map<string, any>(
+      [
+        ['option.1', { title: 'Opção 1' }],
+        ['option.1/option.1.1', { title: 'Opção 1.1' }],
+        ['option.1/option.1.2', { title: 'Opção 1.2' }],
+
+        ['option.2', { title: 'Opção 2' }],
+        ['option.2/option.2.1', { title: 'Opção 2.1' }],
+        ['option.2/option.2.2', { title: 'Opção 2.2' }]
+      ]
+    )
+
+    const result = sut.map({ manualList: params })
+    expect(result).toStrictEqual(expected)
+  })
+
+  it('should return new Map if not have childrens present', () => {
+    const { sut } = makeSut()
+
+    const result = sut.map()
+    expect(result).toStrictEqual(new Map())
+  })
+
+  it('should return Components in Component attribute', () => {
+    const { sut } = makeSut()
+    const fn = function () {
+      return 'any_value'
+    }
+    const params = {
+      anyAttributeName: {
+        title: 'Any Title',
+        component: fn
+      }
+    }
+
+    const expected = new Map<string, any>(
+      [
+        ['anyAttributeName', {
+          title: 'Any Title',
+          component: fn
+        }]
+      ]
+    )
+
+    const result = sut.map({ manualList: params })
+    expect(result).toStrictEqual(expected)
+  })
+
+  it('super test', () => {
+    const { sut } = makeSut()
+    const fn = function () {
+      return 'any_value'
+    }
+    const params = {
+      ...buildParamsWithChildrens({ lengthChildrens: 2 }),
+      anyAttributeName: {
+        title: 'Any Title',
+        component: fn
+      }
+    }
+
+    const expected = new Map<string, any>(
+      [
+        ['option.1', { title: 'Opção 1' }],
+        ['option.1/option.1.1', { title: 'Opção 1.1' }],
+        ['option.1/option.1.2', { title: 'Opção 1.2' }],
+        ['anyAttributeName', {
+          title: 'Any Title',
+          component: fn
+        }]
+      ]
+    )
+
+    const result = sut.map({ manualList: params })
+    expect(result).toStrictEqual(expected)
+  })
 })

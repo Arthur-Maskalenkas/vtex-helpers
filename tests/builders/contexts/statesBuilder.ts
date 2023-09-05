@@ -3,6 +3,7 @@ import { type States } from '../../../src/context/reducer/types.ts'
 
 export class StatesBuilder {
   #state: States
+
   private constructor () {
     this.#state = BuilderDefaultStates.aDefaultStates({} as any)
   }
@@ -35,6 +36,25 @@ export class StatesBuilder {
     return this
   }
 
+  public appendParamsWithChildrens (options: appendPrivateListOptionsWithOptions = {}) {
+    const { lengthChildrens = 1, mainIndex = 1 } = options
+    const result: any = {
+      [`option.${mainIndex}`]: {
+        title: `Opção ${mainIndex}`,
+        items: {}
+      }
+    }
+
+    for (let i = 1; i <= lengthChildrens; i++) {
+      const key = `option.${mainIndex}.${i}`
+      result[`option.${mainIndex}`].items[key] = {
+        title: `Opção ${mainIndex}.${i}`
+      }
+    }
+
+    return result
+  }
+
   public appendPrivateListOptionsWithItemsAttribute (options: appendPrivateListOptionsWithOptions = {}) {
     const { lengthChildrens = 1 } = options
 
@@ -54,4 +74,5 @@ export class StatesBuilder {
 
 type appendPrivateListOptionsWithOptions = {
   lengthChildrens?: number
+  mainIndex?: number
 }
