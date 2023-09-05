@@ -1,14 +1,10 @@
-import {
-} from '../../src/context/reducers/reducer/reducer.ts'
-import { type States } from '../../src/context/reducers/types.ts'
-import {
-  generateDefaultStates
-} from '../../src/context/reducers/reducer/utils/generateDefaultStates'
+import { BuilderDefaultStates } from '../../../src/context/reducer/generateDefaultStates'
+import { type States } from '../../../src/context/reducer/types.ts'
 
 export class StatesBuilder {
   #state: States
   private constructor () {
-    this.#state = generateDefaultStates()
+    this.#state = BuilderDefaultStates.aDefaultStates({} as any)
   }
 
   public static a () {
@@ -31,7 +27,7 @@ export class StatesBuilder {
     return this
   }
 
-  public appendPrivateListOptionsWithFNAttribute (fn: () => any) {
+  public appendPrivateListOptionsWithFNAttribute (fn: any) {
     const mainIndex = this.#state.privateListOptions.size
 
     this.#state.privateListOptions.set(`item_${mainIndex}_title`, fn)

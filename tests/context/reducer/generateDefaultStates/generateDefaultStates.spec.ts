@@ -1,14 +1,10 @@
-import {
-  generateDefaultStates
-} from '../../../../../src/context/reducers/reducer/utils/generateDefaultStates'
-import {
-  type ParamsBuildDefaultStates
-} from '../../../../../src/context/reducers/reducer/utils/generateDefaultStates/protocols.ts'
-import { type States } from '../../../../../src/context/reducers/types.ts'
+import { type ParamsBuildDefaultStates } from '../../../../src/context/reducer/generateDefaultStates/protocols.ts'
+import { BuilderDefaultStates } from '../../../../src/context/reducer/generateDefaultStates'
+import { type States } from '../../../../src/context/reducer/types.ts'
 
-describe(generateDefaultStates.name, () => {
+describe(BuilderDefaultStates.name, () => {
   it('should generate default states', () => {
-    const paramFn = vi.fn
+    const paramFn = vi.fn as any
     const params: ParamsBuildDefaultStates = {
       manualList: {
         item1: {
@@ -26,7 +22,7 @@ describe(generateDefaultStates.name, () => {
 
         item3: {
           title: 'item_3_title',
-          fn: paramFn
+          component: paramFn
         }
       }
     }
@@ -45,7 +41,7 @@ describe(generateDefaultStates.name, () => {
       ]
     }
 
-    const result = generateDefaultStates(params)
+    const result = BuilderDefaultStates.aDefaultStates(params)
 
     expect(result).toStrictEqual(expected)
   })
@@ -55,7 +51,7 @@ describe(generateDefaultStates.name, () => {
       manualList: {}
     }
 
-    const result = generateDefaultStates(params)
+    const result = BuilderDefaultStates.aDefaultStates(params)
 
     const expected: Partial<States> = {
       listOptions: [],

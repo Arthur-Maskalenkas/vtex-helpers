@@ -1,10 +1,7 @@
 import {
   MapPrivateListOptions
-} from '../../../../../../src/context/reducers/reducer/utils/generateDefaultStates/mappers/mapPrivateListOptions.ts'
-import { expect, vi } from 'vitest'
-import {
-  type ParamsBuildDefaultStates
-} from '../../../../../../src/context/reducers/reducer/utils/generateDefaultStates/protocols.ts'
+} from '../../../../../src/context/reducer/generateDefaultStates/mappers/mapPrivateListOptions.ts'
+import { type ParamsBuildDefaultStates } from '../../../../../src/context/reducer/generateDefaultStates/protocols.ts'
 
 const makeSut = () => {
   const sut = new MapPrivateListOptions()
@@ -165,7 +162,7 @@ describe(MapPrivateListOptions.name, () => {
                     },
                     item_1_1_1_2: {
                       title: 'item_1_1_1_2_title',
-                      fn: paramFn
+                      component: paramFn as any
                     }
                   }
                 },

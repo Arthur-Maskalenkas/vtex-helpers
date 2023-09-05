@@ -1,15 +1,7 @@
-import {
-  type ReducerParams,
-  type States
-} from '../../../../src/context/reducers/types.ts'
-import {
-  ActionHandleGoToOption
-} from '../../../../src/context/reducers/reducer/actions/actionHandleGoToOption.ts'
-import { StatesBuilder } from '../../../builders/statesBuilder.ts'
-import {
-  type Actions
-} from '../../../../src/context/reducers/reducer/reducer.ts'
-import { vi } from 'vitest'
+import { type Actions } from '../../../../src/context/reducer/reducer.ts'
+import { ActionHandleGoToOption } from '../../../../src/context/reducer/actions/actionHandleGoToOption.ts'
+import { StatesBuilder } from '../../../builders/contexts/statesBuilder.ts'
+import { type ReducerParams, type States } from '../../../../src/context/reducer/types.ts'
 
 const makeDispatch = (target: string): Actions => {
   return {

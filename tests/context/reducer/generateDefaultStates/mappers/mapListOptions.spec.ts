@@ -1,10 +1,6 @@
-import {
-  MapListOptions
-} from '../../../../../../src/context/reducers/reducer/utils/generateDefaultStates/mappers/mapListOptions.ts'
-import {
-  type ParamsBuildDefaultStates
-} from '../../../../../../src/context/reducers/reducer/utils/generateDefaultStates/protocols.ts'
-import { type StateListOptions } from '../../../../../../src/context/reducers/types.ts'
+import { MapListOptions } from '../../../../../src/context/reducer/generateDefaultStates/mappers/mapListOptions.ts'
+import { type ParamsBuildDefaultStates } from '../../../../../src/context/reducer/generateDefaultStates/protocols.ts'
+import { type StateListOptions } from '../../../../../src/context/reducer/types.ts'
 
 const makeSut = () => {
   const sut = new MapListOptions()
@@ -38,7 +34,7 @@ describe(MapListOptions.name, () => {
 
         item3: {
           title: 'item_3_title',
-          fn: () => {}
+          component: (() => {}) as any
         }
       }
     })
