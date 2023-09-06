@@ -8,7 +8,7 @@ export const ActionHandleGoToOption = (props: ReducerParams): States => {
 
   const target = actionHandle.payload.data.target
 
-  const targetRoot = state.privateListOptions.get(target)
+  const targetRoot = state.internalListOptions.get(target)
 
   if (!targetRoot) return state
 

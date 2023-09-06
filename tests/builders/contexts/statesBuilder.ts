@@ -28,15 +28,15 @@ export class StatesBuilder {
     return this
   }
 
-  public appendPrivateListOptionsWithFNAttribute (fn: any) {
-    const mainIndex = this.#state.privateListOptions.size
+  public appendinternalListOptionsWithFNAttribute (fn: any) {
+    const mainIndex = this.#state.internalListOptions.size
 
-    this.#state.privateListOptions.set(`item_${mainIndex}_title`, fn)
+    this.#state.internalListOptions.set(`item_${mainIndex}_title`, fn)
 
     return this
   }
 
-  public appendParamsWithChildrens (options: appendPrivateListOptionsWithOptions = {}) {
+  public appendParamsWithChildrens (options: appendinternalListOptionsWithOptions = {}) {
     const { lengthChildrens = 1, mainIndex = 1 } = options
     const result: any = {
       [`option.${mainIndex}`]: {
@@ -55,14 +55,14 @@ export class StatesBuilder {
     return result
   }
 
-  public appendPrivateListOptionsWithItemsAttribute (options: appendPrivateListOptionsWithOptions = {}) {
+  public appendinternalListOptionsWithItemsAttribute (options: appendinternalListOptionsWithOptions = {}) {
     const { lengthChildrens = 1 } = options
 
-    const mainIndex = this.#state.privateListOptions.size
+    const mainIndex = this.#state.internalListOptions.size
 
     const childrens = Array.from({ length: lengthChildrens }, (_, index) => `item_${mainIndex}_${index}_title`)
 
-    this.#state.privateListOptions.set(`item_${mainIndex}_title`, childrens)
+    this.#state.internalListOptions.set(`item_${mainIndex}_title`, childrens)
 
     return this
   }
@@ -72,7 +72,7 @@ export class StatesBuilder {
   }
 }
 
-type appendPrivateListOptionsWithOptions = {
+type appendinternalListOptionsWithOptions = {
   lengthChildrens?: number
   mainIndex?: number
 }

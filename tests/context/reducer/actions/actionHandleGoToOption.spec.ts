@@ -18,8 +18,8 @@ describe(ActionHandleGoToOption.name, () => {
   it('should return target selected and all childrens', () => {
     const state =
             StatesBuilder.a()
-              .appendPrivateListOptionsWithItemsAttribute()
-              .appendPrivateListOptionsWithItemsAttribute(({ lengthChildrens: 3 }))
+              .appendinternalListOptionsWithItemsAttribute()
+              .appendinternalListOptionsWithItemsAttribute(({ lengthChildrens: 3 }))
               .build()
 
     const currentTarget = 'item_1_title'
@@ -49,7 +49,7 @@ describe(ActionHandleGoToOption.name, () => {
 
     const state =
             StatesBuilder.a()
-              .appendPrivateListOptionsWithFNAttribute(fnSpy)
+              .appendinternalListOptionsWithFNAttribute(fnSpy)
               .build()
 
     const currentTarget = 'item_0_title'

@@ -1,4 +1,6 @@
 import { type Actions } from './reducer.ts'
+import { type ModelInternalListOptions } from './domain/models/modelInternalListOptions.ts'
+import { type ModelListOptions } from './domain/models/modelListOptions.ts'
 
 export type GlobalActionProps<S, A> = {
   state: S
@@ -6,26 +8,12 @@ export type GlobalActionProps<S, A> = {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace StateListOptions {
-  export type WithComponents = {
-    title: string
-    component?: () => any | null
-  }
+export namespace internalListOptions {
+  export type Items = Map<string, ModelInternalListOptions>
+}
 
-  export type WithItems = {
-    title: string
-    items?: Record<string, Item> | null
-  }
-
-  export type Item = WithItems | WithComponents
-
-  export type ItemMapped = {
-    title: string
-    component?: Element
-  }
-
-  export type State = ItemMapped[]
-  export type _State = Map<string, string[] | Element>
+export namespace ListOptions {
+  export type Items = ModelListOptions[]
 }
 
 export interface States {
@@ -33,8 +21,8 @@ export interface States {
   currentComponent: Element | null
   currentTarget: string | null
   breadcrumb: string[]
-  listOptions: StateListOptions.State
-  privateListOptions: StateListOptions._State
+  listOptions: ListOptions.Items
+  internalListOptions: internalListOptions.Items | null
 }
 
 export type ReducerParams = GlobalActionProps<States, Actions>

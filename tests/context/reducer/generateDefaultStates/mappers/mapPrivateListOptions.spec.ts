@@ -1,9 +1,12 @@
 import {
-  MapPrivateListOptions
-} from '../../../../../src/context/reducer/generateDefaultStates/mappers/mapPrivateListOptions.ts'
+  MapInternalListOptions
+} from '../../../../../src/context/reducer/generateDefaultStates/mappers/mapInternalListOptions.ts'
+import { type internalListOptions } from '../../../../../src/context/reducer/types.ts'
+import { type ManualItem } from '../../../../../src/context/reducer/generateDefaultStates/protocols.ts'
+import { ModelInternalListOptions } from '../../../../../src/context/reducer/domain/models/modelInternalListOptions.ts'
 
 const makeSut = () => {
-  const sut = new MapPrivateListOptions()
+  const sut = new MapInternalListOptions()
   return { sut }
 }
 
@@ -11,7 +14,7 @@ type buildParamsWithChildrensOptions = {
   lengthChildrens?: number
   mainIndex?: number
 }
-const buildParamsWithChildrens = (options: buildParamsWithChildrensOptions = {}) => {
+const buildParamsWithChildrens = (options: buildParamsWithChildrensOptions = {}): ManualItem.Items => {
   const { lengthChildrens = 1, mainIndex = 1 } = options
   const result: any = {
     [`option.${mainIndex}`]: {
@@ -30,16 +33,16 @@ const buildParamsWithChildrens = (options: buildParamsWithChildrensOptions = {})
   return result
 }
 
-describe(MapPrivateListOptions.name, () => {
+describe(MapInternalListOptions.name, () => {
   it('should create each key on Map with key as path and value as function or options', () => {
     const { sut } = makeSut()
-    const params = buildParamsWithChildrens({ lengthChildrens: 2 })
+    const params: ManualItem.Items = buildParamsWithChildrens({ lengthChildrens: 2 })
 
-    const expected = new Map<string, any>(
+    const expected: internalListOptions.Items = new Map(
       [
-        ['option.1', { title: 'Opção 1' }],
-        ['option.1/option.1.1', { title: 'Opção 1.1' }],
-        ['option.1/option.1.2', { title: 'Opção 1.2' }]
+        ['option.1', new ModelInternalListOptions('Opção 1', null, null)],
+        ['option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1')],
+        ['option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1')]
       ]
     )
 
@@ -50,27 +53,40 @@ describe(MapPrivateListOptions.name, () => {
   it('should work with depth levels', () => {
     const { sut } = makeSut()
 
-    const expected = new Map<string, any>(
+    const expected: internalListOptions.Items = new Map(
       [
-        ['option.2', { title: 'Opção 2' }],
-        ['option.2/option.2.1', { title: 'Opção 2.1' }],
-        ['option.2/option.2.1/option.2.1.1', { title: 'Opção 2.1.1' }],
-        ['option.2/option.2.1/option.2.1.1/option.2.1.1.1', { title: 'Opção 2.1.1.1' }]
+        ['option.2', new ModelInternalListOptions('Opção 2', null, null)],
+        ['option.2/option.2.1', new ModelInternalListOptions('Opção 2.1', null, 'option.2')],
+        ['option.2/option.2.1/option.2.1.1', {
+          title: 'Opção 2.1.1',
+          parent: 'option.2/option.2.1',
+          component: null
+        }],
+        ['option.2/option.2.1/option.2.1.1/option.2.1.1.1', {
+          title: 'Opção 2.1.1.1',
+          parent: 'option.2/option.2.1/option.2.1.1',
+          component: null
+        }]
       ]
     )
 
-    const params = {
+    const params: ManualItem.Items = {
       'option.2': {
         title: 'Opção 2',
+        component: null,
         items: {
           'option.2.1': {
             title: 'Opção 2.1',
+            component: null,
             items: {
               'option.2.1.1': {
                 title: 'Opção 2.1.1',
+                component: null,
                 items: {
                   'option.2.1.1.1': {
-                    title: 'Opção 2.1.1.1'
+                    title: 'Opção 2.1.1.1',
+                    items: null,
+                    component: null
                   }
                 }
               }
@@ -88,20 +104,20 @@ describe(MapPrivateListOptions.name, () => {
 
   it('should work with multiple childrens', () => {
     const { sut } = makeSut()
-    const params = {
+    const params: ManualItem.Items = {
       ...buildParamsWithChildrens({ lengthChildrens: 2, mainIndex: 1 }),
       ...buildParamsWithChildrens({ lengthChildrens: 2, mainIndex: 2 })
     }
 
-    const expected = new Map<string, any>(
+    const expected: internalListOptions.Items = new Map(
       [
-        ['option.1', { title: 'Opção 1' }],
-        ['option.1/option.1.1', { title: 'Opção 1.1' }],
-        ['option.1/option.1.2', { title: 'Opção 1.2' }],
+        ['option.1', new ModelInternalListOptions('Opção 1', null, null)],
+        ['option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1')],
+        ['option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1')],
 
-        ['option.2', { title: 'Opção 2' }],
-        ['option.2/option.2.1', { title: 'Opção 2.1' }],
-        ['option.2/option.2.2', { title: 'Opção 2.2' }]
+        ['option.2', new ModelInternalListOptions('Opção 2', null, null)],
+        ['option.2/option.2.1', new ModelInternalListOptions('Opção 2.1', null, 'option.2')],
+        ['option.2/option.2.2', new ModelInternalListOptions('Opção 2.2', null, 'option.2')]
       ]
     )
 
@@ -109,11 +125,11 @@ describe(MapPrivateListOptions.name, () => {
     expect(result).toStrictEqual(expected)
   })
 
-  it('should return new Map if not have childrens present', () => {
+  it('should return null if not have items or component present', () => {
     const { sut } = makeSut()
 
     const result = sut.map()
-    expect(result).toStrictEqual(new Map())
+    expect(result).toBeNull()
   })
 
   it('should return Components in Component attribute', () => {
@@ -121,18 +137,20 @@ describe(MapPrivateListOptions.name, () => {
     const fn = function () {
       return 'any_value'
     }
-    const params = {
+    const params: ManualItem.Items = {
       anyAttributeName: {
         title: 'Any Title',
-        component: fn
+        component: fn as any,
+        items: null
       }
     }
 
-    const expected = new Map<string, any>(
+    const expected: internalListOptions.Items = new Map(
       [
         ['anyAttributeName', {
           title: 'Any Title',
-          component: fn
+          parent: null,
+          component: fn as any
         }]
       ]
     )
@@ -146,22 +164,24 @@ describe(MapPrivateListOptions.name, () => {
     const fn = function () {
       return 'any_value'
     }
-    const params = {
+    const params: ManualItem.Items = {
       ...buildParamsWithChildrens({ lengthChildrens: 2 }),
       anyAttributeName: {
         title: 'Any Title',
-        component: fn
+        component: fn as any,
+        items: null
       }
     }
 
-    const expected = new Map<string, any>(
+    const expected: internalListOptions.Items = new Map(
       [
-        ['option.1', { title: 'Opção 1' }],
-        ['option.1/option.1.1', { title: 'Opção 1.1' }],
-        ['option.1/option.1.2', { title: 'Opção 1.2' }],
+        ['option.1', new ModelInternalListOptions('Opção 1', null, null)],
+        ['option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1')],
+        ['option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1')],
         ['anyAttributeName', {
           title: 'Any Title',
-          component: fn
+          parent: null,
+          component: fn as any
         }]
       ]
     )

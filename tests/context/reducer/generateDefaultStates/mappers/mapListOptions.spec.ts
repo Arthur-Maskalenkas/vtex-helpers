@@ -1,59 +1,61 @@
 import { MapListOptions } from '../../../../../src/context/reducer/generateDefaultStates/mappers/mapListOptions.ts'
-import { type ParamsBuildDefaultStates } from '../../../../../src/context/reducer/generateDefaultStates/protocols.ts'
-import { type StateListOptions } from '../../../../../src/context/reducer/types.ts'
+import {
+  type ManualItem, type ParamsBuildDefaultStates
+} from '../../../../../src/context/reducer/generateDefaultStates/protocols.ts'
+import { type ListOptions } from '../../../../../src/context/reducer/types.ts'
+import { ModelListOptions } from '../../../../../src/context/reducer/domain/models/modelListOptions.ts'
 
 const makeSut = () => {
   const sut = new MapListOptions()
   return { sut }
 }
 
-type PartialParamsBuildDefaultStates = Pick<ParamsBuildDefaultStates, 'privateListOptions' | 'manualList'>
+type buildParamsWithChildrensOptions = {
+  lengthChildrens?: number
+  mainIndex?: number
+}
+const buildParamsWithChildrens = (options: buildParamsWithChildrensOptions = {}): ManualItem.Items => {
+  const { lengthChildrens = 1, mainIndex = 1 } = options
+  const result: any = {
+    [`option.${mainIndex}`]: {
+      title: `Opção ${mainIndex}`,
+      items: {},
+      component: null,
+      parent: null
+    }
+  }
 
-const makeParams = (params: PartialParamsBuildDefaultStates): ParamsBuildDefaultStates => {
-  return params as ParamsBuildDefaultStates
+  for (let i = 1; i <= lengthChildrens; i++) {
+    const key = `option.${mainIndex}.${i}`
+    result[`option.${mainIndex}`].items[key] = {
+      title: `Opção ${mainIndex}.${i}`,
+      component: null,
+      parent: null
+    }
+  }
+
+  return result
 }
 
 describe(MapListOptions.name, () => {
   it('should return only options from first level', () => {
     const { sut } = makeSut()
 
-    const params = makeParams({
+    const params: Partial<ParamsBuildDefaultStates> = {
       manualList: {
-        item1: {
-          title: 'item_1_title',
-          items: {
-            item_1_1: {
-              title: 'item_1_1_title'
-            }
-          }
-        },
+        ...buildParamsWithChildrens({ lengthChildrens: 2, mainIndex: 1 }),
+        ...buildParamsWithChildrens({ lengthChildrens: 2, mainIndex: 2 })
 
-        item2: {
-          title: 'item_2_title'
-        },
-
-        item3: {
-          title: 'item_3_title',
-          component: (() => {}) as any
-        }
       }
-    })
+    }
 
-    const result = sut.map(params)
+    const result = sut.map({ ...params as any })
 
-    const expected: StateListOptions.State = [
-      {
-        title: 'item_1_title'
-      },
-
-      {
-        title: 'item_2_title'
-      },
-
-      {
-        title: 'item_3_title'
-      }
-    ]
+    const expected: ListOptions.Items =
+            [
+              new ModelListOptions('Opção 1', 'option.1', null, null),
+              new ModelListOptions('Opção 2', 'option.2', null, null)
+            ]
 
     expect(result).toStrictEqual(expected)
   })

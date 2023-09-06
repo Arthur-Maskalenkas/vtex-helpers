@@ -1,21 +1,17 @@
 import { type States } from '../types.ts'
 
-type ManualItem = ItemWithItems | ItemWithFn
+export namespace ManualItem {
+  export type Item = {
+    title: string
+    items?: Record<string, Item> | null
+    component?: Element | null
+  }
 
-type ItemWithItems = {
-  title: string
-  items?: Record<string, ManualItem> | null
+  export type Items = Record<string, ManualItem.Item>
 }
-
-type ItemWithFn = {
-  title: string
-  component?: Element
-}
-
-export type ManualItems = Record<string, ManualItem>
 
 export type ParamsBuildDefaultStates = {
-  manualList: ManualItems
+  manualList?: ManualItem.Items
 } & Partial<States>
 export interface ProtocolMapperDefaultStates {
   field: keyof States

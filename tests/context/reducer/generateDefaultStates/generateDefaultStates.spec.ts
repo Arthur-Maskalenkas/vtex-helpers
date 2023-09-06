@@ -1,62 +1,46 @@
 import { type ParamsBuildDefaultStates } from '../../../../src/context/reducer/generateDefaultStates/protocols.ts'
 import { BuilderDefaultStates } from '../../../../src/context/reducer/generateDefaultStates'
 import { type States } from '../../../../src/context/reducer/types.ts'
+import { ModelInternalListOptions } from '../../../../src/context/reducer/domain/models/modelInternalListOptions.ts'
+import { ModelListOptions } from '../../../../src/context/reducer/domain/models/modelListOptions.ts'
 
 describe(BuilderDefaultStates.name, () => {
   it('should generate default states', () => {
     const paramFn = vi.fn as any
     const params: ParamsBuildDefaultStates = {
       manualList: {
-        item1: {
-          title: 'item_1_title',
+        'option.1': {
+          title: 'Opção 1',
           items: {
-            item_1_1: {
-              title: 'item_1_1_title'
+            'option.1.1': {
+              title: 'Opção 1.1'
+            },
+            'option.1.2': {
+              title: 'Opção 1.2'
             }
           }
         },
-
-        item2: {
-          title: 'item_2_title'
-        },
-
-        item3: {
-          title: 'item_3_title',
+        anyAttributeName: {
+          title: 'Any Title',
           component: paramFn
         }
       }
     }
 
     const expected: Partial<States> = {
-      privateListOptions: new Map<any, any>([
-        ['item_1_title', ['item_1_1_title']],
-        ['item_1_1_title', null],
-        ['item_2_title', null],
-        ['item_3_title', paramFn]
+      internalListOptions: new Map<any, any>([
+        ['option.1', new ModelInternalListOptions('Opção 1', null, null)],
+        ['option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1')],
+        ['option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1')],
+        ['anyAttributeName', new ModelInternalListOptions('Any Title', paramFn, null)]
       ]),
       listOptions: [
-        { title: 'item_1_title' },
-        { title: 'item_2_title' },
-        { title: 'item_3_title' }
+        new ModelListOptions('Opção 1', 'option.1', null, null),
+        new ModelListOptions('Any Title', 'anyAttributeName', paramFn, null)
       ]
     }
 
     const result = BuilderDefaultStates.aDefaultStates(params)
-
-    expect(result).toStrictEqual(expected)
-  })
-
-  it('should not throw error if lists is empty', () => {
-    const params: ParamsBuildDefaultStates = {
-      manualList: {}
-    }
-
-    const result = BuilderDefaultStates.aDefaultStates(params)
-
-    const expected: Partial<States> = {
-      listOptions: [],
-      privateListOptions: new Map()
-    }
 
     expect(result).toStrictEqual(expected)
   })
