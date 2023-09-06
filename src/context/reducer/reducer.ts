@@ -1,6 +1,7 @@
 import { actionHandleIsOpen } from './actions/actionHandleIsOpen.ts'
 import { ActionHandleGoToOption } from './actions/actionHandleGoToOption.ts'
 import { type States } from './types.ts'
+import { ActionHandleSearchOption } from './actions/actionHandleSearchOption.ts'
 
 export namespace Action {
   export type HandleIsOpen = {
@@ -16,9 +17,19 @@ export namespace Action {
     }
   }
 
+  export type HandleSearchOption = {
+    type: 'ACTION_HANDLE_SEARCH_OPTION'
+    payload: {
+      data: {
+        typeSearch: 'all'
+        target: string
+      }
+    }
+  }
+
 }
 
-export type Actions = Action.HandleIsOpen | Action.HandleGoToOption
+export type Actions = Action.HandleIsOpen | Action.HandleGoToOption | Action.HandleSearchOption
 
 export function reducer (state: States, action: Actions) {
   const commonProps = {
@@ -31,6 +42,8 @@ export function reducer (state: States, action: Actions) {
       return actionHandleIsOpen(commonProps)
     case 'ACTION_HANDLE_GO_TO_OPTION':
       return ActionHandleGoToOption(commonProps)
+    case 'ACTION_HANDLE_SEARCH_OPTION':
+      return ActionHandleSearchOption(commonProps)
     default:
       return state
   }

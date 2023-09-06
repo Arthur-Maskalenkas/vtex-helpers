@@ -22,6 +22,8 @@ export interface States {
   currentTarget: string | null
   breadcrumb: string[]
   listOptions: ListOptions.Items
+  query: string | null
+  searchableListOptions: ListOptions.Items | null
   internalListOptions: internalListOptions.Items | null
 }
 
