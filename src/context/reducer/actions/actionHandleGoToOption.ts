@@ -1,33 +1,38 @@
 import { type Action } from '../reducer.ts'
-import { type ReducerParams, type States } from '../types.ts'
+import { type ListOptions, type ReducerParams, type States } from '../types.ts'
+import { ModelListOptions } from '../domain/models/modelListOptions.ts'
 
 export const ActionHandleGoToOption = (props: ReducerParams): States => {
   const { state, action } = props
 
+  if (!state.internalListOptions) return state
+
   const actionHandle = action as unknown as Action.HandleGoToOption
 
-  const target = actionHandle.payload.data.target
+  const listOptionsMapped: ListOptions.Items = []
 
-  const targetRoot = state.internalListOptions.get(target)
-
-  if (!targetRoot) return state
-
-  if (typeof targetRoot === 'function') {
-    return {
-      ...state,
-      listOptions: [{
-        title: target,
-        component: targetRoot
-      }],
-      currentTarget: targetRoot
+  for (const [key, value] of state.internalListOptions) {
+    if (value.parent === actionHandle.payload.data.target) {
+      const { title, parent, component } = value
+      listOptionsMapped.push(new ModelListOptions(title, key, component, parent))
     }
   }
 
-  const listOptions = targetRoot.map((option) => ({ title: option }))
+  const componentOnParent = listOptionsMapped.find(item => item.component !== null)?.component
+
+  if (componentOnParent) {
+    return {
+      ...state,
+      currentTarget: actionHandle.payload.data.target,
+      currentComponent: componentOnParent,
+      listOptions: []
+    }
+  }
 
   return {
     ...state,
-    currentTarget: target,
-    listOptions
+    listOptions: listOptionsMapped,
+    currentComponent: null,
+    currentTarget: actionHandle.payload.data.target
   }
 }

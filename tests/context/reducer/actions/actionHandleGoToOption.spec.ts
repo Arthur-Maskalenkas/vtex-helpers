@@ -1,7 +1,9 @@
 import { type Actions } from '../../../../src/context/reducer/reducer.ts'
 import { ActionHandleGoToOption } from '../../../../src/context/reducer/actions/actionHandleGoToOption.ts'
-import { StatesBuilder } from '../../../builders/contexts/statesBuilder.ts'
 import { type ReducerParams, type States } from '../../../../src/context/reducer/types.ts'
+import { ModelInternalListOptions } from '../../../../src/context/reducer/domain/models/modelInternalListOptions.ts'
+import { ModelListOptions } from '../../../../src/context/reducer/domain/models/modelListOptions.ts'
+import { expect } from 'vitest'
 
 const makeDispatch = (target: string): Actions => {
   return {
@@ -15,16 +17,21 @@ const makeDispatch = (target: string): Actions => {
 }
 
 describe(ActionHandleGoToOption.name, () => {
-  it('should return target selected and all childrens', () => {
-    const state =
-            StatesBuilder.a()
-              .appendinternalListOptionsWithItemsAttribute()
-              .appendinternalListOptionsWithItemsAttribute(({ lengthChildrens: 3 }))
-              .build()
+  it('should return all items with same parent', () => {
+    const target = 'parent.2'
+    const fn = vi.fn() as any
 
-    const currentTarget = 'item_1_title'
+    const state = {
+      internalListOptions: new Map([
+        ['validItem1', new ModelInternalListOptions('valid item 1', null, target)],
+        ['invalidItem1', new ModelInternalListOptions('invalid item 1', null, 'parent.1')],
+        ['invalidItem2', new ModelInternalListOptions('invalid item 2', fn, 'parent.1')],
+        ['validItem2', new ModelInternalListOptions('valid item 2', null, target)],
+        ['validItem3', new ModelInternalListOptions('valid item 3', null, target)]
+      ])
+    } satisfies Partial<States> as any
 
-    const dispatch = makeDispatch(currentTarget)
+    const dispatch = makeDispatch(target)
     const params: ReducerParams = {
       state,
       action: dispatch
@@ -33,28 +40,33 @@ describe(ActionHandleGoToOption.name, () => {
 
     const expected: States = {
       ...state,
-      currentTarget,
+      currentComponent: null,
+      currentTarget: target,
       listOptions: [
-        { title: 'item_1_0_title' },
-        { title: 'item_1_1_title' },
-        { title: 'item_1_2_title' }
+        new ModelListOptions('valid item 1', 'validItem1', null, target),
+        new ModelListOptions('valid item 2', 'validItem2', null, target),
+        new ModelListOptions('valid item 3', 'validItem3', null, target)
       ]
     }
 
+    expect(result.listOptions).toStrictEqual(expected.listOptions)
     expect(result).toStrictEqual(expected)
   })
 
-  it('should return target selected with attribute component', () => {
-    const fnSpy = vi.fn()
+  it('should return only component when have parent with children with component', () => {
+    const target = 'parent.2'
+    const dispatch = makeDispatch(target)
+    const fnSpy = vi.fn() as any
 
-    const state =
-            StatesBuilder.a()
-              .appendinternalListOptionsWithFNAttribute(fnSpy)
-              .build()
+    const state = {
+      internalListOptions: new Map([
+        ['validItem1', new ModelInternalListOptions('invalid item 1', null, target)],
+        ['invalidItem1', new ModelInternalListOptions('valid item', fnSpy, target)],
+        ['validItem2', new ModelInternalListOptions('invalid item 2', null, target)],
+        ['validItem3', new ModelInternalListOptions('invalid item 3', null, target)]
+      ])
+    } satisfies Partial<States> as any
 
-    const currentTarget = 'item_0_title'
-
-    const dispatch = makeDispatch(currentTarget)
     const params: ReducerParams = {
       state,
       action: dispatch
@@ -63,20 +75,35 @@ describe(ActionHandleGoToOption.name, () => {
 
     const expected: States = {
       ...state,
-      currentTarget: fnSpy as any,
-      listOptions: [
-        { title: 'item_0_title', component: fnSpy }
-      ]
+      currentTarget: target,
+      listOptions: [],
+      currentComponent: fnSpy
     }
 
+    expect(result.listOptions).toStrictEqual(expected.listOptions)
+    expect(result.currentComponent).toStrictEqual(expected.currentComponent)
     expect(result).toStrictEqual(expected)
     expect(fnSpy).not.toHaveBeenCalled()
   })
 
-  //  function () {
-  //     return null
-  //   }
-  it.todo('should return a component')
+  it('should return a state if internalListOptions not exists', () => {
+    const target = 'parent.2'
+    const dispatch = makeDispatch(target)
 
-  it.todo('should throw error if target not exists')
+    const state = {
+      isOpened: false
+    } satisfies Partial<States> as any
+
+    const params: ReducerParams = {
+      state,
+      action: dispatch
+    }
+    const result = ActionHandleGoToOption(params)
+
+    const expected: States = {
+      ...state
+    }
+
+    expect(result).toStrictEqual(expected)
+  })
 })
