@@ -3,7 +3,7 @@ import { type States } from './reducer/types.ts'
 import { statesDefault } from './reducer/generateDefaultStates'
 import { type Actions, reducer } from './reducer/reducer.ts'
 
-type ApplicationReducerProvider = {
+export type ApplicationReducerProvider = {
   state: States
   dispatch: Dispatch<Actions>
 }

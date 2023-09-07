@@ -1,24 +1,50 @@
 import { render, userEvent } from '../../utils/test-utils.tsx'
 import { Input } from '../../../src/views/atoms/input'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, type Mock } from 'vitest'
 import { faker } from '@faker-js/faker'
 import * as appContext from '../../../src/context'
 import * as useDebounceModule from '../../../src/context/hooks/useDebounce.tsx'
 
-const makeSut = () => {
-  const component = render(<Input.QueryOptions id={'default-id'} name={'default-name'} data-testid={'default-id'}/>)
+class BuildInputQueryOptions {
+  #props: Parameters<typeof Input.QueryOptions>[0]
+  private constructor () {
+    this.#props = {
+      id: 'default-id',
+      name: 'default-name',
+      'data-testid': 'default-id'
+    } as any
+  }
 
-  const sut = component.getByTestId('default-id')
+  public static a () {
+    return new BuildInputQueryOptions()
+  }
 
-  return {
-    sut
+  public appendSpyOnDispatchContext (fnSpy: Mock<any, any>) {
+    vi.spyOn(appContext, 'useApplicationReducerContext')
+      .mockImplementation(() => ({
+        dispatch: fnSpy,
+        state: {} as any
+      }))
+
+    return this
+  }
+
+  public appendStubOnDebounce (text: string) {
+    vi.spyOn(useDebounceModule, 'useDebounce')
+      .mockImplementation(() => text)
+
+    return this
+  }
+
+  build () {
+    return render(<Input.QueryOptions {...this.#props}/>).getByTestId((this as any).#props['data-testid'])
   }
 }
 
-describe('input', () => {
+describe(Input.QueryOptions.name, () => {
   it('should render correctly', async () => {
+    const sut = BuildInputQueryOptions.a().build()
     const text = faker.lorem.words(3)
-    const { sut } = makeSut()
 
     await userEvent.type(sut, text)
 
@@ -27,18 +53,13 @@ describe('input', () => {
 
   it('should call action present in context with correct value', async () => {
     const spyDispatch = vi.fn()
-    const text = 'abc'
+    const text = faker.lorem.words(3)
 
-    vi.spyOn(appContext, 'useApplicationReducerContext')
-      .mockImplementation(() => ({
-        dispatch: spyDispatch,
-        state: {} as any
-      }))
-
-    vi.spyOn(useDebounceModule, 'useDebounce')
-      .mockImplementation(() => text)
-
-    const { sut } = makeSut()
+    const sut = BuildInputQueryOptions
+      .a()
+      .appendSpyOnDispatchContext(spyDispatch)
+      .appendStubOnDebounce(text)
+      .build()
 
     await userEvent.type(sut, text)
 
@@ -51,7 +72,5 @@ describe('input', () => {
         }
       }
     })
-
-    expect(spyDispatch).toHaveBeenCalled()
   })
 })

@@ -24,7 +24,21 @@ module.exports = {
                 'standard-with-typescript'],
             "rules": {
                 "vitest/prefer-called-with": "off",
-                "vitest/consistent-test-filename": "off"
+                "vitest/consistent-test-filename": "off",
+                'react-refresh/only-export-components': [
+                    'warn'
+                ],
+                "@typescript-eslint/ban-ts-comment": "off",
+                "@typescript-eslint/no-explicit-any": "off",
+                "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/consistent-type-definitions": "off",
+                "eol-last": "off",
+                "@typescript-eslint/triple-slash-reference": "off",
+                "@typescript-eslint/strict-boolean-expressions": "off",
+                "@typescript-eslint/no-non-null-assertion": "off",
+                "@typescript-eslint/no-namespace": "off",
+                "@typescript-eslint/no-floating-promises": "off"
+
             }
         }
     ],

@@ -1,22 +1,21 @@
-import React from 'react'
+import React, { type ButtonHTMLAttributes, type DetailedHTMLProps } from 'react'
 import { Button } from '../atoms/button'
 import { useApplicationReducerContext } from '../../context'
 
 const Option = ({
   children,
-  key,
-  target
-}: React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> & {
+  index,
+  target,
+  ...rest
+}: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
   target: string
+  index: number
 }) => {
   const context = useApplicationReducerContext()
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
 
-    console.log('#!! 🔥 ALVO', target)
-    console.log('#!! 🔥 ESTADO STATE', context.state)
-    console.log('#!! 🔥 ESTADO LISTOPTIONS', context.state.listOptions)
     context.dispatch({
       type: 'ACTION_HANDLE_GO_TO_OPTION',
       payload: {
@@ -27,8 +26,8 @@ const Option = ({
     })
   }
   return (
-        <li key={key}>
-            <Button.Container onClick={handleClick}>
+        <li key={index}>
+            <Button.Container {...rest} onClick={handleClick}>
                 {children}
             </Button.Container>
         </li>
@@ -46,12 +45,12 @@ const Container = ({ children }: React.PropsWithChildren) => {
 const OptionsWithQuery = () => {
   const { state: { query, searchableListOptions } } = useApplicationReducerContext()
 
-  if (!query) return null
+  const isHide = searchableListOptions?.length === 0 || !query
 
   return (
-      <ul className={'container-app-options-with-query list-options'}>
+      <ul aria-label={'Lista de Opções'} aria-hidden={isHide} className={'container-app-options-with-query list-options'}>
         {searchableListOptions.map((option, index) => (
-            <Option key={index} target={option.title}>
+            <Option aria-label={`selecionar opção ${option.title}`} key={index} index={index} target={option.title}>
               {option.title}
             </Option>
         ))}
@@ -65,7 +64,7 @@ export const OptionsWithoutQuery = () => {
   return (
       <ul className={'container-app-options-without-query list-options'}>
         {listOptions.map((option, index) => (
-            <Option key={index} target={option.title}>
+            <Option index={index} target={option.title}>
               {option.title}
             </Option>
         ))}
