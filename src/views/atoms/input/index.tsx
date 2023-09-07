@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.scss'
+import { useDebounce } from '../../../context/hooks/useDebounce.tsx'
 
 export type InputProps = {
   className?: string
@@ -24,7 +25,28 @@ const Container = ({ children }: React.PropsWithChildren) => {
   )
 }
 
+const QueryOptions = ({ className, ...props }: InputProps) => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const target = useDebounce(searchTerm, 100) // Use o hook de debounce
+
+  const handleChange = (event: any) => {
+    const { value } = event.target
+    setSearchTerm(value)
+  }
+
+  return (
+      <input
+          type='text'
+          {...props}
+          className={`container-app-input text ${className} atom}`}
+          value={searchTerm}
+          onChange={handleChange}
+      />
+  )
+}
+
 export const Input = () => null
 
 Input.Container = Container
 Input.Text = Text
+Input.QueryOptions = QueryOptions
