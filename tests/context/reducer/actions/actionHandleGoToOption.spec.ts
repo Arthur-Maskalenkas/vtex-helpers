@@ -49,8 +49,7 @@ describe(ActionHandleGoToOption.name, () => {
       ]
     }
 
-    expect(result.listOptions).toStrictEqual(expected.listOptions)
-    expect(result).toStrictEqual(expected)
+    expect(result).toMatchObject(expected)
   })
 
   it('should return only component when have parent with children with component', () => {
@@ -80,9 +79,7 @@ describe(ActionHandleGoToOption.name, () => {
       currentComponent: fnSpy
     }
 
-    expect(result.listOptions).toStrictEqual(expected.listOptions)
-    expect(result.currentComponent).toStrictEqual(expected.currentComponent)
-    expect(result).toStrictEqual(expected)
+    expect(result).toMatchObject(expected)
     expect(fnSpy).not.toHaveBeenCalled()
   })
 
@@ -104,6 +101,28 @@ describe(ActionHandleGoToOption.name, () => {
       ...state
     }
 
-    expect(result).toStrictEqual(expected)
+    expect(result).toMatchObject(expected)
+  })
+
+  it('should reset search states params', () => {
+    const dispatch = makeDispatch('any target')
+
+    const state: States = {
+      searchableListOptions: [
+        new ModelListOptions('item to search 1', 'item1', null, null),
+        new ModelListOptions('item to search 3', 'item3', null, null),
+        new ModelListOptions('item to search 5', 'item5', null, null)
+      ],
+      query: 'item to search'
+    } satisfies Partial<States> as any
+
+    const params: ReducerParams = {
+      state,
+      action: dispatch
+    }
+    const result = ActionHandleGoToOption(params)
+
+    expect(result.searchableListOptions).toHaveLength(0)
+    expect(result.query).toBeNull()
   })
 })

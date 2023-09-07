@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '../atoms/button'
-import { useApplicationReducerContext } from '../../context/reducerApplicationContext.tsx'
+import { useApplicationReducerContext } from '../../context'
 
 const Option = ({
   children,
@@ -35,16 +35,46 @@ const Option = ({
   )
 }
 
-export const ListOptions = () => {
+const Container = ({ children }: React.PropsWithChildren) => {
+  return (
+      <div className="container-app-listOptions">
+        {children}
+      </div>
+  )
+}
+
+const OptionsWithQuery = () => {
+  const { state: { query, searchableListOptions } } = useApplicationReducerContext()
+
+  if (!query) return null
+
+  return (
+      <ul className={'container-app-options-with-query list-options'}>
+        {searchableListOptions.map((option, index) => (
+            <Option key={index} target={option.title}>
+              {option.title}
+            </Option>
+        ))}
+      </ul>
+  )
+}
+
+export const OptionsWithoutQuery = () => {
   const { state: { listOptions } } = useApplicationReducerContext()
 
   return (
-        <ul>
-            {listOptions.map((option, index) => (
-                <Option key={index} target={option.title}>
-                    {option.title}
-                </Option>
-            ))}
-        </ul>
+      <ul className={'container-app-options-without-query list-options'}>
+        {listOptions.map((option, index) => (
+            <Option key={index} target={option.title}>
+              {option.title}
+            </Option>
+        ))}
+      </ul>
   )
 }
+
+export const ListOptions = () => null
+
+ListOptions.Container = Container
+ListOptions.OptionsWithQuery = OptionsWithQuery
+ListOptions.OptionsWithoutQuery = OptionsWithoutQuery

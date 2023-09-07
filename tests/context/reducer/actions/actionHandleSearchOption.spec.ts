@@ -68,4 +68,22 @@ describe(ActionHandleSearchOption.name, () => {
     // verify if item 1 is item to search 1
     expect(result?.searchableListOptions?.[0]?.title).toStrictEqual('item to search 1')
   })
+
+  it('should return empty list and remove query when not found any item', () => {
+    const state: States = {
+      searchableListOptions: [
+        new ModelListOptions('item to search 1', 'item1', null, null),
+        new ModelListOptions('item to search 3', 'item3', null, null),
+        new ModelListOptions('item to search 5', 'item5', null, null)
+      ],
+      query: 'item to search'
+    } satisfies Partial<States> as any
+
+    const target = 'invalid search'
+
+    const result = useSut(state, target)
+
+    expect(result.searchableListOptions).toHaveLength(0)
+    expect(result.query).toBeNull()
+  })
 })

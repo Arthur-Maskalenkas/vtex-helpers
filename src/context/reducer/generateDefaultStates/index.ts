@@ -28,7 +28,14 @@ export class BuilderDefaultStates {
         ...acc,
         [mapper.field]: valueMapped
       }
-    }, {})
+    }, {
+      query: null,
+      currentComponent: null,
+      breadcrumb: [],
+      currentTarget: null,
+      isOpened: false,
+      searchableListOptions: []
+    })
   }
 
   public static aDefaultStates (params?: ParamsBuildDefaultStates) {

@@ -23,7 +23,7 @@ export interface States {
   breadcrumb: string[]
   listOptions: ListOptions.Items
   query: string | null
-  searchableListOptions: ListOptions.Items | null
+  searchableListOptions: ListOptions.Items
   internalListOptions: internalListOptions.Items | null
 }
 

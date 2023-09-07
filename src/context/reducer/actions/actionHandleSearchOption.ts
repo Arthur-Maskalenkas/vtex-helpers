@@ -4,17 +4,24 @@ import { ModelListOptions } from '../domain/models/modelListOptions.ts'
 
 export const ActionHandleSearchOption = (props: ReducerParams): States => {
   const { state, action } = props
-  if (!state.internalListOptions) return state
   const handleAction = action as unknown as Action.HandleSearchOption
   const searchableListOptions: ListOptions.Items = []
 
-  for (const [key, value] of state.internalListOptions) {
+  for (const [key, value] of state.internalListOptions ?? new Map()) {
     const title = value.title.toLowerCase()
     const target = handleAction.payload.data.target.toLowerCase()
 
     if (title.includes(target)) {
       const { title, parent, component } = value
       searchableListOptions.push(new ModelListOptions(title, key, component, parent))
+    }
+  }
+
+  if (searchableListOptions.length === 0) {
+    return {
+      ...state,
+      searchableListOptions: [],
+      query: null
     }
   }
 

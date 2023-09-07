@@ -5,13 +5,11 @@ import { ModelListOptions } from '../domain/models/modelListOptions.ts'
 export const ActionHandleGoToOption = (props: ReducerParams): States => {
   const { state, action } = props
 
-  if (!state.internalListOptions) return state
-
   const actionHandle = action as unknown as Action.HandleGoToOption
 
   const listOptionsMapped: ListOptions.Items = []
 
-  for (const [key, value] of state.internalListOptions) {
+  for (const [key, value] of state.internalListOptions ?? new Map()) {
     if (value.parent === actionHandle.payload.data.target) {
       const { title, parent, component } = value
       listOptionsMapped.push(new ModelListOptions(title, key, component, parent))
@@ -25,7 +23,9 @@ export const ActionHandleGoToOption = (props: ReducerParams): States => {
       ...state,
       currentTarget: actionHandle.payload.data.target,
       currentComponent: componentOnParent,
-      listOptions: []
+      listOptions: [],
+      searchableListOptions: [],
+      query: null
     }
   }
 
@@ -33,6 +33,8 @@ export const ActionHandleGoToOption = (props: ReducerParams): States => {
     ...state,
     listOptions: listOptionsMapped,
     currentComponent: null,
-    currentTarget: actionHandle.payload.data.target
+    currentTarget: actionHandle.payload.data.target,
+    searchableListOptions: [],
+    query: null
   }
 }

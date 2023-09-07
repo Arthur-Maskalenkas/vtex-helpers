@@ -37,10 +37,23 @@ describe(BuilderDefaultStates.name, () => {
       listOptions: [
         new ModelListOptions('Opção 1', 'option.1', null, null),
         new ModelListOptions('Any Title', 'anyAttributeName', paramFn, null)
-      ]
+      ],
+      query: null,
+      currentComponent: null,
+      breadcrumb: [],
+      currentTarget: null,
+      isOpened: false,
+      searchableListOptions: []
     }
 
     const result = BuilderDefaultStates.aDefaultStates(params)
+
+    expect(result.listOptions).toStrictEqual(expected.listOptions)
+    expect(result.internalListOptions).toStrictEqual(expected.internalListOptions)
+    expect(result.query).toBeNull()
+    expect(result.currentComponent).toBeNull()
+    expect(result.breadcrumb).toStrictEqual(expected.breadcrumb)
+    expect(result.currentTarget).toStrictEqual(expected.currentTarget)
 
     expect(result).toStrictEqual(expected)
   })

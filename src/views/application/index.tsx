@@ -9,9 +9,12 @@ export const Application = () => {
         <div className={'container-main-app'}>
             <ContainerVisibility.InsideContent>
                 <Header>
-                    <Header.Input/>
+                    <Header.InputSearch/>
                 </Header>
-                <ListOptions/>
+                <ListOptions.Container>
+                    <ListOptions.OptionsWithQuery/>
+                    <ListOptions.OptionsWithoutQuery/>
+                </ListOptions.Container>
             </ContainerVisibility.InsideContent>
 
             <ContainerVisibility.OutsideContent>
