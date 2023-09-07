@@ -14,10 +14,16 @@ module.exports = {
             "parserOptions": {
                 "project": "./tsconfig.test.json"
             },
+
             "plugins": ["vitest"],
-            "extends": ["plugin:vitest/all"],
+            "extends": [
+                "plugin:vitest/all",
+                'eslint:recommended',
+                'plugin:@typescript-eslint/recommended',
+                'plugin:react-hooks/recommended',
+                'standard-with-typescript'],
             "rules": {
-            "vitest/prefer-called-with": "off",
+                "vitest/prefer-called-with": "off",
                 "vitest/consistent-test-filename": "off"
             }
         }
@@ -38,7 +44,8 @@ module.exports = {
         "@typescript-eslint/triple-slash-reference": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/no-namespace": "off"
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-floating-promises": "off"
     },
 
 }
