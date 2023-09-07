@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './styles.scss'
 import { useDebounce } from '../../../context/hooks/useDebounce.tsx'
+import { useApplicationReducerContext } from '../../../context'
 
 export type InputProps = {
   className?: string
@@ -26,12 +27,23 @@ const Container = ({ children }: React.PropsWithChildren) => {
 }
 
 const QueryOptions = ({ className, ...props }: InputProps) => {
+  const { dispatch } = useApplicationReducerContext()
   const [searchTerm, setSearchTerm] = useState('')
   const target = useDebounce(searchTerm, 100) // Use o hook de debounce
 
   const handleChange = (event: any) => {
     const { value } = event.target
     setSearchTerm(value)
+
+    dispatch({
+      type: 'ACTION_HANDLE_SEARCH_OPTION',
+      payload: {
+        data: {
+          target,
+          typeSearch: 'all'
+        }
+      }
+    })
   }
 
   return (
