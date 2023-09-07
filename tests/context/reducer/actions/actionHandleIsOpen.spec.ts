@@ -1,6 +1,7 @@
 import { StatesBuilder } from '../../../builders/contexts/statesBuilder.ts'
 import { type ReducerParams, type States } from '../../../../src/context/reducer/types.ts'
 import { actionHandleIsOpen } from '../../../../src/context/reducer/actions/actionHandleIsOpen.ts'
+import { describe, it } from 'vitest'
 
 const makeParams = (state: States): ReducerParams => {
   return {

@@ -9,7 +9,9 @@
     "lint": "eslint ./src/** --ext ts,tsx --fix",
     "preview": "vite preview",
     "test": "vitest --watch",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "generate": "yarn plop --plopfile ./.plop/plopfile.mjs"
+
   },
   "dependencies": {
     "postcss-prefix-selector": "^1.16.0",
@@ -41,6 +43,7 @@
     "vite": "^4.4.5",
     "vite-plugin-zip-pack": "^1.0.6",
     "vitest": "^0.31.4",
+    "plop": "^4.0.0",
     "vitest-dom": "^0.1.0"
   }
 }
