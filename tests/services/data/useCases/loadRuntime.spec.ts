@@ -11,7 +11,7 @@ const makeSut = (params: {
       .build()
   } = params
 
-  const sut = new UseCaseLoadRuntime(protocolLoadRuntimeRepository)
+  const sut = new UseCaseLoadRuntime(protocolLoadRuntimeRepository as any)
   return { sut }
 }
 

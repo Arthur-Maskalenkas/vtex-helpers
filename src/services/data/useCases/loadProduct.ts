@@ -15,6 +15,9 @@ export class UseCaseLoadProduct implements IUseCaseLoadProduct {
   }
 
   async load (params: Record<string, string>): Promise<ModelProduct[] | null> {
-    return null as any
+    const paramsMapped = this.mapperSearchParams.map(params)
+    const products = await this.loadProducRepository.search(paramsMapped)
+    const productsRemapped = this.mapperExternalModelProductToProductModel.map(products)
+    return productsRemapped
   }
 }

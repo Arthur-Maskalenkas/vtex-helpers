@@ -3,11 +3,11 @@ import { type SpyInstance } from 'vitest'
 import { type ExternalModelRuntime } from '../../../../src/services/domain/models/external/runtime.ts'
 
 export class BuilderProtocolLoadRunTimeRepository {
-  #useCaseLoadRunTime: ProtocolLoadRunTimeRepository
+  #protocolLoadRuntimeRepository: ProtocolLoadRunTimeRepository
   public fnSpyLoad: SpyInstance<[], Promise<ExternalModelRuntime>> | null = null
 
   private constructor () {
-    this.#useCaseLoadRunTime = {
+    this.#protocolLoadRuntimeRepository = {
       searchRuntimeInHTML: async () => {
         return await Promise.resolve({
           _manifest: 'manifest'
@@ -21,18 +21,18 @@ export class BuilderProtocolLoadRunTimeRepository {
   }
 
   public withNullReturn () {
-    vi.spyOn(this.#useCaseLoadRunTime, 'searchRuntimeInHTML').mockImplementationOnce(() => null as any)
+    vi.spyOn(this.#protocolLoadRuntimeRepository, 'searchRuntimeInHTML').mockImplementationOnce(() => null as any)
 
     return this
   }
 
   public withSpy () {
-    this.fnSpyLoad = vi.spyOn(this.#useCaseLoadRunTime, 'searchRuntimeInHTML')
+    this.fnSpyLoad = vi.spyOn(this.#protocolLoadRuntimeRepository, 'searchRuntimeInHTML')
 
     return this
   }
 
   public build () {
-    return this.#useCaseLoadRunTime
+    return this.#protocolLoadRuntimeRepository
   }
 }

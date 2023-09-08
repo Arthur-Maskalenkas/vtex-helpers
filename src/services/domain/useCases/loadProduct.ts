@@ -1,5 +1,6 @@
 import { type ModelProduct } from '../models/product.ts'
 
+export type IUseCaseLoadProductParams = Record<string, string>
 export interface IUseCaseLoadProduct {
-  load: (params: Record<string, string>) => Promise<ModelProduct[] | null>
+  load: (params: IUseCaseLoadProductParams) => Promise<ModelProduct[] | null>
 }

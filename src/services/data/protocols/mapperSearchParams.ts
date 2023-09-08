@@ -1,3 +1,5 @@
+import { type IUseCaseLoadProductParams } from '../../domain/useCases/loadProduct.ts'
+
 export type ProtocolMapperSearchParamsResult = {
   byText: string
   byCategory: string
@@ -12,5 +14,5 @@ export type ProtocolMapperSearchParamsResult = {
 }
 
 export interface ProtocolMapperSearchParams {
-  map: (params: Record<string, string>) => ProtocolMapperSearchParamsResult
+  map: (params: IUseCaseLoadProductParams) => ProtocolMapperSearchParamsResult
 }
