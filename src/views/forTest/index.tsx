@@ -4,7 +4,11 @@ import { factoryControllerLoadRuntime } from '../../services/main/factories/cont
 
 export const Application = () => {
   useEffect(() => {
-    console.log('teste 1')
+    console.log('teste 111')
+
+    fetch('/api/catalog_system/pvt/products/7754/specification').then(async r => await r.json()).then((r) => {
+      console.log('teste 222', r)
+    })
 
     factoryControllerLoadRuntime().handle().then((runtime) => {
       console.log('#!! 🔥 index 08:54', runtime)
