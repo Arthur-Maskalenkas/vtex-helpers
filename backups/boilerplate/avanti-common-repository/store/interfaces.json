@@ -1,8 +1,0 @@
-{
-  "app--avanti-common-repository": { },
-
-  "app--avanti-common-repository.render-price-pix": {
-    "component": "RenderPricePix",
-    "render": "lazy"
-  }
-}

@@ -27,6 +27,21 @@
 }
 ```
 
+# pages
+
+```json
+    "vtex.store@2.x:store.custom#charged-masculino": {
+        "allowConditions": true,
+        "context": null,
+        "declarer": null,
+        "auth": false,
+        "path": "/charged-masculino",
+        "routeId": "vtex.store@2.x:store.custom#charged-masculino",
+        "blockId": "underarmourbrio.store-theme@5.x:store.custom#collections",
+        "map": []
+    },
+```
+
 # consulta graphql
 ```json
 {

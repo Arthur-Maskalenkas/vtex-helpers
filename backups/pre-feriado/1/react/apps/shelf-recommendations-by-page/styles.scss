@@ -1,7 +1,0 @@
-.container-component--smart-hint-container.container-component {
-  & {
-    @include grid();
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}

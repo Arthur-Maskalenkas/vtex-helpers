@@ -1,8 +1,0 @@
-:global(.vtex-stack-layout-0-x-stackContainer--container_debug) > :nth-child(3) {
-  width: 100% !important;
-  height: 100% !important;
-}
-:global(.vtex-stack-layout-0-x-stackContainer--container_debug) > :nth-child(3) > div {
-  height: 100% !important;
-  justify-content: center !important;
-}
