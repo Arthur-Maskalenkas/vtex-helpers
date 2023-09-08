@@ -16,7 +16,6 @@ export class ControllerLoadRuntime implements ProtocolController {
       return runtime
     } catch (error) {
       console.error(error)
-      return null
     }
   }
 }
