@@ -1,6 +1,6 @@
-import { type IUseCaseLoadRunTime } from '../../../../../src/services/domain/useCases/loadRuntime.ts'
+import { type IUseCaseLoadRunTime } from '../../../../src/services/domain/useCases/loadRuntime.ts'
 import { type SpyInstance, vi } from 'vitest'
-import { type ModelRuntime } from '../../../../../src/services/domain/models/runtime.ts'
+import { type ModelRuntime } from '../../../../src/services/domain/models/runtime.ts'
 
 export class BuilderUseCaseLoadRuntime {
   #useCaseLoadRunTime: IUseCaseLoadRunTime

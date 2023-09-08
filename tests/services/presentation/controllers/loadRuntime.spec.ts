@@ -1,5 +1,5 @@
 import { ControllerLoadRuntime } from '../../../../src/services/presentation/controllers/loadRuntime.ts'
-import { BuilderUseCaseLoadRuntime } from '../builders/useCases/loadRuntime.ts'
+import { BuilderUseCaseLoadRuntime } from '../builders/loadRuntime.ts'
 import { type IUseCaseLoadRunTime } from '../../../../src/services/domain/useCases/loadRuntime.ts'
 import { ErrorOnLoadRuntime } from '../../../../src/services/presentation/errors/onLoadRuntime.ts'
 
