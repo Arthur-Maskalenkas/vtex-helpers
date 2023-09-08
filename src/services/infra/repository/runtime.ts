@@ -53,8 +53,11 @@ export class RepositoryRuntime implements ProtocolLoadRunTimeRepository {
     const htmlParsed = await html.text()
 
     runtime = this.selectTagTemplate(htmlParsed)
-
+    if (runtime) {
+      console.log('#!! 🔥 TENTATIVA 1', runtime)
+    }
     if (!runtime) {
+      console.log('#!! 🔥 TENTATIVA 2', runtime)
       const scriptWithRuntime = this.selectScriptWithRuntime(htmlParsed)
       runtime = this.parseRunTime(scriptWithRuntime)
     }
