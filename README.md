@@ -14,3 +14,8 @@
  * dropdown.header
 [] fazer um schema para o layout em tabs
 [] implementar pasta services
+
+
+```sh
+  cd vtex_utils_extension
+```

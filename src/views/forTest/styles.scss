@@ -1,0 +1,18 @@
+.container-inside-content {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.root-app {
+  .container-inside-content {
+    background-color: gray;
+
+    padding: 20px;
+  }
+
+}
