@@ -17,12 +17,14 @@ module.exports = {
 
             "plugins": ["vitest"],
             "extends": [
+
                 "plugin:vitest/all",
                 'eslint:recommended',
                 'plugin:@typescript-eslint/recommended',
                 'plugin:react-hooks/recommended',
                 'standard-with-typescript'],
             "rules": {
+                "@typescript-eslint/return-await": "off",
                 "vitest/prefer-called-with": "off",
                 "vitest/consistent-test-filename": "off",
                 'react-refresh/only-export-components': [
