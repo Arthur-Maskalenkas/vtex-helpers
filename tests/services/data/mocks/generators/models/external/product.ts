@@ -1,0 +1,88 @@
+import { type ExternalModelProduct } from '../../../../../../../src/services/domain/models/external/product.ts'
+import { faker } from '@faker-js/faker'
+
+const anyNumber = () => String(faker.number.int())
+export const generateExternalModelProduct = (): ExternalModelProduct => ({
+  productId: faker.string.uuid(),
+  allSpecifications: faker.helpers.multiple(faker.commerce.department, { count: 5 }),
+  brand: faker.commerce.productName(),
+  brandId: faker.number.int(),
+  allSpecificationsGroups: faker.helpers.multiple(faker.commerce.department, { count: 5 }),
+  brandImageUrl: faker.string.uuid(),
+  categories: faker.helpers.multiple(faker.commerce.productAdjective, { count: 5 }),
+  productName: faker.commerce.productName(),
+  categoriesIds: [anyNumber(), anyNumber(), anyNumber()],
+  categoryId: anyNumber(),
+  clusterHighlights: {
+    cluster1: faker.commerce.productName(),
+    cluster2: faker.commerce.productName(),
+    cluster3: faker.commerce.productName()
+  },
+  description: faker.commerce.productDescription(),
+  link: faker.internet.url(),
+  linkText: faker.commerce.productName(),
+  metaTagDescription: faker.commerce.productDescription(),
+  productClusters: {
+    cluster1: faker.commerce.productName()
+  },
+
+  productReference: faker.commerce.productName(),
+  productTitle: faker.commerce.productName(),
+  productReferenceCode: anyNumber(),
+  releaseDate: faker.date.future() as any,
+  items: [
+    {
+      itemId: anyNumber(),
+      ean: anyNumber(),
+      complementName: faker.commerce.productDescription(),
+      images: [],
+      isKit: faker.datatype.boolean(),
+      estimatedDateArrival: faker.date.future(),
+      measurementUnit: faker.commerce.productDescription(),
+      modalType: faker.commerce.productDescription(),
+      name: faker.commerce.productName(),
+      nameComplete: faker.commerce.productName(),
+      referenceId: [{ Key: faker.commerce.productName(), Value: faker.commerce.productName() }],
+      sellers: [
+        {
+          addToCartLink: faker.internet.url(),
+          sellerId: anyNumber(),
+          sellerDefault: faker.datatype.boolean(),
+          sellerName: faker.commerce.productName(),
+          commertialOffer: {
+            BuyTogether: [],
+            CacheVersionUsedToCallCheckout: faker.commerce.productName(),
+            DiscountHighLight: [faker.commerce.productName()],
+            GetInfoErrorMessage: faker.commerce.productName(),
+            GiftSkuIds: [],
+            IsAvailable: faker.datatype.boolean(),
+            ItemMetadataAttachment: [faker.commerce.productName()],
+            ListPrice: faker.number.int(),
+            Price: faker.number.int(),
+            PriceValidUntil: 'dsa' as any,
+            PriceWithoutDiscount: faker.number.int(),
+            Tax: faker.number.int(),
+            PromotionTeasers: [],
+            Teasers: [],
+            RewardValue: faker.number.int(),
+            AvailableQuantity: faker.number.int(),
+            Installments: [
+              {
+                InterestRate: faker.number.int(),
+                Name: faker.commerce.productName(),
+                NumberOfInstallments: faker.number.int(),
+                PaymentSystemGroupName: faker.commerce.productName(),
+                PaymentSystemName: faker.commerce.productName(),
+                TotalValuePlusInterestRate: faker.number.int(),
+                Value: faker.number.int()
+              }
+            ]
+          }
+        }
+      ],
+      Videos: [],
+      unitMultiplier: faker.number.int(),
+      variations: [faker.commerce.productName()]
+    }
+  ]
+})

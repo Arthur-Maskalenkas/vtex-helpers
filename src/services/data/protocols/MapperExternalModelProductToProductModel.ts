@@ -2,5 +2,10 @@ import { type ExternalModelProduct } from '../../domain/models/external/product.
 import { type ModelProduct } from '../../domain/models/product.ts'
 
 export interface ProtocolMapperExternalModelProductToProductModel {
-  map: (externalModelProduct: ExternalModelProduct[]) => ModelProduct[]
+  map: (externalModelProduct: ProtocolMapperExternalModelProductToProductModel.Params) => ProtocolMapperExternalModelProductToProductModel.Result
+}
+
+export namespace ProtocolMapperExternalModelProductToProductModel {
+  export type Params = ExternalModelProduct[]
+  export type Result = ModelProduct[]
 }

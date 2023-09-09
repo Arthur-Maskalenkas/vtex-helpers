@@ -1,5 +1,9 @@
 import { type ExternalModelRuntime } from '../../domain/models/external/runtime.ts'
 
 export interface ProtocolLoadRunTimeRepository {
-  searchRuntimeInHTML: () => Promise<ExternalModelRuntime>
+  searchRuntimeInHTML: () => ProtocolLoadRunTimeRepository.Result
+}
+
+export namespace ProtocolLoadRunTimeRepository {
+  export type Result = Promise<ExternalModelRuntime>
 }

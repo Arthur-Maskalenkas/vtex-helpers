@@ -1,6 +1,11 @@
 import { type ModelProduct } from '../models/product.ts'
 
-export type IUseCaseLoadProductParams = Record<string, string>
 export interface IUseCaseLoadProduct {
-  load: (params: IUseCaseLoadProductParams) => Promise<ModelProduct[] | null>
+  load: (params: IUseCaseLoadProduct.Params) => IUseCaseLoadProduct.Result
+}
+
+export namespace IUseCaseLoadProduct {
+  export type Result = Promise<ModelProduct[]>
+
+  export type Params = Record<string, string>
 }

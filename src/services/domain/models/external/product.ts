@@ -43,8 +43,6 @@ export interface ExternalModelProduct {
       imageText: string
       imageLastModified: string
     }>
-    Cor: string[]
-    Tamanho: string[]
     variations: string[]
     sellers: [{
       sellerId: string
@@ -52,7 +50,7 @@ export interface ExternalModelProduct {
       addToCartLink: string
       sellerDefault: boolean
       commertialOffer: {
-        Installments: {
+        Installments: Array<{
           Value: number
           InterestRate: number
           TotalValuePlusInterestRate: number
@@ -60,7 +58,7 @@ export interface ExternalModelProduct {
           PaymentSystemName: string
           PaymentSystemGroupName: string
           Name: string
-        }
+        }>
         DiscountHighLight: any[]
         GiftSkuIds: any[]
         Teasers: any[]

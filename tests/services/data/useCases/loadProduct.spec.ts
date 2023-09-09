@@ -3,12 +3,12 @@ import {
   type ProtocolMapperExternalModelProductToProductModel
 } from '../../../../src/services/data/protocols/MapperExternalModelProductToProductModel.ts'
 import { type ProtocolMapperSearchParams } from '../../../../src/services/data/protocols/mapperSearchParams.ts'
-import { BuilderProtocolLoadProductRepository } from '../builders/loadProductRepository.ts'
+import { BuilderProtocolLoadProductRepository } from '../mocks/builders/loadProductRepository.ts'
 import { type ProtocolLoadProducRepository } from '../../../../src/services/data/protocols/loadProductRepository.ts'
-import { BuilderProtocolMapperSearchParams } from '../builders/mapperSearchParams.ts'
+import { BuilderProtocolMapperSearchParams } from '../mocks/builders/mapperSearchParams.ts'
 import {
   BuilderProtocolMapperExternalModelProductToProductModel
-} from '../builders/mapperExternalModelProductToProductModel.ts'
+} from '../mocks/builders/mapperExternalModelProductToProductModel.ts'
 import { faker } from '@faker-js/faker'
 
 const generateAnyValue = (): any => faker.lorem.word(1)
@@ -19,14 +19,11 @@ const makeSut = (params: {
   protocolMapperExternalModelProductToProductModel?: ProtocolMapperExternalModelProductToProductModel
 } = {}) => {
   const {
-    protocolLoadProductRepository = BuilderProtocolLoadProductRepository
-      .a()
+    protocolLoadProductRepository = new BuilderProtocolLoadProductRepository()
       .build(),
-    protocolMapperSearchParams = BuilderProtocolMapperSearchParams
-      .a()
+    protocolMapperSearchParams = new BuilderProtocolMapperSearchParams()
       .build(),
-    protocolMapperExternalModelProductToProductModel = BuilderProtocolMapperExternalModelProductToProductModel
-      .a()
+    protocolMapperExternalModelProductToProductModel = new BuilderProtocolMapperExternalModelProductToProductModel()
       .build()
   } = params
 
@@ -46,9 +43,7 @@ describe(UseCaseLoadProduct.name, () => {
 
   it('should call mapperSearchParams with correct params', async () => {
     const mockValue = generateAnyValue()
-    const protocolMapperSearchParams = BuilderProtocolMapperSearchParams
-      .a()
-      .withSpy()
+    const protocolMapperSearchParams = new BuilderProtocolMapperSearchParams()
       .build()
 
     const { sut } = makeSut({ protocolMapperSearchParams })
@@ -61,11 +56,9 @@ describe(UseCaseLoadProduct.name, () => {
   it('should call loadProductRepository with correct params', async () => {
     const mockValue = generateAnyValue()
 
-    const protocolMapperSearchParams = BuilderProtocolMapperSearchParams
-      .a().returnWith(generateAnyValue()).build()
+    const protocolMapperSearchParams = new BuilderProtocolMapperSearchParams().returnWith(generateAnyValue()).build()
 
-    const protocolLoadProductRepository = BuilderProtocolLoadProductRepository
-      .a().build()
+    const protocolLoadProductRepository = new BuilderProtocolLoadProductRepository().build()
 
     const { sut } = makeSut({ protocolMapperSearchParams, protocolLoadProductRepository })
 
@@ -77,11 +70,11 @@ describe(UseCaseLoadProduct.name, () => {
   it('should call mapperExternalModelProductToProductModel with correct params', async () => {
     const mockValue = generateAnyValue()
 
-    const protocolLoadProductRepository = BuilderProtocolLoadProductRepository
-      .a().returnWith(mockValue).build()
+    const protocolLoadProductRepository = new BuilderProtocolLoadProductRepository()
+      .returnWith(mockValue).build()
 
-    const protocolMapperExternalModelProductToProductModel = BuilderProtocolMapperExternalModelProductToProductModel
-      .a().withSpy().build()
+    const protocolMapperExternalModelProductToProductModel = new BuilderProtocolMapperExternalModelProductToProductModel()
+      .build()
 
     const { sut } = makeSut({ protocolLoadProductRepository, protocolMapperExternalModelProductToProductModel })
 
@@ -93,14 +86,17 @@ describe(UseCaseLoadProduct.name, () => {
   it('should call all dependencies with correct params and return correctly value', async () => {
     const [mockvalue1, mockvalue2, mockvalue3, mockvalue4] = [generateAnyValue(), generateAnyValue(), generateAnyValue(), generateAnyValue()]
 
-    const protocolMapperSearchParams = BuilderProtocolMapperSearchParams
-      .a().returnWith(mockvalue2).build()
+    const protocolMapperSearchParams = new BuilderProtocolMapperSearchParams()
+      .returnWith(mockvalue2)
+      .build()
 
-    const protocolLoadProductRepository = BuilderProtocolLoadProductRepository
-      .a().returnWith(mockvalue3).build()
+    const protocolLoadProductRepository = new BuilderProtocolLoadProductRepository()
+      .returnWith(mockvalue3)
+      .build()
 
-    const protocolMapperExternalModelProductToProductModel = BuilderProtocolMapperExternalModelProductToProductModel
-      .a().returnWith(mockvalue4).build()
+    const protocolMapperExternalModelProductToProductModel = new BuilderProtocolMapperExternalModelProductToProductModel()
+      .returnWith(mockvalue4)
+      .build()
 
     const { sut } = makeSut({
       protocolMapperSearchParams,

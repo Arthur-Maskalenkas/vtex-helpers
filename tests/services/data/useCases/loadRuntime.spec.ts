@@ -1,13 +1,12 @@
 import { UseCaseLoadRuntime } from '../../../../src/services/data/useCases/loadRuntime.ts'
+import { BuilderProtocolLoadRunTimeRepository } from '../mocks/builders/loadRuntimeRepository.ts'
 import { type ProtocolLoadRunTimeRepository } from '../../../../src/services/data/protocols/loadRuntimeRepository.ts'
-import { BuilderProtocolLoadRunTimeRepository } from '../builders/loadRuntimeRepository.ts'
 
 const makeSut = (params: {
   protocolLoadRuntimeRepository?: ProtocolLoadRunTimeRepository
 } = {}) => {
   const {
-    protocolLoadRuntimeRepository = BuilderProtocolLoadRunTimeRepository
-      .a()
+    protocolLoadRuntimeRepository = new BuilderProtocolLoadRunTimeRepository()
       .build()
   } = params
 
@@ -25,9 +24,7 @@ describe(UseCaseLoadRuntime.name, () => {
   })
 
   it('should a call protocolLoadRuntimeRepository.searchRuntimeInHTML', async () => {
-    const protocolLoadRuntimeRepository = BuilderProtocolLoadRunTimeRepository
-      .a()
-      .withSpy()
+    const protocolLoadRuntimeRepository = new BuilderProtocolLoadRunTimeRepository()
       .build()
 
     const { sut } = makeSut({ protocolLoadRuntimeRepository })
@@ -38,9 +35,8 @@ describe(UseCaseLoadRuntime.name, () => {
   })
 
   it('should return null if protocolLoadRuntimeRepository.searchRuntimeInHTML returns null', async () => {
-    const protocolLoadRuntimeRepository = BuilderProtocolLoadRunTimeRepository
-      .a()
-      .withNullReturn()
+    const protocolLoadRuntimeRepository = new BuilderProtocolLoadRunTimeRepository()
+      .returnWithoutTypeErrors(null)
       .build()
 
     const { sut } = makeSut({ protocolLoadRuntimeRepository })

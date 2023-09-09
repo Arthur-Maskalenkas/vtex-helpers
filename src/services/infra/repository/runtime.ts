@@ -1,5 +1,4 @@
 import { type ProtocolLoadRunTimeRepository } from '../../data/protocols/loadRuntimeRepository.ts'
-import { type ExternalModelRuntime } from '../../domain/models/external/runtime.ts'
 
 export class RepositoryRuntime implements ProtocolLoadRunTimeRepository {
   private selectTagTemplate (html: string) {
@@ -47,7 +46,7 @@ export class RepositoryRuntime implements ProtocolLoadRunTimeRepository {
     return result
   }
 
-  async searchRuntimeInHTML (): Promise<ExternalModelRuntime> {
+  async searchRuntimeInHTML (): ProtocolLoadRunTimeRepository.Result {
     let runtime = null
     const html = await fetch(window.location.href)
     const htmlParsed = await html.text()

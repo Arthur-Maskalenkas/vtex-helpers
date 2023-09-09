@@ -1,5 +1,9 @@
 import { type ModelRuntime } from '../models/runtime.ts'
 
 export interface IUseCaseLoadRunTime {
-  load: () => Promise<ModelRuntime>
+  load: () => IUseCaseLoadRunTime.Result
+}
+
+export namespace IUseCaseLoadRunTime {
+  export type Result = Promise<ModelRuntime>
 }

@@ -1,4 +1,3 @@
-import { type ModelProduct } from '../../domain/models/product.ts'
 import { type IUseCaseLoadProduct } from '../../domain/useCases/loadProduct.ts'
 import { type ProtocolLoadProducRepository } from '../protocols/loadProductRepository.ts'
 import {
@@ -14,7 +13,7 @@ export class UseCaseLoadProduct implements IUseCaseLoadProduct {
   ) {
   }
 
-  async load (params: Record<string, string>): Promise<ModelProduct[] | null> {
+  async load (params: Record<string, string>): IUseCaseLoadProduct.Result {
     const paramsMapped = this.mapperSearchParams.map(params)
     const products = await this.loadProducRepository.search(paramsMapped)
     const productsRemapped = this.mapperExternalModelProductToProductModel.map(products)
