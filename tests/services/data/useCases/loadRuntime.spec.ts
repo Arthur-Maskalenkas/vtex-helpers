@@ -1,5 +1,5 @@
 import { UseCaseLoadRuntime } from '../../../../src/services/data/useCases/loadRuntime.ts'
-import { BuilderProtocolLoadRunTimeRepository } from '../mocks/builders/loadRuntimeRepository.ts'
+import { BuilderProtocolLoadRunTimeRepository } from '../mocks/builders/protocols/loadRuntimeRepository.ts'
 import { type ProtocolLoadRunTimeRepository } from '../../../../src/services/data/protocols/loadRuntimeRepository.ts'
 
 const makeSut = (params: {

@@ -3,12 +3,12 @@ import {
   type ProtocolMapperExternalModelProductToProductModel
 } from '../../../../src/services/data/protocols/MapperExternalModelProductToProductModel.ts'
 import { type ProtocolMapperSearchParams } from '../../../../src/services/data/protocols/mapperSearchParams.ts'
-import { BuilderProtocolLoadProductRepository } from '../mocks/builders/loadProductRepository.ts'
+import { BuilderProtocolLoadProductRepository } from '../mocks/builders/protocols/loadProductRepository.ts'
 import { type ProtocolLoadProducRepository } from '../../../../src/services/data/protocols/loadProductRepository.ts'
-import { BuilderProtocolMapperSearchParams } from '../mocks/builders/mapperSearchParams.ts'
+import { BuilderProtocolMapperSearchParams } from '../mocks/builders/protocols/mapperSearchParams.ts'
 import {
   BuilderProtocolMapperExternalModelProductToProductModel
-} from '../mocks/builders/mapperExternalModelProductToProductModel.ts'
+} from '../mocks/builders/protocols/mapperExternalModelProductToProductModel.ts'
 import { faker } from '@faker-js/faker'
 
 const generateAnyValue = (): any => faker.lorem.word(1)

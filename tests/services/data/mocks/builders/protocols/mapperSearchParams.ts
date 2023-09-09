@@ -1,5 +1,5 @@
-import { type ProtocolMapperSearchParams } from '../../../../../src/services/data/protocols/mapperSearchParams.ts'
-import { BuilderBase } from './base.ts'
+import { type ProtocolMapperSearchParams } from '../../../../../../src/services/data/protocols/mapperSearchParams.ts'
+import { BuilderBase } from '../base.ts'
 
 import { faker } from '@faker-js/faker'
 

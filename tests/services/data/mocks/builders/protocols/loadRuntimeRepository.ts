@@ -1,5 +1,5 @@
-import { type ProtocolLoadRunTimeRepository } from '../../../../../src/services/data/protocols/loadRuntimeRepository.ts'
-import { BuilderBase } from './base.ts'
+import { type ProtocolLoadRunTimeRepository } from '../../../../../../src/services/data/protocols/loadRuntimeRepository.ts'
+import { BuilderBase } from '../base.ts'
 
 export class BuilderProtocolLoadRunTimeRepository
   extends BuilderBase<ProtocolLoadRunTimeRepository, ProtocolLoadRunTimeRepository.Result> {
