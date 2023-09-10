@@ -35,6 +35,66 @@ export class BuilderParamsProtocolMapperExternalModelProductToProductModel {
     return this
   }
 
+  appendColletion () {
+    if (!this.methodsCalledSpy.includes('withCollection')) {
+      this.builderResult[0].productClusters = {}
+      this.methodsCalledSpy.push('withCollection')
+    }
+
+    const index = Object.keys(this.builderResult[0].productClusters)?.length ?? 0
+
+    this.builderResult[0].productClusters[`item-${index}`] = `value-${index}`
+
+    return this
+  }
+
+  appendSkuSpecification () {
+    const index = this.builderResult[0].skuSpecifications?.length ?? 0
+
+    this.builderResult[0].skuSpecifications.push({
+      field: {
+        name: `item-${index}`,
+        isActive: true
+      },
+      values: [
+        {
+          name: `value-${index}`
+        }
+      ]
+    })
+
+    return this
+  }
+
+  appendSkuSpecificationChildren (index) {
+    const target = this.builderResult[0].skuSpecifications[index].values
+    const targetLength = target?.length ?? 0
+
+    target.push({
+      name: `value-${targetLength}`
+    })
+
+    return this
+  }
+
+  appendDisabledSkuSpecification () {
+    const index = this.builderResult[0].skuSpecifications?.length ?? 0
+
+    this.builderResult[0].skuSpecifications.push({
+      field: {
+        name: `item-${index}`,
+        isActive: false
+      },
+      values: [
+        {
+          name: `value-${index}`
+        }
+      ]
+    })
+
+    return this
+  }
+
   appendCategorie (value: string, id: string) {
     if (!this.methodsCalledSpy.includes('appendCategorie')) {
       this.builderResult[0].categories = []
@@ -48,6 +108,25 @@ export class BuilderParamsProtocolMapperExternalModelProductToProductModel {
     return this
   }
 
+  appendCollection () {
+    if (!this.methodsCalledSpy.includes('appendCollection')) {
+      this.builderResult[0].productClusters = {}
+      this.methodsCalledSpy.push('appendCollection')
+    }
+
+    const index = Object.keys(this.builderResult[0].productClusters)?.length ?? 0
+
+    this.builderResult[0].productClusters[`item-${index}`] = `value-${index}`
+
+    return this
+  }
+
+  appendBrand (value: string) {
+    this.builderResult[0].brand = value
+
+    return this
+  }
+
   withEmptySpecifications () {
     this.builderResult[0].productClusters = {}
 
@@ -55,6 +134,18 @@ export class BuilderParamsProtocolMapperExternalModelProductToProductModel {
   }
 
   withUndefinedSpecifications () {
+    this.builderResult[0].productClusters = undefined as any
+
+    return this
+  }
+
+  withEmptyCollections () {
+    this.builderResult[0].productClusters = {}
+
+    return this
+  }
+
+  withUndefinedCollections () {
     this.builderResult[0].productClusters = undefined as any
 
     return this

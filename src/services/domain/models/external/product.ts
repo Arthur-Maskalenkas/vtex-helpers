@@ -20,6 +20,22 @@ export interface ExternalModelProduct {
   allSpecificationsGroups: string[]
   description: string
 
+  skuSpecifications: Array<{
+    field: {
+      id?: number
+      name: string
+      position?: number
+      isActive: boolean
+      type?: string
+    }
+
+    values: Array<{
+      id?: string
+      name: string
+      position?: number
+    }>
+  }>
+
   items: Array<
   {
     itemId: string

@@ -15,10 +15,17 @@ export namespace Product {
     name: string
     id: string
     url: string
-    specifications: Specification[]
-
+    specifications: SkuSpecification[]
     currentPrice: number
     oldPrice: number
+  }
+
+  export type SkuSpecification = {
+    name: string
+    values: Array<{
+      value: string
+      url: string
+    }>
   }
 
   export type Specification = {
@@ -29,13 +36,13 @@ export namespace Product {
 
   export type Category = {
     name: string
-    id: string
+    value: string
     url: string
   }
 
   export type Collection = {
     name: string
-    id: string
+    value: string
     url: string
   }
 
@@ -45,7 +52,7 @@ export namespace Product {
     brand: string
 
     specifications: Specification[]
-    collections: Record<string, any>
+    collections: Collection[]
     category: Category
     categories: Category[]
 

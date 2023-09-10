@@ -2,11 +2,28 @@ import { type ProtocolMapperSearchParams } from '../../data/protocols/mapperSear
 import {
   type ProtocolMapperExternalModelProductToProductModel
 } from '../../data/protocols/MapperExternalModelProductToProductModel.ts'
-import { Current, type Product } from '../../domain/models/product.ts'
-import Specification = Product.Specification
+import { type Product } from '../../domain/models/product.ts'
 
 export class RepositoryProduct
 implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProductModel {
+  private formatUrl (
+    typeUrl: 'sku-specification' | 'product-specification' | 'brand-search' | 'category-search' | 'collection-search',
+    value: string,
+    id = '') {
+    const valueFormatted = value.replace(/^\//, '').replace(/\/$/, '').toLowerCase()
+
+    const urlFormats = new Map([
+      ['sku-specification', `/${valueFormatted}?map=specificationFilter_${id}`],
+      ['product-specification', `/${valueFormatted}?map=specificationFilter_${id}`],
+      ['brand-search', `/${valueFormatted}map=b`],
+      ['category-search', `/${valueFormatted}?map=c`],
+      ['collection-search', `/${valueFormatted}?map=productClusterIds`]
+
+    ])
+
+    return urlFormats.get(typeUrl) ?? `/${valueFormatted}`
+  }
+
   normalizeModelProduct (externalModelProduct: ProtocolMapperExternalModelProductToProductModel.Params): ProtocolMapperExternalModelProductToProductModel.Result {
     const modelNormalized: any = externalModelProduct.map((product) => {
       const listSkus = product.items.map((sku) => {
@@ -16,10 +33,33 @@ implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProdu
         const validations = [listPrice !== price, listPrice]
         const haveDiscount = validations.every(validation => validation)
 
+        const skuSpecifications: Product.SkuSpecification[] = []
+
+        // for in product.skuSpecifications
+        for (const wrapper of product?.skuSpecifications ?? []) {
+          if (!wrapper.field.isActive) continue
+          const specificationValues = []
+
+          for (const value of wrapper.values ?? []) {
+            const specification = {
+              value: value.name,
+              url: this.formatUrl('sku-specification', value.name, wrapper.field.name)
+            }
+
+            specificationValues.push(specification)
+          }
+
+          skuSpecifications.push({
+            name: wrapper.field.name,
+            values: specificationValues
+          })
+        }
+
         return {
           currentPrice: price,
-          oldPrice: haveDiscount ? listPrice : null
-        }
+          oldPrice: haveDiscount ? listPrice : null,
+          specifications: skuSpecifications
+        } as Partial<Product.Sku> as Product.Sku
       })
 
       const listSpecifications = Object.entries(product.productClusters ?? {})
@@ -27,31 +67,41 @@ implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProdu
           return {
             name: key,
             value,
-            url: `/${value}?map=productClusterIds`
+            url: this.formatUrl('product-specification', value, key)
           }
         })
-      const [currentSku, ...restSkus] = listSkus
+
+      const listCollections = Object.entries(product.productClusters ?? {})
+        .map(([key, value]) => {
+          return {
+            name: key,
+            value,
+            url: this.formatUrl('collection-search', value, key)
+          }
+        }) ?? []
 
       const listCategories: Product.Category[] = product.categories?.map((category, index) => {
         const formatString = (value: string) => value
           .replace(/^\//, '')
           .replace(/\/$/, '')
-          .replace(/\s/g, '-').toLowerCase()
-
-        const formatUrl = (value: string) => `/${formatString(value)}`
+          .replace(/\s/g, '-')
+          .toLowerCase()
 
         return {
           name: formatString(category),
-          id: formatString(product.categoriesIds[index]),
-          url: formatUrl(category)
+          value: formatString(product.categoriesIds[index]),
+          url: this.formatUrl('category-search', category)
+
         }
       })
 
       const currentProduct: Product.Current = {
-        currentSku,
-        skus: restSkus,
+        currentSku: listSkus?.[0] ?? [],
+        skus: listSkus,
+        collections: listCollections,
         specifications: listSpecifications,
-        categories: listCategories
+        categories: listCategories,
+        category: listCategories?.[0]
       } as Partial<Product.Current> as Product.Current
 
       const result: ProtocolMapperExternalModelProductToProductModel.Result = {

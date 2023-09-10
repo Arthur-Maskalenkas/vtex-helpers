@@ -30,6 +30,7 @@ export const generateExternalModelProduct = (): ExternalModelProduct => ({
   productTitle: faker.commerce.productName(),
   productReferenceCode: anyNumber(),
   releaseDate: faker.date.future() as any,
+  skuSpecifications: [],
   items: faker.helpers.multiple(() => ({
     itemId: anyNumber(),
     ean: anyNumber(),
