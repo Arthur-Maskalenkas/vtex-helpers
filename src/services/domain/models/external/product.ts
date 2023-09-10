@@ -11,8 +11,8 @@ export interface ExternalModelProduct {
   productTitle: string
   metaTagDescription: string
   releaseDate: string
-  clusterHighlights: Record<string, string>
-  productClusters: Record<string, string>
+  clusterHighlights: Record<string, string> | null
+  productClusters: Record<string, string> | null
   categories: string[]
   categoriesIds: string[]
   link: string

@@ -6,9 +6,6 @@ import {
 import {
   BuilderParamsProtocolMapperExternalModelProductToProductModel
 } from '../mocks/builders/repositories/product/ProtocolMapperExternalModelProductToProductModel.ts'
-import {
-  type ProtocolMapperExternalModelProductToProductModel
-} from '../../../../src/services/data/protocols/MapperExternalModelProductToProductModel.ts'
 import { type Product } from '../../../../src/services/domain/models/product.ts'
 
 const makeSut = () => {
@@ -149,50 +146,95 @@ describe(RepositoryProduct.name, () => {
     })
 
     describe('product specifications', () => {
-      it('should return a list of specifications', () => {
+      it('should map a specification', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendSpecification()
-          .appendSpecification()
+          .appendProductSpecification()
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
 
-        const expected = [
+        const expected: Product.ProductSpecification[] = [
           {
             name: 'item-0',
-            value: 'value-0',
-            url: '/value-0?map=specificationFilter_item-0'
-          },
-          {
-            name: 'item-1',
-            value: 'value-1',
-            url: '/value-1?map=specificationFilter_item-1'
+            values: [
+              {
+                url: '/value-0?map=specificationFilter_item-0',
+                value: 'value-0'
+              }
+            ]
           }
         ]
 
         expect(result).toStrictEqual(expected)
       })
 
-      it('should return a empty list when not have specifications on list', () => {
+      it('should map a list specifications', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .withEmptySpecifications()
+          .appendProductSpecification()
+          .appendProductSpecification()
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
 
-        const expected = []
+        const expected: Product.ProductSpecification[] = [
+          {
+            name: 'item-0',
+            values: [
+              {
+                url: '/value-0?map=specificationFilter_item-0',
+                value: 'value-0'
+              }
+            ]
+          },
+
+          {
+            name: 'item-1',
+            values: [
+              {
+                url: '/value-1?map=specificationFilter_item-1',
+                value: 'value-1'
+              }
+            ]
+          }
+        ]
 
         expect(result).toStrictEqual(expected)
       })
 
-      it('should return a empty list when specification list is undefined', () => {
+      it('should save specifications with same name in same parent', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .withUndefinedSpecifications()
+          .appendProductSpecification()
+          .appendProductSpecificationChildren(0)
+          .appendProductSpecification()
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
 
-        const expected = []
+        const expected: Product.ProductSpecification[] = [
+          {
+            name: 'item-0',
+            values: [
+              {
+                url: '/value-0?map=specificationFilter_item-0',
+                value: 'value-0'
+              },
+              {
+                url: '/value-1?map=specificationFilter_item-0',
+                value: 'value-1'
+              }
+            ]
+          },
+
+          {
+            name: 'item-1',
+            values: [
+              {
+                url: '/value-1?map=specificationFilter_item-1',
+                value: 'value-1'
+              }
+            ]
+          }
+        ]
 
         expect(result).toStrictEqual(expected)
       })

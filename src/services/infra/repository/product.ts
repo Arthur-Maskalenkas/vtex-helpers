@@ -62,14 +62,21 @@ implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProdu
         } as Partial<Product.Sku> as Product.Sku
       })
 
-      const listSpecifications = Object.entries(product.productClusters ?? {})
-        .map(([key, value]) => {
-          return {
-            name: key,
+      const listSpecifications = product?.allSpecifications?.map((name) => {
+        const specificationsValues = []
+
+        for (const value of (product as any)[name] ?? []) {
+          specificationsValues.push({
             value,
-            url: this.formatUrl('product-specification', value, key)
-          }
-        })
+            url: this.formatUrl('product-specification', value, name)
+          })
+        }
+
+        return {
+          name,
+          values: specificationsValues
+        }
+      })
 
       const listCollections = Object.entries(product.productClusters ?? {})
         .map(([key, value]) => {
@@ -102,7 +109,7 @@ implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProdu
         specifications: listSpecifications,
         categories: listCategories,
         category: listCategories?.[0]
-      } as Partial<Product.Current> as Product.Current
+      } as any
 
       const result: ProtocolMapperExternalModelProductToProductModel.Result = {
         api: product,

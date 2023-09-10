@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker'
 const anyNumber = () => String(faker.number.int())
 export const generateExternalModelProduct = (): ExternalModelProduct => ({
   productId: faker.string.uuid(),
-  allSpecifications: faker.helpers.multiple(faker.commerce.department, { count: 5 }),
+  allSpecifications: [],
   brand: faker.commerce.productName(),
   brandId: faker.number.int(),
   allSpecificationsGroups: faker.helpers.multiple(faker.commerce.department, { count: 5 }),
@@ -13,18 +13,12 @@ export const generateExternalModelProduct = (): ExternalModelProduct => ({
   productName: faker.commerce.productName(),
   categoriesIds: [],
   categoryId: anyNumber(),
-  clusterHighlights: {
-    cluster1: faker.commerce.productName(),
-    cluster2: faker.commerce.productName(),
-    cluster3: faker.commerce.productName()
-  },
+  clusterHighlights: null,
   description: faker.commerce.productDescription(),
   link: faker.internet.url(),
   linkText: faker.commerce.productName(),
   metaTagDescription: faker.commerce.productDescription(),
-  productClusters: {
-    cluster1: faker.commerce.productName()
-  },
+  productClusters: null,
 
   productReference: faker.commerce.productName(),
   productTitle: faker.commerce.productName(),

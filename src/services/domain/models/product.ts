@@ -28,6 +28,14 @@ export namespace Product {
     }>
   }
 
+  export type ProductSpecification = {
+    name: string
+    values: Array<{
+      value: string
+      url: string
+    }>
+  }
+
   export type Specification = {
     name: string
     value: string
@@ -51,7 +59,7 @@ export namespace Product {
     id: string
     brand: string
 
-    specifications: Specification[]
+    specifications: ProductSpecification[]
     collections: Collection[]
     category: Category
     categories: Category[]

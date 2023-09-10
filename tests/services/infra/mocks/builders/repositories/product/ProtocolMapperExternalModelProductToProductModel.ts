@@ -22,15 +22,33 @@ export class BuilderParamsProtocolMapperExternalModelProductToProductModel {
     return this
   }
 
-  appendSpecification () {
-    if (!this.methodsCalledSpy.includes('withSpecifications')) {
-      this.builderResult[0].productClusters = {}
-      this.methodsCalledSpy.push('withSpecifications')
+  appendProductSpecification () {
+    const index = this.builderResult[0].allSpecifications?.length ?? 0
+    const name = `item-${index}`
+    const value = `value-${index}`
+
+    if (!this.methodsCalledSpy.includes('withProductSpecification')) {
+      this.builderResult[0].allSpecifications = []
+      this.methodsCalledSpy.push('withProductSpecification')
     }
 
-    const index = Object.keys(this.builderResult[0].productClusters)?.length ?? 0
+    this.builderResult[0].allSpecifications.push(name)
+    this.builderResult[0][name] = [value]
 
-    this.builderResult[0].productClusters[`item-${index}`] = `value-${index}`
+    return this
+  }
+
+  appendProductSpecificationChildren (index) {
+    const name = `item-${index}`
+
+    const target = this.builderResult[0][name]
+    const targetLength = target?.length ?? 0
+
+    this.builderResult[0].allSpecifications.push(name)
+
+    target.push({
+      name: `value-${targetLength}`
+    })
 
     return this
   }
