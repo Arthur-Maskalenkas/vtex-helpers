@@ -24,6 +24,7 @@ module.exports = {
                 'plugin:react-hooks/recommended',
                 'standard-with-typescript'],
             "rules": {
+                "prefer-const": "off",
                 "@typescript-eslint/return-await": "off",
                 "vitest/prefer-called-with": "off",
                 "vitest/consistent-test-filename": "off",

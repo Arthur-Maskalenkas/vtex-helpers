@@ -1,5 +1,3 @@
-import { type IUseCaseLoadProduct } from '../../domain/useCases/loadProduct.ts'
-
 export interface ProtocolMapperSearchParams {
   map: (params: ProtocolMapperSearchParams.Params) => ProtocolMapperSearchParams.Result
 }
@@ -16,7 +14,7 @@ export namespace ProtocolMapperSearchParams {
     byReferenceId: string
     byEAN13: string
     bySellerId: string
-  }
+  } | null
 
-  export type Params = IUseCaseLoadProduct.Params
+  export type Params = string
 }
