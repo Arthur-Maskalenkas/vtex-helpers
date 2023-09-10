@@ -54,6 +54,7 @@ module.exports = {
         'react-refresh/only-export-components': [
             'warn'
         ],
+        "@typescript-eslint/consistent-type-assertions": "off",
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/explicit-function-return-type": "off",

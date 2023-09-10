@@ -2,6 +2,8 @@ import { type ProtocolMapperSearchParams } from '../../data/protocols/mapperSear
 import {
   type ProtocolMapperExternalModelProductToProductModel
 } from '../../data/protocols/MapperExternalModelProductToProductModel.ts'
+import { Current, type Product } from '../../domain/models/product.ts'
+import Specification = Product.Specification
 
 export class RepositoryProduct
 implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProductModel {
@@ -20,16 +22,44 @@ implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProdu
         }
       })
 
+      const listSpecifications = Object.entries(product.productClusters ?? {})
+        .map(([key, value]) => {
+          return {
+            name: key,
+            value,
+            url: `/${value}?map=productClusterIds`
+          }
+        })
       const [currentSku, ...restSkus] = listSkus
 
-      return {
-        api: product,
-        currentProduct: {
-          currentSku,
-          skus: restSkus
+      const listCategories: Product.Category[] = product.categories?.map((category, index) => {
+        const formatString = (value: string) => value
+          .replace(/^\//, '')
+          .replace(/\/$/, '')
+          .replace(/\s/g, '-').toLowerCase()
 
+        const formatUrl = (value: string) => `/${formatString(value)}`
+
+        return {
+          name: formatString(category),
+          id: formatString(product.categoriesIds[index]),
+          url: formatUrl(category)
         }
-      }
+      })
+
+      const currentProduct: Product.Current = {
+        currentSku,
+        skus: restSkus,
+        specifications: listSpecifications,
+        categories: listCategories
+      } as Partial<Product.Current> as Product.Current
+
+      const result: ProtocolMapperExternalModelProductToProductModel.Result = {
+        api: product,
+        currentProduct
+      } as any
+
+      return result
     })
 
     return modelNormalized

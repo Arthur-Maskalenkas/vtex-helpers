@@ -9,9 +9,9 @@ export const generateExternalModelProduct = (): ExternalModelProduct => ({
   brandId: faker.number.int(),
   allSpecificationsGroups: faker.helpers.multiple(faker.commerce.department, { count: 5 }),
   brandImageUrl: faker.string.uuid(),
-  categories: faker.helpers.multiple(faker.commerce.productAdjective, { count: 5 }),
+  categories: [],
   productName: faker.commerce.productName(),
-  categoriesIds: [anyNumber(), anyNumber(), anyNumber()],
+  categoriesIds: [],
   categoryId: anyNumber(),
   clusterHighlights: {
     cluster1: faker.commerce.productName(),

@@ -87,62 +87,173 @@ describe(RepositoryProduct.name, () => {
   })
 
   describe(RepositoryProduct.prototype.normalizeModelProduct.name, () => {
-    it('should remap product price correctly when have discount', () => {
-      const currentPrice = 129.99
-      const oldPrice = 189.99
+    describe('prices', () => {
+      it('should remap product price correctly when have discount', () => {
+        const currentPrice = 129.99
+        const oldPrice = 189.99
 
-      const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-        .withPrice(currentPrice)
-        .withListPrice(oldPrice)
-        .build()
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withPrice(currentPrice)
+          .withListPrice(oldPrice)
+          .build()
 
-      const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku
 
-      expect(result.currentPrice).toBe(currentPrice)
-      expect(result.oldPrice).toBe(oldPrice)
+        expect(result.currentPrice).toBe(currentPrice)
+        expect(result.oldPrice).toBe(oldPrice)
+      })
+
+      it('should return oldPrice with null value when not have a  difference with currentPrice', () => {
+        const currentPrice = 189.99
+
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withPrice(currentPrice)
+          .withListPrice(currentPrice)
+          .build()
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku
+
+        expect(result.oldPrice).toBeNull()
+        expect(result.currentPrice).toBe(currentPrice)
+      })
+
+      it('should return oldPrice with null value when Listprice is undefined', () => {
+        const currentPrice = 189.99
+
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withPrice(currentPrice)
+          .withListPrice(undefined as any)
+          .build()
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku
+
+        expect(result.oldPrice).toBeNull()
+        expect(result.currentPrice).toBe(currentPrice)
+      })
+
+      it('should follow same rules on list of sku', () => {
+        const currentPriceOtherSku = 200.00
+        const oldPriceOtherSku = 150.00
+
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withPrice(currentPriceOtherSku, 1)
+          .withListPrice(oldPriceOtherSku, 1)
+          .build()
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.skus[0]
+
+        expect(result.currentPrice).toBe(currentPriceOtherSku)
+        expect(result.oldPrice).toBe(oldPriceOtherSku)
+      })
     })
 
-    it('should return oldPrice with null value when not have a  difference with currentPrice', () => {
-      const currentPrice = 189.99
+    describe('specifications', () => {
+      it('should return a list of specifications', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .appendSpecification()
+          .appendSpecification()
+          .build()
 
-      const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-        .withPrice(currentPrice)
-        .withListPrice(currentPrice)
-        .build()
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
 
-      const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku
+        const expected = [
+          { name: 'item-0', value: 'value-0', url: '/value-0?map=productClusterIds' },
+          { name: 'item-1', value: 'value-1', url: '/value-1?map=productClusterIds' }
+        ]
 
-      expect(result.oldPrice).toBeNull()
-      expect(result.currentPrice).toBe(currentPrice)
+        expect(result).toStrictEqual(expected)
+      })
+
+      it('should return a empty list when not have specifications on list', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withEmptySpecifications()
+          .build()
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
+
+        const expected = []
+
+        expect(result).toStrictEqual(expected)
+      })
+
+      it('should return a empty list when specification list is undefined', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withUndefinedSpecifications()
+          .build()
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
+
+        const expected = []
+
+        expect(result).toStrictEqual(expected)
+      })
     })
 
-    it('should return oldPrice with null value when Listprice is undefined', () => {
-      const currentPrice = 189.99
+    describe('categories', () => {
+      it('should return a list of categories', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .appendCategorie('/infantil/', '/10/')
+          .appendCategorie('/infantil/brinquedos/', '/10/11/')
+          .build()
 
-      const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-        .withPrice(currentPrice)
-        .withListPrice(undefined as any)
-        .build()
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.categories
 
-      const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku
+        const expected = [
+          {
+            name: 'infantil',
+            id: '10',
+            url: '/infantil'
+          },
 
-      expect(result.oldPrice).toBeNull()
-      expect(result.currentPrice).toBe(currentPrice)
-    })
+          {
+            name: 'infantil/brinquedos',
+            id: '10/11',
+            url: '/infantil/brinquedos'
+          }
+        ]
 
-    it('should follow same rules on list of sku', () => {
-      const currentPriceOtherSku = 200.00
-      const oldPriceOtherSku = 150.00
+        expect(result).toStrictEqual(expected)
+      })
 
-      const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-        .withPrice(currentPriceOtherSku, 1)
-        .withListPrice(oldPriceOtherSku, 1)
-        .build()
+      it('should return a list with all parents and patch', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .appendCategorie('/infantil/', '/10/')
+          .appendCategorie('/infantil/brinquedos/', '/10/11/')
 
-      const result = sut.normalizeModelProduct(params)[0].currentProduct.skus[0]
+          .appendCategorie('/camisetas/', '/20/')
+          .appendCategorie('/camisetas/verão/', '/20/21/')
+          .build()
 
-      expect(result.currentPrice).toBe(currentPriceOtherSku)
-      expect(result.oldPrice).toBe(oldPriceOtherSku)
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.categories
+
+        const expected = [
+          {
+            name: 'infantil',
+            id: '10',
+            url: '/infantil'
+          },
+
+          {
+            name: 'infantil/brinquedos',
+            id: '10/11',
+            url: '/infantil/brinquedos'
+          },
+
+          {
+            name: 'camisetas',
+            id: '20',
+            url: '/camisetas'
+          },
+
+          {
+            name: 'camisetas/verão',
+            id: '20/21',
+            url: '/camisetas/verão'
+          }
+        ]
+
+        expect(result).toStrictEqual(expected)
+      })
     })
   })
 })
