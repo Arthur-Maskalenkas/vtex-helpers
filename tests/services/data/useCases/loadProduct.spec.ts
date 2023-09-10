@@ -80,7 +80,7 @@ describe(UseCaseLoadProduct.name, () => {
 
     await sut.load(null as any)
 
-    expect(protocolMapperExternalModelProductToProductModel.map).toHaveBeenCalledWith(mockValue)
+    expect(protocolMapperExternalModelProductToProductModel.normalizeModelProduct).toHaveBeenCalledWith(mockValue)
   })
 
   it('should call all dependencies with correct params and return correctly value', async () => {
@@ -112,8 +112,8 @@ describe(UseCaseLoadProduct.name, () => {
     expect(protocolLoadProductRepository.search).toHaveBeenCalledWith(mockvalue2)
     expect(protocolLoadProductRepository.search).toHaveBeenCalledTimes(1)
 
-    expect(protocolMapperExternalModelProductToProductModel.map).toHaveBeenCalledWith(mockvalue3)
-    expect(protocolMapperExternalModelProductToProductModel.map).toHaveBeenCalledTimes(1)
+    expect(protocolMapperExternalModelProductToProductModel.normalizeModelProduct).toHaveBeenCalledWith(mockvalue3)
+    expect(protocolMapperExternalModelProductToProductModel.normalizeModelProduct).toHaveBeenCalledTimes(1)
 
     expect(result).toBe(mockvalue4)
   })

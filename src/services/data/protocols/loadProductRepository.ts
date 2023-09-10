@@ -6,5 +6,4 @@ export interface ProtocolLoadProducRepository {
 
 export namespace ProtocolLoadProducRepository {
   export type Result = Promise<ExternalModelProduct[]>
-
 }

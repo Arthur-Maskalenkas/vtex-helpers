@@ -8,8 +8,8 @@ export class BuilderProtocolMapperExternalModelProductToProductModel
   extends BuilderBase<ProtocolMapperExternalModelProductToProductModel, ProtocolMapperExternalModelProductToProductModel.Result> {
   constructor () {
     super(
-      { map: () => [generateModelProduct()] },
-      'map'
+      { normalizeModelProduct: () => [generateModelProduct()] },
+      'normalizeModelProduct'
     )
   }
 }

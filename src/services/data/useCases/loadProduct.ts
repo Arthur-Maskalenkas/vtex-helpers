@@ -13,10 +13,11 @@ export class UseCaseLoadProduct implements IUseCaseLoadProduct {
   ) {
   }
 
-  async load (params: Record<string, string>): IUseCaseLoadProduct.Result {
+  async load (params: IUseCaseLoadProduct.Params
+  ): IUseCaseLoadProduct.Result {
     const paramsMapped = this.mapperSearchParams.map(params)
     const products = await this.loadProducRepository.search(paramsMapped)
-    const productsRemapped = this.mapperExternalModelProductToProductModel.map(products)
+    const productsRemapped = this.mapperExternalModelProductToProductModel.normalizeModelProduct(products)
     return productsRemapped
   }
 }

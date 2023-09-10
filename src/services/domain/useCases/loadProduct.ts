@@ -7,5 +7,5 @@ export interface IUseCaseLoadProduct {
 export namespace IUseCaseLoadProduct {
   export type Result = Promise<ModelProduct[]>
 
-  export type Params = Record<string, string>
+  export type Params = string
 }
