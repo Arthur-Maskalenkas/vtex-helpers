@@ -27,31 +27,25 @@ implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProdu
   normalizeModelProduct (externalModelProduct: ProtocolMapperExternalModelProductToProductModel.Params): ProtocolMapperExternalModelProductToProductModel.Result {
     const modelNormalized: any = externalModelProduct.map((product) => {
       const listSkus = product.items.map((sku) => {
-        const listPrice = sku.sellers[0].commertialOffer.ListPrice
-        const price = sku.sellers[0].commertialOffer.Price
+        const listPrice = sku?.sellers?.[0]?.commertialOffer.ListPrice
+        const price = sku?.sellers?.[0]?.commertialOffer.Price
 
         const validations = [listPrice !== price, listPrice]
         const haveDiscount = validations.every(validation => validation)
 
         const skuSpecifications: Product.SkuSpecification[] = []
 
-        // for in product.skuSpecifications
-        for (const wrapper of product?.skuSpecifications ?? []) {
-          if (!wrapper.field.isActive) continue
-          const specificationValues = []
-
-          for (const value of wrapper.values ?? []) {
-            const specification = {
-              value: value.name,
-              url: this.formatUrl('sku-specification', value.name, wrapper.field.name)
-            }
-
-            specificationValues.push(specification)
-          }
+        for (const variation of sku.variations ?? []) {
+          const values = (sku as any)[variation] ?? []
 
           skuSpecifications.push({
-            name: wrapper.field.name,
-            values: specificationValues
+            name: variation,
+            values: values.map((value: string) => {
+              return {
+                value,
+                url: this.formatUrl('sku-specification', value, variation)
+              }
+            })
           })
         }
 

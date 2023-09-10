@@ -148,7 +148,7 @@ describe(RepositoryProduct.name, () => {
     describe('product specifications', () => {
       it('should map a specification', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendProductSpecification()
+          .withProductSpecification('item-0', 'value-0')
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
@@ -156,22 +156,19 @@ describe(RepositoryProduct.name, () => {
         const expected: Product.ProductSpecification[] = [
           {
             name: 'item-0',
-            values: [
-              {
-                url: '/value-0?map=specificationFilter_item-0',
-                value: 'value-0'
-              }
-            ]
-          }
-        ]
+            values: [{
+              url: '/value-0?map=specificationFilter_item-0',
+              value: 'value-0'
+            }]
+          }]
 
         expect(result).toStrictEqual(expected)
       })
 
       it('should map a list specifications', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendProductSpecification()
-          .appendProductSpecification()
+          .withProductSpecification('item-0', 'value-0')
+          .withProductSpecification('item-1', 'value-1')
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
@@ -203,9 +200,8 @@ describe(RepositoryProduct.name, () => {
 
       it('should save specifications with same name in same parent', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendProductSpecification()
-          .appendProductSpecificationChildren(0)
-          .appendProductSpecification()
+          .withProductSpecificationWithTwoChildrens('item-0', 'value-0', 'value-1')
+          .withProductSpecification('item-1', 'value-1')
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.specifications
@@ -239,12 +235,126 @@ describe(RepositoryProduct.name, () => {
         expect(result).toStrictEqual(expected)
       })
     })
+    describe('sku specifications', () => {
+      it('should map a specification', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withSkuSpecification('item-0', 'value-0')
+          .build()
+
+        const expected: Product.SkuSpecification[] = [
+          {
+            name: 'item-0',
+            values: [
+              {
+                url: '/value-0?map=specificationFilter_item-0',
+                value: 'value-0'
+              }
+            ]
+          }
+        ]
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct
+
+        expect(result.skus[0].specifications).toStrictEqual(expected)
+      })
+
+      it('should map one or more specifications, with diffrent parents', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withSkuSpecification('item-0', 'value-0')
+          .withSkuSpecification('item-1', 'value-1')
+          .build()
+
+        const expected: Product.SkuSpecification[] = [
+          {
+            name: 'item-0',
+            values: [
+              {
+                url: '/value-0?map=specificationFilter_item-0',
+                value: 'value-0'
+              }
+            ]
+          },
+
+          {
+            name: 'item-1',
+            values: [
+              {
+
+                url: '/value-1?map=specificationFilter_item-1',
+                value: 'value-1'
+              }
+            ]
+          }
+        ]
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct
+
+        expect(result.skus[0].specifications).toStrictEqual(expected)
+      })
+
+      it('should remap all specifications sibilings ', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withSkuSpecificationWithTwoChildrens('item-0', 'value-0', 'value-1')
+          .withSkuSpecification('item-1', 'value-1')
+          .build()
+
+        const expected: Product.SkuSpecification[] = [
+          {
+            name: 'item-0',
+            values: [
+              {
+                url: '/value-0?map=specificationFilter_item-0',
+                value: 'value-0'
+              },
+
+              {
+                url: '/value-1?map=specificationFilter_item-0',
+                value: 'value-1'
+              }
+            ]
+
+          },
+
+          {
+            name: 'item-1',
+            values: [
+              {
+
+                url: '/value-1?map=specificationFilter_item-1',
+                value: 'value-1'
+              }
+            ]
+          }
+        ]
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct
+
+        expect(result.skus[0].specifications).toStrictEqual(expected)
+      })
+
+      it('should map correctly specification on currentSku', () => {
+        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+          .withSkuSpecification('item-0', 'value-0')
+          .withSkuSpecification('item-1', 'value-1')
+          .build()
+
+        const expected: Product.SkuSpecification[] =
+            [
+              { name: 'item-0', values: [{ url: '/value-0?map=specificationFilter_item-0', value: 'value-0' }] },
+              { name: 'item-1', values: [{ url: '/value-1?map=specificationFilter_item-1', value: 'value-1' }] }
+            ]
+
+        const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku.specifications
+
+        expect(result).toStrictEqual(expected)
+      })
+    })
 
     describe('product collections', () => {
       it('should return a list of collections', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendCollection()
-          .appendCollection()
+          .withCollection('item-0', 'value-0')
+          .withCollection('item-1', 'value-1')
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.collections
@@ -294,8 +404,8 @@ describe(RepositoryProduct.name, () => {
     describe('product categories', () => {
       it('should return a first category on Category property', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendCategorie('/infantil/', '/10/')
-          .appendCategorie('/infantil/brinquedos/', '/10/11/')
+          .withCategorie('/infantil/', '/10/')
+          .withCategorie('/infantil/brinquedos/', '/10/11/')
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.category
@@ -311,8 +421,8 @@ describe(RepositoryProduct.name, () => {
 
       it('should return a list of categories', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendCategorie('/infantil/', '/10/')
-          .appendCategorie('/infantil/brinquedos/', '/10/11/')
+          .withCategorie('/infantil/', '/10/')
+          .withCategorie('/infantil/brinquedos/', '/10/11/')
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.categories
@@ -336,11 +446,11 @@ describe(RepositoryProduct.name, () => {
 
       it('should return a list with all parents and patch', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendCategorie('/infantil/', '/10/')
-          .appendCategorie('/infantil/brinquedos/', '/10/11/')
+          .withCategorie('/infantil/', '/10/')
+          .withCategorie('/infantil/brinquedos/', '/10/11/')
 
-          .appendCategorie('/camisetas/', '/20/')
-          .appendCategorie('/camisetas/verão/', '/20/21/')
+          .withCategorie('/camisetas/', '/20/')
+          .withCategorie('/camisetas/verão/', '/20/21/')
           .build()
 
         const result = sut.normalizeModelProduct(params)[0].currentProduct.categories
@@ -370,180 +480,6 @@ describe(RepositoryProduct.name, () => {
             url: '/camisetas/verão?map=c'
           }
         ]
-
-        expect(result).toStrictEqual(expected)
-      })
-    })
-
-    describe('sku specifications', () => {
-      it('should return a empty list when not have specifications on list', () => {
-        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .build()
-
-        const result = sut.normalizeModelProduct(params)[0].currentProduct
-
-        expect(result.currentSku.specifications).toHaveLength(0)
-        expect(result.skus[0].specifications).toHaveLength(0)
-      })
-
-      it('should map correctly specification on list of skus', () => {
-        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendSkuSpecification()
-          .build()
-
-        const expected: Product.SkuSpecification[] = [
-          {
-            name: 'item-0',
-            values: [
-              {
-                url: '/value-0?map=specificationFilter_item-0',
-                value: 'value-0'
-              }
-            ]
-          }
-        ]
-
-        const result = sut.normalizeModelProduct(params)[0].currentProduct
-
-        expect(result.skus[0].specifications).toStrictEqual(expected)
-      })
-
-      it('should map one or more specifications, in differents fields', () => {
-        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendSkuSpecification()
-          .appendSkuSpecification()
-          .build()
-
-        const expected: Product.SkuSpecification[] = [
-          {
-            name: 'item-0',
-            values: [
-              {
-                url: '/value-0?map=specificationFilter_item-0',
-                value: 'value-0'
-              }
-            ]
-          },
-
-          {
-            name: 'item-1',
-            values: [
-              {
-
-                url: '/value-1?map=specificationFilter_item-1',
-                value: 'value-1'
-              }
-            ]
-          }
-        ]
-
-        const result = sut.normalizeModelProduct(params)[0].currentProduct
-
-        expect(result.skus[0].specifications).toStrictEqual(expected)
-      })
-
-      it('should remap all specifications sibilings ', () => {
-        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendSkuSpecification()
-          .appendSkuSpecificationChildren(0)
-          .appendSkuSpecification()
-          .build()
-
-        const expected: Product.SkuSpecification[] = [
-          {
-            name: 'item-0',
-            values: [
-              {
-                url: '/value-0?map=specificationFilter_item-0',
-                value: 'value-0'
-              },
-
-              {
-                url: '/value-1?map=specificationFilter_item-0',
-                value: 'value-1'
-              }
-            ]
-
-          },
-
-          {
-            name: 'item-1',
-            values: [
-              {
-
-                url: '/value-1?map=specificationFilter_item-1',
-                value: 'value-1'
-              }
-            ]
-          }
-        ]
-
-        const result = sut.normalizeModelProduct(params)[0].currentProduct
-
-        expect(result.skus[0].specifications).toStrictEqual(expected)
-      })
-
-      it('should map correctly specification on currentSku', () => {
-        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendSkuSpecification()
-          .appendSkuSpecification()
-          .build()
-
-        const expected: Product.SkuSpecification[] = [
-          {
-            name: 'item-0',
-            values: [
-              {
-                url: '/value-0?map=specificationFilter_item-0',
-                value: 'value-0'
-              }
-            ]
-          },
-          {
-            name: 'item-1',
-            values: [
-              {
-                url: '/value-1?map=specificationFilter_item-1',
-                value: 'value-1'
-              }
-            ]
-          }
-        ]
-
-        const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku.specifications
-
-        expect(result).toStrictEqual(expected)
-      })
-
-      it('should not return specification if isActive is false', () => {
-        const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
-          .appendSkuSpecification()
-          .appendDisabledSkuSpecification()
-          .appendSkuSpecification()
-          .build()
-
-        const expected: Product.SkuSpecification[] = [
-          {
-            name: 'item-0',
-            values: [
-              {
-                url: '/value-0?map=specificationFilter_item-0',
-                value: 'value-0'
-              }
-            ]
-          },
-          {
-            name: 'item-2',
-            values: [
-              {
-                url: '/value-2?map=specificationFilter_item-2',
-                value: 'value-2'
-              }
-            ]
-          }
-        ]
-
-        const result = sut.normalizeModelProduct(params)[0].currentProduct.currentSku.specifications
 
         expect(result).toStrictEqual(expected)
       })

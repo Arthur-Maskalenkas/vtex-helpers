@@ -17,143 +17,75 @@ export class BuilderParamsProtocolMapperExternalModelProductToProductModel {
   }
 
   withPrice (price: number, indexSku = 0) {
-    this.builderResult[0].items[indexSku].sellers[0].commertialOffer.Price = price
-
-    return this
-  }
-
-  appendProductSpecification () {
-    const index = this.builderResult[0].allSpecifications?.length ?? 0
-    const name = `item-${index}`
-    const value = `value-${index}`
-
-    if (!this.methodsCalledSpy.includes('withProductSpecification')) {
-      this.builderResult[0].allSpecifications = []
-      this.methodsCalledSpy.push('withProductSpecification')
-    }
-
-    this.builderResult[0].allSpecifications.push(name)
-    this.builderResult[0][name] = [value]
-
-    return this
-  }
-
-  appendProductSpecificationChildren (index) {
-    const name = `item-${index}`
-
-    const target = this.builderResult[0][name]
-    const targetLength = target?.length ?? 0
-
-    this.builderResult[0].allSpecifications.push(name)
-
-    target.push({
-      name: `value-${targetLength}`
-    })
-
-    return this
-  }
-
-  appendColletion () {
-    if (!this.methodsCalledSpy.includes('withCollection')) {
-      this.builderResult[0].productClusters = {}
-      this.methodsCalledSpy.push('withCollection')
-    }
-
-    const index = Object.keys(this.builderResult[0].productClusters)?.length ?? 0
-
-    this.builderResult[0].productClusters[`item-${index}`] = `value-${index}`
-
-    return this
-  }
-
-  appendSkuSpecification () {
-    const index = this.builderResult[0].skuSpecifications?.length ?? 0
-
-    this.builderResult[0].skuSpecifications.push({
-      field: {
-        name: `item-${index}`,
-        isActive: true
-      },
-      values: [
-        {
-          name: `value-${index}`
+    this.builderResult[0].items[indexSku].sellers = [
+      {
+        commertialOffer: {
+          ...this.builderResult[0].items[indexSku]?.sellers?.[0].commertialOffer,
+          Price: price
         }
-      ]
-    })
+      }
+    ]
 
     return this
   }
 
-  appendSkuSpecificationChildren (index) {
-    const target = this.builderResult[0].skuSpecifications[index].values
-    const targetLength = target?.length ?? 0
-
-    target.push({
-      name: `value-${targetLength}`
-    })
-
-    return this
-  }
-
-  appendDisabledSkuSpecification () {
-    const index = this.builderResult[0].skuSpecifications?.length ?? 0
-
-    this.builderResult[0].skuSpecifications.push({
-      field: {
-        name: `item-${index}`,
-        isActive: false
-      },
-      values: [
-        {
-          name: `value-${index}`
-        }
-      ]
-    })
-
-    return this
-  }
-
-  appendCategorie (value: string, id: string) {
-    if (!this.methodsCalledSpy.includes('appendCategorie')) {
-      this.builderResult[0].categories = []
-      this.builderResult[0].categoriesIds = []
-      this.methodsCalledSpy.push('appendCategorie')
+  withProductSpecification (name: string, value: string) {
+    this.builderResult[0] = {
+      ...this.builderResult[0],
+      [name]: [value],
+      allSpecifications: [...this.builderResult[0].allSpecifications, name]
     }
 
-    this.builderResult[0].categories.push(value)
-    this.builderResult[0].categoriesIds.push(id)
+    return this
+  }
+
+  withSkuSpecification (name: string, value: string) {
+    const targetPath = this.builderResult[0].items.length - 1 ?? 0
+
+    const targetValue = this.builderResult[0].items[targetPath]
+
+    targetValue?.variations?.push(name)
+
+    Reflect.defineProperty(targetValue, name, {
+      value: [value]
+    })
 
     return this
   }
 
-  appendCollection () {
-    if (!this.methodsCalledSpy.includes('appendCollection')) {
-      this.builderResult[0].productClusters = {}
-      this.methodsCalledSpy.push('appendCollection')
+  withProductSpecificationWithTwoChildrens (name: string, value1: string, value2: string) {
+    this.builderResult[0].allSpecifications.push(name)
+    this.builderResult[0][name] = [value1, value2]
+
+    return this
+  }
+
+  withSkuSpecificationWithTwoChildrens (name: string, value1: string, value2: string) {
+    const targetPath = this.builderResult[0].items.length - 1 ?? 0
+
+    const targetValue = this.builderResult[0].items[targetPath]
+
+    targetValue?.variations?.push(name)
+
+    Reflect.defineProperty(targetValue, name, {
+      value: [value1, value2]
+    })
+
+    return this
+  }
+
+  withCategorie (value: string, id: string) {
+    this.builderResult[0].categories = [...this.builderResult[0].categories, value]
+    this.builderResult[0].categoriesIds = [...this.builderResult[0].categoriesIds, id]
+
+    return this
+  }
+
+  withCollection (id: string, value: string) {
+    this.builderResult[0].productClusters = {
+      ...this.builderResult[0].productClusters,
+      [id]: value
     }
-
-    const index = Object.keys(this.builderResult[0].productClusters)?.length ?? 0
-
-    this.builderResult[0].productClusters[`item-${index}`] = `value-${index}`
-
-    return this
-  }
-
-  appendBrand (value: string) {
-    this.builderResult[0].brand = value
-
-    return this
-  }
-
-  withEmptySpecifications () {
-    this.builderResult[0].productClusters = {}
-
-    return this
-  }
-
-  withUndefinedSpecifications () {
-    this.builderResult[0].productClusters = undefined as any
-
     return this
   }
 

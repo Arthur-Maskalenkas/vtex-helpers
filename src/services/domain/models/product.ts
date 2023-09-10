@@ -36,12 +36,6 @@ export namespace Product {
     }>
   }
 
-  export type Specification = {
-    name: string
-    value: string
-    url: string
-  }
-
   export type Category = {
     name: string
     value: string
