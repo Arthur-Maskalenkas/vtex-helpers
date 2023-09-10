@@ -10,14 +10,14 @@ export class BuilderParamsProtocolMapperExternalModelProductToProductModel {
     this.builderResult.push(generateExternalModelProduct())
   }
 
-  withListPrice (listPrice: number) {
-    this.builderResult[0].items[0].sellers[0].commertialOffer.ListPrice = listPrice
+  withListPrice (listPrice: number, indexSku = 0) {
+    this.builderResult[0].items[indexSku].sellers[0].commertialOffer.ListPrice = listPrice
 
     return this
   }
 
-  withPrice (price: number) {
-    this.builderResult[0].items[0].sellers[0].commertialOffer.Price = price
+  withPrice (price: number, indexSku = 0) {
+    this.builderResult[0].items[indexSku].sellers[0].commertialOffer.Price = price
 
     return this
   }

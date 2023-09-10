@@ -7,26 +7,27 @@ export class RepositoryProduct
 implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProductModel {
   normalizeModelProduct (externalModelProduct: ProtocolMapperExternalModelProductToProductModel.Params): ProtocolMapperExternalModelProductToProductModel.Result {
     const modelNormalized: any = externalModelProduct.map((product) => {
-      const currentSku = product.items[0]
-      const commertialOffer = currentSku.sellers[0].commertialOffer
+      const listSkus = product.items.map((sku) => {
+        const listPrice = sku.sellers[0].commertialOffer.ListPrice
+        const price = sku.sellers[0].commertialOffer.Price
 
-      let haveDiscount = true
+        const validations = [listPrice !== price, listPrice]
+        const haveDiscount = validations.every(validation => validation)
 
-      if (commertialOffer.ListPrice === commertialOffer.Price) {
-        haveDiscount = false
-      }
+        return {
+          currentPrice: price,
+          oldPrice: haveDiscount ? listPrice : null
+        }
+      })
 
-      if (!commertialOffer.ListPrice) {
-        haveDiscount = false
-      }
+      const [currentSku, ...restSkus] = listSkus
 
       return {
         api: product,
         currentProduct: {
-          currentSku: {
-            currentPrice: commertialOffer.Price,
-            oldPrice: haveDiscount ? commertialOffer.ListPrice : null
-          }
+          currentSku,
+          skus: restSkus
+
         }
       }
     })

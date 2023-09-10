@@ -129,5 +129,20 @@ describe(RepositoryProduct.name, () => {
       expect(result.oldPrice).toBeNull()
       expect(result.currentPrice).toBe(currentPrice)
     })
+
+    it('should follow same rules on list of sku', () => {
+      const currentPriceOtherSku = 200.00
+      const oldPriceOtherSku = 150.00
+
+      const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
+        .withPrice(currentPriceOtherSku, 1)
+        .withListPrice(oldPriceOtherSku, 1)
+        .build()
+
+      const result = sut.normalizeModelProduct(params)[0].currentProduct.skus[0]
+
+      expect(result.currentPrice).toBe(currentPriceOtherSku)
+      expect(result.oldPrice).toBe(oldPriceOtherSku)
+    })
   })
 })
