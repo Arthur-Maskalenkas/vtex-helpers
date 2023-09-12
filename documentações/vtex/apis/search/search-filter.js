@@ -16,3 +16,4 @@ await getData('4836')
 // COLOCANDO LIMITE
 export const API = {
   getSimilarProducts: (ft?: string) => `/api/catalog_system/pub/products/search?ft=${ft}*&sc=1&_from=0&_to=3`,
+

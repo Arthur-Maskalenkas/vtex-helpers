@@ -29,7 +29,8 @@ class UrlBuilder {
   }
 
   build() {
-    return this.baseUrl + (this.mapValue ? `?map=${this.mapValue}` : '');
+    const mapValueFormatted = this.mapValue
+    return this.baseUrl + (mapValueFormatted ? `?map=${mapValueFormatted}` : '');
   }
 
   openInNewTab() {
@@ -38,9 +39,10 @@ class UrlBuilder {
   }
 }
 
-new UrlBuilder()
-  .category('eletronicos')
-  .brand('apple')
-  .collection(123)
-  .build();
 
+
+new UrlBuilder()
+  .category('Masculino/Tênis/Treino-e-Academia')
+  .productField('Cor', 'Preto')
+  .productField('Tecnologia', 'Evasense')
+  .openInNewTab();

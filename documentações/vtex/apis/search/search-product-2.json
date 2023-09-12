@@ -1,0 +1,636 @@
+[
+  {
+    "productId": "991",
+    "productName": "Tablete Língua de Gato com Amêndoas 100G",
+    "brand": "Kopenhagen",
+    "brandId": 2000000,
+    "brandImageUrl": null,
+    "linkText": "tablete-lingua-de-gato-com-amendoas-100g",
+    "productReference": "1102028001",
+    "productReferenceCode": "1102028001",
+    "categoryId": "14",
+    "productTitle": "Tablete Língua de Gato com Amêndoas 100G",
+    "metaTagDescription": "Tablete de chocolate ao leite com amêndoas",
+    "releaseDate": "2023-08-24T00:00:00Z",
+    "clusterHighlights": { },
+    "productClusters": {
+      "215": "AllProducts",
+      "248": "teste",
+      "259": "catalogo completo",
+      "305": "Categoria língua de gato",
+      "318": "Categoria clássicos",
+      "514": "Tabletes 30%OFF 2ªUnidade",
+      "517": "FLAG LDG - NOVIDADE"
+    },
+    "searchableClusters": {
+      "248": "teste",
+      "514": "Tabletes 30%OFF 2ªUnidade"
+    },
+    "categories": [
+      "/Clássicos/Língua de Gato/",
+      "/Clássicos/",
+      "/Nossas Linhas/Tabletes/",
+      "/Nossas Linhas/"
+    ],
+    "categoriesIds": [
+      "/1/14/",
+      "/1/",
+      "/42/13/",
+      "/42/"
+    ],
+    "link": "https://kopenhagen21.vtexcommercestable.com.br/tablete-lingua-de-gato-com-amendoas-100g/p",
+    "Ingredientes": [
+      "Ingredientes: açúcar, manteiga de cacau, leite em pó integral, pasta de cacau, amêndoas, emulsificante lecitina de soja e aromatizante. ALÉRGICOS: CONTÉM AMÊNDOAS E DERIVADOS DE LEITE E SOJA. PODE CONTER AMENDOIM, AVELÃ, CASTANHA-DE-CAJU, CASTANHA-DO-BRASIL, MACADÂMIA, NOZES E PISTACHE. CONTÉM LACTOSE. NÃO CONTÉM GLÚTEN."
+    ],
+    "Quem será o presenteado?": [
+      "Para colegas do trabalho"
+    ],
+    "Ocasião de Consumo": [
+      "Para qualquer hora do dia"
+    ],
+    "Categorias Kopenhagen": [
+      "Clássicos"
+    ],
+    "Tipo de Chocolate": [
+      "Ao Leite",
+      "Maciços"
+    ],
+    "Informações do produto": [
+      "Tablete de chocolate ao leite com amêndoas"
+    ],
+    "APP_Ingredientes": [
+      "Ingredientes: açúcar, manteiga de cacau, leite em pó integral, pasta de cacau, amêndoas, emulsificante lecitina de soja e aromatizante. ALÉRGICOS: CONTÉM AMÊNDOAS E DERIVADOS DE LEITE E SOJA. PODE CONTER AMENDOIM, AVELÃ, CASTANHA-DE-CAJU, CASTANHA-DO-BRASIL, MACADÂMIA, NOZES E PISTACHE. CONTÉM LACTOSE. NÃO CONTÉM GLÚTEN."
+    ],
+    "APP_Informações do produto": [
+      "Tablete de chocolate ao leite com amêndoas"
+    ],
+    "Sabores": [
+      "Língua de Gato com Amêndoas"
+    ],
+    "Informações de Produto": [
+      "Ingredientes",
+      "Quem será o presenteado?",
+      "Ocasião de Consumo",
+      "Categorias Kopenhagen",
+      "Tipo de Chocolate",
+      "Informações do produto",
+      "APP_Ingredientes",
+      "APP_Informações do produto",
+      "Sabores"
+    ],
+    "allSpecifications": [
+      "Ingredientes",
+      "Quem será o presenteado?",
+      "Ocasião de Consumo",
+      "Categorias Kopenhagen",
+      "Tipo de Chocolate",
+      "Informações do produto",
+      "APP_Ingredientes",
+      "APP_Informações do produto",
+      "Sabores"
+    ],
+    "allSpecificationsGroups": [
+      "Informações de Produto"
+    ],
+    "description": "Tablete de chocolate ao leite com amêndoas",
+    "items": [
+      {
+        "itemId": "992",
+        "name": "Tablete Língua de Gato com Amêndoas 100G",
+        "nameComplete": "Tablete Língua de Gato com Amêndoas 100G",
+        "complementName": "Tablete Língua de Gato com Amêndoas 100G",
+        "ean": "7890110202806",
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "1102028001"
+          }
+        ],
+        "measurementUnit": "un",
+        "unitMultiplier": 1.0000,
+        "modalType": null,
+        "isKit": false,
+        "images": [
+          {
+            "imageId": "164776",
+            "imageLabel": "",
+            "imageTag": "<img src=\"~/arquivos/ids/164776-#width#-#height#/Tablete-Lingua-de-Gato-com-Amendoas-100G.png?v=638284945095930000\" width=\"#width#\" height=\"#height#\" alt=\"Tablete-Lingua-de-Gato-com-Amendoas-100G\" id=\"\" />",
+            "imageUrl": "https://kopenhagen.vteximg.com.br/arquivos/ids/164776/Tablete-Lingua-de-Gato-com-Amendoas-100G.png?v=638284945095930000",
+            "imageText": "Tablete-Lingua-de-Gato-com-Amendoas-100G",
+            "imageLastModified": "2023-08-24T17:21:49.5930000Z"
+          },
+          {
+            "imageId": "164777",
+            "imageLabel": "",
+            "imageTag": "<img src=\"~/arquivos/ids/164777-#width#-#height#/Tablete-Lingua-de-Gato-com-Amendoas-100G.png?v=638284945428130000\" width=\"#width#\" height=\"#height#\" alt=\"Tablete-Lingua-de-Gato-com-Amendoas-100G\" id=\"\" />",
+            "imageUrl": "https://kopenhagen.vteximg.com.br/arquivos/ids/164777/Tablete-Lingua-de-Gato-com-Amendoas-100G.png?v=638284945428130000",
+            "imageText": "Tablete-Lingua-de-Gato-com-Amendoas-100G",
+            "imageLastModified": "2023-08-24T17:22:22.8130000Z"
+          },
+          {
+            "imageId": "164778",
+            "imageLabel": "",
+            "imageTag": "<img src=\"~/arquivos/ids/164778-#width#-#height#/Tablete-Lingua-de-Gato-com-Amendoas-100G.png?v=638284945841370000\" width=\"#width#\" height=\"#height#\" alt=\"Tablete-Lingua-de-Gato-com-Amendoas-100G\" id=\"\" />",
+            "imageUrl": "https://kopenhagen.vteximg.com.br/arquivos/ids/164778/Tablete-Lingua-de-Gato-com-Amendoas-100G.png?v=638284945841370000",
+            "imageText": "Tablete-Lingua-de-Gato-com-Amendoas-100G",
+            "imageLastModified": "2023-08-24T17:23:04.1370000Z"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "kopenhagen21",
+            "addToCartLink": "https://kopenhagen21.vtexcommercestable.com.br/checkout/cart/add?sku=992&qty=1&seller=1&sc=1&price=2990&cv=587D5C2B103D4E40B3BE191DAF292637_&sc=1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "DeliverySlaSamplesPerRegion": {
+                "0": {
+                  "DeliverySlaPerTypes": [ ],
+                  "Region": null
+                }
+              },
+              "Installments": [
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "American Express",
+                  "PaymentSystemGroupName": "creditCardPaymentGroup",
+                  "Name": "American Express à vista"
+                },
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "Visa",
+                  "PaymentSystemGroupName": "creditCardPaymentGroup",
+                  "Name": "Visa à vista"
+                },
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "Diners",
+                  "PaymentSystemGroupName": "creditCardPaymentGroup",
+                  "Name": "Diners à vista"
+                },
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "Mastercard",
+                  "PaymentSystemGroupName": "creditCardPaymentGroup",
+                  "Name": "Mastercard à vista"
+                },
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "Hipercard",
+                  "PaymentSystemGroupName": "creditCardPaymentGroup",
+                  "Name": "Hipercard à vista"
+                },
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "Elo",
+                  "PaymentSystemGroupName": "creditCardPaymentGroup",
+                  "Name": "Elo à vista"
+                },
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "Vale",
+                  "PaymentSystemGroupName": "giftCardPaymentGroup",
+                  "Name": "Vale à vista"
+                },
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "Promissory",
+                  "PaymentSystemGroupName": "promissoryPaymentGroup",
+                  "Name": "Promissory à vista"
+                },
+                {
+                  "Value": 29.9,
+                  "InterestRate": 0.0,
+                  "TotalValuePlusInterestRate": 29.9,
+                  "NumberOfInstallments": 1,
+                  "PaymentSystemName": "Pix",
+                  "PaymentSystemGroupName": "instantPaymentPaymentGroup",
+                  "Name": "Pix à vista"
+                }
+              ],
+              "DiscountHighLight": [ ],
+              "GiftSkuIds": [ ],
+              "Teasers": [ ],
+              "PromotionTeasers": [ ],
+              "BuyTogether": [ ],
+              "ItemMetadataAttachment": [ ],
+              "Price": 29.9,
+              "ListPrice": 29.9,
+              "PriceWithoutDiscount": 29.9,
+              "RewardValue": 0.0,
+              "PriceValidUntil": "2024-09-10T15:41:13Z",
+              "AvailableQuantity": 222,
+              "IsAvailable": true,
+              "Tax": 0.0,
+              "DeliverySlaSamples": [
+                {
+                  "DeliverySlaPerTypes": [ ],
+                  "Region": null
+                }
+              ],
+              "GetInfoErrorMessage": null,
+              "CacheVersionUsedToCallCheckout": "587D5C2B103D4E40B3BE191DAF292637_",
+              "PaymentOptions": {
+                "installmentOptions": [
+                  {
+                    "paymentSystem": "1",
+                    "bin": null,
+                    "paymentName": "American Express",
+                    "paymentGroupName": "creditCardPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "paymentSystem": "2",
+                    "bin": null,
+                    "paymentName": "Visa",
+                    "paymentGroupName": "creditCardPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "paymentSystem": "3",
+                    "bin": null,
+                    "paymentName": "Diners",
+                    "paymentGroupName": "creditCardPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "paymentSystem": "4",
+                    "bin": null,
+                    "paymentName": "Mastercard",
+                    "paymentGroupName": "creditCardPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "paymentSystem": "8",
+                    "bin": null,
+                    "paymentName": "Hipercard",
+                    "paymentGroupName": "creditCardPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "paymentSystem": "9",
+                    "bin": null,
+                    "paymentName": "Elo",
+                    "paymentGroupName": "creditCardPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "paymentSystem": "16",
+                    "bin": null,
+                    "paymentName": "Vale",
+                    "paymentGroupName": "giftCardPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "paymentSystem": "17",
+                    "bin": null,
+                    "paymentName": "Promissory",
+                    "paymentGroupName": "promissoryPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "paymentSystem": "125",
+                    "bin": null,
+                    "paymentName": "Pix",
+                    "paymentGroupName": "instantPaymentPaymentGroup",
+                    "value": 2990,
+                    "installments": [
+                      {
+                        "count": 1,
+                        "hasInterestRate": false,
+                        "interestRate": 0,
+                        "value": 2990,
+                        "total": 2990,
+                        "sellerMerchantInstallments": [
+                          {
+                            "id": "KOPENHAGEN21",
+                            "count": 1,
+                            "hasInterestRate": false,
+                            "interestRate": 0,
+                            "value": 2990,
+                            "total": 2990
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "paymentSystems": [
+                  {
+                    "id": 17,
+                    "name": "Promissory",
+                    "groupName": "promissoryPaymentGroup",
+                    "validator": null,
+                    "stringId": "17",
+                    "template": "promissoryPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:26:57.1906433Z",
+                    "availablePayments": null
+                  },
+                  {
+                    "id": 125,
+                    "name": "Pix",
+                    "groupName": "instantPaymentPaymentGroup",
+                    "validator": null,
+                    "stringId": "125",
+                    "template": "instantPaymentPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:26:57.1906433Z",
+                    "availablePayments": null
+                  },
+                  {
+                    "id": 1,
+                    "name": "American Express",
+                    "groupName": "creditCardPaymentGroup",
+                    "validator": null,
+                    "stringId": "1",
+                    "template": "creditCardPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:25:57.1906433Z",
+                    "availablePayments": null
+                  },
+                  {
+                    "id": 2,
+                    "name": "Visa",
+                    "groupName": "creditCardPaymentGroup",
+                    "validator": null,
+                    "stringId": "2",
+                    "template": "creditCardPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:25:57.1906433Z",
+                    "availablePayments": null
+                  },
+                  {
+                    "id": 3,
+                    "name": "Diners",
+                    "groupName": "creditCardPaymentGroup",
+                    "validator": null,
+                    "stringId": "3",
+                    "template": "creditCardPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:25:57.1906433Z",
+                    "availablePayments": null
+                  },
+                  {
+                    "id": 4,
+                    "name": "Mastercard",
+                    "groupName": "creditCardPaymentGroup",
+                    "validator": null,
+                    "stringId": "4",
+                    "template": "creditCardPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:25:57.1906433Z",
+                    "availablePayments": null
+                  },
+                  {
+                    "id": 8,
+                    "name": "Hipercard",
+                    "groupName": "creditCardPaymentGroup",
+                    "validator": null,
+                    "stringId": "8",
+                    "template": "creditCardPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:25:57.1906433Z",
+                    "availablePayments": null
+                  },
+                  {
+                    "id": 9,
+                    "name": "Elo",
+                    "groupName": "creditCardPaymentGroup",
+                    "validator": null,
+                    "stringId": "9",
+                    "template": "creditCardPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:25:57.1906433Z",
+                    "availablePayments": null
+                  },
+                  {
+                    "id": 16,
+                    "name": "Vale",
+                    "groupName": "giftCardPaymentGroup",
+                    "validator": null,
+                    "stringId": "16",
+                    "template": "giftCardPaymentGroup-template",
+                    "requiresDocument": false,
+                    "isCustom": false,
+                    "description": null,
+                    "requiresAuthentication": false,
+                    "dueDate": "2023-09-17T15:25:57.1906433Z",
+                    "availablePayments": null
+                  }
+                ],
+                "payments": [ ],
+                "giftCards": [ ],
+                "giftCardMessages": [ ],
+                "availableAccounts": [ ],
+                "availableTokens": [ ]
+              }
+            }
+          }
+        ],
+        "Videos": [ ],
+        "estimatedDateArrival": null
+      }
+    ]
+  }
+]

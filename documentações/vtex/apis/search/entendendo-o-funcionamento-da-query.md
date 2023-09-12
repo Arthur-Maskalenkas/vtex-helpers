@@ -34,3 +34,29 @@ Por exemplo:
 /apple/eletronicos?map=b,c
 
 Essa URL busca por produtos da marca 'apple' ('b') na categoria 'eletronicos' ('c'). A ordem em 'map' (primeiro 'b', depois 'c') corresponde à ordem na URL (primeiro 'apple', depois 'eletronicos').
+
+# outros exemplos
+
+
+# buscando especificação de sku
+titulo: 'Cor'
+valor: 'Preto'
+https://olympikusio.myvtex.com/Preto?map=specificationFilter_Cor
+
+# buscando especificação de produto
+titulo: 'Teconologia'
+valor: 'Evasense'
+https://olympikusio.myvtex.com/Evasense?map=specificationFilter_Tecnologia
+
+# buscando marcas
+valor: 'Veja'
+/Veja?map=b
+
+# buscando categorias
+/[CategoryName]?map=c
+
+# buscando coleções
+/[CollectionId]?map=productClusterIds
+
+# combinando tudo
+https://olympikusio.myvtex.com/Masculino/T%C3%AAnis/Treino-e-Academia/Preto/Evasense?map=c,specificationFilter_Cor,specificationFilter_Tecnologia
