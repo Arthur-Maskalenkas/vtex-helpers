@@ -26,6 +26,7 @@ module.exports = {
             "rules": {
                 "prefer-const": "off",
                 "@typescript-eslint/return-await": "off",
+                "@typescript-eslint/prefer-nullish-coalescing": "off",
                 "vitest/prefer-called-with": "off",
                 "vitest/consistent-test-filename": "off",
                 'react-refresh/only-export-components': [
