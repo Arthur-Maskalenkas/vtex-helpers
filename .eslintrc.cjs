@@ -26,6 +26,7 @@ module.exports = {
             "rules": {
                 "prefer-const": "off",
                 "@typescript-eslint/return-await": "off",
+                "vitest/prefer-spy-on": "off",
                 "@typescript-eslint/prefer-nullish-coalescing": "off",
                 "vitest/prefer-called-with": "off",
                 "vitest/consistent-test-filename": "off",
@@ -55,6 +56,7 @@ module.exports = {
         'react-refresh/only-export-components': [
             'warn'
         ],
+        '@typescript-eslint/no-extraneous-class': "off",
         "@typescript-eslint/consistent-type-assertions": "off",
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-explicit-any": "off",
