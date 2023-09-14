@@ -3,7 +3,7 @@ export interface ProtocolMapperPageSearchParams {
 }
 
 export namespace ProtocolMapperPageSearchParams {
-  export type Result = string
+  export type Result = string | null
 
   export type Params = string
 }
