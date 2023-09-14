@@ -6,8 +6,8 @@ export class BuilderProtocolMapperSearchParams
   extends BuilderBase<ProtocolMapperSearchParams, ProtocolMapperSearchParams.Result> {
   constructor () {
     super(
-      { map: () => generateProtocolMapperSearchParamsResult() },
-      'map'
+      { mapSearchParams: () => generateProtocolMapperSearchParamsResult() },
+      'mapSearchParams'
     )
   }
 }

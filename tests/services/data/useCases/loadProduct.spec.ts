@@ -50,7 +50,7 @@ describe(UseCaseLoadProduct.name, () => {
 
     await sut.load(mockValue)
 
-    expect(protocolMapperSearchParams.map).toHaveBeenCalledWith(mockValue)
+    expect(protocolMapperSearchParams.mapSearchParams).toHaveBeenCalledWith(mockValue)
   })
 
   it('should call loadProductRepository with correct params', async () => {
@@ -106,8 +106,8 @@ describe(UseCaseLoadProduct.name, () => {
 
     const result = await sut.load(mockvalue1)
 
-    expect(protocolMapperSearchParams.map).toHaveBeenCalledWith(mockvalue1)
-    expect(protocolMapperSearchParams.map).toHaveBeenCalledTimes(1)
+    expect(protocolMapperSearchParams.mapSearchParams).toHaveBeenCalledWith(mockvalue1)
+    expect(protocolMapperSearchParams.mapSearchParams).toHaveBeenCalledTimes(1)
 
     expect(protocolLoadProductRepository.search).toHaveBeenCalledWith(mockvalue2)
     expect(protocolLoadProductRepository.search).toHaveBeenCalledTimes(1)

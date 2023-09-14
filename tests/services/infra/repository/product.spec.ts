@@ -27,13 +27,13 @@ describe(RepositoryProduct.name, () => {
     sut = newSut.sut
   })
 
-  describe(RepositoryProduct.prototype.map.name, () => {
+  describe(RepositoryProduct.prototype.mapSearchParams.name, () => {
     it('should return a object with string param received', () => {
       const params = new BuilderParamsProtocolMapperSearchParams()
         .appendParam()
         .build()
 
-      const result = sut.map(params)
+      const result = sut.mapSearchParams(params)
       const expected = {
         'attr-0': {
           'key-0': 'value-0'
@@ -53,7 +53,7 @@ describe(RepositoryProduct.name, () => {
 
       const { sut } = makeSut()
 
-      const result = sut.map(params)
+      const result = sut.mapSearchParams(params)
 
       const expected = {
         'attr-0': {
@@ -72,7 +72,7 @@ describe(RepositoryProduct.name, () => {
 
       const { sut } = makeSut()
 
-      const result = sut.map(params)
+      const result = sut.mapSearchParams(params)
 
       const expected = {
         'attr-0': {
@@ -146,7 +146,7 @@ describe(RepositoryProduct.name, () => {
     })
 
     describe('product specifications', () => {
-      it('should map a specification', () => {
+      it('should mapSearchParams a specification', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
           .withProductSpecification('item-0', 'value-0')
           .build()
@@ -165,7 +165,7 @@ describe(RepositoryProduct.name, () => {
         expect(result).toStrictEqual(expected)
       })
 
-      it('should map a list specifications', () => {
+      it('should mapSearchParams a list specifications', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
           .withProductSpecification('item-0', 'value-0')
           .withProductSpecification('item-1', 'value-1')
@@ -236,7 +236,7 @@ describe(RepositoryProduct.name, () => {
       })
     })
     describe('sku specifications', () => {
-      it('should map a specification', () => {
+      it('should mapSearchParams a specification', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
           .withSkuSpecification('item-0', 'value-0')
           .build()
@@ -258,7 +258,7 @@ describe(RepositoryProduct.name, () => {
         expect(result.skus[0].specifications).toStrictEqual(expected)
       })
 
-      it('should map one or more specifications, with diffrent parents', () => {
+      it('should mapSearchParams one or more specifications, with diffrent parents', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
           .withSkuSpecification('item-0', 'value-0')
           .withSkuSpecification('item-1', 'value-1')
@@ -332,7 +332,7 @@ describe(RepositoryProduct.name, () => {
         expect(result.skus[0].specifications).toStrictEqual(expected)
       })
 
-      it('should map correctly specification on currentSku', () => {
+      it('should mapSearchParams correctly specification on currentSku', () => {
         const params = new BuilderParamsProtocolMapperExternalModelProductToProductModel()
           .withSkuSpecification('item-0', 'value-0')
           .withSkuSpecification('item-1', 'value-1')

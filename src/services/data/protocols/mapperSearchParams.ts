@@ -1,5 +1,5 @@
 export interface ProtocolMapperSearchParams {
-  map: (params: ProtocolMapperSearchParams.Params) => ProtocolMapperSearchParams.Result
+  mapSearchParams: (params: ProtocolMapperSearchParams.Params) => ProtocolMapperSearchParams.Result
 }
 
 export namespace ProtocolMapperSearchParams {

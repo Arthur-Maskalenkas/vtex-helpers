@@ -1,6 +1,11 @@
 export class BuilderParamsProtocolMapperSearchParams {
   public builderResult: string[] = []
 
+  public withParamCategorie (id, value) {
+    this.builderResult.push(`mapc=${id}=${value}`)
+    return this
+  }
+
   public appendParam (inIndex?: number) {
     const index = this.builderResult.length
 

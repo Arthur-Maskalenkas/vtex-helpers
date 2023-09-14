@@ -116,7 +116,7 @@ implements ProtocolMapperSearchParams, ProtocolMapperExternalModelProductToProdu
     return modelNormalized
   }
 
-  map (params: ProtocolMapperSearchParams.Params): ProtocolMapperSearchParams.Result {
+  mapSearchParams (params: ProtocolMapperSearchParams.Params): ProtocolMapperSearchParams.Result {
     if (!params) return null
     const listParams = params.split(',') ?? [params]
 
