@@ -10,7 +10,7 @@ type Response = {
   value: string
 }
 
-export class RepositorySearchPage implements ProtocolMapperPageSearchParams {
+export class MapperSearchPageParams implements ProtocolMapperPageSearchParams {
   private mapCategorie ({ id }: Params): Response {
     return {
       id,

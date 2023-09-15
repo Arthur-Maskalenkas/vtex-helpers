@@ -1,4 +1,4 @@
-import { type ExternalModelCategory } from '../../domain/models/external/category.ts'
+import { type ExternalModelCategory } from '../../domain/external/models/category.ts'
 
 export interface ProtocolLoadAllCategoriesRepository {
   loadAll: () => ProtocolLoadAllCategoriesRepository.Result

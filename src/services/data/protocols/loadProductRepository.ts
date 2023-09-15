@@ -1,4 +1,4 @@
-import { type ExternalModelProduct } from '../../domain/models/external/product.ts'
+import { type ExternalModelProduct } from '../../domain/external/product.ts'
 
 export interface ProtocolLoadProducRepository {
   search: (params: any) => ProtocolLoadProducRepository.Result

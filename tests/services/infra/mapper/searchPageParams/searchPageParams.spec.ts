@@ -1,20 +1,20 @@
 import { RepositoryProduct } from '../../../../src/services/infra/repository/product.ts'
 import { beforeEach, describe } from 'vitest'
-import { RepositorySearchPage } from '../../../../../src/services/infra/repository/searchPage.ts'
+import { MapperSearchPageParams } from '../../../../../src/services/infra/mapper/searchPageParams.ts'
 import {
   BuilderParamsProtocolMapperPageSearchParams
 } from './builder.ts'
 
 const makeSut = () => {
-  const sut = new RepositorySearchPage()
+  const sut = new MapperSearchPageParams()
   return {
     sut
   }
 }
 
-describe(RepositorySearchPage.name, () => {
+describe(MapperSearchPageParams.name, () => {
   // before each, create a new instance of sut
-  let sut: RepositorySearchPage
+  let sut: MapperSearchPageParams
 
   beforeEach(() => {
     const newSut = makeSut()
@@ -24,7 +24,7 @@ describe(RepositorySearchPage.name, () => {
     sut = newSut.sut
   })
 
-  describe(RepositorySearchPage.prototype.mapPageSearchParams.name, () => {
+  describe(MapperSearchPageParams.prototype.mapPageSearchParams.name, () => {
     it('should return category param mapped', () => {
       const params = BuilderParamsProtocolMapperPageSearchParams
         .aBuilder()

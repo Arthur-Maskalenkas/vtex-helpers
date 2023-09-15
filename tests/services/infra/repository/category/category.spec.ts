@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, type SpyInstance, vi } from 'vitest'
-import { RepositoryCategory } from '../../../../src/services/infra/repository/category.ts'
-import { fetchHelper } from '../../../utils/test-utils.tsx'
+import { RepositoryCategory } from '../../../../../src/services/infra/repository/category.ts'
+import { fetchHelper } from '../../../../utils/test-utils.tsx'
 
 const makeSut = () => {
   const sut = new RepositoryCategory()

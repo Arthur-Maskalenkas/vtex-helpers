@@ -1,4 +1,4 @@
-import { type ExternalModelRuntime } from '../../domain/models/external/runtime.ts'
+import { type ExternalModelRuntime } from '../../domain/external/runtime.ts'
 
 export interface ProtocolLoadRunTimeRepository {
   searchRuntimeInHTML: () => ProtocolLoadRunTimeRepository.Result
