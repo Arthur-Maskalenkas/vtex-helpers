@@ -1,7 +1,7 @@
-import { type ProtocolLoadAllCategoriesRepository } from '../../data/protocols/loadAllCategoriesRepository.ts'
+import { type ProtocolRepositoryLoadAllCategories } from '../../data/protocols/repositoryLoadAllCategories.ts'
 
-export class RepositoryCategory implements ProtocolLoadAllCategoriesRepository {
-  async loadAll (): ProtocolLoadAllCategoriesRepository.Result {
+export class RepositoryCategory implements ProtocolRepositoryLoadAllCategories {
+  async loadAll (): ProtocolRepositoryLoadAllCategories.Result {
     const result = await fetch('/api/catalog_system/pub/category/tree/3')
 
     const data = await result.json()
