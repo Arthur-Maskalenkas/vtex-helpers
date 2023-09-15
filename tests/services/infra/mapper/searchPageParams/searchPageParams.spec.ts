@@ -1,9 +1,9 @@
 import { RepositoryProduct } from '../../../../src/services/infra/repository/product.ts'
 import { beforeEach, describe } from 'vitest'
-import { RepositorySearchPage } from '../../../../src/services/infra/repository/searchPage.ts'
+import { RepositorySearchPage } from '../../../../../src/services/infra/repository/searchPage.ts'
 import {
   BuilderParamsProtocolMapperPageSearchParams
-} from '../mocks/builders/repositories/searchPage/protocolMapperPageSearchParams.ts'
+} from './builder.ts'
 
 const makeSut = () => {
   const sut = new RepositorySearchPage()
