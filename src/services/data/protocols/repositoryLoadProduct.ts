@@ -5,7 +5,7 @@ export interface ProtocolRepositoryLoadProduct {
 }
 
 export namespace ProtocolRepositoryLoadProduct {
-  export type Result = Promise<ExternalModelProduct>
+  export type Result = Promise<ExternalModelProduct | null>
 
   export type Params = string
 }
