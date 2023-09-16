@@ -24,7 +24,7 @@ describe(MapperSearchPageParams.name, () => {
     sut = newSut.sut
   })
 
-  describe(MapperSearchPageParams.prototype.mapPageSearchParams.name, () => {
+  describe(MapperSearchPageParams.prototype.map.name, () => {
     it('should return category param mapped', () => {
       const params = BuilderParamsProtocolMapperPageSearchParams
         .aBuilder()
@@ -33,7 +33,7 @@ describe(MapperSearchPageParams.name, () => {
 
       const expected = '/id-0?map=c'
 
-      const result = sut.mapPageSearchParams(params)
+      const result = sut.map(params)
 
       expect(result).toBe(expected)
     })
@@ -46,7 +46,7 @@ describe(MapperSearchPageParams.name, () => {
 
       const expected = '/id-0?map=b'
 
-      const result = sut.mapPageSearchParams(params)
+      const result = sut.map(params)
 
       expect(result).toBe(expected)
     })
@@ -59,7 +59,7 @@ describe(MapperSearchPageParams.name, () => {
 
       const expected = '/id-0?map=productClusterIds'
 
-      const result = sut.mapPageSearchParams(params)
+      const result = sut.map(params)
 
       expect(result).toBe(expected)
     })
@@ -72,7 +72,7 @@ describe(MapperSearchPageParams.name, () => {
 
       const expected = '/value-0?map=specificationFilter_id-0'
 
-      const result = sut.mapPageSearchParams(params)
+      const result = sut.map(params)
 
       expect(result).toBe(expected)
     })
@@ -89,7 +89,7 @@ describe(MapperSearchPageParams.name, () => {
       // /Masculino/Olympikus/Todos/Evasense?map=c,b,productClusterIds,specificationFilter_Tecnologia
       const expected = '/categorie-id/brand-id/collection-id/specification-value?map=c,b,productClusterIds,specificationFilter_specification-id'
 
-      const result = sut.mapPageSearchParams(params)
+      const result = sut.map(params)
       console.log(result)
 
       expect(result).toBe(expected)

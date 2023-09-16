@@ -5,8 +5,8 @@ import {
 import { faker } from '@faker-js/faker'
 import { type ExternalModelCategory } from '../../../../../src/services/domain/external/models/category.ts'
 import {
-  type ProtocolMapperExternalModelCategoryToInternalModelCategory
-} from '../../../../../src/services/data/protocols/mapperExternalModelCategoryToInternalModelCategory.ts'
+  type ProtocolMapModelCategory
+} from '../../../../../src/services/data/protocols/mapModelCategory.ts'
 import { type InternalModelCategory } from '../../../../../src/services/domain/internal/models/category.ts'
 
 const makeExternalModelCategory = (index = 0): ExternalModelCategory => ({
@@ -79,7 +79,7 @@ export class BuilderRepositoryLoadAllCategories
 }
 
 export class BuilderMapperExternalModelCategoryToInternalModelCategory
-  extends BuilderBase<ProtocolMapperExternalModelCategoryToInternalModelCategory, ProtocolMapperExternalModelCategoryToInternalModelCategory.Result> {
+  extends BuilderBase<ProtocolMapModelCategory, ProtocolMapModelCategory.Result> {
   constructor () {
     super(
       { map: () => makeInternalModelCategory(0) },
