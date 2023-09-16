@@ -25,11 +25,6 @@ export class UseCaseLoadAllCategories implements IUseCaseLoadAllCategories {
       }
     }
 
-    Please create a commit message in the following format: <type><emoji>: <subject>. If the file is a test file, use the prefix test: <test><📝>: <subject>. If the file is not a test file, use a regular prefix. The type can be one of the following: feat, fix, docs, style, refactor, test, chore, ci, build, or revert. The emoji can be one of the following: ✅, 🚧, 🎨, ♻️, 🚀, ✅, 🚨, 🔧, 📦, 🚑, or ⏪. Your subject should be clear and concise, and please do not include details from each file. The commit should have maximum 1 line and not append body or footer.
-
-    write a commit message in the following format: <type><emoji>: <subject>. If the file is test, should use a prefix test: <test><📝>: <subject>. If file is not a test, should use a normal prefix. The type can be feat, fix, docs, style, refactor, perf, test, chore, ci, build, temp or revert. The emoji can be ✅, 🚧, 📝, 🎨, ♻️, 🚀, ✅, 🚨, 🔧, 📦, 🚑 or ⏪. The subject should be clear and concise. not append body of footer. The sent text will be the differences between files, where deleted lines are prefixed with a single minus sign and added lines are prefixed with a single plus sign.
-    {diff}
-
     await mapExternalCategories(allCategories)
 
     return internalCategories
