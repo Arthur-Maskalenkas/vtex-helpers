@@ -5,7 +5,7 @@ export interface IUseCaseLoadProduct {
 }
 
 export namespace IUseCaseLoadProduct {
-  export type Result = Promise<InternalModelProduct>
+  export type Result = Promise<InternalModelProduct | null>
 
   export type Params = string
 }
