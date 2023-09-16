@@ -10,10 +10,11 @@ export class UsecaseLoadProduct implements IUseCaseLoadProduct {
 
   async load (params: IUseCaseLoadProduct.Params): IUseCaseLoadProduct.Result {
     const product = await this.repositoryProduct.load(params)
+
+    if (!product) return null
+
     const internalProduct = this.mapModelProduct.map(product)
 
     return internalProduct
   }
 }
-
-// feat: add a class UsecaseLoadProduct with implementation  of IUseCaseLoadProduct
