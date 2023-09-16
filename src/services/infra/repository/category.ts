@@ -6,18 +6,19 @@ import {
 export class RepositoryCategory implements
     ProtocolRepositoryLoadAllCategories,
     ProtocolMapModelCategory {
-  map (externalCategory: ProtocolM  ModelCategory.Params): ProtocolMapModelCategory.Result {
-    const { id, name, children = [    rl } = externalCategory
+  map (externalCategory: ProtocolMapModelCategory.Params): ProtocolMapModelCategory.Result {
+    const { id, name, children = [], url } = externalCategory
 
-    return ({ name, id, children,     })
+    return ({ name, id, children, url })
   }
 
-  async loadAll (): Protoco  eposi  ryLoadAllCategories.Result {
-    const result = await fetch('/a    atalog_system/pub/category/tree/3')
+  async loadAll (): ProtocolRepositoryLoadAllCategories.Result {
+    const result = await fetch('/api/catalog_system/pub/category/tree/3')
 
-    const data = await result.json    
+    const data = await result.json()
+
     if (!data) return []
 
-    re     data
+    return data
   }
-}      
+}

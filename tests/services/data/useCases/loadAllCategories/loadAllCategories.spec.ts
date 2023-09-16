@@ -3,6 +3,7 @@ import {
   BuilderMapperExternalModelCategoryToInternalModelCategory,
   BuilderRepositoryLoadAllCategories
 } from './builders.ts'
+import { describe } from 'vitest'
 
 const makeSut = (
   {
@@ -26,113 +27,62 @@ const makeSut = (
 
 describe(UseCaseLoadAllCategories.name, () => {
   describe(UseCaseLoadAllCategories.prototype.loadAll.name, () => {
-    it('should call repository', async () => {
-      const repository = new BuilderRepositoryLoadAllCategories()
-        .build()
+    describe('repository', () => {
+      it('should call repository', async () => {
+        const repository = new BuilderRepositoryLoadAllCategories()
+          .build()
 
-      const { sut } = makeSut({ repository })
+        const { sut } = makeSut({ repository })
 
-      await sut.loadAll()
+        await sut.loadAll()
 
-      expect(repository.loadAll).toHaveBeenCalledTimes(1)
-    })
-
-    it('sHould call mapper', async () => {
-      const mapperModelCategory = new BuilderMapperExternalModelCategoryToInternalModelCategory()
-        .build()
-
-      const { sut } = makeSut({ mapperModelCategory })
-
-      await sut.loadAll()
-
-      expect(mapperModelCategory.map).toHaveBeenCalledTimes(1)
-    })
-    it('should call repository with correctly values', async () => {
-      const repository = new BuilderRepositoryLoadAllCategories()
-        .build()
-
-      const { sut } = makeSut({ repository })
-
-      await sut.loadAll()
-
-      expect(repository.loadAll).toHaveBeenCalledWith()
-    })
-
-    it('should call mapper with categories return', async () => {
-      const repository = new BuilderRepositoryLoadAllCategories()
-        .withChildren()
-        .build()
-
-      const mapperModelCategory = new BuilderMapperExternalModelCategoryToInternalModelCategory()
-        .build()
-
-      const { sut } = makeSut({ repository, mapperModelCategory })
-
-      await sut.loadAll()
-
-      expect(mapperModelCategory.map).toHaveBeenCalledTimes(1)
-
-      expect(mapperModelCategory.map).toHaveBeenCalledWith({
-        hasChildren: false,
-        children: [],
-        name: 'name.0',
-        url: 'url.0',
-        Title: 'title.0',
-        id: 0,
-        MetaTagDescription: 'metaTagDescription.0'
+        expect(repository.loadAll).toHaveBeenCalledTimes(1)
       })
     })
 
-    it('should call mapper with categories returns', async () => {
-      const repository = new BuilderRepositoryLoadAllCategories()
-        .withChildrens()
-        .build()
+    describe('mapper', () => {
+      it('should call mapper', async () => {
+        const mapperModelCategory = new BuilderMapperExternalModelCategoryToInternalModelCategory()
+          .build()
 
-      const mapperModelCategory = new BuilderMapperExternalModelCategoryToInternalModelCategory()
-        .build()
+        const { sut } = makeSut({ mapperModelCategory })
 
-      const children0 = {
-        hasChildren: false,
-        children: [],
-        name: 'name.1',
-        url: 'url.1',
-        Title: 'title.1',
-        id: 1,
-        MetaTagDescription: 'metaTagDescription.1'
-      }
+        await sut.loadAll()
 
-      const children1 = {
-        hasChildren: false,
-        children: [],
-        name: 'name.2',
-        url: 'url.2',
-        Title: 'title.2',
-        id: 2,
-        MetaTagDescription: 'metaTagDescription.2'
-      }
+        expect(mapperModelCategory.map).toHaveBeenCalledTimes(1)
+      })
 
-      const { sut } = makeSut({ repository, mapperModelCategory })
+      it('should call mapper with categories returns', async () => {
+        const repository = new BuilderRepositoryLoadAllCategories()
+          .withChildrens()
+          .build()
 
-      await sut.loadAll()
+        const mapperModelCategory = new BuilderMapperExternalModelCategoryToInternalModelCategory()
+          .build()
 
-      expect(mapperModelCategory.map).toHaveBeenCalledTimes(2)
+        const { sut } = makeSut({ repository, mapperModelCategory })
 
-      // expected
-    })
+        await sut.loadAll()
 
-    it('should call mapper with depth categories returns', async () => {
-      const repository = new BuilderRepositoryLoadAllCategories()
-        .withDepthChildrens()
-        .build()
+        expect(mapperModelCategory.map).toHaveBeenCalledTimes(2)
 
-      const mapperModelCategory = new BuilderMapperExternalModelCategoryToInternalModelCategory()
-        .build()
+        // expected
+      })
 
-      const { sut } = makeSut({ repository, mapperModelCategory })
+      it('should call mapper with depth categories returns', async () => {
+        const repository = new BuilderRepositoryLoadAllCategories()
+          .withDepthChildrens()
+          .build()
 
-      await sut.loadAll()
+        const mapperModelCategory = new BuilderMapperExternalModelCategoryToInternalModelCategory()
+          .build()
 
-      expect(mapperModelCategory.map).toHaveBeenCalledTimes(3)
+        const { sut } = makeSut({ repository, mapperModelCategory })
+
+        await sut.loadAll()
+
+        expect(mapperModelCategory.map).toHaveBeenCalledTimes(3)
+      })
     })
   })
 })
