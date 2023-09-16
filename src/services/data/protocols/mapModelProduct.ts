@@ -6,7 +6,13 @@ export interface ProtocolMapModelProduct {
 }
 
 export namespace ProtocolMapModelProduct {
-  export type Result = InternalModelProduct
+  export type ResultModel = InternalModelProduct
+  export type ResultListModel = InternalModelProduct[]
 
-  export type Params = ExternalModelProduct
+  export type Result = ResultModel | ResultListModel
+
+  export type ParamModel = ExternalModelProduct
+  export type ParamListModel = ExternalModelProduct[]
+
+  export type Params = ParamModel | ParamListModel
 }
