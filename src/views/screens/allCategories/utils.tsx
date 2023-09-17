@@ -14,13 +14,14 @@ export const useAllCategories = () => {
         controller
       })
 
-      const response = await controller.handle()
+      const response = await controller.handle({ id: 'categories.allCategories' })
 
       console.log('#!! 🔥 allCategories 10:39', {
         controller,
         response
+
       })
-      setCategories(response)
+      setCategories(response?.data)
     }
     getCategories()
   }, [state, state.appInternalServices])
