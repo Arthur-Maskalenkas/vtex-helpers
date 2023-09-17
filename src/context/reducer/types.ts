@@ -1,6 +1,7 @@
 import { type Actions } from './reducer.ts'
 import { type ModelInternalListOptions } from './domain/models/modelInternalListOptions.ts'
 import { type ModelListOptions } from './domain/models/modelListOptions.ts'
+import { type AppInternalServices } from '../../services/main/app.ts'
 
 export type GlobalActionProps<S, A> = {
   state: S
@@ -17,6 +18,7 @@ export namespace ListOptions {
 }
 
 export interface States {
+  appInternalServices: TypeAppInternalServices
   isOpened: boolean
   currentComponent: Element | null
   currentTarget: string | null
@@ -26,5 +28,5 @@ export interface States {
   searchableListOptions: ListOptions.Items
   internalListOptions: internalListOptions.Items | null
 }
-
+export type TypeAppInternalServices = ReturnType<typeof AppInternalServices>
 export type ReducerParams = GlobalActionProps<States, Actions>

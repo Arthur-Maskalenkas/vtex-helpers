@@ -2,6 +2,7 @@ import { MapInternalListOptions } from './mappers/mapInternalListOptions.ts'
 import { type ParamsBuildDefaultStates, type ProtocolMapperDefaultStates } from './protocols.ts'
 import { MapListOptions } from './mappers/mapListOptions.ts'
 import { type States } from '../types.ts'
+import { AppInternalServices } from '../../../services/main/app.ts'
 
 export class BuilderDefaultStates {
   private readonly mappers: ProtocolMapperDefaultStates[] = []
@@ -29,6 +30,7 @@ export class BuilderDefaultStates {
         [mapper.field]: valueMapped
       }
     }, {
+      appInternalServices: AppInternalServices(),
       query: null,
       currentComponent: null,
       breadcrumb: [],

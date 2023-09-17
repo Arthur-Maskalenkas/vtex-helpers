@@ -1,0 +1,19 @@
+.component-list.common {
+
+  &.container {
+
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  }
+
+  &.item {
+    font-size: 14px;
+    line-height: 14px;
+
+    color: $primary;
+  }
+}
