@@ -6,6 +6,13 @@ export interface ProtocolMapModelCategory {
 }
 
 export namespace ProtocolMapModelCategory {
-  export type Result = InternalModelCategory
-  export type Params = ExternalModelCategory
+
+  export type ResultModel = InternalModelCategory
+  export type ResultListModel = InternalModelCategory[]
+
+  export type ParamModel = ExternalModelCategory
+  export type ParamListModel = ExternalModelCategory[]
+
+  export type Result = Promise<ResultListModel>
+  export type Params = ParamListModel
 }

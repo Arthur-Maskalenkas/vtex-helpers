@@ -37,6 +37,12 @@ export class BuilderRepositoryLoadAllCategories
     )
   }
 
+  withNull (): BuilderRepositoryLoadAllCategories {
+    this.fnSpy.mockResolvedValue([])
+
+    return this
+  }
+
   withChildren (): BuilderRepositoryLoadAllCategories {
     this.fnSpy.mockResolvedValue([makeExternalModelCategory(0)])
 
@@ -82,7 +88,7 @@ export class BuilderMapperExternalModelCategoryToInternalModelCategory
   extends BuilderBase<ProtocolMapModelCategory, ProtocolMapModelCategory.Result> {
   constructor () {
     super(
-      { map: () => makeInternalModelCategory(0) },
+      { map: async () => Promise.resolve([makeInternalModelCategory(0)]) },
       'map'
     )
   }

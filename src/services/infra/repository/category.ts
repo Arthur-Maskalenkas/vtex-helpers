@@ -6,10 +6,18 @@ import {
 export class RepositoryCategory implements
     ProtocolRepositoryLoadAllCategories,
     ProtocolMapModelCategory {
-  map (externalCategory: ProtocolMapModelCategory.Params): ProtocolMapModelCategory.Result {
-    const { id, name, children = [], url } = externalCategory
+  async map (listExternalCategories: ProtocolMapModelCategory.Params): ProtocolMapModelCategory.Result {
+    const mapCategory = ({ id, name, children = [], url }: ProtocolMapModelCategory.ParamModel) => {
+      let mappedChildren: any = null
 
-    return ({ name, id, children, url })
+      if (children.length > 0) {
+        mappedChildren = children.map(mapCategory)
+      }
+
+      return { id, name, url, children: mappedChildren ?? [] }
+    }
+
+    return listExternalCategories.map(mapCategory)
   }
 
   async loadAll (): ProtocolRepositoryLoadAllCategories.Result {
