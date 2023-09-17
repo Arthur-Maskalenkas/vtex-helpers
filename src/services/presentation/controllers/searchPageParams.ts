@@ -7,6 +7,11 @@ export class ControllerSearchPageParams implements ProtocolController {
   ) {}
 
   public async handle<R = IUsecaseMapSearchParams.Result, P = string> (params: P): Promise<R> {
-    return this.readonlyIUsecaseMapSearchParams.map(params as string) as R
+    try {
+      return this.readonlyIUsecaseMapSearchParams.map(params as string) as R
+    } catch (error) {
+      console.error(error)
+      return null as R
+    }
   }
 }

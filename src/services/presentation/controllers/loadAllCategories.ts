@@ -11,10 +11,15 @@ export class ControllerLoadAllCategories implements ProtocolController {
   ) {}
 
   public async handle<R = IUseCaseLoadAllCategories.Result> (): Promise<R> {
-    const cache = await this.usecaseLoadCache.load({ id: 'categories' })
-    if (cache) return cache
-    const categories = await this.usecaseLoadAllCategories.loadAll() as R
-    await this.usecaseSaveCache.save({ id: 'categories', value: categories })
-    return categories
+    try {
+      const cache = await this.usecaseLoadCache.load({ id: 'categories' })
+      if (cache) return cache
+      const categories = await this.usecaseLoadAllCategories.loadAll() as R
+      await this.usecaseSaveCache.save({ id: 'categories', value: categories })
+      return categories
+    } catch (error) {
+      console.error(error)
+      return [] as R
+    }
   }
 }
