@@ -1,7 +1,7 @@
 import {
   factoryControllerLoadAllCategories
-} from '../../main/factories/controllers/factoryControllerLoadAllCategories.ts'
-import { factoryControllerMapSearchParams } from '../../main/factories/controllers/factoryControllerMapSearchParams.ts'
+} from '../factories/controllers/factoryControllerLoadAllCategories.ts'
+import { factoryControllerMapSearchParams } from '../factories/controllers/factoryControllerMapSearchParams.ts'
 
 export const setupApp = () => ({
   category: {

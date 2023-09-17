@@ -1,3 +1,3 @@
-import { setupApp } from '../presentation/config/app.ts'
+import { setupApp } from './config/app.ts'
 
 export const AppInternalServices = () => setupApp()
