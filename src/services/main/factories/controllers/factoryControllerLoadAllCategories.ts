@@ -1,12 +1,11 @@
 import { factoryUsecaseLoadAllCategories } from '../useCases/factoryUsecaseLoadAllCategories.ts'
 import { ControllerLoadAllCategories } from '../../../presentation/controllers/loadAllCategories.ts'
-import { factoryUsecaseLoadCache } from '../useCases/factoryUsecaseLoadCache.ts'
-import { factoryUsecaseSaveCache } from '../useCases/factoryUsecaseSaveCache.ts'
+import { factoryDecoratorControllerCache } from '../decorators/controllers/cache.ts'
+import { type IUseCaseLoadAllCategories } from '../../../domain/useCases/loadAllCategories.ts'
 
 export const factoryControllerLoadAllCategories = () => {
   const usecaseLoadAllCategories = factoryUsecaseLoadAllCategories()
-  const usecaseLoadCache = factoryUsecaseLoadCache()
-  const usecaseSaveCache = factoryUsecaseSaveCache()
+  const controller = new ControllerLoadAllCategories(usecaseLoadAllCategories)
 
-  return new ControllerLoadAllCategories(usecaseLoadAllCategories, usecaseLoadCache, usecaseSaveCache)
+  return factoryDecoratorControllerCache<any, IUseCaseLoadAllCategories.Result>(controller)
 }
