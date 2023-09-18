@@ -8,7 +8,7 @@ const Container = ({ children }: React.PropsWithChildren) => {
         </ul>
   )
 }
-const Item = ({ children, index }: React.PropsWithChildren<{ index: number }>) => {
+const Item = ({ children, index }: React.PropsWithChildren<{ index: string }>) => {
   return (
         <li className="component-list item common" key={index}>
             {children}

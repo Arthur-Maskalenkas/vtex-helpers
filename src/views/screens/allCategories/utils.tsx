@@ -8,12 +8,7 @@ export const useAllCategories = () => {
 
   useEffect(() => {
     const getCategories = async () => {
-      console.log('🔥 allCategories 10:39')
       const controller = state.appInternalServices.category.loadAll
-      console.log('🔥 allCategories 10:37', {
-        controller
-      })
-
       const response = await controller.handle({ id: 'categories.allCategories' })
 
       console.log('#!! 🔥 allCategories 10:39', {
