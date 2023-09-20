@@ -1,7 +1,14 @@
+export const errorMessages = {
+  specification: {
+    requiredValue: 'É necessario informar o valor da especificação. O formato para informar o valor é: "id=valor". Exemplo: Cor=Azul',
+  }
+}
+
 export const mapParams = (event: React.FormEvent<HTMLFormElement>) => {
   const inputValues = Array.from(event.currentTarget.elements)
 
-  const params: string[] = []
+  const params = []
+  const errors = new Map()
 
   for (const input of inputValues) {
     const [id, value, thisInputHaveValue] = ['id', 'value', 'data-with-value']
@@ -15,11 +22,17 @@ export const mapParams = (event: React.FormEvent<HTMLFormElement>) => {
 
       const [splitId, splitValue] = value.split('=')
 
-      if (!splitValue) continue
+      if (!splitValue) {
+        errors.set(id, errorMessages.specification.requiredValue)
+        continue
+      }
 
       params.push(`${id}=${splitId}=${splitValue}`)
     }
   }
 
-  return params?.length ? params.join(',') : null
+  if (errors.size) return errors
+  if (!params.length) return null
+
+  return params.join(',')
 }
