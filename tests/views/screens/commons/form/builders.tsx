@@ -1,6 +1,47 @@
 import { render, userEvent } from '../../../../utils/test-utils.tsx'
 import { Form } from '../../../../../src/views/screens/commons/form/form.tsx'
+import * as utilsModule from '../../../../../src/views/screens/commons/form/utils.ts'
 
+export class BuilderReactFormEvent {
+  #elements: any[] = []
+
+  private constructor () {
+
+  }
+
+  public static a () {
+    return new BuilderReactFormEvent()
+  }
+
+  public appendInput (id?: string, value?: string, ...rest: any) {
+    const attrs = {
+      ...rest,
+      id,
+      value
+    }
+
+    this.#elements.push(
+      {
+        ...attrs,
+        attributes: {
+          ...attrs,
+          getNamedItem: (name: string) => {
+            return { value: attrs[name] }
+          }
+        }
+      }
+    )
+    return this
+  }
+
+  public build () {
+    return {
+      currentTarget: {
+        elements: this.#elements
+      }
+    }
+  }
+}
 export class BuilderForm {
   #inputs: any[] = []
   #submitOnStart: boolean
@@ -17,6 +58,12 @@ export class BuilderForm {
     this.#inputs.push(
             <input {...rest} id={id} value={value}/>
     )
+    return this
+  }
+
+  public mockAMapParams (value: string) {
+    vi.spyOn(utilsModule, utilsModule.mapParams.name as any)
+      .mockImplementation(() => value)
     return this
   }
 
