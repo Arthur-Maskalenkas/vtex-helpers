@@ -14,7 +14,6 @@ const ApplicationReducerContext = createContext<ApplicationReducerProvider>({
 })
 export const ProviderApplication = ({ children }: React.PropsWithChildren) => {
   const [stateApplication, dispatchApplication] = React.useReducer(reducer, statesDefault)
-  console.log('#!! 🔥 states 10:41', stateApplication)
   return (
         <ApplicationReducerContext.Provider value={{ dispatch: dispatchApplication, state: stateApplication }}>
             {children}

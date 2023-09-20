@@ -1,9 +1,6 @@
-import { RepositoryProduct } from '../../../../src/services/infra/repository/product.ts'
 import { beforeEach, describe } from 'vitest'
 import { MapperSearchPageParams } from '../../../../../src/services/infra/mapper/searchPageParams.ts'
-import {
-  BuilderParamsProtocolMapperPageSearchParams
-} from './builder.ts'
+import { BuilderParamsProtocolMapperPageSearchParams } from './builder.ts'
 
 const makeSut = () => {
   const sut = new MapperSearchPageParams()

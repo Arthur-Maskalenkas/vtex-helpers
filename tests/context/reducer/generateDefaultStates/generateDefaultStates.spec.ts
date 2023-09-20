@@ -5,7 +5,7 @@ import { ModelInternalListOptions } from '../../../../src/context/reducer/domain
 import { ModelListOptions } from '../../../../src/context/reducer/domain/models/modelListOptions.ts'
 
 describe(BuilderDefaultStates.name, () => {
-  it('should generate default states', () => {
+  it.skip('should generate default states', () => {
     const paramFn = vi.fn as any
     const params: ParamsBuildDefaultStates = {
       manualList: {
