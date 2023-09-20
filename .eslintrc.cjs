@@ -62,6 +62,7 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/no-unused-expressions": "off",
         "eol-last": "off",
         "@typescript-eslint/triple-slash-reference": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
