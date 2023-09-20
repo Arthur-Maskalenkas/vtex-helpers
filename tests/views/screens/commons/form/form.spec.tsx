@@ -1,9 +1,7 @@
 import { Form } from '../../../../../src/views/screens/commons/form/form.tsx'
-import { render, userEvent } from '../../../../utils/test-utils.tsx'
 import { afterEach, expect } from 'vitest'
-import { ListOptions } from '../../../../../src/views/molecules/listOptions.tsx'
 import { BuilderForm, BuilderReactFormEvent } from './builders.tsx'
-import { mapParams } from '../../../../../src/views/screens/commons/form/utils.ts'
+import {errorMessages, mapParams} from '../../../../../src/views/screens/commons/form/utils.ts'
 
 describe(Form.name, () => {
   afterEach(
@@ -31,9 +29,15 @@ describe(Form.name, () => {
   })
 
   describe('mapParams', () => {
-    it.todo('should return a Map with any error', () => {})
+    it.todo('should a return error on Map if input have "data-with-value" attribute but not have value', () => {
+      const params: any = BuilderReactFormEvent.a()
+          .appendInputWithAttributeDataWithValue('paramSpecification', 'specificationId')
+          .build()
 
-    it.todo('should a return error on Map if input have "data-with-value" attribute but not have value', () => {})
+      const result = mapParams(params)
+
+      expect(result).toEqual(new Map([['paramSpecification', errorMessages.specification.requiredValue]]))
+    })
 
     it('should map multiple inputs', () => {
       const params: any = BuilderReactFormEvent.a()
