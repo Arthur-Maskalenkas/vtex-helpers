@@ -1,57 +1,66 @@
 import { Form } from '../../../../../src/views/screens/commons/form/form.tsx'
 import { render, userEvent } from '../../../../utils/test-utils.tsx'
-import { expect } from 'vitest'
+import { afterEach, expect } from 'vitest'
 import { ListOptions } from '../../../../../src/views/molecules/listOptions.tsx'
-import { BuilderForm } from './builders.tsx'
+import { BuilderForm, BuilderReactFormEvent } from './builders.tsx'
 import { mapParams } from '../../../../../src/views/screens/commons/form/utils.ts'
 
 describe(Form.name, () => {
-  beforeEach(() => {
-    vi.resetAllMocks()
-  })
+  afterEach(
+    () => {
+      vi.restoreAllMocks()
+    }
+  )
+  describe('fn callback', () => {
+    it('should not call fn when not have a value', () => {
+      const { fnSpy } = BuilderForm
+        .a()
+        .build()
 
-  describe(mapParams.name, () => {
-    it('should call clearSubmit with inputs', () => {
-      const { fnSpy } = BuilderForm.a().appendInput('paramCollection', 'value.0').build()
+      expect(fnSpy).not.toHaveBeenCalled()
+    })
+
+    it('should call clearSubmit with inputs resolved', () => {
+      const { fnSpy } = BuilderForm
+        .a()
+        .mockAMapParams('paramCollection=value.0')
+        .build()
 
       expect(fnSpy).toHaveBeenCalledWith('paramCollection=value.0')
     })
+  })
 
-    it('should receive multiple inputs', () => {
-      const { fnSpy } = BuilderForm
-        .a()
+  describe('mapParams', () => {
+    it.todo('should return a Map with any error', () => {})
+
+    it.todo('should a return error on Map if input have "data-with-value" attribute but not have value', () => {})
+
+    it('should map multiple inputs', () => {
+      const params: any = BuilderReactFormEvent.a()
         .appendInput('paramCollection', 'collection')
         .appendInput('paramCategory', 'category')
         .appendInput('paramSpecification', 'specificationId=specificationValue')
         .build()
 
-      expect(fnSpy).toHaveBeenCalledWith('paramCollection=collection,paramCategory=category,paramSpecification=specificationId=specificationValue')
+      const result = mapParams(params)
+
+      expect(result).toBe('paramCollection=collection,paramCategory=category,paramSpecification=specificationId=specificationValue')
     })
 
     it('should join params by character "=" if input have "data-with-value" attribute', () => {
-      const { fnSpy } = BuilderForm
-        .a()
+      const params: any = BuilderReactFormEvent.a()
         .appendInput('paramSpecification', 'specificationId=specificationValue', 'data-with-value')
         .build()
 
-      expect(fnSpy).toHaveBeenCalledWith('paramSpecification=specificationId=specificationValue')
+      const result = mapParams(params)
+
+      expect(result).toBe('paramSpecification=specificationId=specificationValue')
     })
+  })
 
-    it('should not call when not have inputs', () => {
-      const { fnSpy } = BuilderForm
-        .a()
-        .build()
-
-      expect(fnSpy).not.toHaveBeenCalled()
-    })
-
-    it('should not call fn if input have "data-with-value" attribute but not have value', () => {
-      const { fnSpy } = BuilderForm
-        .a()
-        .appendInput('paramSpecification', '', 'data-with-value')
-        .build()
-
-      expect(fnSpy).not.toHaveBeenCalled()
-    })
+  describe('provider', () => {
+    it.todo('should provide a URL generated')
+    it.todo('should provide a name of input with error and a error message')
+    it.todo('should show generic message error if any fn throw an error')
   })
 })
