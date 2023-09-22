@@ -37,5 +37,16 @@ describe(actionHandleInputErrors.name, () => {
 				expect(result).toStrictEqual(expectedState)
 		})
 
+		it('Should nullify the urlGenerated', () => {
+
+				const states = BuilderReducerFormSearchParams.a().build()
+
+				const payload = new Map()
+
+				const result = useSut(states, payload)
+
+				expect(result.urlGenerated).toBeNull()
+
+		})
 
 })
