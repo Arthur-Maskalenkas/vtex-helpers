@@ -14,6 +14,7 @@ export type ActionHandleParamsResult = {
 export const actionHandleParamsResult = ({ states, action }: ReducerFormSearchParams.Params<ActionHandleParamsResult>): ReducerFormSearchParams.States => {
 		return {
 				...states,
+				hasErrors: false,
 				urlGenerated: action.payload.data.params
 		}
 }
