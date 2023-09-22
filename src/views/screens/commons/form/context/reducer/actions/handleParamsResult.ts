@@ -15,6 +15,7 @@ export const actionHandleParamsResult = ({ states, action }: ReducerFormSearchPa
 		return {
 				...states,
 				hasErrors: false,
+				inputsWithErrors: new Map(),
 				urlGenerated: action.payload.data.params
 		}
 }
