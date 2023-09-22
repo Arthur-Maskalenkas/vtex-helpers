@@ -15,7 +15,6 @@ export const actionHandleInputErrors = ({ states, action }: ReducerFormSearchPar
 		return {
 				...states,
 				hasErrors: true,
-				inputsWithErrors: action.payload.data.inputs,
-				urlGenerated: null
+				inputsWithErrors: action.payload.data.inputs
 		}
 }
