@@ -23,4 +23,9 @@ export class BuilderReducerFormSearchParams {
 				return this.#data
 		}
 
+		public withError() {
+				this.#data.hasErrors = true
+				return this
+		}
+
 }

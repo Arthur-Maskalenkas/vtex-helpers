@@ -4,6 +4,7 @@ import {
 } from "../../../../../../src/views/screens/commons/form/context/reducer/actions/handleParamsResult.ts";
 import { BuilderReducerFormSearchParams } from "./builders.ts";
 import { faker } from "@faker-js/faker";
+import { beforeEach } from "vitest";
 
 
 
@@ -42,7 +43,15 @@ describe(actionHandleParamsResult.name, () => {
 				expect(result).toStrictEqual(expectedState)
 		})
 
-		it.todo('Should reset the inputsWithErrors')
+		it('Should reset the hasErrors', () => {
+				const states = BuilderReducerFormSearchParams.a().withError().build()
+
+				const payload = faker.internet.domainName()
+
+				const result = useSut(states, payload)
+
+				expect(result.hasErrors).toBeFalsy()
+		})
 
 		it.todo('Should nullify the hasErrors')
 
