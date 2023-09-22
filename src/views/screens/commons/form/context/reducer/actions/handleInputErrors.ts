@@ -11,7 +11,7 @@ export type ActionHandleInputErrors = {
 		}
 }
 
-export const actionHandleInputErrors = ({ states, action }: ReducerFormSearchParams.Params): ReducerFormSearchParams.States => {
+export const actionHandleInputErrors = ({ states, action }: ReducerFormSearchParams.Params<ActionHandleInputErrors>): ReducerFormSearchParams.States => {
 		return {
 				...states,
 				urlGenerated: null,

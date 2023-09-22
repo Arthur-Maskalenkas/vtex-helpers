@@ -1,4 +1,5 @@
 import { actionHandleInputErrors, ActionHandleInputErrors } from "./actions/handleInputErrors.ts";
+import { actionHandleParamsResult, ActionHandleParamsResult } from "./actions/handleParamsResult.ts";
 
 
 
@@ -9,12 +10,12 @@ export namespace ReducerFormSearchParams {
 				urlGenerated: string | null
 		}
 
-		export type Actions = ActionHandleInputErrors
+		export type Actions = ActionHandleInputErrors | ActionHandleParamsResult
 
-		export type Params = {
-				states: States
-				action: Actions
-		}
+		export type Params<T extends Actions = Actions> = {
+				states: States;
+				action: T;
+		};
 
 }
 
@@ -25,11 +26,13 @@ export const ReducerFormSearchParamsDefaultValues: ReducerFormSearchParams.State
 }
 
 export function reducer(states: ReducerFormSearchParams.States, action: ReducerFormSearchParams.Actions) {
-		const commonProps = { states, action }
+		const commonProps: any = { states, action }
 
 		switch (action.type) {
 				case 'ACTION_HANDLE_INPUT_ERRORS':
 						return actionHandleInputErrors(commonProps)
+				case 'ACTION_HANDLE_PARAMS_RESULT':
+						return actionHandleParamsResult(commonProps)
 				default:
 						return states
 		}
