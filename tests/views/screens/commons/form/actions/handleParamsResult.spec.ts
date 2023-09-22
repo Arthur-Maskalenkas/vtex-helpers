@@ -53,6 +53,14 @@ describe(actionHandleParamsResult.name, () => {
 				expect(result.hasErrors).toBeFalsy()
 		})
 
-		it.todo('Should nullify the hasErrors')
+		it('Should reset the inputsWithErrors', () => {
+				const states = BuilderReducerFormSearchParams.a().withInputsWithErrors().build()
+
+				const payload = faker.internet.domainName()
+
+				const result = useSut(states, payload)
+
+				expect(result.inputsWithErrors.size).toBe(0)
+		})
 
 })

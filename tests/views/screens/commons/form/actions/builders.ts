@@ -28,4 +28,9 @@ export class BuilderReducerFormSearchParams {
 				return this
 		}
 
+		public withInputsWithErrors() {
+				this.#data.inputsWithErrors = new Map([ [ 'name', 'error' ] ])
+				return this
+		}
+
 }
