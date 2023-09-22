@@ -36,4 +36,9 @@ describe(actionHandleParamsResult.name, () => {
 
 				expect(result).toStrictEqual(expectedState)
 		})
+
+		it.todo('Should reset the inputsWithErrors')
+
+		it.todo('Should nullify the hasErrors')
+
 })
