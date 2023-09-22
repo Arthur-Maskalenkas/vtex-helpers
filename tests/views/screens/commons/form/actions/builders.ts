@@ -1,11 +1,15 @@
 import {
 		ReducerFormSearchParams, ReducerFormSearchParamsDefaultValues
 } from "../../../../../../src/views/screens/commons/form/context/reducer/reducer.ts";
+import { faker } from "@faker-js/faker";
 
 
 
 export class BuilderReducerFormSearchParams {
-		#data: ReducerFormSearchParams.States = ReducerFormSearchParamsDefaultValues
+		#data: ReducerFormSearchParams.States = {
+				...ReducerFormSearchParamsDefaultValues,
+				urlGenerated: faker.internet.url()
+		}
 
 
 		private constructor() {
