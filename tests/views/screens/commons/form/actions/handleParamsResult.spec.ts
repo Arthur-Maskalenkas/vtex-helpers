@@ -22,6 +22,11 @@ const useSut = (states: ReducerFormSearchParams.States, payload: string): Reduce
 
 
 describe(actionHandleParamsResult.name, () => {
+		beforeEach(() => {
+				vi.clearAllMocks()
+		})
+
+
 		it('Should return a correctly states', () => {
 				const states = BuilderReducerFormSearchParams.a().build()
 
