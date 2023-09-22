@@ -1,11 +1,11 @@
 export interface IUseCaseDeleteCache {
-  delete: (params: IUseCaseDeleteCache.Params) => IUseCaseDeleteCache.Result
+		delete: (params: IUseCaseDeleteCache.Params) => IUseCaseDeleteCache.Result
 }
 
 export namespace IUseCaseDeleteCache {
-  export type Params = {
-    id: string
-  }
+		export type Params = {
+				id: string
+		}
 
-  export type Result = Promise<boolean>
+		export type Result = Promise<boolean>
 }

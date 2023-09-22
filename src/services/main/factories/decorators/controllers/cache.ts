@@ -3,13 +3,15 @@ import { factoryUsecaseLoadCache } from '../../useCases/factoryUsecaseLoadCache.
 import { factoryUsecaseSaveCache } from '../../useCases/factoryUsecaseSaveCache.ts'
 import { type ProtocolController } from '../../../../presentation/protocols/controller.ts'
 
-export const factoryDecoratorControllerCache = <TParams, TResult> (controller: ProtocolController) => {
-  const usecaseLoadCache = factoryUsecaseLoadCache()
-  const usecaseSaveCache = factoryUsecaseSaveCache()
 
-  return new DecoratorControllerCache<TParams, TResult>(
-    controller,
-    usecaseLoadCache,
-    usecaseSaveCache
-  )
+
+export const factoryDecoratorControllerCache = <TParams, TResult>(controller: ProtocolController) => {
+		const usecaseLoadCache = factoryUsecaseLoadCache()
+		const usecaseSaveCache = factoryUsecaseSaveCache()
+
+		return new DecoratorControllerCache<TParams, TResult>(
+					controller,
+					usecaseLoadCache,
+					usecaseSaveCache
+		)
 }

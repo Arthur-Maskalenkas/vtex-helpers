@@ -11,7 +11,7 @@ const reactRoot = document.createElement('div')
 let existingElement = document.querySelector('div.main') as HTMLElement
 
 if (!existingElement) {
-  existingElement = document.querySelector('body.bg-base') as HTMLElement
+		existingElement = document.querySelector('body.bg-base') as HTMLElement
 }
 
 // Adicione o novo elemento à árvore DOM, como um filho do elemento existente
@@ -19,11 +19,11 @@ existingElement.appendChild(reactRoot)
 
 // Use ReactDOM.createRoot para renderizar o componente React no novo elemento
 ReactDOM.createRoot(reactRoot).render(
-    <React.StrictMode>
-        <div className="root-app">
-        <ProviderApplication>
-            <Application/>
-        </ProviderApplication>
-        </div>
-    </React.StrictMode>
+			<React.StrictMode>
+					<div className="root-app">
+							<ProviderApplication>
+									<Application/>
+							</ProviderApplication>
+					</div>
+			</React.StrictMode>
 )

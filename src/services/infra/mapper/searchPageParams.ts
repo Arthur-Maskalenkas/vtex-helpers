@@ -1,72 +1,74 @@
 import { type ProtocolMapSearchparams } from '../../data/protocols/mapSearchParams.ts'
 
+
+
 type Params = {
-  id: string
-  value: string
+		id: string
+		value: string
 }
 
 type Response = {
-  id: string
-  value: string
+		id: string
+		value: string
 }
 
 export class MapperSearchPageParams implements ProtocolMapSearchparams {
-  private mapCategorie ({ id }: Params): Response {
-    return {
-      id,
-      value: 'c'
-    }
-  }
+		map(params: ProtocolMapSearchparams.Params): ProtocolMapSearchparams.Result {
+				const searchParams = params.split(',')
 
-  private mapBrand ({ id }: Params): Response {
-    return {
-      id,
-      value: 'b'
-    }
-  }
+				const mappedIds: string[] = []
+				const mappedValues: string[] = []
 
-  private mapCollection ({ id }: Params): Response {
-    return {
-      id,
-      value: 'productClusterIds'
-    }
-  }
+				for (let i = 0; i < searchParams.length; i++) {
+						const currentParam = searchParams[i]
 
-  private mapSpecification ({ id, value }: Params): Response {
-    return {
-      id: `${value}`,
-      value: `specificationFilter_${id}`
-    }
-  }
+						const [ attribute, id, value ] = currentParam.split('=')
 
-  map (params: ProtocolMapSearchparams.Params): ProtocolMapSearchparams.Result {
-    const searchParams = params.split(',')
+						const paramsStrategy: any = {
+								paramCategorie: this.mapCategorie,
+								paramBrand: this.mapBrand,
+								paramCollection: this.mapCollection,
+								paramSpecification: this.mapSpecification
+						}
 
-    const mappedIds: string[] = []
-    const mappedValues: string[] = []
+						const currentStrategy = paramsStrategy[attribute]
 
-    for (let i = 0; i < searchParams.length; i++) {
-      const currentParam = searchParams[i]
+						if (!currentStrategy) continue
 
-      const [attribute, id, value] = currentParam.split('=')
+						const result = currentStrategy({ id, value })
 
-      const paramsStrategy: any = {
-        paramCategorie: this.mapCategorie,
-        paramBrand: this.mapBrand,
-        paramCollection: this.mapCollection,
-        paramSpecification: this.mapSpecification
-      }
+						mappedIds.push(result.id)
+						mappedValues.push(result.value)
+				}
 
-      const currentStrategy = paramsStrategy[attribute]
+				return `/${mappedIds.join('/')}?map=${mappedValues.join(',')}`
+		}
 
-      if (!currentStrategy) continue
+		private mapCategorie({ id }: Params): Response {
+				return {
+						id,
+						value: 'c'
+				}
+		}
 
-      const result = currentStrategy({ id, value })
+		private mapBrand({ id }: Params): Response {
+				return {
+						id,
+						value: 'b'
+				}
+		}
 
-      mappedIds.push(result.id)
-      mappedValues.push(result.value)
-    }
+		private mapCollection({ id }: Params): Response {
+				return {
+						id,
+						value: 'productClusterIds'
+				}
+		}
 
-    return `/${mappedIds.join('/')}?map=${mappedValues.join(',')}`
-  }
+		private mapSpecification({ id, value }: Params): Response {
+				return {
+						id: `${value}`,
+						value: `specificationFilter_${id}`
+				}
+		}
 }

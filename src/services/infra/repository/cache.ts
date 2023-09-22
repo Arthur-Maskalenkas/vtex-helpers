@@ -4,26 +4,27 @@ import { type ProtocolRepositoryDeleteCache } from '../../data/protocols/reposit
 
 // implements a repository save cache, load cache and delete cache protocols
 export class RepositoryCache implements ProtocolRepositorySaveCache, ProtocolRepositoryLoadCache, ProtocolRepositoryDeleteCache {
-  private readonly prefix = 'vtex-helper'
-  async save ({ value, id }: ProtocolRepositorySaveCache.Params): ProtocolRepositorySaveCache.Result {
-    const valueJson = JSON.stringify(value)
-    const key = `${this.prefix}-${id}`
+		private readonly prefix = 'vtex-helper'
 
-    window.localStorage.setItem(key, valueJson)
-  }
+		async save({ value, id }: ProtocolRepositorySaveCache.Params): ProtocolRepositorySaveCache.Result {
+				const valueJson = JSON.stringify(value)
+				const key = `${this.prefix}-${id}`
 
-  async load ({ id }: ProtocolRepositoryLoadCache.Params): ProtocolRepositoryLoadCache.Result {
-    const key = `${this.prefix}-${id}`
-    const value = window.localStorage.getItem(key)
+				window.localStorage.setItem(key, valueJson)
+		}
 
-    if (!value) return null
+		async load({ id }: ProtocolRepositoryLoadCache.Params): ProtocolRepositoryLoadCache.Result {
+				const key = `${this.prefix}-${id}`
+				const value = window.localStorage.getItem(key)
 
-    return JSON.parse(value)
-  }
+				if (!value) return null
 
-  async delete ({ id }: ProtocolRepositoryDeleteCache.Params): ProtocolRepositoryDeleteCache.Result {
-    const key = `${this.prefix}-${id}`
+				return JSON.parse(value)
+		}
 
-    window.localStorage.removeItem(key)
-  }
+		async delete({ id }: ProtocolRepositoryDeleteCache.Params): ProtocolRepositoryDeleteCache.Result {
+				const key = `${this.prefix}-${id}`
+
+				window.localStorage.removeItem(key)
+		}
 }
