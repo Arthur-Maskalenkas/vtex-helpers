@@ -1,34 +1,36 @@
-import { BuilderDefaultStates } from '../../../src/context/reducer/generateDefaultStates'
-import { type States } from '../../../src/context/reducer/types.ts'
+import { BuilderDefaultStates } from "../../../src/views/application/context/reducer/generateDefaultStates";
+import { States } from "../../../src/views/application/context/reducer/types.ts";
+
+
 
 export class StatesBuilder {
-  #state: States
+		#state: States
 
-  private constructor () {
-    this.#state = BuilderDefaultStates.aDefaultStates({} as any)
-  }
+		private constructor() {
+				this.#state = BuilderDefaultStates.aDefaultStates({} as any)
+		}
 
-  public static a () {
-    return new StatesBuilder()
-  }
+		public static a() {
+				return new StatesBuilder()
+		}
 
-  public appendIsOpenedTrue () {
-    this.#state = {
-      ...this.#state,
-      isOpened: true
-    }
-    return this
-  }
+		public appendIsOpenedTrue() {
+				this.#state = {
+						...this.#state,
+						isOpened: true
+				}
+				return this
+		}
 
-  public appendIsOpenedFalse () {
-    this.#state = {
-      ...this.#state,
-      isOpened: false
-    }
-    return this
-  }
+		public appendIsOpenedFalse() {
+				this.#state = {
+						...this.#state,
+						isOpened: false
+				}
+				return this
+		}
 
-  build () {
-    return this.#state
-  }
+		build() {
+				return this.#state
+		}
 }

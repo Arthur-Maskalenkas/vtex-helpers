@@ -2,7 +2,7 @@ import { MapInternalListOptions } from './mappers/mapInternalListOptions.ts'
 import { type ParamsBuildDefaultStates, type ProtocolMapperDefaultStates } from './protocols.ts'
 import { MapListOptions } from './mappers/mapListOptions.ts'
 import { type States } from '../types.ts'
-import { AppInternalServices } from '../../../services/main/app.ts'
+import { AppInternalServices } from "../../../../../services/main/app.ts";
 
 
 
