@@ -8,6 +8,10 @@ import {
 		actionHandleInputErrors
 } from "../../../../../src/views/screens/commons/form/context/reducer/actions/handleInputErrors.ts";
 import * as contextModule from '../../../../../src/views/screens/commons/form/context/index.tsx'
+import {
+		actionHandleParamsResult
+} from "../../../../../src/views/screens/commons/form/context/reducer/actions/handleParamsResult.ts";
+import { faker } from "@faker-js/faker";
 
 
 
@@ -52,6 +56,23 @@ describe(`${Form.name} Tests Suits`, () => {
 		})
 
 		describe(`#${useFormContext.name}`, () => {
+
+				it("Should not call	any action when map params returns null", () => {
+						vi.spyOn(utilsModule, 'mapParams')
+								.mockReturnValue(null)
+
+						vi.spyOn(contextModule, 'useFormContext')
+								.mockReturnValue({ dispatch: vi.fn() } as any)
+
+						BuilderForm.a()
+								.appendInput('paramSpecification', 'specificationId')
+								.build()
+
+						const contextSpy = useFormContext()
+
+						expect(contextSpy.dispatch).not.toHaveBeenCalled()
+				})
+
 				it(`Should call ${actionHandleInputErrors.name} when map params returns a map with errors`, () => {
 						const expectedMap = new Map([ [ 'paramSpecification', errorMessages.specification.requiredValue ] ])
 
@@ -73,6 +94,29 @@ describe(`${Form.name} Tests Suits`, () => {
 						})
 
 
+				})
+
+				it(`Should call ${actionHandleParamsResult.name} when map params returns a string`, () => {
+						const expectedString = faker.lorem.word()
+
+						vi.spyOn(utilsModule, 'mapParams')
+								.mockReturnValue(expectedString)
+
+						vi.spyOn(contextModule, 'useFormContext')
+								.mockReturnValue({ dispatch: vi.fn() } as any)
+
+						BuilderForm.a()
+								.appendInput('paramSpecification', 'specificationId')
+								.build()
+
+						const contextSpy = useFormContext()
+
+						expect(contextSpy.dispatch).toHaveBeenCalledWith({
+								type: 'ACTION_HANDLE_PARAMS_RESULT',
+								payload: {
+										data: { params: expectedString }
+								}
+						})
 				})
 		})
 })
