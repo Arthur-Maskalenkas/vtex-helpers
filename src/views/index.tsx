@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Application } from './application'
+import { Application } from './forTest'
 import './global.scss'
+import { ProviderApplication } from '../context'
 
 // Crie um novo elemento para renderizar o componente React
 const reactRoot = document.createElement('div')
@@ -20,7 +21,9 @@ existingElement.appendChild(reactRoot)
 ReactDOM.createRoot(reactRoot).render(
 			<React.StrictMode>
 					<div className="root-app">
-							<Application/>
+							<ProviderApplication>
+									<Application/>
+							</ProviderApplication>
 					</div>
 			</React.StrictMode>
 )

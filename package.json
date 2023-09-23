@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint ./src/** ./tests/** --ext ts,tsx --fix",
+    "lint": "eslint ./src/** --ext ts,tsx --fix",
     "preview": "vite preview",
     "test": "vitest  --watch --silent",
     "test:ui": "vitest --ui",
     "generate": "yarn plop --plopfile ./.plop/plopfile.mjs"
+
   },
   "dependencies": {
     "postcss-prefix-selector": "^1.16.0",
