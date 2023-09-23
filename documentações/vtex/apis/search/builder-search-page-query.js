@@ -42,7 +42,10 @@ class UrlBuilder {
 
 
 new UrlBuilder()
-  .category('Masculino/Tênis/Treino-e-Academia')
-  .productField('Cor', 'Preto')
+  .category('Masculino')
+  .brand('Olympikus')
+  .collection('Todos')
   .productField('Tecnologia', 'Evasense')
   .openInNewTab();
+
+// /Masculino/Olympikus/Todos/Evasense?map=c,b,productClusterIds,specificationFilter_Tecnologia

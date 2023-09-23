@@ -2,8 +2,6 @@ class BuilderParamsSearchApi {
   constructor() {
     this.baseUrl = `/api/catalog_system/pub/products/search`;
     this.filters = [];
-
-    this.setPagination(1, 50)
   }
 
   byText(searchWord) {
@@ -79,7 +77,8 @@ class BuilderParamsSearchApi {
 // Exemplo de uso:
 const api = BuilderParamsSearchApi
   .aBuilderQuery()
-  .byText(das)
+  .byProductId('8531')
+  .byText('TÊNIS OLYMPIKUS VELOZ 2 UNISSEX')
   .build()
 
 console.log(api);
