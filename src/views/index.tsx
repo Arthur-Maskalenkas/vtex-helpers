@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Application } from './forTest'
 import './global.scss'
-import { ProviderApplication } from '../context'
+import { ProviderApplication } from "./application/context";
+import { Application } from "./application";
 
 // Crie um novo elemento para renderizar o componente React
 const reactRoot = document.createElement('div')
