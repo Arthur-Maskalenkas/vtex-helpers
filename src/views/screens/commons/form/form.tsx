@@ -13,7 +13,7 @@ export const Button = ({ children }: React.PropsWithChildren) => {
 		)
 }
 
-export const Form = ({ children, handleSubmit }: React.PropsWithChildren<{
+export const Form = ({ children }: React.PropsWithChildren<{
 		handleSubmit: (data: string | Map<any, any> | null) => void
 }>) => {
 		const { dispatch } = useFormContext()
@@ -22,8 +22,14 @@ export const Form = ({ children, handleSubmit }: React.PropsWithChildren<{
 				event.preventDefault()
 				const paramsMapped = mapParams(event)
 
-				dispatch({ type: 'ACTION_HANDLE_INPUT_ERRORS', payload: { data: { inputs: paramsMapped } } })
-				paramsMapped && handleSubmit(paramsMapped)
+				if (!paramsMapped) return
+
+				if (paramsMapped instanceof Map) {
+						dispatch({ type: 'ACTION_HANDLE_INPUT_ERRORS', payload: { data: { inputs: paramsMapped } } })
+						return
+				}
+
+				dispatch({ type: 'ACTION_HANDLE_PARAMS_RESULT', payload: { data: { params: paramsMapped } } })
 		}
 
 		return (
