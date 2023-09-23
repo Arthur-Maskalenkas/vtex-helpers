@@ -1,31 +1,22 @@
 import { Form } from '../../../../../src/views/screens/commons/form/form.tsx'
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { BuilderForm, BuilderReactFormEvent } from './builders.tsx'
-import { errorMessages, mapParams } from '../../../../../src/views/screens/commons/form/utils.ts'
+import * as utilsModule from '../../../../../src/views/screens/commons/form/utils.ts'
+import { useFormContext } from "../../../../../src/views/screens/commons/form/context";
+import {
+		actionHandleInputErrors
+} from "../../../../../src/views/screens/commons/form/context/reducer/actions/handleInputErrors.ts";
+import * as contextModule from '../../../../../src/views/screens/commons/form/context/index.tsx'
 
 
 
-describe(Form.name, () => {
-		describe('fn callback', () => {
-				it('should not call fn when not have a value', () => {
-						const { fnSpy } = BuilderForm
-								.a()
-								.build()
+const { errorMessages, mapParams } = utilsModule
 
-						expect(fnSpy)
-								.not.toHaveBeenCalled()
-				})
 
-				it('should call clearSubmit with inputs resolved', () => {
-						const { fnSpy } = BuilderForm
-								.a().mockAMapParams('paramCollection=value.0').build()
-						expect(fnSpy).toHaveBeenCalledWith('paramCollection=value.0')
-				})
-		})
-
-		describe('mapParams', () => {
-				it.todo('should a return error on Map if input have "data-with-value" attribute but not have value', () => {
+describe(`${Form.name} Tests Suits`, () => {
+		describe(`#${mapParams.name}`, () => {
+				it('should a return error on Map if input have "data-with-value" attribute but not have value', () => {
 						const params: any = BuilderReactFormEvent.a()
 								.appendInputWithAttributeDataWithValue('paramSpecification', 'specificationId')
 								.build()
@@ -60,9 +51,28 @@ describe(Form.name, () => {
 				})
 		})
 
-		describe('provider', () => {
-				it.todo('should provide a URL generated')
-				it.todo('should provide a name of input with error and a error message')
-				it.todo('should show generic message error if any fn throw an error')
+		describe(`#${useFormContext.name}`, () => {
+				it(`Should call ${actionHandleInputErrors.name} when map params returns a map with errors`, () => {
+						const expectedMap = new Map([ [ 'paramSpecification', errorMessages.specification.requiredValue ] ])
+
+						vi.spyOn(utilsModule, 'mapParams')
+								.mockReturnValue(expectedMap)
+
+						vi.spyOn(contextModule, 'useFormContext')
+								.mockReturnValue({ dispatch: vi.fn() } as any)
+
+						BuilderForm.a()
+								.appendInput('paramSpecification', 'specificationId')
+								.build()
+
+						const contextSpy = useFormContext()
+
+						expect(contextSpy.dispatch).toHaveBeenCalledWith({
+								type: 'ACTION_HANDLE_INPUT_ERRORS',
+								payload: { data: { inputs: expectedMap } }
+						})
+
+
+				})
 		})
 })
