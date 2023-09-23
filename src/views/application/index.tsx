@@ -1,29 +1,17 @@
 import './styles.scss'
-import { Header } from '../molecules/header.tsx'
-import { ListOptions } from '../molecules/listOptions.tsx'
-import { SwitcherVisibility } from '../molecules/switcher-visibility.tsx'
-import { ContainerVisibility } from '../molecules/containerVisibility.tsx'
+import { useEffect } from 'react'
+import { AllCategories } from '../screens/allCategories/allCategories.tsx'
 
 
 
 export const Application = () => {
+		useEffect(() => {
+				console.log('carregou2')
+		}, [])
+
 		return (
 					<div className={'container-main-app'}>
-							<ContainerVisibility.InsideContent>
-									<Header>
-											<Header.InputSearch/>
-									</Header>
-									<ListOptions.Container>
-											<ListOptions.OptionsWithQuery/>
-											<ListOptions.OptionsWithoutQuery/>
-									</ListOptions.Container>
-							</ContainerVisibility.InsideContent>
-
-							<ContainerVisibility.OutsideContent>
-									<SwitcherVisibility>
-											<SwitcherVisibility.Icon/>
-									</SwitcherVisibility>
-							</ContainerVisibility.OutsideContent>
+							<AllCategories/>
 					</div>
 		)
 }
