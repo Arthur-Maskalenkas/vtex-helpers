@@ -2,7 +2,6 @@
   "extends": [
     "./tsconfig.node.json"
   ],
-  "types": ["vitest/globals"],
   "include": [
     "tests",
     "./vitest.config.ts"
@@ -10,7 +9,6 @@
   "exclude": [
     "src"
   ],
-
   "compilerOptions": {
     "target": "ES2021",
     "useDefineForClassFields": true,
@@ -37,7 +35,6 @@
     "noFallthroughCasesInSwitch": true,
     "types": [
       "node",
-      "vitest/globals",
       "vitest-dom/extend-expect"
     ]
   }

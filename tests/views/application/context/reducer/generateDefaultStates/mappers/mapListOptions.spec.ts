@@ -1,13 +1,14 @@
 import {
 		MapListOptions
-} from '../../../../../src/views/application/context/reducer/generateDefaultStates/mappers/mapListOptions.ts'
+} from '../../../../../../../src/views/application/context/reducer/generateDefaultStates/mappers/mapListOptions.ts'
 import {
 		ManualItem, ParamsBuildDefaultStates
-} from '../../../../../src/views/application/context/reducer/generateDefaultStates/protocols.ts'
-import { type ListOptions } from '../../../../../src/views/application/context/reducer/types.ts'
+} from '../../../../../../../src/views/application/context/reducer/generateDefaultStates/protocols.ts'
+import { type ListOptions } from '../../../../../../../src/views/application/context/reducer/types.ts'
 import {
 		ModelListOptions
-} from '../../../../../src/views/application/context/reducer/domain/models/modelListOptions.ts'
+} from '../../../../../../../src/views/application/context/reducer/domain/models/modelListOptions.ts'
+import { describe, expect, it } from "vitest";
 
 
 
@@ -58,10 +59,10 @@ describe(MapListOptions.name, () => {
 				const result = sut.map({ ...params as any })
 
 				const expected: ListOptions.Items =
-							[
-									new ModelListOptions('Opção 1', 'option.1', null, null),
-									new ModelListOptions('Opção 2', 'option.2', null, null)
-							]
+						[
+								new ModelListOptions('Opção 1', 'option.1', null, null),
+								new ModelListOptions('Opção 2', 'option.2', null, null)
+						]
 
 				expect(result).toStrictEqual(expected)
 		})

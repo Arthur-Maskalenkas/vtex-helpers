@@ -1,12 +1,14 @@
-import { describe, expect, it } from 'vitest'
-import { States } from "../../../../src/views/application/context/reducer/types.ts";
+import { describe, expect, it, vi } from "vitest";
+import { States } from "../../../../../../src/views/application/context/reducer/types.ts";
 import {
 		ModelInternalListOptions
-} from "../../../../src/views/application/context/reducer/domain/models/modelInternalListOptions.ts";
-import { ModelListOptions } from "../../../../src/views/application/context/reducer/domain/models/modelListOptions.ts";
+} from "../../../../../../src/views/application/context/reducer/domain/models/modelInternalListOptions.ts";
+import {
+		ModelListOptions
+} from "../../../../../../src/views/application/context/reducer/domain/models/modelListOptions.ts";
 import {
 		ActionHandleSearchOption
-} from "../../../../src/views/application/context/reducer/actions/actionHandleSearchOption.ts";
+} from "../../../../../../src/views/application/context/reducer/actions/actionHandleSearchOption.ts";
 
 
 

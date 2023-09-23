@@ -1,12 +1,16 @@
 import {
 		type ParamsBuildDefaultStates
-} from '../../../../src/views/application/context/reducer/generateDefaultStates/protocols.ts'
-import { BuilderDefaultStates } from '../../../../src/views/application/context/reducer/generateDefaultStates'
-import { type States } from '../../../../src/views/application/context/reducer/types.ts'
+} from '../../../../../../src/views/application/context/reducer/generateDefaultStates/protocols.ts'
+import { BuilderDefaultStates } from '../../../../../../src/views/application/context/reducer/generateDefaultStates'
+import { type States } from '../../../../../../src/views/application/context/reducer/types.ts'
 import {
 		ModelInternalListOptions
-} from '../../../../src/views/application/context/reducer/domain/models/modelInternalListOptions.ts'
-import { ModelListOptions } from '../../../../src/views/application/context/reducer/domain/models/modelListOptions.ts'
+} from '../../../../../../src/views/application/context/reducer/domain/models/modelInternalListOptions.ts'
+import {
+		ModelListOptions
+} from '../../../../../../src/views/application/context/reducer/domain/models/modelListOptions.ts'
+
+import { describe, expect, it, vi } from "vitest";
 
 
 

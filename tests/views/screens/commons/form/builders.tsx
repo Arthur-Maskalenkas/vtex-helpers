@@ -1,9 +1,7 @@
 import { render, userEvent } from '../../../../utils/test-utils.tsx'
 import { Form } from '../../../../../src/views/screens/commons/form/form.tsx'
 import * as utilsModule from '../../../../../src/views/screens/commons/form/utils.ts'
-import {
-		ReducerFormSearchParams, ReducerFormSearchParamsDefaultValues
-} from "../../../../../src/views/screens/commons/form/context/reducer/reducer.ts";
+import { vi } from "vitest";
 
 
 
@@ -25,15 +23,15 @@ export class BuilderReactFormEvent {
 				}
 
 				this.#elements.push(
-							{
-									...attrs,
-									attributes: {
-											...attrs,
-											getNamedItem: (name: string) => {
-													return { value: attrs[name] }
-											}
-									}
-							}
+						{
+								...attrs,
+								attributes: {
+										...attrs,
+										getNamedItem: (name: string) => {
+												return { value: attrs[name] }
+										}
+								}
+						}
 				)
 				return this
 		}
@@ -47,15 +45,15 @@ export class BuilderReactFormEvent {
 				}
 
 				this.#elements.push(
-							{
-									...attrs,
-									attributes: {
-											...attrs,
-											getNamedItem: (name: string) => {
-													return { value: attrs[name] }
-											}
-									}
-							}
+						{
+								...attrs,
+								attributes: {
+										...attrs,
+										getNamedItem: (name: string) => {
+												return { value: attrs[name] }
+										}
+								}
+						}
 				)
 				return this
 		}
@@ -84,24 +82,24 @@ export class BuilderForm {
 
 		public appendInput(id?: string, value?: string, ...rest: any) {
 				this.#inputs.push(
-							<input {...rest} id={id} value={value}/>
+						<input {...rest} id={id} value={value}/>
 				)
 				return this
 		}
 
 		public mockAMapParams(value: string) {
 				vi.spyOn(utilsModule, utilsModule.mapParams.name as any)
-							.mockImplementation(() => value)
+						.mockImplementation(() => value)
 				return this
 		}
 
 		public build() {
 				const fnSpy = vi.fn()
 				const renderedEl = render(
-							<Form handleSubmit={fnSpy}>
-									{this.#inputs}
-									<Form.Button>Submit</Form.Button>
-							</Form>
+						<Form handleSubmit={fnSpy}>
+								{this.#inputs}
+								<Form.Button>Submit</Form.Button>
+						</Form>
 				)
 
 				if (this.#submitOnStart) {

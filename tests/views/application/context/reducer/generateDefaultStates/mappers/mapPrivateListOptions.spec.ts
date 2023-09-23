@@ -1,13 +1,14 @@
 import {
 		MapInternalListOptions
-} from '../../../../../src/views/application/context/reducer/generateDefaultStates/mappers/mapInternalListOptions.ts'
-import { type internalListOptions } from '../../../../../src/views/application/context/reducer/types.ts'
+} from '../../../../../../../src/views/application/context/reducer/generateDefaultStates/mappers/mapInternalListOptions.ts'
+import { type internalListOptions } from '../../../../../../../src/views/application/context/reducer/types.ts'
 import {
 		type ManualItem
-} from '../../../../../src/views/application/context/reducer/generateDefaultStates/protocols.ts'
+} from '../../../../../../../src/views/application/context/reducer/generateDefaultStates/protocols.ts'
 import {
 		ModelInternalListOptions
-} from '../../../../../src/views/application/context/reducer/domain/models/modelInternalListOptions.ts'
+} from '../../../../../../../src/views/application/context/reducer/domain/models/modelInternalListOptions.ts'
+import { describe, expect, it } from "vitest";
 
 
 
@@ -45,11 +46,11 @@ describe(MapInternalListOptions.name, () => {
 				const params: ManualItem.Items = buildParamsWithChildrens({ lengthChildrens: 2 })
 
 				const expected: internalListOptions.Items = new Map(
-							[
-									[ 'option.1', new ModelInternalListOptions('Opção 1', null, null) ],
-									[ 'option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1') ],
-									[ 'option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1') ]
-							]
+						[
+								[ 'option.1', new ModelInternalListOptions('Opção 1', null, null) ],
+								[ 'option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1') ],
+								[ 'option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1') ]
+						]
 				)
 
 				const result = sut.map({ manualList: params })
@@ -60,20 +61,20 @@ describe(MapInternalListOptions.name, () => {
 				const { sut } = makeSut()
 
 				const expected: internalListOptions.Items = new Map(
-							[
-									[ 'option.2', new ModelInternalListOptions('Opção 2', null, null) ],
-									[ 'option.2/option.2.1', new ModelInternalListOptions('Opção 2.1', null, 'option.2') ],
-									[ 'option.2/option.2.1/option.2.1.1', {
-											title: 'Opção 2.1.1',
-											parent: 'option.2/option.2.1',
-											component: null
-									} ],
-									[ 'option.2/option.2.1/option.2.1.1/option.2.1.1.1', {
-											title: 'Opção 2.1.1.1',
-											parent: 'option.2/option.2.1/option.2.1.1',
-											component: null
-									} ]
-							]
+						[
+								[ 'option.2', new ModelInternalListOptions('Opção 2', null, null) ],
+								[ 'option.2/option.2.1', new ModelInternalListOptions('Opção 2.1', null, 'option.2') ],
+								[ 'option.2/option.2.1/option.2.1.1', {
+										title: 'Opção 2.1.1',
+										parent: 'option.2/option.2.1',
+										component: null
+								} ],
+								[ 'option.2/option.2.1/option.2.1.1/option.2.1.1.1', {
+										title: 'Opção 2.1.1.1',
+										parent: 'option.2/option.2.1/option.2.1.1',
+										component: null
+								} ]
+						]
 				)
 
 				const params: ManualItem.Items = {
@@ -116,15 +117,15 @@ describe(MapInternalListOptions.name, () => {
 				}
 
 				const expected: internalListOptions.Items = new Map(
-							[
-									[ 'option.1', new ModelInternalListOptions('Opção 1', null, null) ],
-									[ 'option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1') ],
-									[ 'option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1') ],
+						[
+								[ 'option.1', new ModelInternalListOptions('Opção 1', null, null) ],
+								[ 'option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1') ],
+								[ 'option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1') ],
 
-									[ 'option.2', new ModelInternalListOptions('Opção 2', null, null) ],
-									[ 'option.2/option.2.1', new ModelInternalListOptions('Opção 2.1', null, 'option.2') ],
-									[ 'option.2/option.2.2', new ModelInternalListOptions('Opção 2.2', null, 'option.2') ]
-							]
+								[ 'option.2', new ModelInternalListOptions('Opção 2', null, null) ],
+								[ 'option.2/option.2.1', new ModelInternalListOptions('Opção 2.1', null, 'option.2') ],
+								[ 'option.2/option.2.2', new ModelInternalListOptions('Opção 2.2', null, 'option.2') ]
+						]
 				)
 
 				const result = sut.map({ manualList: params })
@@ -152,13 +153,13 @@ describe(MapInternalListOptions.name, () => {
 				}
 
 				const expected: internalListOptions.Items = new Map(
-							[
-									[ 'anyAttributeName', {
-											title: 'Any Title',
-											parent: null,
-											component: fn as any
-									} ]
-							]
+						[
+								[ 'anyAttributeName', {
+										title: 'Any Title',
+										parent: null,
+										component: fn as any
+								} ]
+						]
 				)
 
 				const result = sut.map({ manualList: params })
@@ -180,16 +181,16 @@ describe(MapInternalListOptions.name, () => {
 				}
 
 				const expected: internalListOptions.Items = new Map(
-							[
-									[ 'option.1', new ModelInternalListOptions('Opção 1', null, null) ],
-									[ 'option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1') ],
-									[ 'option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1') ],
-									[ 'anyAttributeName', {
-											title: 'Any Title',
-											parent: null,
-											component: fn as any
-									} ]
-							]
+						[
+								[ 'option.1', new ModelInternalListOptions('Opção 1', null, null) ],
+								[ 'option.1/option.1.1', new ModelInternalListOptions('Opção 1.1', null, 'option.1') ],
+								[ 'option.1/option.1.2', new ModelInternalListOptions('Opção 1.2', null, 'option.1') ],
+								[ 'anyAttributeName', {
+										title: 'Any Title',
+										parent: null,
+										component: fn as any
+								} ]
+						]
 				)
 
 				const result = sut.map({ manualList: params })

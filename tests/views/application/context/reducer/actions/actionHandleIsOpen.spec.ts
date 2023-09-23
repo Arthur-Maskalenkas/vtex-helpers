@@ -1,7 +1,9 @@
-import { StatesBuilder } from '../../../builders/contexts/statesBuilder.ts'
-import { describe, it } from 'vitest'
-import { ReducerParams, States } from "../../../../src/views/application/context/reducer/types.ts";
-import { actionHandleIsOpen } from "../../../../src/views/application/context/reducer/actions/actionHandleIsOpen.ts";
+import { StatesBuilder } from '../../../../../builders/contexts/statesBuilder.ts'
+import { describe, expect, it } from "vitest";
+import { ReducerParams, States } from "../../../../../../src/views/application/context/reducer/types.ts";
+import {
+		actionHandleIsOpen
+} from "../../../../../../src/views/application/context/reducer/actions/actionHandleIsOpen.ts";
 
 
 

@@ -1,13 +1,15 @@
-import { describe, expect, it } from 'vitest'
-import { ReducerParams, States } from "../../../../src/views/application/context/reducer/types.ts";
-import { Actions } from "../../../../src/views/application/context/reducer/reducer.ts";
+import { describe, expect, it, vi } from "vitest";
+import { ReducerParams, States } from "../../../../../../src/views/application/context/reducer/types.ts";
+import { Actions } from "../../../../../../src/views/application/context/reducer/reducer.ts";
 import {
 		ModelInternalListOptions
-} from "../../../../src/views/application/context/reducer/domain/models/modelInternalListOptions.ts";
+} from "../../../../../../src/views/application/context/reducer/domain/models/modelInternalListOptions.ts";
 import {
 		ActionHandleGoToOption
-} from "../../../../src/views/application/context/reducer/actions/actionHandleGoToOption.ts";
-import { ModelListOptions } from "../../../../src/views/application/context/reducer/domain/models/modelListOptions.ts";
+} from "../../../../../../src/views/application/context/reducer/actions/actionHandleGoToOption.ts";
+import {
+		ModelListOptions
+} from "../../../../../../src/views/application/context/reducer/domain/models/modelListOptions.ts";
 
 
 

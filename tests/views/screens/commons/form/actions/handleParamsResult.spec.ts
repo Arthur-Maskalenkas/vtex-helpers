@@ -4,7 +4,7 @@ import {
 } from "../../../../../../src/views/screens/commons/form/context/reducer/actions/handleParamsResult.ts";
 import { BuilderReducerFormSearchParams } from "./builders.ts";
 import { faker } from "@faker-js/faker";
-import { beforeEach } from "vitest";
+import { describe, expect, it } from "vitest";
 
 
 
@@ -16,6 +16,7 @@ const useSut = (states: ReducerFormSearchParams.States, payload: string): Reduce
 								params: payload
 						}
 				}
+
 		}
 
 		return actionHandleParamsResult({ states, action })
@@ -23,18 +24,10 @@ const useSut = (states: ReducerFormSearchParams.States, payload: string): Reduce
 
 
 describe(actionHandleParamsResult.name, () => {
-		beforeEach(() => {
-				vi.clearAllMocks()
-		})
-
-
 		it('Should return a correctly states', () => {
 				const states = BuilderReducerFormSearchParams.a().build()
-
 				const payload = faker.internet.domainName()
-
 				const result = useSut(states, payload)
-
 				const expectedState: ReducerFormSearchParams.States = {
 						...states,
 						urlGenerated: payload
@@ -45,14 +38,12 @@ describe(actionHandleParamsResult.name, () => {
 
 		it('Should reset the hasErrors', () => {
 				const states = BuilderReducerFormSearchParams.a().withError().build()
-
 				const payload = faker.internet.domainName()
 
 				const result = useSut(states, payload)
 
 				expect(result.hasErrors).toBeFalsy()
 		})
-
 		it('Should reset the inputsWithErrors', () => {
 				const states = BuilderReducerFormSearchParams.a().withInputsWithErrors().build()
 

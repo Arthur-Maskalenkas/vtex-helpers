@@ -3,7 +3,7 @@ import {
 } from "../../../../../../src/views/screens/commons/form/context/reducer/actions/handleInputErrors.ts";
 import { BuilderReducerFormSearchParams } from "./builders.ts";
 import { ReducerFormSearchParams } from "../../../../../../src/views/screens/commons/form/context/reducer/reducer.ts";
-import { expect } from 'vitest'
+import { describe, expect, it } from "vitest";
 
 
 
@@ -31,6 +31,7 @@ describe(actionHandleInputErrors.name, () => {
 				const expectedState = {
 						...states,
 						hasErrors: true,
+						urlGenerated: null,
 						inputsWithErrors: payload
 				}
 

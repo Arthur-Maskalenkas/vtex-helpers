@@ -1,8 +1,8 @@
-import { describe, it } from 'vitest'
-import { renderHook } from '@testing-library/react'
+import { act, renderHook } from '@testing-library/react'
 import { useDebounce } from '../../../src/views/hooks/useDebounce.tsx'
-import { act } from 'react-dom/test-utils'
 import { faker } from '@faker-js/faker'
+
+import { describe, expect, it, vi } from "vitest";
 
 
 
