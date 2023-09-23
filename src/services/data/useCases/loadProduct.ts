@@ -18,6 +18,6 @@ export class UsecaseLoadProduct implements IUseCaseLoadProduct {
 
 				const internalProduct = this.mapModelProduct.map(product)
 
-				return internalProduct
+				return internalProduct as any as IUseCaseLoadProduct.Result
 		}
 }
