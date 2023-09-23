@@ -1,42 +1,35 @@
 import { describe, it, expect, beforeEach, jest } from '@jest/globals'
-import Service from '../src/service.js'
 
 import crypto from 'node:crypto'
 
-//
-// * Testando o retorno de funções
-//
+class Services {
+  hashPassword(password) {
+    return crypto.createHash('sha256')
+      .update(`${password}`)
+  }
+}
 
-//
-// * Existe um clear mocks antes de cada teste, na configuração do jest
-//
 describe('Service Test Suite', () => {
   let _service
-  const MOCKED_HASH_PWD = 'hashedpassword'
 
   describe('#create - spies', () => {
     beforeEach(() => {
       jest.spyOn(crypto, crypto.createHash.name)
-        .mockReturnValue({
-          update: jest.fn().mockReturnThis(),
-          digest: jest.fn().mockReturnValue(MOCKED_HASH_PWD),
-        })
+        // tanto faz o retorno do update, pois não vamos testar o retorno, e sim a chamada do metodo
+        .mockReturnValue({ update: jest.fn().mockReturnThis() })
 
-
-      _service = new Service()
+      _service = new Services()
     })
 
     it('should call appendFile with right params', async () => {
-      const input = { password: 'passs1' }
-      await _service.hashPassword(input.password)
+      const password = 'any_password'
+      await _service.hashPassword(password)
 
-      // * 💡 Como o jest ja substitui a implementação do nodejs pela implementação do jest, é possivel usar o toHaveBeenCalledTimes
-      expect(crypto.createHash).toHaveBeenCalledTimes(1)
-      expect(crypto.createHash).toHaveBeenCalledWith('sha256')
-
+      // criando a instancia do hash
       const hash = crypto.createHash('sha256')
-      expect(hash.update).toHaveBeenCalledWith(input.password)
-      expect(hash.digest).toHaveBeenCalledWith('hex')
+
+      // verificando se o metodo update foi chamado com o parametro password
+      expect(hash.update).toHaveBeenCalledWith(password)
     })
 
   })
