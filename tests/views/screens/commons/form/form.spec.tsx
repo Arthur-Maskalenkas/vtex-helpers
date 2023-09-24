@@ -1,7 +1,7 @@
 import { Form } from '../../../../../src/views/screens/commons/form/form.tsx'
 import { describe, expect, it, vi } from "vitest";
 
-import { BuilderForm, BuilderReactFormEvent } from './builders.tsx'
+import { BuilderReactFormEvent } from './builders.tsx'
 import * as utilsModule from '../../../../../src/views/screens/commons/form/utils.ts'
 import { useFormContext } from "../../../../../src/views/screens/commons/form/context";
 import {
@@ -12,6 +12,9 @@ import {
 		actionHandleParamsResult
 } from "../../../../../src/views/screens/commons/form/context/reducer/actions/handleParamsResult.ts";
 import { faker } from "@faker-js/faker";
+import { render, userEvent } from "../../../../utils/test-utils.tsx";
+import { Input } from "../../../../../src/views/screens/commons/input/input.tsx";
+import { Button } from "../../../../../src/views/screens/commons/button/button.tsx";
 
 
 
@@ -62,11 +65,16 @@ describe(`${Form.name} Tests Suits`, () => {
 								.mockReturnValue(null)
 
 						vi.spyOn(contextModule, 'useFormContext')
-								.mockReturnValue({ dispatch: vi.fn() } as any)
+								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
-						BuilderForm.a()
-								.appendInput('paramSpecification', 'specificationId')
-								.build()
+						const { getByPlaceholderText, getByRole } = render(
+								<Form.Container>
+										<Form/>
+								</Form.Container>)
+
+						const inputSpecification = getByPlaceholderText('Buscar por Especificação')
+						const buttonSubmit = getByRole('button', { name: 'Gerar URL' })
+
 
 						const contextSpy = useFormContext()
 
@@ -80,11 +88,18 @@ describe(`${Form.name} Tests Suits`, () => {
 								.mockReturnValue(expectedMap)
 
 						vi.spyOn(contextModule, 'useFormContext')
-								.mockReturnValue({ dispatch: vi.fn() } as any)
+								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
-						BuilderForm.a()
-								.appendInput('paramSpecification', 'specificationId')
-								.build()
+						const { getByPlaceholderText, getByRole } = render(
+								<Form.Container>
+										<Form/>
+								</Form.Container>)
+
+						const inputSpecification = getByPlaceholderText('Buscar por Especificação')
+						const buttonSubmit = getByRole('button', { name: 'Gerar URL' })
+
+						userEvent.type(inputSpecification, 'any	value')
+						userEvent.click(buttonSubmit)
 
 						const contextSpy = useFormContext()
 
@@ -103,11 +118,18 @@ describe(`${Form.name} Tests Suits`, () => {
 								.mockReturnValue(expectedString)
 
 						vi.spyOn(contextModule, 'useFormContext')
-								.mockReturnValue({ dispatch: vi.fn() } as any)
+								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
-						BuilderForm.a()
-								.appendInput('paramSpecification', 'specificationId')
-								.build()
+						const { getByPlaceholderText, getByRole } = render(
+								<Form.Container>
+										<Form/>
+								</Form.Container>)
+
+						const inputSpecification = getByPlaceholderText('Buscar por Especificação')
+						const buttonSubmit = getByRole('button', { name: 'Gerar URL' })
+
+						userEvent.type(inputSpecification, expectedString)
+						userEvent.click(buttonSubmit)
 
 						const contextSpy = useFormContext()
 
