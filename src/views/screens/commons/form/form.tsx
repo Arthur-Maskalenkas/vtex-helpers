@@ -50,7 +50,6 @@ const Input = ({ typeInput }: { typeInput: 'specification' | 'category' | 'brand
 				category: {
 						name: 'paramCategory',
 						label: 'Categoria',
-
 				},
 				brand: {
 						name: 'paramBrand',
@@ -96,9 +95,15 @@ export const Form = ({}: React.PropsWithChildren<{
 		return (
 				<FormProvider>
 						<form role={'form'} onSubmit={handleSubmit} className={'component-form form common'}>
-								{children}
+								<Input typeInput={'category'}/>
+								<Input typeInput={'brand'}/>
+								<Input typeInput={'collection'}/>
+								<Input typeInput={'specification'}/>
+
+								<Button typeButton={'submit'}/>
+								<Button typeButton={'openResultInSamePage'}/>
+								<Button typeButton={'openResultInOtherPage'}/>
 						</form>
 				</FormProvider>
 		)
 }
-Form.Button = Button
