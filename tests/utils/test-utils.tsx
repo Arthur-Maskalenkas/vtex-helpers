@@ -1,6 +1,6 @@
 import { cleanup, render, type RenderOptions } from '@testing-library/react'
 import { afterEach, type SpyInstance, vi } from 'vitest'
-import { ProviderApplication } from '../../src/views/application/context'
+import { ProviderApplication } from "../../src/views/application/context";
 
 // eslint-disable-next-line vitest/no-hooks,vitest/require-top-level-describe
 afterEach(() => {
