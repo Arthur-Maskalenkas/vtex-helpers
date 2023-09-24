@@ -199,10 +199,28 @@ describe(`${Form.name} Tests Suits`, () => {
 								expect(buttonSubmit).toBeInTheDocument()
 						})
 
-						it.todo('Should render buttons links disabled	when urlGenerated is empty', () => {
+						it('Should render button links disabled on init', () => {
+
+								const { getByRole } = renderForm()
+
+								const buttonOpenResultInAnotherPage = getByRole('button', { name: 'Abrir resultado em outra página' })
+								const buttonOpenResultInSamePage = getByRole('button', { name: 'Abrir resultado na mesma página' })
+
+								expect(buttonOpenResultInAnotherPage).toBeDisabled()
+								expect(buttonOpenResultInSamePage).toBeDisabled()
 						})
 
-						it.todo('Should render buttons links enabled	when urlGenerated is not empty', () => {
+						it('Should render buttons links enabled	when urlGenerated is not empty', () => {
+								vi.spyOn(contextModule, 'useFormContext')
+										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: 'anyUrl' } as any })
+
+								const { getByRole } = renderForm()
+
+								const buttonOpenResultInAnotherPage = getByRole('button', { name: 'Abrir resultado em outra página' })
+								const buttonOpenResultInSamePage = getByRole('button', { name: 'Abrir resultado na mesma página' })
+
+								expect(buttonOpenResultInAnotherPage).not.toBeDisabled()
+								expect(buttonOpenResultInSamePage).not.toBeDisabled()
 						})
 				})
 		})
