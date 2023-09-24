@@ -6,7 +6,10 @@ import { Input as InputCommon } from "../input/input.tsx";
 
 
 
-const Button = ({ typeButton }: { typeButton: 'submit' | 'openResultInSamePage' | 'openResultInOtherPage' }) => {
+const Button = ({ typeButton, isDisabled = false }: {
+		typeButton: 'submit' | 'openResultInSamePage' | 'openResultInOtherPage',
+		isDisabled?: boolean
+}) => {
 		const { states: { urlGenerated = '' } } = useFormContext()
 
 		const buttonStrategy: any = {
@@ -33,7 +36,7 @@ const Button = ({ typeButton }: { typeButton: 'submit' | 'openResultInSamePage' 
 		const { label, ...buttonProps } = buttonStrategy[typeButton]
 
 		return (
-				<ButtonCommon  {...buttonProps} role={"button"}>
+				<ButtonCommon  {...buttonProps} disabled={isDisabled} role={"button"}>
 						{label}
 				</ButtonCommon>
 		)
@@ -111,8 +114,8 @@ export const Form = () => {
 						<Input typeInput={'specification'}/>
 
 						<Button typeButton={'submit'}/>
-						<Button typeButton={'openResultInSamePage'}/>
-						<Button typeButton={'openResultInOtherPage'}/>
+						<Button typeButton={'openResultInSamePage'} isDisabled={true}/>
+						<Button typeButton={'openResultInOtherPage'} isDisabled={true}/>
 				</form>
 		)
 }
