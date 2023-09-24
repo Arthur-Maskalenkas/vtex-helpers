@@ -236,6 +236,12 @@ describe(`${Form.name} Tests Suits`, () => {
 								expect(buttonOpenResultInSamePage).toBeInTheDocument()
 								expect(buttonSubmit).toBeInTheDocument()
 						})
+
+						it.todo('Should render buttons links disabled	when urlGenerated is empty', () => {
+						})
+
+						it.todo('Should render buttons links enabled	when urlGenerated is not empty', () => {
+						})
 				})
 		})
 })
