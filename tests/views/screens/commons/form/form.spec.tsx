@@ -20,6 +20,25 @@ import { Button } from "../../../../../src/views/screens/commons/button/button.t
 
 const { errorMessages, mapParams } = utilsModule
 
+const renderForm = (
+		{
+				expectedString = faker.lorem.word()
+		} = {}
+) => {
+		const sut = render(
+				<Form.Container>
+						<Form/>
+				</Form.Container>)
+
+		const inputSpecification = sut.getByPlaceholderText('Buscar por Especificação')
+		const buttonSubmit = sut.getByRole('button', { name: 'Gerar URL' })
+		userEvent.type(inputSpecification, expectedString)
+		userEvent.click(buttonSubmit)
+
+
+		return sut
+}
+
 
 describe(`${Form.name} Tests Suits`, () => {
 		describe(`#${mapParams.name}`, () => {
@@ -67,14 +86,8 @@ describe(`${Form.name} Tests Suits`, () => {
 						vi.spyOn(contextModule, 'useFormContext')
 								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
-						const { getByPlaceholderText, getByRole } = render(
-								<Form.Container>
-										<Form/>
-								</Form.Container>)
 
-						const inputSpecification = getByPlaceholderText('Buscar por Especificação')
-						const buttonSubmit = getByRole('button', { name: 'Gerar URL' })
-
+						renderForm()
 
 						const contextSpy = useFormContext()
 
@@ -90,16 +103,7 @@ describe(`${Form.name} Tests Suits`, () => {
 						vi.spyOn(contextModule, 'useFormContext')
 								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
-						const { getByPlaceholderText, getByRole } = render(
-								<Form.Container>
-										<Form/>
-								</Form.Container>)
-
-						const inputSpecification = getByPlaceholderText('Buscar por Especificação')
-						const buttonSubmit = getByRole('button', { name: 'Gerar URL' })
-
-						userEvent.type(inputSpecification, 'any	value')
-						userEvent.click(buttonSubmit)
+						renderForm()
 
 						const contextSpy = useFormContext()
 
@@ -120,16 +124,8 @@ describe(`${Form.name} Tests Suits`, () => {
 						vi.spyOn(contextModule, 'useFormContext')
 								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
-						const { getByPlaceholderText, getByRole } = render(
-								<Form.Container>
-										<Form/>
-								</Form.Container>)
+						renderForm()
 
-						const inputSpecification = getByPlaceholderText('Buscar por Especificação')
-						const buttonSubmit = getByRole('button', { name: 'Gerar URL' })
-
-						userEvent.type(inputSpecification, expectedString)
-						userEvent.click(buttonSubmit)
 
 						const contextSpy = useFormContext()
 
@@ -149,10 +145,7 @@ describe(`${Form.name} Tests Suits`, () => {
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
 
-								const { getByPlaceholderText, getByText, } = render(
-										<Form.Container>
-												<Form/>
-										</Form.Container>)
+								const { getByPlaceholderText, getByText, } = renderForm()
 
 								const inputSpecification = getByPlaceholderText('Buscar por Especificação')
 								const inputCategory = getByPlaceholderText('Buscar por Categoria')
@@ -172,10 +165,7 @@ describe(`${Form.name} Tests Suits`, () => {
 								vi.spyOn(contextModule, 'useFormContext')
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
-								const { getByText } = render(
-										<Form.Container>
-												<Form/>
-										</Form.Container>)
+								const { getByText } = renderForm()
 
 
 								const labelSpecification = getByText('Especificação')
@@ -193,10 +183,7 @@ describe(`${Form.name} Tests Suits`, () => {
 								vi.spyOn(contextModule, 'useFormContext')
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
-								const { getByText } = render(
-										<Form.Container>
-												<Form/>
-										</Form.Container>)
+								const { getByText } = renderForm()
 
 								const descriptionSpecification = getByText('O id e o valor da especificação devem ser separados por "=" Exemplo: Cor=Azul')
 								const descriptionCategory = getByText('O valor pode ser tanto o ID quanto o nome da categoria. Exemplo: Tênis | 100')
@@ -223,11 +210,8 @@ describe(`${Form.name} Tests Suits`, () => {
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
 
-								const { getByPlaceholderText, getByText, } = render(
-										<Form.Container>
-												<Form/>
-										</Form.Container>)
-
+								const { getByPlaceholderText, getByText, } = renderForm()
+								
 								const buttonOpenResultInAnotherPage = getByText('Abrir resultado em outra página')
 								const buttonOpenResultInSamePage = getByText('Abrir resultado na mesma página')
 								const buttonSubmit = getByText('Gerar URL')
