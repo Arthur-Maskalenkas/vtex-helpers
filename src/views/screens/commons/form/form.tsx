@@ -2,13 +2,39 @@ import { Button as ButtonCommon } from '../button/button.tsx'
 import './styles.scss'
 import { mapParams } from './utils.ts'
 import { FormProvider, useFormContext } from "./context";
+import { Input as InputCommon } from "../input/input.tsx";
 
 
 
-export const Button = ({ children }: React.PropsWithChildren) => {
+const Button = ({ typeButton }: { typeButton: 'submit' | 'openResultInSamePage' | 'openResultInOtherPage' }) => {
+		const { states: { urlGenerated = '' } } = useFormContext()
+
+		const buttonStrategy: any = {
+				openResultInOtherPage: {
+						label: 'Abrir resultado em outra página',
+						type: 'button',
+						onClick: () => {
+								window.open(urlGenerated ?? '')
+						},
+				},
+				openResultInSamePage: {
+						label: 'Abrir resultado na mesma página',
+						type: 'button',
+						onClick: () => {
+								window.location.href = urlGenerated ?? ''
+						}
+				},
+				submit: {
+						label: 'Gerar URL',
+						type: 'submit',
+				}
+		}
+
+		const { label, ...buttonProps } = buttonStrategy[typeButton]
+
 		return (
-				<ButtonCommon type={'submit'}>
-						{children}
+				<ButtonCommon  {...buttonProps}>
+						{label}
 				</ButtonCommon>
 		)
 }
