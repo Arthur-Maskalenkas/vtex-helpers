@@ -24,12 +24,14 @@ export const Form = ({ children }: React.PropsWithChildren<{
 
 				if (!paramsMapped) return
 
-				if (paramsMapped instanceof Map) {
-						dispatch({ type: 'ACTION_HANDLE_INPUT_ERRORS', payload: { data: { inputs: paramsMapped } } })
-						return
+				const hasError = paramsMapped instanceof Map
+
+				const dispatchArgs: any = {
+						type: hasError ? 'ACTION_HANDLE_INPUT_ERRORS' : 'ACTION_HANDLE_PARAMS_RESULT',
+						payload: { data: { [hasError ? 'inputs' : 'params']: paramsMapped } }
 				}
 
-				dispatch({ type: 'ACTION_HANDLE_PARAMS_RESULT', payload: { data: { params: paramsMapped } } })
+				dispatch(dispatchArgs)
 		}
 
 		return (
