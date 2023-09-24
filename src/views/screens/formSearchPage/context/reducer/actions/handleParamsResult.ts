@@ -1,4 +1,4 @@
-import { ReducerFormSearchParams } from "../reducer.ts";
+import { ReducerFormSearchPage } from "../reducer.ts";
 
 
 
@@ -11,7 +11,7 @@ export type ActionHandleParamsResult = {
 		}
 }
 
-export const actionHandleParamsResult = ({ states, action }: ReducerFormSearchParams.Params<ActionHandleParamsResult>): ReducerFormSearchParams.States => {
+export const actionHandleParamsResult = ({ states, action }: ReducerFormSearchPage.Params<ActionHandleParamsResult>): ReducerFormSearchPage.States => {
 		return {
 				...states,
 				hasErrors: false,

@@ -1,13 +1,13 @@
 import {
 		ActionHandleInputErrors, actionHandleInputErrors
-} from "../../../../../../src/views/screens/commons/form/context/reducer/actions/handleInputErrors.ts";
-import { BuilderReducerFormSearchParams } from "./builders.ts";
-import { ReducerFormSearchParams } from "../../../../../../src/views/screens/commons/form/context/reducer/reducer.ts";
+} from "../../../../../../src/views/screens/formSearchPage/context/reducer/actions/handleInputErrors.ts";
+import { BuilderReducerFormSearchPage } from "./builders.ts";
+import { ReducerFormSearchPage } from "../../../../../../src/views/screens/formSearchPage/context/reducer/reducer.ts";
 import { describe, expect, it } from "vitest";
 
 
 
-const useSut = (states: ReducerFormSearchParams.States, payload: Map<string, string>): ReducerFormSearchParams.States => {
+const useSut = (states: ReducerFormSearchPage.States, payload: Map<string, string>): ReducerFormSearchPage.States => {
 		const action: ActionHandleInputErrors = {
 				type: 'ACTION_HANDLE_INPUT_ERRORS',
 				payload: {
@@ -22,7 +22,7 @@ const useSut = (states: ReducerFormSearchParams.States, payload: Map<string, str
 
 describe(actionHandleInputErrors.name, () => {
 		it('Should return a correctly states', () => {
-				const states = BuilderReducerFormSearchParams.a().build()
+				const states = BuilderReducerFormSearchPage.a().build()
 
 				const payload = new Map([ [ 'name', 'error' ] ])
 
@@ -40,7 +40,7 @@ describe(actionHandleInputErrors.name, () => {
 
 		it('Should nullify the urlGenerated', () => {
 
-				const states = BuilderReducerFormSearchParams.a().build()
+				const states = BuilderReducerFormSearchPage.a().build()
 
 				const payload = new Map()
 

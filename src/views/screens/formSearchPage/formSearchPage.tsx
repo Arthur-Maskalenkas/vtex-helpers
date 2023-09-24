@@ -1,8 +1,8 @@
-import { Button as ButtonCommon } from '../button/button.tsx'
+import { Button as ButtonCommon } from '../commons/button/button.tsx'
 import './styles.scss'
 import { mapParams } from './utils.ts'
-import { FormProvider, useFormContext } from "./context";
-import { Input as InputCommon } from "../input/input.tsx";
+import { FormSearchPageProvider, useFormSearchPageContext } from "./context";
+import { Input as InputCommon } from "../commons/input/input.tsx";
 
 
 
@@ -10,7 +10,7 @@ const Button = ({ typeButton, isDisabled = false }: {
 		typeButton: 'submit' | 'openResultInSamePage' | 'openResultInOtherPage',
 		isDisabled?: boolean
 }) => {
-		const { states: { urlGenerated = '' } } = useFormContext()
+		const { states: { urlGenerated = '' } } = useFormSearchPageContext()
 
 		const buttonStrategy: any = {
 				openResultInOtherPage: {
@@ -87,8 +87,8 @@ const Input = ({ typeInput }: { typeInput: 'specification' | 'category' | 'brand
 		)
 }
 
-export const Form = () => {
-		const { dispatch, states } = useFormContext()
+const FormBody = () => {
+		const { dispatch, states } = useFormSearchPageContext()
 		const buttonsLinksIsActive = !!states.urlGenerated
 
 		const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -121,13 +121,10 @@ export const Form = () => {
 		)
 }
 
-const Container = ({ children }: { children: React.ReactNode }) => {
+export const FormSearchPage = () => {
 		return (
-				<FormProvider>
-						{children}
-				</FormProvider>
+				<FormSearchPageProvider>
+						<FormBody/>
+				</FormSearchPageProvider>
 		)
 }
-
-
-Form.Container = Container

@@ -1,20 +1,20 @@
-import { Form } from '../../../../../src/views/screens/commons/form/form.tsx'
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { BuilderReactFormEvent } from './builders.tsx'
-import * as utilsModule from '../../../../../src/views/screens/commons/form/utils.ts'
-import { useFormContext } from "../../../../../src/views/screens/commons/form/context";
+import * as utilsModule from '../../../../../src/views/screens/formSearchPage/utils.ts'
+import { useFormSearchPageContext } from "../../../../../src/views/screens/formSearchPage/context";
 import {
 		actionHandleInputErrors
-} from "../../../../../src/views/screens/commons/form/context/reducer/actions/handleInputErrors.ts";
-import * as contextModule from '../../../../../src/views/screens/commons/form/context/index.tsx'
+} from "../../../../../src/views/screens/formSearchPage/context/reducer/actions/handleInputErrors.ts";
+import * as contextModule from '../../../../../src/views/screens/formSearchPage/context/index.tsx'
 import {
 		actionHandleParamsResult
-} from "../../../../../src/views/screens/commons/form/context/reducer/actions/handleParamsResult.ts";
+} from "../../../../../src/views/screens/formSearchPage/context/reducer/actions/handleParamsResult.ts";
 import { faker } from "@faker-js/faker";
 import { render, userEvent } from "../../../../utils/test-utils.tsx";
 import { Input } from "../../../../../src/views/screens/commons/input/input.tsx";
 import { Button } from "../../../../../src/views/screens/commons/button/button.tsx";
+import { FormSearchPage } from "../../../../../src/views/screens/formSearchPage/formSearchPage.tsx";
 
 
 
@@ -25,10 +25,7 @@ const renderForm = (
 				expectedString = faker.lorem.word()
 		} = {}
 ) => {
-		const sut = render(
-				<Form.Container>
-						<Form/>
-				</Form.Container>)
+		const sut = render(<FormSearchPage/>)
 
 		const inputSpecification = sut.getByPlaceholderText('Buscar por Especificação')
 		const buttonSubmit = sut.getByRole('button', { name: 'Gerar URL' })
@@ -40,7 +37,7 @@ const renderForm = (
 }
 
 
-describe(`${Form.name} Tests Suits`, () => {
+describe(`${FormSearchPage.name} Tests Suits`, () => {
 		describe(`#${mapParams.name}`, () => {
 				it('should a return error on Map if input have "data-with-value" attribute but not have value', () => {
 						const params: any = BuilderReactFormEvent.a()
@@ -77,16 +74,16 @@ describe(`${Form.name} Tests Suits`, () => {
 				})
 		})
 
-		describe(`#${useFormContext.name}`, () => {
-				const mockUseFormContext = { dispatch: vi.fn(), states: { urlGenerated: '' } as any };
+		describe(`#${useFormSearchPageContext.name}`, () => {
+				const mockuseFormSearchPageContext = { dispatch: vi.fn(), states: { urlGenerated: '' } as any };
 				beforeEach(() => {
-						vi.spyOn(contextModule, 'useFormContext').mockReturnValue(mockUseFormContext);
+						vi.spyOn(contextModule, 'useFormSearchPageContext').mockReturnValue(mockuseFormSearchPageContext);
 				});
 
 				it("Should not call	any action when map params returns null", () => {
 						vi.spyOn(utilsModule, 'mapParams').mockReturnValue(null);
 						renderForm();
-						const contextSpy = useFormContext();
+						const contextSpy = useFormSearchPageContext();
 						expect(contextSpy.dispatch).not.toHaveBeenCalled();
 				});
 
@@ -94,7 +91,7 @@ describe(`${Form.name} Tests Suits`, () => {
 						const expectedMap = new Map([ [ 'paramSpecification', errorMessages.specification.requiredValue ] ]);
 						vi.spyOn(utilsModule, 'mapParams').mockReturnValue(expectedMap);
 						renderForm();
-						const contextSpy = useFormContext();
+						const contextSpy = useFormSearchPageContext();
 						expect(contextSpy.dispatch).toHaveBeenCalledWith({
 								type: 'ACTION_HANDLE_INPUT_ERRORS',
 								payload: { data: { inputs: expectedMap } }
@@ -105,7 +102,7 @@ describe(`${Form.name} Tests Suits`, () => {
 						const expectedString = faker.lorem.word();
 						vi.spyOn(utilsModule, 'mapParams').mockReturnValue(expectedString);
 						renderForm();
-						const contextSpy = useFormContext();
+						const contextSpy = useFormSearchPageContext();
 						expect(contextSpy.dispatch).toHaveBeenCalledWith({
 								type: 'ACTION_HANDLE_PARAMS_RESULT',
 								payload: {
@@ -116,10 +113,10 @@ describe(`${Form.name} Tests Suits`, () => {
 		})
 
 
-		describe(`#${Form.name}`, () => {
+		describe(`#${FormSearchPage.name}`, () => {
 				describe(`#${Input.name}`, () => {
 						it('Should render all inputs', () => {
-								vi.spyOn(contextModule, 'useFormContext')
+								vi.spyOn(contextModule, 'useFormSearchPageContext')
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
 
@@ -140,7 +137,7 @@ describe(`${Form.name} Tests Suits`, () => {
 
 						it('Should render all titles inputs', () => {
 
-								vi.spyOn(contextModule, 'useFormContext')
+								vi.spyOn(contextModule, 'useFormSearchPageContext')
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
 								const { getByText } = renderForm()
@@ -158,7 +155,7 @@ describe(`${Form.name} Tests Suits`, () => {
 						})
 
 						it('Should render all descriptions inputs', () => {
-								vi.spyOn(contextModule, 'useFormContext')
+								vi.spyOn(contextModule, 'useFormSearchPageContext')
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
 								const { getByText } = renderForm()
@@ -184,7 +181,7 @@ describe(`${Form.name} Tests Suits`, () => {
 
 				describe(`#${Button.name}`, () => {
 						it('Should render all buttons', () => {
-								vi.spyOn(contextModule, 'useFormContext')
+								vi.spyOn(contextModule, 'useFormSearchPageContext')
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
 
 
@@ -211,7 +208,7 @@ describe(`${Form.name} Tests Suits`, () => {
 						})
 
 						it('Should render buttons links enabled	when urlGenerated is not empty', () => {
-								vi.spyOn(contextModule, 'useFormContext')
+								vi.spyOn(contextModule, 'useFormSearchPageContext')
 										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: 'anyUrl' } as any })
 
 								const { getByRole } = renderForm()

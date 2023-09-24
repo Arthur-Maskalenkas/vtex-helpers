@@ -1,4 +1,4 @@
-import { ReducerFormSearchParams } from "../reducer.ts";
+import { ReducerFormSearchPage } from "../reducer.ts";
 
 
 
@@ -11,7 +11,7 @@ export type ActionHandleInputErrors = {
 		}
 }
 
-export const actionHandleInputErrors = ({ states, action }: ReducerFormSearchParams.Params<ActionHandleInputErrors>): ReducerFormSearchParams.States => {
+export const actionHandleInputErrors = ({ states, action }: ReducerFormSearchPage.Params<ActionHandleInputErrors>): ReducerFormSearchPage.States => {
 		return {
 				...states,
 				urlGenerated: null,

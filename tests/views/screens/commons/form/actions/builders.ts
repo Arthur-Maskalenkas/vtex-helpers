@@ -1,13 +1,13 @@
 import {
-		ReducerFormSearchParams, ReducerFormSearchParamsDefaultValues
-} from "../../../../../../src/views/screens/commons/form/context/reducer/reducer.ts";
+		ReducerFormSearchPage, ReducerFormSearchPageParamsDefaultValues
+} from "../../../../../../src/views/screens/formSearchPage/context/reducer/reducer.ts";
 import { faker } from "@faker-js/faker";
 
 
 
-export class BuilderReducerFormSearchParams {
-		#data: ReducerFormSearchParams.States = {
-				...ReducerFormSearchParamsDefaultValues,
+export class BuilderReducerFormSearchPage {
+		#data: ReducerFormSearchPage.States = {
+				...ReducerFormSearchPageParamsDefaultValues,
 				urlGenerated: faker.internet.url()
 		}
 
@@ -16,7 +16,7 @@ export class BuilderReducerFormSearchParams {
 		}
 
 		public static a() {
-				return new BuilderReducerFormSearchParams()
+				return new BuilderReducerFormSearchPage()
 		}
 
 		public build() {

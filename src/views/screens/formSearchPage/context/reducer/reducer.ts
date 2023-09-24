@@ -3,7 +3,7 @@ import { actionHandleParamsResult, ActionHandleParamsResult } from "./actions/ha
 
 
 
-export namespace ReducerFormSearchParams {
+export namespace ReducerFormSearchPage {
 		export type States = {
 				hasErrors: boolean
 				inputsWithErrors: Map<string, string>
@@ -24,14 +24,14 @@ export namespace ReducerFormSearchParams {
 
 }
 
-export const ReducerFormSearchParamsDefaultValues: ReducerFormSearchParams.States = {
+export const ReducerFormSearchPageParamsDefaultValues: ReducerFormSearchPage.States = {
 		hasErrors: false,
 		inputsWithErrors: new Map(),
 		urlGenerated: null
 }
 
 
-export function reducer(states: ReducerFormSearchParams.States, action: ReducerFormSearchParams.Actions) {
+export function reducer(states: ReducerFormSearchPage.States, action: ReducerFormSearchPage.Actions) {
 		const commonProps: any = { states, action }
 
 		switch (action.type) {
