@@ -88,7 +88,8 @@ const Input = ({ typeInput }: { typeInput: 'specification' | 'category' | 'brand
 }
 
 export const Form = () => {
-		const { dispatch } = useFormContext()
+		const { dispatch, states } = useFormContext()
+		const buttonsLinksIsActive = !!states.urlGenerated
 
 		const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 				event.preventDefault()
@@ -114,8 +115,8 @@ export const Form = () => {
 						<Input typeInput={'specification'}/>
 
 						<Button typeButton={'submit'}/>
-						<Button typeButton={'openResultInSamePage'} isDisabled={true}/>
-						<Button typeButton={'openResultInOtherPage'} isDisabled={true}/>
+						<Button typeButton={'openResultInSamePage'} isDisabled={!buttonsLinksIsActive}/>
+						<Button typeButton={'openResultInOtherPage'} isDisabled={!buttonsLinksIsActive}/>
 				</form>
 		)
 }
