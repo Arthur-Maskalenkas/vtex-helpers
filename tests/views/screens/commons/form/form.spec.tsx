@@ -1,5 +1,5 @@
 import { Form } from '../../../../../src/views/screens/commons/form/form.tsx'
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { BuilderReactFormEvent } from './builders.tsx'
 import * as utilsModule from '../../../../../src/views/screens/commons/form/utils.ts'
@@ -78,65 +78,43 @@ describe(`${Form.name} Tests Suits`, () => {
 		})
 
 		describe(`#${useFormContext.name}`, () => {
+				const mockUseFormContext = { dispatch: vi.fn(), states: { urlGenerated: '' } as any };
+				beforeEach(() => {
+						vi.spyOn(contextModule, 'useFormContext').mockReturnValue(mockUseFormContext);
+				});
 
 				it("Should not call	any action when map params returns null", () => {
-						vi.spyOn(utilsModule, 'mapParams')
-								.mockReturnValue(null)
-
-						vi.spyOn(contextModule, 'useFormContext')
-								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
-
-
-						renderForm()
-
-						const contextSpy = useFormContext()
-
-						expect(contextSpy.dispatch).not.toHaveBeenCalled()
-				})
+						vi.spyOn(utilsModule, 'mapParams').mockReturnValue(null);
+						renderForm();
+						const contextSpy = useFormContext();
+						expect(contextSpy.dispatch).not.toHaveBeenCalled();
+				});
 
 				it(`Should call ${actionHandleInputErrors.name} when map params returns a map with errors`, () => {
-						const expectedMap = new Map([ [ 'paramSpecification', errorMessages.specification.requiredValue ] ])
-
-						vi.spyOn(utilsModule, 'mapParams')
-								.mockReturnValue(expectedMap)
-
-						vi.spyOn(contextModule, 'useFormContext')
-								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
-
-						renderForm()
-
-						const contextSpy = useFormContext()
-
+						const expectedMap = new Map([ [ 'paramSpecification', errorMessages.specification.requiredValue ] ]);
+						vi.spyOn(utilsModule, 'mapParams').mockReturnValue(expectedMap);
+						renderForm();
+						const contextSpy = useFormContext();
 						expect(contextSpy.dispatch).toHaveBeenCalledWith({
 								type: 'ACTION_HANDLE_INPUT_ERRORS',
 								payload: { data: { inputs: expectedMap } }
-						})
-
-
-				})
+						});
+				});
 
 				it(`Should call ${actionHandleParamsResult.name} when map params returns a string`, () => {
-						const expectedString = faker.lorem.word()
-
-						vi.spyOn(utilsModule, 'mapParams')
-								.mockReturnValue(expectedString)
-
-						vi.spyOn(contextModule, 'useFormContext')
-								.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
-
-						renderForm()
-
-
-						const contextSpy = useFormContext()
-
+						const expectedString = faker.lorem.word();
+						vi.spyOn(utilsModule, 'mapParams').mockReturnValue(expectedString);
+						renderForm();
+						const contextSpy = useFormContext();
 						expect(contextSpy.dispatch).toHaveBeenCalledWith({
 								type: 'ACTION_HANDLE_PARAMS_RESULT',
 								payload: {
 										data: { params: expectedString }
 								}
-						})
-				})
+						});
+				});
 		})
+
 
 		describe(`#${Form.name}`, () => {
 				describe(`#${Input.name}`, () => {
@@ -211,7 +189,7 @@ describe(`${Form.name} Tests Suits`, () => {
 
 
 								const { getByPlaceholderText, getByText, } = renderForm()
-								
+
 								const buttonOpenResultInAnotherPage = getByText('Abrir resultado em outra página')
 								const buttonOpenResultInSamePage = getByText('Abrir resultado na mesma página')
 								const buttonSubmit = getByText('Gerar URL')
