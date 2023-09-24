@@ -13,7 +13,40 @@ export const Button = ({ children }: React.PropsWithChildren) => {
 		)
 }
 
-export const Form = ({ children }: React.PropsWithChildren<{
+
+const Input = ({ typeInput }: { typeInput: 'specification' | 'category' | 'brand' | 'collection' }) => {
+		const inputStrategy = {
+				specification: {
+						name: 'paramSpecification',
+						label: 'Especificação',
+						input: { 'data-with-value': true }
+				},
+				category: {
+						name: 'paramCategory',
+						label: 'Categoria',
+
+				},
+				brand: {
+						name: 'paramBrand',
+						label: 'Marca',
+				},
+				collection: {
+						name: 'paramCollection',
+						label: 'Coleção',
+				}
+		}
+
+		const { name, label, ...inputProps } = inputStrategy[typeInput]
+
+		return (
+				<InputCommon.Container>
+						<InputCommon.Label htmlFor={name}>{label}</InputCommon.Label>
+						<InputCommon {...inputProps} name={name} id={name}/>
+				</InputCommon.Container>
+		)
+}
+
+export const Form = ({}: React.PropsWithChildren<{
 		handleSubmit: (data: string | Map<any, any> | null) => void
 }>) => {
 		const { dispatch } = useFormContext()
