@@ -33,7 +33,7 @@ const Button = ({ typeButton }: { typeButton: 'submit' | 'openResultInSamePage' 
 		const { label, ...buttonProps } = buttonStrategy[typeButton]
 
 		return (
-				<ButtonCommon  {...buttonProps}>
+				<ButtonCommon  {...buttonProps} role={"button"}>
 						{label}
 				</ButtonCommon>
 		)
@@ -44,29 +44,42 @@ const Input = ({ typeInput }: { typeInput: 'specification' | 'category' | 'brand
 		const inputStrategy = {
 				specification: {
 						name: 'paramSpecification',
+						ariaDescreditedBy: 'descriptionSpecification',
 						label: 'Especificação',
-						input: { 'data-with-value': true }
+						input: { 'data-with-value': true },
+						placeholder: 'Buscar por Especificação',
+						description: 'O id e o valor da especificação devem ser separados por "=" Exemplo: Cor=Azul'
 				},
 				category: {
 						name: 'paramCategory',
+						ariaDescreditedBy: 'descriptionCategory',
 						label: 'Categoria',
+						placeholder: 'Buscar por Categoria',
+						description: 'O valor pode ser tanto o ID quanto o nome da categoria. Exemplo: Tênis | 100'
 				},
 				brand: {
 						name: 'paramBrand',
+						ariaDescreditedBy: 'descriptionBrand',
 						label: 'Marca',
+						placeholder: 'Buscar por Marca',
+						description: 'O valor pode ser tanto o ID quanto o nome da marca. Exemplo: Mizuno | 100'
 				},
 				collection: {
 						name: 'paramCollection',
+						ariaDescreditedBy: 'descriptionCollection',
 						label: 'Coleção',
+						placeholder: 'Buscar por Coleção',
+						description: 'O valor pode ser tanto o ID quanto o nome da coleção. Exemplo: Primavera | 100'
 				}
 		}
 
-		const { name, label, ...inputProps } = inputStrategy[typeInput]
+		const { name, label, ariaDescreditedBy, description, ...inputProps } = inputStrategy[typeInput]
 
 		return (
 				<InputCommon.Container>
 						<InputCommon.Label htmlFor={name}>{label}</InputCommon.Label>
-						<InputCommon {...inputProps} name={name} id={name}/>
+						<InputCommon {...inputProps} aria-describedby={ariaDescreditedBy} name={name} id={name}/>
+						<InputCommon.Description ariaDescribedBy={ariaDescreditedBy}>{description} </InputCommon.Description>
 				</InputCommon.Container>
 		)
 }
@@ -91,17 +104,26 @@ export const Form = () => {
 		}
 
 		return (
-				<FormProvider>
-						<form role={'form'} onSubmit={handleSubmit} className={'component-form form common'}>
-								<Input typeInput={'category'}/>
-								<Input typeInput={'brand'}/>
-								<Input typeInput={'collection'}/>
-								<Input typeInput={'specification'}/>
+				<form role={'form'} onSubmit={handleSubmit} className={'component-form form common'}>
+						<Input typeInput={'category'}/>
+						<Input typeInput={'brand'}/>
+						<Input typeInput={'collection'}/>
+						<Input typeInput={'specification'}/>
 
-								<Button typeButton={'submit'}/>
-								<Button typeButton={'openResultInSamePage'}/>
-								<Button typeButton={'openResultInOtherPage'}/>
-						</form>
+						<Button typeButton={'submit'}/>
+						<Button typeButton={'openResultInSamePage'}/>
+						<Button typeButton={'openResultInOtherPage'}/>
+				</form>
+		)
+}
+
+const Container = ({ children }: { children: React.ReactNode }) => {
+		return (
+				<FormProvider>
+						{children}
 				</FormProvider>
 		)
 }
+
+
+Form.Container = Container
