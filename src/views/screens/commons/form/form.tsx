@@ -18,7 +18,7 @@ export const Form = ({ children }: React.PropsWithChildren<{
 }>) => {
 		const { dispatch } = useFormContext()
 
-		const clearSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+		const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 				event.preventDefault()
 				const paramsMapped = mapParams(event)
 
@@ -34,7 +34,7 @@ export const Form = ({ children }: React.PropsWithChildren<{
 
 		return (
 				<FormProvider>
-						<form role={'form'} onSubmit={clearSubmit} className={'component-form form common'}>
+						<form role={'form'} onSubmit={handleSubmit} className={'component-form form common'}>
 								{children}
 						</form>
 				</FormProvider>
