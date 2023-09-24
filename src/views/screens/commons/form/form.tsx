@@ -71,9 +71,7 @@ const Input = ({ typeInput }: { typeInput: 'specification' | 'category' | 'brand
 		)
 }
 
-export const Form = ({}: React.PropsWithChildren<{
-		handleSubmit: (data: string | Map<any, any> | null) => void
-}>) => {
+export const Form = () => {
 		const { dispatch } = useFormContext()
 
 		const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
