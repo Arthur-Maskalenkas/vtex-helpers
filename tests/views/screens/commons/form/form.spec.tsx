@@ -119,4 +119,101 @@ describe(`${Form.name} Tests Suits`, () => {
 						})
 				})
 		})
+
+		describe(`#${Form.name}`, () => {
+				describe(`#${Input.name}`, () => {
+						it('Should render all inputs', () => {
+								vi.spyOn(contextModule, 'useFormContext')
+										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
+
+
+								const { getByPlaceholderText, getByText, } = render(
+										<Form.Container>
+												<Form/>
+										</Form.Container>)
+
+								const inputSpecification = getByPlaceholderText('Buscar por Especificação')
+								const inputCategory = getByPlaceholderText('Buscar por Categoria')
+								const inputBrand = getByPlaceholderText('Buscar por Marca')
+								const inputCollection = getByPlaceholderText('Buscar por Coleção')
+
+								expect(inputSpecification).toBeInTheDocument()
+								expect(inputCategory).toBeInTheDocument()
+								expect(inputBrand).toBeInTheDocument()
+								expect(inputCollection).toBeInTheDocument()
+
+
+						})
+
+						it('Should render all titles inputs', () => {
+
+								vi.spyOn(contextModule, 'useFormContext')
+										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
+
+								const { getByText } = render(
+										<Form.Container>
+												<Form/>
+										</Form.Container>)
+
+
+								const labelSpecification = getByText('Especificação')
+								const labelCategory = getByText('Categoria')
+								const labelBrand = getByText('Marca')
+								const labelCollection = getByText('Coleção')
+
+								expect(labelSpecification).toBeInTheDocument()
+								expect(labelCategory).toBeInTheDocument()
+								expect(labelBrand).toBeInTheDocument()
+								expect(labelCollection).toBeInTheDocument()
+						})
+
+						it('Should render all descriptions inputs', () => {
+								vi.spyOn(contextModule, 'useFormContext')
+										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
+
+								const { getByText } = render(
+										<Form.Container>
+												<Form/>
+										</Form.Container>)
+
+								const descriptionSpecification = getByText('O id e o valor da especificação devem ser separados por "=" Exemplo: Cor=Azul')
+								const descriptionCategory = getByText('O valor pode ser tanto o ID quanto o nome da categoria. Exemplo: Tênis | 100')
+								const descriptionBrand = getByText('O valor pode ser tanto o ID quanto o nome da marca. Exemplo: Mizuno | 100')
+								const descriptionCollection = getByText('O valor pode ser tanto o ID quanto o nome da coleção. Exemplo: Primavera | 100')
+
+								expect(descriptionSpecification).toBeInTheDocument()
+								expect(descriptionCategory).toBeInTheDocument()
+								expect(descriptionBrand).toBeInTheDocument()
+								expect(descriptionCollection).toBeInTheDocument()
+
+
+								expect(descriptionSpecification).toHaveAttribute('id', 'descriptionSpecification')
+								expect(descriptionCategory).toHaveAttribute('id', 'descriptionCategory')
+								expect(descriptionBrand).toHaveAttribute('id', 'descriptionBrand')
+								expect(descriptionCollection).toHaveAttribute('id', 'descriptionCollection')
+
+						})
+				})
+
+				describe(`#${Button.name}`, () => {
+						it('Should render all buttons', () => {
+								vi.spyOn(contextModule, 'useFormContext')
+										.mockReturnValue({ dispatch: vi.fn(), states: { urlGenerated: '' } as any })
+
+
+								const { getByPlaceholderText, getByText, } = render(
+										<Form.Container>
+												<Form/>
+										</Form.Container>)
+
+								const buttonOpenResultInAnotherPage = getByText('Abrir resultado em outra página')
+								const buttonOpenResultInSamePage = getByText('Abrir resultado na mesma página')
+								const buttonSubmit = getByText('Gerar URL')
+
+								expect(buttonOpenResultInAnotherPage).toBeInTheDocument()
+								expect(buttonOpenResultInSamePage).toBeInTheDocument()
+								expect(buttonSubmit).toBeInTheDocument()
+						})
+				})
+		})
 })
