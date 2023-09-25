@@ -1,9 +1,9 @@
-import { type IUsecaseMapSearchParams } from '../../domain/useCases/mapSearchParams.ts'
+import { type IUsecaseMapSearchPageParams } from '../../domain/useCases/mapSearchPageParams.ts'
 
 
 
 export interface ProtocolMapSearchPageParams {
-		map: (params: IUsecaseMapSearchParams.Params) => IUsecaseMapSearchParams.Result
+		map: (params: IUsecaseMapSearchPageParams.Params) => IUsecaseMapSearchPageParams.Result
 }
 
 export namespace ProtocolMapSearchPageParams {
