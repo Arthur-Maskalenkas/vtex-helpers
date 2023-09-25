@@ -15,6 +15,7 @@ export class UsecaseLoadProducts implements IUseCaseLoadProducts {
 		}
 
 		async load(params: IUseCaseLoadProduct.Params): IUseCaseLoadProducts.Result {
+				this.mapParams.map(params)
 				return params as any
 		}
 }
