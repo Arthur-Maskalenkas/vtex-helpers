@@ -51,6 +51,15 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						expect(repositoryProductSpy.search).toHaveBeenCalledWith(expected)
 				})
+
+				it('Should return empty	array when repositoryProduct returns empty array', async () => {
+						const params = faker.string.sample()
+						repositoryProductSpy.search.mockReturnValueOnce([])
+
+						const result = await sut.load(params)
+
+						expect(result).toEqual([])
+				})
 		})
 
 })
