@@ -32,6 +32,17 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 				sut = new UsecaseLoadProducts(repositoryProductSpy as any, mapModelProductSpy as any, mapParamsSpy as any)
 		})
 
+		describe('# load', () => {
+				it('Should return product mapped', () => {
+						const params = faker.string.sample()
+						const expected = faker.helpers.multiple(() => ({ id: faker.string.uuid() }), { count: 2 })
+
+						const result = sut.load(params)
+
+						expect(result).toEqual(expected)
+				})
+		})
+
 		describe(`# mapParams`, () => {
 				it('Should call repositoryProduct with correct params', async () => {
 						const params = faker.string.sample()
@@ -86,6 +97,6 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						expect(mapModelProductSpy.map).toHaveBeenCalledWith(expected)
 				})
 		})
-		
+
 
 })
