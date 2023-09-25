@@ -70,20 +70,22 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						expect(result).toEqual([])
 				})
 
-				describe(`# mapModelProduct`, () => {
+		})
 
-						it('Should call with correctly params', async () => {
-								const params = faker.string.sample()
+		describe(`# mapModelProduct`, () => {
 
-								const expected = faker.helpers.multiple(() => ({ id: faker.string.uuid() }), { count: 2 })
+				it('Should call with correctly params', async () => {
+						const params = faker.string.sample()
 
-								repositoryProductSpy.search.mockReturnValueOnce(expected)
+						const expected = faker.helpers.multiple(() => ({ id: faker.string.uuid() }), { count: 2 })
 
-								await sut.load(params)
+						repositoryProductSpy.search.mockReturnValueOnce(expected)
 
-								expect(mapModelProductSpy.map).toHaveBeenCalledWith(expected)
-						})
+						await sut.load(params)
+
+						expect(mapModelProductSpy.map).toHaveBeenCalledWith(expected)
 				})
 		})
+		
 
 })
