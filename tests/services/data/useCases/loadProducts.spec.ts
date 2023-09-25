@@ -24,15 +24,16 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 		describe(`# repositoryProductSpy`, () => {
 				it('Should call repositoryProduct with correct params', () => {
+		describe(`# mapParams`, () => {
 						const params = faker.string.sample()
 						sut.load(params)
 
 						expect(mapParamsSpy.map).toHaveBeenCalledWith(params)
 				})
 		})
-		describe(`# mapModelProductSpy`, () => {
+		describe(`# mapModelProduct`, () => {
 		})
-		describe(`# mapParams`, () => {
+		describe(`# repositoryProduct`, () => {
 		})
 
 })
