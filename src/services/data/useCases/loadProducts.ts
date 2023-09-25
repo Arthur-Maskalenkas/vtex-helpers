@@ -23,8 +23,6 @@ export class UsecaseLoadProducts implements IUseCaseLoadProducts {
 
 				if (!products?.length) return []
 
-				this.mapModelProduct.map(products)
-
-				return paramsMapped as any
+				return this.mapModelProduct.map(products) as unknown as IUseCaseLoadProducts.Result
 		}
 }
