@@ -16,6 +16,11 @@ export class UsecaseLoadProducts implements IUseCaseLoadProducts {
 
 		async load(params: IUseCaseLoadProduct.Params): IUseCaseLoadProducts.Result {
 				const paramsMapped = this.mapParams.map(params)
+
+				if (!paramsMapped) return null
+
+				const products = await this.repositoryProduct.search(paramsMapped)
+
 				return paramsMapped as any
 		}
 }
