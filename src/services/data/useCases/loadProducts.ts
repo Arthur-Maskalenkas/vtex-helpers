@@ -21,6 +21,8 @@ export class UsecaseLoadProducts implements IUseCaseLoadProducts {
 
 				const products = await this.repositoryProduct.search(paramsMapped)
 
+				if (!products?.length) return []
+
 				return paramsMapped as any
 		}
 }
