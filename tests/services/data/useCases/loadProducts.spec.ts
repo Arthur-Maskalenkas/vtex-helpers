@@ -19,6 +19,16 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 		let sut: UsecaseLoadProducts
 
 		beforeEach(() => {
+				const randomIds = faker.helpers.multiple(() => {
+						id: faker.string.uuid()
+				}, { count: 2 })
+
+
+				mapParamsSpy.map.mockReturnValue(faker.string.sample())
+				mapModelProductSpy.map.mockReturnValue(randomIds)
+				repositoryProductSpy.search.mockReturnValue(randomIds)
+
+
 				sut = new UsecaseLoadProducts(repositoryProductSpy as any, mapModelProductSpy as any, mapParamsSpy as any)
 		})
 
