@@ -1,5 +1,5 @@
 import { UsecaseMapSearchParams } from '../../../data/useCases/mapSearchParams.ts'
-import { MapperSearchPageParams } from '../../../infra/mapper/searchPageParams.ts'
+import { MapperSearchPageParams } from '../../../infra/mapper/params/searchPageParams.ts'
 
 
 

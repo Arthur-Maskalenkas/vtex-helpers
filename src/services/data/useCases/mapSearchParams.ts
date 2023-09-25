@@ -1,15 +1,15 @@
 import { type IUsecaseMapSearchParams } from '../../domain/useCases/mapSearchParams.ts'
-import { type ProtocolMapSearchparams } from '../protocols/mapSearchParams.ts'
+import { type ProtocolMapSearchPageParams } from '../protocols/mapSearchPageParams.ts'
 
 
 
 export class UsecaseMapSearchParams implements IUsecaseMapSearchParams {
 		constructor(
-					private readonly protocolMapSearchParams: ProtocolMapSearchparams
+				private readonly ProtocolMapSearchPageParams: ProtocolMapSearchPageParams
 		) {
 		}
 
 		map(params: IUsecaseMapSearchParams.Params): IUsecaseMapSearchParams.Result {
-				return this.protocolMapSearchParams.map(params)
+				return this.ProtocolMapSearchPageParams.map(params)
 		}
 }

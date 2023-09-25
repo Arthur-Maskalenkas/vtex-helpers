@@ -2,11 +2,11 @@ import { type IUsecaseMapSearchParams } from '../../domain/useCases/mapSearchPar
 
 
 
-export interface ProtocolMapSearchparams {
+export interface ProtocolMapSearchPageParams {
 		map: (params: IUsecaseMapSearchParams.Params) => IUsecaseMapSearchParams.Result
 }
 
-export namespace ProtocolMapSearchparams {
+export namespace ProtocolMapSearchPageParams {
 		export type Params = string
 		export type Result = string
 }

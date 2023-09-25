@@ -1,4 +1,4 @@
-import { MapperSearchPageParams } from '../../../../../src/services/infra/mapper/searchPageParams.ts'
+import { MapperSearchPageParams } from '../../../../../src/services/infra/mapper/params/searchPageParams.ts'
 import { BuilderParamsProtocolMapperPageSearchParams } from './builder.ts'
 import { beforeEach, describe, expect, it, vi } from "vitest";
 

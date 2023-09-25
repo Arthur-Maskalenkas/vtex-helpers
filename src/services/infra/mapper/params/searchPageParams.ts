@@ -1,4 +1,4 @@
-import { type ProtocolMapSearchparams } from '../../data/protocols/mapSearchParams.ts'
+import { ProtocolMapSearchPageParams } from "../../../data/protocols/mapSearchPageParams.ts";
 
 
 
@@ -12,8 +12,8 @@ type Response = {
 		value: string
 }
 
-export class MapperSearchPageParams implements ProtocolMapSearchparams {
-		map(params: ProtocolMapSearchparams.Params): ProtocolMapSearchparams.Result {
+export class MapperSearchPageParams implements ProtocolMapSearchPageParams {
+		map(params: ProtocolMapSearchPageParams.Params): ProtocolMapSearchPageParams.Result {
 				const searchParams = params.split(',')
 
 				const mappedIds: string[] = []
