@@ -22,13 +22,19 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 				sut = new UsecaseLoadProducts(repositoryProductSpy as any, mapModelProductSpy as any, mapParamsSpy as any)
 		})
 
-		describe(`# repositoryProductSpy`, () => {
-				it('Should call repositoryProduct with correct params', () => {
 		describe(`# mapParams`, () => {
+				it('Should call repositoryProduct with correct params', async () => {
 						const params = faker.string.sample()
-						sut.load(params)
+						await sut.load(params)
 
 						expect(mapParamsSpy.map).toHaveBeenCalledWith(params)
+				})
+
+				it('Should return null when mapParams returns null', async () => {
+						mapParamsSpy.map.mockReturnValueOnce(null)
+						const result = await sut.load(faker.string.sample())
+
+						expect(result).toBeNull()
 				})
 		})
 		describe(`# mapModelProduct`, () => {
