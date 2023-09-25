@@ -47,8 +47,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						expect(result).toBeNull()
 				})
 		})
-		describe(`# mapModelProduct`, () => {
-		})
+
 		describe(`# repositoryProduct`, () => {
 				it("Should call with correctly params", async () => {
 						const params = faker.string.sample()
@@ -69,6 +68,11 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						const result = await sut.load(params)
 
 						expect(result).toEqual([])
+				})
+
+				describe(`# mapModelProduct`, () => {
+
+
 				})
 		})
 
