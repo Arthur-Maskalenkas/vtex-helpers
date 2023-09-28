@@ -5,6 +5,9 @@ import { IUsecaseMapSearchPageParams } from "../../../domain/useCases/mapSearchP
 
 export class MapperSearchProductParams implements ProtocolMapSearchProductParams {
 		public map(params: IUsecaseMapSearchPageParams.Params): IUsecaseMapSearchPageParams.Result {
+				if (!params) return null
+
+
 				return null as any;
 		}
 
