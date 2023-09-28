@@ -33,7 +33,7 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 		}
 
 		private mapFq(paramKey: string, id: string) {
-				return `fq=${paramKey}:${id}`
+				return `search?_from=0&_to=49&fq=${paramKey}:${id}`
 		}
 
 		private mapFt(value: string) {
