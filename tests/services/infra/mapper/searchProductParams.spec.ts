@@ -24,6 +24,16 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						expect(result).toBeNull()
 				})
 
+				it('Should return a product name param mapped', () => {
+						const productName = `${faker.commerce.productName()} ${faker.commerce.productName()}`
+
+						const result = sut.map(`paramProductName=${productName}`)
+
+						const expected = `ft=${productName.replace(/\s/g, '%20')}`
+
+						expect(result).toContain(expected)
+				})
+
 				it('Should return a product id param mapped', () => {
 						const result = sut.map(`paramProductId=${id}`)
 
