@@ -60,6 +60,14 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						expect(result).toBe(expected)
 				})
+
+				it('Should not repeteat params', () => {
+						const result = sut.map(`paramProductId=${id},paramProductId=${id}`)
+
+						const expected = `fq=productId:${id}`
+
+						expect(result).toBe(expected)
+				})
 		})
 
 })
