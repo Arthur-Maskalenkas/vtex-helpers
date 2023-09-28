@@ -39,6 +39,15 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						expect(result).toBe(expected)
 				})
+
+
+				it('Should return a product cluster id param mapped', () => {
+						const result = sut.map(`productClusterIds=${id}`)
+
+						const expected = `fq=productClusterIds:${id}`
+
+						expect(result).toBe(expected)
+				})
 		})
 
 })
