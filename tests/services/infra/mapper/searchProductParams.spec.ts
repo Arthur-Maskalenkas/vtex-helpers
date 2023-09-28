@@ -68,6 +68,14 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						expect(result).toBe(expected)
 				})
+
+				it('Should not map params if not exist in strategy', () => {
+						const result = sut.map(`paramNotExists=${id},paramProductId=${id}`)
+
+						const expected = `fq=productId:${id}`
+
+						expect(result).toBe(expected)
+				})
 		})
 
 })
