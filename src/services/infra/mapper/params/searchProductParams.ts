@@ -8,9 +8,8 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 				if (!params) return null
 
 				const searchParams = new Set()
-				const paramsSplited = params.split(',')
 
-				for (const param of paramsSplited) {
+				for (const param of params.split(',')) {
 						const [ paramStrategy, paramId ] = param.split('=')
 
 						const paramsStrategy: any = {
