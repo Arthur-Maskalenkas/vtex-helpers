@@ -12,7 +12,7 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 				const paramsSplited = params.split('=')
 
 				if (paramsSplited[0] === 'paramProductId') {
-						searchParams.add(`productId:${paramsSplited[1]}`)
+						searchParams.add(`fq=productId:${paramsSplited[1]}`)
 				}
 
 
