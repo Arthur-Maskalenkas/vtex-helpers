@@ -8,23 +8,31 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 				if (!params) return null
 
 				const searchParams = new Set()
+				const paramsSplited = params.split(',')
 
-				const paramsSplited = params.split('=')
+				for (const param of paramsSplited) {
+						const [ paramStrategy, paramId ] = param.split('=')
 
-				if (paramsSplited[0] === 'paramProductId') {
-						searchParams.add(`fq=productId:${paramsSplited[1]}`)
+						const paramsStrategy: any = {
+								paramProductId: () => this.mapFq('productId', paramId),
+								paramSkuId: () => this.mapFq('skuId', paramId),
+								productClusterIds: () => this.mapFq('productClusterIds', paramId)
+						}
+
+						const currentStrategy = paramsStrategy[paramStrategy]
+
+						if (!currentStrategy) continue
+
+						const result = currentStrategy()
+
+						searchParams.add(result)
 				}
 
-				if (paramsSplited[0] === 'paramSkuId') {
-						searchParams.add(`fq=skuId:${paramsSplited[1]}`)
-				}
+				return [ ...searchParams ].join('&')
+		}
 
-				if (paramsSplited[0] === 'productClusterIds') {
-						searchParams.add(`fq=productClusterIds:${paramsSplited[1]}`)
-				}
-
-
-				return [ ...searchParams ].join(' ')
+		private mapFq(paramKey: string, id: string) {
+				return `fq=${paramKey}:${id}`
 		}
 
 
