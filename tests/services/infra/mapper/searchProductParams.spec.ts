@@ -27,7 +27,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 				it('Should return a product id param mapped', () => {
 						const result = sut.map(`paramProductId=${id}`)
 
-						const expected = `productId:${id}`
+						const expected = `fq=productId:${id}`
 
 						expect(result).toBe(expected)
 				})
