@@ -1,11 +1,22 @@
 import { type ProtocolRepositoryLoadProduct } from '../../data/protocols/repositoryLoadProduct.ts'
 import { type ProtocolMapModelProduct } from '../../data/protocols/mapModelProduct.ts'
 import { type Product } from '../../domain/internal/models/product.ts'
+import { ProtocolRepositoryLoadProducts } from "../../data/protocols/repositoryLoadProducts.ts";
 
 
 
 export class RepositoryProduct
-			implements ProtocolRepositoryLoadProduct, ProtocolMapModelProduct {
+		implements ProtocolRepositoryLoadProduct, ProtocolMapModelProduct, ProtocolRepositoryLoadProducts {
+		public async search(params: ProtocolRepositoryLoadProducts.Params): ProtocolRepositoryLoadProducts.Result {
+				const result = await fetch(`/api/catalog_system/pub/products/search/${params}`)
+				const data = await result?.json()
+
+				if (!data?.length) return []
+
+				return data[0]
+		}
+
+
 		map(params: ProtocolMapModelProduct.Params): ProtocolMapModelProduct.Result {
 				let externalModelProduct = params as ProtocolMapModelProduct.ParamListModel
 
@@ -61,20 +72,20 @@ export class RepositoryProduct
 						})
 
 						const listCollections = Object.entries(product.productClusters ?? {})
-									.map(([ key, value ]) => {
-											return {
-													name: key,
-													value,
-													url: this.formatUrl('collection-search', value, key)
-											}
-									}) ?? []
+								.map(([ key, value ]) => {
+										return {
+												name: key,
+												value,
+												url: this.formatUrl('collection-search', value, key)
+										}
+								}) ?? []
 
 						const listCategories: Product.Category[] = product.categories?.map((category, index) => {
 								const formatString = (value: string) => value
-											.replace(/^\//, '')
-											.replace(/\/$/, '')
-											.replace(/\s/g, '-')
-											.toLowerCase()
+										.replace(/^\//, '')
+										.replace(/\/$/, '')
+										.replace(/\s/g, '-')
+										.toLowerCase()
 
 								return {
 										name: formatString(category),
@@ -116,9 +127,9 @@ export class RepositoryProduct
 		}
 
 		private formatUrl(
-					typeUrl: 'sku-specification' | 'product-specification' | 'brand-search' | 'category-search' | 'collection-search',
-					value: string,
-					id = '') {
+				typeUrl: 'sku-specification' | 'product-specification' | 'brand-search' | 'category-search' | 'collection-search',
+				value: string,
+				id = '') {
 				const valueFormatted = value.replace(/^\//, '').replace(/\/$/, '').toLowerCase()
 
 				const urlFormats = new Map([
