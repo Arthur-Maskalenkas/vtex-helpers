@@ -10,7 +10,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 		let id
 
 		beforeEach(() => {
-				id = faker.string.uuid()
+				id = faker.number.int(10).toString()
 
 				sut = new MapperSearchProductParams()
 		})
@@ -45,6 +45,18 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						const result = sut.map(`productClusterIds=${id}`)
 
 						const expected = `fq=productClusterIds:${id}`
+
+						expect(result).toBe(expected)
+				})
+
+				it('Should combine	all params and map', () => {
+						const idProduct = faker.number.int(10).toString()
+						const idSku = faker.number.int(10).toString()
+						const idCluster = faker.number.int(10).toString()
+
+						const result = sut.map(`paramProductId=${idProduct},paramSkuId=${idSku},productClusterIds=${idCluster}`)
+
+						const expected = `fq=productId:${idProduct}&fq=skuId:${idSku}&fq=productClusterIds:${idCluster}`
 
 						expect(result).toBe(expected)
 				})
