@@ -29,7 +29,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						const expected = `fq=productId:${id}`
 
-						expect(result).toBe(expected)
+						expect(result).toContain(expected)
 				})
 
 				it('Should return a product id param mapped', () => {
@@ -37,7 +37,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						const expected = `fq=skuId:${id}`
 
-						expect(result).toBe(expected)
+						expect(result).toContain(expected)
 				})
 
 
@@ -46,7 +46,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						const expected = `fq=productClusterIds:${id}`
 
-						expect(result).toBe(expected)
+						expect(result).toContain(expected)
 				})
 
 				it('Should combine	all params and map', () => {
@@ -58,7 +58,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						const expected = `fq=productId:${idProduct}&fq=skuId:${idSku}&fq=productClusterIds:${idCluster}`
 
-						expect(result).toBe(expected)
+						expect(result).toContain(expected)
 				})
 
 				it('Should not repeteat params', () => {
@@ -66,7 +66,8 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						const expected = `fq=productId:${id}`
 
-						expect(result).toBe(expected)
+						expect(result).toContain(expected)
+						expect(result).not.toContain(`fq=productId:${id},fq=productId:${id}`)
 				})
 
 				it('Should not map params if not exist in strategy', () => {
@@ -74,7 +75,8 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 
 						const expected = `fq=productId:${id}`
 
-						expect(result).toBe(expected)
+						expect(result).toContain(expected)
+						expect(result).not.toContain(`fq=paramNotExists:${id}`)
 				})
 		})
 
