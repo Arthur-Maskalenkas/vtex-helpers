@@ -7,8 +7,16 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 		public map(params: IUsecaseMapSearchPageParams.Params): IUsecaseMapSearchPageParams.Result {
 				if (!params) return null
 
+				const searchParams = new Set()
 
-				return null as any;
+				const paramsSplited = params.split('=')
+
+				if (paramsSplited[0] === 'paramProductId') {
+						searchParams.add(`productId:${paramsSplited[1]}`)
+				}
+
+
+				return [ ...searchParams ].join(' ')
 		}
 
 
