@@ -63,10 +63,11 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						const idProduct = faker.number.int(10).toString()
 						const idSku = faker.number.int(10).toString()
 						const idCluster = faker.number.int(10).toString()
+						const idName = faker.commerce.productName()
 
-						const result = sut.map(`paramProductId=${idProduct},paramSkuId=${idSku},productClusterIds=${idCluster}`)
+						const result = sut.map(`paramProductId=${idProduct},paramSkuId=${idSku},productClusterIds=${idCluster},paramProductName=${idName}`)
 
-						const expected = `fq=productId:${idProduct}&fq=skuId:${idSku}&fq=productClusterIds:${idCluster}`
+						const expected = `fq=productId:${idProduct}&fq=skuId:${idSku}&fq=productClusterIds:${idCluster}&ft=${idName.replace(/\s/g, '%20')}`
 
 						expect(result).toContain(expected)
 				})
