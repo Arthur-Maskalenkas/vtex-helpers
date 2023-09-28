@@ -89,6 +89,14 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						expect(result).toContain(expected)
 						expect(result).not.toContain(`fq=paramNotExists:${id}`)
 				})
+
+				it('Should return a full url search', () => {
+						const result = sut.map(`paramProductId=${id}`)
+
+						const expected = `search?_from=0&_to=49&fq=productId:${id}`
+
+						expect(result).toBe(expected)
+				})
 		})
 
 })
