@@ -15,7 +15,8 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 						const paramsStrategy: any = {
 								paramProductId: () => this.mapFq('productId', paramId),
 								paramSkuId: () => this.mapFq('skuId', paramId),
-								productClusterIds: () => this.mapFq('productClusterIds', paramId)
+								productClusterIds: () => this.mapFq('productClusterIds', paramId),
+								paramProductName: () => this.mapFt(paramId)
 						}
 
 						const currentStrategy = paramsStrategy[paramStrategy]
@@ -23,6 +24,7 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 						if (!currentStrategy) continue
 
 						const result = currentStrategy()
+								.replace(/\s/g, '%20')
 
 						searchParams.add(result)
 				}
@@ -32,6 +34,10 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 
 		private mapFq(paramKey: string, id: string) {
 				return `fq=${paramKey}:${id}`
+		}
+
+		private mapFt(value: string) {
+				return `ft=${value}`
 		}
 
 
