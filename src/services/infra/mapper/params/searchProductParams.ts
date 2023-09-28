@@ -19,6 +19,10 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 						searchParams.add(`fq=skuId:${paramsSplited[1]}`)
 				}
 
+				if (paramsSplited[0] === 'productClusterIds') {
+						searchParams.add(`fq=productClusterIds:${paramsSplited[1]}`)
+				}
+
 
 				return [ ...searchParams ].join(' ')
 		}
