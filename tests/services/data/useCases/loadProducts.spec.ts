@@ -33,11 +33,15 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 		})
 
 		describe('# load', () => {
-				it('Should return product mapped', () => {
-						const params = faker.string.sample()
-						const expected = faker.helpers.multiple(() => ({ id: faker.string.uuid() }), { count: 2 })
+				it('Should return product mapped', async () => {
+						const mappedProducts = faker.helpers.multiple(() => ({ id: faker.string.uuid() }), { count: 2 })
 
-						const result = sut.load(params)
+						const params = faker.string.sample()
+						const expected = mappedProducts
+
+						mapModelProductSpy.map.mockReturnValue(mappedProducts)
+
+						const result = await sut.load(params)
 
 						expect(result).toEqual(expected)
 				})
