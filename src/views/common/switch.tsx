@@ -15,21 +15,11 @@ export const Switch = () => null
 
 
 const Container = ({ children }: PropsWithChildren) => {
-		let matchChild: any = null
-		let defaultCase: any = null
+		const matchChild = React.Children.toArray(children).find(
+				(child: any) => (child?.type !== DefaultCase && child?.props?.condition) || child?.type === DefaultCase
+		)
 
-		React?.Children?.forEach(children, (child: any) => {
-				if (!matchChild && child.type === Case) {
-						const condition = child?.props?.condition
-						const conditionResult = Boolean(condition)
-						if (conditionResult) {
-								matchChild = child
-						}
-				} else if (!defaultCase && child.type === DefaultCase) {
-						defaultCase = child
-				}
-		});
-		return matchChild ?? defaultCase ?? null
+		return matchChild
 }
 
 Switch.Container = Container
