@@ -5,14 +5,6 @@ import { faker } from "@faker-js/faker";
 
 
 
-const renderSut = (childrens: any) => {
-		const { getByText } = render(<Switch.Container>{childrens}</Switch.Container>)
-
-		return {
-				getByText
-		}
-}
-
 describe(`${Switch.name} Tests Suite`, () => {
 
 
@@ -64,9 +56,6 @@ describe(`${Switch.name} Tests Suite`, () => {
 						expect(queryByText(caseContent3)).not.toBeInTheDocument()
 
 						expect(getByText(caseContent4)).toBeInTheDocument()
-				})
-
-				it('Should return null when not have default	case and cases not match', () => {
 				})
 		})
 
