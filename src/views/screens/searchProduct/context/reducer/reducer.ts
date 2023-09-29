@@ -1,8 +1,9 @@
 import { Product } from "../../../../../services/domain/internal/models/product.ts";
-import { ActionHandleParamsResult } from "./actions/handleParamsResult.ts";
+import { actionHandleParamsResult, ActionHandleParamsResult } from "./actions/handleParamsResult.ts";
 import { ActionHandleInputErrors } from "./actions/handleInputErrors.ts";
-import { ActionHandleProduct } from "./actions/handleProduct.ts";
-import { ActionHandleSku } from "./actions/handleSku.ts";
+import { actionHandleProduct, ActionHandleProduct } from "./actions/handleProduct.ts";
+import { actionHandleSku, ActionHandleSku } from "./actions/handleSku.ts";
+import actionHandleInputErrors = ActionHandleInputErrors.actionHandleInputErrors;
 
 
 
@@ -56,6 +57,14 @@ export function reducer(states: ReducerSearchProduct.States, action: ReducerSear
 		const commonProps: any = { states, action }
 
 		switch (action.type) {
+				case 'ACTION_HANDLE_INPUT_ERRORS':
+						return actionHandleInputErrors(commonProps)
+				case 'ACTION_HANDLE_PARAMS_RESULT':
+						return actionHandleParamsResult(commonProps)
+				case 'ACTION_HANDLE_PRODUCT':
+						return actionHandleProduct(commonProps)
+				case 'ACTION_HANDLE_SKU':
+						return actionHandleSku(commonProps)
 				default:
 						return states
 		}
