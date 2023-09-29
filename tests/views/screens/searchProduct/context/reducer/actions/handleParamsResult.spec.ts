@@ -9,7 +9,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 
 
 
-const useSut = (states: ReducerSearchProduct.States, payload: ActionHandleParamsResult.Payload): ReducerSearchProduct.States => {
+const useSut = (states: ReducerSearchProduct.States, payload: ActionHandleParamsResult.Payload = []): ReducerSearchProduct.States => {
 		const action: ActionHandleParamsResult.Action = {
 				type: 'ACTION_HANDLE_PARAMS_RESULT',
 				payload: {
@@ -87,14 +87,20 @@ describe(`${actionHandleParamsResult.name} Tests Suite`, () => {
 						}
 				}
 
-				const payload: ActionHandleParamsResult.Payload = [ fakerObj() ]
-
-				const result = useSut(state, payload)
+				const result = useSut(state)
 
 				expect(result.form.hasErrors).toBe(false)
 				expect(result.form.inputsWithErrors.size).toBe(0)
 		})
 
 		it('Should clear current product', () => {
+				const state: ReducerSearchProduct.States = {
+						...defaultStates,
+						product: fakerObj()
+				}
+
+				const result = useSut(state)
+
+				expect(result.product).toBeNull()
 		})
 })
