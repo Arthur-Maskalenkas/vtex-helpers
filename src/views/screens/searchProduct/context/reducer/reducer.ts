@@ -4,6 +4,7 @@ import { ActionHandleInputErrors } from "./actions/handleInputErrors.ts";
 import { actionHandleProduct, ActionHandleProduct } from "./actions/handleProduct.ts";
 import { actionHandleSku, ActionHandleSku } from "./actions/handleSku.ts";
 import { ActionHandleChangeToModuleProduct } from "./actions/actionHandleChangeToModuleProduct.ts";
+import { ActionHandleBackModule } from "./actions/actionHandleBackModule.ts";
 import actionHandleInputErrors = ActionHandleInputErrors.actionHandleInputErrors;
 
 
@@ -28,7 +29,7 @@ export namespace ReducerSearchProduct {
 		}
 
 		export type Actions = ActionHandleInputErrors.Dispatch | ActionHandleProduct.Dispatch | ActionHandleSku.Dispatch
-				| ActionHandleParamsResult.Dispatch | ActionHandleChangeToModuleProduct.Dispatch
+				| ActionHandleParamsResult.Dispatch | ActionHandleChangeToModuleProduct.Dispatch | ActionHandleBackModule.Dispatch
 
 		export type Context = {
 				states: States;
