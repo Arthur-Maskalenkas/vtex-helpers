@@ -22,6 +22,8 @@ export const actionHandleParamsResult = ({ states, action }: ReducerSearchProduc
 				currentModule: 'search',
 				form: {
 						...states.form,
+						hasErrors: false,
+						inputsWithErrors: new Map(),
 						products: action.payload.data
 				}
 		}
