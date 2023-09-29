@@ -78,6 +78,21 @@ describe(`${actionHandleParamsResult.name} Tests Suite`, () => {
 		})
 
 		it('Should clear inputs with errors', () => {
+				const state: ReducerSearchProduct.States = {
+						...defaultStates,
+						form: {
+								...defaultStates.form,
+								hasErrors: true,
+								inputsWithErrors: new Map([ [ faker.random.word(), faker.random.word() ] ])
+						}
+				}
+
+				const payload: ActionHandleParamsResult.Payload = [ fakerObj() ]
+
+				const result = useSut(state, payload)
+
+				expect(result.form.hasErrors).toBe(false)
+				expect(result.form.inputsWithErrors.size).toBe(0)
 		})
 
 		it('Should clear current product', () => {
