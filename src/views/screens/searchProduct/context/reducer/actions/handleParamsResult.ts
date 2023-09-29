@@ -20,6 +20,7 @@ export const actionHandleParamsResult = ({ states, action }: ReducerSearchProduc
 		return {
 				...states,
 				currentModule: 'search',
+				product: null,
 				form: {
 						...states.form,
 						hasErrors: false,
