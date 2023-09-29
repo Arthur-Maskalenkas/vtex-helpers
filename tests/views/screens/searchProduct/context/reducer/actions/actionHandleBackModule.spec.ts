@@ -25,4 +25,14 @@ describe(`${actionHandleBackModule.name} Tests Suite`, () => {
 				expect(result.currentModule).toBe('search')
 		})
 
+		it('Should replace currentModule with form value when	currentModule is search', () => {
+				const state: any = {
+						currentModule: 'search'
+				}
+
+				const result = useSut(state)
+
+				expect(result.currentModule).toBe('form')
+		})
+
 })
