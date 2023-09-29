@@ -6,9 +6,6 @@
     "tests",
     "./vitest.config.ts"
   ],
-  "exclude": [
-    "src"
-  ],
   "compilerOptions": {
     "target": "ES2021",
     "useDefineForClassFields": true,
