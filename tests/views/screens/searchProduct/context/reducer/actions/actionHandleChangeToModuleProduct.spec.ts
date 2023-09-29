@@ -47,4 +47,20 @@ describe(`${actionHandleChangeToModuleProduct.name} Tests Suite`, () => {
 
 				expect(result.currentModule).toBe('product')
 		})
+
+		it('Should replace currentProduct and selectedSku attributes with payload', () => {
+				const expectedSelectedSku = fakerObj()
+				const expectedCurrentProduct = fakerObj()
+
+				const payload: ActionHandleChangeToModuleProduct.Payload = {
+						...expectedCurrentProduct,
+						currentSku: expectedSelectedSku,
+				}
+
+				const result = useSut(defaultStates, payload)
+
+				expect(result?.product?.currentProduct).contain(expectedCurrentProduct)
+				expect(result.product?.currentProduct?.currentSku).toEqual(expectedSelectedSku)
+				expect(result?.product?.selectedSku).toEqual(expectedSelectedSku)
+		})
 })
