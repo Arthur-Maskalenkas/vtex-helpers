@@ -55,6 +55,26 @@ describe(`${actionHandleParamsResult.name} Tests Suite`, () => {
 		})
 
 		it('Should replace existent products in states with new products', () => {
+				const state: ReducerSearchProduct.States = {
+						...defaultStates,
+						form: {
+								...defaultStates.form,
+								products: [
+										fakerObj(3),
+										fakerObj(3),
+								]
+						}
+				}
+
+				const data = [ fakerObj(), fakerObj() ]
+
+				const payload: ActionHandleParamsResult.Payload = data
+
+				const result = useSut(state, payload)
+
+				const [ expectedProduct1, expectedProduct2 ] = data
+
+				expect(result.form.products).toEqual([ expectedProduct1, expectedProduct2 ])
 		})
 
 		it('Should clear inputs with errors', () => {
