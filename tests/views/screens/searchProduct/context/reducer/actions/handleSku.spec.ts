@@ -10,7 +10,7 @@ import { faker } from "@faker-js/faker";
 
 
 const useSut = (states: ReducerSearchProduct.States, payload: ActionHandleSku.Payload): ReducerSearchProduct.States => {
-		const action: ActionHandleSku = {
+		const action: ActionHandleSku.Dispatch = {
 				type: 'ACTION_HANDLE_SKU',
 				payload: {
 						data: payload
@@ -54,7 +54,7 @@ describe(`${actionHandleSku.name} Tests Suite`, () => {
 										currentSku: defaultStateSku
 								},
 						},
-				}
+				} as any
 
 				const payload = fakerObj()
 				const result = useSut(states, payload)
@@ -66,7 +66,7 @@ describe(`${actionHandleSku.name} Tests Suite`, () => {
 								currentProduct: {
 										...defaultStates?.product?.currentProduct,
 										currentSku: payload
-								}
+								} as any
 						}
 				}
 

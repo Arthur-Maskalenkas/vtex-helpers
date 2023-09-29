@@ -7,7 +7,7 @@ export namespace ActionHandleParamsResult {
 
 		export type Payload = Product.Current[]
 
-		export type Action = {
+		export type Dispatch = {
 				type: 'ACTION_HANDLE_PARAMS_RESULT'
 				payload: {
 						data: Payload
@@ -16,7 +16,7 @@ export namespace ActionHandleParamsResult {
 
 }
 
-export const actionHandleParamsResult = ({ states, action }: ReducerSearchProduct.Params<ActionHandleParamsResult.Action>): ReducerSearchProduct.States => {
+export const actionHandleParamsResult = ({ states, action }: ReducerSearchProduct.Params<ActionHandleParamsResult.Dispatch>): ReducerSearchProduct.States => {
 		return {
 				...states,
 				currentModule: 'search',

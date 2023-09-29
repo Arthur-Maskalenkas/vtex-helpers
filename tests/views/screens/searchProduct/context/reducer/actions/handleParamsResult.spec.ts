@@ -10,7 +10,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 
 
 const useSut = (states: ReducerSearchProduct.States, payload: ActionHandleParamsResult.Payload = []): ReducerSearchProduct.States => {
-		const action: ActionHandleParamsResult.Action = {
+		const action: ActionHandleParamsResult.Dispatch = {
 				type: 'ACTION_HANDLE_PARAMS_RESULT',
 				payload: {
 						data: payload

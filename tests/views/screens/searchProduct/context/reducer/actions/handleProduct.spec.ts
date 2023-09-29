@@ -11,7 +11,7 @@ import { Product } from "../../../../../../../src/services/domain/internal/model
 
 
 const useSut = (states: ReducerSearchProduct.States, payload: ActionHandleProduct.Payload): ReducerSearchProduct.States => {
-		const action: ActionHandleProduct.Action = {
+		const action: ActionHandleProduct.Dispatch = {
 				type: 'ACTION_HANDLE_PRODUCT',
 				payload: {
 						data: payload

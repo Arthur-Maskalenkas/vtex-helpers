@@ -3,18 +3,17 @@ import {
 		ReducerSearchProduct, ReducerSearchProductParamsDefaultValues
 } from "../../../../../../../src/views/screens/searchProduct/context/reducer/reducer.ts";
 import {
-		actionHandleInputErrors, ActionHandleInputErrors
+		ActionHandleInputErrors
 } from "../../../../../../../src/views/screens/searchProduct/context/reducer/actions/handleInputErrors.ts";
+import actionHandleInputErrors = ActionHandleInputErrors.actionHandleInputErrors;
 
 
 
-const useSut = (states: ReducerSearchProduct.States, payload: Map<string, string>): ReducerSearchProduct.States => {
-		const action: ActionHandleInputErrors = {
+const useSut = (states: ReducerSearchProduct.States, payload: ActionHandleInputErrors.Payload): ReducerSearchProduct.States => {
+		const action: ActionHandleInputErrors.Dispatch = {
 				type: 'ACTION_HANDLE_INPUT_ERRORS',
 				payload: {
-						data: {
-								inputs: payload
-						}
+						data: payload
 				}
 		}
 

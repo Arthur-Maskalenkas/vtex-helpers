@@ -1,4 +1,8 @@
 import { Product } from "../../../../../services/domain/internal/models/product.ts";
+import { ActionHandleParamsResult } from "./actions/handleParamsResult.ts";
+import { ActionHandleInputErrors } from "./actions/handleInputErrors.ts";
+import { ActionHandleProduct } from "./actions/handleProduct.ts";
+import { ActionHandleSku } from "./actions/handleSku.ts";
 
 
 
@@ -21,7 +25,8 @@ export namespace ReducerSearchProduct {
 
 		}
 
-		export type Actions = any
+		export type Actions = ActionHandleInputErrors.Dispatch | ActionHandleProduct.Dispatch | ActionHandleSku.Dispatch
+				| ActionHandleParamsResult.Dispatch
 
 		export type Context = {
 				states: States;

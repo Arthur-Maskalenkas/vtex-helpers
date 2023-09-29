@@ -7,7 +7,7 @@ export namespace ActionHandleSku {
 
 		export type Payload = Product.Sku
 
-		export type Action = {
+		export type Dispatch = {
 				type: 'ACTION_HANDLE_SKU'
 				payload: {
 						data: Product.Sku
@@ -16,7 +16,7 @@ export namespace ActionHandleSku {
 
 }
 
-export const actionHandleSku = ({ states, action }: ReducerSearchProduct.Params<ActionHandleSku.Action>): ReducerSearchProduct.States => {
+export const actionHandleSku = ({ states, action }: ReducerSearchProduct.Params<ActionHandleSku.Dispatch>): ReducerSearchProduct.States => {
 		return {
 				...states,
 				product: {
