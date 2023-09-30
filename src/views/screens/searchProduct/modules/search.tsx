@@ -23,6 +23,7 @@ const Product = ({ product }: { product: Product.Current }) => {
 		)
 }
 
+
 const ButtonGoToProduct = ({ children, product }: PropsWithChildren<{ product: Product.Current }>) => {
 		const { dispatch } = useSearchProductContext()
 
