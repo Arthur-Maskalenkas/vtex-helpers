@@ -90,14 +90,10 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 				})
 
 				it('Should return a full url search', () => {
-						const idProduct = faker.number.int(10).toString()
-						const idSku = faker.number.int(10).toString()
-						const idCluster = faker.number.int(10).toString()
-						const idName = faker.commerce.productName()
+						const idProduct = '6974'
 
-						const result = sut.map(`paramProductId=${idProduct},paramSkuId=${idSku},productClusterIds=${idCluster},paramProductName=${idName}`)
-
-						const expected = `search?_from=0&_to=49&fq=productId:${idProduct}&fq=skuId:${idSku}&fq=productClusterIds:${idCluster}&ft=${idName.replace(/\s/g, '%20')}`
+						const result = sut.map(`paramProductId=${idProduct}`)
+						const expected = `pub/products/search?_from=0&_to=5&fq=productId:6974`
 						expect(result).toBe(expected)
 				})
 		})
