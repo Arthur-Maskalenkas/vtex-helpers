@@ -45,4 +45,19 @@ describe(`${Header.name} Tests Suite`, () => {
 
 				expect(dispatch).toHaveBeenCalledWith({ type: 'ACTION_HANDLE_BACK_MODULE' })
 		})
+		it('Should disable button when currentModule is equal to form', () => {
+				searchProductContextModule.mockImplementation(() => {
+						return {
+								states: {
+										currentModule: 'form'
+								} as any,
+								dispatch: vi.fn()
+						}
+				})
+
+				const { getByRole } = render(<Header/>)
+
+				expect(getByRole('button', { name: 'Voltar' })).toBeDisabled()
+		})
+
 })
