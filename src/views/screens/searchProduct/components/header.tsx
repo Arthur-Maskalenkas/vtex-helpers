@@ -4,13 +4,16 @@ import { Button } from "../../commons/button/button.tsx";
 
 
 const ButtonBack = () => {
-		const { dispatch } = useSearchProductContext()
+		const { dispatch, states } = useSearchProductContext()
+
 		const handleClick = () => {
 				dispatch({ type: 'ACTION_HANDLE_BACK_MODULE' })
 		}
 
+		const isDisabled = states.currentModule === 'form'
+
 		return (
-				<Button.Container onClick={handleClick}>
+				<Button.Container onClick={handleClick} disabled={isDisabled}>
 						<Button.Text>Voltar</Button.Text>
 				</Button.Container>
 		)
