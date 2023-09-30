@@ -28,4 +28,13 @@ describe(`${mapParams.name} Tests Suite`, () => {
 
 				expect(result).toBeNull()
 		})
+
+		it('Should filter keys without	value', () => {
+				const result = mapParams({
+						paramProductName: '',
+						paramProductId: 'valueProductId',
+				})
+
+				expect(result).toBe('paramProductId=valueProductId')
+		})
 })
