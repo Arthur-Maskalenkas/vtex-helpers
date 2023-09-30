@@ -30,7 +30,7 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 						searchParams.add(result)
 				}
 
-				return [ 'search?_from=0&_to=49', ...searchParams ].join('&')
+				return [ 'pub/products/search?_from=0&_to=5', ...searchParams ].join('&')
 		}
 
 		private mapFq(paramKey: string, id: string) {
