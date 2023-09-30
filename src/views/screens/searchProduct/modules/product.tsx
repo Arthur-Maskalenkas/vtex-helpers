@@ -47,9 +47,7 @@ const CurrentSkuInfos = () => {
 const ProductInfos = () => {
 		const { states } = useSearchProductContext()
 
-		const currentProduct = states?.product?.currentProduct
-
-		const { name, id, category, brand, currentSku } = states?.product?.currentProduct!
+		const { name, id, category, brand } = states?.product?.currentProduct!
 
 		return (
 				<div>
@@ -142,5 +140,19 @@ const ListCategories = () => {
 								</li>
 						))}
 				</ul>
+		)
+}
+
+export const ModuleProduct = () => {
+		return (
+				<div>
+						<ProductInfos/>
+						<ListCollections/>
+						<ListSkuSpecifications/>
+						<ListProductSpecifications/>
+						<ListCategories/>
+						<CurrentSkuInfos/>
+						<ListSkus/>
+				</div>
 		)
 }
