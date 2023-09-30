@@ -28,4 +28,21 @@ describe(`${Header.name} Tests Suite`, () => {
 				expect(getByRole('heading', { name: 'product' })).toBeInTheDocument()
 		})
 
+		it('Should call dispatch with correct value when click on button', () => {
+				const dispatch = vi.fn()
+				searchProductContextModule.mockImplementation(() => {
+						return {
+								states: {
+										currentModule: 'product'
+								} as any,
+								dispatch: dispatch
+						}
+				})
+
+				const { getByRole } = render(<Header/>)
+
+				userEvent.click(getByRole('button', { name: 'Voltar' }))
+
+				expect(dispatch).toHaveBeenCalledWith({ type: 'ACTION_HANDLE_BACK_MODULE' })
+		})
 })
