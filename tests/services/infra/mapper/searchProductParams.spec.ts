@@ -68,7 +68,6 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						const result = sut.map(`paramProductId=${idProduct},paramSkuId=${idSku},productClusterIds=${idCluster},paramProductName=${idName}`)
 
 						const expected = `fq=productId:${idProduct}&fq=skuId:${idSku}&fq=productClusterIds:${idCluster}&ft=${idName.replace(/\s/g, '%20')}`
-
 						expect(result).toContain(expected)
 				})
 
@@ -91,10 +90,14 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 				})
 
 				it('Should return a full url search', () => {
-						const result = sut.map(`paramProductId=${id}`)
+						const idProduct = faker.number.int(10).toString()
+						const idSku = faker.number.int(10).toString()
+						const idCluster = faker.number.int(10).toString()
+						const idName = faker.commerce.productName()
 
-						const expected = `search?_from=0&_to=49&fq=productId:${id}`
+						const result = sut.map(`paramProductId=${idProduct},paramSkuId=${idSku},productClusterIds=${idCluster},paramProductName=${idName}`)
 
+						const expected = `search?_from=0&_to=49&fq=productId:${idProduct}&fq=skuId:${idSku}&fq=productClusterIds:${idCluster}&ft=${idName.replace(/\s/g, '%20')}`
 						expect(result).toBe(expected)
 				})
 		})

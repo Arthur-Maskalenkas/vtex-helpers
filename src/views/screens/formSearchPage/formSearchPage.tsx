@@ -36,9 +36,11 @@ const Button = ({ typeButton, isDisabled = false }: {
 		const { label, ...buttonProps } = buttonStrategy[typeButton]
 
 		return (
-				<ButtonCommon  {...buttonProps} disabled={isDisabled} role={"button"}>
-						{label}
-				</ButtonCommon>
+				<ButtonCommon.Container  {...buttonProps} disabled={isDisabled} role={"button"}>
+						<ButtonCommon.Text>
+								{label}
+						</ButtonCommon.Text>
+				</ButtonCommon.Container>
 		)
 }
 

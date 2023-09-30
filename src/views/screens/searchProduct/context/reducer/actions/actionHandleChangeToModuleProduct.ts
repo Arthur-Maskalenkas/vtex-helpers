@@ -19,6 +19,7 @@ export namespace ActionHandleChangeToModuleProduct {
 export const actionHandleChangeToModuleProduct = ({ states, action }: ReducerSearchProduct.Params<ActionHandleChangeToModuleProduct.Dispatch>): ReducerSearchProduct.States => {
 		return {
 				...states,
+				currentModule: 'product',
 				product: {
 						selectedSku: action.payload.data.currentSku,
 						currentProduct: {

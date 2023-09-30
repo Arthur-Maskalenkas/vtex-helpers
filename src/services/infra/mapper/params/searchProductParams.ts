@@ -26,14 +26,15 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 						const result = currentStrategy()
 								.replace(/\s/g, '%20')
 
+
 						searchParams.add(result)
 				}
 
-				return [ ...searchParams ].join('&')
+				return [ 'search?_from=0&_to=49', ...searchParams ].join('&')
 		}
 
 		private mapFq(paramKey: string, id: string) {
-				return `search?_from=0&_to=49&fq=${paramKey}:${id}`
+				return `fq=${paramKey}:${id}`
 		}
 
 		private mapFt(value: string) {
