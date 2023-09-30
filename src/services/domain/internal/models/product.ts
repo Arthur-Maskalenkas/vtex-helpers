@@ -22,6 +22,8 @@ export namespace Product {
 				currentPrice: number
 				oldPrice: number
 				isAvailable: boolean
+				image: string
+				quantity: number
 		}
 
 		export type SkuSpecification = {
