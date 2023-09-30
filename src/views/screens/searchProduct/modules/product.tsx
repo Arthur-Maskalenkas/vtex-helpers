@@ -48,7 +48,6 @@ const ProductInfos = () => {
 		const { states } = useSearchProductContext()
 
 		const { name, id, category, brand } = states?.product?.currentProduct!
-
 		return (
 				<div>
 						<p>{name}</p>

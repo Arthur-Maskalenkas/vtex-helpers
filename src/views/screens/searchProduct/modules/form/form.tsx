@@ -3,19 +3,14 @@ import { handleSubmit } from "./utils/handleSubmit.ts";
 import { useApplicationReducerContext } from "../../../../application/context";
 
 import { Input as InputCommon } from "../../../commons/input/input.tsx";
-import { useFormSearchPageContext } from "../../../formSearchPage/context";
 import { Button as ButtonCommon } from "../../../commons/button/button.tsx";
 
 
 
-const ButtonSubmit = ({ typeButton, isDisabled = false }: {
-		typeButton: 'submit' | 'openResultInSamePage' | 'openResultInOtherPage',
-		isDisabled?: boolean
-}) => {
-		const { states: { urlGenerated = '' } } = useFormSearchPageContext()
+const ButtonSubmit = () => {
 
 		return (
-				<ButtonCommon.Container type={"button"}>
+				<ButtonCommon.Container type={"submit"}>
 						<ButtonCommon.Text>
 								Pesquisar
 						</ButtonCommon.Text>
@@ -70,7 +65,7 @@ const Input = ({ typeInput }: { typeInput: 'productId' | 'skuId' | 'productName'
 export const ModuleForm = () => {
 		const { dispatch } = useSearchProductContext()
 		const { state: { appInternalServices: { product: { loadProducts: controller } } } } = useApplicationReducerContext()
-
+		console.log(controller);
 
 		return (
 				<form role={'form'} onSubmit={e => handleSubmit(e, dispatch, controller as any)}>
@@ -79,7 +74,7 @@ export const ModuleForm = () => {
 						<Input typeInput={'skuId'}/>
 						<Input typeInput={'collection'}/>
 
-						<ButtonSubmit typeButton={'submit'}/>
+						<ButtonSubmit/>
 				</form>
 		)
 }

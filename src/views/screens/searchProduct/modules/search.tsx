@@ -5,7 +5,7 @@ import { PropsWithChildren } from "react";
 
 
 
-const Product = ({ product }: { product: Product.Current }) => {
+const ProductSummary = ({ product }: { product: Product.Current }) => {
 		const { currentSku, brand, category, name, categories } = product!
 		const { quantity, isAvailable, image, oldPrice, currentPrice, url } = currentSku!
 		return (
@@ -49,7 +49,7 @@ export const Search = () => {
 								{products?.map((product, index) => (
 										<li key={index}>
 												<ButtonGoToProduct product={product}>
-														<Product product={product}/>
+														<ProductSummary product={product}/>
 												</ButtonGoToProduct>
 										</li>
 								))}
