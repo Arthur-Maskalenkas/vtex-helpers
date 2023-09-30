@@ -74,3 +74,7 @@ após o golive:
 
 # Para que serve o workspace de produção
 Serve tanto para utilizar promote quanto para atualizar o conteudo que não é possivel atualizar nos blocos.
+
+# Parar que tudo funcione
+
+CONFIGRA O VTEX LIST DA SUB QUE VAI SER MIGRADA E COMPARE PONTO A PONTO
