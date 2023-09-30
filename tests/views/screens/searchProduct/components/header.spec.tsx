@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, SpyInstance, vi } from "vitest";
 import { Header } from "../../../../../src/views/screens/searchProduct/components/header.tsx";
-import { render } from "../../../../utils/test-utils.tsx";
+import { render, userEvent } from "../../../../utils/test-utils.tsx";
 import * as SearchProductContextModule from "../../../../../src/views/screens/searchProduct/context/index.tsx";
 
 
@@ -21,6 +21,7 @@ describe(`${Header.name} Tests Suite`, () => {
 								dispatch: vi.fn()
 						}
 				})
+
 
 				const { getByRole } = render(<Header/>)
 
@@ -45,6 +46,7 @@ describe(`${Header.name} Tests Suite`, () => {
 
 				expect(dispatch).toHaveBeenCalledWith({ type: 'ACTION_HANDLE_BACK_MODULE' })
 		})
+
 		it('Should disable button when currentModule is equal to form', () => {
 				searchProductContextModule.mockImplementation(() => {
 						return {
@@ -60,4 +62,18 @@ describe(`${Header.name} Tests Suite`, () => {
 				expect(getByRole('button', { name: 'Voltar' })).toBeDisabled()
 		})
 
+		it('Should enable button when currentModule is different to form', () => {
+				searchProductContextModule.mockImplementation(() => {
+						return {
+								states: {
+										currentModule: 'product'
+								} as any,
+								dispatch: vi.fn()
+						}
+				})
+
+				const { getByRole } = render(<Header/>)
+
+				expect(getByRole('button', { name: 'Voltar' })).toBeEnabled()
+		})
 })
