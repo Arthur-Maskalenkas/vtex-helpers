@@ -8,7 +8,7 @@ import { ProtocolRepositoryLoadProducts } from "../../data/protocols/repositoryL
 export class RepositoryProduct
 		implements ProtocolRepositoryLoadProduct, ProtocolMapModelProduct, ProtocolRepositoryLoadProducts {
 		public async search(params: ProtocolRepositoryLoadProducts.Params): ProtocolRepositoryLoadProducts.Result {
-				const result = await fetch(`/api/catalog_system/pub/products/search/${params}`)
+				const result = await fetch(`/api/${params}`)
 				const data = await result?.json()
 
 				if (!data?.length) return []

@@ -136,7 +136,7 @@ describe(RepositoryProduct.name, () => {
 				it('Should call fetch with correct url', async () => {
 						await sut.search('any_params')
 
-						expect(fetchSpy).toHaveBeenCalledWith('/api/catalog_system/pub/products/search/any_params')
+						expect(fetchSpy).toHaveBeenCalledWith('/api/any_params')
 				})
 
 				it('Should return array with length 0 if api returns null', () => {
