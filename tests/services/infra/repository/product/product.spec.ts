@@ -1,27 +1,20 @@
 import { fetchHelper } from '../../../../utils/test-utils.tsx'
 import { RepositoryProduct } from '../../../../../src/services/infra/repository/product.ts'
 import { BuilderProtocolMapModelProduct } from './builders.ts'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, SpyInstance, vi } from 'vitest'
 
 
-
-const makeSut = () => {
-		const sut = new RepositoryProduct()
-		return {
-				sut
-		}
-}
 
 describe(RepositoryProduct.name, () => {
 		// before each, create a new instance of sut
 		let sut: RepositoryProduct
+		let fetchSpy: SpyInstance<any, any>
 
 		beforeEach(() => {
-				const newSut = makeSut()
+				global.fetch = vi.fn()
+				fetchSpy = global.fetch as any
 
-				vi.resetAllMocks()
-
-				sut = newSut.sut
+				sut = new RepositoryProduct()
 		})
 
 		describe(RepositoryProduct.prototype.load.name, () => {
@@ -119,6 +112,31 @@ describe(RepositoryProduct.name, () => {
 
 						expect(result.currentPrice).toBe(currentPriceOtherSku)
 						expect(result.oldPrice).toBe(oldPriceOtherSku)
+				})
+		})
+
+		describe(RepositoryProduct.prototype.search.name, () => {
+
+				it('Should call fetch with correct url', async () => {
+						await sut.search('any_params')
+
+						expect(fetchSpy).toHaveBeenCalledWith('/api/catalog_system/pub/products/search/any_params')
+				})
+
+				it('Should return array with length 0 if api returns null', () => {
+						fetchSpy.mockResolvedValue({ json: async () => Promise.resolve(null) })
+
+						const result = sut.search('any_params')
+
+						expect(result).resolves.toHaveLength(0)
+				})
+
+				it('Should return all products returneds	from api', () => {
+						fetchSpy.mockResolvedValue({ json: async () => Promise.resolve([ { id: 0 }, { id: 1 } ]) })
+
+						const result = sut.search('any_params')
+
+						expect(result).resolves.toHaveLength(2)
 				})
 		})
 })
