@@ -93,7 +93,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						const idProduct = '6974'
 
 						const result = sut.map(`paramProductId=${idProduct}`)
-						const expected = `pub/products/search?_from=0&_to=5&fq=productId:6974`
+						const expected = `catalog_system/pub/products/search?_from=0&_to=5&fq=productId:6974`
 						expect(result).toBe(expected)
 				})
 		})
