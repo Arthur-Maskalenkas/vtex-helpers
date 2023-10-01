@@ -8,7 +8,6 @@ export const Search = () => {
 		const { states } = useSearchProductContext()
 
 		const products = states?.form?.products
-		console.log('#!! 🔥 search 12:41', products)
 		return (
 				<div>
 						<Container.List>
