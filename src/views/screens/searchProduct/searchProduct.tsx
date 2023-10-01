@@ -1,6 +1,6 @@
 import { Switch } from "../../common/switch.tsx";
 import { SearchProductProvider, useSearchProductContext } from "./context";
-import { ModuleProduct } from "./modules/product.tsx";
+import { ModuleProduct } from "./modules/product/product.tsx";
 import { ModuleForm } from "./modules/form/form.tsx";
 import { Search } from "./modules/search/search.tsx";
 import { Header } from "./components/header.tsx";
