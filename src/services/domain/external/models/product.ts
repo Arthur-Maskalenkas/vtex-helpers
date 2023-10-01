@@ -19,35 +19,44 @@ export interface ExternalModelProduct {
 		}>
 
 		items: Array<
-					{
-							itemId: string
-							variations: string[]
-							// também possui as variações
-							// "Cor": [
-							//   "Preto"
-							// ],
-							// "Tamanho": [
-							//   "34"
-							// ],
-							// "variations": [
-							//   "Cor",
-							//   "Tamanho"
-							// ],
+				{
 
-							name: string
-							ean: string
-							referenceId: Array<{
-									Key: string
-									Value: string
-							}>
-							sellers: [ {
-									commertialOffer: {
-											Price: number
-											ListPrice: number
-											AvailableQuantity: number
-											IsAvailable: boolean
-									}
-							} ] | []
-					}>
+						// também possui as variações
+						// "Cor": [
+						//   "Preto"
+						// ],
+						// "Tamanho": [
+						//   "34"
+						// ],
+						// "variations": [
+						//   "Cor",
+						//   "Tamanho"
+						// ],
+						addToCartLink: string
+						itemId: string
+						variations: string[]
+						images: Array<{
+								imageUrl: string
+						}>
+						name: string
+						ean: string
+						referenceId: Array<{
+								Key: string
+								Value: string
+						}>
+						sellers: Array<{
+								commertialOffer: {
+										Price: number
+										ListPrice: number
+										IsAvailable: boolean
+										Teasers: Array<any>
+										PromotionTeasers: Array<any>
+										GiftSkuIds: Array<any>
+										DiscountHighLight: Array<any>
+										isAvailable: boolean
+										AvailableQuantity: number
+								}
+						}>
+				}>
 
 }
