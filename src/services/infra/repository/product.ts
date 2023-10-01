@@ -45,7 +45,14 @@ export class RepositoryProduct
 								}
 
 								return {
+										id: sku.itemId,
 										currentPrice: price,
+										name: sku?.name,
+										isAvailable: sku?.sellers?.[0]?.commertialOffer?.IsAvailable,
+										quantity: sku?.sellers?.[0]?.commertialOffer?.AvailableQuantity,
+										urlAddToCart: sku?.addToCartLink,
+										image: sku?.images?.[0]?.imageUrl,
+										url: this.formatUrl('sku-specification', sku?.name, sku?.itemId),
 										oldPrice: haveDiscount ? listPrice : null,
 										specifications: skuSpecifications
 								} as Partial<Product.Sku>
@@ -91,14 +98,18 @@ export class RepositoryProduct
 								}
 						})
 
+
 						const currentProduct: Product.Current = {
-								currentSku: listSkus?.[0] ?? [],
-								skus: listSkus,
+								currentSku: (listSkus as any)?.[0] ?? [],
+								skus: listSkus as any,
 								collections: listCollections,
+								brand: product?.brand,
+								name: product?.productTitle,
+								id: product?.productId,
 								specifications: listSpecifications,
 								categories: listCategories,
 								category: listCategories?.[0]
-						} as any
+						}
 
 						const result: ProtocolMapModelProduct.Result = {
 								api: product,
