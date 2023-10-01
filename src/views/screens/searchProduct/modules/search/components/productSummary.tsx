@@ -35,22 +35,22 @@ const ButtonSeeMore = ({ product }: { product: Product.Current }) => {
 }
 
 export const ProductSummary = ({ product }: { product: Product.Current }) => {
-		const { currentSku: { name, quantity, id, image } } = product
+		const { currentSku: { name, quantity, id, image, isAvailable } } = product
 
 		return (
-				<div className={'component-handleProduct container'}>
+				<div
+						data-product-available={isAvailable}
+						className={'component-handleProduct container'}>
 						<div className={'left-side'}>
 								<p>{name}</p>
 								<p>SKU ID {id}</p>
 								<p>{quantity} unidades no estoque</p>
-
-
 								<ButtonSeeMore product={product}/>
 								<ButtonGoToPDP product={product}/>
 						</div>
 
 						<div className={'right-side'}>
-								<img width={60} height={60} src={image}/>
+								<img alt={"Imagem de produto"} width={60} height={60} src={image}/>
 						</div>
 				</div>
 		)
