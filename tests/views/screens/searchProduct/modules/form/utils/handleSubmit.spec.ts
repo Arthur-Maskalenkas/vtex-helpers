@@ -24,6 +24,7 @@ describe(`${handleSubmit.name} Tests Suite`, () => {
 						.spyOn(ApplicationContextModule, 'useApplicationReducerContext')
 						.mockReturnValue({
 								dispatch: vi.fn(),
+								// @ts-ignore
 								...ApplicationContextModule.initialState
 						})
 		})
