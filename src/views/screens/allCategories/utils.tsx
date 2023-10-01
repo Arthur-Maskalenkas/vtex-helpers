@@ -13,7 +13,7 @@ export const useAllCategories = () => {
 						const controller = state.appInternalServices.category.loadAll
 						const response = await controller.handle({ id: 'categories.allCategories' })
 
-						console.log('#!! 🔥 allCategories 10:39', {
+						('#!! 🔥 allCategories 10:39', {
 								controller,
 								response
 

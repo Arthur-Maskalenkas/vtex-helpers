@@ -89,7 +89,6 @@ describe(MapperSearchPageParams.name, () => {
 						const expected = '/categorie-id/brand-id/collection-id/specification-value?map=c,b,productClusterIds,specificationFilter_specification-id'
 
 						const result = sut.map(params)
-						console.log(result)
 
 						expect(result).toBe(expected)
 				})

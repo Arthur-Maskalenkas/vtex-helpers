@@ -6,7 +6,7 @@ import { ScreenSearchProductWrapper } from "../screens/searchProduct/searchProdu
 
 export const Application = () => {
 		useEffect(() => {
-				console.log('olaaas')
+				('olaaas')
 		}, [])
 
 		return (
