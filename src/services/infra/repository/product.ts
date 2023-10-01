@@ -13,7 +13,7 @@ export class RepositoryProduct
 
 				if (!data?.length) return []
 
-				return data[0]
+				return data
 		}
 
 
