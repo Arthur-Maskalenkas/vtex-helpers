@@ -1,0 +1,736 @@
+{
+  "productId": "6974",
+  "productName": "Tênis Masculino Mizuno Wave Prophecy 12-S",
+  "brand": "Mizuno",
+  "brandId": 2000000,
+  "brandImageUrl": null,
+  "linkText": "tenis-masculino-mizuno-wave-prophecy-12-s-102057001-1-540",
+  "productReference": "102057001_1-540",
+  "productReferenceCode": "102057001_1-540",
+  "categoryId": "18",
+  "productTitle": "tenis-masculino-mizuno-wave-prophecy-12-s-102057001-1-540",
+  "metaTagDescription": "Tênis Masculino Mizuno Wave Prophecy 12-S",
+  "releaseDate": "2023-08-24T00:28:00Z",
+  "clusterHighlights": {
+    "251": "Lançamento"
+  },
+  "productClusters": {
+    "154": "Itens Site",
+    "251": "Lançamento",
+    "703": "(NOVOS NEGOCIOS) INTEGRADA"
+  },
+  "searchableClusters": {
+    "251": "Lançamento",
+    "703": "(NOVOS NEGOCIOS) INTEGRADA"
+  },
+  "categories": [
+    "/Masculino/Calçados/Corrida/",
+    "/Masculino/Calçados/",
+    "/Masculino/",
+    "/Calçados/Para Todos os Dias/",
+    "/Calçados/",
+    "/Calçados/Para Todos os Treinos/"
+  ],
+  "categoriesIds": [
+    "/1/5/18/",
+    "/1/5/",
+    "/1/",
+    "/74/75/",
+    "/74/",
+    "/74/78/"
+  ],
+  "link": "https://arthurteste--mizunobrio.myvtex.com/tenis-masculino-mizuno-wave-prophecy-12-s-102057001-1-540/p",
+  "Indicado Para": [
+    "Multiesportes"
+  ],
+  "Linha": [
+    "Running"
+  ],
+  "Solado": [
+    "Borracha"
+  ],
+  "Tecnologia": [
+    "SmoothRide, X10, Mizuno Wave e U4icX"
+  ],
+  "Pisada": [
+    "Neutra"
+  ],
+  "Fechamento": [
+    "Cadarço"
+  ],
+  "Peso do Produto": [
+    "370g Ref. núm. 40 (O peso do produto varia de acordo com a numeração)"
+  ],
+  "Garantia do Fabricante": [
+    "Contra defeito de fabricação."
+  ],
+  "Diferenciais do Produto": [
+    "Drop 10mm"
+  ],
+  "Origem": [
+    "Importado"
+  ],
+  "Atributos": [
+    "Indicado Para",
+    "Linha",
+    "Solado",
+    "Tecnologia",
+    "Pisada",
+    "Fechamento",
+    "Peso do Produto",
+    "Garantia do Fabricante",
+    "Diferenciais do Produto",
+    "Origem"
+  ],
+  "Gênero": [
+    "Masculino"
+  ],
+  "Modelo": [
+    "Esportivo"
+  ],
+  "Especificações": [
+    "Gênero",
+    "Modelo"
+  ],
+  "allSpecifications": [
+    "Indicado Para",
+    "Linha",
+    "Solado",
+    "Tecnologia",
+    "Pisada",
+    "Fechamento",
+    "Peso do Produto",
+    "Garantia do Fabricante",
+    "Diferenciais do Produto",
+    "Origem",
+    "Gênero",
+    "Modelo"
+  ],
+  "allSpecificationsGroups": [
+    "Atributos",
+    "Especificações"
+  ],
+  "description": "O novo cabedal mais leve e macio torna o legado do WAVE PROPHECY mais duradouro. O INFINITY WAVE em todo o comprimento oferece amortecimento e estabilidade agindo juntos.",
+  "items": [
+    {
+      "itemId": "35078",
+      "name": "Tênis Masculino Mizuno Wave Prophecy 12-S",
+      "nameComplete": "Tênis Masculino Mizuno Wave Prophecy 12-S",
+      "complementName": "Tênis Masculino Mizuno Wave Prophecy 12-S",
+      "ean": "7893659822931",
+      "referenceId": [
+        {
+          "Key": "RefId",
+          "Value": "102057001_1-540-38"
+        }
+      ],
+      "measurementUnit": "un",
+      "unitMultiplier": 1,
+      "modalType": null,
+      "isKit": false,
+      "images": [
+        {
+          "imageId": "235404",
+          "imageLabel": "",
+          "imageTag": "<img src=\"~/arquivos/ids/235404-#width#-#height#/102057001_1-540-01.jpg?v=638284756457630000\" width=\"#width#\" height=\"#height#\" alt=\"102057001_1-540-01\" id=\"\" />",
+          "imageUrl": "https://mizunobr.vteximg.com.br/arquivos/ids/235404/102057001_1-540-01.jpg?v=638284756457630000",
+          "imageText": "102057001_1-540-01",
+          "imageLastModified": "2023-08-24T12:07:25.7630000Z"
+        }
+      ],
+      "Cor": [
+        "Preto"
+      ],
+      "Tamanho": [
+        "38"
+      ],
+      "variations": [
+        "Cor",
+        "Tamanho"
+      ],
+      "sellers": [
+        {
+          "sellerId": "1",
+          "sellerName": "Mizuno",
+          "addToCartLink": "https://arthurteste--mizunobrio.myvtex.com/checkout/cart/add?sku=35078&qty=1&seller=1&sc=1&price=179999&cv=DD7AC551FC374EE6BFC670A637A3A500_&sc=1",
+          "sellerDefault": true,
+          "commertialOffer": {
+            "DeliverySlaSamplesPerRegion": {
+              "0": {
+                "DeliverySlaPerTypes": [],
+                "Region": null
+              }
+            },
+            "Installments": [
+              {
+                "Value": 1799.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 1,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express à vista"
+              },
+              {
+                "Value": 899.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 2,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 2 vezes sem juros"
+              },
+              {
+                "Value": 599.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 3,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 3 vezes sem juros"
+              },
+              {
+                "Value": 449.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 4,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 4 vezes sem juros"
+              },
+              {
+                "Value": 359.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 5,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 5 vezes sem juros"
+              },
+              {
+                "Value": 299.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 6,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 6 vezes sem juros"
+              },
+              {
+                "Value": 257.14,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 7,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 7 vezes sem juros"
+              },
+              {
+                "Value": 224.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 8,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 8 vezes sem juros"
+              },
+              {
+                "Value": 199.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 9,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 9 vezes sem juros"
+              },
+              {
+                "Value": 179.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 10,
+                "PaymentSystemName": "American Express",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "American Express 10 vezes sem juros"
+              },
+              {
+                "Value": 1799.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 1,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa à vista"
+              },
+              {
+                "Value": 899.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 2,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 2 vezes sem juros"
+              },
+              {
+                "Value": 599.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 3,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 3 vezes sem juros"
+              },
+              {
+                "Value": 449.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 4,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 4 vezes sem juros"
+              },
+              {
+                "Value": 359.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 5,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 5 vezes sem juros"
+              },
+              {
+                "Value": 299.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 6,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 6 vezes sem juros"
+              },
+              {
+                "Value": 257.14,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 7,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 7 vezes sem juros"
+              },
+              {
+                "Value": 224.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 8,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 8 vezes sem juros"
+              },
+              {
+                "Value": 199.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 9,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 9 vezes sem juros"
+              },
+              {
+                "Value": 179.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 10,
+                "PaymentSystemName": "Visa",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Visa 10 vezes sem juros"
+              },
+              {
+                "Value": 1799.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 1,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard à vista"
+              },
+              {
+                "Value": 899.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 2,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 2 vezes sem juros"
+              },
+              {
+                "Value": 599.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 3,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 3 vezes sem juros"
+              },
+              {
+                "Value": 449.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 4,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 4 vezes sem juros"
+              },
+              {
+                "Value": 359.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 5,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 5 vezes sem juros"
+              },
+              {
+                "Value": 299.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 6,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 6 vezes sem juros"
+              },
+              {
+                "Value": 257.14,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 7,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 7 vezes sem juros"
+              },
+              {
+                "Value": 224.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 8,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 8 vezes sem juros"
+              },
+              {
+                "Value": 199.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 9,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 9 vezes sem juros"
+              },
+              {
+                "Value": 179.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 10,
+                "PaymentSystemName": "Mastercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Mastercard 10 vezes sem juros"
+              },
+              {
+                "Value": 1799.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 1,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard à vista"
+              },
+              {
+                "Value": 899.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 2,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 2 vezes sem juros"
+              },
+              {
+                "Value": 599.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 3,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 3 vezes sem juros"
+              },
+              {
+                "Value": 449.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 4,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 4 vezes sem juros"
+              },
+              {
+                "Value": 359.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 5,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 5 vezes sem juros"
+              },
+              {
+                "Value": 299.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 6,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 6 vezes sem juros"
+              },
+              {
+                "Value": 257.14,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 7,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 7 vezes sem juros"
+              },
+              {
+                "Value": 224.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 8,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 8 vezes sem juros"
+              },
+              {
+                "Value": 199.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 9,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 9 vezes sem juros"
+              },
+              {
+                "Value": 179.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 10,
+                "PaymentSystemName": "Hipercard",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Hipercard 10 vezes sem juros"
+              },
+              {
+                "Value": 1799.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 1,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo à vista"
+              },
+              {
+                "Value": 899.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 2,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 2 vezes sem juros"
+              },
+              {
+                "Value": 599.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 3,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 3 vezes sem juros"
+              },
+              {
+                "Value": 449.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 4,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 4 vezes sem juros"
+              },
+              {
+                "Value": 359.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 5,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 5 vezes sem juros"
+              },
+              {
+                "Value": 299.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 6,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 6 vezes sem juros"
+              },
+              {
+                "Value": 257.14,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 7,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 7 vezes sem juros"
+              },
+              {
+                "Value": 224.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 8,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 8 vezes sem juros"
+              },
+              {
+                "Value": 199.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 9,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 9 vezes sem juros"
+              },
+              {
+                "Value": 179.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 10,
+                "PaymentSystemName": "Elo",
+                "PaymentSystemGroupName": "creditCardPaymentGroup",
+                "Name": "Elo 10 vezes sem juros"
+              },
+              {
+                "Value": 1799.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 1,
+                "PaymentSystemName": "Vale",
+                "PaymentSystemGroupName": "giftCardPaymentGroup",
+                "Name": "Vale à vista"
+              },
+              {
+                "Value": 1799.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 1,
+                "PaymentSystemName": "Pix",
+                "PaymentSystemGroupName": "instantPaymentPaymentGroup",
+                "Name": "Pix à vista"
+              },
+              {
+                "Value": 1799.99,
+                "InterestRate": 0,
+                "TotalValuePlusInterestRate": 1799.99,
+                "NumberOfInstallments": 1,
+                "PaymentSystemName": "Pagaleve",
+                "PaymentSystemGroupName": "PagalevePaymentGroup",
+                "Name": "Pagaleve à vista"
+              }
+            ],
+            "DiscountHighLight": [],
+            "GiftSkuIds": [],
+            "Teasers": [],
+            "PromotionTeasers": [],
+            "BuyTogether": [],
+            "ItemMetadataAttachment": [],
+            "Price": 1799.99,
+            "ListPrice": 1799.99,
+            "PriceWithoutDiscount": 1799.99,
+            "RewardValue": 0,
+            "PriceValidUntil": "2024-10-01T15:37:53Z",
+            "AvailableQuantity": 9,
+            "IsAvailable": true,
+            "Tax": 0,
+            "DeliverySlaSamples": [
+              {
+                "DeliverySlaPerTypes": [],
+                "Region": null
+              }
+            ],
+            "GetInfoErrorMessage": null,
+            "CacheVersionUsedToCallCheckout": "DD7AC551FC374EE6BFC670A637A3A500_"
+          }
+        }
+      ],
+      "Videos": [],
+      "estimatedDateArrival": null
+    }
+  ],
+  "skuSpecifications": [
+    {
+      "field": {
+        "id": 52,
+        "name": "Cor",
+        "isActive": true,
+        "position": 1,
+        "type": "Combo"
+      },
+      "values": [
+        {
+          "id": "96",
+          "name": "Preto",
+          "position": 288
+        }
+      ]
+    },
+    {
+      "field": {
+        "id": 53,
+        "name": "Tamanho",
+        "isActive": true,
+        "position": 2,
+        "type": "Combo"
+      },
+      "values": [
+        {
+          "id": "73",
+          "name": "38",
+          "position": 28
+        },
+        {
+          "id": "74",
+          "name": "39",
+          "position": 29
+        },
+        {
+          "id": "75",
+          "name": "40",
+          "position": 31
+        },
+        {
+          "id": "76",
+          "name": "41",
+          "position": 33
+        },
+        {
+          "id": "77",
+          "name": "42",
+          "position": 34
+        },
+        {
+          "id": "78",
+          "name": "43",
+          "position": 36
+        },
+        {
+          "id": "79",
+          "name": "44",
+          "position": 38
+        }
+      ]
+    }
+  ]
+}

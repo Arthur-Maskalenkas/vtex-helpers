@@ -2,6 +2,7 @@ import { fetchHelper } from '../../../../utils/test-utils.tsx'
 import { RepositoryProduct } from '../../../../../src/services/infra/repository/product.ts'
 import { BuilderProtocolMapModelProduct, makeExternalModelProduct } from './builders.ts'
 import { beforeEach, describe, expect, it, SpyInstance, vi } from 'vitest'
+import { Product } from "../../../../../src/services/domain/internal/models/product.ts";
 
 
 
@@ -114,6 +115,27 @@ describe(RepositoryProduct.name, () => {
 						expect(result.oldPrice).toBe(oldPriceOtherSku)
 				})
 
+				it("Should remap basic infos correctly in skus", () => {
+						const productMock = makeExternalModelProduct()
+
+						const skuToMap = productMock.items[0]
+						const skuToMapCommertialOffer = skuToMap.sellers[0]!.commertialOffer
+
+						const result = sut.map([ productMock ])[0].currentProduct.skus[0] as Product.Sku
+
+
+						expect(result.id).toBe(skuToMap.itemId)
+						expect(result.name).toBe(skuToMap.name)
+						expect(result.image).toBe(skuToMap.images[0].imageUrl)
+						expect(result.isAvailable).toBe(skuToMapCommertialOffer.IsAvailable)
+						expect(result.quantity).toBe(skuToMapCommertialOffer.AvailableQuantity)
+						expect(result.currentPrice).toBe(skuToMapCommertialOffer.Price)
+						expect(result.oldPrice).toBe(skuToMapCommertialOffer.ListPrice)
+						expect(result.urlAddToCart).toBe(skuToMap.addToCartLink)
+
+
+				})
+
 				it('Should remap correctly when have 1 product on params', () => {
 						const params = [ makeExternalModelProduct() ]
 
@@ -128,6 +150,17 @@ describe(RepositoryProduct.name, () => {
 						const result = sut.map(params)
 
 						expect(result).toHaveLength(2)
+				})
+
+				it('Should remap correctly basic product properties', () => {
+						const procutMock = makeExternalModelProduct()
+
+
+						const result = sut.map([ procutMock ])[0].currentProduct
+
+						expect(result.id).toBe(procutMock.productId)
+						expect(result.name).toBe(procutMock.productTitle)
+						expect(result.brand).toBe(procutMock.brand)
 				})
 		})
 

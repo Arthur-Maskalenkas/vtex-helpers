@@ -21,8 +21,29 @@ export const makeExternalModelProduct = (): ExternalModelProduct => {
 				skuSpecifications: [],
 				items: [
 						{
-								variations: []
-						} as any
+								addToCartLink: faker.internet.url(),
+								variations: [],
+								images: [ { imageUrl: faker.image.imageUrl() } ],
+								itemId: anyNumber(),
+								ean: anyNumber(),
+								referenceId: [],
+								name: faker.commerce.productName(),
+								sellers: [
+										{
+												commertialOffer: {
+														AvailableQuantity: faker.datatype.number(),
+														ListPrice: faker.datatype.number(),
+														Teasers: [],
+														PromotionTeasers: [],
+														Price: faker.datatype.number(),
+														IsAvailable: faker.datatype.boolean(),
+														GiftSkuIds: [],
+														DiscountHighLight: [],
+														isAvailable: faker.datatype.boolean()
+												}
+										}
+								]
+						}
 				]
 		}
 }
