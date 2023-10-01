@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { render } from "../../utils/test-utils.tsx";
+import { render } from "../../../utils/test-utils.tsx";
 import { faker } from "@faker-js/faker";
-import { Debug } from "../../../src/views/common/debug.tsx";
+import { Debug } from "../../../../src/views/common/debug.tsx";
 
 
 
@@ -86,30 +86,35 @@ describe(`${Debug.name} Tests Suite`, () => {
 
 		it('SHould render objects,nested	objects and nested arrays', () => {
 				const params = {
-						nameNormalObject: faker.lorem.word(),
+						nameNormalObject: 'any_value',
 						nestedObject: {
-								nameNestedObj: faker.lorem.word(),
+								nameNestedObj: 'any_value',
 						},
 						nestedArray: [
 								{
-										nameNestedArray: faker.lorem.word(),
+										nameNestedArray: 'any_value',
 								}
 						]
 				}
-				const { getByText } = render(
+				const { container } = render(
 						<Debug data={params}/>
 				)
 
-				expect(getByText(params.nameNormalObject)).toBeInTheDocument()
-				expect(getByText(params.nestedObject.nameNestedObj)).toBeInTheDocument()
-				expect(getByText(params.nestedArray[0].nameNestedArray)).toBeInTheDocument()
+				expect(container).toMatchSnapshot()
 
+		})
 
-				expect(getByText('nameNormalObject')).toBeInTheDocument()
-				expect(getByText('nestedObject')).toBeInTheDocument()
-				expect(getByText('nestedArray')).toBeInTheDocument()
+		it('Should prevent null	or undefined', () => {
+				const params = {
+						nameNormalObject: 'any_value',
+						attrNull: null,
+						attrUndefined: undefined,
+				}
 
-				expect(getByText(('0'))).toBeInTheDocument()
+				const { container } = render(
+						<Debug data={params}/>
+				)
 
+				expect(container).toMatchSnapshot()
 		})
 })
