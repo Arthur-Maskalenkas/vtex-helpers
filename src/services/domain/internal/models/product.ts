@@ -17,13 +17,13 @@ export namespace Product {
 		export type Sku = {
 				name: string
 				id: string
-				url: string
 				specifications: SkuSpecification[]
 				currentPrice: number
 				oldPrice: number
 				isAvailable: boolean
 				image: string
 				quantity: number
+				urlAddToCart: string
 		}
 
 		export type SkuSpecification = {
