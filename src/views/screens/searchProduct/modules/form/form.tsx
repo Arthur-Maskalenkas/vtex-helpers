@@ -64,8 +64,7 @@ const Input = ({ typeInput }: { typeInput: 'productId' | 'skuId' | 'productName'
 
 export const ModuleForm = () => {
 		const { dispatch } = useSearchProductContext()
-		const { state: { appInternalServices: { product: { loadProducts: controller } } } } = useApplicationReducerContext()
-		(controller);
+		const { state: { appInternalServices: { product: { loadProducts: controller } } } } = useApplicationReducerContext();
 
 		return (
 				<form role={'form'} onSubmit={e => handleSubmit(e, dispatch, controller as any)}>

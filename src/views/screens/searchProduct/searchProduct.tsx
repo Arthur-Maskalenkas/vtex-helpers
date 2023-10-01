@@ -9,7 +9,6 @@ import { Header } from "./components/header.tsx";
 
 export const ScreenSearchProduct = () => {
 		const { states: { currentModule } } = useSearchProductContext()
-		(currentModule);
 		return (
 				<div className={'container-inside-content'}>
 						<Header/>
