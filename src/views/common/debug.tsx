@@ -23,5 +23,5 @@ export const Debug = ({ data }: { data: Record<any, any> }) => {
 				);
 		};
 
-		return <div>{renderData(data)}</div>;
+		return <>{renderData(data)}</>;
 }

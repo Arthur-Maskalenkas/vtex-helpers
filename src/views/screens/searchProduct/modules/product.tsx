@@ -10,7 +10,7 @@ const ListSkus = () => {
 		return (
 				<ul>
 						{skus?.map((sku, index) => {
-								const { currentPrice, oldPrice, id, url, name, isAvailable, quantity, image } = sku
+								const { currentPrice, oldPrice, id, name, isAvailable, quantity, image } = sku
 								return (
 										<li key={index}>
 												<p>{name}</p>
@@ -30,14 +30,13 @@ const ListSkus = () => {
 const CurrentSkuInfos = () => {
 		const { states } = useSearchProductContext()
 
-		const { currentPrice, oldPrice, id, url, name, isAvailable } = states?.product?.currentProduct?.currentSku!
+		const { currentPrice, oldPrice, id, name, isAvailable } = states?.product?.currentProduct?.currentSku!
 
 		return (
 				<div>
 						<p>{currentPrice}</p>
 						<p>{oldPrice}</p>
 						<p>{id}</p>
-						<p>{url}</p>
 						<p>{name}</p>
 						<p>{isAvailable}</p>
 				</div>
@@ -103,7 +102,7 @@ const ListSkuSpecifications = () => {
 
 const ListProductSpecifications = () => {
 		const { states } = useSearchProductContext()
-
+		console.log('#!! 🔥 product 12:39', states)
 		const specifications = states.product?.currentProduct?.specifications
 
 		return (
@@ -131,14 +130,14 @@ const ListCategories = () => {
 		const categories = states.product?.currentProduct?.categories
 
 		return (
-				<ul>
+				<>
 						{categories?.map((category, index) => (
 								<li key={index}>
 										<p>{category.value}</p>
 										<p>{category.name}</p>
 								</li>
 						))}
-				</ul>
+				</>
 		)
 }
 

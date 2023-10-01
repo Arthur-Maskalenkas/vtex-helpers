@@ -1,0 +1,12 @@
+.component-handleProduct.container {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    align-content: start;
+  }
+}

@@ -1,2 +1,17 @@
-.component-button.button.common {
+.component-button.container.common {
+  width: 100%;
+  appearance: none;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  width: fit-content;
+  box-sizing: border-box;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.fullHeight {
+    height: 100%;
+  }
 }

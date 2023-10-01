@@ -9,11 +9,18 @@ export const Text = ({ children }: React.PropsWithChildren) => {
 						{children}
 				</span>
 		)
+
+
 }
 
-export const Container = ({ children, ...rest }: React.PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>>) => {
+export const Container = ({ children, fullWidth = false, fullHeight = false, ...rest }: {
+		fullWidth?: boolean,
+		fullHeight?: boolean
+} & React.PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>>) => {
+		const customClass = `${fullWidth ? 'fullWidth' : ''} ${fullHeight ? 'fullHeight' : ''}`
+
 		return (
-				<button {...rest} className={'component-button button common'}>
+				<button {...rest} className={`component-button container common ${customClass}`}>
 						{children}
 				</button>
 		)

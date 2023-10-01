@@ -5,8 +5,8 @@ import { Button } from "../../commons/button/button.tsx";
 
 const ButtonBack = () => {
 		const { dispatch, states } = useSearchProductContext()
-
 		const handleClick = () => {
+				console.log('#!! 🔥 header 16:31', states)
 				dispatch({ type: 'ACTION_HANDLE_BACK_MODULE' })
 		}
 
