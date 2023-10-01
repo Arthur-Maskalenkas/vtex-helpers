@@ -3,6 +3,15 @@ export const Debug = ({ data }: { data: Record<any, any> }) => {
 				return (
 						<ul>
 								{Object.entries(data).map(([ key, value ], index) => {
+										if (value === null || value === undefined) {
+												return (
+														<li key={index}>
+																<h1>{key}</h1>
+																<p>{value === null ? 'null' : 'undefined'}</p>
+														</li>
+												)
+										}
+
 										return (
 												<li key={index}>
 														<h1>{key}</h1>
