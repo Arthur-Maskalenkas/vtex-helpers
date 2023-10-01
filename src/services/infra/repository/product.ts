@@ -20,10 +20,6 @@ export class RepositoryProduct
 		map(params: ProtocolMapModelProduct.Params): ProtocolMapModelProduct.Result {
 				let externalModelProduct = params as ProtocolMapModelProduct.ParamListModel
 
-				const isArray = Array.isArray(params)
-
-				if (!isArray) externalModelProduct = [ params ]
-
 				const modelNormalized: any = externalModelProduct.map((product) => {
 						const listSkus = product.items.map((sku) => {
 								const listPrice = sku?.sellers?.[0]?.commertialOffer.ListPrice
@@ -112,7 +108,6 @@ export class RepositoryProduct
 						return result
 				})
 
-				if (!isArray) return modelNormalized[0]
 
 				return modelNormalized
 		}

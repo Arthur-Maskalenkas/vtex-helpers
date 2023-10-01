@@ -1,6 +1,6 @@
 import { fetchHelper } from '../../../../utils/test-utils.tsx'
 import { RepositoryProduct } from '../../../../../src/services/infra/repository/product.ts'
-import { BuilderProtocolMapModelProduct } from './builders.ts'
+import { BuilderProtocolMapModelProduct, makeExternalModelProduct } from './builders.ts'
 import { beforeEach, describe, expect, it, SpyInstance, vi } from 'vitest'
 
 
@@ -112,6 +112,22 @@ describe(RepositoryProduct.name, () => {
 
 						expect(result.currentPrice).toBe(currentPriceOtherSku)
 						expect(result.oldPrice).toBe(oldPriceOtherSku)
+				})
+
+				it('Should remap correctly when have 1 product on params', () => {
+						const params = [ makeExternalModelProduct() ]
+
+						const result = sut.map(params)
+
+						expect(result).toHaveLength(1)
+				})
+
+				it('Should remap correctly when have 2 or more	products on params', () => {
+						const params = [ makeExternalModelProduct(), makeExternalModelProduct() ]
+
+						const result = sut.map(params)
+
+						expect(result).toHaveLength(2)
 				})
 		})
 

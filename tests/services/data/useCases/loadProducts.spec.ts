@@ -55,11 +55,11 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						expect(mapParamsSpy.map).toHaveBeenCalledWith(params)
 				})
 
-				it('Should return null when mapParams returns null', async () => {
+				it('Should return empty array when mapParams returns null', async () => {
 						mapParamsSpy.map.mockReturnValueOnce(null)
 						const result = await sut.load(faker.string.sample())
 
-						expect(result).toBeNull()
+						expect(result).toEqual([])
 				})
 		})
 
