@@ -28,3 +28,40 @@ describe(`${Header.name} Tests Suite`, () => {
     expect(getByRole('heading', { name: 'product' })).toBeInTheDocument()
   })
 })
+
+//
+//
+// OU
+//
+//
+import * as ModuleSearchProductContext from "../../../../../../../src/views/screens/searchProduct/context";
+import { useSearchProductContext } from "../../../../../../../src/views/screens/searchProduct/context";
+
+describe(() => {
+  let params, searchProductContextSpy
+
+  beforeEach(() => {
+    searchProductContextSpy = vi.spyOn(ModuleSearchProductContext, 'useSearchProductContext').mockReturnValue({
+      dispatch: vi.fn(),
+      states: {} as any
+    })
+  })
+
+  it('Should call dispatch ACTION_HANDLE_CHANGE_TO_MODULE_PRODUCT when click on button "Ver mais informações"', () => {
+    const { getByRole } = render(<ProductSummary {...params} />)
+
+    const button = getByRole('button', { name: /ver mais informações/i })
+
+    userEvent.click(button)
+
+    const contextSpy = useSearchProductContext()
+
+    expect(contextSpy.dispatch).toHaveBeenCalledWith({
+      type: 'ACTION_HANDLE_CHANGE_TO_MODULE_PRODUCT',
+      payload: { data: params.product }
+    })
+
+  })
+
+
+})
