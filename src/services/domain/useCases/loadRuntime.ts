@@ -7,7 +7,5 @@ export interface IUseCaseLoadRuntime {
 }
 
 export namespace IUseCaseLoadRuntime {
-		export type Result = Promise<InternalModelRuntime | null>
-
-		export type Params = Record<string, any>
+		export type Result = Promise<InternalModelRuntime>
 }
