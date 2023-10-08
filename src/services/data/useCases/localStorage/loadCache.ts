@@ -1,11 +1,11 @@
-import { type ProtocolRepositoryLoadCache } from '../protocols/repositoryLoadCache.ts'
-import { type IUseCaseLoadCache } from '../../domain/useCases/loadCache.ts'
+import { type ProtocolLocalStorageLoadCache } from '../../protocols/localStorage/localStorageLoadCache.ts'
+import { type IUseCaseLoadCache } from '../../../domain/useCases/loadCache.ts'
 
 
 
 export class UseCaseLoadCache implements IUseCaseLoadCache {
 		constructor(
-					private readonly repositoryLoadCache: ProtocolRepositoryLoadCache
+				private readonly repositoryLoadCache: ProtocolLocalStorageLoadCache
 		) {
 		}
 

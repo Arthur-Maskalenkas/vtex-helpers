@@ -1,14 +1,14 @@
 import { type ProtocolController } from '../../../presentation/protocols/controller.ts'
-import { ProtocolRepositoryLoadCache } from "../../../data/protocols/repositoryLoadCache.ts";
-import { ProtocolRepositorySaveCache } from "../../../data/protocols/repositorySaveCache.ts";
+import { IUseCaseLoadCache } from "../../../domain/useCases/loadCache.ts";
+import { IUseCaseSaveCache } from "../../../domain/useCases/saveCache.ts";
 
 
 
 export class DecoratorControllerCache<TParams, TResult> {
 		constructor(
 				private readonly controller: ProtocolController,
-				private readonly usecaseLoadCache: ProtocolRepositoryLoadCache,
-				private readonly usecaseSaveCache: ProtocolRepositorySaveCache
+				private readonly usecaseLoadCache: IUseCaseLoadCache,
+				private readonly usecaseSaveCache: IUseCaseSaveCache
 		) {
 		}
 

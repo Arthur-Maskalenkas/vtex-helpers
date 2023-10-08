@@ -1,11 +1,11 @@
-import { type IUseCaseSaveCache } from '../../domain/useCases/saveCache.ts'
-import { type ProtocolRepositorySaveCache } from '../protocols/repositorySaveCache.ts'
+import { type IUseCaseSaveCache } from '../../../domain/useCases/saveCache.ts'
+import { type ProtocolLocalStorageSaveCache } from '../../protocols/localStorage/localStorageSaveCache.ts'
 
 
 
 export class UseCaseSaveCache implements IUseCaseSaveCache {
 		constructor(
-					private readonly repositorySaveCache: ProtocolRepositorySaveCache
+				private readonly repositorySaveCache: ProtocolLocalStorageSaveCache
 		) {
 		}
 

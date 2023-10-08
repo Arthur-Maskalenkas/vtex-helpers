@@ -36,7 +36,7 @@ export class BuilderUsecaseLoadCache
 }
 
 export class BuilderUsecaseSaveCache
-		extends BuilderBase<IUseCaseSaveCache, IUseCaseSaveCache.Result> {
+		extends BuilderBase<IUseCaseSaveCache, IUseCaseLoadCache.Result> {
 		constructor() {
 				super(
 						{ save: async () => true }, 'save'

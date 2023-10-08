@@ -1,11 +1,11 @@
-import { type IUseCaseDeleteCache } from '../../domain/useCases/deleteCache.ts'
-import { type ProtocolRepositoryDeleteCache } from '../protocols/repositoryDeleteCache.ts'
+import { type IUseCaseDeleteCache } from '../../../domain/useCases/deleteCache.ts'
+import { type ProtocolRepositoryDeleteCache } from '../../protocols/repositoryDeleteCache.ts'
 
 
 
 export class UseCaseDeleteCache implements IUseCaseDeleteCache {
 		constructor(
-					private readonly repositoryDeleteCache: ProtocolRepositoryDeleteCache
+				private readonly repositoryDeleteCache: ProtocolRepositoryDeleteCache
 		) {
 		}
 
