@@ -3,11 +3,11 @@ import { InternalModelPage } from "../internal/models/page.ts";
 
 
 
-export interface IUseCaseLoadAllPages {
-		load: (params: IUseCaseLoadAllPages.Params) => IUseCaseLoadAllPages.Result
+export interface IUseCaseMapAllPages {
+		map: (params: IUseCaseMapAllPages.Params) => IUseCaseMapAllPages.Result
 }
 
-export namespace IUseCaseLoadAllPages {
+export namespace IUseCaseMapAllPages {
 		export type Params = {
 				runtime: ExternalModelRuntime
 		}
