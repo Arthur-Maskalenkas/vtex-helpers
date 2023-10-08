@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { UseCaseLoadRuntime } from "../../../../../src/services/data/useCases/dom/loadRuntime.ts";
+import { InternalModelRuntime } from "../../../../../src/services/domain/internal/models/runtime.ts";
 
 
 
@@ -16,11 +17,11 @@ describe(`${UseCaseLoadRuntime.name} Tests Suite`, () => {
 
 
 		describe(`# ${UseCaseLoadRuntime.prototype.load.name}`, () => {
-				it('Should return null when not exist runtime', async () => {
+				it(`Should return ${InternalModelRuntime.name}} when not exist runtime`, async () => {
 						domLoadRuntimeSpy.getByDom.mockResolvedValueOnce(null)
 						const result = await sut.load()
 
-						expect(result).toBeNull()
+						expect(result).toBeInstanceOf(InternalModelRuntime)
 				})
 
 				it(`Should call domLoadRuntimeSpy correctly`, async () => {
@@ -30,12 +31,12 @@ describe(`${UseCaseLoadRuntime.name} Tests Suite`, () => {
 						expect(domLoadRuntimeSpy.getByDom).toHaveBeenCalledWith()
 				})
 
-				it(`Should return domLoadRuntimeSpy on success result`, async () => {
+				it(`Should return instance of ${InternalModelRuntime.name} on success`, async () => {
 						domLoadRuntimeSpy.getByDom.mockResolvedValue('any_value')
 						const result = await sut.load()
 
 
-						expect(result).toBe('any_value')
+						expect(result).toBeInstanceOf(InternalModelRuntime)
 				})
 		})
 
