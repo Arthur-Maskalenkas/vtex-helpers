@@ -1,19 +1,19 @@
 import { type ProtocolController } from '../../../presentation/protocols/controller.ts'
-import { type IUseCaseLoadCache } from '../../../domain/useCases/loadCache.ts'
-import { type IUseCaseSaveCache } from '../../../domain/useCases/saveCache.ts'
+import { ProtocolRepositoryLoadCache } from "../../../data/protocols/repositoryLoadCache.ts";
+import { ProtocolRepositorySaveCache } from "../../../data/protocols/repositorySaveCache.ts";
 
 
 
 export class DecoratorControllerCache<TParams, TResult> {
 		constructor(
-					private readonly controller: ProtocolController,
-					private readonly usecaseLoadCache: IUseCaseLoadCache,
-					private readonly usecaseSaveCache: IUseCaseSaveCache
+				private readonly controller: ProtocolController,
+				private readonly usecaseLoadCache: ProtocolRepositoryLoadCache,
+				private readonly usecaseSaveCache: ProtocolRepositorySaveCache
 		) {
 		}
 
 		async handle(
-					params: DecoratorControllerCache.Params<TParams> = {}
+				params: DecoratorControllerCache.Params<TParams> = {}
 		): DecoratorControllerCache.Result<TResult> {
 				if (!params?.id) {
 						const result = await this.controller.handle(params?.controllerArgs)
