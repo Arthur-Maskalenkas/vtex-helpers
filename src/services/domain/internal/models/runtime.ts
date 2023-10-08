@@ -13,17 +13,19 @@ export class InternalModelRuntime extends NotificationContext {
 		public readonly serverQuery: { data: string }
 		public readonly binding: ModelRuntime.Binding
 
-		constructor({
-																culture,
-																pages,
-																accountId,
-																workspace,
-																account,
-																publicEndpoint,
-																query,
-																serverQuery,
-																binding
-														}: Record<string, any>) {
+		constructor(args: Record<string, any> | null) {
+				const {
+						culture,
+						pages,
+						accountId,
+						workspace,
+						account,
+						publicEndpoint,
+						query,
+						serverQuery,
+						binding
+				} = args ?? {}
+
 				super()
 				this.culture = culture
 				this.pages = pages
