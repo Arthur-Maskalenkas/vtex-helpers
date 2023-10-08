@@ -1,4 +1,8 @@
-export class InternalModelRuntime {
+import { NotificationContext } from "../notificationContext.ts";
+
+
+
+export class InternalModelRuntime extends NotificationContext {
 		public readonly culture: ModelRuntime.Culture
 		public readonly pages: Record<string, ModelRuntime.Pages>
 		public readonly accountId: string
@@ -20,6 +24,7 @@ export class InternalModelRuntime {
 																serverQuery,
 																binding
 														}: Record<string, any>) {
+				super()
 				this.culture = culture
 				this.pages = pages
 				this.accountId = accountId
@@ -30,6 +35,13 @@ export class InternalModelRuntime {
 				this.serverQuery = serverQuery
 				this.binding = binding
 		}
+
+		public isValid() {
+				if (!this.account) this.addNotification('Not found runtime', 'error')
+
+				return this.hasNotifications()
+		}
+
 
 }
 
