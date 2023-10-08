@@ -10,6 +10,12 @@ export const handleSubmit = async (event: React.FormEvent<HTMLFormElement>, disp
 		const paramsMapped = mapParamsWithUseForm(event)
 		if (!paramsMapped) return null
 
+		const hasError = paramsMapped as any instanceof Map
+		if (hasError) {
+				dispatch({ type: 'ACTION_HANDLE_INPUT_ERRORS', payload: { data: paramsMapped as any } })
+				return null
+		}
+
 		const products = await controller.handle((paramsMapped as any))
 		if (!products?.length) return null
 
