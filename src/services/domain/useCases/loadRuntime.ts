@@ -3,7 +3,7 @@ import { InternalModelRuntime } from "../internal/models/runtime.ts";
 
 
 export interface IUseCaseLoadRuntime {
-		load: (params: IUseCaseLoadRuntime.Params) => IUseCaseLoadRuntime.Result
+		load: () => IUseCaseLoadRuntime.Result
 }
 
 export namespace IUseCaseLoadRuntime {

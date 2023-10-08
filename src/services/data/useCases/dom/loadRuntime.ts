@@ -9,7 +9,7 @@ export class UseCaseLoadRuntime implements IUseCaseLoadRuntime {
 		) {
 		}
 
-		async load(params: IUseCaseLoadRuntime.Params): IUseCaseLoadRuntime.Result {
+		async load(): IUseCaseLoadRuntime.Result {
 				return null as any
 		}
 
