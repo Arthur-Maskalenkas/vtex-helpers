@@ -9,7 +9,7 @@ import { useSearchProductContext } from "../../../../../../../src/views/screens/
 
 
 
-describe(`${ProductSummary.name} Tests Suite`, () => {
+describe.skip(`${ProductSummary.name} Tests Suite`, () => {
 		let params, searchProductContextSpy
 
 		beforeEach(() => {

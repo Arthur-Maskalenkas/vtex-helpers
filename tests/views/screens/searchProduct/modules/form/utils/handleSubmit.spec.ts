@@ -11,10 +11,10 @@ describe(`${handleSubmit.name} Tests Suite`, () => {
 		let dispatchSpy: any
 		let mapParamsSpy: SpyInstance<any, any>
 		let controllerSpy: any
-		let anyEventParam: any = 'eventParam'
+		let anyEventParam: any = { preventDefault: vi.fn() }
 
 		beforeEach(() => {
-				mapParamsSpy = vi.spyOn(MapParamsModule, 'mapParams').mockReturnValue('mapParams')
+				mapParamsSpy = vi.spyOn(MapParamsModule, 'mapParamsWithUseForm').mockReturnValue('mapParams')
 
 				controllerSpy = {
 						handle: vi.fn()
