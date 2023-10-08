@@ -1,4 +1,4 @@
-import { InternalModelRuntime } from "../internal/models/runtime.ts";
+import { ExternalModelRuntime } from "../external/models/runtime.ts";
 
 
 
@@ -7,5 +7,5 @@ export interface IUseCaseLoadRuntime {
 }
 
 export namespace IUseCaseLoadRuntime {
-		export type Result = Promise<InternalModelRuntime>
+		export type Result = Promise<ExternalModelRuntime>
 }

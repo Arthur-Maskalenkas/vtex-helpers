@@ -1,17 +1,17 @@
-import { NotificationContext } from "../notificationContext.ts";
+import { NotificationContext } from "../../notificationContext.ts";
 
 
 
-export class InternalModelRuntime extends NotificationContext {
-		public readonly culture: ModelRuntime.Culture
-		public readonly pages: Record<string, ModelRuntime.Pages>
+export class ExternalModelRuntime extends NotificationContext {
+		public readonly culture: ExternalModelRuntime.Culture
+		public readonly pages: Record<string, ExternalModelRuntime.Pages>
 		public readonly accountId: string
 		public readonly workspace: string
 		public readonly account: string
 		public readonly publicEndpoint: 'publicEndpoint' | null
 		public readonly query: { data: string }
 		public readonly serverQuery: { data: string }
-		public readonly binding: ModelRuntime.Binding
+		public readonly binding: ExternalModelRuntime.Binding
 
 		constructor(args: Record<string, any> | null) {
 				const {
@@ -76,7 +76,7 @@ namespace Route {
 		}
 }
 
-export namespace ModelRuntime {
+export namespace ExternalModelRuntime {
 		export type Pages = {
 				allowConditions: boolean
 				context: string

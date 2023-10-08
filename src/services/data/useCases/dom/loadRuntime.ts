@@ -1,6 +1,6 @@
 import { IUseCaseLoadRuntime } from "../../../domain/useCases/loadRuntime.ts";
 import { ProtocolDomLoadRuntime } from "../../protocols/dom/domLoadRuntime.ts";
-import { InternalModelRuntime } from "../../../domain/internal/models/runtime.ts";
+import { ExternalModelRuntime } from "../../../domain/external/models/runtime.ts";
 
 
 
@@ -13,7 +13,7 @@ export class UseCaseLoadRuntime implements IUseCaseLoadRuntime {
 		async load(): IUseCaseLoadRuntime.Result {
 				const runtime = await this.domLoadRuntime.getByDom()
 
-				const modelRuntime = new InternalModelRuntime(runtime)
+				const modelRuntime = new ExternalModelRuntime(runtime)
 
 				return modelRuntime
 		}
