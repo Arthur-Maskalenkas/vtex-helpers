@@ -50,7 +50,7 @@ describe(`${FormSearchPage.name} Tests Suits`, () => {
 								.toEqual(new Map([ [ 'paramSpecification', errorMessages.specification.requiredValue ] ]))
 				})
 
-				it('should map multiple inputs', () => {
+				it('should load multiple inputs', () => {
 						const params: any = BuilderReactFormEvent.a()
 								.appendInput('paramCollection', 'collection')
 								.appendInput('paramCategory', 'category')
@@ -80,7 +80,7 @@ describe(`${FormSearchPage.name} Tests Suits`, () => {
 						vi.spyOn(contextModule, 'useFormSearchPageContext').mockReturnValue(mockuseFormSearchPageContext);
 				});
 
-				it("Should not call	any action when map params returns null", () => {
+				it("Should not call	any action when load params returns null", () => {
 						vi.spyOn(utilsModule, 'mapParams').mockReturnValue(null);
 						renderForm();
 						const contextSpy = useFormSearchPageContext();

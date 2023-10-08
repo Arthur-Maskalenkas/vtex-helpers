@@ -29,12 +29,12 @@ describe(`${MapperInternalModelPage.name} Tests Suite`, () => {
 
 
 		describe(`# ${MapperInternalModelPage.mapExternalModelRuntimePages.name}`, () => {
-				it('Should return empty array when map not search any page to return', async () => {
+				it('Should return empty array when load not search any page to return', async () => {
 						const result = await sut.mapExternalModelRuntimePages({})
 						expect(result).toEqual([])
 				})
 
-				it('Should map correctly a page', async () => {
+				it('Should load correctly a page', async () => {
 						const [ paramData ] = mockExternalPages
 
 						const params = {
@@ -47,7 +47,7 @@ describe(`${MapperInternalModelPage.name} Tests Suite`, () => {
 				})
 
 
-				it('Should map correctly a list of page', async () => {
+				it('Should load correctly a list of page', async () => {
 						const [ paramData0, paramData1 ] = mockExternalPages
 
 						const params = {

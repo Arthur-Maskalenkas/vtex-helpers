@@ -134,7 +134,7 @@ describe(RepositoryCategory.name, () => {
 		})
 
 		describe('mapper', () => {
-				it('should map model', async () => {
+				it('should load model', async () => {
 						const params: ProtocolMapModelCategory.Params = [
 								{ id: 'category.0', hasChildren: false, children: [] } as any
 						]
@@ -156,7 +156,7 @@ describe(RepositoryCategory.name, () => {
       `)
 				})
 
-				it('should map depth models', async () => {
+				it('should load depth models', async () => {
 						const params: ProtocolMapModelCategory.ParamListModel = [ {
 								id: 0,
 								hasChildren: true,

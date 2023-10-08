@@ -7,7 +7,7 @@ export class UseCaseGetAllPages implements IUseCaseGetAllPages {
 		constructor() {
 		}
 
-		public async map(params: IUseCaseGetAllPages.Params): IUseCaseGetAllPages.Result {
+		public async load(params: IUseCaseGetAllPages.Params): IUseCaseGetAllPages.Result {
 				const pagesToMap = params?.pages
 
 				const result = MapperInternalModelPage.mapExternalModelRuntimePages(pagesToMap)

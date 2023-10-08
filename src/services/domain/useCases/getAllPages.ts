@@ -4,7 +4,7 @@ import { InternalModelPage } from "../internal/models/page.ts";
 
 
 export interface IUseCaseGetAllPages {
-		map: (params: IUseCaseGetAllPages.Params) => IUseCaseGetAllPages.Result
+		load: (params: IUseCaseGetAllPages.Params) => IUseCaseGetAllPages.Result
 }
 
 export namespace IUseCaseGetAllPages {

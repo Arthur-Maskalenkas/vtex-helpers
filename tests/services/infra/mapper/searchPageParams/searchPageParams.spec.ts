@@ -30,7 +30,7 @@ describe(MapperSearchPageParams.name, () => {
 								.withParamCategorie('id-0', 'value-0')
 								.build()
 
-						const expected = '/id-0?map=c'
+						const expected = '/id-0?load=c'
 
 						const result = sut.map(params)
 
@@ -43,7 +43,7 @@ describe(MapperSearchPageParams.name, () => {
 								.withParamBrand('id-0', 'value-0')
 								.build()
 
-						const expected = '/id-0?map=b'
+						const expected = '/id-0?load=b'
 
 						const result = sut.map(params)
 
@@ -56,7 +56,7 @@ describe(MapperSearchPageParams.name, () => {
 								.withParamCollection('id-0', 'value-0')
 								.build()
 
-						const expected = '/id-0?map=productClusterIds'
+						const expected = '/id-0?load=productClusterIds'
 
 						const result = sut.map(params)
 
@@ -69,7 +69,7 @@ describe(MapperSearchPageParams.name, () => {
 								.withParamSpecification('id-0', 'value-0')
 								.build()
 
-						const expected = '/value-0?map=specificationFilter_id-0'
+						const expected = '/value-0?load=specificationFilter_id-0'
 
 						const result = sut.map(params)
 
@@ -85,8 +85,8 @@ describe(MapperSearchPageParams.name, () => {
 								.withParamSpecification('specification-id', 'specification-value')
 								.build()
 
-						// /Masculino/Olympikus/Todos/Evasense?map=c,b,productClusterIds,specificationFilter_Tecnologia
-						const expected = '/categorie-id/brand-id/collection-id/specification-value?map=c,b,productClusterIds,specificationFilter_specification-id'
+						// /Masculino/Olympikus/Todos/Evasense?load=c,b,productClusterIds,specificationFilter_Tecnologia
+						const expected = '/categorie-id/brand-id/collection-id/specification-value?load=c,b,productClusterIds,specificationFilter_specification-id'
 
 						const result = sut.map(params)
 

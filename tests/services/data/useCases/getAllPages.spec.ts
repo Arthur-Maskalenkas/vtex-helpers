@@ -15,7 +15,7 @@ describe(`${UseCaseGetAllPages.name} Tests Suite`, () => {
 		})
 
 
-		it('Should return a empty array when map returns undefined', async () => {
+		it('Should return a empty array when load returns undefined', async () => {
 				console.log('')
 				mapExternalModelRuntimePagesSpy.mockReturnValue(undefined)
 
@@ -35,7 +35,7 @@ describe(`${UseCaseGetAllPages.name} Tests Suite`, () => {
 				expect(mapExternalModelRuntimePagesSpy).toHaveBeenCalledWith('any_param')
 		})
 
-		it('Should return a result from method map', async () => {
+		it('Should return a result from method load', async () => {
 				const expected = [ 'any_param_1', 'any_param_2' ]
 				mapExternalModelRuntimePagesSpy.mockResolvedValue(expected)
 

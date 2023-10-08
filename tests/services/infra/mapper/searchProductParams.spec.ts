@@ -59,7 +59,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						expect(result).toContain(expected)
 				})
 
-				it('Should combine	all params and map', () => {
+				it('Should combine	all params and load', () => {
 						const idProduct = faker.number.int(10).toString()
 						const idSku = faker.number.int(10).toString()
 						const idCluster = faker.number.int(10).toString()
@@ -80,7 +80,7 @@ describe(`${UsecaseLoadProducts.name} Tests Suite`, () => {
 						expect(result).not.toContain(`fq=productId:${id},fq=productId:${id}`)
 				})
 
-				it('Should not map params if not exist in strategy', () => {
+				it('Should not load params if not exist in strategy', () => {
 						const result = sut.map(`paramNotExists=${id},paramProductId=${id}`)
 
 						const expected = `fq=productId:${id}`
