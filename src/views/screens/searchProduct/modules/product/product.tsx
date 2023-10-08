@@ -4,18 +4,19 @@ import { ListSkuSpecifications } from "./components/listSkuSpecifications.tsx";
 import { ListProductSpecifications } from "./components/listProductSpecifications.tsx";
 import { ListCategories } from "./components/listCategories.tsx";
 import { ListSkus } from "./components/listSkus.tsx";
+import { Container } from "../../../commons/styled/container/container.tsx";
 
 
 
 export const ModuleProduct = () => {
 		return (
-				<div>
+				<Container.Screen>
 						<ProductInfos/>
 						<ListCollections/>
 						<ListSkuSpecifications/>
 						<ListProductSpecifications/>
 						<ListCategories/>
 						<ListSkus/>
-				</div>
+				</Container.Screen>
 		)
 }
