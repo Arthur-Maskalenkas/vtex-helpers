@@ -5,6 +5,7 @@ import { NotificationContext } from "../../notificationContext.ts";
 export class ExternalModelRuntime extends NotificationContext {
 		public readonly culture: ExternalModelRuntime.Culture
 		public readonly pages: Record<string, ExternalModelRuntime.Pages>
+		public readonly route: ExternalModelRuntime.Route
 		public readonly accountId: string
 		public readonly workspace: string
 		public readonly account: string
@@ -20,6 +21,7 @@ export class ExternalModelRuntime extends NotificationContext {
 						accountId,
 						workspace,
 						account,
+						route,
 						publicEndpoint,
 						query,
 						serverQuery,
@@ -29,6 +31,7 @@ export class ExternalModelRuntime extends NotificationContext {
 				super()
 				this.culture = culture
 				this.pages = pages
+				this.route = route
 				this.accountId = accountId
 				this.workspace = workspace
 				this.account = account
