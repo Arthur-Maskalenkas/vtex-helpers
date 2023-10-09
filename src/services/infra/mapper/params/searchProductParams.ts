@@ -12,6 +12,7 @@ export class MapperSearchProductParams implements ProtocolMapSearchProductParams
 				for (const param of params.split(',')) {
 						const [ paramStrategy, paramId ] = param.split('=')
 
+						
 						const paramsStrategy: any = {
 								paramProductId: () => this.mapFq('productId', paramId),
 								paramSkuId: () => this.mapFq('skuId', paramId),
