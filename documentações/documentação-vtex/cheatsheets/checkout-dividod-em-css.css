@@ -1,15 +1,14 @@
-// // email
+/* email */
 .container.container-main.container-order-form .form-page.client-pre-email {
   background-color: blue;
 }
 
-// // /cart
+/* cart */
 .container.container-main.container-order-form .checkout-container.orderform-active #client-profile-data .client-profile-data {
   background-color: green;
 }
 
 .container.container-main.container-order-form .checkout-container.orderform-active #shipping-data {
-
   &,
   >* {
     background-color: violet;
@@ -20,7 +19,7 @@
 
   &,
   >* {
-    background-color: $color-primary;
+    background-color: blue;
   }
 }
 
@@ -30,16 +29,16 @@
   }
 }
 
-// // inicio
+/* inicio */
 .container.container-main.container-cart {
   background-color: red;
 
-  // container cart
+/* container cart */
   .cart-template-holder {
     background-color: olivedrab;
   }
 
-  // container shipping
+        /* container shipping */
   .summary-template-holder,
   .summary-template-holder+.cart-links {
     background-color: rebeccapurple;

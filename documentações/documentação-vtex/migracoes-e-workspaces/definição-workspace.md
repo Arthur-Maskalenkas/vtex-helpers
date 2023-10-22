@@ -1,1 +1,0 @@
-https://community.vtex.com/t/workspace-o-que-e-como-criar-um-de-desenvolvimento-e-de-producao/27927

@@ -1,1 +1,0 @@
-{LWIN}{SHIFT}S - abre a ferramenta de captura do windows para tirar print e colar em alguma ide
