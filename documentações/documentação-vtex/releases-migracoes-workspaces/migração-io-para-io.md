@@ -51,7 +51,7 @@
 ```gql
 mutation{
   # basicamente estou falando: pare de utilizar o app template que possui um builder da store e comece a utilizar o app store-theme-avanti que possui builder da store
-  updateThemeIds(from: "rovitex.template@1.x",to: "rovitex.store-theme-avanti@2.x")
+  updateThemeIds(from: "lojapicpayb2b.picpay-b2b-store-theme@5.x",to: "lojapicpayb2b.picpay-b2b-store-theme@6.x")
 }
 ```
 9 - Após usar a query, o dev ira deslinkar tudo com vtex unlink --all

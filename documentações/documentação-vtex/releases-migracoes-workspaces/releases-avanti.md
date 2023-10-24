@@ -50,7 +50,7 @@
 
     // exemplo
      mutation{
-      updateThemeIds(from:"lojasmarabraz.store-theme@9.x", to:"lojasmarabraz.store-theme@11.x")
+      updateThemeIds(from:"lojapicpayb2bqa.picpay-b2b-store-theme@5.x", to:"lojapicpayb2bqa.picpay-b2b-store-theme@6.x")
     }
 
     //Exemplo genérico
